@@ -3,10 +3,10 @@ title: "Automating trade compliance: a practical playbook"
 description: "A practical playbook for trade compliance automation: rules engines, automated screening and classification, document filing, and measuring the ROI."
 category: "Trade & Supply Chain"
 primaryKeyword: "trade compliance automation"
-tags: ["automate customs compliance", "compliance workflow automation", "trade automation software"]
+tags: ["automate customs compliance", "compliance workflow automation", "trade automation software", "denied party screening"]
 ---
 
-Trade compliance is a rules problem drowning in manual work. Every shipment needs the right classification, the right valuation, screening against watchlists, correct documents, and a defensible record, and most companies handle this with people, spreadsheets, and institutional memory. That works until volume grows or an audit arrives. Automating trade compliance does not remove the compliance officer; it removes the repetitive, error-prone parts of their job so they focus on judgment calls. Here is a practical playbook for doing it well.
+Trade compliance is a rules problem drowning in manual work. Every shipment needs the right classification, the right valuation, screening against watchlists, correct documents, and a defensible record, and most companies handle this with people, spreadsheets, and institutional memory. The scale is unforgiving: US importers file over [60 million entry summaries a year through CBP's Automated Commercial Environment](https://www.cbp.gov/trade/automated/ace-transaction-details), each one carrying classification, valuation, and admissibility decisions. That works until volume grows or an audit arrives. Automating trade compliance does not remove the compliance officer; it removes the repetitive, error-prone parts of their job so they focus on judgment calls. Here is a practical playbook for doing it well.
 
 ## Where manual compliance breaks down
 
@@ -20,6 +20,16 @@ Manual compliance fails in predictable ways, and recognizing them tells you wher
 
 The common thread is that compliance is rule-following at scale, and humans doing rule-following at scale are slow, inconsistent, and hard to audit. That is precisely the shape of work software does better.
 
+The numbers below frame why the manual approach stops working, and why the parts most worth automating are the high-volume, high-penalty ones.
+
+| Figure | Value | Source |
+| --- | --- | --- |
+| ACE entry summaries filed per year | 60 million+ | [CBP](https://www.cbp.gov/trade/automated/ace-transaction-details) |
+| Ten-digit HTS classification numbers | 17,000+ | [USTR](https://ustr.gov/callout/us-harmonized-tariff-schedule-hts) |
+| OFAC civil enforcement, 2024 | $48.79M across 12 actions | [OFAC](https://ofac.treasury.gov/civil-penalties-and-enforcement-information/2024-enforcement-information) |
+| OFAC civil enforcement, 2023 | $1.5B+ | [OFAC](https://ofac.treasury.gov/civil-penalties-and-enforcement-information) |
+| Average annual cost of poor data quality | $12.9M | [Gartner](https://www.gartner.com/en/data-analytics/topics/data-quality) |
+
 ## Rules engines for trade decisions
 
 The heart of compliance automation is a rules engine: a system that encodes your compliance rules as explicit, versioned logic and applies them consistently to every transaction. Instead of an expert deciding case by case, the rules they would apply are captured once and executed the same way every time.
@@ -32,13 +42,13 @@ The design mistake to avoid is burying compliance logic inside application code 
 
 Two high-volume compliance tasks are the best early automation targets.
 
-**Denied party screening** is legally mandatory: you cannot transact with sanctioned or restricted parties, and the watchlists change frequently. Automated screening checks every counterparty against current US and international lists in real time, flags potential matches for review, and logs the result. The engineering challenge is match quality, because names are messy and a system that floods reviewers with false positives gets ignored while one that misses a real match creates legal exposure. A dedicated [denied party screening](/blog/denied-party-screening-software) approach balances recall against false positives and keeps a clean audit log of every check.
+**Denied party screening** is legally mandatory: you cannot transact with sanctioned or restricted parties, and the watchlists change frequently. The stakes are concrete. In 2024 OFAC issued [12 enforcement actions totaling $48.79 million](https://ofac.treasury.gov/civil-penalties-and-enforcement-information/2024-enforcement-information), and the prior year's total topped $1.5 billion, so a single missed match can dwarf any software budget. Automated screening checks every counterparty against current US and international lists in real time, flags potential matches for review, and logs the result. The engineering challenge is match quality, because names are messy and a system that floods reviewers with false positives gets ignored while one that misses a real match creates legal exposure. A dedicated [denied party screening](/blog/denied-party-screening-software) approach balances recall against false positives and keeps a clean audit log of every check.
 
-**Classification** assigns the correct [HTS code](/blog/hts-classification-software) to each product, which drives duty rates and admissibility. It is genuinely hard, governed by rules, notes, and interpretation, so full automation is not the goal. What works is assisted classification: the system proposes codes with supporting rationale, a person confirms the non-obvious ones, and past decisions are reused so the same product is not reclassified from scratch every time. AI helps here, but grounded in the actual tariff schedule and your own history, not guessing.
+**Classification** assigns the correct [HTS code](/blog/hts-classification-software) to each product, which drives duty rates and admissibility. It is genuinely hard: the US Harmonized Tariff Schedule carries [over 17,000 ten-digit classification numbers](https://ustr.gov/callout/us-harmonized-tariff-schedule-hts), governed by rules, notes, and interpretation, so full automation is not the goal. What works is assisted classification: the system proposes codes with supporting rationale, a person confirms the non-obvious ones, and past decisions are reused so the same product is not reclassified from scratch every time. AI helps here, but grounded in the actual tariff schedule and your own history, not guessing.
 
 ## Document generation and filing
 
-Trade generates a mountain of documents, and producing them by hand is slow and error-prone. Automation pulls data from the systems where it already lives (orders, the ERP, shipment records) and generates the required commercial documents, entry data, and forms automatically, so the same information is not re-keyed into five places where it can diverge.
+Trade generates a mountain of documents, and producing them by hand is slow and error-prone. Automation pulls data from the systems where it already lives (orders, the ERP, shipment records) and generates the required commercial documents, entry data, and forms automatically, so the same information is not re-keyed into five places where it can diverge. That re-keying is not a small cost: Gartner has estimated poor data quality costs organizations [$12.9 million a year on average](https://www.gartner.com/en/data-analytics/topics/data-quality), and duplicated manual entry is one of the ways trade data drifts out of sync.
 
 Filing is the next step. Where you file entries into CBP through ACE, automating the connection means entry data flows straight through instead of being typed into a portal, with statuses coming back automatically. This is closely related to [customs entry automation](/blog/customs-entry-automation), and it is where a lot of manual hours disappear. The record-keeping side matters as much as the speed: automated filing that also captures a complete, timestamped record of what was filed and when turns audit preparation from a fire drill into a query.
 
@@ -53,9 +63,9 @@ This exception-based model is what makes automation trustworthy in a regulated f
 Compliance automation earns its budget in several measurable ways, and it is worth tracking them from the start:
 
 - **Labor saved.** Hours no longer spent on manual classification, screening, and document entry, redirected to higher-value work.
-- **Errors avoided.** Fewer misclassifications and missed screenings, which reduce penalties, delays, and rework. In trade, a single compliance failure can dwarf the cost of the system.
+- **Errors avoided.** Fewer misclassifications and missed screenings, which reduce penalties, delays, and rework. With OFAC settlements running into the tens of millions in a light year, a single compliance failure can dwarf the cost of the system.
 - **Speed.** Faster screening and filing that unblock shipments and quoting, which has direct revenue impact.
 - **Audit readiness.** Complete, consistent records that turn audits from expensive scrambles into routine responses.
 - **Scalability.** The ability to grow volume without proportionally growing the compliance team.
 
-Build the business case on avoided risk and unlocked capacity, not just headcount, because in trade compliance the downside you are preventing is often the largest number in the equation. For the broader financial framing, see [custom software ROI](/blog/custom-software-roi). If you want to map which parts of your compliance process to automate first and what it would return, [get a technical proposal](/#contact) or see [what we build](/#capabilities).
+Build the business case on avoided risk and freed capacity, not just headcount, because in trade compliance the downside you are preventing is often the largest number in the equation. For the broader financial framing, see [custom software ROI](/blog/custom-software-roi). If you want to map which parts of your compliance process to automate first and what it would return, [get a technical proposal](/#contact) or see [what we build](/#capabilities).

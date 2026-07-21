@@ -1,18 +1,24 @@
 ---
 title: "Real-time shipment tracking software: architecture and build"
-description: "How real-time shipment tracking software is built: data sources, normalizing carrier feeds, event models, predictive ETAs, tracking portals, and scaling the pipeline."
+description: "How real-time shipment tracking software is built: carrier data sources, normalization, event models, predictive ETAs, and scaling the pipeline, with real market figures."
 category: "Trade & Supply Chain"
 primaryKeyword: "shipment tracking software"
-tags: ["real-time freight tracking", "container tracking software", "track and trace platform"]
+tags: ["real-time freight tracking", "container tracking software", "track and trace platform", "demurrage and detention"]
 ---
 
 Everyone wants "real-time visibility" into their shipments. Building it is harder than it sounds, because the reality underneath is a mess of inconsistent data from dozens of carriers, ports, and terminals, each speaking its own dialect on its own schedule. Real-time tracking software is mostly a data-integration and normalization problem wearing a nice map. This walks through the architecture: where the data comes from, how you make sense of it, and how you scale the pipeline without it falling over.
+
+The demand behind it is not speculative. The real-time transportation visibility platform market was worth about [$3.2 billion in 2024 and is projected to grow near 19 percent a year](https://dataintelo.com/report/real-time-transportation-visibility-platform-market) through the early 2030s. The reason is simple economics: shipments are late often enough that knowing where they are pays for itself. Adoption reflects that, with a majority of logistics organizations now running some form of real-time event or visibility system rather than chasing status by phone and email.
+
+## Why visibility pays for itself
+
+Two numbers frame the problem. First, ocean schedules are unreliable. Sea-Intelligence, which tracks 34 trade lanes, reported that global containership schedule reliability [stayed in the 50 to 55 percent range across 2024](https://www.sea-intelligence.com/press-room/288-global-schedule-reliability-remains-stable-at-50-55-in-2024), meaning roughly half of vessels arrived off-schedule, and the average late vessel ran more than five days behind. Second, late containers cost money directly. A US Federal Maritime Commission study found that nine major carriers collected [about $12.9 billion in detention and demurrage charges between April 2020 and March 2023](https://www.ismworld.org/supply-management-news-and-reports/news-publications/inside-supply-management-magazine/blog/2023/2023-07/demurrage-and-detention-charges-down-but-issues-remain-at-some-ports/), with per-container fees commonly running $150 to $500 a day. Software that flags a container before those clocks start earns its keep fast.
 
 ## Data sources for tracking
 
 There is no single feed that tells you where a shipment is. Tracking software has to assemble the picture from many sources, each covering part of the journey:
 
-- Ocean carriers, which publish container events, gate-out, loaded, discharged, through APIs, EDI, or in some cases only a website.
+- Ocean carriers, which publish container events (gate-out, loaded, discharged) through APIs, EDI, or in some cases only a website.
 - Air carriers and their status messages for air freight.
 - Trucking and drayage providers, increasingly with GPS and telematics feeds, moving containers to and from ports.
 - Ports and terminals, which report vessel arrivals, container availability, and gate activity.
@@ -35,9 +41,9 @@ A good event model handles the messy realities of real shipments. Events arrive 
 
 ## Predictive ETAs and delay alerts
 
-Knowing where a shipment is has value. Knowing when it will actually arrive, and being warned early when that slips, has far more. Predictive ETAs use current position and status, historical transit times on similar lanes, and known conditions like port congestion to estimate arrival, then keep refreshing that estimate as new events land.
+Knowing where a shipment is has value. Knowing when it will actually arrive, and being warned early when that slips, has far more. Given that roughly half of ocean sailings miss their schedule, a static booked ETA is close to useless by mid-voyage. Predictive ETAs use current position and status, historical transit times on similar lanes, and known conditions like port congestion to estimate arrival, then keep refreshing that estimate as new events land.
 
-The higher-value feature is exception management. Operations teams cannot watch thousands of shipments that are moving fine; they need the system to surface the handful that are in trouble. That means alerting on the meaningful deviations, a vessel that missed its window, a container dwelling too long at a terminal, a milestone that should have happened and did not, so people spend their attention on the exceptions instead of scanning healthy shipments. This is where machine learning earns its place, and [predictive analytics for supply chain](/blog/predictive-analytics-for-supply-chain) goes deeper on the modeling behind delay and ETA prediction.
+The higher-value feature is exception management. Operations teams cannot watch thousands of shipments that are moving fine; they need the system to surface the handful that are in trouble. That means alerting on the meaningful deviations: a vessel that missed its window, a container dwelling too long at a terminal, a milestone that should have happened and did not. Catching a container before free time expires is exactly where those $150-to-$500-a-day fees get avoided. This is where machine learning earns its place, and [predictive analytics for supply chain](/blog/predictive-analytics-for-supply-chain) goes deeper on the modeling behind delay and ETA prediction.
 
 ## Customer-facing tracking portals
 

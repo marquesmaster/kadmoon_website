@@ -1,12 +1,12 @@
 ---
 title: "How to choose a custom software development company"
-description: "How to choose a custom software development company with a repeatable process: vetting expertise, reading portfolios, checking pricing, and scoring vendors."
+description: "How to choose a custom software development company with a repeatable process: vetting expertise, reading portfolios, scoring pricing, and de-risking the pick."
 category: "Buyer's Guide"
 primaryKeyword: "how to choose a custom software development company"
-tags: ["choosing a software vendor", "best custom software company", "software development partner"]
+tags: ["choosing a software vendor", "best custom software company", "software development partner", "vendor scoring rubric"]
 ---
 
-Picking the wrong software vendor is expensive in ways that do not show up until month four, when the demos stop matching the invoices. The good news is that most of the risk is knowable before you sign. This guide walks through how to choose a custom software development company using a process you can repeat across every candidate, so the decision rests on evidence instead of a good sales call.
+Picking the wrong software vendor is expensive in ways that do not show up until month four, when the demos stop matching the invoices. The odds are not comforting. The Standish Group's CHAOS research, drawn from tens of thousands of delivery projects, has for years put fully successful outcomes at roughly [31% of projects, with 50% "challenged" and 19% outright canceled](https://www.successthroughsafe.com/blog-1/2021/11/13/standish-chaos-report-2021). Most of that risk is knowable before you sign. This guide walks through how to choose a custom software development company using a process you can repeat across every candidate, so the decision rests on evidence instead of a good sales call.
 
 ## What to define before you start your search
 
@@ -14,11 +14,11 @@ Vendors can only be judged against a target. Before you email a single firm, wri
 
 Outcome means the result in plain language. "Cut order-entry time in half" is an outcome. "Build a dashboard" is a task that may or may not serve it. Constraints are the hard edges: a compliance deadline, an ERP you must integrate with, a data-residency rule. Budget is the number that lets a serious firm tell you honestly whether your scope fits.
 
-Skip this step and every proposal you receive will describe a different project, which makes comparison impossible. If you want a deeper method here, see [how to scope a custom software project](/blog/how-to-scope-a-custom-software-project).
+Skip this step and every proposal you receive will describe a different project, which makes comparison impossible. It also feeds the single biggest failure driver in the data: scope that keeps moving. McKinsey and the University of Oxford, studying more than 5,400 large IT projects, found the average one ran [45% over budget and 7% over schedule while delivering 56% less value than predicted](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value). A tight definition up front is the cheapest insurance against being in that group. If you want a deeper method here, see [how to scope a custom software project](/blog/how-to-scope-a-custom-software-project).
 
 ## Technical and domain expertise that actually matters
 
-There are two kinds of expertise, and buyers usually over-index on the first. Technical depth is real: you want engineers who have shipped systems at your scale, using a stack you can hire against later (React, Node.js, Python, PostgreSQL, and infrastructure managed as code rather than clicked together by hand).
+There are two kinds of expertise, and buyers usually over-index on the first. Technical depth is real: you want engineers who have shipped systems at your scale, using a stack you can hire against later. That matters because you will own this code for years, so favor mainstream tooling with a deep labor pool. In the [2024 Stack Overflow survey of over 65,000 developers](https://survey.stackoverflow.co/2024/technology), JavaScript (62%) and Python (51%) led languages used, and PostgreSQL was the most popular database for the second year running at 49%. A team building on tools like those is a team you can staff around after launch, not one that locks you into something exotic.
 
 Domain expertise is the one that saves projects. A team that already understands US Customs filings, ERP financial postings, or HIPAA data handling will ask sharper questions in week one and build fewer wrong things. When a firm knows your industry, discovery goes faster and the estimate is more honest because they have already been surprised by your kind of edge case.
 
@@ -30,11 +30,11 @@ Be wary of the firm that says yes to everything. Real expertise includes pushing
 
 A portfolio is marketing until you verify it. For each case study that matters to you, ask: what did this firm actually build versus advise on, who owned the code afterward, and is the system still running? Screenshots prove design taste, not delivery.
 
-Reference calls are where the truth leaks out, if you ask the right way. Do not ask "were you happy." Ask what went wrong and how the vendor handled it, whether the team stayed the same from kickoff to launch, and whether the final cost tracked the original estimate. A reference who cannot recall a single problem was either coached or never watched closely. The best signal is a client who hit a real snag and describes how the vendor absorbed it.
+Reference calls are where the truth leaks out, if you ask the right way. Do not ask "were you happy." Ask what went wrong and how the vendor handled it, whether the team stayed the same from kickoff to launch, and whether the final cost tracked the original estimate. That last question matters given how routinely estimates slip: the same McKinsey study found 17% of large IT projects went so badly, with overruns above 200%, that they threatened the sponsoring company's existence. A reference who cannot recall a single problem was either coached or never watched closely. The best signal is a client who hit a real snag and describes how the vendor absorbed it.
 
 ## Communication, process, and time-zone fit
 
-Delivery is mostly communication with code attached. Ask how a candidate runs a project day to day. A workable answer usually includes short iterations (two-week sprints are common), a working demo at the end of each cycle, and a single accountable person you can reach without a ticket queue.
+Delivery is mostly communication with code attached. Ask how a candidate runs a project day to day. A workable answer usually includes short iterations (two-week sprints are common), a working demo at the end of each cycle, and a single accountable person you can reach without a ticket queue. This is not a style preference. The CHAOS data consistently shows small, iterative projects succeeding at far higher rates than large, sequential ones, because a wrong turn surfaces in a two-week demo rather than a year-end integration.
 
 Time-zone overlap is underrated. When your team and the build team share working hours, a blocker that surfaces at 10am is resolved that afternoon instead of the next day. Across a multi-month project, that difference compounds into weeks. It also shapes something subtler: how quickly small misunderstandings get corrected. Domain nuance, the reason your process works the way it does, travels badly through asynchronous handoffs and much better through a live conversation. That is one reason many US buyers weigh an onshore team more heavily than the hourly rate alone suggests. See [why choose a US-based software house over offshore](/blog/why-choose-a-us-based-software-house) for the fuller trade-off.
 
@@ -42,7 +42,7 @@ Time-zone overlap is underrated. When your team and the build team share working
 
 Cheap quotes get expensive, and the pattern is predictable: a low fixed number, a thin scope, then a stack of change orders once you are committed. A transparent vendor shows you where the hours go, names their assumptions, and writes measurable acceptance criteria into the contract so "done" is not a matter of opinion.
 
-Pay attention to how each firm handles change. Software scope moves. What matters is whether the change process is written down and fair, or whether it is a lever the vendor pulls whenever the estimate runs short. For the mechanics of each billing approach, compare [fixed price vs time and materials](/blog/fixed-price-vs-time-and-materials).
+Factor in the years after launch, not just the build. Gartner and industry benchmarks put ongoing software maintenance at roughly [15% to 20% of the original build cost every year](https://www.gartner.com/en/information-technology/glossary/software-maintenance) for patches, dependency updates, and small changes. A vendor who talks only about the build price and never about that carrying cost is quoting you half the picture. Pay attention, too, to how each firm handles change. Software scope moves. What matters is whether the change process is written down and fair, or whether it is a lever the vendor pulls whenever the estimate runs short. For the mechanics of each billing approach, compare [fixed price vs time and materials](/blog/fixed-price-vs-time-and-materials).
 
 ## A scoring rubric to compare vendors objectively
 

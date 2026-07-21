@@ -3,16 +3,16 @@ title: "Import/export compliance software: what US traders need"
 description: "A practical guide to import export compliance software for US traders: classification, valuation, origin, export controls, recordkeeping, and custom vs packaged tools."
 category: "Trade & Supply Chain"
 primaryKeyword: "import export compliance software"
-tags: ["trade compliance software", "export controls software", "import compliance tools"]
+tags: ["trade compliance software", "export controls software", "import compliance tools", "denied party screening"]
 ---
 
-US trade compliance is a field where a spreadsheet error can turn into a penalty, a seized shipment, or an audit. As volumes grow, manual processes stop scaling and start creating risk. Import/export compliance software exists to make the rules enforceable in your daily operations rather than something a few experts hold in their heads. This guide walks through what these systems actually need to do for a US importer or exporter, and how to decide between buying a package and building something that fits your trade.
+US trade compliance is a field where a spreadsheet error can turn into a penalty, a seized shipment, or an audit. The scale is easy to underestimate. In fiscal year 2023, CBP processed [$3.33 trillion in imports across 36.7 million entries](https://www.cbp.gov/newsroom/stats/trade), and every one of those entries carried a classification, a value, and an origin that had to be right. As volumes grow, manual processes stop scaling and start creating risk. Import/export compliance software exists to make the rules enforceable in your daily operations rather than something a few experts hold in their heads. This guide walks through what these systems actually need to do for a US importer or exporter, and how to decide between buying a package and building something that fits your trade.
 
 ## The US trade compliance landscape
 
 Compliance is not one rule. It is a web of agencies and requirements that touch every cross-border transaction.
 
-On the import side, US Customs and Border Protection expects accurate classification, valuation, and country of origin, filed electronically through the ACE system. On the export side, the Bureau of Industry and Security administers the Export Administration Regulations, the State Department controls defense items under ITAR, and the Treasury's OFAC maintains sanctions and screening obligations that apply to everyone. Reasonable care is the legal standard, and the burden is on the trader to get it right and to prove it later.
+On the import side, US Customs and Border Protection expects accurate classification, valuation, and country of origin, filed electronically through the ACE system. ACE is now the backbone of that process: CBP has reported processing [over 36 million entry summaries in a single fiscal year, with more than 99% filed electronically](https://www.cbp.gov/trade/automated/ace-transaction-details) through electronic data interchange. On the export side, the Bureau of Industry and Security administers the Export Administration Regulations, the State Department controls defense items under ITAR, and the Treasury's OFAC maintains sanctions and screening obligations that apply to everyone. Reasonable care is the legal standard, and the burden is on the trader to get it right and to prove it later.
 
 Software helps by turning these obligations into checks that run on every transaction instead of relying on memory and manual review. For the automation side specifically, see [trade compliance automation](/blog/trade-compliance-automation).
 
@@ -26,7 +26,7 @@ Three determinations sit at the center of import compliance, and each is a place
 - Valuation: declaring the correct customs value, which is not always the invoice price once you account for assists, royalties, and freight terms.
 - Origin: determining country of origin correctly, which affects duty rates, trade preference eligibility, and admissibility.
 
-Good software supports consistent classification with reference data and history, applies valuation rules the same way every time, and documents the reasoning behind each determination so it holds up under review. Classification in particular benefits from dedicated tooling; our piece on [HTS classification software](/blog/hts-classification-software) goes deeper.
+The stakes are real money. CBP collected tens of billions in duties, taxes, and fees on that $3.33 trillion in FY2023 trade, and a systematic classification error repeated across thousands of entries compounds into either large overpayments you never recover or an underpayment that surfaces as a penalty during an audit. Good software supports consistent classification with reference data and history, applies valuation rules the same way every time, and documents the reasoning behind each determination so it holds up under review. Classification in particular benefits from dedicated tooling; our piece on [HTS classification software](/blog/hts-classification-software) goes deeper.
 
 ## Export controls and licensing
 
@@ -34,13 +34,13 @@ Exporting is where many companies underestimate their exposure, because the cont
 
 The core questions are what you are shipping, where it is going, who is receiving it, and how it will be used. An item may require a license based on its classification and destination. A party may be prohibited entirely because they appear on a restricted or sanctioned list. Software supports this by determining export classification, checking destination and end-use against license requirements, and flagging transactions that need a license before they ship rather than after.
 
-The highest-leverage automated check is screening every party against government denied and sanctioned party lists, since dealing with a prohibited party is a serious violation regardless of intent. [Denied party screening software](/blog/denied-party-screening-software) covers how that works in practice.
+The penalties for getting this wrong are not theoretical. 2023 was a record year for US sanctions enforcement: OFAC assessed [more than $1.5 billion in penalties across 17 enforcement actions](https://www.mofo.com/resources/insights/240304-us-sanctions-enforcement-2023-trends), the highest single-year total in its history, driven by settlements with parties that moved goods and payments through prohibited channels. The highest-leverage automated check is screening every party against government denied and sanctioned party lists, since dealing with a prohibited party is a serious violation regardless of intent. [Denied party screening software](/blog/denied-party-screening-software) covers how that works in practice.
 
 ## Recordkeeping and audit readiness
 
 Compliance is not only about getting each transaction right. It is about proving you did, sometimes years later.
 
-US regulations require traders to retain records of their import and export transactions, typically for five years, and to produce them on demand during an audit. The obligation covers not just the filings but the supporting documentation and the basis for each determination. A system that captures this automatically, as a byproduct of processing each transaction, turns an audit from a scramble into a query. You want a complete, timestamped record of what you declared and why, retrievable without archaeology.
+US regulations require traders to retain records of their import and export transactions, generally for five years from the date of entry, and to produce them on demand during an audit. The obligation covers not just the filings but the supporting documentation and the basis for each determination. A system that captures this automatically, as a byproduct of processing each transaction, turns an audit from a scramble into a query. You want a complete, timestamped record of what you declared and why, retrievable without archaeology.
 
 This is one of the strongest arguments for software over manual processes. Consistent recordkeeping is hard to sustain by hand at volume, and it is exactly what an auditor wants to see.
 
@@ -50,7 +50,7 @@ The related benefit is defensibility. Reasonable care is not only about being ri
 
 The real value of compliance software is moving checks from after the fact to before the transaction commits.
 
-Screening runs automatically against current restricted-party lists. Classification pulls from a maintained database rather than someone's memory. License requirements are flagged based on the item and destination. Filings are validated before submission to ACE so errors are caught before they reach the agency. Anything that fails a check is held for human review rather than proceeding silently.
+Screening runs automatically against current restricted-party lists, and those lists are moving targets. OFAC's Specially Designated Nationals list alone now runs to [more than 12,000 entries, with 3,135 parties added in 2024](https://www.fluxforce.ai/statistics/sanctions-list-growth) on top of the many other lists that feed the Consolidated Screening List. No team screens that by hand at any real volume. Classification pulls from a maintained database rather than someone's memory. License requirements are flagged based on the item and destination. Filings are validated before submission to ACE so errors are caught before they reach the agency. Anything that fails a check is held for human review rather than proceeding silently.
 
 The pattern is consistent: let the software enforce the rules on every transaction, and route exceptions to a person. That scales in a way manual review cannot, and it produces the audit trail at the same time. For clean electronic filing, integrating properly with ACE matters; see our [ACE integration software guide](/blog/ace-integration-software-guide).
 

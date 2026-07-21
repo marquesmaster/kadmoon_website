@@ -3,10 +3,10 @@ title: "How much does it cost to build an MVP?"
 description: "A realistic look at MVP development cost: what an MVP really is, how to scope one, where teams overspend, and how to budget for the roadmap after launch."
 category: "Cost & Pricing"
 primaryKeyword: "cost to build an mvp"
-tags: ["mvp development cost", "minimum viable product budget", "startup mvp cost"]
+tags: ["mvp development cost", "minimum viable product budget", "startup mvp cost", "product-market fit"]
 ---
 
-The honest answer to what an MVP costs is that it depends on what you put in it, and most of the cost is a scoping decision, not a rate-card decision. The teams who spend the least are not the ones who find the cheapest developers. They are the ones who are ruthless about what the first version needs to prove. This walks through what an MVP actually is, how to scope one tightly, and where budgets tend to leak.
+The honest answer to what an MVP costs is that it depends on what you put in it, and most of the cost is a scoping decision, not a rate-card decision. The teams who spend the least are not the ones who find the cheapest developers. They are the ones who are ruthless about what the first version needs to prove. That instinct is backed by hard numbers: CB Insights reviewed post-mortems of failed startups and found that [no market need was the top reason, cited in 42 percent](https://www.cbinsights.com/research/report/startup-failure-reasons-top/) of cases, ahead of running out of cash. An MVP is the cheapest way to find out whether that market exists before you spend the rest of the budget. This walks through what an MVP actually is, how to scope one tightly, and where budgets tend to leak.
 
 ## What an MVP is and is not
 
@@ -14,9 +14,23 @@ A minimum viable product is the smallest thing you can build that lets you test 
 
 What it is not: a feature-complete platform, a polished brand experience, or a system built to scale to a million users. Those come later, and only if the MVP earns them. When people say their MVP is expensive, it is almost always because they defined it as "the product, but smaller" instead of "the test, made real."
 
+It helps to look at what actually kills startups, because that is what the first version should be aimed at. From the CB Insights post-mortem analysis, the leading causes are demand and money problems, not missing features:
+
+| Reason startups fail | Share of post-mortems |
+|---|---|
+| No market need | 42% |
+| Ran out of cash | 29% |
+| Wrong team | 23% |
+| Outcompeted | 19% |
+| Pricing and cost issues | 18% |
+
+Almost none of that is solved by a bigger feature set. Most of it is solved by learning faster and spending less while you learn, which is exactly the job of an MVP.
+
 ## Scoping the smallest testable product
 
 Start from the assumption you are least sure about, not from a feature list. If the risk is that customers will not pay, build the narrowest flow that ends in a payment. If the risk is that a workflow is too complex to adopt, build that one workflow well and stub everything around it.
+
+Smaller is also safer, not just cheaper. The Standish Group's CHAOS research repeatedly shows small, tightly scoped projects succeed roughly 90 percent of the time, while large projects succeed less than 10 percent of the time. Every feature you defer moves your MVP toward the winning end of that curve.
 
 A few rules that keep scope honest:
 
@@ -26,7 +40,7 @@ A few rules that keep scope honest:
 
 ## Cost ranges for a real MVP
 
-Cost tracks scope, team seniority, and how much integration the product needs. A single-workflow MVP built by a senior team, with standard auth and payments and no gnarly third-party integrations, is a modest, weeks-not-months effort. Add multi-user roles, a couple of external integrations, or a regulated data flow, and both the timeline and the number stretch.
+Cost tracks scope, team seniority, and how much integration the product needs. The dominant line item is engineering time, and US labor is not cheap: the Bureau of Labor Statistics puts the median software developer wage at [$133,080 a year, roughly $69.50 an hour](https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm) as of May 2024, before benefits, overhead, or margin. That is why hours, not rates, decide the total. A single-workflow MVP built by a senior team, with standard auth and payments and no gnarly third-party integrations, is a modest, weeks-not-months effort. Add multi-user roles, a couple of external integrations, or a regulated data flow, and both the timeline and the number stretch.
 
 The variables that move the number most:
 
@@ -46,18 +60,18 @@ The expensive mistakes are almost never the developer rate. They are scope and s
 - Gold-plating the UI on flows that may not survive contact with real customers.
 - Committing to a fixed-price contract on a vague spec, which prices in a large risk premium the vendor keeps whether or not the risk materializes.
 
-The pattern is spending on certainty you do not have yet. An MVP is about buying information cheaply.
+There is a compounding cost, too. Stripe's developer survey found the average developer already loses [about 13.5 hours a week to technical debt plus another 3.8 to bad code](https://stripe.com/files/reports/the-developer-coefficient.pdf), and 59 percent of developers called that maintenance load excessive. Code you write to handle imagined future scale is code someone maintains forever, at a real hourly rate. The pattern in all of these is spending on certainty you do not have yet. An MVP is about buying information cheaply, and every hour spent building beyond the current question is an hour that does not answer it.
 
 ## Build, buy, or no-code trade-offs
 
 Not everything needs custom code on day one. No-code and off-the-shelf tools can validate an idea fast and cheap, and for some businesses they are the permanent answer. The trade-off is control and ceilings. No-code tools hit walls on custom logic, integrations, and data ownership, and migrating off them later is real work.
 
-A reasonable heuristic: if the thing you are testing is generic, buy or assemble it. If the thing you are testing is the exact workflow that will make you different, that is worth building properly, because you will be living in that code for years. If you are heading toward a subscription product specifically, [B2B SaaS MVP development](/blog/b2b-saas-mvp-development) covers what belongs in the first release.
+A reasonable heuristic: if the thing you are testing is generic, buy or assemble it. If the thing you are testing is the exact workflow that will make you different, that is worth building properly, because you will be living in that code for years. The failure data cuts both ways here. Buying generic pieces protects you from running out of cash before you learn anything, and building the one differentiating flow protects you from the larger risk, no market need, which no amount of assembled tooling addresses if the core idea is unproven. If you are heading toward a subscription product specifically, [B2B SaaS MVP development](/blog/b2b-saas-mvp-development) covers what belongs in the first release.
 
 ## Budgeting for the post-MVP roadmap
 
 The number that surprises founders is not the MVP. It is everything after. A successful MVP generates a backlog: the features you deferred, the scale work you skipped, the hardening a paying customer expects. Budget for that from the start.
 
-A sensible plan sets aside funding beyond the MVP itself, ideally as an ongoing capacity rather than a one-off project, so momentum does not stall the week you find product-market fit. Two-week sprints with a working demo each cycle keep spend visible and let you stop or pivot at any point rather than discovering the bill at the end. For the broader picture, [how to budget for a software project](/blog/how-to-budget-for-a-software-project) covers build, run, and change costs over time.
+Speed of iteration is where the money is made back. McKinsey's work on software delivery found teams that reorganize around fast, incremental release can cut the time to move code into production from [89 days down to 15](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/beyond-agile-reorganizing-it-for-faster-software-delivery), which is what lets you respond to what the MVP teaches you before the runway runs out. A sensible plan sets aside funding beyond the MVP itself, ideally as an ongoing capacity rather than a one-off project, so momentum does not stall the week you find product-market fit. Two-week sprints with a working demo each cycle keep spend visible and let you stop or pivot at any point rather than discovering the bill at the end. For the broader picture, [how to budget for a software project](/blog/how-to-budget-for-a-software-project) covers build, run, and change costs over time.
 
 Kadmoon builds MVPs for US companies with a senior in-house team and measurable acceptance criteria in the contract, so you know what each sprint buys. If you want a scoped estimate for your idea, [get a technical proposal](/#contact) or read more of [the blog](/blog) first.

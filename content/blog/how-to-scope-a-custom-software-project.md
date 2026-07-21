@@ -1,20 +1,30 @@
 ---
 title: "How to scope a custom software project the right way"
-description: "Learn how to scope a software project: define outcomes, build a backlog, set MVP boundaries, capture non-functional needs, and stop scope creep."
+description: "How to scope a software project: define outcomes, build a backlog, set MVP boundaries, capture non-functional needs, and stop scope creep before it starts."
 category: "Buyer's Guide"
 primaryKeyword: "how to scope a software project"
-tags: ["project scoping", "software scope of work", "define project requirements"]
+tags: ["project scoping", "software scope of work", "define project requirements", "scope creep"]
 ---
 
-Most software projects that go over budget were mis-scoped before a single line of code was written. Scope is not a document you produce once and file away. It is a running agreement about what you are building, why, and where the edges are. Get it wrong and every sprint pays interest on that mistake.
+Most software projects that go over budget were mis-scoped before a single line of code was written. The numbers back this up. In the Standish Group's 2020 CHAOS research, only about [31 percent of projects were rated successful while 50 percent were challenged and 19 percent failed](https://budgetoverrun.com/studies/standish-chaos-report), and "incomplete requirements" has long topped the list of impairment factors at [13.1 percent of failed projects](https://personal.utdallas.edu/~chung/SYSM6309/chaos_report.pdf). Scope is not a document you produce once and file away. It is a running agreement about what you are building, why, and where the edges are. Get it wrong and every sprint pays interest on that mistake.
 
-This guide walks through how to scope a software project so the estimate holds up, the team knows what "done" means, and the work stays inside the boundaries you agreed to.
+This guide walks through how to scope a software project so the estimate holds up, the team knows what "done" means, and the work stays inside the boundaries you agreed to. The research on where projects go wrong is consistent enough to plan around:
+
+| Finding | Figure | Source |
+| --- | --- | --- |
+| Projects rated successful | 31% | Standish CHAOS 2020 |
+| Top cause of failure: incomplete requirements | 13.1% | Standish CHAOS |
+| Large IT projects over budget, on average | 45% | McKinsey / Oxford |
+| Value delivered vs predicted on large projects | 56% less | McKinsey / Oxford |
+| Projects hit by scope creep | 52% | PMI Pulse 2018 |
+
+Every row on that table traces back to a scoping decision made, or skipped, before the build began.
 
 ## Outcomes first: what "done" looks like
 
 Start with the result, not the feature list. A feature list answers "what will we build." An outcome answers "what changes for the business when it ships." Those are different questions, and the second one is the one that keeps you honest.
 
-Write outcomes as measurable statements. "Cut the time to process a customer order from 40 minutes to under 10." "Let a broker file an entry without leaving the system." "Reduce manual data re-entry between the warehouse and the ERP to zero." Each of these gives you a way to test whether the software actually worked, which is the whole point of writing acceptance criteria into the contract in the first place.
+Write outcomes as measurable statements. "Cut the time to process a customer order from 40 minutes to under 10." "Let a broker file an entry without leaving the system." "Reduce manual data re-entry between the warehouse and the ERP to zero." Each of these gives you a way to test whether the software actually worked, which is the whole point of writing acceptance criteria into the contract in the first place. Standish's own analysis of what separates winning projects points to three things: user involvement, executive support, and a clear statement of requirements. Outcomes give you all three at once.
 
 Outcomes also protect you from building the wrong thing well. If a proposed feature does not move one of your named outcomes, it is a candidate for a later phase or the cut list.
 
@@ -22,11 +32,13 @@ Outcomes also protect you from building the wrong thing well. If a proposed feat
 
 Once outcomes are clear, decompose them into capabilities, then into individual stories. A capability like "order processing" breaks down into intake, validation, pricing, approval, and fulfillment handoff. Each of those becomes one or more user stories written from the point of view of the person doing the work.
 
-Keep stories small enough to estimate and demonstrate. A good rule: if you cannot describe how you would test a story in a sentence or two, it is still too big. When a story feels vague, that vagueness is usually hiding a decision nobody has made yet, and it is far cheaper to surface that decision now than to discover it mid-build when a developer has to guess. As the backlog takes shape, tag each item with the outcome it serves. This mapping becomes your prioritization tool later, and it makes the whole thing easier to hand to a vendor as a [software scope of work](/blog/how-to-write-a-software-requirements-document).
+Keep stories small enough to estimate and demonstrate. A good rule: if you cannot describe how you would test a story in a sentence or two, it is still too big. This matters more on bigger efforts. Standish data shows small projects succeed roughly 90 percent of the time while large ones succeed less than 10 percent of the time, and one reason is that small, well-defined units of work are far easier to specify, verify, and finish. When a story feels vague, that vagueness is usually hiding a decision nobody has made yet, and it is far cheaper to surface that decision now than to discover it mid-build when a developer has to guess. As the backlog takes shape, tag each item with the outcome it serves. This mapping becomes your prioritization tool later, and it makes the whole thing easier to hand to a vendor as a [software scope of work](/blog/how-to-write-a-software-requirements-document).
 
 ## MVP boundaries and phase planning
 
 The hardest scoping decision is what to leave out of the first release. An MVP is not a stripped-down version of everything. It is the smallest slice that delivers one real outcome end to end, so you can put it in front of users and learn.
+
+The case for keeping the first slice small is not just philosophical. McKinsey and Oxford studied more than 5,400 large IT projects and found that on average they [run 45 percent over budget and 7 percent over time while delivering 56 percent less value than predicted](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value). The same study found that every additional year a project is scheduled to last increases cost overruns by about 15 percent, and that 17 percent of large IT projects go so badly they threaten the company's existence. Long, monolithic scopes are where that risk lives.
 
 Draw the boundary deliberately. Phase one might handle the single highest-volume workflow completely, while phase two adds the edge cases, the reporting, and the second user type. Sequencing this way means you get a working demo early, you spend less before you have proof, and you can reprioritize the later phases based on what phase one teaches you. At Kadmoon, every two-week sprint ends with a working demo, which makes phase boundaries something you can actually see rather than argue about.
 
@@ -48,13 +60,13 @@ The reason these get missed is that nobody experiences them until they fail. No 
 
 ## Estimating effort without overcommitting
 
-Estimates are ranges, not promises. Early in a project you know the least, so a single confident number is a warning sign, not a comfort. A better estimate expresses uncertainty: a discovery phase to reduce it, then a firmer number for the first build phase once the fog clears.
+Estimates are ranges, not promises. Early in a project you know the least, so a single confident number is a warning sign, not a comfort. The historical Standish figures put the average cost overrun on challenged projects at 189 percent of the original estimate, which tells you how much fog sits inside an early number. A better estimate expresses that uncertainty: a discovery phase to reduce it, then a firmer number for the first build phase once the picture clears.
 
 Break estimates down by story or capability rather than quoting one lump figure. Granular estimates are easier to sanity-check and easier to trim when the total comes in high. When you compare bids, watch how each vendor handles unknowns. The ones who pad silently and the ones who promise everything are both hiding the same risk. This is one of the clearer signals when you [compare software development vendors](/blog/how-to-compare-software-development-vendors) side by side.
 
 ## Keeping scope from quietly creeping
 
-Scope rarely explodes in one dramatic moment. It leaks. A small "while you're in there" request here, a slightly bigger interpretation of a story there, and three months later the project is unrecognizable and over budget.
+Scope rarely explodes in one dramatic moment. It leaks. PMI's 2018 Pulse of the Profession found that [52 percent of projects experienced scope creep, up from 43 percent five years earlier](https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf). A small "while you're in there" request here, a slightly bigger interpretation of a story there, and three months later the project is unrecognizable and over budget.
 
 Control it with a lightweight change process, not a bureaucratic one. Every new request gets written down, sized, and traded against something already in the plan or added with an explicit budget and timeline impact. The goal is not to say no to change. Requirements will and should evolve. The goal is to make each change a visible decision rather than a silent drift. Contracts with measurable acceptance criteria make this easier, because you have a fixed reference point to measure change against.
 
