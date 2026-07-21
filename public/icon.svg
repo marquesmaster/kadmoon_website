@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kadmoon">
+  <rect width="64" height="64" rx="14" fill="#0C1D44"/>
+  <path d="M20 16h6v14.5L38.5 16H46L32.6 31.8 46.5 48h-7.8L26 32.9V48h-6z" fill="#FFFFFF"/>
+  <circle cx="45" cy="20" r="4" fill="#EA5A1F"/>
+</svg>
