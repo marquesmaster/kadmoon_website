@@ -651,3 +651,30 @@ export const industryPages: IndustryPage[] = [
     keyword: 'government',
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Testimonials and client logos.
+// These render ONLY when populated, so nothing fabricated is ever shown.
+// TODO(founder): add REAL client quotes and logo names below to activate the
+// sections on the homepage. Do not invent clients.
+// ---------------------------------------------------------------------------
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+};
+
+export const testimonials: Testimonial[] = [
+  // Example shape (delete this comment and add real, approved quotes):
+  // {
+  //   quote: 'Kadmoon shipped a working demo in the first two weeks and never missed one after.',
+  //   name: 'Jane Doe',
+  //   role: 'VP of Operations',
+  //   company: 'Acme Logistics',
+  // },
+];
+
+// Client names to show as a logo/wordmark marquee (real, approved clients only).
+export const clientLogos: string[] = [];

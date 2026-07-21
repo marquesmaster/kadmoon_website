@@ -11,6 +11,8 @@ import { Process } from '@/components/sections/Process';
 import { Engagement } from '@/components/sections/Engagement';
 import { Work } from '@/components/sections/Work';
 import { Industries } from '@/components/sections/Industries';
+import { Testimonials } from '@/components/sections/Testimonials';
+import { ClientLogos } from '@/components/sections/ClientLogos';
 import { BlogPreview } from '@/components/sections/BlogPreview';
 import { Faq } from '@/components/sections/Faq';
 import { Contact } from '@/components/sections/Contact';
@@ -24,6 +26,7 @@ export default function HomePage() {
         <Hero />
         <StatsBand />
         <Credibility />
+        <ClientLogos />
         <Capabilities />
         <TechStack />
         <WhyKadmoon />
@@ -33,6 +36,7 @@ export default function HomePage() {
         <Engagement />
         <Work />
         <Industries />
+        <Testimonials />
         <BlogPreview />
         <Faq />
         <Contact />
