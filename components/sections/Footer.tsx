@@ -39,11 +39,19 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-xs text-ink-3">
             {siteConfig.legalName} · {siteConfig.city}, {siteConfig.region} · {siteConfig.country}
           </p>
-          <p className="font-mono text-xs text-ink-3">© 2026 {siteConfig.legalName}</p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a href="/privacy" className="font-mono text-xs text-ink-3 transition-colors hover:text-ink">
+              Privacy
+            </a>
+            <a href="/terms" className="font-mono text-xs text-ink-3 transition-colors hover:text-ink">
+              Terms
+            </a>
+            <p className="font-mono text-xs text-ink-3">© 2026 {siteConfig.legalName}</p>
+          </div>
         </div>
       </div>
     </footer>
