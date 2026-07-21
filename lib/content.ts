@@ -355,3 +355,71 @@ export const footer = {
     },
   ],
 };
+
+// ---------------------------------------------------------------------------
+// Additional homepage sections (richer detail)
+// ---------------------------------------------------------------------------
+
+export const techStack = {
+  eyebrow: 'Our stack',
+  title: 'Modern by default, chosen on merit.',
+  sub: 'No project of ours is born with technical debt. We pick tools for performance, security, and long-term maintainability, not familiarity.',
+  groups: [
+    { label: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'React Native', 'Tailwind CSS'] },
+    { label: 'Backend', items: ['Node.js', 'Python', 'Go', 'PostgreSQL', 'Redis', 'GraphQL'] },
+    { label: 'Data & AI', items: ['dbt', 'Airflow', 'LLMs / RAG', 'PyTorch', 'BigQuery', 'Snowflake'] },
+    { label: 'Infra & DevOps', items: ['Kubernetes', 'Terraform', 'Docker', 'AWS', 'GitHub Actions', 'Datadog'] },
+    { label: 'Integrations', items: ['US Customs / ACE', 'NetSuite', 'SAP', 'Dynamics', 'Stripe', 'REST / SOAP'] },
+  ],
+  // Flattened for the marquee.
+  marquee: [
+    'React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'Go', 'PostgreSQL', 'Redis',
+    'GraphQL', 'React Native', 'Kubernetes', 'Terraform', 'Docker', 'AWS', 'GitHub Actions',
+    'Datadog', 'LLMs / RAG', 'PyTorch', 'Snowflake', 'Stripe', 'NetSuite', 'SAP', 'US Customs / ACE',
+  ],
+};
+
+export const engagement = {
+  eyebrow: 'How we engage',
+  title: 'Three ways to work with us.',
+  sub: 'Every model runs on the same senior in-house team, measurable acceptance criteria, and code you own.',
+  models: [
+    {
+      name: 'Fixed-scope project',
+      best: 'Best when the outcome is well defined',
+      body: 'A defined build with measurable acceptance criteria per feature and milestone-based billing. You know exactly what you get, when, and how to validate it.',
+      points: ['Per-feature acceptance criteria', 'Milestone billing', 'Fixed timeline'],
+    },
+    {
+      name: 'Dedicated team',
+      best: 'Best for an evolving roadmap',
+      body: 'A senior squad embedded on your roadmap: engineers, a designer, and an architect working in two-week sprints against your priorities.',
+      points: ['Two-week sprints', 'Direct backlog control', 'Monthly engagement'],
+    },
+    {
+      name: 'Evolution & support',
+      best: 'Best after go-live',
+      body: 'Post-delivery support with a defined SLA, P1 fixes within 4 hours, and planned evolution on a quarterly roadmap.',
+      points: ['Defined SLA', 'P1 fixes in 4 hours', 'Quarterly roadmap'],
+    },
+  ],
+};
+
+export const comparison = {
+  eyebrow: 'Custom vs the alternatives',
+  title: 'Why bespoke wins for real operations.',
+  sub: 'Off-the-shelf and low-code get you started fast. They also decide what your software can and cannot do. Here is the honest trade-off.',
+  columns: ['Custom (Kadmoon)', 'Off-the-shelf SaaS', 'Low-code platform'],
+  rows: [
+    { label: 'You own the source code', values: ['yes', 'no', 'partial'] },
+    { label: 'Fits your exact process', values: ['yes', 'no', 'partial'] },
+    { label: 'Scales without a rewrite', values: ['yes', 'partial', 'no'] },
+    { label: 'No per-seat lock-in', values: ['yes', 'no', 'no'] },
+    { label: 'AI engineered into the core', values: ['yes', 'partial', 'no'] },
+    { label: 'Fast to a first version', values: ['partial', 'yes', 'yes'] },
+  ],
+};
+
+export const credibility = {
+  text: 'Kadmoon is the US engineering arm of an established software house. The metrics and cases here come from our team’s delivered work, framed honestly; the first US-specific case joins them as it lands.',
+};
