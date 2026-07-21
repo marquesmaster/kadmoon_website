@@ -5,6 +5,7 @@ import './globals.css';
 import { siteConfig } from '@/lib/site';
 import { JsonLd } from '@/components/JsonLd';
 import { FloatingContact } from '@/components/FloatingContact';
+import { ScrollProgress } from '@/components/ScrollProgress';
 
 const display = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
       <body className="min-h-screen bg-paper font-sans text-ink antialiased">
+        <ScrollProgress />
         <JsonLd />
         <a
           href="#top"

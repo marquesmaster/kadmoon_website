@@ -14,7 +14,7 @@ export function ClientLogos() {
           Teams that operate with Kadmoon
         </div>
       </div>
-      <div className="marquee-mask overflow-hidden">
+      <div className="marquee-mask marquee-pause overflow-hidden">
         <div className="flex w-max animate-marquee">
           {[...items, ...items].map((name, i) => (
             <span

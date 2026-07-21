@@ -32,7 +32,7 @@ export function TechStack() {
 
       {/* Marquee */}
       <div
-        className="marquee-mask mt-12 overflow-hidden"
+        className="marquee-mask marquee-pause mt-12 overflow-hidden"
         aria-hidden
       >
         <div className="flex w-max animate-marquee gap-3">

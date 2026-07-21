@@ -6,6 +6,8 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36">
       <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
+      <div aria-hidden className="blob blob-accent -right-24 -top-16 h-72 w-72 md:h-96 md:w-96" />
+      <div aria-hidden className="blob blob-navy right-1/4 top-40 h-64 w-64" />
 
       <div className="relative mx-auto max-w-shell px-6">
         <div className="max-w-4xl">

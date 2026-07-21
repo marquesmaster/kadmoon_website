@@ -1,5 +1,6 @@
 import { stats } from '@/lib/content';
 import { Reveal } from '../Reveal';
+import { StatCounter } from '../StatCounter';
 
 export function StatsBand() {
   return (
@@ -11,9 +12,10 @@ export function StatsBand() {
             <Reveal as="div" key={stat.label} delay={i * 70} className="text-center md:text-left">
               <dt className="sr-only">{stat.label}</dt>
               <dd>
-                <span className="block font-display text-4xl font-semibold tracking-[-0.03em] text-white md:text-5xl">
-                  {stat.value}
-                </span>
+                <StatCounter
+                  value={stat.value}
+                  className="block font-display text-4xl font-semibold tracking-[-0.03em] text-white md:text-5xl"
+                />
                 <span className="mt-2 block font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">
                   {stat.label}
                 </span>
