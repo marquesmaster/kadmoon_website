@@ -109,6 +109,132 @@ button {
   border-radius: 4px;
 }
 
+/* =========================================================
+   PROSE — article body (blog posts)
+   ========================================================= */
+.prose {
+  color: rgb(var(--ink));
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose > * + * {
+  margin-top: 1.25rem;
+}
+.prose h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: rgb(var(--ink));
+  margin-top: 2.75rem;
+  scroll-margin-top: 6rem;
+}
+.prose h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: rgb(var(--ink));
+  margin-top: 2rem;
+}
+.prose p,
+.prose ul,
+.prose ol {
+  color: rgb(var(--ink-2));
+}
+.prose a {
+  color: rgb(var(--navy));
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--accent));
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+.prose a:hover {
+  color: rgb(var(--accent));
+}
+.prose strong {
+  color: rgb(var(--ink));
+  font-weight: 600;
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.4rem;
+}
+.prose ul {
+  list-style: none;
+}
+.prose ul > li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+.prose ul > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  height: 6px;
+  width: 6px;
+  border-radius: 9999px;
+  background: rgb(var(--accent));
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li + li {
+  margin-top: 0.5rem;
+}
+.prose blockquote {
+  border-left: 3px solid rgb(var(--accent));
+  background: rgb(var(--mist));
+  padding: 1rem 1.25rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  font-style: normal;
+  color: rgb(var(--ink));
+}
+.prose code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9em;
+  background: rgb(var(--ice));
+  padding: 0.15em 0.4em;
+  border-radius: 0.35rem;
+  color: rgb(var(--navy));
+}
+.prose pre {
+  background: rgb(var(--navy));
+  color: #fff;
+  padding: 1.25rem;
+  border-radius: 0.9rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+.prose pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+.prose h2 + p,
+.prose h3 + p {
+  margin-top: 0.75rem;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.prose th,
+.prose td {
+  border: 1px solid rgb(var(--line));
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+.prose th {
+  background: rgb(var(--mist));
+  font-weight: 600;
+  color: rgb(var(--ink));
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

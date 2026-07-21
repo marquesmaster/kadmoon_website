@@ -32,7 +32,7 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-shell items-center justify-between px-6 md:h-[72px]">
-        <a href="#top" aria-label="Kadmoon, Inc. home" className="shrink-0">
+        <a href="/" aria-label="Kadmoon, Inc. home" className="shrink-0">
           <Wordmark />
         </a>
 

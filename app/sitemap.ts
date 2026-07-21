@@ -1,13 +1,43 @@
 import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site';
+import { getAllPostMeta, getCategories } from '@/lib/blog';
+import { getAllCities } from '@/lib/cities-utils';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const base = siteConfig.url;
+  const now = new Date('2026-06-01');
+
+  const staticRoutes: MetadataRoute.Sitemap = [
+    { url: base, lastModified: now, changeFrequency: 'monthly', priority: 1 },
+    { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     {
-      url: siteConfig.url,
-      lastModified: new Date('2026-01-01'),
+      url: `${base}/custom-software-development`,
+      lastModified: now,
       changeFrequency: 'monthly',
-      priority: 1,
+      priority: 0.8,
     },
   ];
+
+  const posts: MetadataRoute.Sitemap = getAllPostMeta().map((p) => ({
+    url: `${base}/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  const categories: MetadataRoute.Sitemap = getCategories().map((c) => ({
+    url: `${base}/blog/category/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: 0.5,
+  }));
+
+  const cities: MetadataRoute.Sitemap = getAllCities().map((c) => ({
+    url: `${base}/custom-software-development/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...posts, ...categories, ...cities];
 }

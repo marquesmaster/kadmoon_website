@@ -12,14 +12,14 @@ export const nav = {
   wordmark: 'Kadmoon',
   suffix: 'INC.',
   links: [
-    { label: 'Capabilities', href: '#capabilities' },
-    { label: 'Why Kadmoon', href: '#why' },
-    { label: 'How to Choose', href: '#how-to-choose' },
-    { label: 'Process', href: '#process' },
-    { label: 'Work', href: '#work' },
-    { label: 'Industries', href: '#industries' },
+    { label: 'Capabilities', href: '/#capabilities' },
+    { label: 'How to Choose', href: '/#how-to-choose' },
+    { label: 'Process', href: '/#process' },
+    { label: 'Industries', href: '/#industries' },
+    { label: 'Locations', href: '/custom-software-development' },
+    { label: 'Blog', href: '/blog' },
   ],
-  cta: { label: 'Start a project', href: '#contact' },
+  cta: { label: 'Start a project', href: '/#contact' },
 };
 
 export const hero = {
@@ -339,19 +339,19 @@ export const footer = {
     {
       heading: 'Company',
       links: [
-        { label: 'Capabilities', href: '#capabilities' },
-        { label: 'Why Kadmoon', href: '#why' },
-        { label: 'How to Choose', href: '#how-to-choose' },
-        { label: 'Process', href: '#process' },
+        { label: 'Capabilities', href: '/#capabilities' },
+        { label: 'Why Kadmoon', href: '/#why' },
+        { label: 'How to Choose', href: '/#how-to-choose' },
+        { label: 'Process', href: '/#process' },
       ],
     },
     {
       heading: 'Explore',
       links: [
-        { label: 'Work', href: '#work' },
-        { label: 'Industries', href: '#industries' },
-        { label: 'FAQ', href: '#faq' },
-        { label: 'Start a project', href: '#contact' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'Locations', href: '/custom-software-development' },
+        { label: 'Industries', href: '/#industries' },
+        { label: 'Start a project', href: '/#contact' },
       ],
     },
   ],
