@@ -1,0 +1,49 @@
+---
+title: "Custom customs brokerage software: features and build guide"
+description: "Custom customs brokerage software: the brokerage workflow end to end, entry and document handling, ACE/ABI filing, client portals, compliance, and build vs buy."
+category: "Trade & Supply Chain"
+primaryKeyword: "customs brokerage software"
+tags: ["customs broker software", "brokerage automation", "custom broker platform"]
+---
+
+Customs brokerage runs on deadlines, documents, and detail. A single entry touches commercial invoices, packing lists, classifications, valuation, duty calculations, and a filing to CBP that has to be right the first time. Most brokers run this on a mix of an aging legacy platform, spreadsheets, email, and institutional memory. Custom customs brokerage software exists to replace the fragile parts of that stack with a system built around how brokerage actually works. This guide covers the workflow, the core features, and how to decide whether to build.
+
+## The brokerage workflow end to end
+
+Before talking features, it helps to trace the whole path, because that is what the software has to fit. A shipment arrives with documents from the importer or forwarder. The broker validates those documents, classifies the goods under the Harmonized Tariff Schedule, determines value and country of origin, calculates duties and fees, and files an entry to CBP through ACE. Then comes the response cycle: CBP messages, release or exam, and reconciliation. Finally the broker bills the client for duties, fees, and services.
+
+Every step has deadlines and every step has liability. A misclassification is not a typo, it is a compliance exposure. A late filing has consequences. Software that only digitizes part of this chain and leaves gaps for spreadsheets and re-keying does not remove the risk, it just moves it around. The value of a purpose-built system is keeping the whole chain in one place with the data flowing through it, which is the same integration logic covered in [what is system integration](/blog/what-is-system-integration).
+
+The volume angle is what makes this a software problem rather than a staffing one. A broker's throughput is capped by how many entries a person can build, check, and file in a day, and hiring more people scales that linearly at best. Software changes the shape of the curve: if the system pre-populates entries, validates them, and surfaces only the exceptions that need human judgment, one experienced broker can oversee far more entries without the error rate climbing. That is the real business case. You are not just replacing a legacy screen with a nicer one, you are moving the human effort from data entry to the decisions that actually require expertise.
+
+## Entry management and document handling
+
+The heart of the system is entry management: a workspace where a broker builds an entry from the source documents and tracks it to completion. That starts with documents. Brokers receive commercial invoices, packing lists, bills of lading, and certificates in every format imaginable, and manually keying them is slow and error-prone.
+
+Modern brokerage software attacks this with document capture: extract line items, values, and party details from incoming documents so the broker reviews and corrects rather than types from scratch. AI-assisted extraction has gotten genuinely useful here, and it pairs naturally with a human-in-the-loop review step so nothing files unchecked. [AI document processing](/blog/ai-document-processing) covers how that extraction and validation loop works. Around it, the system tracks entry status, deadlines, and the document set for each shipment, so a broker managing dozens of entries can see at a glance what needs attention and what is waiting on CBP.
+
+## ACE/ABI filing and status tracking
+
+The connection to CBP is where brokerage software earns its name. Entries file through ABI (the Automated Broker Interface) into ACE, and that integration is unforgiving. Message formats are specific, CBP validates strictly, and the response cycle has to be handled correctly: acceptance, rejection with reason codes, release, exam notices, and status updates all flow back and have to be surfaced to the broker.
+
+Building and certifying an ABI connection is a real project with CBP in the loop, not a weekend integration. The technical detail of how CBP, ACE, and ABI fit together is worth understanding before you scope this, and [CBP, ACE, and ABI integration explained for developers](/blog/cbp-ace-abi-integration) goes deep on the message sets, filer setup, and certification. The software side needs robust error handling, idempotent filing so a retry never double-files, and clear status tracking so a broker always knows exactly where each entry stands with CBP. This is also where generic logistics tools fall down hardest, because they were not built for US customs specifically.
+
+## Client portals and billing
+
+Brokerage is a service business, and clients want visibility without a phone call. A client portal lets importers see their entries, upload documents, check status, and pull records themselves. That cuts the volume of status-request emails and makes the broker look organized, which matters in a relationship built on trust and deadlines.
+
+Billing in brokerage is its own puzzle. An invoice combines duties and fees advanced on the client's behalf with the broker's own service charges, and the numbers have to tie back to the entry precisely. Custom software can generate billing directly from entry data so duties, fees, and services roll up automatically instead of being reassembled by hand. Handling money that flows through the broker (advancing duties, then collecting) demands accurate records and an audit trail, which leads directly to the compliance layer.
+
+The portal also changes the economics of client onboarding. When importers can submit documents through a structured intake rather than a stream of email attachments, the broker receives cleaner data in a consistent format, which cuts the back-and-forth that eats a coordinator's day. Over time the portal becomes a moat: clients who have their history, documents, and status in your system face real switching friction, and that stickiness is worth more than any single feature. The same portal can serve forwarders and agents, so everyone touching a shipment works from one source of truth instead of trading spreadsheets.
+
+## Compliance and duty calculations
+
+Duty calculation has to be correct and defensible, full stop. It depends on classification, value, origin, and any special trade programs or additional duties that apply. Getting classification right is genuinely hard, involving tariff schedule notes and interpretation rules, and it is a place where AI assistance helps but a defensible audit trail is mandatory. [HTS classification software](/blog/hts-classification-software) covers how to automate this while keeping it defensible.
+
+Compliance is broader than the math. Recordkeeping requirements mean the system has to retain entries, documents, and the reasoning behind decisions for the required period, and produce them cleanly if CBP asks. Denied-party screening should run so goods and parties are checked against watchlists. Every consequential action should leave an audit trail: who classified what, who approved it, when it filed. A system that captures this as a byproduct of normal work, rather than as a separate chore, is what keeps a broker audit-ready without extra effort.
+
+## Off-the-shelf vs custom brokerage platforms
+
+Off-the-shelf brokerage platforms exist, and for a broker whose process matches the product they can be the right choice. The case for custom shows up when the packaged platform forces your operation to work its way, cannot represent your billing or client structure, locks your data where you cannot use it, or is a legacy system you are stuck maintaining and cannot extend. The build-versus-buy logic here mirrors [custom software vs off-the-shelf](/blog/custom-software-vs-off-the-shelf): fit and ownership on one side, speed and shared maintenance on the other.
+
+You do not have to build everything at once, and you should not. The sensible path is to target the most painful gap first (often document handling or the ACE filing layer), build it well, and integrate with what you keep. Kadmoon works in US customs and trade specifically, with senior in-house engineers, two-week sprints with a working demo each cycle, and acceptance criteria in the contract. If you are weighing a custom brokerage build or need a reliable ACE integration, [get a technical proposal](/#contact) or see [what we build](/#capabilities).

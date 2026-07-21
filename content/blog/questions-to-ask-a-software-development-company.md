@@ -1,0 +1,94 @@
+---
+title: "25 questions to ask a software development company"
+description: "The 25 questions to ask a software development company before you sign, covering process, staffing, IP, security, support, and pricing, with the answers that should worry you."
+category: "Buyer's Guide"
+primaryKeyword: "questions to ask a software development company"
+tags: ["software vendor questions", "interview software agency", "vetting developers"]
+---
+
+A sales call will tell you what a vendor wants you to hear. Good questions tell you how they actually work. The list below is what we would ask if we were on the buying side, grouped so you can run a structured evaluation instead of a vibe check. Ask the same questions to every firm on your shortlist and compare the answers side by side.
+
+## Questions about process and delivery
+
+Start here, because delivery habits predict most of your future pain.
+
+- How is the work broken into iterations, and what do I see at the end of each one?
+- Can I see a working demo every sprint, or only at milestones?
+- Who writes the acceptance criteria, and are they in the contract?
+- How do you handle a sprint that slips? What is your first move?
+- What does your definition of done include? Tests, code review, deployment?
+
+You want specific answers. A firm that runs two-week sprints with a working demo each cycle can describe exactly what that looks like. A firm that says "agile" and nothing more is telling you it does not have a real cadence. If you want to go deeper on this, our piece on [how to evaluate a software development proposal](/blog/how-to-evaluate-a-software-development-proposal) breaks down what a delivery plan should actually contain.
+
+## Questions about team and staffing
+
+The people in the pitch are not always the people who write your code.
+
+- Who exactly will be on my team, and can I see their profiles?
+- Are they full-time employees or subcontractors?
+- Where are they located and in what time zone do they work?
+- What is your turnover, and what happens if a key engineer leaves mid-project?
+- Will I have direct access to engineers, or does everything route through a manager?
+
+The subcontractor question matters more than most buyers realize. A senior in-house team gives you continuity and a single line of accountability. A firm that quietly farms work out to freelancers loses that, and you find out only when quality drops.
+
+Time zone is worth pressing on too. A four-hour overlap with your working day is enough for real collaboration. A one-hour window, or none, turns every question into a next-day answer and stretches a two-day fix into a two-week one. Ask when their engineers are actually online relative to you, not just where the office is registered.
+
+## Questions about code ownership and IP
+
+Do not assume you own what you paid for. Confirm it.
+
+- Do I own 100% of the source code, or do you retain a license?
+- When do I get the repository, CI/CD pipeline, credentials, and infrastructure access?
+- Are there any third-party components with restrictive licenses in the stack?
+- If we part ways, what do I walk away with?
+
+The right answer is that you own everything: the repo, the pipeline, the credentials, and a runbook on delivery. Anything less creates lock-in. We cover this in detail in [who owns custom software IP](/blog/who-owns-custom-software-ip), and it is worth reading before you sign.
+
+## Questions about security and compliance
+
+Even a small app touches sensitive data eventually.
+
+- How do you handle secrets, credentials, and access control during the build?
+- Have your teams worked under SOC 2 or similar controls?
+- If my product handles health data, how do you approach HIPAA?
+- How do you manage dependency vulnerabilities and patching?
+- Who has access to production, and how is that access logged?
+
+You are not looking for perfection here. You are looking for a vendor that treats security as part of engineering rather than a checkbox added at the end.
+
+## Questions about maintenance and support
+
+The build is a fraction of the total cost of ownership.
+
+- What does support look like after launch, and what does it cost?
+- How do you handle bugs found after delivery? Is there a warranty period?
+- Will you document the system so another team could maintain it?
+- What is your response time for a production incident?
+
+A vendor that plans for handoff and documentation is thinking about your long-term interest. One that keeps the system opaque is protecting a support annuity.
+
+The warranty answer is a good tell on its own. A firm confident in its work will fix defects found shortly after delivery at no charge, because it stands behind what it shipped. A firm that bills you to repair its own bugs is signaling either low confidence or a business model built on your dependence. Neither is what you want.
+
+## Questions about pricing and change orders
+
+Money disputes almost always trace back to fuzzy scope.
+
+- Is this fixed price, time and materials, or a dedicated team? Why that model for my project?
+- How are changes to scope priced and approved?
+- What is not included in the quote that I should budget for separately?
+- How do you bill, and what triggers each payment?
+
+Scope will change. That is normal. What matters is whether the process for handling change is clear and fair, or whether every adjustment becomes a negotiation. If pricing models are new to you, [how to compare software development vendors](/blog/how-to-compare-software-development-vendors) walks through the trade-offs.
+
+Watch how the vendor talks about the parts of the quote that are uncertain. An experienced firm will tell you which line items are firm and which are estimates that depend on things you have not decided yet, like which systems you need to integrate with. A vendor that quotes everything as a single confident number, with no discussion of what could move it, is either hiding the risk or has not thought about it. Both cost you later.
+
+## Answers that should reassure or worry you
+
+Patterns matter more than any single reply.
+
+Reassuring signs: named engineers you can meet, a written acceptance process, clear IP transfer, honest talk about risks and what could go wrong, and a willingness to say "we would not build it that way" when your idea has a flaw.
+
+Worrying signs: vague answers about who does the work, reluctance to commit acceptance criteria to writing, pressure to skip discovery, a quote with no detail behind it, and a habit of agreeing with everything you say. A vendor that never pushes back is either not experienced enough to see problems or not confident enough to raise them.
+
+Run these questions across your shortlist, write the answers down, and the right partner usually becomes obvious. When you are ready, you can [start a project](/#contact) or read more on [the blog](/blog) about vetting firms before you commit.

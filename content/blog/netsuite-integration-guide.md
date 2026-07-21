@@ -1,0 +1,51 @@
+---
+title: "NetSuite integration: a practical guide for teams"
+description: "A practical NetSuite integration guide: SuiteTalk, REST, and RESTlets compared, common data flows, governance limits, error handling, and best practices for reliable syncs."
+category: "Integrations & APIs"
+primaryKeyword: "netsuite integration"
+tags: ["integrate with netsuite", "netsuite api", "suitetalk suitescript"]
+---
+
+NetSuite sits at the center of a lot of US businesses, which means sooner or later something has to talk to it: a storefront, a warehouse system, a CRM, a custom app your team built. NetSuite integration has a reputation for being fiddly, and the reputation is earned. The platform is powerful and deeply customizable, which is exactly what makes connecting to it harder than a typical REST API. This guide walks through the real options, the traps, and how to build a sync that holds up.
+
+## NetSuite integration options
+
+There is no single "NetSuite API." There are several ways in, and picking the right one for each use case saves a lot of pain later. The main paths are SuiteTalk (SOAP and REST web services), RESTlets (custom endpoints you write in SuiteScript), and for bulk work, CSV import and the SuiteAnalytics data warehouse connectors. Third-party iPaaS tools also exist, and they wrap these same underlying mechanisms.
+
+The choice depends on what you are moving and how much control you need. SuiteTalk gives you a standardized interface across standard records. RESTlets give you a custom endpoint that can do exactly what you want, at the cost of writing and maintaining SuiteScript. Most real integrations end up using more than one path: SuiteTalk for standard record CRUD, a RESTlet for the one complex operation that does not map cleanly to a standard record. If you are weighing whether to build this yourself or use a platform, [middleware and integration platforms](/blog/middleware-and-integration-platforms) compares the trade-offs.
+
+## SuiteTalk, REST, and RESTlets
+
+It helps to be concrete about the three you will actually reach for.
+
+- SuiteTalk REST is the modern default for standard records: customers, sales orders, items, invoices. It speaks JSON, uses standard HTTP verbs, and is the least surprising option. Start here when the data maps to a standard record.
+- SuiteTalk SOAP is the older web services interface. It is still widely used and sometimes exposes fields or operations the REST layer does not, but it is heavier to work with. Reach for it when REST cannot do what you need.
+- RESTlets are custom endpoints written in SuiteScript that run inside NetSuite. They shine when you need custom logic on the NetSuite side: complex validation, multi-record transactions, or an operation that would take many standard API calls to accomplish. The cost is that you now maintain SuiteScript code.
+
+A useful rule: use SuiteTalk REST until it cannot do the job, then write a RESTlet for the specific operation that needs custom logic, rather than pushing everything through RESTlets by default.
+
+## Common data flows
+
+Most NetSuite integrations are variations on a handful of flows. Orders come in from a storefront or channel and become sales orders. Fulfillment and shipping status flows back out to the storefront and to customers. Inventory levels sync between NetSuite and a warehouse or channel so you do not oversell. Customer and item master data has to stay consistent across systems. Financial data rolls up for reporting.
+
+The hard part in each is agreeing on the system of record. For inventory, is NetSuite the truth or is the warehouse system? For customer data, which side wins on a conflict? Decide this per data domain before writing code, because a sync without a clear source of truth eventually produces two disagreeing databases and a lot of manual cleanup. This is the same discipline that [ERP integration guide](/blog/erp-integration-guide) stresses for any core-system connection.
+
+Timing is the other decision baked into every flow: real-time or batch. Real-time sync keeps systems closely aligned but multiplies the number of API calls, which runs straight into NetSuite's governance limits. Batch sync is gentler on governance and simpler to reason about, but it introduces lag, and lag on inventory can mean overselling. A common and practical pattern is to sync the time-sensitive things (orders, inventory) close to real time through small, frequent updates, while pushing heavier, less urgent data (financial roll-ups, reporting extracts) on a schedule. Matching the sync cadence to how fresh the data actually needs to be, rather than making everything real-time by reflex, is what keeps the integration both accurate and within limits.
+
+## Rate limits and governance
+
+Here is the trap that catches teams new to NetSuite: governance. NetSuite meters API usage with a points system, not just simple rate limits. Each operation costs governance units, scripts have a unit budget per execution, and concurrency is capped based on your account tier. A naive integration that loops through records one call at a time will hit governance limits fast and start failing in production even though it worked fine in testing.
+
+Designing around governance is a core skill for NetSuite work. That means batching operations where the API supports it, using search to pull many records in one call instead of many, respecting concurrency limits with a queue rather than firing parallel requests, and spreading heavy jobs across time. Treat governance as a design constraint from the first line of code, not something to tune later, because retrofitting it into a chatty integration usually means a rewrite.
+
+## Error handling and monitoring
+
+Integrations fail. The connection drops, a record is locked, a required field is missing, governance is exceeded, NetSuite has a maintenance window. A production-grade NetSuite integration assumes failure and handles it gracefully instead of losing data. That means idempotent operations so a retry does not create a duplicate sales order, a dead-letter queue for records that fail repeatedly, and retries with backoff for transient errors.
+
+Monitoring is what turns a fragile sync into a reliable one. You want visibility into what synced, what failed, and why, with alerts when the failure rate crosses a threshold. Without it, the first sign of trouble is a customer asking where their order went. The general patterns here apply beyond NetSuite, and [webhooks vs polling](/blog/webhooks-vs-polling) covers how to move data reliably in the first place.
+
+## Best practices for reliable syncs
+
+Pulling it together, a NetSuite integration that lasts tends to share a few traits. It picks the right API per use case rather than forcing everything through one. It respects governance from day one. It defines a clear system of record for each data domain. It is idempotent, monitored, and built to retry. And it is documented, so the next engineer is not reverse-engineering SuiteScript at 2am.
+
+None of this is exotic, but it takes real ERP integration experience to get right the first time, and NetSuite has enough quirks that generic API experience only gets you partway. At Kadmoon this is core work: senior in-house engineers, US ERPs including NetSuite, and integrations built with acceptance criteria in the contract. If you have a NetSuite connection that keeps breaking or one you need built properly, [get a technical proposal](/#contact) or see [what we build](/#capabilities).

@@ -1,0 +1,59 @@
+---
+title: "Supply chain ERP integration: connecting logistics to your ERP"
+description: "Supply chain ERP integration explained: why data lives in silos, mapping ERP, WMS, and TMS data, real-time vs batch sync, inventory truth, and reliable architecture."
+category: "Trade & Supply Chain"
+primaryKeyword: "supply chain erp integration"
+tags: ["erp logistics integration", "netsuite supply chain", "erp wms tms integration"]
+---
+
+Your ERP knows what you own and what you owe. Your warehouse system knows what is physically on the shelf. Your transportation system knows where the freight is. When those three cannot agree, you get stockouts you did not see coming, orders that ship late, and a finance team that no longer trusts the numbers. Supply chain ERP integration is the work of making these systems tell one consistent story. This guide covers why that is hard and how to architect it so it holds up.
+
+## Why supply chain data lives in silos
+
+Supply chain software grew up in pieces. A company buys an ERP for finance and orders, adds a warehouse management system when fulfillment gets complex, layers on a transportation management system for freight, and bolts on customs or visibility tools as it starts importing. Each was bought to solve one problem, and each keeps its own copy of the truth.
+
+The result is silos that overlap but disagree. The ERP thinks 500 units are available. The WMS knows 40 of those are damaged and 60 are allocated to an order that has not posted back yet. The TMS shows a shipment the ERP still lists as in stock. None of the systems is lying. They just do not talk. Integration is how you reconcile them, and the reason it matters is that decisions made on wrong data cost real money.
+
+## Mapping ERP, WMS, and TMS data
+
+Before any code, you have to agree on what the data means across systems, because the same word rarely means the same thing in each. This mapping work is the heart of the project.
+
+- Items and SKUs. The ERP's product record, the WMS's storage unit, and the TMS's freight description all reference the same physical thing under different identifiers. Reconcile them explicitly.
+- Inventory states. Available, allocated, on-hold, in-transit, and damaged mean different things in each system, and the integration has to translate between them without losing meaning.
+- Orders and shipments. An order in the ERP becomes a pick task in the WMS and a load in the TMS. Mapping the lifecycle across all three keeps status consistent.
+- Locations. Warehouses, zones, and bins need a shared vocabulary.
+
+For each data flow, define the source of truth, the transformation, and what happens on a missing or conflicting value. This is the same discipline our general [ERP integration guide](/blog/erp-integration-guide) applies, sharpened for logistics data.
+
+## Real-time vs batch synchronization
+
+Not all supply chain data has the same urgency, and matching the sync method to the need keeps the system both fast and stable. Force everything into real-time and you overload your systems. Batch everything and you make decisions on stale data.
+
+- Real-time or event-driven fits data where lag causes bad decisions: an inventory change that affects what you can promise a customer, a shipment status a client is watching, an order that must reach the warehouse now.
+- Batch fits high-volume, less time-sensitive flows: nightly financial reconciliation, bulk master-data updates, historical reporting feeds.
+
+Most solid integrations mix the two, using event-driven updates for the handful of flows that need immediacy and scheduled batches for the rest. Choosing per flow, rather than one method everywhere, respects the rate limits of systems like NetSuite while keeping the data that matters current. Our overview of [webhooks vs polling](/blog/webhooks-vs-polling) unpacks the event-driven mechanics.
+
+## Handling inventory and order truth
+
+Inventory is where supply chain integrations most often go wrong, because more than one system wants to own the count. If two systems both think they are authoritative, you get drift, and drift becomes oversells and stockouts.
+
+The fix is to decide, per data type, which system is the source of truth, and make everything else follow. Commonly the WMS owns physical on-hand because it reflects reality on the floor, while the ERP owns financial and order state. Whatever you choose, enforce it. The same discipline applies to orders: one system owns the order's canonical status, and the integration propagates changes outward rather than letting each system invent its own version. Get this wrong and no amount of clever syncing will make the numbers trustworthy. Get it right and every system shows a consistent picture.
+
+## Common integration pitfalls
+
+The same mistakes sink these projects again and again. Knowing them ahead of time is cheap insurance.
+
+- No source of truth. Ambiguity about which system owns a data type guarantees drift.
+- Ignoring failure. Networks drop and systems go into maintenance. Without retries, idempotency, and a way to reprocess failed records, data quietly goes missing.
+- Point-to-point sprawl. Wiring every system directly to every other creates a tangle where one change breaks three connections.
+- No reconciliation. Without a routine check that systems still agree, small discrepancies grow silently until finance finds them.
+- Underestimating volume. What works with test data falls over at real transaction rates if throughput was never designed for.
+
+Each of these is avoidable with planning, and each is expensive to fix after go-live.
+
+## Architecting a reliable integration
+
+Put it together and a durable supply chain integration has a recognizable shape. Rather than connecting systems directly to one another, route them through a clear integration layer, so any single system can change without breaking the others. Define the source of truth for every data type up front. Use event-driven sync where immediacy matters and batch where it does not.
+
+Build in the operational essentials from the start: retries with backoff, idempotency to prevent duplicates, a dead-letter path for records that fail, reconciliation jobs that confirm systems agree, and monitoring that alerts you before a customer notices. Keep the mappings and configuration in version control, test against real volumes, and make sure you own all of it on delivery. An integration built this way becomes reliable infrastructure that lets the whole supply chain operate on one version of the truth. If you need this scoped and built for your stack, you can [get a technical proposal](/#contact) or explore [what we build](/#capabilities).

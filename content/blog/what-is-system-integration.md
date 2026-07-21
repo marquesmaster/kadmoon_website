@@ -1,0 +1,61 @@
+---
+title: "What is system integration and why does it matter?"
+description: "What is system integration? A plain guide to integration patterns, point-to-point vs middleware, APIs and events, why integrations fail, and how to plan one."
+category: "Integrations & APIs"
+primaryKeyword: "what is system integration"
+tags: ["system integration meaning", "software integration", "integrating business systems"]
+---
+
+Most companies do not run one system. They run a dozen, and the real work is getting those systems to agree with each other. System integration is the discipline of making separate applications share data and coordinate actions so a customer order in one tool becomes an inventory update, a shipment, and an invoice in three others, without a person copying numbers between screens. This guide explains what system integration is, the main patterns, and why so many integration projects go sideways.
+
+## System integration defined
+
+System integration is connecting independent software systems so they function as a coordinated whole. Instead of an ERP, a CRM, a warehouse system, and a billing platform each holding its own island of data, integration lets them exchange information and trigger each other's processes.
+
+The goal is a single, trustworthy flow of data across the business. When a salesperson closes a deal in the CRM, integration is what makes the ERP create the customer, the finance system prepare to bill, and the fulfillment system get ready to ship, all from that one action. Done well, it removes manual re-entry, cuts the errors that come with it, and gives everyone a consistent view of the same facts. Done poorly, it becomes a fragile web that breaks whenever one system changes.
+
+## Common integration patterns
+
+Integrations tend to follow a handful of shapes, and naming them helps you reason about your own:
+
+- **Data synchronization:** keeping the same information consistent across systems, such as a customer record that should match in CRM and ERP.
+- **Process orchestration:** one action kicking off a sequence across systems, like an order that flows through inventory, shipping, and billing.
+- **Shared services:** one system exposing a capability (payments, address validation, tax calculation) that many others call.
+- **Data aggregation:** pulling from several systems into one place, such as a reporting layer or data warehouse, so you can see across silos.
+
+Real businesses use several of these at once. The pattern you choose per connection shapes the cost, the latency, and how gracefully the whole thing fails. A reporting warehouse that lags an hour behind is usually fine; an inventory check that lags an hour can oversell a product. Matching the pattern to the freshness the business actually needs is where a thoughtful integration saves money, because real-time everything is expensive and rarely necessary.
+
+## Point-to-point vs middleware
+
+The first architectural fork is how the connections are wired. Point-to-point means each system talks directly to each other system that needs its data. Two systems, one connection, simple. The problem is math: connect five systems directly and you can end up with many separate links, each with its own logic, and each breaking independently. That web is where integration earns its bad reputation.
+
+Middleware puts a hub in the middle. Systems connect to the hub, and the hub handles routing, translation, and delivery between them. Adding a sixth system means one connection to the hub instead of five new point-to-point links. Middleware costs more upfront and adds a component to run, but it keeps complexity from exploding as you grow. The choice depends on scale: two or three systems that rarely change may be fine point-to-point, while a growing landscape usually justifies a hub. [Middleware and integration platforms](/blog/middleware-and-integration-platforms) compares the packaged and custom options for that hub.
+
+## APIs, files, and event-driven flows
+
+Systems can exchange data in a few fundamentally different ways, and each has a natural fit.
+
+APIs are the modern default: one system calls another's interface to read or write data on demand, in near real time. When you need current information (is this item in stock right now), an API is usually the answer. Building your systems to expose clean APIs makes every future integration cheaper, which is the argument for [api-first development](/blog/api-first-development).
+
+File-based exchange is older and still everywhere, especially with legacy and partner systems. One system drops a file, another picks it up on a schedule. It is simple and durable, but it is batch by nature, so the data is only as fresh as the last run.
+
+Event-driven flows sit in between. Instead of one system asking repeatedly whether something changed, the source publishes an event when it does, and interested systems react. This scales well and keeps systems loosely coupled. The trade-off between reacting to events and asking on a schedule is covered in [webhooks vs polling](/blog/webhooks-vs-polling).
+
+## Why integrations fail
+
+Integration projects fail in predictable ways, and knowing them is half of avoiding them.
+
+- **Dirty data:** the same customer spelled three ways, missing fields, mismatched IDs. Integration exposes data quality problems that each system was quietly tolerating on its own.
+- **No error handling:** happy-path integrations that assume every message arrives, in order, exactly once. Real networks drop, duplicate, and delay. Without retries, idempotency, and reconciliation, small failures become silent data corruption.
+- **Tight coupling:** wiring systems so directly that changing one breaks the others, which makes every future upgrade a risk.
+- **Unclear source of truth:** two systems both think they own the customer record, so they overwrite each other and no one knows which is right.
+
+Most of these are not exotic. They are the boring, essential work that a rushed or cheap integration skips, and that a serious one budgets for.
+
+## Approaching an integration project
+
+Start by mapping reality before you write code. List the systems, the data each one owns, and where the same information lives in more than one place. Decide the source of truth for every important entity, because "the customer record" needs exactly one authoritative home. Then decide, per connection, how fresh the data must be: real-time via API where a person is waiting on it, batch where a nightly sync will do.
+
+From there, design for failure openly. Assume messages will be lost, duplicated, or arrive out of order, and build the retries, idempotency, and reconciliation that keep the systems agreeing anyway. Favor loose coupling so one system's change does not cascade, and expose clean interfaces so the next integration is cheaper than the last. This is careful engineering, not glue code, and treating it as glue is exactly how the fragile web gets built.
+
+You can see [what we build](/#capabilities), including integration work across ERP and supply chain systems, or read more on [the blog](/blog). When you have a set of systems that need to agree, [start a project](/#contact) and we will map the flows before anyone writes a line of code.

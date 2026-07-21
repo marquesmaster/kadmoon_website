@@ -1,0 +1,49 @@
+---
+title: "Why custom software costs what it does"
+description: "Why custom software is expensive, explained honestly: where the money goes, the invisible work of architecture and QA, and why the cheapest bid rarely wins."
+category: "Cost & Pricing"
+primaryKeyword: "why custom software is expensive"
+tags: ["what you pay for in software", "software cost breakdown", "developer rates"]
+---
+
+The first time you see a six-figure quote for software that "just does a few things," it can feel absurd. You are not buying a product off a shelf, though. You are paying a team of experienced people to think hard about your problem and build something that did not exist before. Understanding why custom software is expensive starts with seeing where the hours actually go, because it is almost never where buyers expect.
+
+## Where the money actually goes
+
+Writing code is a fraction of the cost. On a typical project, engineers spend large portions of their time reading existing code, discussing design, reviewing each other's work, writing tests, fixing what testing reveals, and wiring systems together. The visible output, a working feature, sits on top of a lot of invisible labor that makes it correct and maintainable.
+
+Then there is everything around the code. Requirements have to be pinned down, edge cases identified, a database designed, infrastructure provisioned, security considered, and the whole thing deployed in a way that does not break at 2am. A rough rule holds across the industry: the initial coding is maybe a third of the total effort. The other two-thirds is figuring out what to build and making sure it keeps working. If you want the buyer's-eye version of this breakdown, [how much does custom software cost](/blog/how-much-does-custom-software-cost) lays out the ranges.
+
+Project management and communication also cost real money, and they are not overhead you can cut without paying for it elsewhere. Someone has to keep the work sequenced, surface blockers early, run the demo each cycle, and translate between what you asked for and what the engineers build. Skip that coordination and the team drifts, builds the wrong thing, and burns hours reworking it. The fee for a good project manager is usually cheaper than the waste their absence creates.
+
+## Senior engineering vs commodity coding
+
+There is a real difference between someone who can make a feature work in a demo and someone who can build a system that survives three years of changes. Senior engineers cost more per hour and are cheaper per outcome, because they make fewer expensive mistakes. They choose an architecture that bends instead of breaking, they anticipate the failure modes, and they write code the next person can understand.
+
+Commodity coding, often sold at attractive rates, tends to produce software that works until it does not. The bill arrives later as rework, outages, and the eventual rewrite. When you pay senior rates, a large share of what you are buying is the mistakes that do not happen. That is hard to put on an invoice, which is exactly why it gets undervalued. A team of full-time employees rather than rotating subcontractors compounds this, because the people who made the decisions are still there to explain them.
+
+## The invisible work: architecture and QA
+
+Architecture is the set of decisions that are cheap to make at the start and ruinously expensive to change later: how data is modeled, how services talk, where state lives, how the system scales. Good architecture looks like nothing happened, which is precisely why buyers resist paying for it. Bad architecture looks fine for six months and then makes every new feature take three times as long.
+
+Quality assurance is the other invisible cost. Automated tests, code review, and a real QA pass are not padding. They are how you find the bug in a safe environment instead of in front of your customers. Skipping this work does not remove the cost, it defers it and adds interest. The same logic runs through the [hidden costs of custom software](/blog/hidden-costs-of-custom-software) that show up long after launch.
+
+## Onshore rates vs offshore trade-offs
+
+Offshore rates are lower, and for some work that is a genuine saving. The trade-off is not just talent, since strong engineers exist everywhere. It is time-zone overlap, communication bandwidth, domain nuance, and the friction of coordinating across a twelve-hour gap. A misunderstanding that a US-based team resolves in a five-minute call can cost a week when it bounces across time zones twice.
+
+For US B2B software that touches domain-specific systems, US Customs and ACE filing, NetSuite or SAP, Stripe, and SOC 2 expectations, the value of a team that lives in that context is high. Onshore rates buy you fewer translation losses and faster decisions. Offshore can absolutely work for well-specified, loosely-coupled work. It works less well when requirements are fluid and the domain is intricate.
+
+## Why the cheapest bid rarely wins
+
+The lowest bid is usually low for a reason: it assumes less scope, staffs more junior people, or omits the testing and deployment work that the realistic bids include. Once the project is underway and the omissions surface, the change orders begin, and the final cost often passes the higher bids you rejected. This is not always dishonesty. Sometimes the cheap vendor genuinely underestimated because they did not understand the problem, which is its own warning sign.
+
+Price should be one input, not the decision. A proposal that is honest about complexity and slightly higher usually costs less over the life of the project. If you are comparing quotes right now, [how to evaluate a software development proposal](/blog/how-to-evaluate-a-software-development-proposal) shows how to normalize bids that look nothing alike.
+
+There is a psychological trap worth naming. The low bid feels like a win the day you sign it, and the extra cost arrives months later when the momentum makes it hard to walk away. By then you have paid for a foundation you may need to redo, and switching vendors mid-project is its own expense. The discount you captured at the start is often the most expensive money you ever saved.
+
+## Getting more value per dollar spent
+
+You control a lot of the efficiency. Clear requirements reduce wasted work. A phased approach lets you validate direction before spending heavily. Owning your code, repository, CI/CD, and credentials from day one prevents the vendor lock-in that quietly taxes you later. Prioritizing ruthlessly, building the sharp core first and deferring the nice-to-haves, keeps the budget aimed at what matters.
+
+Custom software is expensive because it is bespoke engineering done by skilled people, and the cost mostly reflects thinking, not typing. Spent well, it becomes an asset you own that fits your business exactly. If you want a grounded estimate for your specific project, [get a technical proposal](/#contact) and see [what we build](/#capabilities).
