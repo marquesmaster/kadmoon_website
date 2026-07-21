@@ -1,12 +1,12 @@
 ---
 title: "EDI integration for supply chain: what to know"
-description: "A practical guide to EDI integration for supply chain teams: transaction sets, EDI vs API, mapping, trading-partner onboarding, and resilient flows."
+description: "A practical guide to EDI integration for supply chain teams: transaction sets, EDI vs API, mapping, trading-partner onboarding, chargebacks, and resilient flows."
 category: "Integrations & APIs"
 primaryKeyword: "edi integration"
-tags: ["edi supply chain", "edi transactions", "edi vs api"]
+tags: ["edi supply chain", "edi transactions", "edi vs api", "edi chargebacks"]
 ---
 
-EDI is the plumbing that most of the physical economy still runs on. Retailers, carriers, warehouses, and manufacturers exchange purchase orders, shipping notices, and invoices through it every day, and if you sell to or ship with large partners, you will be asked to support it. This guide explains what EDI integration involves for a supply chain team, how it compares to modern APIs, and how to build flows that do not break every time a partner changes something.
+EDI is the plumbing that most of the physical economy still runs on. Retailers, carriers, warehouses, and manufacturers exchange purchase orders, shipping notices, and invoices through it every day, and if you sell to or ship with large partners, you will be asked to support it. The global EDI market was valued at roughly [$36 billion in 2024 and is forecast to keep growing at a double-digit rate](https://www.fortunebusinessinsights.com/electronic-data-interchange-edi-software-market-103690), which tells you this format is not going anywhere. This guide explains what EDI integration involves for a supply chain team, how it compares to modern APIs, and how to build flows that do not break every time a partner changes something.
 
 ## What EDI is and why it persists
 
@@ -24,10 +24,15 @@ Each document type has a number in the common US standard, ANSI X12. You do not 
 - 810, invoice. You bill for what you shipped.
 - 940 and 945, warehouse shipping order and shipping advice, used with third-party warehouses.
 - 214, transportation carrier status message, for shipment tracking updates.
+- 997, functional acknowledgment. The partner confirms your message was received and structurally valid.
 
 A typical order-to-cash cycle with a large retailer might touch the 850, 855, 856, and 810 in sequence, each one a structured message that has to be generated, sent, and reconciled correctly.
 
-The 856 deserves special attention because it is where chargebacks concentrate. Large retailers use the advance ship notice to receive goods against, matching the physical shipment to the electronic manifest down to the carton and sometimes the item. If the ASN is late, wrong, or does not match what shows up on the dock, the retailer issues a compliance chargeback that comes straight out of your margin. For high-volume suppliers, ASN accuracy is not a technical nicety, it is a direct line on the profit and loss statement, and it is a big part of why the integration has to be built carefully rather than assembled quickly.
+## Why the 856 (ASN) is where money leaks
+
+The 856 deserves special attention because it is where chargebacks concentrate. Large retailers use the advance ship notice to receive goods against, matching the physical shipment to the electronic manifest down to the carton and sometimes the item. If the ASN is late, wrong, or does not match what shows up on the dock, the retailer issues a compliance chargeback that comes straight out of your margin.
+
+The numbers are not small. Industry estimates put vendor chargebacks at [2 to 10 percent of a manufacturer's total revenue](https://blog.inymbus.com/reduce-edi-chargebacks-from-major-retailers), and ASN errors generate more penalties than any other EDI document type. Per-violation fines vary widely by retailer: [Target charges around 2 to 3 percent of purchase-order value for ASN errors, while flat penalties can run from tens of dollars per PO to $1,000 per shipment](https://www.orderful.com/blog/edi-compliance-errors-retailer-chargebacks) at some big-box chains. A meaningful share of these deductions are invalid or preventable, which is the whole point: for high-volume suppliers, ASN accuracy is a direct line on the profit and loss statement, and it is a big part of why the integration has to be built carefully rather than assembled quickly.
 
 ## EDI vs modern APIs
 
@@ -49,11 +54,13 @@ Adding a new EDI partner is a project, not a config change, and underestimating 
 
 The way to keep onboarding sane is to build a reusable core that handles the standard transaction sets, then layer per-partner mapping on top. Done well, the fifth partner is much faster than the first because the foundation is already there. Done poorly, every partner is a fresh custom build. This is the same reusability discipline that separates a maintainable integration from a brittle one, a theme in [ERP integration](/blog/erp-integration-guide) as well.
 
+Two operational details tend to trip up first-time integrations. The first is connectivity: many partners still expect AS2, SFTP, or a value-added network (VAN) rather than a modern web endpoint, and each carries its own certificates, IP allow-lists, and retry behavior that have to be provisioned and tested before a single business document flows. The second is envelopes and control numbers. Every X12 interchange is wrapped in ISA and GS segments with sequential control numbers the partner uses to detect gaps and duplicates, so your system has to generate them correctly, store what it sent, and reconcile the 997 that comes back against them. Get the envelope wrong and a perfectly valid 850 inside it still gets rejected.
+
 ## Building resilient EDI flows
 
 EDI failures are operational events with real cost: a missed ASN can mean a chargeback from a retailer, a rejected invoice delays payment. Resilience has to be designed in.
 
-- Acknowledge and reconcile. Functional acknowledgments confirm a partner received your message. Track them, and alert when one does not come back.
+- Acknowledge and reconcile. Functional acknowledgments (the 997) confirm a partner received your message. Track them, and alert when one does not come back.
 - Validate before sending. Catch format and data errors on your side rather than letting the partner reject them.
 - Handle rejections gracefully. When a message bounces, route it to a person with enough context to fix and resend, not into a silent log.
 - Monitor end to end. You want to see that every expected document flowed, and be alerted when one is late or missing, before a partner calls to complain.

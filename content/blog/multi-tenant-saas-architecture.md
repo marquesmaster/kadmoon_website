@@ -8,6 +8,8 @@ tags: ["multi-tenancy patterns", "saas database isolation", "tenant isolation"]
 
 Multi-tenancy is the decision that quietly sets the ceiling on your SaaS. Get it right and you can onboard the thousandth customer as easily as the tenth. Get it wrong and you are rewriting the data layer under load, with real customers on it, which is the worst possible time. The good news is that the choice is not binary. There is a spectrum of models, each trading isolation against cost and complexity, and the right pick depends on who your tenants are.
 
+The stakes keep rising because the money keeps moving to this model. Worldwide spending on software-as-a-service hit [about $247.2 billion in 2024, up roughly 20 percent year over year](https://www.gartner.com/en/newsroom/press-releases/2024-05-20-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-surpass-675-billion-in-2024), the largest single category of public cloud spend. Nearly every dollar of that runs on shared, multi-tenant infrastructure, because the alternative does not scale economically. So the architecture below is not academic. It is the thing standing between a healthy gross margin and a stack of one-off deployments you cannot afford to run.
+
 ## Single vs multi-tenant explained
 
 Single-tenant means each customer gets their own separate instance of the application and database. Multi-tenant means many customers share the same running application, with their data logically separated. Most modern SaaS is multi-tenant, because running one shared system for a thousand customers is dramatically cheaper and easier to operate than running a thousand copies.
@@ -30,15 +32,15 @@ Here is a compact comparison:
 | Separate schema | Stronger | Medium | Mid-market mix |
 | Separate database | Strongest | Highest | Few large or regulated tenants |
 
-Many mature platforms end up hybrid: a shared schema for the long tail of smaller customers, and dedicated databases for a handful of large or regulated enterprise clients who require or pay for stronger isolation.
+Many mature platforms end up hybrid: a shared schema for the long tail of smaller customers, and dedicated databases for a handful of large or regulated enterprise clients who require or pay for stronger isolation. The cloud makes this cheaper to run than it used to be. The cloud segment already accounts for [about 57 percent of custom software deployment](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report), and managed database services let you spin a dedicated instance for a marquee tenant without standing up new hardware.
 
 ## Tenant isolation and security
 
 Isolation is the property that keeps multi-tenancy trustworthy, and it has to hold at every layer, not just the database. A single forgotten tenant filter is how data leaks happen.
 
-Defense in depth is the standard. Enforce the tenant boundary in more than one place so a mistake in one layer does not become a breach. Practical measures include scoping the tenant context at the start of every request from the authenticated session (never from a user-supplied parameter), applying tenant filters at the data-access layer so no individual query can forget them, and using database-level controls such as row-level security as a backstop. The principle is simple: assume application code will occasionally have a bug, and make the database refuse to return the wrong tenant's rows anyway.
+Defense in depth is the standard. Enforce the tenant boundary in more than one place so a mistake in one layer does not become a breach. Practical measures include scoping the tenant context at the start of every request from the authenticated session (never from a user-supplied parameter), applying tenant filters at the data-access layer so no individual query can forget them, and using database-level controls such as row-level security as a backstop. In PostgreSQL, row-level security lets you attach a policy to a table so the database itself refuses to return rows outside the current tenant, even if an application query forgets the filter. The principle is simple: assume application code will occasionally have a bug, and make the database refuse to return the wrong tenant's rows anyway.
 
-This is core to [SaaS security and compliance](/blog/saas-security-and-compliance), and it is exactly the kind of thing enterprise buyers probe during due diligence. Tenant isolation should be something you can explain, demonstrate, and test, not something you hope holds.
+This is core to [SaaS security and compliance](/blog/saas-security-and-compliance), and it is exactly the kind of thing enterprise buyers probe during due diligence. A SOC 2 audit will ask you to describe and demonstrate exactly how one tenant is prevented from reaching another's data. Tenant isolation should be something you can explain, demonstrate, and test, not something you hope holds.
 
 ## Per-tenant customization
 
@@ -53,6 +55,10 @@ Hold the line here. The first per-tenant code fork feels harmless. The tenth is 
 Shared infrastructure creates a specific failure mode: one tenant's heavy usage degrades performance for everyone else. A single customer running an enormous report or hammering the API can starve the shared resources the rest depend on. This is the noisy-neighbor problem, and it gets more likely as you grow.
 
 Mitigations operate at several levels. Per-tenant rate limiting caps how much any one tenant can consume. Fair-usage quotas and query timeouts stop a runaway operation from monopolizing the database. Moving expensive work (reports, exports, batch jobs) onto asynchronous queues keeps heavy tasks off the interactive path. And for your largest tenants, dedicated resources or a siloed database isolate their load entirely, which is one reason big customers often land in the separate-database tier. As you grow, the broader playbook in [how to scale a SaaS platform](/blog/how-to-scale-a-saas-platform) covers the caching, queuing, and database strategies that keep a shared system responsive.
+
+## How you meter matters too
+
+Architecture and pricing are more connected than they look. The industry is moving off per-seat billing: Gartner projects that seat-based pricing's share of enterprise SaaS revenue will [drop from 21 percent to 15 percent by 2030](https://www.saastr.com/gartner-enterprise-software-spend-will-grow-a-stunning-15-2-next-year-but-most-of-that-will-go-to-price-increases-and-ai-apps/), with at least 40 percent of spend shifting to usage, agent, or outcome-based models. If you plan to charge by consumption, your multi-tenant design has to measure it accurately per tenant from day one. Metering that was bolted on after launch tends to undercount, overcount, or disagree with the invoice, and none of those are good conversations to have with a customer.
 
 ## Choosing the right model
 

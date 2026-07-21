@@ -1,9 +1,9 @@
 ---
 title: "SaaS metrics and analytics every product needs"
-description: "The SaaS metrics that drive real decisions: MRR, churn, retention, activation, and engagement, plus how to instrument analytics and act on the numbers."
+description: "The SaaS metrics that drive real decisions: MRR, churn, net revenue retention, activation, and engagement, plus how to instrument analytics and act on them."
 category: "SaaS Development"
 primaryKeyword: "saas metrics"
-tags: ["saas analytics", "product metrics", "mrr churn ltv"]
+tags: ["saas analytics", "product metrics", "mrr churn ltv", "net revenue retention"]
 ---
 
 Every SaaS dashboard shows dozens of numbers, and most of them do not change what anyone does on Monday. The metrics that matter are the small set that expose whether your business is actually healthy and where the leaks are. The rest is decoration. This is a guide to the SaaS metrics worth instrumenting, what each one tells you, and how to build the plumbing so the numbers are trustworthy.
@@ -20,9 +20,17 @@ The core set for a B2B SaaS clusters into three questions. Are we growing revenu
 
 Monthly recurring revenue is the heartbeat of a subscription business. Track it, but track its components, because the total hides the story. New MRR from new customers, expansion MRR from existing customers upgrading, contraction MRR from downgrades, and churned MRR from cancellations together tell you whether growth is coming from acquisition or from keeping and growing accounts you already have.
 
-Churn is the number that quietly decides your ceiling. Watch both customer churn (how many accounts leave) and revenue churn (how much money leaves), because losing one large account is very different from losing several small ones. The metric that matters most for a maturing SaaS is net revenue retention: expansion minus contraction and churn within your existing base. When that number is above 100%, your customer base grows revenue even if you never sign anyone new, which is the strongest signal of durable product-market fit there is.
+Churn is the number that quietly decides your ceiling. Watch both customer churn (how many accounts leave) and revenue churn (how much money leaves), because losing one large account is very different from losing several small ones. As a benchmark, the [2025 Recurly churn analysis put median annual logo churn around 3.5%, with under 5% considered healthy](https://optif.ai/learn/questions/b2b-saas-churn-rate-benchmark/) for B2B SaaS. That number is highly segment-dependent: monthly logo churn tends to run below 0.5% for enterprise products, 0.5% to 1.5% for mid-market, and 2% to 4% for SMB and prosumer tools, so compare yourself to your own segment, not the blended average.
 
-Related figures like lifetime value and customer acquisition cost matter, but they are derived from these fundamentals. Get MRR components and retention right first, and the LTV-to-CAC ratio becomes meaningful rather than a guess. Billing accuracy is the foundation under all of it, which is one more reason a clean [Stripe integration](/blog/stripe-integration-for-saas) is worth doing carefully.
+The metric that matters most for a maturing SaaS is net revenue retention: expansion minus contraction and churn within your existing base. When that number is above 100%, your customer base grows revenue even if you never sign anyone new, which is the strongest signal of durable product-market fit there is. It has also been getting harder to hit. SaaS Capital found that [median net revenue retention for private SaaS slipped from about 105% in 2021 to roughly 101% in 2024](https://www.saas-capital.com/blog-posts/what-is-a-good-retention-rate-for-a-private-saas-company/), and ChartMogul's 2024 data put median NRR for venture-backed companies near 106%. NRR also scales with deal size, as the benchmark table below shows.
+
+| Segment (by ACV) | Median net revenue retention |
+| --- | --- |
+| Enterprise (>$100K) | ~118% |
+| Mid-market | ~108% |
+| SMB (<$25K) | ~97% |
+
+Those figures come from a [939-company B2B SaaS benchmark](https://optif.ai/learn/questions/b2b-saas-net-revenue-retention-benchmark/). The pattern is worth internalizing: retention and churn are two sides of the same coin, and companies in the low-NRR range carry roughly double the churn of those holding at or above 100%. Related figures like lifetime value and customer acquisition cost matter, but they are derived from these fundamentals. Get MRR components and retention right first, and the LTV-to-CAC ratio becomes meaningful rather than a guess. Billing accuracy is the foundation under all of it, which is one more reason a clean [Stripe integration](/blog/stripe-integration-for-saas) is worth doing carefully.
 
 ## Activation and engagement
 
@@ -30,7 +38,7 @@ Revenue metrics are lagging indicators. By the time churn shows up, the customer
 
 Activation is the moment a new user first experiences the product's core value, sometimes called the "aha moment." Define it concretely for your product: the first report generated, the first integration connected, the first team member invited. Then measure what percentage of new users reach it and how long it takes. A weak activation rate means your onboarding is leaking users before they ever see why the product is worth paying for, which ties directly to how you handle [onboarding and user management](/blog/saas-onboarding-and-user-management).
 
-Engagement measures whether activated users keep coming back and using the features that correlate with retention. The useful version is not raw logins. It is depth: are accounts using the product in the way that predicts they will renew. Tracking that lets you spot an account going quiet while there is still time to intervene.
+Engagement measures whether activated users keep coming back and using the features that correlate with retention. The useful version is not raw logins. It is depth: are accounts using the product in the way that predicts they will renew. Tracking that lets you spot an account going quiet while there is still time to intervene, which is the whole point when a percentage point of monthly churn compounds into a very different annual number.
 
 ## Instrumenting product analytics
 
@@ -40,7 +48,7 @@ A few principles keep the data clean:
 
 - Define an event taxonomy before you start. Name events consistently and document what each one means, so "signup_completed" means the same thing everywhere.
 - Capture events server-side where accuracy matters. Client-side tracking gets blocked, dropped, and duplicated; anything tied to revenue or a core metric should be recorded where you control it.
-- Tie events to identity. Connect actions to a user and an account so you can slice by cohort, plan, and segment rather than looking at anonymous aggregates.
+- Tie events to identity. Connect actions to a user and an account so you can slice by cohort, plan, and segment rather than looking at anonymous aggregates. Segment-level slicing is exactly what makes the NRR and churn benchmarks above actionable instead of abstract.
 - Instrument as you build features, not months later. Retrofitting analytics onto a live product is painful and always incomplete.
 
 Doing this from day one is far cheaper than reconstructing history after the fact, which is usually impossible anyway.
@@ -55,6 +63,6 @@ The design rule is the same one from the metrics section: build for decisions, n
 
 Metrics are only worth the instrumentation if they change behavior. Put a regular rhythm around them: a weekly or monthly review where the team looks at the core set, asks what moved and why, and picks one thing to act on. A rising churn number should trigger a conversation about which segment is leaving and why, not just a note in a report.
 
-One discipline separates teams that improve from teams that just report: pairing every metric with an owner and a threshold that triggers action. Net revenue retention is someone's responsibility, and if it drops below a line you set in advance, that is not a data point to note, it is a task to open. Metrics without owners become wallpaper. Metrics with owners and thresholds become a management system.
+One discipline separates teams that improve from teams that just report: pairing every metric with an owner and a threshold that triggers action. Net revenue retention is someone's responsibility, and if it drops below a line you set in advance (say, below the 100% mark where your base stops growing on its own), that is not a data point to note, it is a task to open. Metrics without owners become wallpaper. Metrics with owners and thresholds become a management system.
 
 The point of measurement is a tighter loop between what you ship and what happens next. If you are building a SaaS product and want the metrics wired in from the start, that is part of [how to build a SaaS application](/blog/how-to-build-a-saas-application) properly. You can also [start a project](/#contact) or browse more on [the blog](/blog).

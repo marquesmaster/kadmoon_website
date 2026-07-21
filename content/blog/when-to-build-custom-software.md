@@ -1,12 +1,14 @@
 ---
 title: "When to build custom software (and when not to)"
-description: "When to build custom software and when to buy instead: the signals that justify a build, the cases where off-the-shelf wins, and how timing depends on stage."
+description: "When to build custom software and when to buy instead: the signals that justify a build, the cases where off-the-shelf wins, and how timing tracks stage."
 category: "Custom Software"
 primaryKeyword: "when to build custom software"
-tags: ["should i build custom software", "custom software decision", "right time to build"]
+tags: ["should i build custom software", "custom software decision", "right time to build", "build vs buy"]
 ---
 
 Building custom software is the right call less often than vendors imply and more often than cautious finance teams assume. The trick is knowing which situation you are in. Custom is worth the cost and effort when the software is close to your competitive core or when nothing on the market fits your reality. It is a waste when you are rebuilding a commodity you could have licensed. Here is how to tell the difference before you commit a budget.
+
+The stakes are real on both sides. The custom software development market was estimated at [$43.16 billion in 2024 and is projected to reach $146.18 billion by 2030](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report), a 22.6% compound annual growth rate, with North America holding over 34% of that spend. Demand is climbing, which means more companies are placing this bet. It also means more of them are placing it badly.
 
 ## Signals that off-the-shelf is holding you back
 
@@ -33,6 +35,19 @@ Sometimes the individual tools are fine and the pain lives in the seams between 
 
 In that case the answer may not be replacing a tool but building the integration layer that connects them, or a custom application that sits on top and gives your team one coherent workflow across systems that stay where they are. This is often the highest-return custom work available, because it removes manual reconciliation without a full rip-and-replace. If this sounds like your situation, [what is system integration](/blog/what-is-system-integration) explains the patterns and where they tend to fail.
 
+## The build itself is a risk you have to manage
+
+Custom software has a delivery-risk problem that build enthusiasts skate past. The Standish Group's long-running CHAOS research, drawn from tens of thousands of projects, [categorized software project outcomes as roughly 31% successful, 50% challenged, and 19% outright failed](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), meaning about two thirds of projects came in late, over budget, short on scope, or cancelled. That is not an argument against building. It is an argument for building the right way.
+
+The single biggest predictor in that data is scope. Small, tightly scoped projects succeed at a far higher rate than large ones, where success rates fall into the single digits. The practical lesson is to shrink the bet: build the one module that matters first, ship it in short sprints with a working demo each cycle, and set measurable acceptance criteria before anyone writes code. A giant multi-year rewrite is where most of the failures in that data live. A focused build around one real problem is where the wins are.
+
+| Decision factor | Points toward build | Points toward buy |
+| --- | --- | --- |
+| Relationship to your core | It is a differentiator | It is plumbing |
+| Market fit | Nothing fits, workarounds piling up | A mature product fits well |
+| Ability to own it | Budget and plan to maintain | No capacity to maintain |
+| Scope | Can be phased into small pieces | Only works as a big-bang rebuild |
+
 ## When NOT to build custom
 
 Building is the wrong choice more often than enthusiasm admits. Do not build when:
@@ -54,6 +69,6 @@ Building too early wastes runway on software you should have rented. Building to
 
 ## Making the call with confidence
 
-Run three checks. First, is this software close to your competitive core, or is it plumbing? Core justifies a build; plumbing usually does not. Second, does anything on the market genuinely fit, or are you accumulating workarounds around a poor fit? Third, can you own the result over time, with a real plan and budget for maintenance?
+Run three checks. First, is this software close to your competitive core, or is it plumbing? Core justifies a build; plumbing usually does not. Second, does anything on the market genuinely fit, or are you accumulating workarounds around a poor fit? Third, can you own the result over time, with a real plan and budget for maintenance, and can you phase it so no single release carries all the risk?
 
 If it is core, nothing fits, and you can own it, building is likely the right investment. If any of those is a clear no, the honest answer is probably buy, or integrate what you already have. When you want an outside read on your specific case, you can see [what we build](/#capabilities), compare notes on [how to choose a software partner](/#how-to-choose), or [start a project](/#contact) and we will tell you plainly whether your situation calls for custom at all.

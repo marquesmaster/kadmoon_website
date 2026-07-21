@@ -3,7 +3,7 @@ title: "Build vs buy software: a framework for the decision"
 description: "A build vs buy software framework: decide by differentiation, total cost of ownership, lock-in, and underweighted risks, with a scoring rubric you can reuse."
 category: "Custom Software"
 primaryKeyword: "build vs buy software"
-tags: ["build or buy decision", "software make or buy", "when to build software"]
+tags: ["build or buy decision", "software make or buy", "when to build software", "software total cost of ownership"]
 ---
 
 The build-versus-buy question rarely has a clean answer, which is why it stalls so many teams. Buy and you move fast but bend your process to fit someone else's product. Build and you get exactly what you want but own the cost and the maintenance forever. The trick is not to argue about it abstractly. It is to run the decision through a framework that forces the trade-offs into the open.
@@ -18,9 +18,21 @@ The case for building is strongest where the software encodes something your com
 
 Buyers routinely compare a software license against a build quote and stop there. That comparison is wrong on both sides. Buying has ongoing costs beyond the sticker: per-seat pricing that scales with headcount, integration work to connect it to your other systems, configuration labor, and price increases you do not control. Building has costs beyond the initial project: hosting, maintenance, security patching, and enhancements over the years.
 
-Model both over three to five years, not year one. A SaaS tool at a low monthly price can cost more than a custom build once you multiply seats and add the integration glue. A custom build that looks expensive up front can be cheaper over its life because you are not paying rent on every user forever. The [hidden costs of custom software](/blog/hidden-costs-of-custom-software) cut both directions, and an honest TCO comparison is where most build-vs-buy debates should actually be decided.
+The subscription side of that math has grown heavier than most buyers assume. According to [Vertice, average SaaS spend reached about 8,700 dollars per employee in 2024](https://www.vertice.one/insights/saas-spend-per-employee), rising roughly 9.3% year over year, and the typical organization now runs an average of 112 SaaS applications, up from around 80 in 2020. That sprawl is not all working hard for you: Vertice found that 15% of purchased apps go unused and 51% are underutilized. Zylo's 2024 SaaS Management Index put the [average company's annual license waste at roughly 18 million dollars](https://zylo.com/news/2024-saas-management-index/). None of that spend builds an asset you own.
 
-A concrete example makes the trap visible. A tool at fifty dollars per user per month looks cheap at ten users. Grow to two hundred users over three years and you are paying hundreds of thousands of dollars in subscription fees, none of which builds an asset you own, plus whatever integration and configuration work you funded along the way. A custom build with a larger up-front number but modest hosting and maintenance costs can come out ahead on total spend and leave you owning the result. The point is not that custom always wins; it is that the monthly-price comparison everyone starts with is the wrong denominator.
+Model both paths over three to five years, not year one. A SaaS tool at a low monthly price can cost more than a custom build once you multiply seats and add the integration glue. A custom build that looks expensive up front can be cheaper over its life because you are not paying rent on every user forever. The [hidden costs of custom software](/blog/hidden-costs-of-custom-software) cut both directions, and an honest TCO comparison is where most build-vs-buy debates should actually be decided.
+
+A few reference points from 2024 SaaS benchmarks show why the license line is the least of it:
+
+| Figure | Value | Source |
+| --- | --- | --- |
+| Average SaaS spend per employee | ~$8,700 (2024) | [Vertice](https://www.vertice.one/insights/saas-spend-per-employee) |
+| Year-over-year SaaS spend growth | ~9.3% | [Vertice](https://www.vertice.one/insights/saas-spend-per-employee) |
+| Average SaaS apps per organization | 112 (up from ~80 in 2020) | [Vertice](https://www.vertice.one/insights/saas-spend-per-employee) |
+| Apps unused / underutilized | 15% / 51% | [Vertice](https://www.vertice.one/insights/saas-spend-per-employee) |
+| Average annual license waste | ~$18M | [Zylo, 2024](https://zylo.com/news/2024-saas-management-index/) |
+
+A concrete example makes the trap visible. A tool at fifty dollars per user per month looks cheap at ten users. Grow to two hundred users over three years and you are paying hundreds of thousands of dollars in subscription fees, none of which builds an asset you own, plus whatever integration and configuration work you funded along the way. A custom build with a larger up-front number but modest hosting and maintenance costs can come out ahead on total spend and leave you owning the result. The point is not that custom always wins. It is that the monthly-price comparison everyone starts with is the wrong denominator.
 
 ## Speed, control, and lock-in trade-offs
 
@@ -32,7 +44,7 @@ Control and lock-in run the other way. With a purchased product you inherit the 
 
 A few risks get consistently discounted in these decisions:
 
-- Integration debt. Off-the-shelf tools that do not talk cleanly to your stack create manual work and brittle connectors that break on every vendor update.
+- Integration debt. Off-the-shelf tools that do not talk cleanly to your stack create manual work and brittle connectors that break on every vendor update. When the average firm already runs over a hundred apps, each new tool adds more surface area to keep in sync.
 - Process distortion. Adopting a rigid product often means changing how your team works to match the software, which can erode the very efficiency you were trying to gain.
 - Vendor risk. A SaaS provider can raise prices, get acquired, deprecate the feature you depend on, or shut down. Your operations now sit on someone else's business decisions.
 - Maintenance neglect. On the build side, teams underfund upkeep and let a good system rot. Custom software is a commitment, not a one-time purchase.

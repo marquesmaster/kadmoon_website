@@ -3,10 +3,12 @@ title: "Cloud migration strategy: the 6 Rs and how to choose"
 description: "A practical cloud migration strategy: the 6 Rs explained, how to assess your portfolio, control cost and risk, and avoid lift-and-shift regret."
 category: "Legacy Modernization"
 primaryKeyword: "cloud migration strategy"
-tags: ["migrate to the cloud", "cloud migration approaches", "lift and shift vs refactor"]
+tags: ["migrate to the cloud", "cloud migration approaches", "lift and shift vs refactor", "cloud cost overruns"]
 ---
 
 Cloud migration goes wrong in a predictable way: a team lifts everything as-is, the cloud bill comes in higher than the data center it replaced, and nobody can explain what improved. That is not a cloud problem. It is a strategy problem. Migration is not one decision. It is a decision per application, and the 6 Rs give you a vocabulary for making each one deliberately instead of defaulting to lift-and-shift for the whole portfolio.
+
+The money at stake is large and growing. Gartner forecasts [worldwide public cloud spending to reach 723.4 billion dollars in 2025](https://www.gartner.com/en/newsroom/press-releases/2024-11-19-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-total-723-billion-dollars-in-2025), up 21.5% year over year, with infrastructure services alone accounting for about 211.9 billion of that. When spend rises that fast, the difference between a disciplined migration and a careless one shows up directly on your invoice. McKinsey has estimated that migration inefficiencies add up to more than 100 billion dollars in wasted spend across companies over three years, and that left unchecked they could erode more than 500 billion dollars in shareholder value over the same window. A strategy is not overhead here. It is the thing standing between you and a share of that number.
 
 ## Why migrate to the cloud
 
@@ -37,7 +39,9 @@ This assessment is really a modernization exercise, and it overlaps heavily with
 
 ## Cost, security, and compliance
 
-Cloud can cost less, and it can cost more. The difference is design. Lift-and-shift a workload sized for peak load and running 24/7, and you pay cloud premiums for on-premises habits. Right-size it, use autoscaling, and turn off what you do not need, and the economics improve. Model the run cost before you migrate, not after the first bill. This is the same total-cost thinking behind any [software project budget](/blog/how-to-budget-for-a-software-project): the migration is the build cost, and the monthly cloud spend is the run cost that never stops.
+Cloud can cost less, and it can cost more. The difference is design, and the industry data is not flattering. Flexera's 2026 State of the Cloud Report found that [estimated wasted cloud spend rose to 29%](https://www.flexera.com/about-us/press-center/new-flexera-report-finds-84-percent-of-organizations-struggle-to-manage-cloud-spend), reversing a five-year downward trend, and that 84% of organizations name managing cloud spend as their top challenge, with 17% having blown past their public cloud budgets in the past year. The migration itself is where a lot of that waste is set in motion. McKinsey's research on cloud programs found that [inefficiencies cost the average company 14% more in migration spend than planned](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/cloud-migration-opportunity-business-value-grows-but-missteps-abound), and that 38% of companies saw their migrations slip by more than a quarter. Only 15% of the firms studied managed to move more than 60% of their IT-hosting spend to the cloud within the timeline they set.
+
+The lesson in those numbers is simple: lift-and-shift a workload sized for peak load and running 24/7, and you pay cloud premiums for on-premises habits. Right-size it, use autoscaling, and turn off what you do not need, and the economics improve. Model the run cost before you migrate, not after the first bill. This is the same total-cost thinking behind any [software project budget](/blog/how-to-budget-for-a-software-project): the migration is the build cost, and the monthly cloud spend is the run cost that never stops.
 
 Security changes shape in the cloud rather than disappearing. The shared-responsibility model means the provider secures the infrastructure and you secure your configuration, identity, and data. Misconfigured storage and over-broad access are the common failures, and they are yours to prevent. Building on a security-first foundation, with encryption, least-privilege access, and audited logging, matters as much here as it does for [SaaS security and compliance](/blog/saas-security-and-compliance).
 

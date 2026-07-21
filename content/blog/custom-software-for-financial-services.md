@@ -3,20 +3,20 @@ title: "Custom software for financial services firms"
 description: "Custom software for financial services: how to handle regulation, security, compliance, integrations, and auditability when building fintech and banking software."
 category: "Industry Guides"
 primaryKeyword: "custom software for financial services"
-tags: ["fintech software development", "financial software", "banking software"]
+tags: ["fintech software development", "financial software", "banking software", "compliance software"]
 ---
 
 Financial services software carries a burden most other software does not: a regulator, an auditor, and a customer's money are all watching the same system. That changes how you build. A feature is not done when it works; it is done when it works, is logged, is access-controlled, and can be explained to an examiner two years later. This guide covers what custom software for financial services actually demands, so you can plan a build that survives an audit instead of one that only survives a demo.
 
 ## Regulatory pressure and legacy systems
 
-Financial firms sit on two hard problems at once. On one side, a dense regulatory environment: know-your-customer and anti-money-laundering rules, records retention, consumer protection, and examiners who expect evidence, not assurances. On the other, core systems that are often decades old, written in languages few people still learn, and too load-bearing to switch off.
+Financial firms sit on two hard problems at once. On one side, a dense regulatory environment: know-your-customer and anti-money-laundering rules, records retention, consumer protection, and examiners who expect evidence, not assurances. The cost is not abstract. LexisNexis Risk Solutions put the [total projected cost of financial crime compliance at $205 billion in 2023, with North American institutions carrying roughly $65 billion of it](https://risk.lexisnexis.com/global/en/about-us/press-room/press-release/20240306-true-cost-of-compliance-emea), and it found compliance costs rising for the overwhelming majority of firms year over year. Software that reduces the manual labor behind those numbers pays for itself quickly. The direction of travel is one way: the same LexisNexis research found compliance costs rose for the vast majority of institutions surveyed, and in some markets the increase has been steep. UK financial firms alone were reported spending [£38.3 billion a year on compliance, up nearly a third since 2021](https://risk.lexisnexis.com/global/en/about-us/press-room/press-release/20240306-true-cost-of-compliance-emea). Manual, deadline-driven processes are what make that curve so expensive to ride.
 
-Custom software in this space usually lives in the gap between those two realities. You are rarely rebuilding the core ledger on day one. More often you are building the modern layer around it: a customer-facing application, an internal workflow tool, or an automation that removes manual steps, all while keeping the old system as the source of truth. The design constraint is that new and old must stay in sync and that every action stays traceable. Ignoring the legacy core is not an option; wrapping it carefully usually is. See [legacy system integration](/blog/legacy-system-integration) for how that wrapping works.
+On the other side, core systems that are often decades old, written in languages few people still learn, and too load-bearing to switch off. Custom software in this space usually lives in the gap between those two realities. You are rarely rebuilding the core ledger on day one. More often you are building the modern layer around it: a customer-facing application, an internal workflow tool, or an automation that removes manual steps, all while keeping the old system as the source of truth. The design constraint is that new and old must stay in sync and that every action stays traceable. Ignoring the legacy core is not an option; wrapping it carefully usually is. See [legacy system integration](/blog/legacy-system-integration) for how that wrapping works.
 
 ## Security and compliance requirements
 
-Security is not a feature you add near launch here; it is the foundation you pour first. Financial software should assume it is a target from day one.
+Security is not a feature you add near launch here; it is the foundation you pour first. Financial software should assume it is a target from day one, and the price of getting it wrong is measurable. IBM's 2024 Cost of a Data Breach report found the [average breach in the financial sector cost $6.08 million, about 22% above the cross-industry average of $4.88 million](https://www.ibm.com/think/insights/cost-of-a-data-breach-2024-financial-industry). Regulatory fines and post-breach customer remediation were among the biggest drivers of that gap.
 
 The baseline that serious buyers and auditors expect:
 
@@ -51,7 +51,7 @@ That raises the engineering bar. Integrations need idempotency so a retried mess
 
 In most software, logging is for debugging. In financial software, the log is a legal record. Auditability has to be designed in, not bolted on, because you cannot reconstruct history you never captured.
 
-Practically, that means an immutable audit trail of who did what and when, records retained for the period regulators require, and reporting that can reproduce a point-in-time view: what a balance or a decision looked like on a given date, not just today. When an examiner or an internal auditor asks how a number was derived, the system should answer with evidence rather than a developer's recollection. Reporting built on a clean, well-modeled data layer also means you are not stitching numbers together by hand under deadline, which is where errors and missed filings tend to happen.
+Practically, that means an immutable audit trail of who did what and when, records retained for the period regulators require, and reporting that can reproduce a point-in-time view: what a balance or a decision looked like on a given date, not just today. When an examiner or an internal auditor asks how a number was derived, the system should answer with evidence rather than a developer's recollection. Reporting built on a clean, well-modeled data layer also means you are not stitching numbers together by hand under deadline, which is where errors and missed filings tend to happen. Given that compliance costs are climbing for nearly every firm in the LexisNexis data, automation that turns a manual filing into a repeatable, logged process is one of the clearest returns a custom build can offer.
 
 ## Building compliant financial software
 

@@ -1,12 +1,14 @@
 ---
 title: "What is bespoke software and when do you need it?"
-description: "What is bespoke software, how it differs from configurable products, what it costs, and how to tell whether a tailor-made build is right for your business."
+description: "What is bespoke software, how it differs from configurable products, what it really costs over three to five years, and how to tell if a tailor-made build fits."
 category: "Custom Software"
 primaryKeyword: "bespoke software"
 tags: ["bespoke software development", "tailor-made software", "custom-built software"]
 ---
 
 Bespoke software is software built for one organization to fit one set of needs, rather than a product sold to many. The word comes from tailoring, and the analogy holds: a bespoke suit is cut to your measurements instead of pulled off a rack in the nearest size. That difference sounds simple, but it changes how the software fits your work, what it costs, and who controls it. This guide explains what bespoke means in practice and when it earns the investment.
+
+Demand for this kind of work is not niche anymore. The global custom software development market was worth about [$43.16 billion in 2024 and is projected to reach $146.18 billion by 2030](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report), a compound annual growth rate of 22.6 percent. Enterprise software is the largest slice of that spend, over 60 percent, which tells you where companies feel the pain: the systems that run the core of the business are the ones they most often decide to build rather than rent.
 
 ## Bespoke software in one sentence
 
@@ -35,13 +37,17 @@ If none of these describe you, bespoke may be overkill, and that is worth saying
 
 Bespoke software costs more up front than a subscription, and it takes longer to reach a working system. There is no way around that, and any vendor who pretends otherwise is selling something. You are paying for design, engineering, testing, and the architecture work that makes the thing hold up. A realistic build is measured in months, not weeks, and the number depends heavily on scope.
 
-The way to control that is phasing. Start with the smallest version that delivers real value, get it in front of users, then expand based on what you learn. A good partner works in short sprints with a demo each cycle, so you see progress and can adjust before spending the whole budget. That rhythm also keeps the estimate honest, because scope gets refined as understanding grows rather than guessed at once. For how the money breaks down, [why custom software costs what it does](/blog/why-custom-software-costs-what-it-does) is a useful companion.
+Scope is also where most software money is lost, which is the strongest argument for building in small pieces. The Standish Group's long-running CHAOS research has tracked software project outcomes since 1994, and the numbers are sobering: in the [2020 CHAOS data only about 31 percent of projects succeeded on time, on budget, and with the agreed scope](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), while 50 percent were challenged and 19 percent failed outright. The same research consistently shows size is the biggest predictor of failure. Small projects succeed at rates near 90 percent, large ones well under 10 percent.
 
-It also helps to compare the right numbers. A subscription looks cheap next to a build because you are comparing a monthly fee to a project total, but that is not the real comparison. The honest one is total cost over three to five years, including per-seat growth, add-ons, integration work, and the manual effort a product's gaps force on your team. Bespoke front-loads the spend and then flattens, while a product keeps billing and often keeps climbing as you grow. Neither is universally cheaper, but the sticker price alone will mislead you, and any decision made on month one economics tends to look worse in year three.
+That single fact should shape how you buy. The way to control cost and risk is phasing. Start with the smallest version that delivers real value, get it in front of users, then expand based on what you learn. A good partner works in short sprints with a demo each cycle, so you see progress and can adjust before spending the whole budget. That rhythm turns one large, failure-prone project into a series of small, high-odds ones, and it keeps the estimate honest because scope gets refined as understanding grows rather than guessed at once. For how the money breaks down, [why custom software costs what it does](/blog/why-custom-software-costs-what-it-does) is a useful companion.
+
+It also helps to compare the right numbers. A subscription looks cheap next to a build because you are comparing a monthly fee to a project total, but that is not the real comparison. The honest one is total cost over three to five years, including per-seat growth, add-ons, integration work, and the manual effort a product's gaps force on your team. Worldwide spending on software-as-a-service reached [about $247.2 billion in 2024, up roughly 20 percent year over year](https://www.gartner.com/en/newsroom/press-releases/2024-05-20-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-surpass-675-billion-in-2024), and a large part of that growth is price increases and seat expansion rather than new capability. Bespoke front-loads the spend and then flattens, while a product keeps billing and often keeps climbing as you grow. Neither is universally cheaper, but the sticker price alone will mislead you, and any decision made on month one economics tends to look worse in year three.
 
 ## Ownership and long-term value
 
 The long-term case for bespoke is ownership. You hold the source code, the repository, the infrastructure definitions, and the credentials. There is no per-seat fee that grows with your headcount, no vendor who can deprecate a feature you depend on, and no roadmap you are stuck waiting on. The software is an asset on your side of the ledger.
+
+The per-seat point is worth pressing, because the industry itself is moving off it. Gartner projects that the share of enterprise SaaS revenue tied to per-seat pricing will [fall from 21 percent to 15 percent by 2030](https://www.saastr.com/gartner-enterprise-software-spend-will-grow-a-stunning-15-2-next-year-but-most-of-that-will-go-to-price-increases-and-ai-apps/) as vendors shift to usage and outcome models. Translated for a buyer: the tools you rent are being re-priced around how much you use them, not how many people you employ, and you do not control that pricing. Owning the code takes you out of that meter entirely.
 
 That ownership compounds. Each improvement builds on a base you control, and the data the system captures stays yours to use. Over a multi-year horizon the economics often favor bespoke precisely because you stop renting and start owning. The catch, again, is responsibility: owning the code means keeping it maintained, which is a cost to plan for rather than a surprise.
 

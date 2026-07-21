@@ -1,18 +1,18 @@
 ---
 title: "Low-code vs custom development: which fits your needs?"
-description: "A clear-eyed look at low-code vs custom development: what low-code platforms do well, where they hit a ceiling, and how to choose based on complexity and ownership."
+description: "Low-code vs custom development: what low-code platforms do well, where they hit a ceiling, and how to choose based on complexity, cost, and ownership."
 category: "Comparisons"
 primaryKeyword: "low-code vs custom development"
-tags: ["low-code platforms", "no-code vs custom", "low-code limitations"]
+tags: ["low-code platforms", "no-code vs custom", "low-code limitations", "citizen development"]
 ---
 
-Low-code platforms have earned a real place in the toolkit. They can turn an idea into a working internal app in days, and for the right problem that speed is hard to beat. The mistake buyers make is treating the low-code vs custom development question as a philosophy rather than a fit test. The honest answer depends on how complex your logic is, how much the software matters to your business, and who needs to own it in three years.
+Low-code platforms have earned a real place in the toolkit, and the numbers show it. Gartner projected that [65% of application development activity](https://kissflow.com/low-code/gartner-forecasts-on-low-code-development-market/) would involve low-code by 2024, and that 75% of new enterprise apps would use it by 2026, up from less than 25% in 2020. The worldwide high-productivity aPaaS market grew 16.6% to reach [$10.8 billion in 2024](https://www.gartner.com/en/documents/6934566). This is not a fad you can ignore. The mistake buyers make is treating the low-code vs custom development question as a philosophy rather than a fit test. The honest answer depends on how complex your logic is, how much the software matters to your business, and who needs to own it in three years.
 
 ## What low-code does well
 
 Low-code and no-code tools shine when the problem is standard and the stakes are moderate. Think approval workflows, simple internal dashboards, form-driven data collection, or a lightweight CRM for a small team. The platform handles the plumbing: authentication, hosting, a database, a drag-and-drop UI. You assemble rather than build.
 
-The wins are concrete. Time to first version is short, often measured in days. Non-engineers on your team can maintain small changes without waiting on a developer queue. And for a workflow that touches a handful of people and does not need to scale, that is frequently the correct answer. Building custom software for a five-person approval flow is usually overkill.
+The wins are concrete. Time to first version is short, often measured in days. Non-engineers on your team can maintain small changes without waiting on a developer queue, which matters when the talent math is this tight. Gartner estimates [citizen developers will outnumber professional developers by 4 to 1](https://kissflow.com/citizen-development/gartner-on-citizen-development/) in enterprises that formally adopt these platforms, against a base of roughly 27.7 million professional software developers worldwide. That ratio is partly a symptom of a talent shortage: estimates put the number of people regularly building apps in no-code tools at [100 to 120 million people globally](https://kissflow.com/no-code/no-code-statistics-2026/), which vastly exceeds the professional developer pool. For a workflow that touches a handful of people and does not need to scale, letting a business analyst build it is frequently the correct answer. Building custom software for a five-person approval flow is usually overkill.
 
 Common good fits include:
 
@@ -31,9 +31,18 @@ You tend to hit the wall in predictable places. Complex business rules with lots
 
 The cost comparison flips depending on the time horizon. In month one, low-code almost always wins. There is no build cost, subscription pricing is predictable, and you ship fast. Over years, the math changes.
 
-Low-code pricing usually scales with usage: per seat, per app, per record, per API call. A tool that cost a few hundred dollars a month at launch can become a five-figure monthly line item as you grow, and you cannot renegotiate the architecture to bring it down. Custom software carries a higher upfront cost and a slower start, but the marginal cost of another user or another million records is mostly infrastructure you control. For a serious view of the trade-off, our breakdown of [why custom software costs what it does](/blog/why-custom-software-costs-what-it-does) is a useful companion.
+Low-code pricing usually scales with usage: per seat, per app, per record, per API call. A tool that cost a few hundred dollars a month at launch can become a five-figure monthly line item as you grow, and you cannot renegotiate the architecture to bring it down. The category itself reflects that pull toward scale spend: Gartner forecasts the low-code development technologies market to reach [$58.2 billion by 2029 at a 14.1% CAGR](https://kissflow.com/low-code/gartner-forecasts-on-low-code-development-market/). Custom software carries a higher upfront cost and a slower start, but the marginal cost of another user or another million records is mostly infrastructure you control. For a serious view of the trade-off, our breakdown of [why custom software costs what it does](/blog/why-custom-software-costs-what-it-does) is a useful companion.
 
-Speed is similar. Low-code is faster to the first version and slower to the hundredth, because every non-standard change costs more than it should. Custom development is slower to start and faster to evolve once the foundation is right.
+Here is the shape of the two cost curves in plain terms:
+
+| Factor | Low-code | Custom development |
+| --- | --- | --- |
+| Upfront cost | Low, often subscription only | Higher, a real build budget |
+| Time to first version | Days to weeks | Weeks to months |
+| Marginal cost per user or record | Rises with vendor pricing | Mostly infrastructure you control |
+| Cost to change core logic | Cheap until you hit the ceiling | Predictable, you own the code |
+
+Speed follows the same pattern. Low-code is faster to the first version and slower to the hundredth, because every non-standard change costs more than it should. Custom development is slower to start and faster to evolve once the foundation is right. The pattern to watch for is a tool you adopted for a small internal use case quietly becoming load-bearing, at which point the per-seat or per-record pricing you shrugged off at launch is compounding against a user base you did not anticipate, with no lever to pull except paying more.
 
 ## Ownership and lock-in
 
@@ -49,7 +58,7 @@ The choice is not binary, and the smartest teams treat it as a portfolio. Use lo
 - Keep peripheral internal tools (an ops dashboard, an intake form) on low-code, and invest custom engineering in the system that actually differentiates you.
 - Build a custom core with a clean API, and let non-engineers assemble lightweight low-code apps on top of it for their own needs.
 
-This lets you spend fast, cheap effort on the commodity parts and reserve serious engineering for the work that earns its keep.
+This lets you spend fast, cheap effort on the commodity parts and reserve serious engineering for the work that earns its keep. It also explains why the market keeps growing even as custom builds do: the two are not competing for the same jobs.
 
 ## Choosing by complexity
 

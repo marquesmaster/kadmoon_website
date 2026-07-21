@@ -6,13 +6,13 @@ primaryKeyword: "what is system integration"
 tags: ["system integration meaning", "software integration", "integrating business systems"]
 ---
 
-Most companies do not run one system. They run a dozen, and the real work is getting those systems to agree with each other. System integration is the discipline of making separate applications share data and coordinate actions so a customer order in one tool becomes an inventory update, a shipment, and an invoice in three others, without a person copying numbers between screens. This guide explains what system integration is, the main patterns, and why so many integration projects go sideways.
+Most companies do not run one system. They run a lot of them. The 2025 MuleSoft Connectivity Benchmark puts the average enterprise at [897 separate applications, of which only 29 percent are integrated](https://www.salesforce.com/blog/mulesoft-connectivity-benchmark-2025/). The real work is getting those systems to agree with each other. System integration is the discipline of making separate applications share data and coordinate actions so a customer order in one tool becomes an inventory update, a shipment, and an invoice in three others, without a person copying numbers between screens. This guide explains what system integration is, the main patterns, and why so many integration projects go sideways.
 
 ## System integration defined
 
 System integration is connecting independent software systems so they function as a coordinated whole. Instead of an ERP, a CRM, a warehouse system, and a billing platform each holding its own island of data, integration lets them exchange information and trigger each other's processes.
 
-The goal is a single, trustworthy flow of data across the business. When a salesperson closes a deal in the CRM, integration is what makes the ERP create the customer, the finance system prepare to bill, and the fulfillment system get ready to ship, all from that one action. Done well, it removes manual re-entry, cuts the errors that come with it, and gives everyone a consistent view of the same facts. Done poorly, it becomes a fragile web that breaks whenever one system changes.
+The goal is a single, trustworthy flow of data across the business. When a salesperson closes a deal in the CRM, integration is what makes the ERP create the customer, the finance system prepare to bill, and the fulfillment system get ready to ship, all from that one action. Done well, it removes manual re-entry, cuts the errors that come with it, and gives everyone a consistent view of the same facts. It is also a large and growing category of spend: Fortune Business Insights valued the global system integration market at [USD 451.6 billion in 2024](https://www.fortunebusinessinsights.com/industry-reports/system-integration-market-101432). Done poorly, all that spending buys a fragile web that breaks whenever one system changes.
 
 ## Common integration patterns
 
@@ -25,11 +25,13 @@ Integrations tend to follow a handful of shapes, and naming them helps you reaso
 
 Real businesses use several of these at once. The pattern you choose per connection shapes the cost, the latency, and how gracefully the whole thing fails. A reporting warehouse that lags an hour behind is usually fine; an inventory check that lags an hour can oversell a product. Matching the pattern to the freshness the business actually needs is where a thoughtful integration saves money, because real-time everything is expensive and rarely necessary.
 
+A concrete example makes the difference clear. A distributor might sync its product catalog from ERP to its storefront once a night (data synchronization, batch is fine), check live inventory on the product page through an API (a customer is waiting, so freshness matters), and publish an "order placed" event that the warehouse and billing systems both react to (process orchestration, so one action fans out without the storefront needing to know who is listening). Three connections, three different patterns, each chosen for what that specific flow actually requires.
+
 ## Point-to-point vs middleware
 
-The first architectural fork is how the connections are wired. Point-to-point means each system talks directly to each other system that needs its data. Two systems, one connection, simple. The problem is math: connect five systems directly and you can end up with many separate links, each with its own logic, and each breaking independently. That web is where integration earns its bad reputation.
+The first architectural fork is how the connections are wired. Point-to-point means each system talks directly to each other system that needs its data. Two systems, one connection, simple. The problem is math: the number of possible links grows as n(n-1)/2, so five systems can need ten separate connections and ten systems can need forty-five, each with its own logic and each breaking independently. That web is where integration earns its bad reputation, and it is a big reason silos persist even after companies spend heavily to connect them.
 
-Middleware puts a hub in the middle. Systems connect to the hub, and the hub handles routing, translation, and delivery between them. Adding a sixth system means one connection to the hub instead of five new point-to-point links. Middleware costs more upfront and adds a component to run, but it keeps complexity from exploding as you grow. The choice depends on scale: two or three systems that rarely change may be fine point-to-point, while a growing landscape usually justifies a hub. [Middleware and integration platforms](/blog/middleware-and-integration-platforms) compares the packaged and custom options for that hub.
+Middleware puts a hub in the middle. Systems connect to the hub, and the hub handles routing, translation, and delivery between them. Adding a sixth system means one connection to the hub instead of five new point-to-point links. Middleware costs more upfront and adds a component to run, but it keeps complexity from exploding as you grow. The choice depends on scale: two or three systems that rarely change may be fine point-to-point, while a growing set of systems usually justifies a hub. [Middleware and integration platforms](/blog/middleware-and-integration-platforms) compares the packaged and custom options for that hub.
 
 ## APIs, files, and event-driven flows
 
@@ -43,9 +45,9 @@ Event-driven flows sit in between. Instead of one system asking repeatedly wheth
 
 ## Why integrations fail
 
-Integration projects fail in predictable ways, and knowing them is half of avoiding them.
+Integration projects fail in predictable ways, and knowing them is half of avoiding them. They also fail often: the Standish Group's CHAOS research, which draws on tens of thousands of projects, has for years found only [about 31 percent of IT projects fully succeed](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), with the rest challenged or cancelled. Integration work is squarely in that risky category because it depends on systems and teams the project does not control.
 
-- **Dirty data:** the same customer spelled three ways, missing fields, mismatched IDs. Integration exposes data quality problems that each system was quietly tolerating on its own.
+- **Dirty data:** the same customer spelled three ways, missing fields, mismatched IDs. Integration exposes data quality problems that each system was quietly tolerating on its own. It is no small factor: 89 percent of IT leaders in MuleSoft's research say [data silos slow their digital transformation](https://blogs.mulesoft.com/news/data-silos-slow-down-digital-transformation/).
 - **No error handling:** happy-path integrations that assume every message arrives, in order, exactly once. Real networks drop, duplicate, and delay. Without retries, idempotency, and reconciliation, small failures become silent data corruption.
 - **Tight coupling:** wiring systems so directly that changing one breaks the others, which makes every future upgrade a risk.
 - **Unclear source of truth:** two systems both think they own the customer record, so they overwrite each other and no one knows which is right.

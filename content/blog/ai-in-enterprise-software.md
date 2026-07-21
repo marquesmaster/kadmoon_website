@@ -3,12 +3,12 @@ title: "AI in enterprise software: where it actually pays off"
 description: "AI in enterprise software: how to separate hype from value, find high-ROI use cases, judge data readiness, and deploy AI with real oversight."
 category: "Data & AI"
 primaryKeyword: "ai in enterprise software"
-tags: ["enterprise ai", "ai business applications", "ai for business"]
+tags: ["enterprise ai", "ai business applications", "ai for business", "generative ai roi"]
 ---
 
-Every vendor now claims their product has AI. Most of that is a chatbot bolted onto a settings page. Underneath the noise, though, AI in enterprise software has reached the point where it genuinely changes the economics of certain tasks, especially anything that involves reading unstructured documents, matching messy records, or predicting a number from history.
+Every vendor now claims their product has AI, and adoption backs the noise up. McKinsey's 2025 State of AI survey of 1,993 organizations found [88% now use AI in at least one function](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), with 79% using generative AI, up from 55% total adoption in 2023. Most of that surface activity is a chatbot bolted onto a settings page. Underneath, AI in enterprise software has reached the point where it genuinely changes the economics of certain tasks, especially anything that involves reading unstructured documents, matching messy records, or predicting a number from history.
 
-The job for a buyer is to tell the two apart: the demos that impress in a sales meeting and the applications that hold up in production and pay for themselves. This guide is about the second kind.
+The job for a buyer is to tell the two apart: the demos that impress in a sales meeting and the applications that hold up in production and pay for themselves. That gap is wide. Gartner predicted that [at least 30% of generative AI projects would be abandoned after proof of concept](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025) by the end of 2025, citing poor data quality, weak risk controls, rising costs, and unclear business value. This guide is about landing in the other group.
 
 ## Separating hype from real value
 
@@ -20,7 +20,7 @@ Ask any vendor a blunt question: what happens when the model is wrong, and how o
 
 ## High-ROI AI use cases
 
-The use cases that consistently earn their cost share a pattern. They automate work that a person currently does slowly and grudgingly, and they tolerate a review step.
+The use cases that consistently earn their cost share a pattern. They automate work that a person currently does slowly and grudgingly, and they tolerate a review step. McKinsey's data shows where organizations actually deploy it: marketing and sales leads regular use at 42%, followed by product development at 38%, service operations at 35%, and IT at 33%. The winners cluster in a few shapes:
 
 - Document processing: extracting fields from invoices, contracts, customs paperwork, and forms, then routing them into a system. This is the single most reliable win for most operations-heavy businesses. [AI document processing](/blog/ai-document-processing) alone can remove hours of manual re-keying a day.
 - Answering questions over your own knowledge: a system that retrieves the right internal document and drafts a grounded answer, rather than making one up. This is the [RAG pattern for business applications](/blog/rag-for-business-applications), and it beats a generic chatbot because the answers cite your data.
@@ -33,9 +33,9 @@ The common thread is leverage on existing labor rather than replacement of judgm
 
 ## Data readiness for AI
 
-This is where most enterprise AI projects actually fail, and it has nothing to do with the model. If your data is scattered across systems, inconsistent, and poorly labeled, no model will save you. The quality of the output is capped by the quality and accessibility of the data going in.
+This is where most enterprise AI projects actually fail, and it has nothing to do with the model. Gartner has warned that through 2026, [60% of AI projects will be abandoned](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025) if organizations lack AI-ready data. If your data is scattered across systems, inconsistent, and poorly labeled, no model will save you. The quality of the output is capped by the quality and accessibility of the data going in.
 
-Before funding an AI feature, get honest about a few things. Where does the relevant data live, and can you get at it programmatically. Is it clean and consistent enough to trust. Do you have examples of correct outcomes to evaluate against. For many companies, the first phase of an AI initiative is really a data project: consolidating sources, fixing integrations, and building the pipeline. That work is not glamorous, but it is the foundation, and skipping it is why so many pilots never reach production.
+Before funding an AI feature, get honest about a few things. Where does the relevant data live, and can you get at it programmatically. Is it clean and consistent enough to trust. Do you have examples of correct outcomes to evaluate against. For many companies, the first phase of an AI initiative is really a data project: consolidating sources, fixing integrations, and building the pipeline. That work is not glamorous, but it is the foundation, and skipping it is why so many pilots never reach production. It also explains the gap McKinsey keeps finding between broad adoption and real impact: only about a third of adopters report scaling AI across the organization, and a small minority see material profit from it.
 
 ## Build vs buy AI capabilities
 
@@ -51,7 +51,7 @@ Enterprise AI has failure modes that consumer demos hide. Models produce confide
 
 A responsible deployment includes evaluation against real examples before launch and continuous monitoring after, a human review step for anything consequential, clear handling of what data goes to which provider and where it is stored, and an audit trail of what the system decided and why. For regulated work, that audit trail is not optional. If you cannot explain and log why the software did what it did, you cannot defend it later.
 
-Evaluation deserves special emphasis because it is the step teams most often skip. Before you trust an AI feature, you need a set of real examples with known correct answers and a way to measure how the system does against them. That test set is what lets you say the feature is right ninety-four percent of the time on your data, catch it when a model update degrades that number, and set the confidence threshold above which a result can go through without review. Without it, you are shipping on faith, and faith is not a compliance control.
+Evaluation deserves special emphasis because it is the step teams most often skip. Before you trust an AI feature, you need a set of real examples with known correct answers and a way to measure how the system does against them. That test set is what lets you say the feature is right ninety-four percent of the time on your data, catch it when a model update degrades that number, and set the confidence threshold above which a result can go through without review. Without it, you are shipping on faith, and faith is not a compliance control. Given that abandonment rate Gartner cites, evaluation is also the cheapest insurance you can buy against joining it.
 
 ## Getting started responsibly
 

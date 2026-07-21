@@ -18,7 +18,20 @@ Continuous integration is the practice of merging each developer's work into the
 
 The counterintuitive truth is that releasing more often makes each release safer, not riskier. It comes down to batch size. When a team ships once a quarter, that release bundles hundreds of changes. If something breaks, finding the cause among all those changes is slow and stressful.
 
-When a team ships small changes continuously, each release contains very little. If a problem appears, the culprit is almost always the one small thing that just went out, so diagnosis takes minutes and rollback is easy. Big, infrequent releases also breed fear, and fear leads to delay, which makes the next release even bigger. CI/CD breaks that cycle. It is one of the practices that separates a mature engineering team from a risky one, and worth checking when you evaluate [what to look for in a long-term software development partner](/blog/what-to-look-for-in-a-software-development-partner).
+When a team ships small changes continuously, each release contains very little. If a problem appears, the culprit is almost always the one small thing that just went out, so diagnosis takes minutes and rollback is easy. The research backs this up. Google's [2024 State of DevOps report](https://getdx.com/blog/2024-dora-report/) found that the strongest teams deploy on demand, carry code changes to production in under a day, keep their change failure rate around 5 percent, and recover from a bad deploy in under an hour. Compared with the weakest teams, the elite deploy far more often, ship changes with dramatically shorter lead times, and restore service orders of magnitude faster. Only about 19 percent of teams reach that elite tier, so it is a real differentiator, not table stakes.
+
+The four measures the report tracks are a useful checklist when you assess your own team:
+
+| Metric | Elite benchmark (2024 DORA) | What it tells you |
+| --- | --- | --- |
+| Deployment frequency | On demand, multiple times a day | How fast value reaches users |
+| Lead time for changes | Less than one day | How quickly an idea becomes production code |
+| Change failure rate | Around 5 percent | How often a release causes a problem |
+| Failed deployment recovery | Under one hour | How fast you recover when one does |
+
+Read together, these say the same thing from four angles: small changes, shipped often, that rarely break and are quick to fix. A team strong on all four is not gambling on releases. A team that ships rarely and recovers slowly is carrying risk it has simply learned to live with.
+
+Big, infrequent releases also breed fear, and fear leads to delay, which makes the next release even bigger. CI/CD breaks that cycle. It is one of the practices that separates a mature engineering team from a risky one, and worth checking when you evaluate [what to look for in a long-term software development partner](/blog/what-to-look-for-in-a-software-development-partner).
 
 ## Automated tests and gates
 
@@ -37,7 +50,7 @@ The strength of these gates is the real measure of a CI/CD setup. A pipeline tha
 
 Getting a change to production does not have to mean flipping a switch for everyone at once. Modern deployment strategies reduce risk further by controlling how a change reaches users.
 
-A common approach releases a change to a small slice of users first, watches how it behaves, and expands only if everything looks healthy. Another keeps the previous version ready so that if a new release misbehaves, traffic shifts back instantly with no downtime. The shared idea is that a bad release should be caught quickly and reversed easily, before most users ever notice. For you as a stakeholder, the practical effect is fewer outages, shorter incidents when they do happen, and the confidence to ship improvements without holding your breath.
+A common approach releases a change to a small slice of users first, watches how it behaves, and expands only if everything looks healthy. Another keeps the previous version ready so that if a new release misbehaves, traffic shifts back instantly with no downtime. The shared idea is that a bad release should be caught quickly and reversed easily, before most users ever notice. The stakes are concrete: in ITIC's [2024 downtime survey](https://itic-corp.com/itic-2024-hourly-cost-of-downtime-report/), a single hour of downtime now costs more than $300,000 for over 90 percent of mid-size and large enterprises, and 41 percent put the figure between $1 million and more than $5 million an hour. Every strategy that shortens an outage is protecting real money.
 
 ## Faster, safer releases
 

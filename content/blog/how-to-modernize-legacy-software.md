@@ -6,7 +6,7 @@ primaryKeyword: "how to modernize legacy software"
 tags: ["legacy modernization", "modernize old software", "legacy system upgrade"]
 ---
 
-Legacy systems are rarely replaced because they stopped working. They get replaced because the cost of keeping them running, and the drag they put on everything around them, finally outweighs the fear of touching them. That fear is reasonable: the old system usually runs the business, and a botched migration can take revenue down with it. The goal of modernization is not a dramatic rewrite. It is moving off the risk without ever putting the business at risk.
+Legacy systems are rarely replaced because they stopped working. They get replaced because the cost of keeping them running, and the drag they put on everything around them, finally outweighs the fear of touching them. The scale of that drag is easy to underestimate. The [Government Accountability Office reports that federal agencies spend the majority of their more than $100 billion annual IT budget on operations and maintenance](https://www.gao.gov/products/gao-23-106821), roughly 80 percent, much of it keeping aging systems alive rather than building anything new. That fear of touching them is reasonable: the old system usually runs the business, and a botched migration can take revenue down with it. The goal of modernization is not a dramatic rewrite. It is moving off the risk without ever putting the business at risk.
 
 ## Signs your legacy system is a risk
 
@@ -18,7 +18,7 @@ Legacy is not about age. Plenty of decade-old systems are stable and fine to lea
 - It cannot integrate with modern tools, so staff bridge the gap by hand.
 - Downtime is increasing, and recovery depends on tribal knowledge rather than documentation.
 
-If several of these are true, the system is a risk whether or not it is currently up. The knowledge and security items are the most urgent, because they are the ones that turn a manageable problem into an emergency you cannot staff your way out of.
+These are not abstract worries. When GAO reviewed 69 federal legacy systems and named the 11 most in need of modernization, it found that [eight of them ran on outdated programming languages, four relied on unsupported hardware or software, and seven had known cybersecurity vulnerabilities](https://www.gao.gov/products/gao-25-107795). Two Treasury systems still ran on COBOL and Assembly, languages whose expert pool shrinks every year. If several of these signs are true of your system, it is a risk whether or not it is currently up. The knowledge and security items are the most urgent, because they are the ones that turn a manageable problem into an emergency you cannot staff your way out of.
 
 ## Rehost, replatform, refactor, rebuild
 
@@ -34,6 +34,8 @@ It also helps to price the four paths honestly against the value they deliver. R
 
 Do not choose an approach before you understand what you have. A proper assessment inventories the system's components, dependencies, data model, and integrations, and separates the parts that are painful from the parts that are simply old but fine. Much of the eventual cost hides in the integrations and the undocumented business rules buried in the code, and finding those before you commit is what keeps a project from doubling in scope.
 
+The age gap that assessment tends to uncover is bigger than people expect. GAO has documented federal systems still in service after five decades, with some of the oldest [running on technology around 50 years old with no modernization plans in place](https://www.ciodive.com/news/GAO-federal-legacy-tech-security-red-hat/599375/). An earlier GAO review found ten critical systems ranging from 8 to 51 years old that together cost about $337 million a year just to operate and maintain. Private-sector systems rarely reach that age, but the same dynamic applies: the longer a system runs undocumented, the more business logic accumulates inside it that nobody has written down.
+
 Assessment also means being honest about the goal. Are you modernizing to cut security risk, to enable new features, to reduce maintenance cost, or to escape a vendor? The answer shapes which of the four approaches fits. This is also where [legacy system integration](/blog/legacy-system-integration) enters the picture, because wrapping the old system in clean APIs often opens a path to modernization without touching its internals right away.
 
 A practical part of assessment is recovering the business rules the system enforces but nobody has written down. Legacy code often encodes years of accumulated edge cases: the discount that only applies to one customer type, the rounding rule accounting depends on, the exception nobody remembers the reason for. Skip this and the replacement quietly drops behavior the business relied on, and you find out when a customer or an auditor complains. Interview the people who use the system daily, read the code for the logic that never made it into any document, and capture what you find before you build anything. That recovered knowledge is often the most valuable output of the entire assessment phase.
@@ -48,7 +50,7 @@ Incremental modernization replaces the system piece by piece while it keeps runn
 
 Even incremental work touches production, so plan for it explicitly. Keep the ability to fall back at every step, so a problem means reverting one slice rather than losing the whole system. Migrate and reconcile data carefully, since data problems are the ones that surface after cutover and are hardest to unwind. Test against real data and real load before routing live traffic to a new component.
 
-Kadmoon works in two-week sprints with a working demo each cycle and acceptance criteria written into the contract, which fits modernization well: you see each replaced slice working before it goes live, and nothing gets cut over on faith. You also receive 100% of the IP, including the repository, CI/CD, credentials, and a runbook, so the modernized system is fully yours and documented rather than another black box.
+Kadmoon works in two-week sprints with a working demo each cycle and acceptance criteria written into the contract, which fits modernization well: you see each replaced slice working before it goes live, and nothing gets cut over on faith. You also receive 100% of the IP, including the repository, CI/CD, credentials, and a runbook, so the modernized system is fully yours and documented rather than another black box. That documentation directly attacks the knowledge-loss risk that GAO flags as one of the hardest legacy problems to staff around.
 
 ## Building a modernization roadmap
 

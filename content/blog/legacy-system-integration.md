@@ -1,9 +1,9 @@
 ---
 title: "Legacy system integration: connecting old and new"
-description: "How to integrate legacy systems with modern software: wrapping them in APIs, handling files and databases, cleaning data, and reducing risk while you modernize."
+description: "How to integrate legacy systems with modern software: wrapping them in APIs, handling files and databases, cleaning data, and reducing risk safely."
 category: "Integrations & APIs"
 primaryKeyword: "legacy system integration"
-tags: ["integrate legacy systems", "legacy api", "connect legacy software"]
+tags: ["integrate legacy systems", "legacy api", "connect legacy software", "legacy modernization"]
 ---
 
 The system nobody wants to touch is usually the one running the business. Legacy software holds decades of logic and data, and ripping it out is rarely an option. Integration is how you get new capabilities without betting the company on a rewrite. This is a practical look at connecting old systems to modern software: why it is hard, the techniques that work, and how to keep the whole thing from breaking production.
@@ -12,7 +12,9 @@ The system nobody wants to touch is usually the one running the business. Legacy
 
 Legacy systems were not built to be connected. Many predate the idea of a clean API. They expose data through fixed-width files, direct database access, or a green-screen terminal, and the business rules that matter are buried in code no one has read in years. That resistance is structural, not accidental.
 
-A few things make integration genuinely hard. Documentation is thin or wrong. The people who understood the system have left. The data model reflects assumptions from a different era. And the system often cannot tolerate extra load or downtime, because it runs something critical. None of this means integration is impossible. It means you approach a legacy system the way you approach a live wire: carefully, with respect for what happens if you get it wrong.
+The scale of the problem is easy to underestimate. The US federal government is the clearest public example: it spends [more than $100 billion a year on IT, and about $83 billion of that, roughly 79%, went to operations and maintenance of existing systems in fiscal year 2025](https://www.gao.gov/products/gao-25-107795) rather than new development. A separate GAO review of the government's most critical legacy systems found them [ranging from about 8 to 51 years old and costing roughly $337 million a year to run](https://www.gao.gov/products/gao-23-106821), several of them still written in COBOL. Private enterprises rarely track it as carefully, but the pattern is the same: most of the money and risk sits in keeping old systems alive.
+
+A few things make integration genuinely hard. Documentation is thin or wrong. The people who understood the system have left, and as GAO noted, agencies struggle to even find staff who know languages like COBOL and often pay a premium for the few who do. The data model reflects assumptions from a different era. And the system often cannot tolerate extra load or downtime, because it runs something critical. None of this means integration is impossible. It means you approach a legacy system the way you approach a live wire: carefully, with respect for what happens if you get it wrong.
 
 ## Wrapping legacy with APIs
 
@@ -30,17 +32,30 @@ Not every legacy system can be wrapped cleanly, and you work with what it gives 
 
 Each method trades reliability against how invasive it is. Prefer the least invasive option that meets your latency needs. If the system supports a supported export, use it before you reach into its database. And when EDI is the language the legacy system speaks, our guide to [EDI integration for supply chain](/blog/edi-integration-for-supply-chain) covers the transaction sets and mapping involved.
 
+The trade-offs line up predictably, which is why it helps to name them before you commit to a path:
+
+| Access method | Reliability | Risk to source system | When to use |
+| --- | --- | --- | --- |
+| API or web service | High | Low | The system already exposes one, or can be extended to |
+| File or EDI exchange | High | Low | Batch is acceptable and an official export exists |
+| Direct database | High | High | You fully understand the schema and business rules |
+| Screen scraping | Low | Medium | Nothing else is exposed and the workflow is stable |
+
+The right row is usually the highest one your legacy system actually supports. Reaching further down the table than you need to is how integrations become fragile.
+
 ## Data quality and transformation
 
 Old systems accumulate old data, and old data is messy. Dates in three formats, customer names entered five ways, codes whose meaning changed in 2009 but were never migrated. The moment you integrate, this mess flows into your clean new system unless you stop it.
 
 Build transformation and validation into the integration itself. Map legacy fields to a well-defined target model, normalize formats, and reject or quarantine records that fail validation rather than passing garbage downstream. Decide explicitly which system is the source of truth for each piece of data, because "both" is how you get two systems that quietly disagree. This cleanup work is usually underestimated and often the difference between an integration that helps and one that spreads confusion.
 
+The cost of skipping it is not hypothetical. Recall that Gartner has put the average annual cost of poor data quality at [about $12.9 million per organization](https://www.gartner.com/en/data-analytics/topics/data-quality). An integration that copies dirty legacy data into a modern system does not launder it clean; it multiplies the surface area where those errors surface. Every downstream report, dashboard, and automated decision now inherits whatever the old system got wrong. Catching bad records at the integration boundary is far cheaper than tracing a wrong number back through three systems after a stakeholder acts on it.
+
 ## Incremental modernization via integration
 
 Integration is not just a way to keep the old system alive, it is a way to retire it slowly and safely. The strangler pattern is the standard approach: you route traffic through your new API layer, then rebuild one capability at a time behind it, redirecting each slice from the legacy system to a modern replacement as it is ready.
 
-Because consumers talk to the stable facade, they never know which pieces have moved. You can modernize the highest-risk or highest-value module first, prove it in production, and continue at a pace the business can absorb. Over months or years the legacy system shrinks until what remains can be switched off. This is far less dangerous than a big-bang rewrite. For the broader strategy of choosing between rehost, replatform, and rebuild, see [how to modernize legacy software](/blog/how-to-modernize-legacy-software).
+Because consumers talk to the stable facade, they never know which pieces have moved. You can modernize the highest-risk or highest-value module first, prove it in production, and continue at a pace the business can absorb. This is how you chip away at that 79% maintenance drag without a single terrifying cutover. Over months or years the legacy system shrinks until what remains can be switched off. This is far less dangerous than a big-bang rewrite. For the broader strategy of choosing between rehost, replatform, and rebuild, see [how to modernize legacy software](/blog/how-to-modernize-legacy-software).
 
 ## Reducing risk in the process
 

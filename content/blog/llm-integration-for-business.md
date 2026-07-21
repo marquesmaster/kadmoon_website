@@ -3,10 +3,12 @@ title: "LLM integration for business: from prototype to production"
 description: "A practical guide to LLM integration for business: choosing a model, tools and function calling, guardrails, cost and latency, security, and shipping safely."
 category: "Data & AI"
 primaryKeyword: "llm integration"
-tags: ["integrate llm", "llm in production", "business llm applications"]
+tags: ["integrate llm", "llm in production", "business llm applications", "llm cost control"]
 ---
 
-Getting a large language model to do something impressive in a demo takes an afternoon. Getting it to do that reliably, safely, and affordably for thousands of real users is a different project. The gap between the two is where most business LLM efforts stall. This guide walks through the decisions that matter for LLM integration once you move past the prototype and start caring about accuracy, cost, and trust.
+Getting a large language model to do something impressive in a demo takes an afternoon. Getting it to do that reliably, safely, and affordably for thousands of real users is a different project. The gap between the two is where most business LLM efforts stall. Gartner predicts that [at least 30% of generative AI projects will be abandoned after proof of concept by the end of 2025](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025), citing poor data quality, weak risk controls, escalating costs, and unclear business value. This guide walks through the decisions that keep an LLM feature on the right side of that number once you move past the prototype and start caring about accuracy, cost, and trust.
+
+Adoption itself is no longer the hard part. McKinsey's 2024 global survey found that [65% of organizations were regularly using generative AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024), nearly double the share from ten months earlier, with overall AI adoption at 72%. The same survey found that the average organization using gen AI was applying it in just two business functions, most often in marketing and sales, product development, and IT. The organizations pulling value out of that adoption are the ones that treated integration as an engineering problem, not a demo. That is not a small group either: McKinsey identified a set of gen AI high performers attributing more than 10% of their operating profit to AI deployment, a reminder that the difference between a novelty and a P&L line is entirely in the execution.
 
 ## Choosing a model and provider
 
@@ -39,7 +41,7 @@ Build an evaluation set from real examples with known-correct outcomes, and run 
 
 ## Cost, latency, and caching
 
-LLM costs are usage-based and can surprise you at scale. Every request has a price tied to how much text goes in and comes out, so a feature that is cheap in testing can become expensive when it gets popular.
+LLM costs are usage-based and can surprise you at scale. Every request has a price tied to how much text goes in and comes out, so a feature that is cheap in testing can become expensive when it gets popular. Gartner's analysis of abandoned projects puts typical deployment costs in the [5 million to 20 million dollar range](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025), and it is often the per-token cost, multiplied across thousands of users, that turns a promising pilot into a budget hole.
 
 Several levers keep this under control:
 
@@ -54,7 +56,9 @@ Measure cost per request in production, not just in the demo, and set alerts bef
 
 An LLM feature is a new path for your data to travel, and it deserves the same scrutiny as any other. Know exactly what you send to the model and whether it contains anything sensitive.
 
-Practical safeguards include stripping or masking sensitive fields before they reach the model, confirming with your provider that inputs are not retained or trained on, and controlling which internal tools the model can reach so a clever prompt cannot make it do something it should not. Prompt injection is a real risk when the model reads untrusted content, so treat any text the model ingests from users or documents as potentially adversarial. If you handle regulated data, the same SOC 2 and access-control discipline you apply elsewhere applies here.
+Prompt injection is the headline risk here, and not a theoretical one. The [OWASP Top 10 for LLM Applications lists prompt injection as LLM01, the number-one risk for 2025](https://www.oligo.security/academy/owasp-top-10-llm-updated-2025-examples-and-mitigation-strategies), covering both direct injection through user input and indirect injection through content the model reads from a website or document. A successful attack can leak sensitive data, grant unauthorized access, or manipulate the model's decisions.
+
+Practical safeguards include stripping or masking sensitive fields before they reach the model, confirming with your provider that inputs are not retained or trained on, and controlling which internal tools the model can reach so a clever prompt cannot make it do something it should not. OWASP's own guidance points to defense in depth: least-privilege tooling, input and output filtering, human approval for high-risk actions, and regular adversarial testing. Treat any text the model ingests from users or documents as potentially adversarial. If you handle regulated data, the same SOC 2 and access-control discipline you apply elsewhere applies here.
 
 ## Shipping LLM features safely
 
@@ -62,4 +66,6 @@ Moving from prototype to production is a rollout problem as much as an engineeri
 
 Start behind a flag with a small group of users. Log inputs and outputs so you can see how the feature behaves on real traffic. Keep the human-in-the-loop path for anything consequential until the evaluation numbers earn your trust. Expand the rollout as the data supports it, and keep the ability to fall back to the previous behavior if something goes wrong.
 
-The teams that succeed with LLMs treat them as a component inside well-built software, with tests, monitoring, and clear boundaries, not as magic that replaces engineering. If you want an LLM feature scoped and built to production standards, you can [start a project](/#contact) or see [what we build](/#capabilities).
+The payoff for getting this right is measurable. Among organizations that stuck with their deployments, Gartner reported average gains of 15.8% in revenue, 15.2% in cost savings, and 22.6% in productivity, the kind of numbers that only materialize once a feature is reliable enough to trust on real traffic.
+
+The teams that succeed with LLMs treat them as a component inside well-built software, with tests, monitoring, and clear boundaries, not as magic that replaces engineering. That discipline is most of the difference between the two-thirds of projects that reach production and the 30% that get shelved. If you want an LLM feature scoped and built to production standards, you can [start a project](/#contact) or see [what we build](/#capabilities).

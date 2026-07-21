@@ -3,10 +3,10 @@ title: "How a software house works: teams, process, and delivery"
 description: "Inside how a software house works: the roles, how work moves from idea to release, communication cadence, quality gates, change handling, and good collaboration."
 category: "Software House"
 primaryKeyword: "how a software house works"
-tags: ["software house process", "inside a software company", "software delivery model"]
+tags: ["software house process", "inside a software company", "software delivery model", "agile sprints"]
 ---
 
-If you have never worked with a software house, the process can feel like a black box: you describe what you want, money goes in, and software is supposed to come out. Knowing what happens inside makes you a far better client, because you can tell whether a firm is running a real delivery process or improvising. This walks through the roles, how work actually moves from idea to release, and what good collaboration feels like from your side of the table.
+If you have never worked with a software house, the process can feel like a black box: you describe what you want, money goes in, and software is supposed to come out. The stakes are real. The Standish Group's CHAOS research, which has tracked software project outcomes since 1994, found that in its 2020 dataset only about [31 percent of projects were successful](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), while 50 percent were challenged (late, over budget, or short on features) and 19 percent failed outright. Knowing what happens inside a delivery team is how you land in the first bucket instead of the other two, because you can tell whether a firm is running a real process or improvising. This walks through the roles, how work actually moves from idea to release, and what good collaboration feels like from your side of the table.
 
 ## Roles: PM, engineers, QA, design
 
@@ -17,21 +17,21 @@ A functioning delivery team is a small set of roles, each covering something a p
 - QA, responsible for quality. In good teams QA is involved from the start, defining how features will be verified, not just testing at the end.
 - Design, covering both how the product works (user experience) and how it looks (user interface), usually heaviest early when flows are being shaped.
 
-A red flag worth noting: if the firm cannot clearly say who fills these roles on your project, or if one junior person is quietly doing all of them, the delivery risk is high. Continuity of the same senior people matters, which is why some firms staff with full-time employees rather than rotating subcontractors.
+A red flag worth noting: if the firm cannot clearly say who fills these roles on your project, or if one junior person is quietly doing all of them, the delivery risk is high. Continuity of the same senior people matters, which is why some firms staff with full-time employees rather than rotating subcontractors. When scope, budget, and feature set all move at once, which is what "challenged" means in the CHAOS numbers, it is usually because nobody owned the trade-offs. Clear roles are the first defense against that.
 
 ## How work moves from idea to release
 
-Modern software houses work iteratively rather than trying to specify everything up front and disappearing for six months. The dominant rhythm is the sprint, a fixed cycle, commonly two weeks, that turns priorities into working software you can see.
+Modern software houses work iteratively rather than trying to specify everything up front and disappearing for six months. The dominant rhythm is the sprint, a fixed cycle that turns priorities into working software you can see. Two weeks is the industry default: across [State of Agile surveys, roughly 58 percent of teams](https://echometerapp.com/en/scrum-statistics/) run two-week sprints, because that length balances planning overhead against how often you get to see and steer real progress.
 
 The flow, roughly:
 
-- Discovery. Before building, the team digs into what you actually need, the problem, the users, the constraints, and sometimes challenges your initial idea. A firm that starts coding without asking hard questions is skipping the most valuable step.
+- Discovery. Before building, the team digs into what you actually need, the problem, the users, the constraints, and sometimes challenges your initial idea. A firm that starts coding without asking hard questions is skipping the most valuable step. Given that half of all projects end up "challenged" on scope or budget, the discovery conversation is where much of that risk is either caught or baked in.
 - Backlog and prioritization. Work is broken into pieces and ordered by value and dependency, so the most important things get built first.
 - The sprint. The team picks a chunk of the backlog, builds it, tests it, and ends the cycle with something that works.
 - The demo. At the end of each sprint you see a live, working increment, not a slide deck. This is your regular checkpoint to steer.
 - Release. Finished work is deployed, either continuously as it is ready or on a planned schedule.
 
-The point of the cadence is feedback. You see real progress every couple of weeks and can adjust, which is how projects stay aligned with what the business actually needs instead of drifting toward a spec that made sense months ago. For a deeper look at the stages, [the custom software development process](/blog/custom-software-development-process) breaks them down.
+The point of the cadence is feedback. You see real progress every couple of weeks and can adjust, which is how projects stay aligned with what the business actually needs instead of drifting toward a spec that made sense months ago. That short feedback loop is a large part of why iterative delivery outperforms big up-front specification in the CHAOS data. For a deeper look at the stages, [the custom software development process](/blog/custom-software-development-process) breaks them down.
 
 ## Communication cadence and reporting
 
@@ -43,7 +43,7 @@ The signal of a healthy engagement is that bad news travels fast. When something
 
 Quality is enforced by process, not hoped for. Inside a well-run team, code does not go straight from one engineer's laptop into your product. It passes through gates: peer code review, where another engineer checks the work before it merges; automated tests that run on every change to catch regressions; and a QA pass against the feature's acceptance criteria.
 
-These gates are why some teams ship reliably and others lurch from fire to fire. As a client you will not watch a code review happen, but you feel its absence, in bugs, in regressions, in releases that break things that used to work. [The software QA process](/blog/software-qa-process) covers how this quality machinery fits together.
+These gates are why some teams ship reliably and others lurch from fire to fire. As a client you will not watch a code review happen, but you feel its absence, in bugs, in regressions, in releases that break things that used to work. The compounding cost is well established: a defect caught in review or testing is far cheaper to fix than the same defect found in production, which is exactly why mature teams pay for the gate rather than the cleanup. [The software QA process](/blog/software-qa-process) covers how this quality machinery fits together.
 
 ## How they handle change requests
 

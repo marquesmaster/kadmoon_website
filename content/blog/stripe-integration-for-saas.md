@@ -3,10 +3,10 @@ title: "Stripe integration for SaaS: a technical guide"
 description: "A technical guide to Stripe integration for SaaS: subscriptions, Checkout, webhooks, proration, tax and invoicing, and the integration pitfalls that bite teams."
 category: "SaaS Development"
 primaryKeyword: "stripe integration for saas"
-tags: ["stripe billing", "stripe subscriptions", "saas payment integration"]
+tags: ["stripe billing", "stripe subscriptions", "saas payment integration", "involuntary churn"]
 ---
 
-Stripe is the default choice for SaaS billing in the US market for good reasons: strong APIs, deep documentation, and coverage for most of what a subscription business needs. That does not make integrating it trivial. The gap between a demo that charges a card and a production billing system that handles upgrades, failed payments, proration, and tax correctly is where teams underestimate the work. This guide walks the components of a real Stripe integration and the mistakes that cause billing bugs, which are the worst kind of bugs because they cost customers money.
+Stripe is the default choice for SaaS billing in the US market for good reasons: strong APIs, deep documentation, and coverage for most of what a subscription business needs. The scale is real. Stripe processed [$1.4 trillion in total payment volume in 2024](https://stripe.com/newsroom/news/stripe-2024-update), up 38% year over year and equal to roughly 1.3% of global GDP. That reach does not make integrating it trivial. The gap between a demo that charges a card and a production billing system that handles upgrades, failed payments, proration, and tax correctly is where teams underestimate the work. This guide walks the components of a real Stripe integration and the mistakes that cause billing bugs, which are the worst kind of bugs because they cost customers money.
 
 ## Stripe products for SaaS
 
@@ -51,9 +51,15 @@ The decisions to make explicitly:
 
 Whatever you choose, make it consistent and make it visible to the customer before they confirm. Surprise charges from proration nobody explained are a top source of billing complaints and chargebacks.
 
+## Failed payments and involuntary churn
+
+The billing case teams most often neglect is the payment that simply does not go through. This is not an edge case. Industry benchmarks put [failed first-attempt charges at 9% to 15% of subscription payments](https://churnkey.co/blog/involuntary-churn-benchmarks/), with expired credit cards alone accounting for around 42% of failures. Left unhandled, these become involuntary churn, which is 20% to 40% of total churn for many subscription businesses. Worse, the median SaaS company recovers only about 47.6% of failed payments, so half of that revenue just evaporates unless you build for it.
+
+Stripe gives you the tools to fight this: Smart Retries schedule additional attempts at times more likely to succeed, dunning emails prompt customers to update an expired card, and the account updater refreshes card details automatically when a network supports it. What matters is that you wire the failure events into a real recovery flow instead of treating a declined charge as a dead end. Recovering even a fraction of that median gap moves net revenue more than most feature work does.
+
 ## Tax, invoicing, and compliance
 
-Sales tax in the US is genuinely complicated: rates and rules vary by state and sometimes locality, and your obligations depend on where you have nexus. Stripe Tax can compute and collect the right amount at checkout, which is far safer than hard-coding rates that go stale. For any US SaaS selling across states, plan for tax from the start rather than retrofitting it after you have taxable revenue you failed to collect on.
+Sales tax in the US is genuinely complicated: rates and rules vary by state and sometimes locality, and your obligations depend on where you have nexus. Since the 2018 Supreme Court decision in South Dakota v. Wayfair, states can require you to collect once you cross an economic threshold, commonly [$100,000 in sales or 200 transactions](https://www.salestaxinstitute.com/sales_tax_faqs/wayfair-economic-nexus) into that state, with no physical presence required. Stripe Tax can compute and collect the right amount at checkout, which is far safer than hard-coding rates that go stale. For any US SaaS selling across states, plan for tax from the start rather than retrofitting it after you have taxable revenue you failed to collect on.
 
 Invoicing and receipts also matter more than teams expect, especially for B2B customers whose finance departments need proper documents. Stripe generates invoices and receipts, but you decide how they are branded, when they send, and how they reconcile against your own records. Keeping your system's view of a subscription in sync with Stripe's, through those webhooks, is what makes revenue reporting trustworthy. On the security side, letting Stripe host card entry keeps most of the PCI burden off you, which fits the broader [SaaS security and compliance](/blog/saas-security-and-compliance) posture buyers expect.
 
@@ -64,7 +70,7 @@ The mistakes recur across projects, and knowing them in advance saves real money
 - Trusting the redirect instead of webhooks, so subscriptions get provisioned for payments that never actually completed.
 - Non-idempotent webhook handlers that double-charge or double-provision when Stripe retries an event.
 - Storing your own copy of subscription state and letting it drift out of sync with Stripe, so your app and your billing disagree about who has access.
-- Ignoring failed payments and dunning, so customers silently lapse or keep access they are no longer paying for.
+- Ignoring failed payments and dunning, so customers silently lapse or keep access they are no longer paying for, feeding directly into that involuntary-churn number.
 - Testing only the happy path and skipping declines, disputes, and 3D Secure, which are common in production and painful to handle for the first time under a live incident.
 
 None of these are exotic. They come from treating billing as a feature to bolt on rather than a system to build carefully, because the cost of getting it wrong lands directly on customers and revenue. If you are building a SaaS billing layer and want it done right the first time, you can [get a technical proposal](/#contact) or read [how to build a SaaS application](/blog/how-to-build-a-saas-application) for the wider picture.

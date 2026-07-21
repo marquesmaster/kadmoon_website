@@ -3,10 +3,10 @@ title: "SaaS security and compliance: SOC 2, data, and access"
 description: "A practical guide to SaaS security and compliance: the access, encryption, SOC 2, and monitoring controls B2B buyers expect, and how to build them in early."
 category: "SaaS Development"
 primaryKeyword: "saas security and compliance"
-tags: ["soc 2 for saas", "saas data security", "saas compliance"]
+tags: ["soc 2 for saas", "saas data security", "saas compliance", "access control"]
 ---
 
-SaaS security and compliance stop being abstract the first time a prospect sends you a security questionnaire or asks for your SOC 2 report before signing. At that point, security is not an engineering nicety, it is a sales requirement. This guide covers what B2B buyers actually expect, the controls that matter most, and why building them in from the start is far cheaper than bolting them on after a deal stalls.
+SaaS security and compliance stop being abstract the first time a prospect sends you a security questionnaire or asks for your SOC 2 report before signing. At that point, security is not an engineering nicety, it is a sales requirement. It is also a real financial exposure: IBM put the [average cost of a data breach at $4.88 million in 2024, a 10 percent jump from the prior year](https://newsroom.ibm.com/2024-07-30-ibm-report-escalating-data-breach-disruption-pushes-costs-to-new-highs) and the largest on record. This guide covers what B2B buyers actually expect, the controls that matter most, and why building them in from the start is far cheaper than bolting them on after a deal stalls.
 
 ## Security expectations B2B buyers have
 
@@ -16,13 +16,13 @@ Meeting that bar is increasingly the price of entry. Buyers assume encryption, r
 
 ## Authentication, SSO, and RBAC
 
-Access control is the foundation, because most breaches trace back to someone getting in who should not have, or an insider seeing more than they should. Three layers matter.
+Access control is the foundation, because most breaches trace back to someone getting in who should not have, or an insider seeing more than they should. IBM's 2024 data backs this up: [stolen or compromised credentials were the single most common initial attack vector at 16 percent of breaches, with phishing close behind at 15 percent](https://www.cybersecuritydive.com/news/ibm-data-breach-cost-credentials-phishing/722689/), and credential-based breaches took the longest to spot and shut down, an average of 292 days. Three layers matter.
 
 - **Strong authentication:** proper password handling, multi-factor authentication, and protection against common attacks on login.
 - **Single sign-on (SSO):** enterprise customers expect to manage access through their own identity provider, so employees log in with corporate credentials and lose access automatically when they leave.
 - **Role-based access control (RBAC):** users see and do only what their role permits, enforced on the server, not just hidden in the interface.
 
-For larger customers, SSO and automated user provisioning move from nice-to-have to mandatory, since their IT teams will not manage accounts by hand. Building a clean permission model early is important because retrofitting one into a live product is painful and error-prone. The broader design of roles, teams, and provisioning is covered in [SaaS onboarding and user management](/blog/saas-onboarding-and-user-management).
+For larger customers, SSO and automated user provisioning move from nice-to-have to mandatory, since their IT teams will not manage accounts by hand. In practice that means supporting SAML or OIDC against providers like Okta, Entra ID, or Google Workspace, and ideally SCIM so that when someone is deprovisioned in the customer's directory, their access to your product disappears the same day rather than lingering as a forgotten account. Those orphaned accounts are exactly the credentials attackers reuse, which is why enforcing MFA and killing stale sessions is not box-ticking. Building a clean permission model early is important because retrofitting one into a live product is painful and error-prone. The broader design of roles, teams, and provisioning is covered in [SaaS onboarding and user management](/blog/saas-onboarding-and-user-management).
 
 ## Data encryption and isolation
 
@@ -40,7 +40,7 @@ A few things surprise teams pursuing it for the first time. SOC 2 is about provi
 
 ## Logging, monitoring, and incident response
 
-You cannot secure what you cannot see. Comprehensive logging records who did what and when, across authentication, data access, and administrative actions. Those logs serve two purposes: detecting a problem in progress, and reconstructing what happened afterward. Auditors will also expect them.
+You cannot secure what you cannot see. Comprehensive logging records who did what and when, across authentication, data access, and administrative actions. Those logs serve two purposes: detecting a problem in progress, and reconstructing what happened afterward. Auditors will also expect them. Given that credential-driven breaches ran close to ten months from intrusion to containment in IBM's data, the difference between catching an anomaly in hours and discovering it in months is measured directly in dollars.
 
 Monitoring turns logs into alerts, so an unusual pattern, a spike in failed logins, an unexpected data export, reaches a human quickly rather than sitting unnoticed. Incident response is the plan for what happens next: who is notified, how you contain the issue, how you communicate with affected customers, and how you learn from it. Buyers increasingly ask about this directly, because how you handle an incident matters as much as preventing one. Having a written, practiced plan is itself a control that SOC 2 and enterprise reviews look for.
 

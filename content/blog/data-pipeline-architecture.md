@@ -6,7 +6,7 @@ primaryKeyword: "data pipeline architecture"
 tags: ["data pipelines", "etl vs elt", "streaming pipelines"]
 ---
 
-A data pipeline moves data from where it is created to where it gets used, and reshapes it along the way. Get the architecture right and analytics, reporting, and machine learning all sit on solid ground. Get it wrong and you spend your days chasing missing rows and numbers that do not reconcile. This guide covers the patterns that hold up as data volume grows, and the trade-offs behind each one.
+A data pipeline moves data from where it is created to where it gets used, and reshapes it along the way. Get the architecture right and analytics, reporting, and machine learning all sit on solid ground. Get it wrong and you spend your days chasing missing rows and numbers that do not reconcile. The volume you are designing for keeps climbing: IDC's [Global DataSphere](https://my.idc.com/getdoc.jsp?containerId=IDC_P38353) forecast puts worldwide data creation at 181 zettabytes in 2025, up from 64.2 zettabytes in 2020, a compound growth rate near 23 percent. This guide covers the patterns that hold up as that volume grows, and the trade-offs behind each one.
 
 ## Batch vs streaming pipelines
 
@@ -38,7 +38,17 @@ The orchestrator is also where operational policy lives. It decides how many tim
 
 ## Data quality and observability
 
-A pipeline that runs successfully but delivers wrong data is worse than one that fails loudly, because nobody notices until a decision has already been made on bad numbers. Quality has to be built in, not bolted on.
+A pipeline that runs successfully but delivers wrong data is worse than one that fails loudly, because nobody notices until a decision has already been made on bad numbers. The cost is not hypothetical. Gartner has estimated that [poor data quality costs organizations $12.9 million a year](https://www.gartner.com/en/data-analytics/topics/data-quality) on average, in wasted effort, bad decisions, and rework. Quality has to be built in, not bolted on.
+
+The waste shows up in your team's calendar too. In the CrowdFlower data science survey covered by [Forbes](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/), practitioners reported spending about 80 percent of their time on data preparation, with roughly 60 percent on cleaning and organizing and 19 percent on collecting data sets. The reported breakdown of where that time goes makes the case for automating checks upstream:
+
+| Data science task | Share of time (CrowdFlower) |
+| --- | --- |
+| Cleaning and organizing data | ~60% |
+| Collecting data sets | ~19% |
+| Building training sets, mining, refining, and other | ~21% |
+
+Every hour spent reconciling a broken feed is an hour not spent on the analysis you hired those people to do, which is why moving quality checks upstream into the pipeline pays for itself.
 
 Practical measures include:
 

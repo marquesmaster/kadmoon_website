@@ -1,18 +1,18 @@
 ---
 title: "Custom software vs off-the-shelf: how to choose"
-description: "Custom software vs off-the-shelf compared on fit, cost, and time-to-value, with a decision matrix to help you build, buy, or combine both."
+description: "Custom software vs off-the-shelf compared on fit, cost, and total cost of ownership, with a decision matrix to help you build, buy, or combine both."
 category: "Custom Software"
 primaryKeyword: "custom software vs off-the-shelf"
 tags: ["bespoke vs packaged software", "cots vs custom", "buy vs build software"]
 ---
 
-The choice between custom software vs off-the-shelf is not about which is better in the abstract. It is about which fits the specific problem in front of you, at your stage, with your constraints. Packaged tools are the right answer more often than software firms like to admit, and custom is the right answer more often than buyers realize. This guide gives you a clear way to tell the two situations apart.
+The choice between custom software vs off-the-shelf is not about which is better in the abstract. It is about which fits the specific problem in front of you, at your stage, with your constraints. Packaged tools are the right answer more often than software firms like to admit, and custom is the right answer more often than buyers realize. Demand for tailored systems is real and growing: Grand View Research put the global custom software development market at [$43.16 billion in 2024, heading to $146.18 billion by 2030 at a 22.6% CAGR](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report). That growth is a signal, not a reason to build. This guide gives you a clear way to tell the two situations apart.
 
 ## What off-the-shelf does well
 
 Packaged software wins on speed and predictability. You can buy it today, the vendor has already absorbed the cost of building it across thousands of customers, and someone else maintains it, patches it, and adds features. For problems that are common across many businesses, payroll, email, accounting basics, help desk, there is no reason to build. The market has already solved it well, and reinventing it is a waste of money.
 
-Off-the-shelf also carries less execution risk. The product exists, you can trial it, and you know roughly what you are getting before you commit. That certainty has real value when the underlying process is not where you compete.
+Off-the-shelf also carries less execution risk, and execution risk is not a footnote. The Standish Group CHAOS research has tracked software delivery for decades, and its 2020 data found only [about 31% of projects succeed while roughly 50% are challenged and 19% fail outright](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes). A packaged product exists, you can trial it, and you know roughly what you are getting before you commit. That certainty has real value when the underlying process is not where you compete.
 
 There is a support advantage too. When a packaged tool breaks, the vendor's support team and a large user community are there to help, and documentation, training, and hiring for common tools are all easier because the market knows them. For a business that does not want to run any software engineering of its own, buying moves that burden onto the vendor entirely, which for the right problems is exactly the right call.
 
@@ -30,11 +30,19 @@ You build custom when the process is the point. If how you do something is a gen
 
 Ownership matters here too. With custom software you own the code, the data, and the roadmap. There is no per-seat tax as you grow and no vendor who can raise prices or sunset the product from under you. For the fuller argument, see [benefits of custom software](/blog/benefits-of-custom-software) and [when to build custom software](/blog/when-to-build-custom-software).
 
-## Cost and time-to-value compared
+## Cost and total cost of ownership compared
 
 On paper, off-the-shelf looks cheaper and faster, and in the short term it usually is. You pay a subscription and start next week. Custom software requires an upfront investment and months of build before it earns anything.
 
-The comparison changes over a three-to-five-year horizon. Subscription costs recur and rise, especially as seats and usage grow, while a custom build is a larger cost now that you then own outright. If the packaged tool forces expensive workarounds or blocks growth, its true cost is much higher than the invoice suggests. The right frame is total cost of ownership over the life of the system, not the sticker price in year one.
+The comparison changes over a three-to-five-year horizon. Subscription costs recur and rise, especially as seats and usage grow, while a custom build is a larger cost now that you then own outright. The invoice is also only part of the number. A NIST-commissioned study estimated that software defects cost the US economy about [$59.5 billion a year, roughly 0.6% of GDP](https://www.accountingtoday.com/news/software-bugs-cost-595-billion-annually), with more than half of that borne by users rather than vendors. Bad fit and unhandled edge cases carry a similar hidden tax inside your own operation: the manual reconciliation, the re-keying, the errors caught late. If the packaged tool forces expensive workarounds or blocks growth, its true cost is much higher than the sticker price suggests. The right frame is total cost of ownership over the life of the system, not year-one price.
+
+| Factor | Off-the-shelf | Custom |
+| --- | --- | --- |
+| Time to first use | Days to weeks | Months |
+| Upfront cost | Low | Higher |
+| Cost as you scale | Rises with seats and usage | Flat once built |
+| Fit to your process | Vendor's default | Your exact workflow |
+| Who owns the roadmap | The vendor | You |
 
 Time-to-value cuts the other way and deserves honest weight. Buying gives you a working tool in days, and if the problem is urgent and the fit is decent, that speed can matter more than a perfect long-term fit. Custom software pays back later, so the question is whether you can afford the build window and whether the problem is durable enough to justify it. A short-lived need almost always argues for buying. A core capability you will run for a decade often argues for building, because the recurring costs and constraints of the packaged option accumulate over exactly that horizon.
 

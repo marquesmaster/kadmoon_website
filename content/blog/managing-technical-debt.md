@@ -3,7 +3,7 @@ title: "Managing technical debt: a leader's guide"
 description: "A leader's guide to managing technical debt: what it really costs, good vs bad debt, making it visible to the business, prioritizing fixes, and preventing more."
 category: "Legacy Modernization"
 primaryKeyword: "managing technical debt"
-tags: ["technical debt", "reduce tech debt", "tech debt strategy"]
+tags: ["technical debt", "reduce tech debt", "tech debt strategy", "tech debt cost"]
 ---
 
 Technical debt is one of those terms that gets used to mean everything and therefore nothing. To an engineer it might mean a shortcut taken under deadline. To a CFO it sounds like a line item that never appears on any statement. The gap between those two views is exactly where debt festers, because the people who feel the pain and the people who fund the fix are not speaking the same language. This guide is for leaders who need to manage technical debt as a business problem, not just an engineering complaint.
@@ -11,6 +11,8 @@ Technical debt is one of those terms that gets used to mean everything and there
 ## What technical debt really costs
 
 The cost of technical debt is rarely a single bill. It shows up as a tax on everything you do afterward. Features take longer because the code is tangled. Bugs recur because the design makes them easy to introduce. New engineers take months to become productive because nothing is where they would expect it. None of that appears on an invoice, which is why it is so easy to ignore until it is severe.
+
+The scale is larger than most leaders assume. McKinsey's research on tech debt found that CIOs estimate it at [20 to 40 percent of the value of their entire technology estate before depreciation](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-debt-reclaiming-tech-equity), which runs to hundreds of millions of dollars at a large firm. The same study found that around 30 percent of CIOs believe more than 20 percent of the budget nominally earmarked for new products is quietly diverted into resolving debt. Stripe's Developer Coefficient survey put a per-engineer number on it: the average developer spends [more than 17 hours a week on maintenance and roughly 4 of those on dealing with bad code, an opportunity cost the report estimated at nearly $85 billion a year worldwide](https://stripe.com/files/reports/the-developer-coefficient.pdf). You are paying that tax whether or not you name it. And it is trending the wrong way: in the McKinsey survey, [about 60 percent of CIOs said their organization's tech debt had risen noticeably over the previous three years](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-debt-reclaiming-tech-equity). Stripe went further and estimated that developer inefficiency, of which debt is a large part, drags on the order of $300 billion off global GDP each year. These are not rounding errors, and they land squarely on the roadmap you are trying to fund.
 
 The compounding is what makes it dangerous. Like financial debt, unpaid technical debt accrues interest. Each shortcut makes the next change a little harder, and the slowdown builds quietly until a team that once shipped weekly is spending most of its time fighting the codebase. By the time it is obvious in the roadmap, the interest has been accumulating for a long time.
 
@@ -34,7 +36,7 @@ Concrete ways to surface it:
 - Tie debt to incidents. Point to outages and bugs that trace back to specific shortcuts.
 - Maintain a visible register. Keep a living list of significant debt with an owner, an estimated cost of carrying it, and an estimated cost to fix.
 
-Once debt is expressed as business impact, the conversation changes from "engineers want to rewrite things" to "here is what this is costing us and what fixing it would return." That is a conversation a leader can actually fund.
+Once debt is expressed as business impact, the conversation changes from "engineers want to rewrite things" to "here is what this is costing us and what fixing it would return." That is a conversation a leader can actually fund. And the upside is quantifiable: McKinsey found that companies actively managing tech debt free up engineers to spend [as much as 50 percent more of their time on work that advances business goals](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-debt-reclaiming-tech-equity), and that firms in the top quintile of debt management grow revenue about 20 percent faster than those in the bottom quintile.
 
 ## Prioritizing what to fix
 
@@ -52,7 +54,7 @@ Fix where high churn meets high risk. Defer the rest without guilt. This mirrors
 
 The cheapest debt to manage is the debt you never take on. Prevention is mostly discipline embedded in how the team works, not a heroic cleanup effort. Code review that actually reviews design, automated tests that make regressions visible, and a shared standard for what "finished" means all keep new debt from piling up.
 
-The other half is cultural. Teams accumulate bad debt fastest when they are pushed to ship at any cost with no room to do it well. If every deadline is treated as more important than the last, corners get cut every time, and the interest compounds. Giving teams the room to build things properly the first time is not indulgence; it is the cheapest debt-prevention strategy there is. A senior team that owns quality by default produces far less accidental debt than one racing an impossible clock.
+The other half is cultural. Teams accumulate bad debt fastest when they are pushed to ship at any cost with no room to do it well. If every deadline is treated as more important than the last, corners get cut every time, and the interest compounds. This is not a fringe complaint: in the Stripe survey, nearly two-thirds of developers said the time they spend fixing existing code is excessive. Giving teams the room to build things properly the first time is not indulgence; it is the cheapest debt-prevention strategy there is. A senior team that owns quality by default produces far less accidental debt than one racing an impossible clock.
 
 ## Balancing features and cleanup
 

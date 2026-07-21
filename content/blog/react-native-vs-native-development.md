@@ -3,7 +3,7 @@ title: "React Native vs native app development: how to choose"
 description: "React Native vs native app development compared on performance, native features, cost, team, and maintenance, with a decision framework for your project."
 category: "Mobile Apps"
 primaryKeyword: "react native vs native"
-tags: ["cross-platform vs native", "react native pros and cons", "native app development"]
+tags: ["cross-platform vs native", "react native pros and cons", "native app development", "app development cost"]
 ---
 
 The React Native vs native question comes down to one trade: a single shared codebase versus the last measure of performance and platform fidelity. For most business apps, sharing code is the better deal. For a specific set of apps, it is not. Knowing which side you are on saves you from either overbuilding or hitting a wall you cannot code around.
@@ -14,7 +14,7 @@ This is a decision-focused comparison for someone choosing how to build, not a l
 
 Native development means writing an app in each platform's own toolchain: Swift or Objective-C with Apple's frameworks for iOS, Kotlin or Java with Android's frameworks for Android. Two codebases, each speaking directly to its platform, each maintained separately.
 
-React Native lets you write the app once in JavaScript and TypeScript and run it on both platforms. It is not a web page in a wrapper. It renders real native UI components and talks to native APIs through a bridge, so the result looks and feels like a real app, not a website pretending to be one. You share the large majority of your code across iOS and Android while dropping into native code for the parts that need it. If you are also weighing other cross-platform options, the [React Native versus Flutter comparison](/blog/react-native-vs-flutter) covers that fork of the road.
+React Native lets you write the app once in JavaScript and TypeScript and run it on both platforms. It is not a web page in a wrapper. It renders real native UI components and talks to native APIs through a bridge, so the result looks and feels like a real app, not a website pretending to be one. You share the large majority of your code across iOS and Android while dropping into native code for the parts that need it. It is also a proven mainstream choice, not a niche one: in the [2024 Stack Overflow Developer Survey](https://survey.stackoverflow.co/2024/technology), 8.4 percent of all developers and 13.62 percent of professional developers reported using React Native. If you are also weighing other cross-platform options, the [React Native versus Flutter comparison](/blog/react-native-vs-flutter) covers that fork of the road.
 
 The "drop into native when needed" part is important and often misunderstood. React Native is not all-or-nothing. You can write ninety-five percent of an app in shared code and implement one performance-critical screen or one exotic hardware integration in native code behind a clean interface. That escape hatch is what makes React Native a safe default for most projects: you rarely hit a hard wall, and when you approach one, you can solve that one piece natively without abandoning the shared codebase.
 
@@ -30,7 +30,7 @@ One caution on the library ecosystem: React Native leans on third-party packages
 
 ## Development speed and cost
 
-This is React Native's strongest argument and the reason it wins most business cases. One codebase means you build a feature once instead of twice, you fix a bug once instead of twice, and you ship both platforms roughly in step rather than staggered.
+This is React Native's strongest argument and the reason it wins most business cases. One codebase means you build a feature once instead of twice, you fix a bug once instead of twice, and you ship both platforms roughly in step rather than staggered. Industry cost breakdowns consistently put cross-platform builds at [30 to 50 percent less](https://www.netguru.com/blog/mobile-app-development-cost) than building and maintaining separate native iOS and Android apps, with the savings concentrated in engineering hours rather than one-time setup.
 
 The practical effect is meaningful savings on both the initial build and, more importantly, the years of maintenance that follow. Two native codebases do not just double the build. They roughly double the ongoing cost of every change forever. For a company that needs iOS and Android and does not have a performance ceiling problem, that math is hard to argue with. The [broader cross-platform versus native trade-offs](/blog/cross-platform-vs-native-apps) reinforce the same point across frameworks.
 
@@ -38,7 +38,7 @@ Time-to-market compounds the advantage. Shipping both platforms at once, from on
 
 ## Team, maintenance, and hiring
 
-The staffing implications are underrated. Native development typically needs two skill sets on the team: iOS specialists and Android specialists. React Native needs JavaScript and TypeScript developers, a much larger and more available talent pool, and the same skills your web team likely already has. That overlap can let a smaller team cover web and mobile coherently.
+The staffing implications are underrated. Native development typically needs two skill sets on the team: iOS specialists and Android specialists. React Native needs JavaScript and TypeScript developers, a much larger and more available talent pool. The gap is not subtle: the same [2024 survey](https://survey.stackoverflow.co/2024/technology) put JavaScript at 62 percent usage and TypeScript at 43.4 percent, the top of the language rankings, well ahead of the platform-specific pools you would need to staff two native codebases. That overlap can let a smaller team cover web and mobile coherently.
 
 Maintenance tells the same story. With React Native you patch a dependency, respond to an OS change, or ship a fix once. With two native apps you coordinate two releases and keep two sets of platform knowledge current. Over a multi-year app lifecycle, that difference in overhead usually dwarfs the initial build decision, which is why it belongs at the center of the choice, not the footnotes.
 

@@ -1,9 +1,9 @@
 ---
 title: "Custom software vs SaaS: which fits your business?"
-description: "Custom software vs SaaS compared on economics, control, data, and customization, with a practical way to decide based on where you actually differentiate."
+description: "Custom software vs SaaS compared on real economics, control, data, and customization, with a practical way to decide based on where you actually differentiate."
 category: "Custom Software"
 primaryKeyword: "custom software vs saas"
-tags: ["saas vs bespoke", "subscription vs custom", "build vs subscribe"]
+tags: ["saas vs bespoke", "subscription vs custom", "build vs subscribe", "saas cost"]
 ---
 
 Every growing company faces this fork: subscribe to a SaaS product that mostly fits, or build software that fits exactly. The right answer is rarely all one or all the other. It depends on where a given workflow sits relative to your competitive advantage, and on how the economics look once you run them past year one. Here is how to think it through without the sales pitch from either side.
@@ -12,7 +12,7 @@ Every growing company faces this fork: subscribe to a SaaS product that mostly f
 
 SaaS is optimized for speed and shared cost. You get a working product today, maintained by someone else, with a roadmap funded by thousands of other customers. Updates, security patches, uptime, and infrastructure are the vendor's problem. For anything generic, email, video calls, expense reports, basic CRM, that is an excellent deal. You would be foolish to build your own.
 
-The model works because the vendor spreads development across a large customer base. That is also the source of its limits. The product has to serve the average of everyone, so it is shaped by what most customers need, not what you specifically need.
+The model works because the vendor spreads development across a large customer base. That is also the source of its limits. The product has to serve the average of everyone, so it is shaped by what most customers need, not what you specifically need. The market has voted for that convenience with its wallet: Gartner put worldwide SaaS spending at [$247.2 billion in 2024, up roughly 20% year over year](https://www.gartner.com/en/newsroom/press-releases/2024-05-20-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-surpass-675-billion-in-2024). For most software you touch, subscribing is correct.
 
 ## Where SaaS limits you as you scale
 
@@ -24,13 +24,24 @@ The friction shows up as you grow and your needs diverge from the average. A few
 - Per-seat pricing scales with headcount, so success makes the tool more expensive whether or not you use more of it.
 - The roadmap is theirs. A feature you urgently need may never ship, and one you rely on may get deprecated.
 
-None of these are dealbreakers for generic work. They become dealbreakers when the constrained workflow is central to how you make money.
+None of these are dealbreakers for generic work. They become dealbreakers when the constrained workflow is central to how you make money. Sprawl is real, too. BetterCloud's State of SaaS reporting found the average company runs [around 106 SaaS applications](https://www.bettercloud.com/monitor/saas-statistics/), and Productiv pegged [SaaS spend per employee at $5,607 in 2024](https://productiv.com/state-of-saas/2024-saas-trends-spend/), a 7% jump over the prior year. A lot of that money buys shelfware.
 
-## The economics over 3-5 years
+The number of apps has actually been falling from a 2022 peak as companies consolidate, but the spend per head keeps climbing, which tells you the tools that remain are getting more expensive per seat, not less. That is the per-seat trap in action: the vendor captures more of your budget as you grow, and you have little leverage to push back short of ripping the tool out. For a commodity function that is a fine trade. For the workflow you actually compete on, you are renting your own advantage from someone with different incentives.
+
+## The economics over 3 to 5 years
 
 The comparison people get wrong is month one. SaaS looks cheap because there is no build cost. Custom looks expensive because it is all up front. The honest comparison is total cost over three to five years.
 
-SaaS is an operating expense that grows with seats and usage, forever, with periodic price increases you do not control. Custom is a larger up-front investment plus ongoing maintenance, typically a fraction of the build cost per year, after which the marginal cost of another user is close to zero. Somewhere on that timeline the lines cross. Where they cross depends on your seat count, the SaaS price, and how much the workflow is worth to you. For a build-heavy workflow at meaningful scale, custom often wins on a multi-year basis, and you own the asset at the end.
+SaaS is an operating expense that grows with seats and usage, forever, with periodic price increases you do not control. It is also leaky. Zylo's 2024 SaaS Management Index, drawn from 30 million licenses and $34 billion in tracked spend, found the average enterprise [wastes about $18 million a year on unused licenses, with only 49% of provisioned seats actually in use](https://zylo.com/news/2024-saas-management-index/). Custom is a larger up-front investment plus ongoing maintenance, typically a fraction of the build cost per year, after which the marginal cost of another user is close to zero. Somewhere on that timeline the lines cross. Where they cross depends on your seat count, the SaaS price, and how much the workflow is worth to you. For a build-heavy workflow at meaningful scale, custom often wins on a multi-year basis, and you own the asset at the end.
+
+| Factor | SaaS | Custom |
+| --- | --- | --- |
+| Up-front cost | Low or none | Higher, one time |
+| Cost curve | Grows with seats and price hikes | Flat maintenance after build |
+| Marginal cost per new user | Another subscription | Near zero |
+| Who owns the data and roadmap | The vendor | You |
+
+The waste is not only in idle seats; it is in redundancy. Zylo's data shows the average organization carrying [15 duplicative online training apps, 11 project management tools, and 10 team collaboration apps at once](https://zylo.com/news/2024-saas-management-index/), each with its own contract and renewal. Nobody chose that on purpose. It accretes because subscribing is frictionless and nobody owns the total. Custom software cannot sprawl the same way, because you are the one deciding what gets built and maintained. That does not make it automatically cheaper, but it does mean the money you spend maps to something you chose rather than something that crept onto the invoice.
 
 ## Control, data, and customization
 
@@ -46,7 +57,7 @@ The flip side is real: with custom you also own maintenance, security, and uptim
 
 Most mature stacks are hybrid, and that is the sensible default. Keep SaaS for the commodity layers and build custom where you differentiate, then connect them with solid integrations. A distributor might keep NetSuite for accounting and build a custom pricing and fulfillment layer on top. A logistics firm might use standard tools for HR and email while building the customs and visibility software that is the actual business.
 
-This is usually the lowest-risk path. You avoid rebuilding solved problems and spend your engineering budget only where it buys advantage. The engineering that makes it work is the integration layer, so choosing a partner who is good at connecting systems matters.
+This is usually the lowest-risk path. You avoid rebuilding solved problems and spend your engineering budget only where it buys advantage. The engineering that makes it work is the integration layer, so choosing a partner who is good at connecting systems matters. The build side of these stacks is a growing market in its own right: Grand View Research sized [custom software development at $43.16 billion in 2024, projected to hit $146.18 billion by 2030](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report) at a 22.6% compound rate, with North America holding over a third of it.
 
 ## Choosing based on differentiation
 

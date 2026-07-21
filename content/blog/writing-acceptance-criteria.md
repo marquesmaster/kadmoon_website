@@ -6,13 +6,13 @@ primaryKeyword: "acceptance criteria"
 tags: ["how to write acceptance criteria", "definition of done", "user story criteria"]
 ---
 
-Most disputes on a software project come down to one word: done. The client thought a feature included something the team never built, the team thought it delivered exactly what was asked, and both are looking at the same statement of work reading it differently. Acceptance criteria fix this by turning "done" from an opinion into a test. This guide covers how to write criteria that hold up under pressure.
+Most disputes on a software project come down to one word: done. The client thought a feature included something the team never built, the team thought it delivered exactly what was asked, and both are looking at the same statement of work reading it differently. This is not a rare failure. Standish Group CHAOS research has tracked software delivery for decades and consistently finds only [about a third of projects fully succeed while roughly half are challenged](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), and unclear or shifting requirements are a recurring cause. Acceptance criteria fix this by turning "done" from an opinion into a test. This guide covers how to write criteria that hold up under pressure.
 
 ## Why acceptance criteria matter
 
 Acceptance criteria are the specific, checkable conditions a piece of work must satisfy to count as complete. They are not the feature description, they are the pass/fail test for it. A user story says what someone wants. The acceptance criteria say exactly how you will know it works.
 
-Their real job is to remove ambiguity before it becomes an argument. When criteria are written down and agreed to up front, there is no room for the "I assumed" conversation that derails projects at the worst moment. This is why we put measurable acceptance criteria directly into the contract: they convert vague expectations into an agreed standard both sides can check. A feature either meets the criteria or it does not, and that is a far calmer conversation than debating intent after the fact. Clear criteria are also one of the [contract terms worth negotiating](/blog/custom-software-contract-terms-to-negotiate) precisely because they govern when payment is earned.
+Their real job is to remove ambiguity before it becomes an argument, and the economics favor catching it early. A NIST-commissioned study estimated that software defects cost the US economy about [$59.5 billion a year, and that roughly $22 billion of it could be eliminated by finding errors earlier](https://www.accountingtoday.com/news/software-bugs-cost-595-billion-annually), since more than half of all errors are not caught until late in development or after release. A vague requirement is a defect waiting to surface at the most expensive possible moment. When criteria are written down and agreed to up front, there is no room for the "I assumed" conversation that derails projects at the worst moment. This is why we put measurable acceptance criteria directly into the contract: they convert vague expectations into an agreed standard both sides can check. A feature either meets the criteria or it does not, and that is a far calmer conversation than debating intent after the fact. Clear criteria are also one of the [contract terms worth negotiating](/blog/custom-software-contract-terms-to-negotiate) precisely because they govern when payment is earned.
 
 ## Given-when-then and checklists
 
@@ -26,13 +26,22 @@ Checklists work better for criteria that are not about a single flow: a list of 
 
 A criterion you cannot objectively verify is not a criterion, it is a wish. "The interface should be intuitive" cannot pass or fail, because two reasonable people will disagree about whether it did. Every criterion needs a clear yes-or-no answer.
 
-To make criteria testable, replace vague adjectives with observable outcomes. Instead of "fast," write "results appear within two seconds for a typical query." Instead of "the app handles errors gracefully," write "if the save fails, the user sees a message and their input is preserved." Each criterion should be something a tester, or you, can check without asking the author what they meant. If you cannot describe how you would verify it, rewrite it until you can. This discipline is what makes acceptance criteria the backbone of a working [definition of done](/blog/custom-software-development-process) rather than a paragraph of good intentions.
+To make criteria testable, replace vague adjectives with observable outcomes. The rewrite is usually mechanical once you see the pattern:
+
+| Vague, cannot pass or fail | Testable, one clear answer |
+| --- | --- |
+| The report should load fast | Results appear within two seconds for a typical query |
+| The app handles errors gracefully | If the save fails, the user sees a message and their input is preserved |
+| Search should be accurate | A search for a known SKU returns that SKU as the first result |
+| The screen should be secure | A user without the billing role cannot open the invoices page |
+
+Each criterion should be something a tester, or you, can check without asking the author what they meant. If you cannot describe how you would verify it, rewrite it until you can. This discipline is what makes acceptance criteria the backbone of a working [definition of done](/blog/custom-software-development-process) rather than a paragraph of good intentions.
 
 ## Covering edge cases
 
 Happy-path criteria are easy and insufficient. The feature works when everything goes right, fine, but most disputes and most bugs live in the cases nobody wrote down. What happens with an empty field, a duplicate entry, a network failure mid-save, a user without permission, a value at the boundary.
 
-Good acceptance criteria deliberately cover the edges. For each feature, ask what happens when the input is missing, wrong, too large, or arrives out of order, and write a criterion for the behavior you expect. You will not catch every case, but naming the important ones up front prevents the "we never discussed that" gap that turns into unpaid rework or a payment fight. Edge cases are also where you discover requirements you did not know you had, which is cheaper to find while writing criteria than after the code ships.
+The cost curve is what makes this worth the effort. Study after study, from the NIST work above to decades of practitioner data, finds the same shape: a defect caught while you are writing requirements costs a fraction of the same defect caught in testing, and a small fraction of one caught in production, where you also absorb the support calls, the emergency fix, and the lost trust. Good acceptance criteria deliberately cover the edges. For each feature, ask what happens when the input is missing, wrong, too large, or arrives out of order, and write a criterion for the behavior you expect. You will not catch every case, but naming the important ones up front prevents the "we never discussed that" gap that turns into unpaid rework or a payment fight. Edge cases are also where you discover requirements you did not know you had, which is cheaper to find while writing criteria than after the code ships.
 
 ## Linking criteria to sign-off
 

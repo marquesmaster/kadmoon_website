@@ -8,6 +8,8 @@ tags: ["managed services vs staff aug", "dedicated team vs augmentation", "outso
 
 Both models put outside engineers on your project, but they distribute responsibility very differently. With staff augmentation you rent people and keep the wheel. With a managed team you buy an outcome and hand over the wheel. Picking the wrong one is a common and expensive mistake, usually because a buyer chose the cheaper hourly rate without accounting for who now has to run the work.
 
+The buying reasons behind these models have shifted, which is worth knowing before you choose one. In Deloitte's [2024 Global Outsourcing Survey](https://www.deloitte.com/us/en/services/consulting/articles/global-outsourcing-survey.html), cost was the primary reason for outsourcing for about 70 percent of firms in 2020, and that share has fallen to roughly 34 percent, with agility and access to talent rising to the top. Translated into these two models, the point is simple: if you are choosing purely on rate, you are optimizing for the thing the market has already moved past.
+
 ## How each model is structured
 
 Staff augmentation slots individual contractors into your existing team. They attend your standups, use your tools, and report to your engineering manager. You direct their day-to-day work exactly as you would a new hire, minus the payroll and long-term commitment. The vendor supplies the person; you supply the plan, the management, and the definition of done.
@@ -17,6 +19,8 @@ A managed team is a self-contained delivery unit. It typically includes engineer
 ## Who owns delivery and outcomes
 
 This is the difference that matters most. Under staff augmentation, delivery risk stays with you. If the feature ships late or buggy, that is your management gap, not a contract breach. The contractors did what you told them to do. Under a managed team, the vendor is accountable for delivering what was agreed, and a well-written contract ties payment to measurable acceptance criteria rather than hours logged.
+
+That accountability is not a small thing, because most software work does not land clean. The Standish Group's [CHAOS research](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), drawn from roughly 50,000 projects, found only 31 percent were fully successful in 2020, while 50 percent were challenged (late, over budget, or short on scope) and 19 percent failed outright. The larger and more complex the build, the worse the odds: large projects succeed less than 10 percent of the time. The question is not whether trouble shows up. It is who is on the hook when it does.
 
 Ask yourself who you want holding the outcome. If you have a strong engineering leader with the bandwidth to plan and steer, augmentation gives you cheap capacity under your control. If you need someone else to own that something works by a date, a managed team is the model that actually transfers that responsibility.
 
@@ -33,6 +37,8 @@ There is a quality dimension to this overhead too. Augmented contractors typical
 ## Cost and flexibility
 
 On paper, augmentation usually shows a lower hourly rate because you are only paying for individual contributors, not the wrapper of PM, QA, and delivery management. That gap narrows or reverses once you price your own management time and the cost of quality problems that slip through without dedicated QA.
+
+Demand for both models is climbing, which keeps senior rates firm. The global custom software development market was worth about [$43.16 billion in 2024 and is projected to reach $146.18 billion by 2030](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report), a compound growth rate near 22.6 percent, with North America holding over 34 percent of it. A tight market for experienced engineers is exactly why the cheapest quoted rate often signals a junior bench or heavy subcontracting rather than a real bargain.
 
 Flexibility cuts the other way in each model. Augmentation is easier to scale up and down person by person, which suits variable or short-term capacity needs. A managed team is less granular but more coherent: the group builds shared context and velocity over a longer engagement, which pays off on anything that runs for months. If your roadmap is a steady multi-quarter build, the [dedicated team vs fixed project](/blog/dedicated-team-vs-fixed-project-cost) economics are worth reading alongside this.
 

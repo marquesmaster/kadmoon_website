@@ -3,10 +3,12 @@ title: "Software house vs staff augmentation: which to choose"
 description: "Software house vs staff augmentation compared: who owns delivery, how each handles ramp-up and risk, cost and flexibility, and how to choose by your internal capacity."
 category: "Software House"
 primaryKeyword: "software house vs staff augmentation"
-tags: ["managed team vs staff aug", "staff augmentation vs outsourcing", "dedicated team vs staff aug"]
+tags: ["managed team vs staff aug", "staff augmentation vs outsourcing", "dedicated team vs staff aug", "it outsourcing market"]
 ---
 
 When you need more engineering capacity than you have, two models compete for your budget: hire a software house to deliver a project, or bring in augmented staff to work under your management. They sound similar and cost roughly similar amounts, which is why buyers pick the wrong one so often. The real difference is not headcount or rate. It is who owns the outcome. Getting that distinction right is the difference between buying a result and buying a to-do list you still have to manage.
+
+Both models sit inside a large and growing market, so there is no shortage of vendors happy to sell you either one. Grand View Research valued the [global IT services outsourcing market at about 744.6 billion dollars in 2024, projected to reach 1.22 trillion by 2030](https://www.grandviewresearch.com/industry-analysis/it-services-outsourcing-market) at an 8.6% compound annual growth rate. The broader [outsourcing services market was estimated at 3.8 trillion dollars in 2024, heading toward 7.11 trillion by 2030](https://www.grandviewresearch.com/industry-analysis/outsourcing-services-market-report). The abundance of options is exactly why choosing the right model, not just the cheapest hourly rate, is where buyers create or destroy value.
 
 ## How staff augmentation works
 
@@ -24,7 +26,9 @@ The distinction shows up on day one. With a house, someone other than you is res
 
 This is the whole decision in one line: with staff augmentation, you own delivery; with a software house, the house does. Everything else follows from that.
 
-If an augmented engineer is stuck, unblocking them is your job. If the estimate was wrong, that is your problem to absorb. If quality slips, your reviewers should have caught it. You are the general contractor, and the augmented staff are the extra crew. With a software house, those responsibilities sit with the vendor. They estimated it, so an overrun is theirs. They staffed it, so a skills gap is theirs to fill. They own quality, so QA is baked into their process rather than yours. If you want that accountability contractual, [custom software contract terms you should negotiate](/blog/custom-software-contract-terms-to-negotiate) shows how acceptance and milestones should read.
+If an augmented engineer is stuck, unblocking them is your job. If the estimate was wrong, that is your problem to absorb. If quality slips, your reviewers should have caught it. You are the general contractor, and the augmented staff are the extra crew. With a software house, those responsibilities sit with the vendor. They estimated it, so an overrun is theirs. They staffed it, so a skills gap is theirs to fill. They own quality, so QA is baked into their process rather than yours.
+
+That ownership question is not academic. The Standish Group's CHAOS research has long tied project success to clear ownership of requirements, user involvement, and executive support, and its 2020 data found [agile delivery succeeding around 42% of the time against 13% for waterfall](https://medium.com/leadership-and-agility/agile-project-success-rates-are-2x-higher-than-traditional-projects-376a05e590d4). Whichever model you choose, someone has to own that discipline. Augmentation makes it yours by default. A house takes it on by contract. If you want that accountability written down, [custom software contract terms you should negotiate](/blog/custom-software-contract-terms-to-negotiate) shows how acceptance and milestones should read.
 
 ## Ramp-up, management, and risk
 
@@ -46,7 +50,7 @@ On paper the hourly rates can look similar, so buyers assume the cost is a wash.
 | Flexes headcount fast | Yes | Somewhat |
 | Accountable for delivery | You | The house |
 
-Staff augmentation is more flexible on raw headcount: scale up or down quickly as your needs change. But the augmentation rate rarely includes project management, QA, or architecture, so if you lack those in-house you are paying for them somewhere else, often in your own leaders' time. A house price bundles them in. When you compare, compare the full cost of getting to a working result, not the rate card. [Dedicated team vs fixed project](/blog/dedicated-team-vs-fixed-project-cost) breaks down the money over a longer horizon.
+Staff augmentation is more flexible on raw headcount: scale up or down quickly as your needs change. That flexibility is in demand, which is part of why the outsourcing market is compounding at [8.6% for IT services and above 11% overall](https://www.grandviewresearch.com/industry-analysis/outsourcing-services-market-report) through 2030. But the augmentation rate rarely includes project management, QA, or architecture, so if you lack those in-house you are paying for them somewhere else, often in your own leaders' time. A house price bundles them in. When you compare, compare the full cost of getting to a working result, not the rate card. [Dedicated team vs fixed project](/blog/dedicated-team-vs-fixed-project-cost) breaks down the money over a longer horizon.
 
 ## Choosing by your internal capacity
 

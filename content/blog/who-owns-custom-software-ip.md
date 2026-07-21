@@ -10,15 +10,17 @@ Here is the fact that surprises most buyers: paying for custom software does not
 
 ## Default IP rules and why they surprise buyers
 
-Copyright in a work generally belongs to its author the moment it is created. When you hire an outside firm to build software, the authors are that firm's engineers, not you. Absent specific contract language, the developer can end up holding copyright while you hold nothing more than an implied right to use what you paid for.
+Copyright in a work belongs to its author the moment the work is fixed in tangible form, and [US law vests that copyright in the author from the start](https://www.copyright.gov/title17/92chap2.html#201). When you hire an outside firm to build software, the authors are that firm's engineers, not you. Absent specific contract language, the developer can end up holding copyright while you hold nothing more than an implied right to use what you paid for.
 
-Buyers assume "I paid, so I own" the way they would for a custom-built table. Software is not a table. It is a copyrighted work, and copyright transfers only through explicit written terms. This is exactly why the ownership question belongs in the contract from the start, not in a hopeful conversation after delivery. If you are still assembling your evaluation process, [the software vendor due diligence checklist](/blog/software-vendor-due-diligence-checklist) puts IP terms where they belong: on the list before you sign.
+The Supreme Court settled the core of this in 1989. In [Community for Creative Non-Violence v. Reid, 490 U.S. 730](https://supreme.justia.com/cases/federal/us/490/730/), a nonprofit commissioned and paid for a sculpture, gave the artist detailed direction, and still lost the copyright fight, because the artist was an independent contractor and no written transfer existed. The same logic applies squarely to commissioned software. Paying the bill and directing the work does not, by itself, make you the owner. To decide whether someone is an employee or a contractor, the Court laid out a multi-factor agency test weighing things like who supplied the tools, where the work happened, the tax treatment, and whether benefits were paid. An outside development firm fails almost every one of those factors, which is exactly why relying on the work-for-hire doctrine alone is a gamble for custom software.
+
+Buyers assume "I paid, so I own" the way they would for a custom-built table. Software is not a table. It is a copyrighted work, and [a transfer of copyright ownership is not valid unless it is in a writing signed by the owner](https://www.copyright.gov/title17/92chap2.html#204). This is exactly why the ownership question belongs in the contract from the start, not in a hopeful conversation after delivery. If you are still assembling your evaluation process, [the software vendor due diligence checklist](/blog/software-vendor-due-diligence-checklist) puts IP terms where they belong: on the list before you sign.
 
 ## Work-for-hire vs assignment clauses
 
 Two mechanisms transfer ownership, and good contracts often use both.
 
-"Work made for hire" is a specific legal category. When it applies, the hiring party is treated as the author from the start. The catch is that the doctrine only covers certain types of work and certain relationships, and software commissioned from an independent firm does not always fit cleanly. Relying on work-for-hire language alone can leave a gap.
+"Work made for hire" is a specific legal category, and it is narrower than most buyers think. Under [the statutory definition](https://www.copyright.gov/title17/92chap1.html#101), a commissioned work only qualifies as work made for hire if it falls into one of nine enumerated categories (contributions to collective works, translations, atlases, and the like) and the parties agree in a signed writing. General business software is not on that list. So a contract that leans only on work-for-hire language for custom code can leave the ownership sitting with the vendor by operation of law.
 
 An assignment clause closes that gap. It says the vendor assigns all right, title, and interest in the work to you. A well-drafted contract typically pairs a work-for-hire provision with a present assignment as backup, so that whatever the work-for-hire doctrine does not capture, the assignment does. When you read a proposal, look for both. Our guide to [custom software contract terms you should negotiate](/blog/custom-software-contract-terms-to-negotiate) covers how these clauses sit inside the broader agreement.
 
@@ -26,7 +28,7 @@ An assignment clause closes that gap. It says the vendor assigns all right, titl
 
 Almost no modern application is built entirely from code written just for you. Your app will include open-source libraries, and possibly commercial components or third-party APIs. You cannot own those outright, and no honest vendor will claim you do. What matters is that they are licensed in a way that lets you use, run, and modify your software freely, without a surprise obligation later.
 
-Two things to confirm. First, the open-source licenses in your stack are permissive enough for your use, with no copyleft term that forces you to open-source your own code unexpectedly. Second, any commercial component or API is licensed to you, not to the vendor, so the license does not evaporate when the engagement ends. Ask for a list of third-party dependencies and their licenses. A team that engineers cleanly can produce it without drama, which is part of [what we build](/#capabilities) responsibly from day one.
+This is not a fringe concern. Industry scans of commercial codebases routinely find that the large majority of the code shipping in a typical application comes from open-source dependencies rather than lines written for the specific project. That makes license hygiene part of ownership, not a footnote to it. Two things to confirm. First, the open-source licenses in your stack are permissive enough for your use, with no copyleft term (like the GPL family) that could force you to open-source your own code unexpectedly. Second, any commercial component or API is licensed to you, not to the vendor, so the license does not evaporate when the engagement ends. Ask for a list of third-party dependencies and their licenses. A team that engineers cleanly can produce it without drama, which is part of [what we build](/#capabilities) responsibly from day one.
 
 ## Source-code escrow and access
 
@@ -47,7 +49,7 @@ Put the protections in writing, and be specific. A contract that genuinely prote
 - A moral-rights waiver and a promise of further cooperation to perfect the assignment (signing any documents needed later).
 - Clarity that the vendor will not reuse your specific business logic for a competitor.
 
-Vague language is the enemy here. "Customer will own the deliverables" sounds fine and can still leave holes. The clauses that hold up name the source code, the repositories, and the assignment explicitly.
+Vague language is the enemy here. "Customer will own the deliverables" sounds fine and can still leave holes. Because copyright transfers only through a signed writing, the clauses that hold up name the source code, the repositories, and the assignment explicitly.
 
 ## Questions to ask before signing
 

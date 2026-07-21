@@ -3,10 +3,10 @@ title: "Custom software for wholesale distribution companies"
 description: "How custom software for distribution solves the order, inventory, pricing, and EDI problems that packaged distributor ERP leaves half-finished for wholesalers."
 category: "Industry Guides"
 primaryKeyword: "custom software for distribution"
-tags: ["distribution software", "wholesale software", "distributor erp"]
+tags: ["distribution software", "wholesale software", "distributor erp", "edi integration"]
 ---
 
-Wholesale distribution runs on thin margins and high volume, which means the software has to be right about a thousand small things at once. Most distributors start with a packaged ERP and a stack of add-ons, then spend years papering over the gaps with spreadsheets, manual re-keying, and tribal knowledge. At some point the workarounds cost more than the fix. This is a look at where packaged tools leave distributors stranded and what custom software can do about it.
+Wholesale distribution runs on thin margins and high volume, which means the software has to be right about a thousand small things at once. It is a large business to get wrong: US merchant wholesalers posted [$11.38 trillion in sales in 2022, up 17.4% from $9.69 trillion in 2021](https://www.census.gov/newsroom/press-releases/2024/annual-wholesale-trade-survey.html), according to the Census Bureau's Annual Wholesale Trade Survey, and monthly sales were still running around [$686.5 billion in December 2024](https://www.census.gov/wholesale/). Most distributors start with a packaged ERP and a stack of add-ons, then spend years papering over the gaps with spreadsheets, manual re-keying, and tribal knowledge. At some point the workarounds cost more than the fix. This is a look at where packaged tools leave distributors stranded and what custom software can do about it.
 
 ## Distributor pain points with packaged ERP
 
@@ -16,7 +16,7 @@ So the workarounds appear. A pricing exception lives in a spreadsheet a manager 
 
 ## Order, inventory, and pricing complexity
 
-The core of distribution is deceptively hard. Orders come in through phone, email, EDI, and a web portal, and they all need to land in one place with the same rules applied. Inventory has to be accurate in real time across multiple warehouses, with allocations, backorders, and in-transit stock all accounted for. Get availability wrong and you either promise what you cannot ship or sit on stock you could have sold.
+The core of distribution is deceptively hard. Orders come in through phone, email, EDI, and a web portal, and they all need to land in one place with the same rules applied. Inventory has to be accurate in real time across multiple warehouses, with allocations, backorders, and in-transit stock all accounted for. Get availability wrong and you either promise what you cannot ship or sit on stock you could have sold. On margins this thin, that error shows up directly in the P&L.
 
 Pricing is where packaged tools break most often. Wholesale pricing is rarely a single list. It is customer-specific contracts, volume breaks, promotional pricing, rebates, and cost-plus formulas that change with the market. A distributor might have thousands of price rules, and a rep needs the right one to appear instantly at quote time. Custom software lets you encode your actual pricing logic instead of forcing it into the handful of fields a generic system provides.
 
@@ -32,7 +32,7 @@ The payoff is accuracy and throughput. Barcode or RFID scanning catches the wron
 
 Your customers increasingly expect to order the way they order from everyone else: a self-service portal where they can see their contract pricing, check availability, reorder from history, and track shipments. A good B2B portal reduces phone volume for your inside sales team and captures orders around the clock. Built on top of your real pricing and inventory logic, it shows each customer what is true for them, not a generic catalog.
 
-At the same time, your larger trading partners will insist on EDI. Purchase orders, invoices, and advance ship notices flow as structured messages rather than emails, and getting onboarded with a big retail or industrial buyer often requires it. Custom software can translate those EDI transaction sets into your order flow cleanly, so an EDI order and a portal order end up in the same pipeline with the same rules. Our overview of [EDI integration for supply chain](/blog/edi-integration-for-supply-chain) explains how those flows work in practice.
+At the same time, your larger trading partners will insist on EDI. Purchase orders, invoices, and advance ship notices flow as structured messages rather than emails, and getting onboarded with a big retail or industrial buyer often requires it. The formats are specific: an X12 850 for a purchase order, an 810 for an invoice, an 856 for an advance ship notice, and a mismatch on any field can get a transaction rejected or a chargeback assessed. Custom software can translate those EDI transaction sets into your order flow cleanly, so an EDI order and a portal order end up in the same pipeline with the same rules. Our overview of [EDI integration for supply chain](/blog/edi-integration-for-supply-chain) explains how those flows work in practice.
 
 ## Integrations across the operation
 
@@ -42,9 +42,9 @@ Custom integration work connects these systems so data moves automatically and c
 
 ## Building distribution software
 
-You do not have to replace everything at once, and you should not try to. The pragmatic path is to identify the parts of your operation where the packaged system hurts most, and build custom software there while keeping what works. Some distributors keep a solid financial ERP and build a custom order, pricing, and fulfillment layer around it. Others build a portal and EDI layer first to relieve the most acute pressure.
+You do not have to replace everything at once, and you should not try to. Large replatforming is where projects go to die: Standish Group CHAOS research has found that only [about 31% of software projects succeed, with roughly half challenged and the rest failing](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), and large projects fare far worse than small ones. The pragmatic path is to identify the parts of your operation where the packaged system hurts most, and build custom software there while keeping what works. Some distributors keep a solid financial ERP and build a custom order, pricing, and fulfillment layer around it. Others build a portal and EDI layer first to relieve the most acute pressure.
 
-A phased build reduces risk and gets value into the business early. A capable partner works in short cycles with a working demo each sprint, so you are steering with your own eyes rather than waiting a year for a big reveal. You should also own the result outright: the source code, the pipeline, and the roadmap, so the software grows with the business instead of locking you to a vendor. If you want to weigh building against buying more packaged add-ons, our [build vs buy software framework](/blog/build-vs-buy-software-decision) lays out the decision.
+A phased build reduces risk and gets value into the business early. The broader market has been moving this way for a reason: Grand View Research valued custom software development at [$43.16 billion in 2024 and projects $146.18 billion by 2030](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report), a 22.6% annual clip driven largely by operations that packaged tools cannot fit. A capable partner works in short cycles with a working demo each sprint, so you are steering with your own eyes rather than waiting a year for a big reveal. You should also own the result outright: the source code, the pipeline, and the roadmap, so the software grows with the business instead of locking you to a vendor. If you want to weigh building against buying more packaged add-ons, our [build vs buy software framework](/blog/build-vs-buy-software-decision) lays out the decision.
 
 It also helps to sequence the work around your busy season. Distribution has cycles, and cutting over a new order or fulfillment system in the middle of your peak is asking for trouble. Plan launches for slower periods, run the new system alongside the old one where you can, and migrate data with enough dry runs that go-live is boring. The measure of a good distribution build is not how impressive the demo is. It is whether orders ship correctly on the first Monday after cutover.
 

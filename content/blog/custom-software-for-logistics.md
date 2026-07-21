@@ -8,6 +8,8 @@ tags: ["logistics software development", "logistics tech", "freight software"]
 
 Logistics runs on a patchwork of systems that were never designed to work together: a TMS here, a WMS there, carrier portals, EDI feeds, spreadsheets filling the gaps, and email holding it all together. Packaged tools cover the common cases, but the margin in logistics lives in the details each company handles differently. Custom software is how the better operators turn their specific way of moving freight into an advantage instead of a workaround.
 
+The appetite for building rather than renting is growing fast across the economy. The global custom software development market was worth about [$43.16 billion in 2024 and is forecast to reach $146.18 billion by 2030](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report), a 22.6 percent compound annual growth rate, with enterprise software the largest segment at over 60 percent. Logistics is a prime example of why: the operational core of a freight business rarely matches what a generic product assumes.
+
 ## Where off-the-shelf logistics tools fall short
 
 Packaged logistics platforms are built for the average customer, and no logistics operation is average. The gaps show up fast. Your billing rules do not fit the vendor's model, so someone reconciles invoices by hand. Your carrier mix includes partners the tool does not support, so those moves live outside the system. Your customers want visibility in a format the standard portal does not offer.
@@ -35,13 +37,13 @@ Warehouse management governs receiving, putaway, picking, and inventory accuracy
 
 ## Integrations with carriers and ERPs
 
-A logistics platform is only as useful as the systems it connects. Carrier integrations span modern REST APIs and decades-old EDI transaction sets, and a real platform has to speak both fluently, handling the acknowledgments, status messages, and retries that keep freight data current. Getting this layer right is most of the engineering work, and it is where brittle connectors quietly cause the most operational pain.
+A logistics platform is only as useful as the systems it connects. Carrier integrations span modern REST APIs and decades-old EDI transaction sets, and a real platform has to speak both fluently. In North American freight that means the ANSI X12 standards that still move most of the industry's data: the 204 load tender, the 214 shipment status message, the 210 freight invoice, the 990 response to a load tender, and the 997 functional acknowledgment that confirms each exchange was received. Getting this layer right, including the acknowledgments, status messages, and retries that keep freight data current, is most of the engineering work, and it is where brittle connectors quietly cause the most operational pain.
 
 On the back end, the platform has to reconcile with your ERP so that orders, inventory, and financials stay in agreement. For US operators that usually means NetSuite, SAP, or Microsoft Dynamics, each with its own data model and rate limits. The hard part is not moving a record once; it is keeping two systems truthful about the same shipment in real time. Kadmoon builds on a modern stack of React, Next.js, Node.js, Python, TypeScript, and PostgreSQL, which is well suited to the API and streaming work these integrations demand.
 
 ## Compliance and customs touchpoints
 
-Anything crossing a US border adds a compliance dimension that generic logistics tools handle thinly or not at all. Import and export moves touch classification, valuation, denied-party screening, and CBP filing, and mistakes here carry legal and financial weight, not just operational friction. Software that automates these checks and keeps clean audit trails turns compliance from a bottleneck into a background process.
+Anything crossing a US border adds a compliance dimension that generic logistics tools handle thinly or not at all. Import and export moves touch classification, valuation, denied-party screening, and CBP filing through the Automated Commercial Environment (ACE), the single window through which nearly all US import and export data now flows. Mistakes here carry legal and financial weight, not just operational friction. Software that automates these checks and keeps clean audit trails turns compliance from a bottleneck into a background process.
 
 This is a domain where deep US trade knowledge matters, since ACE and CBP integration, landed cost, and recordkeeping have real regulatory specifics behind them. Kadmoon's flagship vertical is trade and supply chain, spanning US Customs, ACE, import and export, and landed cost, so the customs touchpoints are treated as first-class parts of the platform rather than an afterthought bolted on at the end.
 

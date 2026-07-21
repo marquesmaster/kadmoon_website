@@ -1,12 +1,14 @@
 ---
 title: "Agile software development explained for business leaders"
-description: "Agile software development explained for business leaders: what agile really means, how sprints and demos work, agile vs waterfall, and your role as the client."
+description: "Agile software development explained for business leaders: what agile really means, how sprints and demos work, agile vs waterfall success rates, and your role as client."
 category: "Process & Delivery"
 primaryKeyword: "agile software development"
-tags: ["agile explained", "scrum vs waterfall", "agile for clients"]
+tags: ["agile explained", "scrum vs waterfall", "agile for clients", "agile success rates"]
 ---
 
-Agile gets talked about as a philosophy, which makes it sound softer and vaguer than it is. For a business leader buying software, agile is simply a way of working that trades a fixed long-term plan for short, frequent cycles of building and showing real software. The point is to reduce the risk that you spend months and a large budget on something that turns out to be wrong. Here is what it actually means for you, without the ceremony.
+Agile gets talked about as a philosophy, which makes it sound softer and vaguer than it is. For a business leader buying software, agile is simply a way of working that trades a fixed long-term plan for short, frequent cycles of building and showing real software. The point is to reduce the risk that you spend months and a large budget on something that turns out to be wrong.
+
+That risk is well documented. In a McKinsey and University of Oxford study of more than 5,400 IT projects, [large IT projects ran 45% over budget and 7% over schedule while delivering 56% less value than predicted](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value), and 17% went so badly they threatened the company's existence. Agile exists to catch those failures in weeks rather than at the end. It has become the default for a reason: the 17th Annual State of Agile Report found [71% of respondents use agile in their software development lifecycle](https://2288549.fs1.hubspotusercontent-na1.net/hubfs/2288549/RE-SA-17th-Annual-State-Of-Agile-Report.pdf), with Scrum the most common framework at 63% and 58% of teams running pure Scrum rather than a blend. Here is what it actually means for you, without the ceremony.
 
 ## What agile actually means
 
@@ -26,7 +28,9 @@ That demo is the part leaders should care about most. Kadmoon runs on two-week s
 
 Waterfall does the opposite: it defines the full scope, plans the whole timeline, and builds to that plan in sequence. It is not wrong. For projects where the requirements are genuinely fixed and well understood, waterfall's predictability is an advantage, and its detailed up-front plan makes the total cost easier to fix in advance.
 
-The trade-off is what happens when reality diverges from the plan, which on software it usually does. Waterfall handles change through formal change orders, which are slow and often contentious. Agile absorbs change as a normal part of the process, which is more flexible but makes a single fixed final price harder to promise. The honest summary:
+The trade-off is what happens when reality diverges from the plan, which on software it usually does. The Standish Group's CHAOS research puts numbers on the gap. In the [2020 CHAOS data](https://medium.com/leadership-and-agility/agile-project-success-rates-are-2x-higher-than-traditional-projects-376a05e590d4), agile projects succeeded 42% of the time versus 13% for waterfall, and only 11% of agile projects failed outright compared with 59% of waterfall ones. The gap widens on bigger work: on large projects, [agile succeeded 18% of the time against waterfall's 3%](https://www.mountaingoatsoftware.com/blog/agile-succeeds-three-times-more-often-than-waterfall). Those figures are worth holding next to the McKinsey overrun numbers, because they describe the same disease and the same cure.
+
+Waterfall handles change through formal change orders, which are slow and often contentious. Agile absorbs change as a normal part of the process, which is more flexible but makes a single fixed final price harder to promise. The honest summary:
 
 - Choose waterfall when scope is stable, well understood, and unlikely to change.
 - Choose agile when there is real uncertainty about the right solution, which describes most custom software.
@@ -42,7 +46,7 @@ In practice, one person on your side usually acts as the product owner: the deci
 
 ## Handling scope and change
 
-The most common misunderstanding is that agile means unlimited scope. It does not. Each sprint has a fixed capacity, so adding something new means something else moves down the backlog. That is a feature, not a flaw: it forces explicit prioritization instead of letting scope swell invisibly until the budget is gone.
+The most common misunderstanding is that agile means unlimited scope. It does not. Each sprint has a fixed capacity, so adding something new means something else moves down the backlog. That is a feature, not a flaw: it forces explicit prioritization instead of letting scope swell invisibly until the budget is gone. The 45% budget overrun McKinsey measured is largely that invisible swell, which fixed-length sprints make visible early.
 
 Good teams make this visible. When you request a change mid-project, a healthy response is to show you what it displaces and let you decide the trade-off, rather than silently absorbing it or silently dropping it. Kadmoon writes measurable acceptance criteria into the contract, which keeps "done" concrete even as priorities shift, so change is managed transparently rather than argued about after the fact. The full mechanics look a lot like the [custom software development process](/blog/custom-software-development-process) applied sprint by sprint.
 
@@ -50,4 +54,4 @@ Good teams make this visible. When you request a change mid-project, a healthy r
 
 Agile shines when the destination is not perfectly known at the start: new products, custom platforms, anything where you expect to learn from users and adjust. It thrives on an engaged client, a stable team, and short feedback loops, and it struggles when the client cannot make time to participate or when the vendor uses "agile" as cover for having no plan at all.
 
-For most custom software, the uncertainty is real and agile is the safer bet, precisely because it surfaces problems in weeks instead of at the end. If you want to see how a disciplined agile team runs a real engagement, look at [how to choose a software partner](/#how-to-choose) or [start a project](/#contact) and watch the first demo land two weeks in.
+For most custom software, the uncertainty is real and the success-rate gap is large enough that agile is the safer bet, precisely because it surfaces problems in weeks instead of at the end. If you want to see how a disciplined agile team runs a real engagement, look at [how to choose a software partner](/#how-to-choose) or [start a project](/#contact) and watch the first demo land two weeks in.
