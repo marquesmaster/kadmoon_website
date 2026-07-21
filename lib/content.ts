@@ -218,7 +218,7 @@ export const work = {
     {
       tag: 'Public sector · at scale',
       title: 'Enterprise delivery at scale',
-      body: '16 stalled public-sector projects delivered in 11 months, with 0% turnover across the engagement. AI, data, and management systems, shipped by a senior in-house team.',
+      body: '16 stalled public-sector projects delivered in 11 months, unlocking over $100M in contracts, with 0% turnover across the engagement. AI, data, and management systems, shipped by a senior in-house team.',
     },
   ],
 };
