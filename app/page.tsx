@@ -11,7 +11,6 @@ import { BlogPreview } from '@/components/sections/BlogPreview';
 import { Faq } from '@/components/sections/Faq';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
-import { FloatingContact } from '@/components/FloatingContact';
 
 export default function HomePage() {
   return (
@@ -31,7 +30,6 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
-      <FloatingContact />
     </>
   );
 }

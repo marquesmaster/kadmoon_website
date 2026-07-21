@@ -4,6 +4,7 @@ import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/lib/site';
 import { JsonLd } from '@/components/JsonLd';
+import { FloatingContact } from '@/components/FloatingContact';
 
 const display = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -98,6 +99,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         {children}
+
+        <FloatingContact />
 
         {siteConfig.gaId && (
           <>
