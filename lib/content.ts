@@ -12,12 +12,12 @@ export const nav = {
   wordmark: 'Kadmoon',
   suffix: 'INC.',
   links: [
-    { label: 'Capabilities', href: '/#capabilities' },
-    { label: 'Why Kadmoon', href: '/#why' },
+    { label: 'Services', href: '/services' },
+    { label: 'Industries', href: '/industries' },
     { label: 'How to Choose', href: '/#how-to-choose' },
-    { label: 'Process', href: '/#process' },
-    { label: 'Industries', href: '/#industries' },
+    { label: 'Process', href: '/process' },
     { label: 'Blog', href: '/blog' },
+    { label: 'About', href: '/about' },
   ],
   cta: { label: 'Start a project', href: '/#contact' },
 };
@@ -338,18 +338,18 @@ export const footer = {
     {
       heading: 'Company',
       links: [
-        { label: 'Capabilities', href: '/#capabilities' },
-        { label: 'Why Kadmoon', href: '/#why' },
-        { label: 'How to Choose', href: '/#how-to-choose' },
-        { label: 'Process', href: '/#process' },
+        { label: 'Services', href: '/services' },
+        { label: 'Industries', href: '/industries' },
+        { label: 'Process', href: '/process' },
+        { label: 'About', href: '/about' },
       ],
     },
     {
       heading: 'Explore',
       links: [
         { label: 'Blog', href: '/blog' },
-        { label: 'Work', href: '/#work' },
-        { label: 'Industries', href: '/#industries' },
+        { label: 'How to Choose', href: '/#how-to-choose' },
+        { label: 'Locations', href: '/custom-software-development' },
         { label: 'Start a project', href: '/#contact' },
       ],
     },
@@ -423,3 +423,231 @@ export const comparison = {
 export const credibility = {
   text: 'Kadmoon is the US engineering arm of an established software house. The metrics and cases here come from our team’s delivered work, framed honestly; the first US-specific case joins them as it lands.',
 };
+
+// ---------------------------------------------------------------------------
+// Dedicated pages: Services and Industries (deep content)
+// ---------------------------------------------------------------------------
+
+export type ServicePage = {
+  slug: string;
+  title: string;
+  tagline: string;
+  intro: string;
+  includes: string[];
+  outcomes: string[];
+  blogCategory: string;
+};
+
+export const services: ServicePage[] = [
+  {
+    slug: 'enterprise-systems',
+    title: 'Enterprise Systems',
+    tagline: 'ERPs, CRMs, and operational platforms built around your process.',
+    intro:
+      'When your operation runs on spreadsheets, disconnected tools, or an ERP that fights the way you actually work, a bespoke system pays for itself. We design the modules around your real workflow and spec each one with measurable acceptance criteria.',
+    includes: [
+      'Custom ERP and CRM modules mapped to your process',
+      'Role-based access control and audit trails',
+      'Reporting, dashboards, and export pipelines',
+      'Integration with your existing systems and data',
+      'Migration from legacy tools with no data loss',
+    ],
+    outcomes: [
+      'One system of record instead of scattered tools',
+      'Workflows that match how your team actually works',
+      'Full ownership of the code and infrastructure',
+    ],
+    blogCategory: 'Custom Software',
+  },
+  {
+    slug: 'saas-platforms',
+    title: 'SaaS Platforms',
+    tagline: 'Multi-tenant products engineered to scale from 10 to 10,000 customers.',
+    intro:
+      'Turning an idea or an internal tool into a product means solving multi-tenancy, billing, onboarding, and observability without painting yourself into an architectural corner. We build SaaS that scales without a rewrite.',
+    includes: [
+      'Multi-tenant architecture with tenant isolation',
+      'Recurring billing and subscription management',
+      'White-label onboarding and admin tooling',
+      'Analytics dashboards and documented public APIs',
+      'Security and compliance groundwork (SOC 2 ready)',
+    ],
+    outcomes: [
+      'A product that scales without re-platforming',
+      'Self-serve onboarding and billing',
+      'A public API your customers can build on',
+    ],
+    blogCategory: 'SaaS Development',
+  },
+  {
+    slug: 'mobile-apps',
+    title: 'Mobile Apps',
+    tagline: 'Native and cross-platform apps with product-grade UX.',
+    intro:
+      'Field teams, customers, and operators expect apps that work offline, sync cleanly, and talk directly to your backend. We build for iOS and Android with React Native or native where it matters.',
+    includes: [
+      'Native and React Native apps for iOS and Android',
+      'Offline-first data and background sync',
+      'Direct integration with your backend and APIs',
+      'Push notifications and device features',
+      'App Store and Play Store release management',
+    ],
+    outcomes: [
+      'One codebase serving both platforms when it fits',
+      'Apps that keep working with poor connectivity',
+      'A release pipeline you control',
+    ],
+    blogCategory: 'Mobile Apps',
+  },
+  {
+    slug: 'integrations-and-apis',
+    title: 'Integrations & APIs',
+    tagline: 'Resilient middleware that connects your entire ecosystem.',
+    intro:
+      'Most enterprise pain lives in the seams between systems. We build the connective tissue: middleware with retry, dead-letter queues, and full observability so integrations fail loudly and recover cleanly.',
+    includes: [
+      'Integration with legacy ERPs and third-party APIs',
+      'US Customs / ACE, payment gateways, and marketplaces',
+      'REST and SOAP adapters with schema validation',
+      'Retry, dead-letter, and idempotency handling',
+      'End-to-end monitoring and alerting',
+    ],
+    outcomes: [
+      'Systems that stay in sync automatically',
+      'Failures that are visible and recoverable',
+      'One integration layer instead of brittle scripts',
+    ],
+    blogCategory: 'Integrations & APIs',
+  },
+  {
+    slug: 'data-and-ai',
+    title: 'Data & AI',
+    tagline: 'Pipelines, dashboards, and models engineered into the system.',
+    intro:
+      'AI that ships value is engineered into the architecture, not bolted on at the end. We build the data foundation first, then the models and LLM features that ride on top of clean, governed data.',
+    includes: [
+      'Ingestion pipelines and data warehouses',
+      'BI dashboards and self-serve reporting',
+      'ML models for forecasting and classification',
+      'LLMs via RAG for search and report generation',
+      'Anomaly detection and decision automation',
+    ],
+    outcomes: [
+      'Decisions backed by governed, current data',
+      'AI features tied to real workflows',
+      'Automation that removes manual review',
+    ],
+    blogCategory: 'Data & AI',
+  },
+  {
+    slug: 'legacy-modernization',
+    title: 'Legacy Modernization',
+    tagline: 'Migrate off aging stacks without a risky big-bang rewrite.',
+    intro:
+      'Legacy systems run the business until they cannot. We modernize incrementally: strangle the monolith, migrate data, and eliminate the technical debt that slows every release, without stopping operations.',
+    includes: [
+      'Migration of COBOL, Delphi, VB6, and legacy .NET/PHP',
+      'Monolith-to-microservices refactoring',
+      'Cloud migration and infrastructure as code',
+      'Incremental cutover with the strangler pattern',
+      'Documentation and knowledge transfer',
+    ],
+    outcomes: [
+      'A modern stack without a big-bang cutover',
+      'Lower maintenance cost and faster releases',
+      'Critical technical debt retired for good',
+    ],
+    blogCategory: 'Legacy Modernization',
+  },
+];
+
+export type IndustryPage = {
+  slug: string;
+  name: string;
+  flagship?: boolean;
+  intro: string;
+  systems: string[];
+  integrations: string[];
+  keyword: string;
+};
+
+export const industryPages: IndustryPage[] = [
+  {
+    slug: 'trade-and-supply-chain',
+    name: 'Trade & Supply Chain',
+    flagship: true,
+    intro:
+      'Our deepest domain. We build customs and trade operations, import/export, shipment tracking, landed cost, and end-to-end supply chain visibility into one system, integrated with US Customs and ACE.',
+    systems: [
+      'Customs entry and brokerage software',
+      'Landed cost and duty calculation',
+      'Shipment tracking and supply chain visibility',
+      'Trade compliance and denied-party screening',
+    ],
+    integrations: ['US Customs / ACE / ABI', 'Freight forwarders and carriers', 'ERPs and TMS/WMS'],
+    keyword: 'trade',
+  },
+  {
+    slug: 'logistics',
+    name: 'Logistics',
+    intro:
+      'Fleet, routing, warehouse, and transport operations that need real-time data and tight integration. We build the systems that move goods and the visibility layer on top of them.',
+    systems: ['Fleet and route management', 'Real-time tracking', 'Warehouse and transport operations', 'Drayage and 3PL software'],
+    integrations: ['Telematics and GPS', 'TMS and WMS', 'EDI with partners'],
+    keyword: 'logistics',
+  },
+  {
+    slug: 'financial-services',
+    name: 'Financial Services',
+    intro:
+      'Compliance-heavy platforms where reconciliation, reporting, and audit trails have to be right. We build analytics, forecasting, and risk systems for regulated finance teams.',
+    systems: ['Reconciliation and reporting', 'Risk and forecasting', 'Compliance workflows', 'Analytics platforms'],
+    integrations: ['Core banking and ledgers', 'Payment gateways', 'Data warehouses'],
+    keyword: 'financial',
+  },
+  {
+    slug: 'healthcare',
+    name: 'Healthcare',
+    intro:
+      'Clinical and operational systems for regulated environments. We build records, workflows, and integrations that hold up to HIPAA and the realities of care delivery.',
+    systems: ['Clinical and records platforms', 'Operational and scheduling systems', 'Patient and staff portals', 'Analytics'],
+    integrations: ['EHR/EMR systems', 'HL7 / FHIR', 'Billing and claims'],
+    keyword: 'healthcare',
+  },
+  {
+    slug: 'retail',
+    name: 'Retail',
+    intro:
+      'POS, retail ERP, and inventory that actually talk to each other. We build the connective tissue and the systems on top so stores and e-commerce run on one source of truth.',
+    systems: ['POS and retail ERP', 'Integrated inventory management', 'E-commerce integration', 'Loyalty and analytics'],
+    integrations: ['Payment processors', 'Marketplaces', 'ERPs and 3PLs'],
+    keyword: 'retail',
+  },
+  {
+    slug: 'manufacturing',
+    name: 'Manufacturing',
+    intro:
+      'Production, inventory, and floor operations built for the way the plant actually runs, not generic ERP bent to fit. We connect the floor to the office.',
+    systems: ['Production and MES', 'Inventory and operations', 'Quality and traceability', 'Floor dashboards'],
+    integrations: ['PLCs and OPC-UA / MQTT', 'ERP systems', 'IoT and sensors'],
+    keyword: 'manufacturing',
+  },
+  {
+    slug: 'education',
+    name: 'Education',
+    intro:
+      'School and organization management platforms, LMS, and portals for parents and staff. We build the systems that run programs and keep everyone informed.',
+    systems: ['School/org management', 'Learning management (LMS)', 'Parent and staff portals', 'Reporting'],
+    integrations: ['SIS systems', 'Payment and billing', 'SSO and identity'],
+    keyword: 'education',
+  },
+  {
+    slug: 'government-and-enterprise',
+    name: 'Government & Enterprise',
+    intro:
+      'Transparency portals, digital transformation, and analytics at scale, delivered on a schedule with everything documented. That is how we work by default.',
+    systems: ['Transparency and public portals', 'Digital transformation platforms', 'Analytics at scale', 'Management systems'],
+    integrations: ['Legacy government systems', 'Identity and access', 'Data platforms'],
+    keyword: 'government',
+  },
+];
