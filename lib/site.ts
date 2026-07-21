@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: 'Kadmoon, Inc.',
   shortName: 'Kadmoon',
   url: 'https://kadmoon.com',
-  email: 'hello@kadmoon.com',
+  email: 'comercial@kadmoon.com',
   city: 'Austin',
   region: 'Texas',
   regionCode: 'TX',

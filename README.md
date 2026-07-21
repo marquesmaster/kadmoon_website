@@ -62,16 +62,16 @@ as it lands.
 
 ## Contact form
 
-The form (`components/sections/Contact.tsx`) works with no backend:
+The form posts to `/api/contact` (`app/api/contact/route.ts`), which:
 
-- Set `NEXT_PUBLIC_CONTACT_ENDPOINT` to a form service (Formspree, Basin,
-  Web3Forms) that accepts a JSON POST, and submissions go there.
-- Leave it unset and the form opens the visitor's mail client prefilled to
-  `hello@kadmoon.com`.
-
-A honeypot field filters basic bots.
+- validates input with zod,
+- enforces a honeypot and a timing trap,
+- rate limits to 5 requests / 10 min per IP (hashed),
+- stores the lead in Postgres via Prisma (`prisma/schema.prisma`),
+- optionally emails the lead if SMTP env is configured (`lib/mailer.ts`).
 
 ## Deploy
 
-Push to a Vercel project with the Next.js framework preset. No build config
-needed beyond `vercel.json`. Point the `kadmoon.com` domain at the project.
+Self-hosted on a VPS with Docker Compose (app + dedicated Postgres) behind
+nginx with Let's Encrypt TLS. See `DEPLOY.md` for the full runbook and the
+required `.env` values.

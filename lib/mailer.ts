@@ -22,7 +22,7 @@ export async function sendLeadEmail(lead: {
 
   const port = Number(process.env.SMTP_PORT || 587);
   const secure = (process.env.SMTP_SECURE || (port === 465 ? 'true' : 'false')) === 'true';
-  const to = process.env.CONTACT_TO || 'hello@kadmoon.com';
+  const to = process.env.CONTACT_TO || 'comercial@kadmoon.com';
   const from = process.env.CONTACT_FROM || `Kadmoon Website <${user}>`;
 
   const transporter = nodemailer.createTransport({ host, port, secure, auth: { user, pass } });
