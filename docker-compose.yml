@@ -12,6 +12,11 @@ services:
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
+      # Docker auto-sets HOSTNAME to the container ID, which the Next standalone
+      # server would otherwise bind to. Force it to 0.0.0.0 so the published
+      # port actually reaches the app.
+      - HOSTNAME=0.0.0.0
+      - PORT=3000
       # Optional: a form-service endpoint for the contact form. If unset the
       # form falls back to a mailto: to hello@kadmoon.com.
       # - NEXT_PUBLIC_CONTACT_ENDPOINT=https://formspree.io/f/xxxx
