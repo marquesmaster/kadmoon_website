@@ -27,9 +27,6 @@ export function Work() {
                 {c.title}
               </h3>
               <p className="mt-3 flex-1 text-[15px] leading-relaxed text-ink-2">{c.body}</p>
-              <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-accent">
-                {c.status}
-              </span>
             </div>
           </Reveal>
         ))}

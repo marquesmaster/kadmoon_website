@@ -21,8 +21,8 @@ export function StatsBand() {
             </Reveal>
           ))}
         </dl>
-        <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.12em] text-white/35">
-          Placeholder metrics · to be confirmed
+        <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.12em] text-white/40">
+          Track record delivered by our engineering team
         </p>
       </div>
     </section>

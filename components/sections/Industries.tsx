@@ -43,19 +43,9 @@ export function Industries() {
             >
               {item.body}
             </p>
-            <span
-              className={`mt-5 font-mono text-[11px] uppercase tracking-[0.1em] ${
-                item.flagship ? 'text-white/50' : 'text-ink-3'
-              }`}
-            >
-              {item.count}
-            </span>
           </Reveal>
         ))}
       </div>
-      <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-3">
-        Project counts are placeholders · to be confirmed
-      </p>
     </Section>
   );
 }

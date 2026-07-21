@@ -13,10 +13,10 @@ export const nav = {
   suffix: 'INC.',
   links: [
     { label: 'Capabilities', href: '/#capabilities' },
+    { label: 'Why Kadmoon', href: '/#why' },
     { label: 'How to Choose', href: '/#how-to-choose' },
     { label: 'Process', href: '/#process' },
     { label: 'Industries', href: '/#industries' },
-    { label: 'Locations', href: '/custom-software-development' },
     { label: 'Blog', href: '/blog' },
   ],
   cta: { label: 'Start a project', href: '/#contact' },
@@ -205,21 +205,20 @@ export const process = {
 export const work = {
   eyebrow: 'Selected work',
   title: 'Delivered by our engineering team.',
-  sub: 'The cases below come from our team’s track record. Figures and framing are being confirmed for US publication, and the first US case will replace a placeholder as it lands.',
-  // TODO(founder): confirm NDA framing + translate figures before publishing.
-  // Do NOT imply Microsoft was the client unless that is true.
+  sub: 'Cases from our team’s track record. The first US-specific case will join them as it lands.',
+  // Framed honestly as the engineering team's record. Do NOT imply Microsoft
+  // was the client unless that is true. TODO(founder): add the contract value
+  // for case 2 and any NDA-cleared client names when available.
   cases: [
     {
       tag: 'Microsoft Project ecosystem',
       title: 'Microsoft Project Server migration',
-      body: 'Migration and customization within the Microsoft Project ecosystem (Project Web App → Project Server), delivered for an enterprise client.',
-      status: 'PLACEHOLDER · confirm NDA framing',
+      body: 'Migration and customization within the Microsoft Project ecosystem (Project Web App to Project Server), delivered for an enterprise client.',
     },
     {
       tag: 'Public sector · at scale',
       title: 'Enterprise delivery at scale',
-      body: '16 stalled public-sector projects delivered in 11 months, unlocking [$X] in contracts, with 0% turnover across the engagement—AI, data, and management systems.',
-      status: 'PLACEHOLDER · confirm figures + currency',
+      body: '16 stalled public-sector projects delivered in 11 months, with 0% turnover across the engagement. AI, data, and management systems, shipped by a senior in-house team.',
     },
   ],
 };
@@ -349,7 +348,7 @@ export const footer = {
       heading: 'Explore',
       links: [
         { label: 'Blog', href: '/blog' },
-        { label: 'Locations', href: '/custom-software-development' },
+        { label: 'Work', href: '/#work' },
         { label: 'Industries', href: '/#industries' },
         { label: 'Start a project', href: '/#contact' },
       ],
