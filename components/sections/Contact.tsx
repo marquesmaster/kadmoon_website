@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { contact } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 import { Eyebrow } from '../Eyebrow';
@@ -9,6 +9,14 @@ type Status = 'idle' | 'sending' | 'sent' | 'error';
 
 export function Contact() {
   const [status, setStatus] = useState<Status>('idle');
+  // Timing trap: record when the form became interactive. The API rejects
+  // submissions that arrive implausibly fast (bots).
+  const startedRef = useRef<number>(0);
+  useEffect(() => {
+    startedRef.current = Date.now();
+  }, []);
+
+  const [error, setError] = useState('');
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -16,40 +24,31 @@ export function Contact() {
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
 
     // Honeypot: bots fill hidden fields; humans leave them empty.
-    if (data.company_website) return;
-
-    // If a form-service endpoint is configured, POST the payload there.
-    if (siteConfig.contactEndpoint) {
-      setStatus('sending');
-      try {
-        const res = await fetch(siteConfig.contactEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(data),
-        });
-        if (!res.ok) throw new Error('Request failed');
-        setStatus('sent');
-        form.reset();
-      } catch {
-        setStatus('error');
-      }
+    if (data.company_website) {
+      setStatus('sent'); // pretend success, drop silently
       return;
     }
 
-    // Fallback with no backend: open the visitor's mail client, prefilled.
-    const subject = `Project inquiry — ${data.company || data.name || 'New lead'}`;
-    const body = [
-      `Name: ${data.name || ''}`,
-      `Company: ${data.company || ''}`,
-      `Company size: ${data.size || ''}`,
-      `What you need: ${data.need || ''}`,
-      '',
-      `${data.message || ''}`,
-    ].join('\n');
-    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-    setStatus('sent');
+    setStatus('sending');
+    setError('');
+    try {
+      const res = await fetch(siteConfig.contactApi, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ ...data, startedAt: startedRef.current }),
+      });
+      if (res.status === 429) {
+        setError('Too many requests. Please wait a moment and try again.');
+        setStatus('error');
+        return;
+      }
+      if (!res.ok) throw new Error('Request failed');
+      setStatus('sent');
+      form.reset();
+    } catch {
+      setError(`Something went wrong. Email us directly at ${siteConfig.email}.`);
+      setStatus('error');
+    }
   }
 
   const fieldClass =
@@ -186,10 +185,8 @@ export function Contact() {
                   <span aria-hidden>→</span>
                 </button>
 
-                {status === 'error' && (
-                  <p className="text-sm text-accent">
-                    Something went wrong. Email us directly at {siteConfig.email}.
-                  </p>
+                {status === 'error' && error && (
+                  <p className="text-sm text-accent">{error}</p>
                 )}
               </form>
             )}

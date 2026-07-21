@@ -45,6 +45,46 @@ export function JsonLd() {
       areaServed: siteConfig.countryCode,
       availableLanguage: 'English',
     },
+    sameAs: Object.values(siteConfig.socials).filter(Boolean),
+  };
+
+  const localBusiness = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': `${siteConfig.url}/#business`,
+    name: siteConfig.legalName,
+    url: siteConfig.url,
+    email: siteConfig.email,
+    image: `${siteConfig.url}/opengraph-image`,
+    description: siteConfig.description,
+    priceRange: '$$$',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: siteConfig.city,
+      addressRegion: siteConfig.regionCode,
+      addressCountry: siteConfig.countryCode,
+    },
+    areaServed: { '@type': 'Country', name: siteConfig.country },
+    knowsLanguage: 'en-US',
+  };
+
+  const website = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${siteConfig.url}/#website`,
+    url: siteConfig.url,
+    name: siteConfig.name,
+    description: siteConfig.description,
+    publisher: { '@id': `${siteConfig.url}/#business` },
+    inLanguage: 'en-US',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   };
 
   const faqPage = {
@@ -62,6 +102,14 @@ export function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
       />
       <script
         type="application/ld+json"

@@ -1,36 +1,41 @@
 # syntax=docker/dockerfile:1
 
-# ---- deps: install production + build dependencies ----
-FROM node:20-alpine AS deps
+# ---- deps ----
+FROM node:20-slim AS deps
 WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
 COPY package.json package-lock.json ./
+COPY prisma ./prisma
 RUN npm ci
 
-# ---- builder: build the Next.js standalone output ----
-FROM node:20-alpine AS builder
+# ---- builder ----
+FROM node:20-slim AS builder
 WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends openssl \
+  && rm -rf /var/lib/apt/lists/*
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN npm run build
+# DATABASE_URL is not needed to build (all pages are static/SSG); a dummy keeps
+# Prisma client generation happy.
+ENV DATABASE_URL=postgresql://user:pass@localhost:5432/db
+RUN npx prisma generate && npm run build
 
-# ---- runner: minimal image that serves the app ----
-FROM node:20-alpine AS runner
+# ---- runner ----
+FROM node:20-slim AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
-
-RUN addgroup --system --gid 1001 nodejs \
-  && adduser --system --uid 1001 nextjs
-
-# Standalone server + static assets + public files
+RUN apt-get update && apt-get install -y --no-install-recommends openssl \
+  && rm -rf /var/lib/apt/lists/*
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/next.config.js ./next.config.js
+COPY --from=builder /app/prisma ./prisma
 
-USER nextjs
 EXPOSE 3000
-ENV PORT=3000
-ENV HOSTNAME=0.0.0.0
-
-CMD ["node", "server.js"]
+# Sync the schema to the database (idempotent, non-destructive) then start.
+CMD ["sh", "-c", "npx prisma db push --skip-generate && ./node_modules/.bin/next start -H 0.0.0.0 -p 3000"]

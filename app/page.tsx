@@ -7,9 +7,11 @@ import { HowToChoose } from '@/components/sections/HowToChoose';
 import { Process } from '@/components/sections/Process';
 import { Work } from '@/components/sections/Work';
 import { Industries } from '@/components/sections/Industries';
+import { BlogPreview } from '@/components/sections/BlogPreview';
 import { Faq } from '@/components/sections/Faq';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
+import { FloatingContact } from '@/components/FloatingContact';
 
 export default function HomePage() {
   return (
@@ -24,10 +26,12 @@ export default function HomePage() {
         <Process />
         <Work />
         <Industries />
+        <BlogPreview />
         <Faq />
         <Contact />
       </main>
       <Footer />
+      <FloatingContact />
     </>
   );
 }

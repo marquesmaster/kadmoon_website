@@ -1,0 +1,25 @@
+generator client {
+  provider      = "prisma-client-js"
+  // Native for local dev; debian-openssl for the production Docker image.
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  company   String
+  size      String?
+  need      String?
+  message   String
+  // Light metadata for triage and abuse investigation. No precise tracking.
+  ipHash    String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}

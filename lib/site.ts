@@ -11,9 +11,10 @@ export const siteConfig = {
   countryCode: 'US',
   defaultTitle: 'Kadmoon — Custom Software Engineering Firm | Austin, TX',
   titleTemplate: '%s | Kadmoon',
+  // Kept to 120-160 chars, no em dashes (SEO + humanizer).
   description:
-    'Kadmoon builds bespoke enterprise systems, SaaS platforms, mobile apps, and AI—concept to production—with a senior in-house team. You own every line. Flagship practice: Trade & Supply Chain.',
-  ogImageAlt: 'Kadmoon, Inc. — custom software built for how your business actually runs.',
+    'Kadmoon builds bespoke enterprise systems, SaaS platforms, mobile apps, and AI, from concept to production, with a senior in-house team. You own every line.',
+  ogImageAlt: 'Kadmoon, Inc., custom software built for how your business actually runs.',
   keywords: [
     'custom software',
     'bespoke software',
@@ -23,10 +24,18 @@ export const siteConfig = {
     'trade and supply chain software',
     'Austin software company',
   ],
-  // Optional form-service endpoint. When set (NEXT_PUBLIC_CONTACT_ENDPOINT),
-  // the contact form POSTs the JSON payload there. Otherwise it falls back
-  // to a prefilled mailto to hello@kadmoon.com. No backend required.
-  contactEndpoint: process.env.NEXT_PUBLIC_CONTACT_ENDPOINT || '',
+  // The contact form posts to the site's own secure API route.
+  contactApi: '/api/contact',
+  // Optional analytics. Set NEXT_PUBLIC_GA_ID to a GA4 measurement id
+  // (e.g. G-XXXXXXX) to enable Google Analytics.
+  gaId: process.env.NEXT_PUBLIC_GA_ID || '',
+  // Social profiles. Fill these in as they go live; empty ones are not
+  // rendered. Adding them improves entity/SEO signals (sameAs in JSON-LD).
+  socials: {
+    linkedin: '',
+    x: '',
+    github: '',
+  } as Record<string, string>,
 };
 
 export type SiteConfig = typeof siteConfig;

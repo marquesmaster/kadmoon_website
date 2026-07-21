@@ -1,22 +1,47 @@
 services:
+  db:
+    image: postgres:16-alpine
+    container_name: kadmoon-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=kadmoon
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      - POSTGRES_DB=kadmoon
+    volumes:
+      - kadmoon-db-data:/var/lib/postgresql/data
+    # Not published to the host: only the app container (same network) reaches it.
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U kadmoon -d kadmoon']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   kadmoon:
     build: .
     image: kadmoon-website:latest
     container_name: kadmoon-website
     restart: unless-stopped
-    # Bind to localhost only. Nginx on the host reverse-proxies to this port,
-    # so the app is never exposed to the internet directly. Change 3005 if it
-    # is already taken by another site on the VPS.
+    depends_on:
+      db:
+        condition: service_healthy
+    # Bind to localhost only. Nginx on the host reverse-proxies to this port.
+    # Change 3005 if another site already uses it.
     ports:
       - "127.0.0.1:3005:3000"
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
-      # Docker auto-sets HOSTNAME to the container ID, which the Next standalone
-      # server would otherwise bind to. Force it to 0.0.0.0 so the published
-      # port actually reaches the app.
-      - HOSTNAME=0.0.0.0
-      - PORT=3000
-      # Optional: a form-service endpoint for the contact form. If unset the
-      # form falls back to a mailto: to hello@kadmoon.com.
-      # - NEXT_PUBLIC_CONTACT_ENDPOINT=https://formspree.io/f/xxxx
+      - DATABASE_URL=postgresql://kadmoon:${POSTGRES_PASSWORD}@db:5432/kadmoon?schema=public
+      # Salt for hashing lead IPs (set a random value in .env).
+      - LEAD_IP_SALT=${LEAD_IP_SALT:-change-me}
+      # Email notifications (fill these in .env to enable sending):
+      - SMTP_HOST=${SMTP_HOST:-}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USER=${SMTP_USER:-}
+      - SMTP_PASS=${SMTP_PASS:-}
+      - SMTP_SECURE=${SMTP_SECURE:-false}
+      - CONTACT_TO=${CONTACT_TO:-hello@kadmoon.com}
+      - CONTACT_FROM=${CONTACT_FROM:-}
+
+volumes:
+  kadmoon-db-data:
