@@ -1,0 +1,17 @@
+services:
+  kadmoon:
+    build: .
+    image: kadmoon-website:latest
+    container_name: kadmoon-website
+    restart: unless-stopped
+    # Bind to localhost only. Nginx on the host reverse-proxies to this port,
+    # so the app is never exposed to the internet directly. Change 3005 if it
+    # is already taken by another site on the VPS.
+    ports:
+      - "127.0.0.1:3005:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      # Optional: a form-service endpoint for the contact form. If unset the
+      # form falls back to a mailto: to hello@kadmoon.com.
+      # - NEXT_PUBLIC_CONTACT_ENDPOINT=https://formspree.io/f/xxxx
