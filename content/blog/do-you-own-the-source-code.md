@@ -20,7 +20,17 @@ That is why the contract does the real work. To move ownership from the firm to 
 
 Code you cannot access is code you do not really control. The repository is the obvious piece, but it is not the only one. To actually operate your software you need the CI/CD pipeline that builds and deploys it, the cloud accounts it runs on, the domain and DNS, third-party service keys, and the database credentials.
 
-A common trap is a firm that hosts everything under its own accounts and gives you a login rather than ownership. On the day you part ways, you discover the deployment pipeline, the monitoring, and the production environment all belong to them. The clean arrangement is that these assets live in accounts you own from the start, or transfer to you cleanly on delivery. At Kadmoon the repository, CI/CD, credentials, and runbook are yours on delivery, because holding them hostage is not a business model we are interested in.
+A common trap is a firm that hosts everything under its own accounts and gives you a login rather than ownership. On the day you part ways, you discover the deployment pipeline, the monitoring, and the production environment all belong to them. It helps to list the assets explicitly and decide, for each, who holds the keys:
+
+| Asset | Who should own it | Risk if the firm holds it |
+| --- | --- | --- |
+| Source repository | You | You cannot hire anyone else to change the code |
+| CI/CD pipeline | You | You cannot build or deploy without the firm |
+| Cloud accounts and infrastructure | You | Production lives on someone else's tenancy |
+| Domain, DNS, and TLS certs | You | The firm controls how customers reach you |
+| Third-party and database credentials | You (in your vault) | You cannot rotate keys or cut off access |
+
+The clean arrangement is that these assets live in accounts you own from the start, or transfer to you cleanly on delivery. At Kadmoon the repository, CI/CD, credentials, and runbook are yours on delivery, because holding them hostage is not a business model we are interested in.
 
 ## Licensed components inside your app
 
@@ -45,6 +55,8 @@ Ownership is settled in the agreement, so read those clauses before you sign. Gi
 - Transition assistance if the relationship ends, so you are not stranded mid-flight.
 
 If you are negotiating the broader agreement, our list of [custom software contract terms to negotiate](/blog/custom-software-contract-terms-to-negotiate) puts these in context with warranty, liability, and change-order terms.
+
+If for some reason you cannot hold the repository directly, a source-code escrow is the fallback. A neutral third party holds a current copy of the code and hands it to you if defined events happen, such as the firm going out of business or failing to support the software. Escrow is a weaker arrangement than owning the repo outright, because it only releases on trigger conditions and can go stale between deposits, but it is far better than having no path to the code at all. Treat it as a safety net for a bad relationship, not a substitute for the assignment and direct access you actually want.
 
 ## How to avoid vendor hostage situations
 

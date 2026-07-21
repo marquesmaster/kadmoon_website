@@ -18,6 +18,15 @@ Over time you move more slices across. The legacy system handles less and less u
 
 The obvious alternative, rewrite the whole thing and flip the switch, fails so reliably that it deserves explaining. The numbers back this up. The Standish Group's CHAOS research, which has tracked tens of thousands of IT projects, found that [large projects succeed only about 9% of the time](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), with the majority challenged and roughly a third canceled outright. Its earlier baseline was worse still: just 16.2% of projects delivered on time and on budget, and the projects that did survive at large firms shipped only 42% of their originally planned features. Size is the enemy, and a full rewrite is the largest project you can pick.
 
+The CHAOS project-size data makes the case for slicing plainly:
+
+| Project size | Success rate | Canceled | Notes |
+| --- | --- | --- | --- |
+| Small projects | around 70% to 90% | low | Estimates hold, scope stays manageable |
+| Large projects | around 9% | roughly 30% | Majority end up challenged or scrapped |
+
+A big-bang rewrite is the largest, riskiest bucket on that table by design. Breaking it into strangler slices moves each unit of work down into the high-success row.
+
 Several forces work against the big bang at once. A full rewrite takes a long time, and for that entire period you deliver no value while the business keeps needing changes to the old system. You end up maintaining two codebases and falling behind on both. Requirements drift while you build, so the target moves. And the cutover itself is a single catastrophic event: if anything goes wrong, and with a large system something always does, you roll back a year of work or push through a crisis.
 
 The legacy system also encodes years of accumulated business rules, many undocumented, some understood by no one still at the company. A rewrite has to rediscover all of them, and the ones it misses become production incidents on cutover day. Incremental replacement surfaces those rules one slice at a time, where they are manageable. For the wider set of options, see [how to modernize legacy software](/blog/how-to-modernize-legacy-software).
@@ -49,6 +58,8 @@ There are a few workable approaches:
 - Migrate data with the capability. When a slice moves, its data moves with it, and the facade routes reads and writes accordingly.
 
 Which fits depends on how entangled the data is. The key discipline is defining, for each piece of data, which system is the source of truth at each stage, so you never have two systems silently disagreeing about the same record.
+
+Change data capture is a practical tool here. Instead of asking two applications to write to two stores in lockstep, you let one system own the write and stream its committed changes to the other as a feed of events. That keeps the systems loosely coupled while they coexist, and it gives you an audit trail of what moved and when, which is invaluable when you are reconciling records during a migration that runs for months. Whatever mechanism you pick, write down the source-of-truth rule for each entity before you cut over the first slice, because discovering an ambiguity in production is how you end up with two customer records that disagree about a balance.
 
 ## Retiring the legacy system
 

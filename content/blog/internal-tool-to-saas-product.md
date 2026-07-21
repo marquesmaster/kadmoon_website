@@ -27,6 +27,8 @@ Here is the first hard technical wall. An internal tool serves one organization:
 
 You have to decide on a tenancy model: a shared database with strict tenant isolation, separate databases per customer, or a hybrid. Each has trade-offs in cost, isolation, and operational complexity, and the right choice depends on your customers' size and security expectations. The one non-negotiable is that a bug can never leak one tenant's data to another, which means tenant isolation has to be enforced at the data layer, not just hoped for in application code. This is foundational and hard to change later, so it deserves real design time up front. The patterns and trade-offs are laid out in [multi-tenant SaaS architecture](/blog/multi-tenant-saas-architecture).
 
+Beyond isolation, multi-tenancy quietly reshapes almost every part of the app. Configuration that was hard-coded for your company becomes per-tenant settings. Reports that assumed one org's data now have to filter by tenant everywhere, including in background jobs and exports where the filter is easy to forget. Feature flags let you roll a change to one customer before all of them. Even seemingly simple things like the login screen change, because a user now has to be resolved to a tenant before they are authenticated. None of this is visible in the internal version, and all of it is table stakes for a product, which is why "add multi-tenancy" is rarely a small line item.
+
 ## Adding billing and self-service
 
 Internally, there is no billing, no signup, and no self-service, because you already trust everyone with access. A product needs all three, and they are more than a payment button.

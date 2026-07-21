@@ -14,6 +14,17 @@ The first wall is almost always the database. Application servers are easy to ad
 
 The second wall is work done in the wrong place at the wrong time. Sending email, generating a PDF, or calling a third-party API inside the request that a user is waiting on ties your responsiveness to things you do not control. The third wall is a lack of visibility: when you cannot see what is slow, you cannot fix it, so problems compound. When outages do hit at scale, they cascade. The July 2024 CrowdStrike incident, a single faulty update, is estimated to have [cost Fortune 500 companies about $5.4 billion](https://www.bigpanda.io/blog/it-outage-costs-2024/) in direct losses over a few days. The good news is that the three walls have well-understood answers you can apply incrementally.
 
+The reason to take scaling seriously before it becomes a crisis is that downtime is priced in the millions once a platform matters. The 2024 figures line up like this:
+
+| Metric | Figure | Source |
+| --- | --- | --- |
+| Enterprises where 1 hour of downtime exceeds $300,000 | 91% | ITIC 2024 |
+| Enterprises losing $1M to $5M per hour | 41% | ITIC 2024 |
+| Large-enterprise unplanned downtime, per minute | ~$23,750 | BigPanda 2024 |
+| CrowdStrike outage, Fortune 500 direct losses | ~$5.4 billion | 2024 estimate |
+
+Those numbers are why the incremental fixes below are worth doing before you need them, not after.
+
 ## Scaling the database layer
 
 Because the database is the usual bottleneck, it gets the most attention. Work through it in roughly this order, from cheapest to most involved.
@@ -41,7 +52,7 @@ Multi-region, running your platform in more than one geographic area, is a bigge
 
 ## Observability and cost control
 
-You cannot scale what you cannot see. Before you have a scaling emergency, put in the instrumentation that tells you where time goes: application performance monitoring to find slow endpoints and queries, logs you can search, and alerts that fire before users notice rather than after. Given that the ITIC data shows most enterprises losing six figures per hour of downtime, the instrumentation that catches a problem in ten minutes instead of an afternoon pays for itself the first time it fires.
+You cannot scale what you cannot see. Before you have a scaling emergency, put in the instrumentation that tells you where time goes: application performance monitoring to find slow endpoints and queries, logs you can search, and alerts that fire before users notice rather than after. Given that the ITIC data shows most enterprises losing six figures per hour of downtime, the instrumentation that catches a problem in ten minutes instead of an afternoon pays for itself the first time it fires. Track the numbers that predict trouble: p95 and p99 latency rather than averages, since averages hide the slow tail that users feel; database connection pool saturation; queue depth; and error rate per endpoint. An alert that fires when p99 latency crosses a threshold gives you warning while there is still time to act, which is the whole point of watching before the wall arrives.
 
 Cost is the other half of the same picture. Scaling often means throwing infrastructure at the problem, and cloud bills climb quietly. Watch cost per customer as you grow. If it rises, your architecture is scaling sublinearly and needs attention; if it falls, your unit economics are improving. Autoscaling helps by matching capacity to demand instead of paying for peak load around the clock. Keeping an eye on both performance and spend is how scaling stays a business win rather than a margin drain. Our look at the [hidden costs of custom software](/blog/hidden-costs-of-custom-software) covers the infrastructure side of that bill.
 

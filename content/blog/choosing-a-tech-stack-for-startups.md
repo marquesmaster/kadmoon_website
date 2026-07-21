@@ -12,7 +12,19 @@ Choosing a tech stack for your startup feels like a momentous decision, and foun
 
 At the earliest stage, your scarcest resources are time and the number of people who can build. So the two questions that should dominate your stack choice are: how fast can we ship with this, and how easily can we hire people who already know it?
 
-Speed comes from familiarity and ecosystem. A stack your team already knows, with mature libraries for the common problems, lets you build features instead of inventing infrastructure. Hiring compounds that, and the data on what engineers actually know is worth respecting. In the [2024 Stack Overflow Developer Survey](https://survey.stackoverflow.co/2024/technology), which polled more than 65,000 developers, JavaScript was the most-used language at 62%, followed by HTML/CSS at 53% and Python at 51%. Picking tools near the top of that list means a large pool of engineers who can be productive quickly, rather than a niche technology where every hire is a months-long search. These forces usually point the same direction, toward popular, well-supported tools, and away from anything exotic. If you are still validating the idea, that speed matters even more, which is why lean MVP scoping in [how much it costs to build an MVP](/blog/cost-to-build-an-mvp) pairs naturally with a boring, fast stack.
+Speed comes from familiarity and ecosystem. A stack your team already knows, with mature libraries for the common problems, lets you build features instead of inventing infrastructure. Hiring compounds that, and the data on what engineers actually know is worth respecting. In the [2024 Stack Overflow Developer Survey](https://survey.stackoverflow.co/2024/technology), which polled more than 65,000 developers, JavaScript was the most-used language at 62%, followed by HTML/CSS at 53% and Python at 51%. Picking tools near the top of that list means a large pool of engineers who can be productive quickly, rather than a niche technology where every hire is a months-long search. These forces usually point the same direction, toward popular, well-supported tools, and away from anything exotic.
+
+The survey is a decent proxy for how large a hiring pool each choice gives you. A few of the 2024 figures worth anchoring on:
+
+| Technology | 2024 Stack Overflow usage | Role |
+| --- | --- | --- |
+| JavaScript | 62% of developers | Most-used language |
+| HTML/CSS | 53% | Frontend markup and styling |
+| Python | 51% | Backend, data, and AI |
+| PostgreSQL | #1 database, several years running | Relational data store |
+| Node.js | Most-used web technology | Backend runtime |
+
+The pattern is that the boring, well-known tools sit at the top. If you are still validating the idea, that speed matters even more, which is why lean MVP scoping in [how much it costs to build an MVP](/blog/cost-to-build-an-mvp) pairs naturally with a boring, fast stack.
 
 ## Boring technology as an advantage
 
@@ -28,7 +40,7 @@ On the backend, the sane options cluster around a few languages. Node.js is a st
 
 ## Data and infrastructure
 
-Your data store is the decision most worth getting right early, because it is the hardest to change later. For the overwhelming majority of startups, a relational database, PostgreSQL in particular, is the correct default. Developers agree at scale: PostgreSQL was the [most-used database in the 2024 Stack Overflow survey](https://survey.stackoverflow.co/2024/technology) and has topped that ranking for several years running. It is reliable, flexible, handles far more scale than most startups will ever reach, and its structure protects you from data messes that are painful to clean up. Reach for something else only when you have a specific, proven need that Postgres genuinely cannot meet, which is rarer than the internet suggests.
+Your data store is the decision most worth getting right early, because it is the hardest to change later. For the overwhelming majority of startups, a relational database, PostgreSQL in particular, is the correct default. Developers agree at scale: PostgreSQL was the [most-used database in the 2024 Stack Overflow survey](https://survey.stackoverflow.co/2024/technology) and has topped that ranking for several years running. It is reliable, flexible, handles far more scale than most startups will ever reach, and its structure protects you from data messes that are painful to clean up. Reach for something else only when you have a specific, proven need that Postgres genuinely cannot meet, which is rarer than the internet suggests. Postgres also absorbs needs that founders reach for a second database to solve: its JSONB type handles schemaless documents, full-text search is built in, and extensions cover geospatial queries and vector search for AI features. Running one database you understand well beats running two you half understand, especially when your team is three engineers and every extra system is another thing to back up, monitor, and patch.
 
 For infrastructure, resist the urge to build a sophisticated platform before you have traffic to justify it. Managed cloud services handle databases, hosting, and scaling so your small team does not spend its time operating infrastructure. If you are building multi-tenant SaaS, the one architectural decision worth thinking through early is how you separate customer data, since that is hard to retrofit, and the trade-offs are covered in [multi-tenant SaaS architecture](/blog/multi-tenant-saas-architecture). Beyond that, keep it simple until scale forces a change.
 

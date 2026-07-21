@@ -35,7 +35,7 @@ There are two broad paths off VB6, and the honest answer is that the best projec
 
 Automated conversion tools translate VB6 into a modern language, typically .NET, more or less line by line. This is fast and cheap up front, and it can be the right move when the app is large, well-structured, and you mainly need it running on a supported stack. The catch is that a mechanical translation carries the original's design forward, awkward structure, dated patterns, and all, so you often end up with modern syntax expressing a twenty-year-old architecture. It compiles, but it is not really modernized.
 
-A rewrite rebuilds the application on a modern foundation, keeping the business logic but discarding the old structure. It costs more and takes longer, and it is the right call when the app is central to the business, when the UI or workflow needs to change anyway, or when you want to unlock things the old design cannot support. The middle path, convert first to get onto a supported stack, then refactor the high-value parts, is often the pragmatic winner. For the wider set of options, [how to modernize legacy software](/blog/how-to-modernize-legacy-software) lays out the rehost, replatform, refactor, and rebuild spectrum.
+A rewrite rebuilds the application on a modern foundation, keeping the business logic but discarding the old structure. It costs more and takes longer, and it is the right call when the app is central to the business, when the UI or workflow needs to change anyway, or when you want to build things the old design cannot support. The middle path, convert first to get onto a supported stack, then refactor the high-value parts, is often the pragmatic winner. For the wider set of options, [how to modernize legacy software](/blog/how-to-modernize-legacy-software) lays out the rehost, replatform, refactor, and rebuild spectrum.
 
 ## Preserving critical business rules
 
@@ -54,6 +54,8 @@ Many VB6 apps predate the web era and would be better as browser-based systems t
 The application is only half the job. The data behind it, often in an old Access database or an aging SQL Server, has to come across cleanly, and legacy data is rarely as clean as anyone hopes. Expect duplicates, inconsistent formats, and fields used for purposes their names do not suggest. Plan for a real migration effort: profile the data, define the mapping, transform and validate, and reconcile record counts and totals against the source before you trust it.
 
 Integrations need the same care. The old app may exchange files with other systems, or drive a printer or device, or feed a downstream process. Every one of those touchpoints has to be re-established in the new system, and each is a place where a missed detail causes a production incident on cutover day.
+
+VB6 apps are especially prone to hidden dependencies because of how they were built. A typical one pulls in a handful of third-party OCX and ActiveX controls for grids, date pickers, or reporting, and those controls have to be registered on every machine that runs the app. Some of the vendors that shipped them no longer exist, and the controls themselves stopped getting updates a decade or more ago. When you move to a modern stack, each of those controls needs a supported replacement, and the behavior has to be matched, not just approximated, because users have built muscle memory around exactly how the old grid sorts or how the old report paginates. Cataloguing these dependencies before you start turns cutover-day surprises into planned line items.
 
 ## Planning a phased cutover
 

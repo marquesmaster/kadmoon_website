@@ -28,6 +28,8 @@ Both have vast package ecosystems, and the difference is in emphasis rather than
 
 Python's ecosystem is deep in areas Node barely touches: data processing, numerical computing, and machine learning. If your backend needs to do serious work with data, the libraries you want (NumPy, pandas, PyTorch, scikit-learn) almost certainly exist in Python and are battle-tested. For standard web work, both ecosystems have everything you need, with proven frameworks and mature tooling on either side.
 
+Framework maturity is worth a concrete look. On the Node side, Express remains the default minimal HTTP framework, with Fastify and NestJS covering teams that want more structure or raw throughput. On the Python side, Django gives you a batteries-included framework with an ORM, admin, and auth out of the box, while FastAPI has become the standard choice for high-performance async APIs and pairs naturally with the type hints Python added over the last several releases. The practical takeaway is that neither language forces you into a corner for ordinary CRUD-and-API work. The differences that actually change outcomes show up at the edges: real-time and fan-out favor Node, data and modeling favor Python.
+
 ## Data, AI, and ML fit
 
 This is often the deciding factor, and it usually points one way. If your system does meaningful machine learning, data science, or heavy analytics, Python is the pragmatic default because that is where the entire toolchain lives. The major model providers ship first-class Python SDKs, and most published research and tutorials assume Python. Trying to force that work into a Node stack means fighting the ecosystem the whole way.

@@ -30,6 +30,8 @@ This is the feature that separates real field apps from office apps with a phone
 
 An offline-first design lets the technician do everything (view job details, fill forms, capture photos, record parts and time, collect a signature) with no connection at all, then syncs automatically when the device is back online. Photos deserve specific attention: technicians document conditions constantly, and photos need to attach to the right job, compress sensibly to survive a weak connection, and upload reliably in the background. The engineering behind this, including how to resolve conflicts when the same record changes in two places, is covered in [offline-first mobile apps](/blog/offline-first-mobile-apps). Skip it and adoption collapses at the first dead zone.
 
+Offline-first is not a toggle you add at the end. It changes the data model: the phone becomes the temporary source of truth, each change carries a timestamp and a device identifier, and the server has to merge a day's worth of edits that arrived out of order. A job might be marked complete on the device at 10:14 and reassigned by dispatch at 10:16, and the sync logic has to decide which wins without silently dropping either. Teams that bolt syncing onto an online-only app after the fact usually end up rewriting the core, which is a large part of why field projects overrun. Designing for it from the first sprint is cheaper than retrofitting it after the first field complaint.
+
 ## Signatures, forms, and inventory
 
 The paperwork of field service is where a good app pays for itself. The pieces that matter:

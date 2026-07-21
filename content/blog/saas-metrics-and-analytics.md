@@ -40,6 +40,8 @@ Activation is the moment a new user first experiences the product's core value, 
 
 Engagement measures whether activated users keep coming back and using the features that correlate with retention. The useful version is not raw logins. It is depth: are accounts using the product in the way that predicts they will renew. Tracking that lets you spot an account going quiet while there is still time to intervene, which is the whole point when a percentage point of monthly churn compounds into a very different annual number.
 
+The compounding is worth making concrete. A 1% monthly logo churn rate leaves you retaining about 89% of accounts over a year; push that to 3% monthly and you keep roughly 69%. That is the gap between the enterprise and SMB benchmarks cited above, and it explains why the same headline growth rate can hide a healthy business or a leaking one. Engagement data is what turns that abstract math into a list of specific accounts to call this week, before they show up in the churn number a quarter from now.
+
 ## Instrumenting product analytics
 
 None of these metrics are trustworthy if the underlying data collection is sloppy, and this is where most teams cut corners. Instrumenting analytics well means deciding up front which events matter and capturing them consistently across the product.

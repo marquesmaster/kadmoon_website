@@ -42,6 +42,18 @@ Keep it in-house too when the work is continuous and open-ended rather than proj
 
 Ask three questions. Is this software core to my business long-term, or a project with an end? Do I have the right people with capacity, or a real gap in skill or numbers? Is the timeline forgiving, or fixed and high-stakes? Core, staffed, and flexible points toward in-house. Non-core, gapped, or deadline-driven points toward a software house, often working alongside whatever internal team you have.
 
+| If this is your situation | Lean toward |
+| --- | --- |
+| The software is your core competitive advantage for years | Hire in-house |
+| You have a capable team with spare capacity | In-house |
+| Backlog keeps growing and features slip every quarter | Software house for surge capacity |
+| A one-time product outside your core expertise | Software house |
+| The work needs senior skills you cannot recruit in time | Software house |
+| A hard launch date with real consequences | Software house with sprint demos |
+| Core system, but you want to keep ownership and knowledge | Core team plus a partner |
+
+The pattern behind the table is timing and risk, not cost alone. A software house shortens the path from decision to working software, which is exactly what you are buying when a deadline or a hard problem is on the line.
+
 The best outcomes usually come from being honest about which situation you are actually in, rather than defaulting to either "hire employees" or "outsource everything." Cost should not be the only lens either, since the cheapest path often carries the highest risk when a deadline or a critical system is on the line.
 
 One more consideration: whichever way you lean, insist on owning the output. You should end up with the code, the repository, the credentials, and enough documentation to hand the work to anyone later, so the decision to use a software house never turns into a dependency you cannot exit. If you want help thinking through the right model for a specific initiative, [start a project](/#contact) with a scoping conversation, and read [the blog](/blog) for the surrounding decisions.
