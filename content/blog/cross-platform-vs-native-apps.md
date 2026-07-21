@@ -3,17 +3,17 @@ title: "Cross-platform vs native apps: the real trade-offs"
 description: "Cross-platform vs native apps compared honestly: frameworks, cost and time-to-market, performance and UX, maintenance gains, and where cross-platform breaks down."
 category: "Mobile Apps"
 primaryKeyword: "cross-platform vs native apps"
-tags: ["hybrid vs native", "cross platform app development", "flutter react native native"]
+tags: ["hybrid vs native", "cross platform app development", "flutter react native native", "mobile os market share"]
 ---
 
 The choice between cross-platform and native is one of the first real decisions in a mobile project, and it has consequences that last for years. Pick well and you ship faster and maintain one codebase. Pick wrong and you fight the framework on every hard feature or pay twice to build the same thing. This is an honest look at cross-platform vs native apps, without the framework tribalism, so you can match the approach to what you are actually building.
 
 ## The main cross-platform frameworks
 
-Cross-platform means writing your app once and running it on both iOS and Android from largely shared code. Two frameworks dominate serious work, and they take opposite technical routes to the same goal.
+Cross-platform means writing your app once and running it on both iOS and Android from largely shared code. Two frameworks dominate serious work, and they take opposite technical routes to the same goal. The scale of their use is worth knowing: in the [2024 Stack Overflow Developer Survey of more than 65,000 developers, Flutter was used by about 9.4% and React Native by about 8.4%](https://survey.stackoverflow.co/2024/technology), making them the two leading cross-platform choices by a clear margin.
 
 - React Native, maintained by Meta, uses JavaScript and TypeScript with React and renders real native UI components rather than a webview. Its newer architecture (the Fabric renderer and the JavaScript Interface that replaced the old asynchronous bridge) narrows the gap with native by letting JavaScript call into native code more directly. It is a strong fit for teams already working in the React and web ecosystem, since much of the knowledge and tooling carries over. Our deeper comparison of [React Native vs native app development](/blog/react-native-vs-native-development) covers this in more detail.
-- Flutter, maintained by Google, uses the Dart language and draws its own UI with its own rendering engine instead of mapping to platform widgets. That gives tight control over appearance and smooth animation, and it compiles to native ARM machine code, at the cost of learning a less common language and shipping the engine with your app.
+- Flutter, maintained by Google, uses the Dart language and draws its own UI with its own rendering engine instead of mapping to platform widgets. That gives tight control over appearance and smooth animation, and it compiles ahead-of-time to native ARM machine code, at the cost of learning a less common language and shipping the engine with your app.
 
 Native, by contrast, means building separately for each platform with the platform's own tools: Swift with SwiftUI or UIKit for iOS, Kotlin with Jetpack Compose for Android. Two codebases, two skill sets, full and immediate access to everything each platform offers. The rest of the trade-offs flow from this basic split.
 
@@ -22,6 +22,10 @@ Native, by contrast, means building separately for each platform with the platfo
 This is where cross-platform makes its strongest case. One codebase serving both platforms means roughly one team, one set of features to build, and one place to fix bugs. For most business apps, that is a meaningful reduction in build cost and calendar time compared to writing everything twice natively.
 
 The saving is real but often overstated. Cross-platform still needs platform-specific handling for some features, testing on both platforms, separate signing and provisioning, and separate submissions to the App Store and Google Play, each with its own review process and rules. Call it a substantial saving rather than half price. When speed to a working product matters, for an MVP, an internal tool, or a startup validating demand, a single codebase is usually the pragmatic call. The [cost to build a mobile app](/blog/cost-to-build-a-mobile-app) shifts noticeably depending on which path you take.
+
+## Which platforms you are actually serving
+
+Before choosing an approach, know your users, because the market is lopsided in a way that matters. Worldwide, mobile operating system share runs roughly [Android 72% to iOS 28%, but in the United States iOS leads at about 58%](https://gs.statcounter.com/os-market-share/mobile/united-states-of-america). If you are a US B2B company, a large share of your users and your employees are on iPhones, which changes the calculus. Revenue skews harder still. Consumer app spending reached about [$127 billion in 2024, with the Apple App Store taking around $91 billion against Google Play's roughly $36 billion](https://techcrunch.com/2024/12/18/app-downloads-decline-2-3-in-2024-but-consumer-spending-rises-to-150b-globally/), so iOS users spend far more per head. For a consumer product monetizing on iOS, native iOS polish can pay for itself. For an internal tool on a mixed fleet, cross-platform reach usually wins. Either way, you are almost never building for one platform only, and that is the whole reason this decision exists.
 
 ## Performance and UX fidelity
 
