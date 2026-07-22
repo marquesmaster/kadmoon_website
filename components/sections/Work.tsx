@@ -2,6 +2,7 @@ import { work } from '@/lib/content';
 import { Section } from '../Section';
 import { SectionHeader } from '../SectionHeader';
 import { Reveal } from '../Reveal';
+import { Icon } from '../Icon';
 
 export function Work() {
   return (
@@ -16,8 +17,11 @@ export function Work() {
             delay={i * 90}
             className="flex flex-col overflow-hidden rounded-2xl border border-line bg-paper shadow-card"
           >
-            <div className="relative flex h-40 items-end bg-navy p-6">
+            <div className="relative flex h-40 flex-col justify-between bg-navy p-6">
               <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
+              <span className="relative grid h-10 w-10 place-items-center rounded-xl bg-white/10 text-white">
+                <Icon name={i === 0 ? 'architecture' : 'delivery'} className="h-5 w-5" />
+              </span>
               <span className="relative font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">
                 {c.tag}
               </span>

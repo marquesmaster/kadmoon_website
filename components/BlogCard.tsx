@@ -1,5 +1,4 @@
-import type { PostMeta } from '@/lib/blog';
-import { categorySlug } from '@/lib/blog';
+import { categorySlug, type PostMeta } from '@/lib/blog-shared';
 
 export function BlogCard({ post, featured = false }: { post: PostMeta; featured?: boolean }) {
   return (

@@ -2,20 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import { categorySlug, type PostMeta, type PostCategory } from './blog-shared';
 
-export type PostCategory = string;
-
-export type PostMeta = {
-  slug: string;
-  title: string;
-  description: string;
-  category: PostCategory;
-  primaryKeyword: string;
-  tags: string[];
-  date: string; // ISO date, deterministic (see below)
-  readingTime: string;
-  wordCount: number;
-};
+export { categorySlug };
+export type { PostMeta, PostCategory };
 
 export type Post = PostMeta & { html: string };
 
@@ -97,15 +87,6 @@ export function getRelatedPosts(slug: string, limit = 3): PostMeta[] {
     (p) => p.slug !== slug && p.category !== current.category,
   );
   return [...sameCategory, ...rest].slice(0, limit).map(({ html, ...m }) => m);
-}
-
-export function categorySlug(category: string): string {
-  return category
-    .toLowerCase()
-    .replace(/&/g, 'and')
-    .replace(/'/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
 }
 
 export function getCategories(): { name: string; slug: string; count: number }[] {
