@@ -2,6 +2,9 @@ import { why } from '@/lib/content';
 import { Section } from '../Section';
 import { SectionHeader } from '../SectionHeader';
 import { Reveal } from '../Reveal';
+import { Icon } from '../Icon';
+
+const icons = ['key', 'team', 'contract', 'sparkle', 'stack', 'delivery'];
 
 export function WhyKadmoon() {
   return (
@@ -16,8 +19,8 @@ export function WhyKadmoon() {
             delay={(i % 3) * 80}
             className="rounded-2xl border border-line bg-paper p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy/5 font-mono text-sm text-navy">
-              {String(i + 1).padStart(2, '0')}
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy/5 text-navy">
+              <Icon name={icons[i]} className="h-5 w-5" />
             </div>
             <h3 className="mt-5 font-display text-lg font-semibold tracking-[-0.02em] text-ink">
               {item.title}

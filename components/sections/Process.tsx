@@ -2,6 +2,9 @@ import { process } from '@/lib/content';
 import { Section } from '../Section';
 import { SectionHeader } from '../SectionHeader';
 import { Reveal } from '../Reveal';
+import { Icon } from '../Icon';
+
+const icons = ['discovery', 'architecture', 'code', 'qa', 'deploy', 'support'];
 
 export function Process() {
   return (
@@ -17,11 +20,11 @@ export function Process() {
             className="group relative bg-paper p-7 md:p-8"
           >
             <div className="flex items-center justify-between">
-              <span className="font-display text-3xl font-semibold tracking-[-0.03em] text-navy/25 transition-colors group-hover:text-accent">
-                {step.num}
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy/5 text-navy transition-colors group-hover:bg-accent/10 group-hover:text-accent">
+                <Icon name={icons[i]} className="h-5 w-5" />
               </span>
               <span className="rounded-full border border-line bg-mist px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-2">
-                {step.meta}
+                {step.num} · {step.meta}
               </span>
             </div>
             <h3 className="mt-5 font-display text-lg font-semibold tracking-[-0.02em] text-ink">

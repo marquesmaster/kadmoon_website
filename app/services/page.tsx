@@ -5,7 +5,17 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Reveal } from '@/components/Reveal';
 import { services } from '@/lib/content';
+import { Icon } from '@/components/Icon';
 import { siteConfig } from '@/lib/site';
+
+const icons: Record<string, string> = {
+  'enterprise-systems': 'enterprise',
+  'saas-platforms': 'saas',
+  'mobile-apps': 'mobile',
+  'integrations-and-apis': 'integrations',
+  'data-and-ai': 'dataai',
+  'legacy-modernization': 'legacy',
+};
 
 export const metadata: Metadata = {
   title: 'Services — Custom software capabilities',
@@ -45,10 +55,15 @@ export default function ServicesIndex() {
                 delay={(i % 2) * 80}
                 className="group flex flex-col rounded-2xl border border-line bg-paper p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover md:p-8"
               >
-                <span className="font-mono text-xs text-ink-3">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h2 className="mt-3 font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
+                <div className="flex items-center justify-between">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-navy/5 text-navy transition-colors group-hover:bg-accent/10 group-hover:text-accent">
+                    <Icon name={icons[s.slug]} className="h-6 w-6" />
+                  </span>
+                  <span className="font-mono text-xs text-ink-3">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <h2 className="mt-5 font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
                   {s.title}
                 </h2>
                 <p className="mt-2 text-[15px] font-medium text-navy">{s.tagline}</p>

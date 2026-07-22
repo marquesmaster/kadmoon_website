@@ -2,6 +2,9 @@ import { engagement } from '@/lib/content';
 import { Section } from '../Section';
 import { SectionHeader } from '../SectionHeader';
 import { Reveal } from '../Reveal';
+import { Icon } from '../Icon';
+
+const icons = ['target', 'team', 'support'];
 
 export function Engagement() {
   return (
@@ -16,10 +19,10 @@ export function Engagement() {
             delay={i * 90}
             className="flex flex-col rounded-2xl border border-line bg-paper p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover md:p-8"
           >
-            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
-              {String(i + 1).padStart(2, '0')}
+            <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent/10 text-accent">
+              <Icon name={icons[i]} className="h-5 w-5" />
             </span>
-            <h3 className="mt-4 font-display text-xl font-semibold tracking-[-0.02em] text-ink">
+            <h3 className="mt-5 font-display text-xl font-semibold tracking-[-0.02em] text-ink">
               {m.name}
             </h3>
             <p className="mt-1 text-[13px] text-ink-3">{m.best}</p>

@@ -2,6 +2,9 @@ import { capabilities } from '@/lib/content';
 import { Section } from '../Section';
 import { SectionHeader } from '../SectionHeader';
 import { Reveal } from '../Reveal';
+import { Icon } from '../Icon';
+
+const icons = ['enterprise', 'saas', 'mobile', 'integrations', 'dataai', 'legacy'];
 
 export function Capabilities() {
   return (
@@ -20,10 +23,15 @@ export function Capabilities() {
             delay={(i % 3) * 80}
             className="group flex flex-col bg-paper p-7 transition-colors hover:bg-mist md:p-8"
           >
-            <span className="font-mono text-xs text-ink-3">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <h3 className="mt-4 font-display text-xl font-semibold tracking-[-0.02em] text-ink">
+            <div className="flex items-center justify-between">
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy/5 text-navy transition-colors group-hover:bg-accent/10 group-hover:text-accent">
+                <Icon name={icons[i]} className="h-5 w-5" />
+              </span>
+              <span className="font-mono text-xs text-ink-3">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+            </div>
+            <h3 className="mt-5 font-display text-xl font-semibold tracking-[-0.02em] text-ink">
               {item.title}
             </h3>
             <p className="mt-3 text-[15px] leading-relaxed text-ink-2">{item.body}</p>
