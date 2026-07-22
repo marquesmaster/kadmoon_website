@@ -13,8 +13,9 @@ const csp = [
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
   "style-src 'self' 'unsafe-inline'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
-  "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com",
+  "connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
+  "frame-src 'self' https://www.googletagmanager.com",
   'upgrade-insecure-requests',
 ].join('; ');
 

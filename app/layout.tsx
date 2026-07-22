@@ -6,6 +6,7 @@ import { siteConfig } from '@/lib/site';
 import { JsonLd } from '@/components/JsonLd';
 import { FloatingContact } from '@/components/FloatingContact';
 import { ScrollProgress } from '@/components/ScrollProgress';
+import { CookieConsent } from '@/components/CookieConsent';
 
 const display = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -91,7 +92,44 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en-US"
       className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
+      <head>
+        {/* Google Consent Mode: deny all until the user accepts (see the
+            cookie banner). Must run before GTM loads. */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});`}
+        </Script>
+        {siteConfig.gtmId && (
+          <Script id="gtm" strategy="afterInteractive">
+            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${siteConfig.gtmId}');`}
+          </Script>
+        )}
+      </head>
       <body className="min-h-screen bg-paper font-sans text-ink antialiased">
+        {siteConfig.gtmId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${siteConfig.gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+              title="gtm"
+            />
+          </noscript>
+        )}
         <ScrollProgress />
         <JsonLd />
         <a
@@ -103,21 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
 
         <FloatingContact />
-
-        {siteConfig.gaId && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4" strategy="afterInteractive">
-              {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${siteConfig.gaId}', { anonymize_ip: true });`}
-            </Script>
-          </>
-        )}
+        <CookieConsent />
       </body>
     </html>
   );

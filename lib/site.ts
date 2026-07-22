@@ -26,9 +26,8 @@ export const siteConfig = {
   ],
   // The contact form posts to the site's own secure API route.
   contactApi: '/api/contact',
-  // Optional analytics. Set NEXT_PUBLIC_GA_ID to a GA4 measurement id
-  // (e.g. G-XXXXXXX) to enable Google Analytics.
-  gaId: process.env.NEXT_PUBLIC_GA_ID || '',
+  // Google Tag Manager container id. Public value; overridable via env.
+  gtmId: process.env.NEXT_PUBLIC_GTM_ID || 'GTM-WK2T78RK',
   // Social profiles. Fill these in as they go live; empty ones are not
   // rendered. Adding them improves entity/SEO signals (sameAs in JSON-LD).
   socials: {
