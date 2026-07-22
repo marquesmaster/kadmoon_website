@@ -121,17 +121,12 @@ docker exec -it kadmoon-db psql -U kadmoon -d kadmoon -c \
   'SELECT "createdAt", name, company, need FROM "Lead" ORDER BY "createdAt" DESC LIMIT 20;'
 ```
 
-## Optional: Google Analytics
+## Analytics (Google Tag Manager)
 
-`NEXT_PUBLIC_GA_ID` is baked in at build time. To enable it, build with:
-
-```bash
-docker compose build --build-arg NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX kadmoon
-docker compose up -d
-```
-
-(Requires adding the build arg to the Dockerfile if you want it; ask and it can
-be wired in.)
+GTM (container `GTM-WK2T78RK`) loads on every page with Google Consent Mode set
+to denied by default; the cookie banner grants consent on accept. No deploy
+step is needed. Configure tags (e.g. GA4) inside the GTM console and publish.
+To use a different container, set `NEXT_PUBLIC_GTM_ID` at build time.
 
 ## Security notes
 
