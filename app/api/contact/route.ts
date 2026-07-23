@@ -90,7 +90,9 @@ export async function POST(req: Request) {
       },
     });
   } catch (err) {
-    console.error('lead persist failed:', err);
+    // Log only a safe label, never the full error (which can carry connection
+    // details) or any submitted data.
+    console.error('[contact] lead persist failed:', safeErr(err));
     return NextResponse.json({ ok: false, error: 'server' }, { status: 500 });
   }
 
@@ -105,10 +107,19 @@ export async function POST(req: Request) {
       message: data.message,
     });
   } catch (err) {
-    console.error('lead email failed:', err);
+    console.error('[contact] lead email failed:', safeErr(err));
   }
 
   return ok();
+}
+
+// A short, safe error label (name + optional code). Never the message/data.
+function safeErr(err: unknown): string {
+  if (err instanceof Error) {
+    const code = (err as { code?: string }).code;
+    return code ? `${err.name}:${code}` : err.name;
+  }
+  return 'unknown';
 }
 
 // Any other method: not allowed.

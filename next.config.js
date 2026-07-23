@@ -39,6 +39,24 @@ const nextConfig = {
   async headers() {
     return [{ source: '/(.*)', headers: securityHeaders }];
   },
+  async redirects() {
+    return [
+      // Consolidate www -> non-www (canonical is https://kadmoon.com).
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.kadmoon.com' }],
+        destination: 'https://kadmoon.com/:path*',
+        permanent: true,
+      },
+      // Old /en/* URLs (previous site) no longer exist; send to the closest
+      // new page so indexed links keep their value instead of 404ing.
+      { source: '/en', destination: '/', permanent: true },
+      { source: '/en/contato', destination: '/#contact', permanent: true },
+      { source: '/en/contact', destination: '/#contact', permanent: true },
+      { source: '/en/blog/:slug*', destination: '/blog', permanent: true },
+      { source: '/en/:path*', destination: '/', permanent: true },
+    ];
+  },
 };
 
 module.exports = nextConfig;
