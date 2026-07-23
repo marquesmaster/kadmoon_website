@@ -36,7 +36,29 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
   const subject = `New lead: ${lead.company} (${lead.need || 'inquiry'})`;
   const text = bodyText(lead);
 
-  // 1) Resend (preferred).
+  // 1) Web3Forms (preferred). The access key stays server-side and is never
+  // exposed to the browser; Web3Forms emails the recipient tied to the key.
+  const web3Key = process.env.WEB3FORMS_ACCESS_KEY;
+  if (web3Key) {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: web3Key,
+        subject,
+        from_name: 'Kadmoon Website',
+        name: lead.name,
+        company: lead.company,
+        size: lead.size || '(not provided)',
+        need: lead.need || '(not provided)',
+        message: lead.message,
+      }),
+    });
+    if (!res.ok) throw new Error(`web3forms_http_${res.status}`);
+    return true;
+  }
+
+  // 2) Resend.
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
     const from = process.env.CONTACT_FROM || 'Kadmoon Website <comercial@kadmoon.com>';
@@ -55,7 +77,7 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
     return true;
   }
 
-  // 2) SMTP fallback.
+  // 3) SMTP fallback.
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
