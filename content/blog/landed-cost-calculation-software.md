@@ -4,6 +4,21 @@ description: "How landed cost software calculates true import costs across dutie
 category: "Trade & Supply Chain"
 primaryKeyword: "landed cost software"
 tags: ["landed cost calculation", "total landed cost", "import cost software", "customs duties freight"]
+takeaways:
+  - "Total landed cost is the fully burdened cost delivered to destination: product cost plus freight, duties, insurance, brokerage, inland transport, and fees like the merchandise processing and harbor maintenance fees."
+  - "Applying a flat markup across a mixed catalog overprices some items and sells others at a loss, because low-value heavy goods can carry freight that rivals the goods themselves while compact high-value items do not."
+  - "Duty and freight carry most of the complexity, and rates move fast: the average effective US tariff rate rose from about 2.3 percent in 2024 to roughly 7.7 percent in 2025, so hardcoded rates go wrong immediately."
+  - "Allocation of shipment-level costs has no single correct method, but there is a correct principle: choose a method, apply it consistently, and make it visible so finance can audit it."
+  - "The highest-value version calculates landed cost in real time at quote time through an API, turning it from a backward-looking accounting exercise into a forward-looking sourcing and pricing tool."
+faqs:
+  - q: "What is included in total landed cost?"
+    a: "Total landed cost is the fully burdened cost of a product delivered to its final destination. It starts with the product cost and adds international freight, duties and tariffs, insurance, brokerage and handling fees, and inland transportation on both ends, plus smaller line items like the merchandise processing fee (0.3464 percent of value) and, for ocean shipments, the harbor maintenance fee (0.125 percent of value). Individually the small fees look trivial, but collectively they move the number."
+  - q: "Why can't I just add a flat markup to the invoice price?"
+    a: "Because the distortion is worst where you least expect it. Low-value, heavy, or bulky products carry freight and handling that can rival or exceed the goods themselves, so their landed cost is a large multiple of the invoice price, while high-value compact items are the opposite. A flat markup overprices some products out of the market and sells others below cost. Only a real landed cost calculation, item by item, tells you which is which."
+  - q: "How does landed cost software handle changing tariff rates?"
+    a: "A well-built engine does not hardcode rates, because they move fast: the average effective US tariff rate climbed from about 2.3 percent in 2024 to roughly 7.7 percent in 2025. Accurate duty depends on accurate HTS classification plus current rates by country of origin, kept up to date so a cached or stale rate does not turn a profitable order into a loss. Real-time calculation makes this available instantly through an API at quote time."
+  - q: "Should I build or buy a landed cost engine?"
+    a: "Off-the-shelf landed cost features exist inside some trade and ERP products and can be enough for a straightforward importer. Building makes sense when you need allocation methods packaged tools do not support, real-time calculation embedded in your own quoting or sourcing systems, complex duty scenarios with multiple trade programs, or when landed cost accuracy is tied directly to your margin and you want to own the logic on a clean API."
 ---
 
 The price on a supplier's invoice is not what a product actually costs to get into your warehouse and onto a shelf. Duties, freight, insurance, brokerage, and a dozen smaller fees sit between the quoted unit price and the true cost, and getting that number wrong quietly erodes margin on every order. The stakes are national in scale: in fiscal year 2024 CBP [processed $3.37 trillion in imports across 38.4 million entries and collected more than $88 billion in duties, taxes, and fees](https://www.cbp.gov/newsroom/stats/trade). Every one of those entries carried a landed cost that someone had to compute correctly. This guide covers what goes into landed cost, why it is hard to compute accurately, and what it takes to build an engine you can trust.

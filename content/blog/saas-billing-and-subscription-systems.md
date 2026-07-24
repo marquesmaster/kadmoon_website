@@ -4,6 +4,21 @@ description: "A SaaS billing system guide: seat, usage, and tiered models, Strip
 category: "SaaS Development"
 primaryKeyword: "saas billing system"
 tags: ["subscription billing", "usage-based billing", "saas payments"]
+takeaways:
+  - "Seat, usage, and tiered billing each carry different engineering demands, and most real products blend them, so your data model has to represent the mix cleanly or pricing logic scattered across the code becomes impossible to change."
+  - "Stripe is the source of truth for payments, but your app still needs its own entitlements model in your database, updated by webhooks, so a lapsed payment or plan change flips access correctly."
+  - "Webhooks arrive out of order, arrive twice, or fail to arrive, so handlers must be idempotent and you need a reconciliation job that periodically compares your entitlements against Stripe's records."
+  - "Mid-cycle plan changes are where billing bugs live, so write proration and upgrade/downgrade rules down as product decisions before coding them and test the annual-plan edge cases deliberately."
+  - "Dunning recovers involuntary churn from failed and expired cards, and smart retry timing plus a short grace period with escalating reminders quietly protects a percentage of revenue every month."
+faqs:
+  - q: "Should I build my own SaaS billing system or use Stripe?"
+    a: "You will not build a payment processor, since Stripe handles card storage, PCI scope, subscriptions, and retries. The real question is the billing logic on top, and Stripe Billing covers most standard subscription products with modest custom code around entitlements and webhooks. Lean toward custom only when your pricing is unusual or billing is woven into your product's core logic."
+  - q: "How should SaaS billing handle mid-cycle upgrades and downgrades?"
+    a: "Decide the policy explicitly: whether upgrades take effect immediately, whether downgrades wait for the next renewal, and how credits work. Stripe can compute proration automatically, but the rules are yours to define. Write them down as product decisions and deliberately test the mid-cycle change on an annual plan, since that path rarely gets exercised until a customer hits it."
+  - q: "What is dunning and why does it matter for SaaS?"
+    a: "Dunning is the process of recovering failed payments from expired or declined cards, which cause a meaningful share of subscription churn. A good flow retries the charge on a schedule, prompts the customer to update their card, and gives a grace period before cutting access. Skipping it means silently losing revenue from customers who still want your product."
+  - q: "Why are Stripe webhooks the weak point in billing systems?"
+    a: "Webhooks can arrive out of order, arrive twice, or fail to arrive at all if your endpoint is down. Without an idempotent handler and a reconciliation job that compares your entitlements against Stripe's records, a missed webhook silently gives a churned customer continued access or cuts off a paying one, and you find out only when someone complains."
 ---
 
 Billing looks simple from the outside: charge customers every month, done. Then you add annual plans, mid-cycle upgrades, usage overages, coupons, taxes, failed cards, and refunds, and suddenly billing is one of the most bug-prone parts of the whole product. A SaaS billing system is where your pricing model meets accounting reality, and getting it wrong costs you revenue directly. Here is how the pieces fit together and where teams get burned.

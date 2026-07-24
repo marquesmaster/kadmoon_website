@@ -4,6 +4,21 @@ description: "When to build custom software and when to buy instead: the signals
 category: "Custom Software"
 primaryKeyword: "when to build custom software"
 tags: ["should i build custom software", "custom software decision", "right time to build", "build vs buy"]
+takeaways:
+  - "Build custom when the software is close to your competitive core or when nothing on the market fits, and buy when you would just be rebuilding a commodity you could license."
+  - "A single workaround is normal, but a growing stack of them each quarter is the tool telling you it has run out of room."
+  - "Roughly two thirds of software projects come in late, over budget, short on scope, or cancelled, and scope is the biggest predictor, so shrink the bet into small phased pieces."
+  - "Do not build when a mature product fits, the function is not core, you lack capacity to maintain it, or you are only trying to dodge a cheap SaaS subscription."
+  - "The useful question is not whether you need custom software today but whether the cost of your workarounds is growing faster than the cost of building would be."
+faqs:
+  - q: "When should a company build custom software instead of buying?"
+    a: "Build when the software is close to your competitive core or when nothing on the market fits your reality and workarounds are piling up. If the process is a reason customers choose you, encoding it in custom software makes the advantage durable. When the software is plumbing rather than differentiation, buy it instead."
+  - q: "When is off-the-shelf software the better choice?"
+    a: "Buy when a mature product already fits, when the function is not a differentiator, or when you lack the capacity and budget to maintain custom software over time. Rebuilding solved commodities like email, accounting, payroll, or standard CRM wins you nothing and costs you maintenance forever. Trying to clone a cheap SaaS subscription usually costs far more in build and upkeep than the license you avoided."
+  - q: "How risky is building custom software?"
+    a: "Standish CHAOS research across tens of thousands of projects found roughly 31% successful, 50% challenged, and 19% failed, so about two thirds miss on time, budget, scope, or get cancelled. Scope is the biggest predictor, with large projects failing far more than small ones. The fix is to build the one module that matters first, ship in short sprints with a working demo, and set measurable acceptance criteria before writing code."
+  - q: "Does the right time to build custom software depend on company stage?"
+    a: "Yes. Early on, speed and cash matter most, so buy almost everything and build only the one thing that is your product. As you grow, accumulating workarounds and strained processes make targeted custom work pay off, often at the integration layer. Building too early wastes runway, and building too late lets workarounds harden into risk."
 ---
 
 Building custom software is the right call less often than vendors imply and more often than cautious finance teams assume. The trick is knowing which situation you are in. Custom is worth the cost and effort when the software is close to your competitive core or when nothing on the market fits your reality. It is a waste when you are rebuilding a commodity you could have licensed. Here is how to tell the difference before you commit a budget.

@@ -4,6 +4,21 @@ description: "How to integrate legacy systems with modern software: wrapping the
 category: "Integrations & APIs"
 primaryKeyword: "legacy system integration"
 tags: ["integrate legacy systems", "legacy api", "connect legacy software", "legacy modernization"]
+takeaways:
+  - "Integration lets you add new capabilities without betting the company on a rewrite, which matters because roughly 79 percent of federal IT spending goes to operating and maintaining existing systems."
+  - "The most durable pattern is an API facade in front of the old system, which decouples new work from legacy internals and gives one controlled place for logging, validation, and rate limiting."
+  - "Choose the least invasive access method that meets your needs, preferring API or file exchange over direct database access or brittle screen scraping."
+  - "Build transformation and validation into the integration itself and pick one source of truth per field, since copying dirty legacy data multiplies errors, with poor data quality costing about 12.9 million dollars per organization a year."
+  - "The strangler pattern retires a legacy system safely, rebuilding one capability at a time behind the facade so consumers never know which pieces have moved, avoiding a big-bang cutover."
+faqs:
+  - q: "What is the best way to integrate a legacy system with modern software?"
+    a: "The most durable pattern is to put a modern API layer, or facade, in front of the old system that exposes clean, well-documented endpoints while talking to the legacy system in whatever dialect it requires underneath. This decouples everything you build next from the legacy internals, so you can later replace the old system without changing its consumers, and it gives you a single controlled place to add logging, validation, and rate limiting."
+  - q: "What are the options for getting data out of a legacy system?"
+    a: "In rough order of preference: an API or web service if one exists or can be added, file or EDI exchange when batch is acceptable and an official export exists, direct database access when you fully understand the schema and business rules, and screen scraping as a last resort when nothing else is exposed. Each trades reliability against how invasive it is, so prefer the least invasive option that meets your latency needs."
+  - q: "How do you avoid spreading bad data during a legacy integration?"
+    a: "Build transformation and validation into the integration itself: map legacy fields to a well-defined target model, normalize formats, and reject or quarantine records that fail validation rather than passing garbage downstream. Decide explicitly which system is the source of truth for each piece of data. Catching bad records at the integration boundary is far cheaper than tracing a wrong number back through three systems, given poor data quality costs about 12.9 million dollars per organization a year."
+  - q: "What is the strangler pattern for legacy modernization?"
+    a: "The strangler pattern retires a legacy system slowly and safely. You route traffic through a new API facade, then rebuild one capability at a time behind it, redirecting each slice from the legacy system to a modern replacement as it is ready. Because consumers talk to the stable facade, they never know which pieces have moved, so you can modernize the highest-risk module first and continue at a pace the business can absorb without a single terrifying cutover."
 ---
 
 The system nobody wants to touch is usually the one running the business. Legacy software holds decades of logic and data, and ripping it out is rarely an option. Integration is how you get new capabilities without betting the company on a rewrite. This is a practical look at connecting old systems to modern software: why it is hard, the techniques that work, and how to keep the whole thing from breaking production.

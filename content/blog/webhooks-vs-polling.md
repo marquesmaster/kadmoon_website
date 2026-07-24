@@ -4,6 +4,21 @@ description: "Webhooks vs polling explained for real integrations: how each work
 category: "Integrations & APIs"
 primaryKeyword: "webhooks vs polling"
 tags: ["webhook integration", "api polling", "event-driven integration"]
+takeaways:
+  - "Polling is the pull model your system controls on a schedule, while webhooks are the push model where the source calls your always-on endpoint close to the moment an event happens."
+  - "Webhooks win on latency and load for infrequent events, but polling is naturally more resilient because the next run catches up after a failure."
+  - "Reliability contracts vary sharply: Stripe retries delivery for up to three days, while GitHub expects a 2xx within 10 seconds and does not redeliver, so read the provider docs rather than assume."
+  - "Any system taking webhooks must plan for retries, out-of-order events, and duplicates, which makes idempotency with a unique event ID non-negotiable."
+  - "The strongest integrations combine both: use webhooks for speed and a periodic reconciliation poll as a safety net, or use webhook-triggered pull to fetch the authoritative current state."
+faqs:
+  - q: "What is the difference between webhooks and polling?"
+    a: "Polling is a pull model where your system calls an API on a schedule and asks whether anything changed, which is simple to build and keeps you in control. Webhooks are a push model where you register a URL and the source sends an HTTP request the moment an event occurs, giving you near real-time updates but requiring an always-available endpoint. Polling trades latency and efficiency for simplicity and robustness, while webhooks trade simplicity for speed and lower load."
+  - q: "When should I use webhooks instead of polling?"
+    a: "Reach for webhooks when you need low latency because a user is waiting or a downstream action must fire promptly, when events are infrequent so polling would mostly waste requests, or when the source offers reliable, signed webhooks with retries. Reach for polling when the source has no webhooks, when you need guaranteed completeness and simple recovery, when you are pulling large batches on a schedule anyway, or when you cannot expose a reliable public endpoint. Many third-party platforms support both."
+  - q: "How do you handle a missed webhook delivery?"
+    a: "You cannot assume every sender retries or that retries succeed forever, so build a way to reconcile, such as a periodic catch-up poll or an API you can query to fetch anything missed. On a source like GitHub that will not redeliver, that reconciliation poll is the only thing standing between you and silent data loss. Combining webhooks for speed with a low-frequency reconciliation poll is the common robust pattern."
+  - q: "Why is idempotency important for webhooks?"
+    a: "Because retries mean you will sometimes receive the same event twice, and if processing it twice charges a card twice or creates two records, you have a serious bug. Give each event a unique ID, record the ones you have already processed, and make handling a repeat a safe no-op. Idempotency is not optional in any system that takes webhooks seriously."
 ---
 
 When two systems need to stay in sync, one of them has to find out when something changed. There are two ways to do that. The receiver can keep asking (polling), or the source can announce it (webhooks). The choice sounds like a small technical detail, but it shapes latency, infrastructure cost, and reliability across an integration. Getting it right saves you from either hammering an API for nothing or missing events you needed. Here is how each works and when to reach for it.

@@ -4,6 +4,21 @@ description: "A leader's guide to managing technical debt: what it really costs,
 category: "Legacy Modernization"
 primaryKeyword: "managing technical debt"
 tags: ["technical debt", "reduce tech debt", "tech debt strategy", "tech debt cost"]
+takeaways:
+  - "Technical debt rarely arrives as one bill; it is a tax on everything afterward, and CIOs estimate it at 20 to 40 percent of their entire technology estate before depreciation."
+  - "The distinction that matters for a leader is whether the trade-off was a decision or an accident: deliberate debt with a repayment plan is a tool, while debt from neglect is rot."
+  - "Debt persists because it is invisible to budget holders, so translate it into velocity, incidents, and a visible register with owners and costs to change the conversation."
+  - "Prioritize where high churn meets high risk; ugly code in a stable module nobody touches is cheap to ignore, while debt in code you change weekly is expensive every time."
+  - "Manage debt with continuous, modest investment folded into feature work rather than occasional crisis rewrites, which carry their own large risk."
+faqs:
+  - q: "How much does technical debt actually cost a company?"
+    a: "It rarely shows up as a single invoice, appearing instead as slower features, recurring bugs, and long onboarding. McKinsey found CIOs estimate tech debt at 20 to 40 percent of the value of their entire technology estate before depreciation, and Stripe's survey found the average developer spends more than 17 hours a week on maintenance, with roughly 4 of those on bad code, an opportunity cost estimated near $85 billion a year worldwide."
+  - q: "What is the difference between good and bad technical debt?"
+    a: "Good debt is a conscious trade taken deliberately, for example to hit a market window or validate an idea, with a plan to repay it if the bet pays off. Bad debt is taken by accident or neglect, growing from rushed work, skipped tests, and unaddressed problems with no plan behind it. The question a leader should ask is whether the trade-off was a decision or an accident."
+  - q: "How do you make technical debt visible to business leaders?"
+    a: "Translate it into terms the business already tracks: time, money, and risk. Tie debt to velocity by showing how much slower delivery has become in the areas carrying the most debt, tie it to specific outages and bugs, and maintain a visible register listing significant debt with an owner, an estimated cost of carrying it, and an estimated cost to fix. That reframes it from engineers wanting to rewrite things into a fundable business case."
+  - q: "Which technical debt should you fix first?"
+    a: "Fix where high churn meets high risk. Rank debt by how often the code changes, since high-churn areas repay cleanup fastest, by the blast radius when it breaks, since debt near money, data, or customers carries more risk, and by how much it is slowing current work. Ugly code in a stable module that never changes is cheap to ignore, so defer that without guilt."
 ---
 
 Technical debt is one of those terms that gets used to mean everything and therefore nothing. To an engineer it might mean a shortcut taken under deadline. To a CFO it sounds like a line item that never appears on any statement. The gap between those two views is exactly where debt festers, because the people who feel the pain and the people who fund the fix are not speaking the same language. This guide is for leaders who need to manage technical debt as a business problem, not just an engineering complaint.

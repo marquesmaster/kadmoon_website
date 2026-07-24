@@ -4,6 +4,21 @@ description: "The hidden costs of custom software go past the build: third-party
 category: "Cost & Pricing"
 primaryKeyword: "hidden costs of custom software"
 tags: ["software total cost of ownership", "unexpected software costs", "software maintenance cost", "cloud cost management"]
+takeaways:
+  - "The build quote is the down payment; the real budget shocks come after in third-party fees, cloud waste, maintenance, scope changes, and internal time."
+  - "Third-party services priced per transaction scale with your success, so ask your partner to list every external dependency and estimate cost at expected volume, not today's."
+  - "Wasted cloud spend runs around 28 to 29 percent of the total, and a production system needs staging, backups, and monitoring that look like a saving to skip until something breaks."
+  - "Annual maintenance typically runs 15 to 25 percent of build cost, and across a system's full life maintenance frequently accounts for 50 to 80 percent of total cost of ownership."
+  - "Internal time is the single best predictor of project success, so naming and protecting a product owner is an investment, not an interruption to cut."
+faqs:
+  - q: "What are the hidden costs of custom software?"
+    a: "They go past the build: third-party service and licensing fees that scale with usage, cloud and infrastructure that grow with load, ongoing maintenance and patching, change requests and scope drift, and your own team's internal time. The build is the down payment, and total cost of ownership is the fuller picture to price out three years ahead."
+  - q: "How much does software maintenance cost per year?"
+    a: "Annual maintenance typically runs 15 to 25 percent of the original build cost, climbing toward 25 to 40 percent for business-critical systems with high uptime and security demands. Across the full life of a system, maintenance frequently accounts for 50 to 80 percent of total cost of ownership, so the build can be the minority of what software eventually costs."
+  - q: "How do I avoid surprise cloud costs?"
+    a: "The trap is designing for launch load and getting surprised by growth. Wasted cloud spend runs around 28 to 29 percent of the total, from idle instances, oversized databases, and forgotten environments. Good architecture scales with demand rather than paying for peak all the time, and you should plan infrastructure as a permanent operating line."
+  - q: "How do you keep scope creep from blowing the budget?"
+    a: "The defense is process, not willpower. Insist on a written change-order mechanism in the contract so any change gets estimated and you approve or decline it while the baseline stays clean. Two-week sprints with a working demo each cycle help, because you see progress early and can redirect before a wrong assumption gets expensive."
 ---
 
 The build quote is the number everyone looks at, and it is the one that surprises people least. The real budget shocks come after, in the line items nobody circled during the sales conversation. None of these costs are unavoidable, and none of them are secrets. They are just easy to leave out of a spreadsheet until the invoice arrives. Here is where the money actually goes over a software product's life, and how to plan for it before you sign.

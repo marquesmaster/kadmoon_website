@@ -4,6 +4,21 @@ description: "How scalable custom software grows with your business: designing f
 category: "Custom Software"
 primaryKeyword: "scalable custom software"
 tags: ["software that scales", "scaling business software", "future-proof software", "technical debt"]
+takeaways:
+  - "Scaling usually means changeability, not traffic: most companies outgrow the ability to safely change their code before they outgrow their database."
+  - "Unmanaged technical debt is expensive, running 20 to 40 percent of a technology estate's value, and McKinsey found 30 percent of CIOs divert more than 20 percent of new-product budget to fixing it."
+  - "Design for 10x by getting a few early choices right: a clean data model, clear service boundaries, stateless app layers, and async background work."
+  - "A scalable system shows it when the tenth feature takes about as long as the second, which requires an automated test suite and modular structure."
+  - "Scale data with incremental levers in order: profile slow queries, add indexes, cache read-heavy data, add read replicas, and partition only when a table has truly outgrown those steps."
+faqs:
+  - q: "What does it actually mean for software to scale?"
+    a: "There are two kinds of scale. Technical scale is throughput, handling ten times the requests or records. Organizational scale is changeability, adding a new workflow or integration without weeks of untangling. For most B2B companies the second kind bites first, so scalable software is a system where new requirements land as additions rather than archaeology."
+  - q: "How much does technical debt cost a business?"
+    a: "McKinsey estimates technical debt amounts to 20 to 40 percent of the value of an entire technology estate before depreciation. In its survey, 30 percent of CIOs said more than 20 percent of the budget for new products was quietly diverted to resolving technical-debt problems, which is growth money spent keeping an unscalable system upright."
+  - q: "How do you avoid having to rebuild software from scratch?"
+    a: "You avoid the rebuild trap by paying small continuous costs instead of one enormous one: keeping tests current, refactoring as you go, and not letting the schema rot. Working in two-week sprints with a demo each cycle surfaces problems early while they are cheap to fix, and owning your source code, CI/CD, and runbooks means you are never stuck when you change direction."
+  - q: "Do I need to build for massive scale on day one?"
+    a: "No. Over-engineering for scale you do not have is its own kind of waste and slows down the product you actually need to ship. The goal is to avoid decisions that are cheap now and catastrophic later, then pull incremental levers like indexing, caching, and replicas as you grow."
 ---
 
 Scalable custom software is not about surviving a viral traffic spike. For most B2B companies, scaling means the boring, expensive stuff: more users, more data, more integrations, more feature requests, and more edge cases than you imagined at launch. Software scales well when adding those things is cheap and safe, and scales badly when every addition risks breaking something else. The difference is decided by architecture choices made early, long before you feel the strain, and the cost of getting it wrong is measurable. McKinsey estimates that technical debt amounts to [20 to 40 percent of the value of an entire technology estate](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/tech-debt-reclaiming-tech-equity) before depreciation, a tax you pay for shortcuts taken years earlier.

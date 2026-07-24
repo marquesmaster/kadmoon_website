@@ -4,6 +4,21 @@ description: "Practical requirements gathering techniques: interviews, workshops
 category: "Process & Delivery"
 primaryKeyword: "gathering software requirements"
 tags: ["requirements gathering", "elicitation techniques", "capturing requirements", "requirements failure"]
+takeaways:
+  - "More projects fail from bad requirements than from bad code; incomplete specs, changing specs, and lack of user input recur as leading causes of failure."
+  - "A defect caught in requirements or design is far cheaper to fix, roughly 1x versus 15x to 100x in production, so the cheapest place to catch a misunderstanding is a conversation."
+  - "Interview the people who will actually use the system, not just the executives who sponsor it, and push past the first answer to the decision behind a request."
+  - "Watching real work surfaces the automatic steps, invented workarounds, and exceptions that never come up in an interview but are often the requirements that matter most."
+  - "Treat requirements as living: short iterations with a demo every couple of weeks keep them honest, which is part of why agile succeeds about 42 percent of the time versus 13 percent for waterfall."
+faqs:
+  - q: "What are the best techniques for gathering software requirements?"
+    a: "Direct conversation is still highest-value: interview the actual users, not just sponsors, and run workshops to resolve conflicts in the open. Then observe real workflows to catch what people never mention, use cheap prototypes to turn vague requests into precise feedback, and prioritize with a must-have, should-have, could-have split."
+  - q: "Why do software requirements go wrong?"
+    a: "They fail in predictable ways: people describe the solution they imagine instead of the problem they have, stakeholders assume shared knowledge that lives only in their head, the loudest voice gets their features while quieter users go unheard, and requirements written once at the start are treated as fixed even as understanding improves."
+  - q: "Why is observing real work better than just interviewing users?"
+    a: "What people say they do and what they actually do are rarely the same, and the gap is where requirements hide. Sitting with users reveals automatic steps they never mention, forgotten workarounds, and the exceptions they handle by instinct, like the rush order that skips a step, which are often where a rigid new system falls down."
+  - q: "How do you keep requirements from going stale?"
+    a: "Treat requirements as living rather than carved once and obeyed forever. Let the delivery model support that with short cycles: a demo every couple of weeks gives stakeholders something real to respond to, and that feedback updates the requirements while there is still time to act. What you learn in sprint three should be allowed to change sprint four."
 ---
 
 More projects fail from bad requirements than from bad code. A team can execute flawlessly and still build the wrong thing because nobody understood the real problem before committing to a solution. The Standish Group's CHAOS research has made this point for decades: its analysis of failed projects consistently ranks [incomplete requirements, changing requirements, and lack of user input](https://personal.utdallas.edu/~chung/SYSM6309/chaos_report.pdf) among the leading causes, with lack of user input, incomplete specifications, and changing specifications together accounting for the largest share of failures. Requirements gathering is the work of closing that gap, and it is a skill, not a form to fill out. These are the techniques that actually surface what a system needs to do, along with the traps that make requirements go stale.

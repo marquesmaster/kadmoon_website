@@ -4,6 +4,21 @@ description: "Custom software for construction: where generic contech tools fail
 category: "Industry Guides"
 primaryKeyword: "custom software for construction"
 tags: ["construction software development", "contech", "field construction software"]
+takeaways:
+  - "Construction rework costs the US industry more than $177 billion a year, with about $31.3 billion of it caused by poor project data and miscommunication."
+  - "Custom construction software pays off by keeping the bid-to-cost thread intact, so the estimate becomes the budget and actual costs flow back against the same cost codes in real time."
+  - "Field data capture makes or breaks the system; if the mobile app is even slightly annoying, crews route around it and the data is lost for good."
+  - "Build the field app first with offline-first behavior for spotty job sites, get it into a few foremen's hands, and let their friction drive the design before building office features."
+  - "Accounting integration is usually where generic tools fail worst, because construction accounting has its own logic like job costing, retainage, AIA billing, and certified payroll."
+faqs:
+  - q: "Why does off-the-shelf construction software fail so often?"
+    a: "Packaged tools are built for the average contractor, so they assume a workflow that does not match your bidding process, cannot represent your cost codes the way your accountant needs, and often bolt a mobile app onto an office-first design. Crews on a job site with gloves and spotty signal simply will not use a slow form. The result is shadow spreadsheets and re-keyed data that feed the industry's rework problem."
+  - q: "How much does bad data cost the construction industry?"
+    a: "An Autodesk and FMI study estimated bad data may have cost the global construction industry $1.8 trillion in 2020 and drove roughly 14 percent of avoidable rework, about $88 billion. Separately, PlanGrid and FMI put US rework at over $177 billion a year, with about $31.3 billion caused by poor project data and miscommunication. Every shadow spreadsheet and re-keyed cost code contributes to that total."
+  - q: "Should the field app or the office system be built first?"
+    a: "Build the field app first. Field data capture is where construction software succeeds or fails, and if the app is annoying, crews route around it and the data is gone for good. Getting it into a few foremen's hands on real jobs and letting their friction drive the design produces an app people actually use, which is worth more than a feature-rich one that lives unopened on the home screen."
+  - q: "What integration matters most in construction software?"
+    a: "Accounting is the integration that matters most and the one generic tools handle worst. Construction accounting has its own logic including job costing, retainage, AIA billing, certified payroll, committed costs, and work in progress. A custom system integrates so cost codes match, committed costs sync, and billing pulls from real progress, which turns month-end from a scramble into a routine close."
 ---
 
 Construction runs on a strange mix of tools: a project management platform for some things, spreadsheets for the rest, a separate accounting system that never quite lines up, and a pile of paper forms that live in trucks. Each piece works on its own. The gaps between them are where hours disappear and margin leaks. The industry can measure the leak: a joint study by [PlanGrid and FMI put U.S. construction rework at more than $177 billion a year](https://www.prnewswire.com/news-releases/new-research-from-plangrid-and-fmi-identifies-factors-costing-the-construction-industry-more-than-177-billion-annually-300689826.html), with roughly $31.3 billion of it caused by poor project data and miscommunication. Custom software for construction is not about replacing every tool at once. It is about closing the specific gaps that generic contech products cannot, in a way that matches how your crews actually work.

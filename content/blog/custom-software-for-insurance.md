@@ -4,6 +4,21 @@ description: "Custom software for insurance: modernizing policy, underwriting, a
 category: "Industry Guides"
 primaryKeyword: "custom software for insurance"
 tags: ["insurtech software", "insurance software development", "policy claims software", "insurance modernization"]
+takeaways:
+  - "Modernizing P&C core systems can deliver roughly a 41 percent reduction in IT costs per policy and a 40 percent gain in operational productivity, the size of the gap between a modern and legacy stack."
+  - "Custom insurance work is usually less about replacing the core and more about building the policy, underwriting, and claims pieces around it that packaged platforms handle poorly."
+  - "Modernizing and automating claims can cut loss adjustment expenses by 25 to 30 percent and reduce indemnity payments by 3 to 5 percent through better accuracy and fraud detection."
+  - "Pulling the rating engine out of the core lets actuaries adjust factors without a core release and keeps a versioned history so any quote can be reproduced exactly, which matters for compliance and disputes."
+  - "The safer modernization path is incremental: wrap the core in APIs, build the highest-value capability first, prove it in production, then move to the next."
+faqs:
+  - q: "Should insurers replace their legacy core system to modernize?"
+    a: "Usually not. Most carriers run a stable policy administration system that is expensive to change, and the realistic path is rarely to replace the core. It is to modernize incrementally around it, exposing what you need through APIs and building modern experiences on top. Custom software for insurance is mostly about the pieces around the core that packaged platforms cannot handle well."
+  - q: "What are the biggest returns from modernizing insurance claims?"
+    a: "McKinsey estimates that modernizing and automating claims can cut loss adjustment expenses by 25 to 30 percent and reduce indemnity payments by 3 to 5 percent through better accuracy and fraud detection. Loss adjustment expense is pure overhead, so that cut flows straight to the combined ratio. The indemnity reduction is a larger dollar figure than it sounds, since indemnity is the biggest line in most carriers' loss costs."
+  - q: "Why pull the rating engine out of the core system?"
+    a: "In many carriers the rating engine lives inside the core, which makes every rate change slow and every new rating variable a project. A dedicated rating service lets actuaries and product teams adjust factors and roll out versions without a core release, applies rules consistently across channels, and keeps a versioned history to reproduce any quote. It also makes testing easier, since you can run a proposed change against historical policies before it goes live."
+  - q: "How can a carrier modernize without a risky big-bang rewrite?"
+    a: "Take the incremental path: wrap the core in APIs, build the highest-value new capability first, prove it in production, then move to the next. Each phase delivers something usable, so you are never one failed cutover away from a crisis. Rebuilding just the first notice of loss intake as a modern web and mobile experience, for example, delivers visible value in weeks while touching the core only through an API."
 ---
 
 Insurance runs on software that is often decades old, deeply customized, and expensive to change. That combination is why so many carriers and agencies feel stuck: the core system works, sort of, but every new product, channel, or regulation turns into a six-month project. It also shows up in the numbers. McKinsey's research on P&C core modernization found that upgrading legacy infrastructure can deliver roughly a [41 percent reduction in IT costs per policy and a 40 percent gain in operational productivity](https://www.mckinsey.com/industries/financial-services/our-insights/how-p-and-c-insurers-can-successfully-modernize-core-systems), which is the size of the gap between a modern stack and a legacy one. Custom software for insurance is usually less about ripping out the core and more about building the pieces around it that the packaged platforms cannot handle well.

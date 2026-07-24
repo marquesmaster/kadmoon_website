@@ -4,6 +4,21 @@ description: "Software engagement models compared: fixed-scope projects, dedicat
 category: "Software House"
 primaryKeyword: "software engagement models"
 tags: ["fixed project vs dedicated team", "engagement model software", "how to engage a software house", "staff augmentation"]
+takeaways:
+  - "There is no best engagement model, only the right one for your project's certainty, your internal capacity, and where you are in the software's life, and much project damage traces back to a mismatch between how work was structured and how much requirements changed."
+  - "Fixed-scope engagements give budget certainty but only as good as the scope definition, and they carry a hidden risk premium since the firm prices in the uncertainty it absorbs, which is usually larger than either side estimates."
+  - "A dedicated team suits evolving products because you reprioritize the backlog instead of negotiating every change, but it is only as productive as the priorities you feed it, so you take on more of the direction."
+  - "Staff augmentation gives you control and flexibility filling specific skill gaps, but delivery stays your responsibility, so it can add management load rather than remove it if your internal team is thin."
+  - "Discovery-then-build is often the smartest way to start a substantial project, since projects run in short adaptive increments succeeded 42 percent of the time versus 13 percent for fully-planned-up-front waterfall in the 2020 CHAOS data."
+faqs:
+  - q: "What are the main software house engagement models?"
+    a: "Five common ones: fixed-scope projects with a defined deliverable, price, and timeline; dedicated teams you pay for by capacity and direct sprint by sprint; staff augmentation that adds individual engineers to your existing team; discovery-then-build that buys clarity before committing the build budget; and support or retainer models for the ongoing life of the system. Many real engagements combine several."
+  - q: "Fixed-price project or dedicated team, which should I choose?"
+    a: "Choose fixed-scope when the deliverable is genuinely well understood and unlikely to change, since it gives budget certainty and a clear finish line but locks everything written down. Choose a dedicated team when the work is ongoing, evolving, or too uncertain to pin down, so you reprioritize the backlog as you learn. Over a multi-phase roadmap the economics often favor the dedicated team."
+  - q: "What is discovery-then-build and when does it make sense?"
+    a: "It splits the engagement: a short paid discovery phase produces requirements, architecture, a realistic plan, and an estimate, then you decide how to build with real information. It is the smartest way to start a big, ambiguous project, dramatically de-risks the decision that follows, and doubles as a low-stakes trial of the firm, since you can walk away cheaply if it goes badly."
+  - q: "Why use a retainer for software maintenance?"
+    a: "Software does not end at launch, and whoever built it can maintain it most efficiently because they carry context no runbook fully captures. A retainer reserves a set amount of capacity each month so that team stays available without full-time employment. For anything revenue-critical, a retainer with defined response times is the difference between a quick fix and a scramble."
 ---
 
 How you engage a software house shapes the whole relationship: who controls the work, how you pay, who carries the risk, and how easily the plan can change. Pick a model that fits your project and the collaboration feels natural. Pick the wrong one and you spend the engagement fighting the contract structure instead of building software.

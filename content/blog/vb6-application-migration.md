@@ -4,6 +4,21 @@ description: "A practical VB6 migration guide: the risks of running Visual Basic
 category: "Legacy Modernization"
 primaryKeyword: "vb6 migration"
 tags: ["migrate vb6", "visual basic 6 modernization", "vb6 to .net", "legacy migration"]
+takeaways:
+  - "The VB6 runtime still runs on supported Windows, but the IDE and compiler have been unsupported since April 2008, so the real risk is being one dependency away from a change you cannot make."
+  - "Automated conversion to .NET is fast and cheap but carries the old architecture forward, while a rewrite costs more and modernizes properly; converting first then refactoring the high-value parts is often the pragmatic winner."
+  - "The biggest migration risk is losing undocumented business logic, so treat the old code as a specification to mine, extract the rules explicitly, and capture current behavior in tests."
+  - "VB6 apps hide dependencies in third-party OCX and ActiveX controls that each need a matched replacement, so catalogue them before you start to turn cutover surprises into planned line items."
+  - "Avoid a big-bang switch: migrate module by module or run old and new in parallel, keeping the old app as a fallback until the new one runs clean through a full business cycle."
+faqs:
+  - q: "Is it safe to keep running a VB6 application?"
+    a: "The compiled application keeps running because Microsoft supports the VB6 runtime for the lifetime of supported Windows and Windows Server releases. The danger is that the IDE, compiler, and ability to build a changed version have had no support since April 2008, the talent pool has evaporated, and the language and its OCX controls no longer receive security patches. You are one dependency away from a crisis you cannot fix quickly."
+  - q: "Should I use automated VB6 conversion or a full rewrite?"
+    a: "Automated conversion translates VB6 to .NET line by line, which is fast and cheap and works when the app is large, well-structured, and mainly needs a supported stack, but it carries the twenty-year-old architecture forward. A rewrite rebuilds on a modern foundation and is right when the app is central, the workflow needs to change, or you want capabilities the old design cannot support. The pragmatic middle path is to convert first to get onto a supported stack, then refactor the high-value parts."
+  - q: "How do you avoid losing business logic in a VB6 migration?"
+    a: "Treat the old code as a specification to be mined, not just replaced. Read it carefully, extract the business rules, and write them down explicitly, then capture the current behavior in tests so you can prove the new system matches the old one case for case. Where logic is unclear, involve the people who use the app daily, since they often remember why a rule exists even when the code does not explain it."
+  - q: "What is the safest way to cut over from VB6?"
+    a: "Avoid a big-bang switch, because the old app is load-bearing and any failure hits the whole operation at once. Where the app decomposes into modules, migrate and cut over one at a time, running old and new in parallel and reconciling until each piece is proven. Where it cannot be split, run both systems side by side comparing outputs, and keep the old app as a fallback until the new one has run clean through a full business cycle like month-end or quarter-end."
 ---
 
 Plenty of businesses still run on a Visual Basic 6 application that has quietly worked for two decades. It handles orders, or scheduling, or some core operation, and nobody wants to touch it because it works and the person who wrote it is long gone. The problem is that the ground under it keeps shifting. VB6 shipped as part of Visual Studio 6.0 in September 1998, and Microsoft ended [mainstream support for it on March 31, 2005 and extended support on March 31, 2008](https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6-support-policy). The IDE has been formally unsupported since April 2008. This covers how to get off it without gambling the operation.

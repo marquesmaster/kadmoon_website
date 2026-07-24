@@ -4,6 +4,21 @@ description: "The mobile app development process explained step by step: discove
 category: "Mobile Apps"
 primaryKeyword: "mobile app development process"
 tags: ["app development steps", "how apps are built", "app development lifecycle", "app store submission"]
+takeaways:
+  - "None of the stages are optional; skipping discovery, design, testing, or maintenance just moves the cost later in the project."
+  - "Discovery is a small fraction of the budget but prevents the most expensive mistake, which is building the wrong thing well, and it settles the iOS, Android, or both question by who your users actually are."
+  - "Mobile testing is harder than web because the surface is fragmented, and performance was Apple's single largest 2024 rejection category at over 1.2 million submissions."
+  - "App store review timing is predictable, with Apple reviewing 90% of submissions in under 24 hours, so the real delay is rework, not the queue."
+  - "Launch is a milestone, not the finish line: Apple and Google each ship a major OS version every year that can break an app you stop updating, so budget for ongoing maintenance from the start."
+faqs:
+  - q: "What are the stages of the mobile app development process?"
+    a: "The process runs end to end through discovery and requirements, UX and UI design, development and integration, testing across devices, app store submission, and post-launch support and updates. None of the stages are optional, and skipping one just moves the cost later. Discovery is a small fraction of the budget but prevents the expensive mistake of building the wrong thing well."
+  - q: "Should I build a native or cross-platform mobile app?"
+    a: "Native means separate Swift and Kotlin codebases for the best platform fidelity, while cross-platform means one codebase, often React Native, serving both. In the 2024 Stack Overflow survey React Native was used by 8.4% and Flutter by 9.4% of professional developers, and React Native holds roughly 35% of the cross-platform market. Each is a real trade-off between performance, cost, and long-term maintenance."
+  - q: "How long does Apple App Store review take?"
+    a: "Apple says 90% of submissions are reviewed in under 24 hours, so the queue is rarely the delay. The real cost is rework, since Apple rejected roughly one in four submissions in 2024, with performance the single largest category. Rejection is usually not fatal though, as Apple noted that 295,109 previously rejected submissions were later approved once developers fixed the issues, so build a buffer into your timeline."
+  - q: "Do mobile apps need ongoing maintenance after launch?"
+    a: "Yes. Apple and Google each ship a major OS version every year plus point releases, and each one can deprecate an API your app depends on or change a permission prompt your flow assumes, so an app you stop touching slowly stops working. Ongoing work covers fixing issues real users surface, keeping up with OS and device changes, patching security and dependencies, and shipping improvements the early usage data suggests. Budget for it from the start."
 ---
 
 A mobile app looks simple from the outside: a few screens, some taps, a result. The process that produces a good one is not, and knowing the stages helps you budget, plan, and tell a competent team from a chaotic one. This walkthrough covers the mobile app development process end to end, from the conversation before any design exists to the maintenance that keeps the app alive after launch. None of the stages are optional; skipping them just moves the cost later. The gatekeeping alone is unforgiving: Apple's 2024 App Store Transparency Report shows [1,931,400 of 7,771,599 submissions were rejected](https://www.macrumors.com/2025/05/30/app-store-2024-transparency-report/), roughly one in four.

@@ -4,6 +4,21 @@ description: "Inside how a software house works: the roles, how work moves from 
 category: "Software House"
 primaryKeyword: "how a software house works"
 tags: ["software house process", "inside a software company", "software delivery model", "agile sprints"]
+takeaways:
+  - "A functioning delivery team has clear roles (PM, engineers, QA involved from the start, and design), and a firm that cannot say who fills them or leans on one junior person is a delivery risk."
+  - "Modern software houses work iteratively; the two-week sprint is the industry default, run by roughly 58 percent of teams, because it balances planning overhead against how often you can steer."
+  - "The demo at the end of each sprint shows a live working increment, not a slide deck, and is your regular checkpoint to adjust course."
+  - "Quality is enforced by process through peer code review, automated tests, and a QA pass, because a defect caught in review is far cheaper than one found in production."
+  - "Good collaboration means the firm owns delivery and you own direction, bad news travels fast with options, and everything (repo, CI/CD, credentials, docs) is handed over so you are never dependent on the vendor."
+faqs:
+  - q: "What roles does a software house team have?"
+    a: "A typical engagement has a project or product manager as your main point of contact, engineers split loosely into front end and back end, QA responsible for quality and involved from the start, and design covering both user experience and user interface. If a firm cannot clearly say who fills these roles, the delivery risk is high."
+  - q: "How does work move from idea to release at a software house?"
+    a: "It flows iteratively: discovery to dig into what you actually need, backlog and prioritization to order work by value, the sprint where the team builds and tests a chunk, a demo of a live working increment at the end of each cycle, and release either continuously or on a schedule. The point of the cadence is feedback so the project stays aligned."
+  - q: "Why do software houses use two-week sprints?"
+    a: "Two weeks is the industry default, run by roughly 58 percent of teams across State of Agile surveys, because that length balances planning overhead against how often you get to see and steer real progress. You see a working increment every couple of weeks and can adjust, which is how projects stay aligned with what the business needs."
+  - q: "How should a software house handle change requests?"
+    a: "A mature firm expects change and has a defined way to handle it. Typically a change gets assessed for effort and impact, you see the trade-off against something already planned, and you decide. Under an iterative model, reprioritizing the backlog between sprints is normal; under a fixed-scope contract, changes flow through a formal change order."
 ---
 
 If you have never worked with a software house, the process can feel like a black box: you describe what you want, money goes in, and software is supposed to come out. The stakes are real. The Standish Group's CHAOS research, which has tracked software project outcomes since 1994, found that in its 2020 dataset only about [31 percent of projects were successful](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), while 50 percent were challenged (late, over budget, or short on features) and 19 percent failed outright. Knowing what happens inside a delivery team is how you land in the first bucket instead of the other two, because you can tell whether a firm is running a real process or improvising. This walks through the roles, how work actually moves from idea to release, and what good collaboration feels like from your side of the table.

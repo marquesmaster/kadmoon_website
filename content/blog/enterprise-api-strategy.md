@@ -4,6 +4,21 @@ description: "An enterprise API strategy guide: treating APIs as infrastructure,
 category: "Integrations & APIs"
 primaryKeyword: "enterprise api strategy"
 tags: ["api strategy", "api governance", "internal and external apis", "api security"]
+takeaways:
+  - "Treat APIs as long-lived infrastructure, not project byproducts; nearly two-thirds of organizations already manage more than 100 APIs and counts rose 167 percent in a single year."
+  - "Design each API to its tier (internal, partner, or public), because the tier sets how much freedom you have to change it, and enforce that tier at the gateway."
+  - "Consistency is the whole game: one auth mechanism, pagination pattern, error shape, and naming convention lets consumers learn your platform once and reuse it everywhere."
+  - "Security is part of the contract; 95 percent of respondents had production API security problems yet only 7.5 percent ran dedicated API testing, so security-first design beats retrofitting."
+  - "Lightweight governance (a pre-ship review, a registry, deprecation timelines, and usage monitoring) is what keeps an estate from decaying back into inconsistent endpoints."
+faqs:
+  - q: "What is the difference between internal, partner, and public APIs?"
+    a: "Internal APIs connect your own services, so you control both sides and can evolve them quickly. Partner APIs are exposed to specific external companies under an agreement and need stronger stability, real authentication, and clear docs. Public APIs are open to anyone and carry the heaviest obligations: rate limiting, abuse protection, and strict versioning."
+  - q: "How should I handle API versioning without breaking clients?"
+    a: "Set a clear versioning policy: additive changes should never break clients, while breaking changes require a new version and a deprecation window with real notice. Contract-first design, defining the contract before implementation and treating it as the source of truth, keeps the interface clean."
+  - q: "What are the security basics for an enterprise API estate?"
+    a: "The baseline is strong consistent authentication like OAuth 2.0 with least-privilege tokens, authorization enforced on every request, rate limiting and quotas, transport encryption everywhere, input validation, and audit logging. For US enterprises this ties directly into SOC 2 and, where health data is involved, HIPAA."
+  - q: "Why does an API strategy need governance?"
+    a: "Governance keeps the strategy from decaying back into a pile of inconsistent endpoints, and it does not have to be heavy. It covers a lightweight review before new APIs ship, a registry so people find what exists instead of building a fifth way to fetch a customer, a deprecation process, and monitoring of what is actually used."
 ---
 
 Most companies do not set out to build an API strategy. They accumulate APIs, one per project, each with its own conventions, auth scheme, and error format, until integration becomes a tax on every new initiative. The scale of that sprawl is easy to underestimate. Salt Security's 2024 report found [nearly two-thirds of organizations manage more than 100 APIs](https://www.prnewswire.com/news-releases/salt-security-state-of-api-security-report-reveals-95-of-respondents-experienced-api-security-problems-driven-by-accelerated-api-usage-302174946.html), and its customer data showed API counts rising 167% in a single year. A real strategy treats APIs as long-lived infrastructure rather than project byproducts. This covers how to think about the tiers, the standards, and the governance that keep an API estate useful for years instead of turning into a liability.

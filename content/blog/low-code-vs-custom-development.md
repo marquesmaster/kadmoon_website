@@ -4,6 +4,21 @@ description: "Low-code vs custom development: what low-code platforms do well, w
 category: "Comparisons"
 primaryKeyword: "low-code vs custom development"
 tags: ["low-code platforms", "no-code vs custom", "low-code limitations", "citizen development"]
+takeaways:
+  - "Low-code wins for standard, moderate-stakes problems like approval workflows, internal dashboards, and admin panels, where time to first version is often measured in days."
+  - "The ceiling arrives when logic gets specific: complex conditional branches turn brittle, performance suffers as data grows, and non-standard integrations force you back into writing code inside a tool not built for it."
+  - "The cost comparison flips over time; low-code almost always wins in month one, but usage-based pricing per seat, app, or record can compound into a five-figure monthly bill you cannot renegotiate."
+  - "On a low-code platform you do not own the runtime or data format, so migrating off a mature app is often a full rebuild, whereas custom software gives you the source code, pipeline, and IP."
+  - "The smartest approach is a portfolio: use low-code for commodity and peripheral tools, and invest custom engineering in the system that actually differentiates how you compete."
+faqs:
+  - q: "When is low-code better than custom development?"
+    a: "Lean low-code when the workflow is standard, the user count is small, the data volume is modest, the logic is simple, and the app is not core to how you compete. It shines for internal tools that replace a spreadsheet, prototypes to test with users, admin panels on an existing database, and simple automations between a couple of SaaS apps. Time to first version is short, and non-engineers can maintain small changes."
+  - q: "Where do low-code platforms hit a ceiling?"
+    a: "You tend to hit the wall in predictable places: complex business rules with many conditional branches become brittle, performance suffers once data volumes grow because you do not control the queries or indexing, integrations beyond prebuilt connectors get awkward, and deep control over the user experience is rarely on offer. Past a certain point you are writing code anyway, just inside a tool that was not designed for it."
+  - q: "Is low-code cheaper than custom software?"
+    a: "It depends on the time horizon. In month one low-code almost always wins, with no build cost and predictable subscription pricing. Over years the math changes, because low-code pricing usually scales with usage per seat, app, record, or API call, and a tool that cost a few hundred dollars a month can become a five-figure line item as you grow. Custom software costs more upfront, but the marginal cost of another user is mostly infrastructure you control."
+  - q: "Do you own your software on a low-code platform?"
+    a: "Not the way you do with custom software. On a low-code platform your logic lives inside the vendor's proprietary format, your data sits in their database, and your ability to leave depends on their export tools. If they raise prices or deprecate a feature, your options are limited and migrating off is often a rebuild. With custom software done properly, you own the source code, repository, CI/CD pipeline, and credentials."
 ---
 
 Low-code platforms have earned a real place in the toolkit, and the numbers show it. Gartner projected that [65% of application development activity](https://kissflow.com/low-code/gartner-forecasts-on-low-code-development-market/) would involve low-code by 2024, and that 75% of new enterprise apps would use it by 2026, up from less than 25% in 2020. The worldwide high-productivity aPaaS market grew 16.6% to reach [$10.8 billion in 2024](https://www.gartner.com/en/documents/6934566). This is not a fad you can ignore. The mistake buyers make is treating the low-code vs custom development question as a philosophy rather than a fit test. The honest answer depends on how complex your logic is, how much the software matters to your business, and who needs to own it in three years.

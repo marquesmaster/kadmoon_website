@@ -4,6 +4,19 @@ description: "A practical cloud migration strategy: the 6 Rs explained, how to a
 category: "Legacy Modernization"
 primaryKeyword: "cloud migration strategy"
 tags: ["migrate to the cloud", "cloud migration approaches", "lift and shift vs refactor", "cloud cost overruns"]
+takeaways:
+  - "Cloud migration is a decision per application, not one decision, and the 6 Rs give you a vocabulary for making each one deliberately instead of defaulting to lift-and-shift."
+  - "The 6 Rs are rehost, replatform, refactor, repurchase, retire, and retain, and most real migrations use several across different applications."
+  - "Flexera's 2026 report found wasted cloud spend rose to 29 percent and 84 percent of organizations name managing cloud spend as their top challenge, so cost discipline is the whole game."
+  - "Lift-and-shift regret comes from rehosting systems that needed more: the bill goes up, performance is unchanged, and you still have the same brittle architecture in a more expensive place."
+  - "Sequence the migration starting with something low-risk and well-understood to prove the process, then migrate in waves with checkpoints, and refactor high-value systems last."
+faqs:
+  - q: "What are the 6 Rs of cloud migration?"
+    a: "The 6 Rs are the standard menu of migration approaches, ordered roughly from least to most transformation: rehost (lift and shift) moves an app with little change, replatform makes targeted improvements during the move, refactor reworks the app for cloud-native services, repurchase swaps to a commercial product, retire turns off unused apps, and retain leaves a system where it is for now. The skill is matching each system to the right R rather than forcing one approach on everything."
+  - q: "Why do cloud migrations end up costing more than expected?"
+    a: "Migrations run over budget when teams lift-and-shift workloads sized for peak load and running around the clock, paying cloud premiums for on-premises habits. Flexera's 2026 report found wasted cloud spend rose to 29 percent, and McKinsey found inefficiencies cost the average company 14 percent more in migration spend than planned. The fix is to right-size workloads, use autoscaling, turn off what you do not need, and model run cost before you migrate rather than after the first bill."
+  - q: "How should I sequence a cloud migration?"
+    a: "Do not start with your most critical, most complex system. Start with something low-risk and well-understood to prove the process, build the team's cloud muscle, and validate your tooling and security. A workable sequence is to pilot a simple application, migrate the retire and repurchase candidates to shrink the estate, replatform the straightforward middle tier, and refactor high-value systems last. Migrate in waves with clear checkpoints, each small enough to roll back."
 ---
 
 Cloud migration goes wrong in a predictable way: a team lifts everything as-is, the cloud bill comes in higher than the data center it replaced, and nobody can explain what improved. That is not a cloud problem. It is a strategy problem. Migration is not one decision. It is a decision per application, and the 6 Rs give you a vocabulary for making each one deliberately instead of defaulting to lift-and-shift for the whole portfolio.

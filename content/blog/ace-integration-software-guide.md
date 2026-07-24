@@ -4,6 +4,21 @@ description: "A guide to ACE integration software: what ACE is, ABI and EDI mess
 category: "Trade & Supply Chain"
 primaryKeyword: "ace integration software"
 tags: ["ace filing software", "automated commercial environment", "cbp ace api", "abi entry summary"]
+takeaways:
+  - "ACE is CBP's single-window platform for US imports and exports, and it processes more than 105,000 entries on a typical day, so manual keying does not scale."
+  - "You connect to ACE through the Automated Broker Interface using structured EDI messages defined in CBP's CATAIR documents, which specify field positions and codes down to the character."
+  - "The three connection paths trade cost against control: a service bureau is fastest to start, a third-party ABI platform is more flexible, and a custom integration under your own filer code gives you the most control."
+  - "A custom integration must handle data assembly, transmission, response processing, and recordkeeping, and customs rules require importers to retain entry records for five years from the date of entry."
+  - "CBP requires a formal certification process before you file in production, and it commonly takes weeks and moves at CBP's pace, so plan for it in your timeline."
+faqs:
+  - q: "What is ACE integration software?"
+    a: "ACE integration software connects your own systems directly to CBP's Automated Commercial Environment so your software can submit entry data and receive CBP's responses automatically, instead of a person keying information into a service bureau screen. It assembles correctly formatted ABI messages, transmits them, and processes the responses CBP sends back."
+  - q: "What are ABI and EDI in customs filing?"
+    a: "ABI, the Automated Broker Interface, is the interface through which entry data is transmitted to and from CBP, and filing under it requires an assigned filer code. EDI, electronic data interchange, is the format of those messages, which CBP defines in its CATAIR documents down to the field position and code."
+  - q: "How long does CBP certification take for a new ACE integration?"
+    a: "The certification phase commonly takes weeks and moves at CBP's pace rather than yours. Your software has to demonstrate that it produces correct messages and handles responses properly, working through CBP client representative review for each message type you plan to use."
+  - q: "Should I build a custom ACE integration or use a service bureau?"
+    a: "If entries are occasional, a service bureau is fine. Once you are filing thousands of entries a month, per-transaction bureau fees add up and the workflow constraints cost staff time, so a custom integration certified under your own or your broker's filer code pays back the investment when customs is core to your operation."
 ---
 
 For US importers and brokers, the Automated Commercial Environment is the door every entry passes through. The volume is not small. On a typical day in fiscal year 2024, CBP processed [$9.2 billion worth of imported goods, more than 105,000 entries of merchandise, and collected $241 million in duties, taxes, and fees](https://www.cbp.gov/newsroom/stats/typical-day-fy2024), nearly all of it flowing through ACE. Connecting your systems to it directly, instead of retyping data into someone else's portal, is what turns customs from a manual bottleneck into an automated flow. This guide explains what ACE integration software actually involves: how the system works, the message formats you have to speak, your options for connecting, and what it takes to get certified by CBP.

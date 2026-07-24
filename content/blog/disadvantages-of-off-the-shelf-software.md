@@ -4,6 +4,21 @@ description: "The disadvantages of off-the-shelf software: feature bloat, bent w
 category: "Custom Software"
 primaryKeyword: "disadvantages of off-the-shelf software"
 tags: ["limitations of packaged software", "saas limitations", "cots software problems", "saas license waste"]
+takeaways:
+  - "Packaged products are built for the average of thousands of customers, so you pay for feature bloat you never touch, and Zylo found roughly 51 percent of SaaS licenses go unused."
+  - "The costliest and least-discussed disadvantage is bending your workflows around the tool's one opinion of how work should flow, which taxes your team daily and erodes the process that makes you competitive."
+  - "Integration and data-export limits can strand your data behind thin, rate-limited, or higher-tier APIs, making a clean real-time connection to the rest of your stack range from awkward to impossible."
+  - "Vendor lock-in gives leverage that shows up in pricing, with Zylo reporting SaaS costs from several large vendors rising 10 to 20 percent in 2025, far outpacing typical IT budget growth."
+  - "Off-the-shelf is the right call for standard, edge-of-operation needs, but the calculus flips to custom when the tool is central, you run meaningful workarounds, integrations are a constant friction, and per-seat cost climbs faster than your budget."
+faqs:
+  - q: "What are the main disadvantages of off-the-shelf software?"
+    a: "Its costs are quiet and cumulative rather than upfront: feature bloat you pay for but never use, workflows you have to bend around because the tool encodes one opinion of how work should flow, integration and data-export limits that strand your data, vendor lock-in with annual price hikes, and a roadmap someone else controls. These tend to surface two years after purchase, once you are committed."
+  - q: "How much money do companies waste on unused software licenses?"
+    a: "Zylo's 2024 SaaS Management Index, which analyzed 30 million licenses and more than $34 billion in spend, found companies leave an average of $18 million in wasted spend on the table, rising toward $127 million for large enterprises. The report also found roughly 51 percent of SaaS licenses go unused, the highest waste rate the benchmark has recorded."
+  - q: "Why do SaaS renewal prices keep increasing?"
+    a: "Once your data lives in a proprietary format, your team is trained on the interface, and your processes are wired around the tool, switching is expensive, and that leverage flows to the vendor. A Gartner analyst told Zylo that SaaS costs from several large vendors rose 10 to 20 percent in 2025, far outpacing the 2.8 percent IT budget growth most companies planned, with much of the increase buying the same functionality plus AI add-ons."
+  - q: "When is custom software worth it over off-the-shelf?"
+    a: "The calculus flips to custom when several things are true at once: the tool sits at the center of how you operate rather than the edge, you run meaningful workarounds and pay for seats and modules nobody opens, integrations are a constant source of friction, per-seat cost climbs faster than your budget, and the process the software constrains is part of your competitive edge."
 ---
 
 Off-the-shelf software earns its place. It is fast to adopt, someone else maintains it, and for common needs it is the obvious call. The trouble is that its costs are quiet and cumulative. They do not show up in the purchase order. They show up two years later in the workarounds your team has quietly built, the integrations that keep failing, and the annual renewal that keeps climbing. These are the disadvantages of off-the-shelf software that buyers tend to discover after they are committed.

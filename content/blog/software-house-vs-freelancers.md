@@ -4,6 +4,21 @@ description: "Software house vs freelancers: when freelancers fit, the continuit
 category: "Software House"
 primaryKeyword: "software house vs freelancers"
 tags: ["hire freelancers or agency", "freelance developers vs company", "freelancer risks"]
+takeaways:
+  - "Freelancers fit bounded, well-defined work only when someone on your side owns the architecture, quality, and integration."
+  - "Standish CHAOS data shows small projects succeed around 90 percent of the time while large projects succeed less than 10 percent, and freelancers live at the small end."
+  - "A solo freelancer has a bus factor of one, so their departure can leave you with unfamiliar code, no documentation, and no one to explain it."
+  - "Individual freelancers usually test their own work, skipping the independent review and dedicated QA that catch blind spots."
+  - "Hourly rate favors freelancers, but coordination, QA, project management, and rework often make a software house the better total value on a full product."
+faqs:
+  - q: "When should I hire freelancers instead of a software house?"
+    a: "Choose freelancers for bounded, well-defined tasks when you have strong internal technical leadership to spec and review the work, or when you need a narrow specialist briefly and the scope is small. The precondition is that someone on your side owns architecture, quality, and integration. For a full product or ongoing work, a software house is usually the better fit."
+  - q: "What is the bus factor and why does it matter with freelancers?"
+    a: "The bus factor is how many people would have to disappear before a project stalls. With a solo freelancer it is one, so if they take a full-time job or stop replying, the entire knowledge of your system leaves with them. A software house carries that knowledge across a team, which is a large part of what the premium buys."
+  - q: "Are freelancers cheaper than a software house?"
+    a: "On hourly rate, yes, because you are not paying for a company's overhead, project management, or bench. But total project cost also includes coordination, QA, project management, rework from gaps, and the risk of discontinuity. For a small, clear task the rate advantage holds; for a full product those extras often make a firm the better value."
+  - q: "Can I mix freelancers and a software house?"
+    a: "Yes. Some companies use a firm for the core system and freelancers for peripheral work under the firm's or their own coordination. The unifying question is whether you have someone who can own architecture, quality, and coordination. If yes, freelancers can work alongside; if no, you need a team that brings that ownership with them."
 ---
 
 Freelancers can be excellent, and for the right job they are the smart, cost-effective choice. There are plenty of them, too: Upwork's study of the US workforce found that [64 million Americans freelanced in 2023](https://investors.upwork.com/news-releases/news-release-details/upwork-study-finds-64-million-americans-freelanced-2023-adding), about 38 percent of the workforce, contributing an estimated $1.27 trillion to the economy. The mistake is defaulting to freelancers for work that needs a team, then discovering the hidden costs only after a key person disappears mid-project. The software house vs freelancers decision is really a question about continuity, accountability, and coordination: who owns the outcome, who covers for whom, and what happens when the one person who understands your system stops answering. Here is an honest look at both sides.

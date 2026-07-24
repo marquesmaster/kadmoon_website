@@ -4,6 +4,21 @@ description: "Custom software for logistics: where packaged tools fall short, hi
 category: "Industry Guides"
 primaryKeyword: "custom software for logistics"
 tags: ["logistics software development", "logistics tech", "freight software"]
+takeaways:
+  - "Logistics runs on a patchwork of TMS, WMS, carrier portals, EDI feeds, and spreadsheets, and the margin lives in the details each company handles differently."
+  - "Prioritize custom builds by following the manual labor: wherever staff rekey data, reconcile numbers by hand, or chase status by phone, there is a workflow worth automating and a cost you can measure."
+  - "Carrier integrations must speak both modern REST APIs and decades-old X12 EDI sets like the 204 load tender, 214 status message, 210 invoice, 990, and 997 acknowledgment, and this layer is most of the engineering work."
+  - "Keeping two systems truthful about the same shipment in real time is the hard part of ERP integration, not moving a record once."
+  - "US customs compliance through ACE and CBP should be built into the platform so a shipment is validated as it is created, turning compliance from a manual gate into a background process."
+faqs:
+  - q: "Where do off-the-shelf logistics tools fall short?"
+    a: "Packaged platforms are built for the average customer, so billing rules do not fit, unsupported carriers live outside the system, and customer visibility comes in the wrong format. The deeper problem is integration, because logistics is fundamentally about connecting islands from origin to port to line-haul to final mile. When tools do not talk cleanly, staff become the integration layer, rekeying data and catching errors after they cost money."
+  - q: "How should a logistics company prioritize what to build custom?"
+    a: "Follow the manual labor. Wherever staff rekey data between systems, reconcile mismatched numbers by hand, or chase status by phone and email, there is a workflow worth automating and a measurable cost. Those tasks are also where errors enter, and a single misfiled entry can cost far more than the hour it took to handle. Ranking projects by the manual hours and error risk they remove gives an honest order of operations."
+  - q: "What integrations does a logistics platform need?"
+    a: "Carrier integrations span modern REST APIs and decades-old EDI, so a real platform speaks both, including the X12 204 load tender, 214 status message, 210 invoice, 990, and 997 acknowledgment. On the back end it has to reconcile with the ERP, usually NetSuite, SAP, or Microsoft Dynamics. The hard part is not moving a record once; it is keeping two systems truthful about the same shipment in real time."
+  - q: "How does custom software handle customs and trade compliance?"
+    a: "Cross-border moves touch classification, valuation, denied-party screening, and CBP filing through the Automated Commercial Environment, and mistakes carry legal and financial weight. When classification, screening, and filing data live in the same platform as the operational workflow, the system validates a shipment as it is created and flags problems while there is time to fix them. Clean audit trails then fall out automatically, which matters the day CBP asks you to reconstruct an entry."
 ---
 
 Logistics runs on a patchwork of systems that were never designed to work together: a TMS here, a WMS there, carrier portals, EDI feeds, spreadsheets filling the gaps, and email holding it all together. Packaged tools cover the common cases, but the margin in logistics lives in the details each company handles differently. Custom software is how the better operators turn their specific way of moving freight into an advantage instead of a workaround.

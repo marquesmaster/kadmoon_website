@@ -4,6 +4,21 @@ description: "How demand forecasting software works, why spreadsheets fail, stat
 category: "Data & AI"
 primaryKeyword: "demand forecasting software"
 tags: ["demand planning", "sales forecasting software", "inventory forecasting"]
+takeaways:
+  - "Forecast accuracy pays: the Institute of Business Forecasting estimates a single point of accuracy is worth $1.43 million to $3.5 million a year to a large consumer goods company."
+  - "Spreadsheets fail structurally, not at math: Panko's research found 88 percent of audited spreadsheets contained errors, and applying one uniform method cannot fit seasonal, promotion-driven, steady, and erratic demand at once."
+  - "Better forecasts come mostly from better inputs, like clean SKU-level history, promotion calendars, lead times, and stockout history, rather than from fancier algorithms."
+  - "A pragmatic system uses statistical models as a reliable baseline and applies ML where richer data justifies it, always comparing both against a naive benchmark and judging results with a metric like MAPE, where under 10 to 20 percent is considered good."
+  - "Companies moving from spreadsheet extrapolation to data-driven forecasting typically see a 20 to 50 percent reduction in forecast error and cut excess inventory by up to 30 percent while holding fill rates."
+faqs:
+  - q: "Why do spreadsheets fail at demand forecasting?"
+    a: "Spreadsheets can only hold so much history before slowing down, forcing you to aggregate away the detail that drives accuracy, and they mix data and logic so nobody can fully audit the model. They are also error-prone: Panko's research found 88 percent of audited spreadsheets contained errors. Worst of all, a spreadsheet forecast is usually one method applied uniformly, which cannot fit demand that behaves differently across products."
+  - q: "Should demand forecasting use statistical methods or machine learning?"
+    a: "Often both. Classical statistical methods like exponential smoothing and ARIMA are transparent, need little data, and are hard to beat for stable, long-lived products. Machine learning shines when you have many related series and richer features such as promotions and price elasticity. A pragmatic system uses statistical models as a baseline, applies ML where the data justifies it, and compares both against a naive benchmark."
+  - q: "What is a good forecast accuracy or MAPE?"
+    a: "Mean absolute percentage error, or MAPE, is the common metric, and in most supply chain settings a MAPE under 10 to 20 percent is considered good, though the acceptable range shifts with how volatile the product is. Always compare your model against a naive benchmark so you know the added sophistication is actually earning its keep."
+  - q: "Should I build or buy demand forecasting software?"
+    a: "Packaged demand-planning tools are a reasonable starting point if your business is fairly standard and you want something running quickly, and the market was valued around USD 4.81 billion in 2024. Building custom makes sense when your demand has structure packaged tools do not model well, when forecasting is close to your competitive advantage, or when you need it woven tightly into a custom planning workflow and want to own the models and data."
 ---
 
 Forecasting demand well is worth real money. Get it right and you hold less safety stock, stock out less often, and stop tying up cash in inventory that sits. Get it wrong and you pay for both problems at once. The Institute of Business Forecasting estimates that a single percentage point of forecast accuracy is worth between [$1.43 million and $3.5 million a year to a large consumer goods company](https://www.spscommerce.com/community/articles/forecast-accuracy-and-forecast-bias-the-two-numbers-that-decide-whether-your-supply-chain-holds) in reduced inventory and operating cost. Most companies still forecast in spreadsheets, extrapolating last year plus a gut adjustment. This covers what better forecasting software actually does, where the accuracy comes from, and when it is worth building your own.

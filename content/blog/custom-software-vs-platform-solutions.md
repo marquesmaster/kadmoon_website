@@ -4,6 +4,21 @@ description: "Custom software vs platform: how configurable platforms compare to
 category: "Comparisons"
 primaryKeyword: "custom software vs platform"
 tags: ["platform vs custom build", "configurable platform", "platform solution limits", "total cost of ownership"]
+takeaways:
+  - "The real dividing line is configuration versus code: platforms are fast and cheap to change inside the boundary the vendor exposed and hit a wall outside it."
+  - "Watch the middle zone where just enough scripting makes heavy customization look feasible, so teams keep investing past the point a custom build would have been cheaper."
+  - "Platforms win on day-one cost and speed, but over three to five years costs scale with seats and add-ons, and enterprises waste about 18 million dollars a year on unused licenses."
+  - "Flexibility and lock-in are two sides of one coin: a platform locks in your data schema, tooling, and reporting to fields the vendor chose to expose."
+  - "Migrate before the workarounds calcify, since the cost of leaving climbs every year and a phased migration beats a single cutover."
+faqs:
+  - q: "What is the difference between custom software and a platform solution?"
+    a: "A platform solution is a product built to be configured rather than coded, like a low-code app builder or a CRM extended with custom objects. You change behavior through settings, fields, and rules the vendor exposed on purpose. Custom software has no such boundary: if the business needs a behavior, you build it, and you own the code, database, and roadmap."
+  - q: "When does a platform solution become more expensive than a custom build?"
+    a: "Platforms win the cost comparison on day one with predictable fees and a live system in weeks. The picture shifts over three to five years as costs scale with seats and usage and heavy customization piles on integration and add-on spend. When you are paying for a stack of add-ons, exporting to spreadsheets constantly, and funding five-figure customization projects, the platform has become a tax rather than a saving."
+  - q: "How do you decide between custom software and a platform?"
+    a: "Frame the decision around differentiation. Where your process looks like everyone else's, use a platform and move on. Where your process is the reason customers choose you, custom is worth the investment. Ask whether the platform forces you to change how you work, what year three costs including add-ons, how trapped you would be if the vendor doubled prices, and whether the process is a differentiator or plumbing."
+  - q: "What are the signs a business has outgrown its platform?"
+    a: "Consistent warning signs include paying for a stack of add-ons that each solve a fraction of your problem, teams constantly exporting data to spreadsheets because the platform cannot report the way you need, admins spending more time fighting configuration limits than doing their jobs, and a single unusual rule requiring a consultant and a five-figure customization. At that point the platform is a tax you pay to avoid building."
 ---
 
 The choice between custom software and a platform solution is not really build versus buy. It is a question of how far someone else's product can bend before it starts to break your process. Platforms have gotten genuinely good. Many teams run for years on a well-configured platform and never need to write a line of code. The trouble starts when your workflow and the platform's assumptions diverge, and that divergence is exactly what this comparison is about.

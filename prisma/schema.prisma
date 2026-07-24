@@ -12,6 +12,7 @@ datasource db {
 model Lead {
   id        String   @id @default(cuid())
   name      String
+  email     String?
   company   String
   size      String?
   need      String?

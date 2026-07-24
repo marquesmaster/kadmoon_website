@@ -4,6 +4,21 @@ description: "A practical definition of done for software teams: what a good DoD
 category: "Process & Delivery"
 primaryKeyword: "definition of done"
 tags: ["dod agile", "done criteria", "when is software done"]
+takeaways:
+  - "A written definition of done turns 'finished' into a shared, explicit standard instead of a personal opinion, closing the gaps between what a developer, tester, and product owner each mean by done."
+  - "A solid DoD is a checklist covering code standards, passing automated tests, independent review, updated docs, a merged and deployable change, and met acceptance criteria."
+  - "The definition of done is global and applies to every item, while acceptance criteria are local to one feature, and an item is complete only when it satisfies both."
+  - "Enforce the DoD every time, especially under deadline pressure, since honoring it only when convenient trains the team that 'done' is negotiable and rebuilds the ambiguity it was meant to remove."
+  - "Automate enforcement where you can by letting the pipeline block merges that lack passing tests or review, so the standard is upheld by tooling rather than willpower."
+faqs:
+  - q: "What should a definition of done include?"
+    a: "A solid baseline covers code that is written to agreed standards, automated tests that exist and pass on the important paths, an independent review by someone other than the author, updated documentation and runbooks, a change that is merged and deployable through the normal pipeline, and met and verified acceptance criteria. The exact list should fit your context but must be written, agreed, and applied to everything."
+  - q: "What is the difference between definition of done and acceptance criteria?"
+    a: "The definition of done is global and describes the quality bar for every item: tested, reviewed, documented, deployable. Acceptance criteria are local to a single item and describe what that particular feature must do to be correct, such as a user resetting a password and receiving a confirmation email. An item is complete only when it satisfies both."
+  - q: "How do you enforce a definition of done?"
+    a: "Automate what you can so the pipeline blocks merges lacking passing tests or review, keep the checklist visible where work is tracked, hold the line under schedule pressure instead of dropping it to hit a date, and revisit it deliberately as the team and product mature. A DoD that is written but not enforced is decoration."
+  - q: "Why does an unclear definition of done cost money?"
+    a: "When definitions differ, work is declared finished, handed off, and bounced back after the original context has gone cold, making the fix more expensive and eroding trust in status reports. Figures cited from IBM put fixing a defect after release at up to 100 times the cost of fixing it during requirements, so ambiguity that lets problems surface late is expensive."
 ---
 
 "It's done" is one of the most expensive phrases in software, because it means something different to everyone in the room. To a developer it might mean the code runs on their machine. To a tester it means it passed QA. To a product owner it means a customer can use it. When those definitions differ, work gets declared finished, handed off, and bounced back, and the whole team loses trust in the word. The cost of that ambiguity is not hypothetical. A 2002 study prepared for the National Institute of Standards and Technology estimated that software defects cost the US economy [about $59.5 billion a year](https://www.nist.gov/document/samate-document-greg-tasseys-summary-pdf-nists-2002-report-economic-impacts-inadequate), much of it traceable to problems caught late rather than early. A written definition of done attacks that problem by making "finished" a shared, explicit standard instead of a personal opinion.

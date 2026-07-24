@@ -4,6 +4,21 @@ description: "Why custom software is expensive, explained with real numbers: dev
 category: "Cost & Pricing"
 primaryKeyword: "why custom software is expensive"
 tags: ["what you pay for in software", "software cost breakdown", "developer rates", "maintenance cost"]
+takeaways:
+  - "Writing code is a fraction of the cost, because most engineering hours go to reading code, design discussion, review, testing, and integration that make a feature correct and maintainable."
+  - "The upfront quote is a down payment: maintenance runs 15 to 25 percent of the original budget every year and commonly reaches 60 to 90 percent of total cost of ownership over a system's life."
+  - "The US median software developer wage was $133,080 in May 2024, and loaded with overhead an experienced engineer costs a firm well over $200,000 a year, which is the real floor under onshore rates."
+  - "Senior engineers cost more per hour but less per outcome, since a large share of what you buy is the expensive mistakes, rework, and outages that never happen."
+  - "The lowest bid is usually low because it assumes less scope, staffs junior people, or omits testing and deployment, so the final cost often passes the higher bids you rejected."
+faqs:
+  - q: "Why is custom software so expensive?"
+    a: "You are paying a team of experienced people to think hard about your problem and build something that did not exist, and the cost mostly reflects thinking rather than typing. Writing code is a fraction of it: engineers spend large portions of their time reading code, discussing design, reviewing work, writing tests, and wiring systems together. Requirements definition, architecture, security, deployment, and ongoing maintenance all sit on top of the visible feature."
+  - q: "How much does software maintenance cost after launch?"
+    a: "Ongoing maintenance runs 15 to 25 percent of the original development budget every year, and over a system's full life it commonly reaches 60 to 90 percent of total cost of ownership. The upfront quote is the down payment, not the whole bill. Budgeting for maintenance up front keeps the system healthy instead of letting it rot into an expensive rewrite."
+  - q: "Why does the cheapest software bid rarely win?"
+    a: "The lowest bid is usually low because it assumes less scope, staffs more junior people, or omits the testing and deployment work realistic bids include. Once the project is underway and the omissions surface, change orders begin and the final cost often passes the higher bids you rejected. The discount you captured at signing is often the most expensive money you ever saved."
+  - q: "Are senior engineers worth their higher rates?"
+    a: "Senior engineers cost more per hour and are cheaper per outcome, because they make fewer expensive mistakes. When you pay senior rates, a large share of what you buy is the mistakes that do not happen: the architecture that bends instead of breaking, anticipated failure modes, and code the next person can understand. Commodity coding sold at attractive rates tends to produce software that works until it does not, with the bill arriving later as rework, outages, and an eventual rewrite."
 ---
 
 The first time you see a six-figure quote for software that "just does a few things," it can feel absurd. You are not buying a product off a shelf, though. You are paying a team of experienced people to think hard about your problem and build something that did not exist before. Understanding why custom software is expensive starts with seeing where the hours actually go, because it is almost never where buyers expect.

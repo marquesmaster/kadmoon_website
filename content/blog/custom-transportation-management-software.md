@@ -4,6 +4,21 @@ description: "A guide to custom TMS software: what a TMS does, where packaged pl
 category: "Trade & Supply Chain"
 primaryKeyword: "custom tms software"
 tags: ["transportation management system", "tms development", "custom tms build", "freight audit software"]
+takeaways:
+  - "A TMS plans, executes, and settles freight: rating, routing and load planning, tendering and tracking, and freight audit and settlement, all tied to your ERP and carriers."
+  - "Packaged TMS platforms limit you when your routing or audit logic does not fit their fields, integration is gated behind paid connectors, and per-shipment or per-user pricing scales against you."
+  - "Roughly 3% to 8% of freight invoices contain billing errors, so on a 10 million dollar freight budget that is 300,000 to 800,000 dollars sitting in incorrect invoices an audit engine can recover."
+  - "Carrier integration is where custom work concentrates, handling both legacy EDI transaction sets (204 tenders, 214 status, 210 invoices) and newer REST APIs so onboarding a carrier is configuration rather than a project."
+  - "Build when transportation is core to how you compete and packaged fees rival a build's cost, since a build is one-time plus maintenance while platform costs recur and grow with volume."
+faqs:
+  - q: "What does a transportation management system do?"
+    a: "A TMS plans, executes, and settles the movement of freight. It rates shipments by comparing carrier options and costs, routes and plans loads, tenders freight to carriers and tracks it in transit, and audits carrier invoices before settling payment. Around that core sit integrations with your ERP and carriers plus reporting on cost and performance across lanes and carriers."
+  - q: "When should you build a custom TMS instead of buying one?"
+    a: "Lean toward custom when transportation is central to how you compete, when your routing or audit logic is genuinely specific and packaged fields cannot hold it, when per-shipment fees and paid connectors are climbing past what a build would cost, or when you need to own the roadmap. A rough test is to total your annual per-shipment fees, connectors, change requests, and freight leaking through weak audit, and compare it to a build."
+  - q: "How much money is lost to freight billing errors?"
+    a: "Industry freight-audit data consistently finds that roughly 3% to 8% of freight invoices contain billing errors, most in accessorial charges and misapplied discounts. On a 10 million dollar freight budget that is on the order of 300,000 to 800,000 dollars in incorrect invoices. Third-party audit services typically take 15% to 25% of what they recover, so at volume an audit engine you own can pay for itself."
+  - q: "Why does carrier EDI integration matter in a TMS?"
+    a: "A TMS is only as good as its connections to carriers, and much of that still runs on EDI, the structured message standard the freight industry has used for decades. Load tenders move as EDI 204, status updates as EDI 214, and invoices as EDI 210, while newer carriers offer REST APIs. Building this layer so a new carrier is a configuration rather than a project is one of the strongest reasons companies go custom."
 ---
 
 A transportation management system sits at the center of how freight moves and how it gets paid for, which means small inefficiencies there multiply across every shipment. The dollars behind that sentence are large: US business logistics costs [reached about $2.4 trillion in 2023, roughly 8.7% of GDP](https://www.thescxchange.com/articles/10429-business-logistics-costs-finally-reverting-to-prepandemic-levels-according-annual-report), according to the CSCMP State of Logistics Report prepared by Kearney. Plenty of companies run a packaged TMS and make it work. Others find that the platform dictates their operation instead of supporting it, and the workarounds start to cost more than the license. This is a guide to what a TMS actually does, where off-the-shelf platforms limit you, and how to tell whether building a custom TMS is the right move rather than an expensive detour.

@@ -4,6 +4,21 @@ description: "Agile software development explained for business leaders: what ag
 category: "Process & Delivery"
 primaryKeyword: "agile software development"
 tags: ["agile explained", "scrum vs waterfall", "agile for clients", "agile success rates"]
+takeaways:
+  - "Agile trades a fixed long-term plan for short, frequent cycles of building and showing real software, which surfaces a wrong direction in weeks rather than at the end of a year-long build."
+  - "In 2020 CHAOS data, agile projects succeeded 42% of the time versus 13% for waterfall, and on large projects agile succeeded 18% of the time against waterfall's 3%."
+  - "Kadmoon runs two-week sprints with a working demo each cycle, so every two weeks you see functioning software you can click on rather than a status report or a percentage."
+  - "Agile does not mean unlimited scope: each sprint has fixed capacity, so adding something new pushes something else down the backlog, which forces explicit prioritization."
+  - "Naming an available product owner with real authority before kickoff is one of the highest-leverage decisions a client makes, because the projects that struggle are the ones where that person cannot engage."
+faqs:
+  - q: "What does agile software development actually mean?"
+    a: "Agile means building software in small increments and adjusting course based on what each increment reveals, instead of specifying everything up front and building to that spec for a year. It is not an excuse for having no plan; the plan is held loosely and updated as reality comes in."
+  - q: "Is agile better than waterfall?"
+    a: "It depends on the work. Waterfall's predictability is an advantage when scope is genuinely fixed and well understood, but for custom software where the right solution is uncertain, agile is the safer bet. The 2020 CHAOS data shows agile projects succeeding 42% of the time versus 13% for waterfall."
+  - q: "What is the client's role in an agile project?"
+    a: "The client provides a steady stream of feedback: someone on your side answers questions, reviews each demo, and helps re-prioritize the backlog as the team learns. Usually one person acts as product owner, prioritizing the backlog and accepting or rejecting each demo against agreed criteria, which requires availability and authority more than technical depth."
+  - q: "How does agile handle scope changes?"
+    a: "Each sprint has a fixed capacity, so requesting a new change means something else moves down the backlog. A healthy team shows you what the change displaces and lets you decide the trade-off, rather than silently absorbing or dropping it, which keeps scope from swelling invisibly until the budget is gone."
 ---
 
 Agile gets talked about as a philosophy, which makes it sound softer and vaguer than it is. For a business leader buying software, agile is simply a way of working that trades a fixed long-term plan for short, frequent cycles of building and showing real software. The point is to reduce the risk that you spend months and a large budget on something that turns out to be wrong.

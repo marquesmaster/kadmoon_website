@@ -13,6 +13,7 @@ export const dynamic = 'force-dynamic';
 // surface; these bounds mainly stop oversized/garbage payloads and abuse.
 const schema = z.object({
   name: z.string().trim().min(1).max(120),
+  email: z.string().trim().email().max(200),
   company: z.string().trim().min(1).max(160),
   size: z.string().trim().max(60).optional().default(''),
   need: z.string().trim().max(60).optional().default(''),
@@ -81,6 +82,7 @@ export async function POST(req: Request) {
     await prisma.lead.create({
       data: {
         name: data.name,
+        email: data.email,
         company: data.company,
         size: data.size || null,
         need: data.need || null,
@@ -101,6 +103,7 @@ export async function POST(req: Request) {
   try {
     await sendLeadEmail({
       name: data.name,
+      email: data.email,
       company: data.company,
       size: data.size,
       need: data.need,

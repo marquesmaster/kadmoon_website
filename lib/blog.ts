@@ -8,7 +8,23 @@ export { categorySlug };
 export type { PostMeta, PostCategory };
 
 export type TocItem = { id: string; text: string; level: number };
-export type Post = PostMeta & { html: string; toc: TocItem[] };
+export type PostFaq = { q: string; a: string };
+export type Post = PostMeta & {
+  html: string;
+  toc: TocItem[];
+  takeaways: string[];
+  faqs: PostFaq[];
+};
+
+function parseFaqs(raw: unknown): PostFaq[] {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((f) => {
+      const o = f as { q?: unknown; a?: unknown };
+      return { q: String(o?.q ?? ''), a: String(o?.a ?? '') };
+    })
+    .filter((f) => f.q && f.a);
+}
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
@@ -86,6 +102,8 @@ export function getAllPosts(): Post[] {
       wordCount,
       html,
       toc,
+      takeaways: Array.isArray(data.takeaways) ? data.takeaways.map(String) : [],
+      faqs: parseFaqs(data.faqs),
     } satisfies Post;
   });
   posts.sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -94,7 +112,7 @@ export function getAllPosts(): Post[] {
 }
 
 export function getAllPostMeta(): PostMeta[] {
-  return getAllPosts().map(({ html, toc, ...meta }) => meta);
+  return getAllPosts().map(({ html, toc, takeaways, faqs, ...meta }) => meta);
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
@@ -111,7 +129,7 @@ export function getRelatedPosts(slug: string, limit = 3): PostMeta[] {
   const rest = all.filter(
     (p) => p.slug !== slug && p.category !== current.category,
   );
-  return [...sameCategory, ...rest].slice(0, limit).map(({ html, toc, ...m }) => m);
+  return [...sameCategory, ...rest].slice(0, limit).map(({ html, toc, takeaways, faqs, ...m }) => m);
 }
 
 export function getCategories(): { name: string; slug: string; count: number }[] {

@@ -4,6 +4,21 @@ description: "iOS vs Android first: how to pick your launch platform based on yo
 category: "Mobile Apps"
 primaryKeyword: "ios vs android first"
 tags: ["which platform first", "launch platform choice", "android or ios app", "cross-platform development"]
+takeaways:
+  - "Global OS share is close to useless for a specific product: Android holds about 72 percent worldwide, but US share inverts to roughly 58 percent iOS and 42 percent Android, so use your own analytics."
+  - "Android costs more to test and maintain because it spans thousands of device models and slower, more spread-out OS adoption, widening regression testing on every release."
+  - "iOS users spend far more: of about 127 billion dollars spent across both stores in 2024, Apple's App Store took roughly 91 billion versus around 36 billion for Google Play."
+  - "Cross-platform frameworks like Flutter and React Native can remove the choice entirely for standard apps, shipping to both platforms for close to the cost of one native build."
+  - "For B2B and enterprise apps, the buyer's issued-device reality overrides market share and monetization; if the customer issues iPhones, you build iOS."
+faqs:
+  - q: "Should I launch my app on iOS or Android first?"
+    a: "It depends on who your users are, what each platform costs you, and how you plan to make money. Revenue-per-user goals point to iOS, maximum-reach goals point to Android, and if your buyers use company-issued devices, that reality overrides both. Start from your audience's actual device split, using your own website analytics as the best proxy, and remember the US skews toward iOS while the global average skews toward Android."
+  - q: "Is iOS or Android cheaper to develop for?"
+    a: "Neither is meaningfully cheaper to start, but the difference shows up over the life of the app, mostly in testing. Android spans thousands of device models, screen sizes, and OS versions with slower, more spread-out adoption, so it demands more QA and wider regression testing on every release. iOS has a smaller device matrix and faster version adoption, so a single-platform iOS launch often reaches a well-tested release slightly faster."
+  - q: "Do iOS or Android users spend more money?"
+    a: "iOS users spend considerably more inside apps and on subscriptions. Of the roughly 127 billion dollars consumers spent across the two stores in 2024, Apple's App Store accounted for about 91 billion while Google Play took around 36 billion, so Apple captures well over two-thirds of the spend from under a third of the global install base. That is why many consumer products with paid features launch on iOS first."
+  - q: "Can I avoid choosing between iOS and Android?"
+    a: "Often, yes. Cross-platform frameworks let one codebase serve both platforms, and adoption is real, with roughly 11 percent of apps released in 2024 using Flutter and 7 percent using React Native. If your app is mostly standard screens, forms, data, and API calls without heavy device-specific features, a cross-platform build can ship to both platforms for close to the cost of one native app. The trade-off is some performance and access to the newest native capabilities."
 ---
 
 If you are building a mobile app and cannot afford to do both platforms at once, the launch order matters. Pick wrong and you spend your first release chasing users who are not there, or optimizing for revenue you will not see. The good news is that this is a decision you can make with data rather than preference. It comes down to who your users are, what each platform costs you, and how you plan to make money. Here is how to reason through it.

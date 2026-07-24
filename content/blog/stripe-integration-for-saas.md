@@ -4,6 +4,21 @@ description: "A technical guide to Stripe integration for SaaS: subscriptions, C
 category: "SaaS Development"
 primaryKeyword: "stripe integration for saas"
 tags: ["stripe billing", "stripe subscriptions", "saas payment integration", "involuntary churn"]
+takeaways:
+  - "The gap between a demo that charges a card and a production billing system handling upgrades, failed payments, proration, and tax is where teams underestimate the work."
+  - "Treat webhooks, not the redirect, as the source of truth, and make handlers idempotent by keying off the event ID so retries never double-charge or double-provision."
+  - "Decide proration behavior deliberately: upgrades usually apply immediately with a prorated charge, while downgrades are often best applied at the end of the period."
+  - "Failed first-attempt charges run 9 to 15 percent of subscription payments and become 20 to 40 percent of total churn, so wire failure events into a real recovery flow."
+  - "Since South Dakota v. Wayfair, states can require tax collection past thresholds like 100,000 dollars in sales or 200 transactions, so plan for tax from the start."
+faqs:
+  - q: "Why should I use webhooks instead of the Stripe redirect?"
+    a: "The redirect back to your app is not a trustworthy signal that money moved, because a user can close the tab, a payment can be delayed, or a card can require extra authentication. Stripe's event stream is the source of truth. Verify signatures, be idempotent by keying off the event ID, acknowledge fast and process asynchronously, and tolerate out-of-order delivery."
+  - q: "How does Stripe handle subscription upgrades and proration?"
+    a: "When someone upgrades mid-cycle they have already paid for the current plan, so you owe credit for the unused portion and a charge for the new plan's remainder. Stripe's proration handles the math, but you decide the behavior: upgrades usually take effect immediately with a prorated charge, downgrades are often applied at period end, and quantity changes prorate the same way. Make it consistent and visible to the customer before they confirm."
+  - q: "What is involuntary churn and how do I reduce it?"
+    a: "Involuntary churn is subscription cancellation caused by failed payments rather than a customer choosing to leave, and it makes up 20 to 40 percent of total churn for many subscription businesses. Failed first-attempt charges run 9 to 15 percent of payments, with expired cards causing around 42 percent of failures. Reduce it with Stripe Smart Retries, dunning emails, and the account updater wired into a real recovery flow."
+  - q: "Do I need to collect sales tax with Stripe for my SaaS?"
+    a: "Likely yes, depending on where you have nexus. Since the 2018 South Dakota v. Wayfair decision, states can require you to collect once you cross an economic threshold, commonly 100,000 dollars in sales or 200 transactions into that state, with no physical presence required. Stripe Tax can compute and collect the right amount at checkout, which is far safer than hard-coding rates that go stale."
 ---
 
 Stripe is the default choice for SaaS billing in the US market for good reasons: strong APIs, deep documentation, and coverage for most of what a subscription business needs. The scale is real. Stripe processed [$1.4 trillion in total payment volume in 2024](https://stripe.com/newsroom/news/stripe-2024-update), up 38% year over year and equal to roughly 1.3% of global GDP. That reach does not make integrating it trivial. The gap between a demo that charges a card and a production billing system that handles upgrades, failed payments, proration, and tax correctly is where teams underestimate the work. This guide walks the components of a real Stripe integration and the mistakes that cause billing bugs, which are the worst kind of bugs because they cost customers money.

@@ -4,6 +4,21 @@ description: "Custom AI vs off-the-shelf AI: when packaged tools are enough, whe
 category: "Data & AI"
 primaryKeyword: "custom ai vs off-the-shelf"
 tags: ["build vs buy ai", "custom ai models", "ai product vs custom", "enterprise ai adoption"]
+takeaways:
+  - "The real AI question is not build vs buy from scratch but how much of your own data and logic you wrap around existing foundation models."
+  - "Adoption is broad but shallow: McKinsey found 65 percent of organizations use generative AI regularly, while S&P Global reported the share abandoning most AI initiatives before production jumped from 17 to 42 percent in a year."
+  - "Off-the-shelf AI fits generic, low-stakes tasks with near-zero upfront cost and per-use pricing, while custom fits high volume tied to your proprietary data or rules where the upfront cost amortizes."
+  - "Custom rarely means a new model; it means retrieval over your documents, fine-tuning on your examples, business rules around the output, and evaluation against your ground truth."
+  - "Build the evaluation before you trust the output, because the AI failure mode is a confident wrong answer that looks right, and it is the step most failed projects skip."
+faqs:
+  - q: "Should I build custom AI or buy an off-the-shelf tool?"
+    a: "Buy a packaged tool when the task is generic and low-stakes, like transcription or translation, because you get a working result in days at per-use pricing. Lean custom when the value depends on your proprietary data or rules, when you need to measure and control accuracy for compliance or trust, or when volume is high enough that per-use pricing hurts. Most real systems end up a hybrid: buy the commodity pieces, build the parts that are actually your business."
+  - q: "When does off-the-shelf AI stop working?"
+    a: "General tools work until the task depends on your terminology, your rules, or your data, at which point they start giving confidently wrong answers. In the S&P Global survey, 46 percent of companies that invested in generative AI said no single enterprise objective saw a strong positive impact, naming cost, data privacy, and security as top obstacles. The moment the value lives in something only you have, custom becomes necessary."
+  - q: "What does custom AI actually involve if you are not training a model?"
+    a: "Custom here means retrieval over your documents, fine-tuning on your examples, business rules that constrain the model's output, and evaluation against your ground truth. The common pattern is a capable general foundation model you did not train, fed your data through retrieval and validated against your standards. You get the reasoning of a large model plus the specificity and control of your own data and evaluation."
+  - q: "How do I keep an AI project from failing?"
+    a: "Match the tool to the actual problem and build the evaluation before you trust the output. The dangerous failure mode is not a crash but a confident wrong answer that looks right, so a test set of known-correct examples run regularly tells you whether the system is good enough. Going by the abandonment data, that evaluation step is the one most failed projects skip."
 ---
 
 The framing of "build vs buy" for AI misleads people, because almost nobody trains a model from scratch anymore. The real question is how much of your own data and logic you wrap around foundation models that already exist. Off-the-shelf AI can be excellent for common problems and useless for anything specific to your business. Knowing which situation you are in saves both money and disappointment.

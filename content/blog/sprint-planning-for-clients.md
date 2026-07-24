@@ -4,6 +4,21 @@ description: "Sprint planning for clients explained: what happens in planning, h
 category: "Process & Delivery"
 primaryKeyword: "sprint planning for clients"
 tags: ["sprint planning", "client role in sprints", "agile sprint process"]
+takeaways:
+  - "Sprint planning is the recurring decision point where clients have the most leverage over what gets built and in what order."
+  - "The 2020 Standish data shows agile projects succeeding about 42 percent of the time versus 13 percent for waterfall, but only if the recurring decisions actually get made."
+  - "Clients own the value judgments in backlog prioritization while the team brings the technical view of risk and dependencies."
+  - "PMI found about 47 percent of failed projects miss their goals from poor requirements management, so an actively prioritized backlog is a running clarification of requirements."
+  - "Reprioritize between sprints, not during one, which is how you get the benefit of changing your mind without the scope creep that PMI found hit 52 percent of projects."
+faqs:
+  - q: "What is the client's role in sprint planning?"
+    a: "Your job is to make the calls only you can make: which of two features matters more this month, how a business rule should work, and whether an edge case is worth handling now. You own the value judgments in prioritizing the backlog, while the team brings the technical view of risk and dependencies. A responsive decision-maker is worth more to a project than almost anything else."
+  - q: "How is a product backlog prioritized?"
+    a: "Good prioritization weighs business value, risk, dependencies, and effort against each other. You own the value judgments since only you know what matters most to the business, and the team supplies the technical view of risk and dependencies. The goal is an order that delivers value early instead of saving the useful parts for a final phase that may never arrive."
+  - q: "Can I change scope after a sprint has started?"
+    a: "The rule is that you reprioritize between sprints, not in the middle of one. During a sprint the team stays focused on what it committed to, which is what lets it finish. Between sprints you can reorder the backlog freely: pull a new item to the top, push something down, or add work you did not think of before. Adding scope still costs time and money, so trade-offs are real."
+  - q: "Why is two weeks the standard sprint length?"
+    a: "Two weeks is long enough to finish something real and short enough to catch a wrong turn early. It is not unique to any one firm: per Digital.ai's State of Agile report, Scrum is by far the most used framework and the large majority of teams run sprints of two weeks or shorter. Each sprint should end in something you can actually see and use."
 ---
 
 If your software partner works in sprints, planning is where you have the most leverage over what gets built and in what order. Many clients treat it as a meeting they can skip. That is a mistake. Sprint planning is the recurring decision point that keeps a project pointed at your goals instead of drifting toward whatever is easiest to build. The stakes are measurable: the [2020 Standish CHAOS data shows agile projects succeeding about 42 percent of the time versus 13 percent for waterfall](https://medium.com/leadership-and-agility/agile-project-success-rates-are-2x-higher-than-traditional-projects-376a05e590d4), and that advantage only holds if the recurring decisions inside each sprint actually get made. This guide explains sprint planning from the client side, so you know what to expect and how to use it to stay in control.

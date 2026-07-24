@@ -4,6 +4,21 @@ description: "Staff augmentation vs managed team compared: who owns delivery, re
 category: "Comparisons"
 primaryKeyword: "staff augmentation vs managed team"
 tags: ["managed services vs staff aug", "dedicated team vs augmentation", "outsourcing models"]
+takeaways:
+  - "With staff augmentation you rent people and keep the wheel, while with a managed team you buy an outcome and hand over the wheel."
+  - "Deloitte's 2024 survey found cost as the primary outsourcing reason fell from about 70 percent in 2020 to roughly 34 percent, as agility and talent access rose to the top."
+  - "Under augmentation delivery risk stays with you, while under a managed team a well-written contract ties payment to measurable acceptance criteria rather than hours logged."
+  - "Every augmented engineer needs tickets written, pull requests reviewed, and blockers cleared by your side, effectively creating a second team a lead must run."
+  - "Standish found only 31 percent of projects fully successful in 2020, so the real question is who is on the hook when trouble shows up."
+faqs:
+  - q: "What is the difference between staff augmentation and a managed team?"
+    a: "Staff augmentation slots individual contractors into your existing team, where they attend your standups, use your tools, and take direction from your engineering manager. A managed team is a self-contained delivery unit that includes engineers plus a lead or PM, QA, and often design, and the vendor owns how the work gets organized and delivered against agreed goals. The unit of accountability shifts from a timesheet to a shipped increment."
+  - q: "Which is cheaper, staff augmentation or a managed team?"
+    a: "Augmentation usually shows a lower hourly rate because you pay only for individual contributors, not the wrapper of PM, QA, and delivery management. That gap narrows or reverses once you price your own management time and the cost of quality problems that slip through without dedicated QA. The cheapest quoted rate often signals a junior bench or heavy subcontracting rather than a real bargain."
+  - q: "Who is accountable for delivery with a managed team?"
+    a: "The vendor is accountable for delivering what was agreed, and a well-written contract ties payment to measurable acceptance criteria rather than hours logged. When something slips, a missed acceptance criterion is the vendor's problem to solve. Under staff augmentation, by contrast, a late feature is your management gap, not a contract breach, because the contractors did what you told them to."
+  - q: "When does staff augmentation make more sense than a managed team?"
+    a: "Augmentation fits when you have strong engineering leadership with spare management capacity and mostly need more hands, or when your needs are highly variable and short-term so you want to flex headcount person by person. A managed team fits better when your leadership is thin or overloaded, the work sits outside your core expertise, or you have a defined project with a real deadline and stakes."
 ---
 
 Both models put outside engineers on your project, but they distribute responsibility very differently. With staff augmentation you rent people and keep the wheel. With a managed team you buy an outcome and hand over the wheel. Picking the wrong one is a common and expensive mistake, usually because a buyer chose the cheaper hourly rate without accounting for who now has to run the work.

@@ -4,6 +4,19 @@ description: "A COBOL migration strategy that lowers risk: why mainframes still 
 category: "Legacy Modernization"
 primaryKeyword: "cobol migration"
 tags: ["mainframe modernization", "migrate off cobol", "legacy cobol systems"]
+takeaways:
+  - "A 2022 Micro Focus survey found more than 800 billion lines of COBOL in daily production use, roughly three times an earlier estimate, and 92 percent of respondents called their COBOL applications strategic."
+  - "Doing nothing is not holding steady but accumulating risk: the average COBOL developer is around 55 years old with roughly 10 percent retiring each year, so knowledge walks out the door."
+  - "The migration approaches are rehost, replatform, refactor, and rebuild, and most large migrations mix approaches by subsystem rather than betting everything on one."
+  - "The single greatest danger is losing business rules that live only in the code, so treat the existing code as the specification, extract the rules, and build a test suite before changing anything."
+  - "Validate by running old and new systems in parallel and comparing outputs field by field, because close is not acceptable when the data is money or compliance records."
+faqs:
+  - q: "Why do critical systems still run on COBOL?"
+    a: "COBOL powers core systems in banking, insurance, government, and logistics because it was built for high-volume, transaction-heavy batch and record processing. Widely cited figures trace it to roughly 3 trillion dollars in daily commerce, about 95 percent of ATM swipes, and 43 percent of US banking systems. The code has been debugged over decades, encodes years of business rules, and handles enormous throughput reliably, which is why replacing it is not an obvious win."
+  - q: "What are the risks of not migrating off COBOL?"
+    a: "The real risk is slower and more dangerous than an outage. The average COBOL developer is around 55 years old with roughly 10 percent retiring every year, so each year fewer people can maintain the code and every bug fix or change takes longer and costs more. Meanwhile the business needs the system to expose APIs, feed analytics, and integrate with cloud systems, which gets more expensive and fragile over time. Doing nothing accumulates risk until a forced event turns a planned project into an emergency."
+  - q: "How do you migrate off COBOL without losing business logic?"
+    a: "Treat the existing code as the specification. Extract the rules, document behavior with real inputs and outputs, and build a test suite that captures what the current system actually does before you change anything, since decades of edge cases and fixes are encoded in undocumented programs. Migrate incrementally one subsystem at a time, run old and new in parallel on the same inputs, and reconcile totals field by field before trusting the new system with production."
 ---
 
 COBOL is decades old and still runs a startling share of the systems that move money, process claims, and track inventory. That is not nostalgia. A 2022 survey by Micro Focus found [more than 800 billion lines of COBOL in daily production use, roughly three times an earlier Reuters estimate of 220 billion](https://www.thestack.technology/cobol-in-daily-use/). Those systems work, they are fast, and rewriting them is genuinely risky. A COBOL migration is one of the highest-stakes projects an organization can take on, which is exactly why it needs a strategy built around reducing risk rather than chasing a clean-slate rewrite. Here is how to think about it.

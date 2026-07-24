@@ -4,6 +4,21 @@ description: "Denied party screening software explained: US watchlists, fuzzy ma
 category: "Trade & Supply Chain"
 primaryKeyword: "denied party screening software"
 tags: ["restricted party screening", "sanctions screening", "export screening software", "OFAC compliance"]
+takeaways:
+  - "Sanctions liability is strict, meaning a violation counts whether or not you knew, and the maximum civil penalty per IEEPA violation is the greater of $377,700 or twice the transaction value."
+  - "There is no single list to check: screening spans OFAC's SDN and consolidated lists, BIS lists, State Department debarments, and program-specific lists, and keeping that list data fresh is one of the hardest parts of building this well."
+  - "Matching must use fuzzy logic scored by confidence to handle spelling, transliteration, and alias variation, and it must reason about OFAC's 50 Percent Rule, since too-strict misses real hits and too-loose drowns analysts until they rubber-stamp."
+  - "Screening has to run in real time at decision points like order placement and onboarding, because with thousands of list additions a year an entity that was clean last month can be blocked today."
+  - "You must be able to prove you screened, so every event needs immutable logging with the list versions and threshold in effect, plus a case-management workflow that preserves each analyst decision."
+faqs:
+  - q: "Is denied party screening legally required?"
+    a: "Yes. US law prohibits dealing with sanctioned and restricted parties, and enforcement falls on the company doing the transaction, not just the person who made the decision. Liability under IEEPA is strict, so a genuine mistake still counts as a violation, and 'we did not check' is not a defense. That is why screening is a compliance requirement rather than a convenience."
+  - q: "Which watchlists does screening software need to check?"
+    a: "There is no single list. Screening covers OFAC's Specially Designated Nationals list and consolidated sanctions lists, the BIS Entity List, Denied Persons List, and Unverified List, State Department debarred parties, and sector- or program-specific lists. Companies with international exposure also screen against non-US lists such as EU and UN sanctions, and a system is only as good as how fresh its list data is."
+  - q: "How does screening software reduce false positives?"
+    a: "It uses fuzzy matching that accounts for spelling variations, transliteration differences, name order, aliases, and partial matches, then scores each potential match by confidence. The goal is to catch true matches while keeping false positives low enough for a team to actually review them, because a too-loose engine drowns analysts in false alarms until they start rubber-stamping and a real hit slips through."
+  - q: "Should I build or buy a denied party screening engine?"
+    a: "Packaged products can be a good fit for standard needs with off-the-shelf list coverage. Building custom gets stronger when screening must be embedded deeply into your own platform, when your matching and review workflow is specific to your business, or when the engine needs to sit natively inside a larger custom trade system, giving you control over matching logic, thresholds, list sources, and audit format."
 ---
 
 Selling to, buying from, or shipping to a party on a US government restricted list is a violation whether or not you knew. Sanctions liability under the International Emergency Economic Powers Act is strict, and the maximum civil penalty per violation is [the greater of $377,700 or twice the value of the underlying transaction](https://home.treasury.gov/system/files/206/Notice-Inflation-Adjustment-to-Maximum-Civil-Monetary-Penalty.pdf) as of the 2024 inflation adjustment. That is what makes denied party screening software a compliance requirement rather than a convenience: the obligation is strict, the penalties are steep, and "we did not check" is not a defense. The job of the software is to check every relevant party against every relevant list, every time, and to prove it did.

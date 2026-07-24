@@ -4,6 +4,19 @@ description: "CI/CD explained for non-technical leaders: what continuous integra
 category: "Process & Delivery"
 primaryKeyword: "ci/cd explained"
 tags: ["continuous integration", "continuous delivery", "ci cd pipeline"]
+takeaways:
+  - "CI/CD is a business decision about release risk: teams without it treat releases as rare scary events, while teams with it ship small changes safely many times a week."
+  - "Releasing more often makes each release safer because of batch size: a small change that breaks is easy to diagnose and roll back, unlike a quarterly release bundling hundreds of changes."
+  - "Google's 2024 DORA report found elite teams deploy on demand, carry changes to production in under a day, keep change failure rate around 5 percent, and recover in under an hour, yet only about 19 percent of teams reach that tier."
+  - "The strength of the automated gates, tests, security scans, code review, and build checks, is the real measure of a pipeline, because one that deploys fast but tests little just ships bugs faster."
+  - "ITIC's 2024 survey found a single hour of downtime costs more than 300,000 dollars for over 90 percent of mid-size and large enterprises, so deployment strategies that shorten outages protect real money."
+faqs:
+  - q: "What does CI/CD mean in plain terms?"
+    a: "CI/CD stands for continuous integration and continuous delivery, and both describe automating the path from a developer finishing a change to that change running safely in production. Continuous integration merges each developer's work into the shared codebase frequently and automatically checks it every time. Continuous delivery extends that automation through release, deploying passing changes through a repeatable process rather than a manual scramble. Think of it as a factory line for software changes."
+  - q: "Why does releasing more often make software safer?"
+    a: "It comes down to batch size. When a team ships once a quarter, that release bundles hundreds of changes, so finding the cause of a break is slow and stressful. When a team ships small changes continuously, each release contains very little, so the culprit is almost always the one small thing that just went out and rollback is easy. Google's 2024 DORA report found the strongest teams keep change failure rates around 5 percent and recover in under an hour."
+  - q: "What questions should I ask my team to check their CI/CD?"
+    a: "Ask how often they can release and expect that a mature team ships safely on demand, not only on a fixed schedule. Ask what happens when a release breaks and listen for automatic detection and a fast, low-drama rollback rather than an all-hands panic. Ask what runs automatically before a change ships, expecting tests, reviews, and security checks as required gates. On a custom build, confirm you own the pipeline, credentials, and infrastructure config."
 ---
 
 CI/CD gets talked about as a technical detail, but it is really a business decision about how much risk you carry every time software changes. Teams without it treat releases as rare, scary events. Teams with it release small changes safely, many times a week. This is CI/CD explained for the people who fund and depend on software, without the jargon, so you can tell whether your team is doing it well.

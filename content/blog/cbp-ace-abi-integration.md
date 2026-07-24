@@ -4,6 +4,19 @@ description: "A developer's guide to ABI integration with CBP: how ACE and ABI f
 category: "Trade & Supply Chain"
 primaryKeyword: "abi integration cbp"
 tags: ["ace abi filing", "cbp edi integration", "customs abi software", "catair"]
+takeaways:
+  - "CBP is the agency, ACE (the Automated Commercial Environment) is its system of record, and ABI (the Automated Broker Interface) is the electronic pipe that feeds entry data into ACE."
+  - "Over 96 percent of all entries are filed through ABI, so for practical purposes electronic customs filing means implementing ABI."
+  - "ABI access is a permissioned relationship: a qualifying entity like a broker, self-filing importer, or service bureau must be approved by CBP, and your software operates on their behalf."
+  - "ABI communication is EDI using the position and segment based record layouts defined in CBP's Customs Publication 552, the CATAIR, where a single malformed field gets rejected."
+  - "CBP requires testing and certification in a test environment before live filing, and the CATAIR is revised periodically, so an ABI integration needs ongoing maintenance to stay compliant."
+faqs:
+  - q: "What is the difference between CBP, ACE, and ABI?"
+    a: "CBP, Customs and Border Protection, is the US federal agency you file with. ACE, the Automated Commercial Environment, is CBP's system of record and the US Single Window through which trade data is processed and released. ABI, the Automated Broker Interface, is the electronic channel that transmits entry data directly into ACE. In short, ABI is the pipe, ACE is the system it feeds, and CBP is the agency behind both."
+  - q: "How do I become an ABI filer to submit customs entries?"
+    a: "You cannot simply point code at CBP and start transmitting, because ABI access is a permissioned relationship. A qualifying entity such as a customs broker, an importer acting as a self-filer, or a service bureau must apply to CBP, meet the eligibility requirements, and be assigned the identifiers that tag transmissions. Your software then operates on that filer's behalf, so confirm the filer arrangement before you write the integration."
+  - q: "What format does ABI use to communicate with CBP?"
+    a: "ABI uses EDI, electronic data interchange, with defined message sets rather than a modern JSON API. The technical specifications live in CBP's Customs Publication 552, the CATAIR, which defines each position and segment based record layout down to the field. It is a set of chapters, one per transaction type, so a project filing entry summaries plus partner government agency messages implements several distinct record specifications, each with its own conditional field rules."
 ---
 
 If you are building software that files customs entries in the United States, you will eventually run into three acronyms that carry the whole system: CBP, ACE, and ABI. They are not interchangeable, and understanding how they relate is the difference between a project that gets certified and one that stalls. The scale involved is not small: in fiscal year 2024, CBP processed [38.4 million entries and $3.37 trillion in imports, collecting more than $88 billion in duties, taxes, and fees](https://www.cbp.gov/sites/default/files/2025-06/20250625_cbp_trade_fact_sheet_2025_final.pdf). Almost all of that flows through the interface described below. This is a developer-oriented walk through how the pieces fit, what it takes to connect, and where the hard parts live.

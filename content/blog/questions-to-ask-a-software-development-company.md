@@ -4,6 +4,21 @@ description: "The 25 questions to ask a software development company before you 
 category: "Buyer's Guide"
 primaryKeyword: "questions to ask a software development company"
 tags: ["software vendor questions", "interview software agency", "vetting developers", "software project risk"]
+takeaways:
+  - "Ask the same structured questions to every firm on your shortlist and write the answers down, because the stakes are high: McKinsey found large IT projects average 45% over budget and deliver 56% less value than promised."
+  - "Project size is the strongest predictor of success in the CHAOS data, so favor a vendor that breaks a big program into small, demonstrable increments with a working demo each sprint."
+  - "Press on staffing and turnover: confirm named engineers, whether they are full-time employees or subcontractors, their time zone, and what happens if a key person leaves mid-build."
+  - "Confirm you own 100% of the source code, repository, CI/CD pipeline, and credentials on delivery, since anything less creates lock-in."
+  - "A firm that fixes defects found shortly after delivery at no charge stands behind its work, while one that bills you to repair its own bugs signals low confidence or a dependence-based model."
+faqs:
+  - q: "What should I ask a software development company before hiring them?"
+    a: "Cover six areas: process and delivery, team and staffing, code ownership and IP, security and compliance, maintenance and support, and pricing and change orders. Ask specific questions like who exactly will be on your team, whether you own 100% of the code, and how scope changes are priced. Ask the same set to every firm on your shortlist and compare the answers side by side."
+  - q: "How do I know if a software vendor is trustworthy?"
+    a: "Patterns matter more than any single reply. Reassuring signs include named engineers you can meet, a written acceptance process, clear IP transfer, honest talk about risks, and a willingness to say they would not build it that way. Worrying signs include vague answers about who does the work, reluctance to put acceptance criteria in writing, pressure to skip discovery, and agreeing with everything you say."
+  - q: "Should I worry about developer turnover on my project?"
+    a: "Yes. Technology carries the highest attrition of any sector, around 13% a year, and median engineer tenure at many firms sits near two years, so on an eighteen-month build the person who designed your data model may be gone before launch. Ask whether the design is documented and knowledge is shared across the team, or whether it walks out in one person's head."
+  - q: "How do I avoid a project going over budget?"
+    a: "Money disputes almost always trace back to fuzzy scope. The average 45% budget overrun is mostly scope that crept because nobody agreed up front how change would be priced and approved. Ask for a written change process, find out which quote line items are firm versus estimates, and be wary of a vendor that quotes everything as a single confident number with no discussion of what could move it."
 ---
 
 A sales call will tell you what a vendor wants you to hear. Good questions tell you how they actually work. That gap is expensive. When McKinsey and the University of Oxford studied [more than 5,400 large IT projects](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value), the average one ran 45% over budget, 7% over schedule, and delivered 56% less value than promised. The Standish Group's CHAOS research is bleaker: across roughly 50,000 projects, [only about 31% finished on time, on budget, and with the agreed scope](https://budgetoverrun.com/studies/standish-chaos-report), while 19% were cancelled outright. The questions below are what we would ask if we were on the buying side, grouped so you can run a structured evaluation instead of a vibe check. Ask the same questions to every firm on your shortlist and compare the answers side by side.

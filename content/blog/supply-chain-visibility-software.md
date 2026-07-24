@@ -4,6 +4,21 @@ description: "What supply chain visibility software really requires: unifying ca
 category: "Trade & Supply Chain"
 primaryKeyword: "supply chain visibility software"
 tags: ["end-to-end visibility", "shipment visibility platform", "supply chain tracking", "predictive eta"]
+takeaways:
+  - "Supply chain visibility is a data integration and quality problem first, not a dashboard problem: the hard work is reconciling carrier, port, ERP, WMS, and TMS feeds into one normalized event model."
+  - "Exception detection is the higher-value feature over live tracking, because it points a limited operations team at the shipments that are off plan instead of asking them to watch everything."
+  - "Predictive ETAs earn their keep through lead time: a delay flagged a week out is a calm decision, while the same delay found on the arrival date is a fire to fight."
+  - "Ops teams and executives need opposite views of the same data, so build each screen around the decision its audience actually makes rather than sharing one crowded dashboard."
+  - "Buy packaged tools for generic carrier connections, but build custom when deep integration with your own systems is the differentiator, since only 29% of organizations have the visibility capabilities they need."
+faqs:
+  - q: "What is supply chain visibility software?"
+    a: "It is a system that ingests shipment and event data from carriers, ports, terminals, and your own ERP, WMS, and TMS, then normalizes it into a single current picture of where goods are and what is happening to them. The real value comes from turning that unified data into exception alerts and predictive ETAs a person can act on before losses land. It is a data integration outcome, not just a tracking screen."
+  - q: "Should I build or buy a supply chain visibility platform?"
+    a: "Buy a packaged platform when you want prebuilt carrier connections and a working interface fast, and its generic data model fits your operation. Build custom when your operation is your advantage, you need deep integration with your specific ERP and partners, or off-the-shelf tools cannot represent how your supply chain actually works. A hybrid, where a custom layer unifies data that packaged tools leave fragmented, is often the practical answer."
+  - q: "Why do supply chain visibility projects fail?"
+    a: "They fail when teams treat visibility as a user interface problem and skip the underlying data work. If the feeds are late, wrong, contradictory, or full of duplicates, no dashboard fixes it; it just displays the confusion more attractively. Most of the effort in an honest visibility project goes into ingesting and normalizing fragmented data into a trustworthy common event model."
+  - q: "How much does supply chain disruption actually cost?"
+    a: "McKinsey estimates supply chain disruptions cost the average company about 45% of one year's profits over a decade, with disruptions lasting a month or more now arriving roughly every 3.7 years. That risk is the financial case for visibility: catching a problem hours or days earlier compounds fast. It is also why the visibility software market is growing from around $4 billion in 2024 toward $10.9 billion by 2034."
 ---
 
 Everyone says they want supply chain visibility. Fewer are clear on what that actually means to build. The demand is real: analysts value the supply chain visibility software market at [around $4 billion in 2024, growing toward $10.9 billion by 2034 at roughly 13% a year](https://www.gminsights.com/industry-analysis/supply-chain-visibility-software-market). The reason is money at risk. McKinsey estimates that supply chain disruptions cost the average company [about 45% of one year's profits over a decade](https://www.mckinsey.com/capabilities/operations/our-insights/supply-chain-resilience-is-there-a-holy-grail), with disruptions lasting a month or more now arriving every 3.7 years. Visibility is not a screen, it is the outcome of getting fragmented data into one trustworthy place and turning it into something a person can act on before those losses land.

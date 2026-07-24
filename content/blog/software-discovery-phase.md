@@ -4,6 +4,21 @@ description: "What the software discovery phase produces, from aligned outcomes 
 category: "Process & Delivery"
 primaryKeyword: "software discovery phase"
 tags: ["discovery workshop", "project discovery", "software discovery process"]
+takeaways:
+  - "Discovery is a deliverable, not a meeting: it should produce a written problem and outcomes statement, a prioritized scoped backlog, an architecture and integration plan, a phased estimate, and a ranked list of risks."
+  - "PMI research found 47 percent of unsuccessful projects fail because of poor requirements management, which is exactly the failure discovery exists to prevent."
+  - "Integrations are where estimates most often go wrong, so discovery reads the actual API docs and runs a test request rather than guessing, since a sync that looks like a checkbox in a sales call can turn into weeks of work."
+  - "A defect caught in requirements costs a fraction of one caught later, about 6 times more in implementation, 15 times more in testing, and up to 100 times more in production, so the earliest stage is the cheapest place to find mistakes."
+  - "Phased estimates de-risk spending because CHAOS research shows small, tightly scoped projects succeed around 90 percent of the time while large ones succeed less than 10 percent, so delivering an MVP then increments beats one lump number."
+faqs:
+  - q: "What does a software discovery phase produce?"
+    a: "Concrete artifacts, not just a good feeling: a written statement of the problem and measurable success outcomes, a prioritized backlog scoped clearly enough to estimate, an architecture and integration plan, a phased delivery plan with a real estimate, and a list of key risks with a plan for the biggest ones. Those documents let you price, schedule, staff, and hold a team accountable."
+  - q: "Is skipping the discovery phase cheaper?"
+    a: "No. Starting to build feels like progress and feels cheaper, but the cost curve of a mistake makes it neither. A defect caught in requirements costs a fraction of one caught later, up to 100 times more once it reaches production. Skipping discovery also produces vague contracts with no acceptance criteria, which generate disputes and endless change orders."
+  - q: "How long is a discovery phase and what does it cost?"
+    a: "It is a short, structured, paid, time-boxed phase that happens before serious building begins. It is low-cost relative to the build, and at the end you can decide to proceed, adjust, or stop with far better information than you started with. Given that nearly half of failed projects trace back to requirements no one nailed down, it is cheap insurance."
+  - q: "Why do integrations cause estimates to go wrong?"
+    a: "A connection to an ERP, a customs system, or a payment gateway can be trivial or a project in itself, and you only find out by investigating the actual API, its limits, and its quirks. A NetSuite sync that looks like a checkbox can turn into weeks once you learn its rate limits, its lack of a real-time change feed, and the custom fields a client added years ago. Discovery makes that call by reading the docs and running a test request."
 ---
 
 The software discovery phase is the short, structured work that happens before serious building begins. It is where a vague idea becomes a scoped plan, where assumptions get tested against reality, and where the biggest risks in a project get identified while they are still cheap to fix. Buyers sometimes see it as a delay or an upsell. It is neither. The Project Management Institute's research on requirements found that [47 percent of unsuccessful projects fail because of poor requirements management](https://www.pmi.org/learning/thought-leadership/pulse/core-competency-project-program-success), which is exactly the failure discovery exists to prevent. This explains what discovery produces and why skipping it costs more.

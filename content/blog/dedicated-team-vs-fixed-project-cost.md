@@ -4,6 +4,21 @@ description: "Dedicated team vs fixed price: how each is priced, total cost acro
 category: "Cost & Pricing"
 primaryKeyword: "dedicated team vs fixed price"
 tags: ["dedicated development team cost", "retainer vs project", "ongoing team pricing", "software project cost overrun"]
+takeaways:
+  - "Fixed price often wins on a single well-defined phase, but over a multi-phase roadmap the repeated ramp-up and stacked risk premiums usually make a series of fixed projects the more expensive path."
+  - "A fixed-price quote bakes in a risk premium you pay whether or not the risk materializes, and the McKinsey and Oxford study of 5,400 IT projects found the average ran 45 percent over budget."
+  - "PMI found scope creep now hits 52 percent of projects, so evolving requirements are the common case, and in a fixed model each change is a marked-up change order rather than a reprioritized backlog item."
+  - "A dedicated team's hidden value is knowledge retention: the same people accumulate domain and codebase context, avoiding the re-onboarding and discovery you repay at the start of every new fixed project."
+  - "Choose by horizon: fixed price fits one clearly specified deliverable, while a dedicated team almost always costs less across quarters of ongoing work where each release informs the next."
+faqs:
+  - q: "Is a dedicated team or fixed price cheaper for software development?"
+    a: "It depends on how much your scope will change and how long you plan to keep building. For a single, well-defined phase, fixed price often wins on paper. Across a multi-phase roadmap with evolving requirements, a dedicated team usually costs less once you account for risk premiums, marked-up change orders, and repeated ramp-up per phase."
+  - q: "Why is fixed-price software often more expensive than it looks?"
+    a: "The vendor absorbs the risk of underestimating, so they add a risk premium priced for the bad case, and you pay that buffer whether or not the risk materializes. Fixed pricing also makes change expensive, since anything outside the original scope goes through a slower, often marked-up change order, and it requires paying for detailed discovery up front."
+  - q: "How does scope creep affect each pricing model?"
+    a: "PMI's research found scope creep hitting 52 percent of projects, up from 43 percent five years earlier. In a fixed-price model each uncontrolled change becomes a separate, marked-up change order. With a dedicated team the same change is just a reprioritized backlog item, so evolving requirements do not trigger repeated renegotiation."
+  - q: "Can you combine fixed price and a dedicated team?"
+    a: "Yes, and a common middle path works well: run a fixed-scope discovery to define the problem, then move to a dedicated team for the build and beyond. That gives you a firm starting estimate without locking a moving target into a rigid contract."
 ---
 
 The dedicated team vs fixed price question usually gets answered with a gut feeling, and the gut is often wrong. A fixed project looks cheaper because you get a single number up front. A dedicated team looks open-ended because you pay monthly. But over a multi-phase roadmap, the model that costs less depends on how much your scope will change and how long you plan to keep building. Requirements change more than buyers expect: PMI's Pulse of the Profession research found scope creep hitting [52% of projects, up from 43% five years earlier](https://www.pmi.org/learning/library/scope-creep-rising-11308). Here is how the two models are actually priced and when each one wins.

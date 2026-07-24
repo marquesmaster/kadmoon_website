@@ -4,6 +4,21 @@ description: "Custom software for healthcare that is HIPAA-ready: compliance, EH
 category: "Industry Guides"
 primaryKeyword: "custom software for healthcare"
 tags: ["healthcare software development", "hipaa software", "medical software", "fhir integration"]
+takeaways:
+  - "The average healthcare data breach cost $9.77 million in 2024, the costliest of any industry for the fourteenth year running and roughly double the cross-industry average."
+  - "HIPAA is an engineering constraint from day one, not a checkbox; access controls, audit logging, encryption, retention, and breach procedures all become requirements rather than nice-to-haves."
+  - "The US EHR market is concentrated, with Epic at 42.3 percent of acute care hospitals, so if you integrate with hospitals you are most likely integrating with Epic and its data quirks."
+  - "Modern healthcare integration runs through FHIR APIs, while older interfaces still rely on HL7 v2, and integration is often the hardest, most underestimated part of a project."
+  - "Build for real security rather than mere compliance, because a truly secure system satisfies HIPAA almost as a side effect, and detect problems fast since breaches took an average of 213 days to identify and contain."
+faqs:
+  - q: "What does it take to make healthcare software HIPAA-ready?"
+    a: "HIPAA applies directly if your software creates, receives, stores, or transmits PHI, so access controls, audit logging, encryption, data retention, and breach procedures become build requirements from day one. You also need business associate agreements with any vendor that touches PHI. Treating HIPAA as an engineering constraint from the start is far cheaper than retrofitting authentication, storage, and logging later."
+  - q: "How expensive is a healthcare data breach?"
+    a: "IBM's 2024 report put the average healthcare breach at $9.77 million, the costliest of any industry for the fourteenth year in a row and roughly double the $4.88 million cross-industry average. Breaches also took an average of 213 days to identify and contain, above the 194-day cross-industry figure, and every extra day of dwell time adds to the bill. That cost data argues for detecting problems fast and minimizing the PHI you collect."
+  - q: "Which EHR systems will healthcare software need to integrate with?"
+    a: "The US EHR market is concentrated: Epic held 42.3 percent of acute care hospitals in 2024, with Oracle Health at 22.9 percent and Meditech at 14.8 percent. If you integrate with hospitals, you are most likely integrating with Epic, whose access model and data quirks will shape your timeline. Modern integration increasingly runs through FHIR APIs, while older interfaces still rely on HL7 v2 messaging."
+  - q: "What is the difference between HIPAA compliance and security?"
+    a: "HIPAA compliance is a set of requirements you can document and demonstrate, while security is the actual practice of keeping data safe and goes beyond what any regulation spells out. A system can technically satisfy HIPAA and still be poorly secured, but a truly secure system satisfies HIPAA almost as a side effect. Building for real security makes compliance the easier of the two to prove."
 ---
 
 Healthcare software carries a burden most other software does not. A bug in a marketing app is embarrassing. A bug in a system that touches patient data can trigger regulatory penalties, breach notifications, and real harm. The financial stakes are not abstract: IBM's 2024 Cost of a Data Breach report put the [average healthcare breach at $9.77 million](https://www.ibm.com/think/insights/cost-of-a-data-breach-healthcare-industry), the costliest of any industry for the fourteenth year running and roughly double the $4.88 million cross-industry average. Building custom software for healthcare means designing for compliance, security, and interoperability from the first architecture decision, not bolting them on before launch.

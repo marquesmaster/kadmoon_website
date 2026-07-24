@@ -4,6 +4,21 @@ description: "How to measure custom software ROI: quantify time saved, errors av
 category: "Custom Software"
 primaryKeyword: "custom software roi"
 tags: ["software return on investment", "roi of building software", "software business case"]
+takeaways:
+  - "Measure ROI across three buckets: efficiency (time saved), quality (errors and rework avoided), and growth (revenue captured, retained, or newly opened), since labor savings are usually the smallest part."
+  - "Capture baselines before the build, state assumptions openly, and include the full cost side (hosting, maintenance, support, internal time), not just the build price."
+  - "Attribute gains conservatively, because a defensible smaller number beats an impressive one nobody believes."
+  - "Use payback period for most internal tools and add NPV for seven-figure platforms where timing of value changes the answer."
+  - "Ship in increments, since a phased build returns value earlier and every added year of duration compounds the average cost overrun by about 15%."
+faqs:
+  - q: "How do you measure the ROI of custom software?"
+    a: "Set up measurement before the build by capturing baselines for the workflows the software will change, then track efficiency, quality, and growth after launch. Quantify time saved by loaded hourly rate, count errors avoided and their downstream cost, and model revenue effects conservatively. Compare realized metrics against the pre-launch baseline to check the prediction against reality."
+  - q: "What should a software business case include?"
+    a: "A defensible business case has baselines measured before the project, assumptions stated in the open, and both costs and benefits laid out over time. Include the full cost of ownership: build, hosting, maintenance, support, and internal team time. Showing total cost honestly is far more persuasive to a CFO than a case that quietly leaves out ongoing bills."
+  - q: "What is the difference between payback period and NPV for software?"
+    a: "Payback period is how long until cumulative benefits equal total cost, and short paybacks are easier to approve and carry less risk. Net present value discounts future benefits and costs back to today because a dollar next year is worth less than one now. Payback is usually enough for internal tools, while NPV gives a fairer picture for larger platforms with benefits spread over years."
+  - q: "Why does phased delivery improve software ROI?"
+    a: "A phased build that delivers a working, useful slice in the first couple of months starts returning value while the rest is still being built. A big-bang project that delivers nothing until month twelve carries all its cost before any benefit arrives, pushing out payback and raising risk. Since every added year of duration compounds the overrun, shipping in increments improves the ROI math directly."
 ---
 
 Most software business cases fail not because the software was a bad idea but because nobody defined what success would look like in numbers. The base rates are sobering. In a joint study with Oxford covering more than 5,400 IT projects, [McKinsey found that large projects ran 45 percent over budget and 7 percent over schedule while delivering 56 percent less value than predicted](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value). ROI on custom software is measurable if you set it up correctly before the build, track the right baselines, and stay honest about what the software actually caused. This is a practical guide to doing that, not a spreadsheet template that flatters the decision you already made.

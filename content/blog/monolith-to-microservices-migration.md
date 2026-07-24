@@ -4,6 +4,21 @@ description: "When to migrate a monolith to microservices and how: the strangler
 category: "Legacy Modernization"
 primaryKeyword: "monolith to microservices"
 tags: ["microservices migration", "break up monolith", "decompose monolith", "strangler fig pattern"]
+takeaways:
+  - "A monolith is not a problem by default; migrate only when specific symptoms appear, such as teams blocking each other on releases, uneven scaling needs, or an entangled codebase where changes break unrelated things."
+  - "Distributed systems move complexity rather than removing it, and getting granularity wrong is expensive in both directions, as Amazon Prime Video's move back to a monolith cut running costs by 90 percent."
+  - "Avoid a big-bang rewrite; large IT projects over $15 million run about 45 percent over budget and deliver 56 percent less value, while the strangler-fig pattern extracts one capability at a time behind a routing layer."
+  - "Draw service boundaries around business capabilities, not technical layers, so most changes stay inside one service and two things that always change together stay as one."
+  - "Data consistency is the hardest part: keep atomic operations inside a single service, accept eventual consistency where you can, and factor cross-service reporting into your boundary decisions."
+faqs:
+  - q: "When should you migrate a monolith to microservices?"
+    a: "Migrate only when specific symptoms show up: teams block each other because one deploy carries everyone's changes, one part of the system needs far more resources than the rest but you have to scale the whole thing, the codebase is so entangled that changes break unrelated areas, or the build and test cycle grows so slow that iteration crawls. If you do not recognize these, you may be chasing a fashionable fix to a problem you do not have."
+  - q: "What is the strangler-fig pattern?"
+    a: "The strangler-fig pattern is a gradual migration approach where you put a routing layer in front of the monolith, then extract one capability at a time into a new service. The router sends traffic for the migrated capability to the new service and everything else to the monolith. Over time more capabilities move out until the monolith shrinks to nothing or to a small stable core, and the system keeps running throughout so you can stop or roll back if a step goes wrong."
+  - q: "Why do big-bang microservices rewrites fail?"
+    a: "Rewrites that try to replace everything at once have a long history of running over budget and failing to reach parity. The Standish Group's CHAOS research found large IT projects with budgets over $15 million run about 45 percent over budget and deliver 56 percent less value than predicted, and large projects succeed less than 10 percent of the time compared with roughly 90 percent for small ones. A total rewrite is exactly the kind of large, all-at-once project that record warns against."
+  - q: "How do you define microservice boundaries?"
+    a: "Draw boundaries around business capabilities, not technical layers. A service should own a coherent slice of the domain end to end, such as billing or inventory, including its own data. The test of a good boundary is that most changes stay inside one service and services talk through clear, stable interfaces rather than reaching into each other's internals. If two proposed services always change together, they probably belong as one."
 ---
 
 Microservices are one of the most oversold and most misapplied patterns in software. Splitting a monolith can solve real problems around scaling and team autonomy, or it can trade one set of headaches for a worse distributed one. The decision is not about being modern. It is about whether the specific pain you have is the kind microservices actually fix. This is when the migration is worth it and how to do it without breaking production.

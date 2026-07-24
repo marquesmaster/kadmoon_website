@@ -72,6 +72,22 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
         />
+        {post.faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: post.faqs.map((f) => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              }),
+            }}
+          />
+        )}
 
         <article className="pb-16 pt-28 md:pt-32">
           <div className="mx-auto max-w-3xl px-6">
@@ -102,6 +118,22 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
             <div className="mt-8 border-t border-line pt-8" />
 
+            {post.takeaways.length > 0 && (
+              <div className="mb-10 rounded-2xl border-l-2 border-accent bg-mist p-6">
+                <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
+                  Key takeaways
+                </h2>
+                <ul className="mt-3 space-y-2.5">
+                  {post.takeaways.map((t, i) => (
+                    <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed text-ink">
+                      <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {post.toc.filter((t) => t.level === 2).length >= 3 && (
               <nav
                 aria-label="Table of contents"
@@ -128,6 +160,22 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             )}
 
             <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
+
+            {post.faqs.length > 0 && (
+              <section className="mt-12 border-t border-line pt-10">
+                <h2 className="font-display text-display-sm text-ink">Frequently asked questions</h2>
+                <div className="mt-6 divide-y divide-line border-y border-line">
+                  {post.faqs.map((f) => (
+                    <div key={f.q} className="py-5">
+                      <h3 className="font-display text-base font-medium text-ink md:text-lg">
+                        {f.q}
+                      </h3>
+                      <p className="mt-2 text-[15px] leading-relaxed text-ink-2">{f.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         </article>
 

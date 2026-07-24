@@ -4,6 +4,21 @@ description: "A clear breakdown of software maintenance cost: the 15-25% rule, c
 category: "Cost & Pricing"
 primaryKeyword: "software maintenance cost"
 tags: ["ongoing software costs", "application maintenance", "annual software upkeep", "total cost of ownership"]
+takeaways:
+  - "Budget annual maintenance at roughly 15% to 25% of the original build cost, with 15% to 20% for smaller apps and 20% to 30% for enterprise systems."
+  - "Over a full lifecycle, upkeep typically runs two to four times the original development cost, so total cost of ownership matters more than the sticker price."
+  - "Maintenance is 30% to 60% of total cost for a cloud app and 70% to 90% for complex on-premises enterprise software."
+  - "Split post-launch work into corrective, adaptive, perfective, and preventive so a quote covering only bug fixes does not blindside you on the first adaptive emergency."
+  - "Insist on owning the repository, credentials, and a runbook at delivery so any competent team can maintain the system and you are not locked to one vendor's rates."
+faqs:
+  - q: "How much does software maintenance cost per year?"
+    a: "A common rule of thumb is 15% to 25% of the original build cost annually. Smaller applications tend toward 15% to 20% and enterprise systems toward 20% to 30%. So a system that cost 200,000 dollars to build might need 30,000 to 50,000 dollars a year to keep healthy."
+  - q: "Why is software maintenance necessary if the software already works?"
+    a: "Software depends on hundreds of external components that keep changing. Operating systems update, third-party APIs shift, and libraries ship security patches monthly. The average audited application carries 528 open source components, and 91% of scanned codebases had components 10 or more versions out of date, which is what happens when maintenance is deferred."
+  - q: "What is the difference between software maintenance and support?"
+    a: "Maintenance is the ongoing work of keeping software running and secure: fixing defects, adapting to a changing environment, and patching dependencies. Support is about responsiveness, meaning how fast someone answers when something breaks. Support tiers range from business-hours response to 24/7 on-call coverage with contractual SLAs, and you should buy the level the stakes actually justify."
+  - q: "What makes maintenance cost more for some systems?"
+    a: "The percentage climbs with many external integrations, regulated or financial data, high volume, or an aging stack that needs constant shoring up. It drops for simpler, self-contained applications on a modern, well-tested codebase. Clean architecture, automated tests, and a documented runbook make maintenance cheaper, while build shortcuts compound into higher upkeep later."
 ---
 
 Most buyers budget carefully for the build and then treat maintenance as an afterthought. That is backwards. Over a system's life, the money you spend keeping it running usually exceeds what you spent building it, often by a wide margin. Across ScienceSoft's custom maintenance projects, upkeep runs [two to four times the original development cost](https://www.scnsoft.com/software-development/maintenance-and-support/costs) over a full lifecycle. Understanding software maintenance cost up front changes how you scope, how you negotiate, and how you plan cash flow for years two through five.

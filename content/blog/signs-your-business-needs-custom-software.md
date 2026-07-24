@@ -4,6 +4,21 @@ description: "Seven concrete signs you need custom software, from spreadsheet sp
 category: "Buyer's Guide"
 primaryKeyword: "signs you need custom software"
 tags: ["when to build custom software", "outgrown spreadsheets", "software no longer fits", "data silos"]
+takeaways:
+  - "A web of load-bearing spreadsheets is the clearest sign you have outgrown off-the-shelf, and a 2024 study found 94 percent of business spreadsheets used in decision-making contain errors, meaning you are already running custom software badly in Excel."
+  - "Companies use only about 49 percent of the SaaS licenses they pay for, leaving the average enterprise roughly 18 million dollars a year on the table, so when per-seat costs climb and modules sit dark the math starts to favor building exactly what you use."
+  - "Integration pain is structural: the average enterprise runs close to 900 apps with only about 29 percent integrated, so brittle export-and-reimport routines are a symptom that the off-the-shelf pieces were never designed to work together."
+  - "When people say they work a certain way because the system makes them, the software is steering a process you compete on, and a generic tool cannot express your proprietary workflow."
+  - "Custom is not the answer for everything: keep buying payroll, email, and generic accounting, and reserve custom for the workflows that carry your margin or differentiation, ideally as a hybrid on top of systems you keep."
+faqs:
+  - q: "What are the signs a business needs custom software?"
+    a: "The recurring signals are spreadsheet sprawl and manual workarounds, paying for packaged features you never use, integrations that keep breaking, processes bent to fit the tool, data trapped in silos, growth blocked by your current stack, and one employee holding the whole system together. Hitting several of these at once is the real pattern, not any single one."
+  - q: "When should you build custom software instead of buying off-the-shelf?"
+    a: "Buy anything that is not core to how you compete, since payroll, email, and generic accounting should almost always stay bought. Build for the workflows that carry your margin or differentiation, where a generic tool forces you to sand off the exact process that makes you better. Rank candidates by how much they touch your competitive advantage and build there first."
+  - q: "How much money do unused software licenses and bad data actually cost?"
+    a: "Zylo's 2024 index found companies use only about 49 percent of the SaaS licenses they pay for, leaving the average enterprise roughly 18 million dollars a year unused and small companies about 2 million. Separately, Gartner has put the average cost of poor data quality at 12.9 million dollars a year per organization, and analysts spend around 45 percent of their time just preparing and cleaning data."
+  - q: "Is it risky when one employee holds a process together?"
+    a: "Yes. When a single person wrote the macros, knows which report to trust, and does the month-end reconciliation by hand, they are a single point of failure with no backup and no documentation. The knowledge lives in their head rather than a system anyone else can run, so the process stalls when they take a vacation and part of the business leaves when they do."
 ---
 
 Most companies do not decide to build custom software. They drift into needing it. The packaged tool that fit fine at 20 people starts to creak at 200, and the workarounds pile up until someone finally asks why a growing business runs on a spreadsheet held together by one analyst who knows all the formulas. Here are the signs that off-the-shelf has stopped serving you, and what they usually mean underneath.

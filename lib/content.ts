@@ -79,8 +79,8 @@ export const capabilities = {
 
 export const why = {
   eyebrow: 'Why Kadmoon',
-  title: 'Not just another software house.',
-  sub: 'Each of these is an engineering and management decision we made so your project ships with quality, predictability, and no surprises.',
+  title: 'A software house you can build your business on.',
+  sub: 'Each of these is an engineering and management decision we made so your project ships with quality, predictability, and full ownership.',
   items: [
     {
       title: 'You own the IP',
@@ -348,6 +348,8 @@ export const footer = {
     {
       heading: 'Explore',
       links: [
+        { label: 'Custom software company', href: '/custom-software-development-company' },
+        { label: 'SaaS development company', href: '/saas-development-company' },
         { label: 'Blog', href: '/blog' },
         { label: 'How to Choose', href: '/#how-to-choose' },
         { label: 'Locations', href: '/custom-software-development' },

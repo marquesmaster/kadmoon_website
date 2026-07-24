@@ -4,6 +4,19 @@ description: "How to choose a tech stack for startups: optimize for speed and hi
 category: "Tech Stack"
 primaryKeyword: "tech stack for startups"
 tags: ["startup tech stack", "choose a stack", "mvp tech stack", "boring technology"]
+takeaways:
+  - "For most early-stage products, optimize for shipping quickly and hiring easily rather than a scale you do not have yet."
+  - "In the 2024 Stack Overflow survey, JavaScript was the most-used language at 62 percent, HTML/CSS at 53 percent, and Python at 51 percent, so tools near the top give you the largest hiring pool."
+  - "Keep the plumbing boring and spend your limited innovation budget on the product, not on the auth system or job queue."
+  - "PostgreSQL has been the most-used database for several years running and absorbs needs founders reach for a second database to solve, with JSONB, built-in full-text search, and extensions for geospatial and vector queries."
+  - "Avoid premature complexity like microservices; start with a single well-organized codebase and split it only when a concrete pain forces the issue."
+faqs:
+  - q: "What tech stack should a startup use?"
+    a: "A sensible default for a US startup building a web product is React with Next.js and TypeScript on the frontend, Node.js with TypeScript on the backend or Python if data and AI are central, PostgreSQL for the database, and managed cloud services kept simple. Every one of these lines up with what the largest pool of engineers already uses, which makes them easy to hire for and cheap to maintain. Deviate only where you have a real reason."
+  - q: "What is boring technology and why does it matter for startups?"
+    a: "Boring technology means proven, stable, well understood tools whose failure modes are documented and whose problems have known solutions. Every novel technology you adopt spends part of a limited budget of attention on sharp edges, thin documentation, and small communities. A startup should spend its innovation budget on the product that makes it different and keep the database, language, framework, and cloud services boring."
+  - q: "Do startups need microservices?"
+    a: "No. Splitting a system into many independently deployed services solves real problems at large scale but creates painful ones for a team of a few engineers: more moving parts, harder debugging, and slower development. Start with a single well-organized codebase and split it only when a concrete pain forces the issue. Premature complexity, not the choice of language, is the most common way startups hurt themselves technically."
 ---
 
 Choosing a tech stack for your startup feels like a momentous decision, and founders often agonize over it. The truth is calmer: for most early-stage products, several reasonable stacks would work fine, and the wrong instinct is to optimize for a scale you do not have yet. What actually matters is shipping quickly, hiring easily, and not drowning in complexity before you have customers. This guide covers how to choose with those priorities in mind.

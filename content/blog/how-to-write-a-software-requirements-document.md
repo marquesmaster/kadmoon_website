@@ -4,6 +4,21 @@ description: "A practical guide to writing a software requirements document vend
 category: "Buyer's Guide"
 primaryKeyword: "software requirements document"
 tags: ["requirements specification", "how to write requirements", "srs document", "acceptance criteria"]
+takeaways:
+  - "Inaccurate requirements are the top failure cause named by 37 percent of organizations, and a defect caught at the requirements stage costs up to 100 times less than fixing it in production."
+  - "Split requirements into functional (what the system does) and non-functional (how well it does it); buyers over-specify features and under-specify performance, retention, and security, then get surprised by the budget."
+  - "Write user stories with a 'so that' clause and back each with specific, testable acceptance criteria, which double as your test plan and sign-off checklist."
+  - "Prioritize with MoSCoW and keep the Must list honest; if everything is a must, you have relabeled a wish list instead of prioritizing."
+  - "Treat the document as living: version it with a change reason, review it each sprint, and tie requirements to backlog items, since agile projects succeed at 42 percent versus 13 percent for waterfall."
+faqs:
+  - q: "What is the difference between functional and non-functional requirements?"
+    a: "Functional requirements describe what the system does, such as a user submitting a claim and a manager approving it. Non-functional requirements describe how well it does it: response time under load, uptime targets, data retention, accessibility, and browser support. Buyers tend to over-specify features and under-specify the non-functional side, then get surprised when performance or security work balloons the budget."
+  - q: "What are acceptance criteria in a requirements document?"
+    a: "Acceptance criteria are the specific, testable conditions that decide whether a user story is done. For a barcode scan, that might be: an invalid barcode shows an error and does not change inventory, a valid scan updates the count within two seconds, and a duplicate scan within five seconds is ignored. Written this way, they become your test plan and sign-off checklist at the same time."
+  - q: "How do you prioritize software requirements?"
+    a: "MoSCoW is a simple, effective method: Must have (the product is worthless without it), Should have (important but there is a painful workaround), Could have (valuable if time allows), and Won't have this time (explicitly out of scope). The discipline is being honest about the Must list, because a tight Must set lets a vendor propose a phased plan that proves the core first."
+  - q: "Why do vague requirements cause software projects to fail?"
+    a: "Most failed projects fail on misunderstanding, not code. A requirement like the system should handle invoices can mean a simple PDF export to one reader and a full accounts-receivable module to another, and the gap surfaces late after money is spent building the wrong thing. Inaccurate requirements sit behind roughly a third of failed projects, and a vague requirement is just a defect that has not been noticed yet."
 ---
 
 A software requirements document is the shared contract between what you want and what a vendor will build. When it is clear, estimates get tighter and change orders get rarer. When it is vague, everyone fills the gaps with their own assumptions, and those assumptions collide during delivery. The cost of that collision is well documented. PMI's Pulse of the Profession found that [37% of organizations named inaccurate requirements as the primary reason projects fail](https://www.apollotechnical.com/51-project-management-statistics-that-every-manager-should-know/), and that poor requirements management wastes [5.1% of every dollar spent, or $51 million for every $1 billion invested](https://www.pmi.org/learning/library/poor-requirements-management-source-failed-projects-9341). This guide covers how to write one that earns respect from serious engineering teams without turning into a 90-page binder nobody reads.

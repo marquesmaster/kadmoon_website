@@ -4,6 +4,21 @@ description: "How custom software for distribution solves the order, inventory, 
 category: "Industry Guides"
 primaryKeyword: "custom software for distribution"
 tags: ["distribution software", "wholesale software", "distributor erp", "edi integration"]
+takeaways:
+  - "Packaged distributor ERP is built for the average wholesaler, so pricing exceptions, allocations, and big-account handling end up in spreadsheets and manual re-keying that add labor and hide errors."
+  - "Pricing is where packaged tools break most often, since wholesale pricing is customer-specific contracts, volume breaks, rebates, and cost-plus formulas that can run to thousands of rules a rep needs instantly at quote time."
+  - "EDI transaction sets like the X12 850 purchase order, 810 invoice, and 856 advance ship notice must map cleanly into your order flow, or a single field mismatch causes rejections or chargebacks."
+  - "Replatforming everything at once is risky, since only about 31 percent of software projects succeed; the pragmatic path is to build custom where the packaged system hurts most and keep what works."
+  - "Sequence launches around the slow season, run new and old systems in parallel, and do enough dry runs that go-live is boring, because success is orders shipping correctly the first Monday after cutover."
+faqs:
+  - q: "Why do wholesale distributors outgrow packaged ERP?"
+    a: "Packaged distributor ERP is built for the average wholesaler, and no wholesaler is average. The pricing model reps quote from, the way inventory is allocated across branches, and special handling for large accounts are exactly what generic systems handle poorly. Distributors end up papering over the gaps with spreadsheets, manual re-keying, and tribal knowledge until the workarounds cost more than a fix."
+  - q: "How does custom software handle complex wholesale pricing?"
+    a: "Wholesale pricing is rarely a single list; it is customer-specific contracts, volume breaks, promotional pricing, rebates, and cost-plus formulas that change with the market. A distributor might have thousands of price rules, and a rep needs the right one instantly at quote time. Custom software encodes your actual pricing logic instead of forcing it into the handful of fields a generic system provides."
+  - q: "Do distributors need both a B2B portal and EDI?"
+    a: "Usually yes. Customers increasingly expect a self-service portal to see contract pricing, check availability, and reorder, while larger trading partners insist on EDI for purchase orders, invoices, and advance ship notices. Custom software can route both an EDI order and a portal order into the same pipeline with the same pricing and inventory rules, so the two channels stay consistent."
+  - q: "Should a distributor replace its whole system at once?"
+    a: "No. Large replatforming is where projects go to die, and only about 31 percent of software projects succeed. The safer path is to build custom software where the packaged system hurts most while keeping what works, often around a solid financial ERP. Phase the work, launch in the slow season, run systems in parallel, and migrate data with enough dry runs that go-live is boring."
 ---
 
 Wholesale distribution runs on thin margins and high volume, which means the software has to be right about a thousand small things at once. It is a large business to get wrong: US merchant wholesalers posted [$11.38 trillion in sales in 2022, up 17.4% from $9.69 trillion in 2021](https://www.census.gov/newsroom/press-releases/2024/annual-wholesale-trade-survey.html), according to the Census Bureau's Annual Wholesale Trade Survey, and monthly sales were still running around [$686.5 billion in December 2024](https://www.census.gov/wholesale/). Most distributors start with a packaged ERP and a stack of add-ons, then spend years papering over the gaps with spreadsheets, manual re-keying, and tribal knowledge. At some point the workarounds cost more than the fix. This is a look at where packaged tools leave distributors stranded and what custom software can do about it.

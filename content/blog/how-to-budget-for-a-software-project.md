@@ -4,6 +4,21 @@ description: "How to budget for a software project: separate build, run, and cha
 category: "Cost & Pricing"
 primaryKeyword: "how to budget for a software project"
 tags: ["software project budget", "software cost planning", "budgeting for development", "software total cost of ownership"]
+takeaways:
+  - "Split the software budget into three numbers, not one: build (one-time), run (recurring hosting, services, support), and change (features after launch)."
+  - "Size contingency to how much is unknown: a well-defined project might carry 10 to 15 percent, while a vague project with novel integrations needs more."
+  - "Budget on a three-year horizon, where annual maintenance of 15 to 20 percent of build cost plus hosting and change can approach or exceed the original build figure."
+  - "Phase the spend behind acceptance criteria so you approve each chunk against results, since only about 31 percent of projects finish on time, on budget, and on scope."
+  - "Count internal costs that never hit an invoice: discovery and review hours, product owner time, data cleanup, training, and opportunity cost, priced at a fully loaded internal rate."
+faqs:
+  - q: "Why do software budgets so often go over?"
+    a: "They usually count the build and forget everything around it: the monthly cloud bill, unpredictable changes, and internal hours that never hit an invoice. McKinsey and Oxford studied more than 5,400 large IT projects and found average overruns of 45 percent on cost and 56 percent less value delivered than planned. Separating build, run, and change costs and sizing contingency is how a budget survives contact with reality."
+  - q: "How much contingency should I add to a software budget?"
+    a: "Size it to how much is still unknown. Early in a project an estimate can be off by a factor of four in either direction, tightening to about 1.6x after requirements lock. A well-defined project with a clear spec might carry 10 to 15 percent contingency, while a vague, ambitious project with novel integrations should carry more."
+  - q: "What is the true three-year cost of custom software?"
+    a: "A one-year view flatters custom software because year one is mostly build. On a 400,000 dollar build, maintenance at the middle of the Gartner range of 15 to 20 percent runs roughly 68,000 dollars a year, or about 204,000 dollars over three years. Add hosting, third-party services, and a change budget, and the three-year total can approach or exceed the original build figure."
+  - q: "How do I get a software budget approved?"
+    a: "Finance approves budgets they can defend. Show the three cost buckets, a sized contingency tied to real uncertainty, a phased spend gated by results, and a three-year total. Lead with the business case rather than the technology, tying spend to hours saved, errors avoided, or revenue enabled, and show the plan de-risks itself by releasing money in phases against acceptance criteria."
 ---
 
 Most software budgets are wrong the moment they are approved, and not because someone lied. They are wrong because they count the build and forget everything around it: the cloud bill that arrives every month, the changes nobody could predict, the internal hours that never hit an invoice. The scale of the problem is documented. McKinsey and the University of Oxford studied [more than 5,400 large IT projects and found average overruns of 45 percent on cost and 7 percent on time, with 56 percent less value delivered than planned](https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/McKinsey%20Digital/Our%20Insights/Delivering%20large%20scale%20IT%20projects%20on%20time%20on%20budget%20and%20on%20value/Delivering%20large%20scale%20IT%20projects%20on%20time%20on%20budget%20and%20on%20value.pdf). A budget that survives contact with reality separates cost types and plans for the uncertainty instead of pretending it away. Here is how to build one.

@@ -4,6 +4,21 @@ description: "What a real software QA process covers: test levels and types, man
 category: "Process & Delivery"
 primaryKeyword: "software qa process"
 tags: ["software testing process", "quality assurance software", "qa best practices", "test automation"]
+takeaways:
+  - "QA is a discipline woven through the whole process from the first sprint, not a bug-hunting phase bolted on at the end."
+  - "CISQ estimated poor software quality cost the US economy about 2.41 trillion dollars in 2022, with roughly 1.52 trillion of that from accumulated technical debt."
+  - "A healthy project uses unit, integration, and end-to-end tests plus targeted types like regression, performance, and security testing, proportioned to risk."
+  - "Automate the stable, repetitive, high-value paths and spend human attention on exploratory, usability, and new-feature testing."
+  - "Bug triage should give every defect an owner, a severity, and a status tracked somewhere visible."
+faqs:
+  - q: "What is the difference between testing and quality assurance?"
+    a: "Testing is finding defects in what has been built. Quality assurance is the broader practice of preventing defects in the first place, through clear acceptance criteria before work starts, code review, automated checks in the pipeline, and an agreed definition of done. Good QA pushes defect discovery as far left as possible, toward the moment code is written."
+  - q: "What are the different levels of software testing?"
+    a: "Unit tests check individual functions and components in isolation. Integration tests verify that components work together, such as a service talking to the database. End-to-end tests exercise complete user workflows through the real interface. A healthy project uses all three in proportion, plus targeted types like functional, regression, performance, security, and usability testing."
+  - q: "Should software testing be manual or automated?"
+    a: "Both belong in a mature process. Automated tests run on every change in minutes and catch regressions immediately, so they are the backbone of confidence. Manual testing uses human judgment and is irreplaceable for exploratory testing, usability, and new features whose behavior is still settling. The rule of thumb is to automate the stable, repetitive, high-value paths and spend human attention on the new and nuanced."
+  - q: "How can I tell if a vendor has good QA?"
+    a: "You cannot easily inspect the test suite, but you can read the signals: acceptance criteria written before work starts, a working demo each sprint you can actually try, bugs tracked openly with clear severity, automated tests running in the pipeline, and releases that are boring, predictable, and rarely followed by a scramble. That predictability is the real product of good QA."
 ---
 
 Quality assurance is not a phase at the end where someone clicks around looking for bugs. In teams that ship reliable software, quality is built in from the first sprint, and QA is a discipline woven through the whole process rather than a gate at the finish line. The stakes are not abstract. CISQ estimated that poor software quality cost the US economy [about $2.41 trillion in 2022](https://www.it-cisq.org/the-cost-of-poor-quality-software-in-the-us-a-2022-report/), with unaddressed technical debt accounting for roughly $1.52 trillion of that. The numbers behind that estimate frame why the discipline matters:

@@ -4,6 +4,21 @@ description: "How to write acceptance criteria that prevent disputes: testable g
 category: "Process & Delivery"
 primaryKeyword: "acceptance criteria"
 tags: ["how to write acceptance criteria", "definition of done", "user story criteria"]
+takeaways:
+  - "Acceptance criteria turn done from an opinion into a pass/fail test, since a user story says what someone wants and the criteria say exactly how you will know it works."
+  - "Use given-when-then for behavior and scenarios and checklists for lists of requirements, without forcing everything into one shape, because the goal is clarity not format purity."
+  - "A criterion you cannot objectively verify is a wish, so replace vague adjectives like intuitive or fast with observable outcomes that have one clear yes-or-no answer."
+  - "Happy-path criteria are insufficient because most disputes and bugs live in edge cases, so for each feature name what happens when input is missing, wrong, too large, or out of order."
+  - "Tie criteria to sign-off and payment so a demo becomes a checklist rather than a negotiation, which is why measurable criteria belong directly in the contract."
+faqs:
+  - q: "What are acceptance criteria in software development?"
+    a: "Acceptance criteria are the specific, checkable conditions a piece of work must satisfy to count as complete. They are not the feature description; they are the pass/fail test for it. A user story says what someone wants, and the acceptance criteria say exactly how you will know it works, which turns done from an opinion into a test."
+  - q: "How do you write testable acceptance criteria?"
+    a: "Replace vague adjectives with observable outcomes that have one clear yes-or-no answer. Instead of the report should load fast, write that results appear within two seconds for a typical query. Instead of the app handles errors gracefully, write that if the save fails the user sees a message and their input is preserved. If you cannot describe how you would verify a criterion, rewrite it until you can."
+  - q: "What is the given-when-then format for acceptance criteria?"
+    a: "Given-when-then describes behavior as a scenario: given some starting state, when the user does something, then a specific result happens. For example, given a customer with an overdue invoice, when a user tries to place a new order, then the system blocks the order and shows the outstanding balance. It reads naturally, maps directly to a test, and anyone can check it. Use it for behavior and scenarios, and use checklists for lists of conditions."
+  - q: "How do acceptance criteria prevent scope disputes?"
+    a: "Most disputes come down to the word done, where the client and team read the same statement of work differently. Criteria agreed in advance are the cheapest place to settle a disagreement about scope, and a defect caught while writing requirements costs a fraction of one caught in production. When criteria are set before work starts and tied to sign-off and payment, the demo becomes a checklist rather than a negotiation about intent."
 ---
 
 Most disputes on a software project come down to one word: done. The client thought a feature included something the team never built, the team thought it delivered exactly what was asked, and both are looking at the same statement of work reading it differently. This is not a rare failure. Standish Group CHAOS research has tracked software delivery for decades and consistently finds only [about a third of projects fully succeed while roughly half are challenged](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), and unclear or shifting requirements are a recurring cause. Acceptance criteria fix this by turning "done" from an opinion into a test. This guide covers how to write criteria that hold up under pressure.

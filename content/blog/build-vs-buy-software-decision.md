@@ -4,6 +4,19 @@ description: "A build vs buy software framework: decide by differentiation, tota
 category: "Custom Software"
 primaryKeyword: "build vs buy software"
 tags: ["build or buy decision", "software make or buy", "when to build software", "software total cost of ownership"]
+takeaways:
+  - "Start with differentiation: buy commodity capabilities like payroll and email, and build only where the software encodes an advantage competitors cannot easily copy."
+  - "Compare total cost of ownership over three to five years, not the license price against a build quote, because both paths carry ongoing costs the sticker hides."
+  - "Average SaaS spend reached about 8,700 dollars per employee in 2024 and the typical organization runs 112 apps, yet 15 percent go unused and 51 percent are underutilized."
+  - "Buying wins on speed to value, but you inherit the vendor's roadmap, outages, data model, and pricing power, while building gives you ownership and control."
+  - "The answer is often both: buy the commodity foundation and build the thin differentiating layer on top, which depends on clean integrations between them."
+faqs:
+  - q: "Should I build or buy software?"
+    a: "Buy when the capability is commodity plumbing that thousands of companies need the same way, and build when the software encodes a differentiator competitors cannot easily copy. Run the decision through a framework that weighs differentiation, fit gap, integration need, longevity, and control, rather than arguing about it abstractly. A common middle path is to buy the commodity foundation and build only the layer that sets you apart."
+  - q: "How do I compare the true cost of building versus buying software?"
+    a: "Model both paths over three to five years, not year one. Buying carries per-seat pricing that scales with headcount, integration work, configuration labor, and price increases you do not control, while building adds hosting, maintenance, security patching, and enhancements. A SaaS tool at a low monthly price can cost more than a custom build once you multiply seats, and none of that subscription spend builds an asset you own."
+  - q: "What risks do buyers underestimate in build vs buy decisions?"
+    a: "Buyers routinely discount integration debt from tools that do not talk cleanly to your stack, process distortion from bending your team to a rigid product, and vendor risk when a provider raises prices, gets acquired, or shuts down. On the build side, teams underfund maintenance and let a good system rot. Naming these explicitly keeps them from ambushing you after the contract is signed."
 ---
 
 The build-versus-buy question rarely has a clean answer, which is why it stalls so many teams. Buy and you move fast but bend your process to fit someone else's product. Build and you get exactly what you want but own the cost and the maintenance forever. The trick is not to argue about it abstractly. It is to run the decision through a framework that forces the trade-offs into the open.

@@ -4,6 +4,21 @@ description: "How HTS classification software works: 17,000+ tariff codes, GRI l
 category: "Trade & Supply Chain"
 primaryKeyword: "hts classification software"
 tags: ["harmonized tariff schedule", "tariff classification software", "hts code automation", "customs compliance"]
+takeaways:
+  - "The Harmonized Tariff Schedule has more than 17,000 ten-digit codes, and classification is legal reasoning against the tariff's structure and notes, not a keyword lookup."
+  - "Good software encodes the General Rules of Interpretation as a rules engine that walks the GRI in order and captures the reasoning at each step, making a classification defensible."
+  - "AI should propose candidate codes and surface distinguishing questions, but a human or strict rule must dispose, because Customs does not accept 'the algorithm said so' and reasonable care stays on the importer."
+  - "The code is only the first output; useful software computes the full duty picture including base rate, trade programs, and stacked tariffs like Section 301, which add 7.5 to 25 percent on covered goods."
+  - "Defensibility requires a complete audit trail, version history, and consistency, since negligent misclassification can draw a penalty up to two times the lost duties and gross negligence up to four times."
+faqs:
+  - q: "How does HTS classification software work?"
+    a: "The useful versions treat classification as a legal reasoning problem rather than a search box. They maintain current tariff data, encode the General Rules of Interpretation as a rules engine that walks the rules in order, apply section and chapter notes, and capture the reasoning at each step so the final code comes with a defensible record of why it was chosen. Many layer AI on top to read messy product descriptions and propose candidates."
+  - q: "Can AI classify HTS codes on its own?"
+    a: "AI is well suited to reading messy free-text product descriptions and surfacing likely candidate codes, but it should not assign codes silently. The right pattern is that AI proposes and a human or a strict rule disposes, keeping a person in the loop for anything material. Customs does not accept the algorithm said so as a defense, and the reasonable-care standard falls on the importer regardless of what tool produced the number."
+  - q: "What are the penalties for misclassifying an HTS code?"
+    a: "Under 19 U.S.C. 1592, a negligent misclassification can draw a civil penalty up to two times the lost duties, and gross negligence up to four times, while the importer carries an affirmative duty to exercise reasonable care. A code with a documented GRI path behind it is how you show that care, which is why a defensible audit trail is a core requirement rather than a nice-to-have."
+  - q: "Does the HTS code determine the total duty I pay?"
+    a: "The code is only the first output. A correct code maps to a general duty rate, but what you actually pay can differ under trade agreements like USMCA or GSP, or rise sharply under additional tariffs. Section 301 alone adds 7.5 to 25 percent on covered Chinese-origin goods, so useful software computes the base rate, program eligibility, and stacked special tariffs together."
 ---
 
 Every product imported into the United States needs a Harmonized Tariff Schedule code, and that code determines the duty you pay, the trade programs you qualify for, and whether Customs considers your entry compliant. The stakes are not small. In fiscal year 2024, [CBP processed $3.37 trillion in imports and collected more than $88 billion in duties, taxes, and fees across 38.4 million entries](https://www.cbp.gov/newsroom/national-media-release/cbp-releases-december-2024-monthly-update). Getting a code wrong is not a rounding error. It can mean overpaying duty for years, or underpaying and facing penalties and back-duty when Customs audits. HTS classification software promises to make this faster and more consistent, but the useful versions understand that classification is a legal reasoning problem, not a lookup. This guide covers what the software actually has to do.

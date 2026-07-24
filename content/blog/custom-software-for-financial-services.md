@@ -4,6 +4,21 @@ description: "Custom software for financial services: how to handle regulation, 
 category: "Industry Guides"
 primaryKeyword: "custom software for financial services"
 tags: ["fintech software development", "financial software", "banking software", "compliance software"]
+takeaways:
+  - "In financial services a feature is not done when it works; it is done when it works, is logged, is access-controlled, and can be explained to an examiner two years later."
+  - "Financial crime compliance was projected to cost $205 billion globally in 2023, with North American institutions carrying roughly $65 billion, so automation that removes manual filing labor pays for itself quickly."
+  - "Custom work usually wraps aging core systems rather than replacing them, building a modern layer that stays in sync while the legacy core remains the source of truth."
+  - "Security is the foundation, not a late-stage feature; the average financial-sector breach cost $6.08 million, about 22 percent above the cross-industry average."
+  - "Financial integrations need idempotency so a retried message does not post twice, plus reconciliation to prove both systems agree, because a dropped or duplicated message means a real financial discrepancy."
+faqs:
+  - q: "What makes building financial services software different?"
+    a: "A regulator, an auditor, and a customer's money are all watching the same system, so a feature is only done when it works, is logged, is access-controlled, and can be explained to an examiner years later. That changes the whole build, making auditability and security architectural requirements rather than add-ons. The goal is software that survives an audit, not just a demo."
+  - q: "What security controls do auditors expect in financial software?"
+    a: "The baseline serious buyers and auditors expect is encryption in transit and at rest with real key management, multi-factor authentication with role-based least-privilege access, alignment to SOC 2 controls even before formal certification, and segregation of duties enforced in software. A gap in any of these is the finding that stalls a deal or an exam. Security is the foundation you pour first, not a feature added near launch."
+  - q: "Do you have to replace a legacy core system to modernize?"
+    a: "Rarely on day one. Custom software in financial services usually lives in the gap between dense regulation and decades-old core systems, building a modern layer around the core while keeping it as the source of truth. The design constraint is that new and old stay in sync and every action stays traceable. Wrapping the legacy core carefully is almost always safer than ripping it out."
+  - q: "Why is auditability so important in financial software?"
+    a: "In financial software the log is a legal record, not just a debugging tool, so auditability has to be designed in because you cannot reconstruct history you never captured. That means an immutable trail of who did what and when, records retained for the required period, and reporting that can reproduce a point-in-time view. When an examiner asks how a number was derived, the system should answer with evidence rather than a developer's recollection."
 ---
 
 Financial services software carries a burden most other software does not: a regulator, an auditor, and a customer's money are all watching the same system. That changes how you build. A feature is not done when it works; it is done when it works, is logged, is access-controlled, and can be explained to an examiner two years later. This guide covers what custom software for financial services actually demands, so you can plan a build that survives an audit instead of one that only survives a demo.

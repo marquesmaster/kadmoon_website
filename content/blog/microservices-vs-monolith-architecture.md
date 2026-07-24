@@ -4,6 +4,21 @@ description: "Microservices vs monolith for decision-makers: how each works, the
 category: "Comparisons"
 primaryKeyword: "microservices vs monolith"
 tags: ["monolith vs microservices", "architecture comparison", "when to use microservices"]
+takeaways:
+  - "The core difference is not size but boundaries: in a monolith they are logical and cheap to cross, while microservices make them physical and add a network hop and a distributed system underneath everything."
+  - "Most teams that think they need microservices actually need a modular monolith, which keeps one deployment and database transactions while enforcing clean internal boundaries you can extract later."
+  - "Operational complexity is the most underestimated cost, since every cross-service feature becomes a distributed systems problem needing service discovery, tracing, and engineers who have run distributed systems."
+  - "Microservices solve an organizational problem before a technical one, and their benefit only appears past a certain headcount; load scaling rarely requires them since a monolith scales horizontally."
+  - "The decision is reversible in only one direction: extracting a service from a clean monolith is routine, but merging sprawling microservices back is a rescue project, as Amazon Prime Video's 90 percent cost cut showed."
+faqs:
+  - q: "Should I start with microservices or a monolith?"
+    a: "For an early-stage or new product, start with a modular monolith to optimize for speed and cheap changes of mind, keeping clean internal boundaries so you can extract services later. Microservices trade early speed for later independence, and the common mistake is paying that operational overhead before you have the scale or team size that justifies it."
+  - q: "What is a modular monolith?"
+    a: "A modular monolith keeps a single deployment but enforces clean internal boundaries, with separate modules, defined interfaces, minimal shared state, and domain logic that does not leak across modules. It gives you most of the maintainability people attribute to microservices without the operational tax; you still deploy once, get database transactions across the whole request, and can extract a module into its own service later when it proves it needs independent scaling."
+  - q: "When do microservices actually make sense?"
+    a: "They earn their cost at the scale stage, when many teams need to own and ship their piece independently instead of queuing behind one shared codebase. Split along team and domain lines, and only after your operational tooling for observability, CI/CD, and on-call is genuinely ready. Organizational scaling favors services past a threshold, but load scaling rarely requires them."
+  - q: "Why did Amazon Prime Video move from microservices back to a monolith?"
+    a: "In 2023 the Prime Video team rebuilt its audio and video quality monitoring service, moving from a distributed serverless design back to a single application, and cut its operating cost by 90 percent. The distributed version paid a heavy tax on data passing between components and orchestration overhead; collapsing it into one process, with data moving in memory instead of through storage, was both cheaper and easier to scale. The lesson is that the split has to earn its cost for the specific workload."
 ---
 
 The microservices vs monolith debate gets treated like a values contest, where one side is modern and the other is legacy. That framing costs teams real money. The honest answer is that architecture is a trade against your team size, your operational maturity, and your rate of change. This piece lays out how each model actually behaves so you can pick the one that fits where you are, not where a conference talk says you should be.

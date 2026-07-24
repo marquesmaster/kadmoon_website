@@ -4,6 +4,19 @@ description: "How to build business intelligence dashboards that drive decisions
 category: "Data & AI"
 primaryKeyword: "business intelligence dashboards"
 tags: ["bi dashboards", "analytics dashboards", "custom bi tools", "self-service bi"]
+takeaways:
+  - "Dashboards get ignored for predictable reasons: they answer questions nobody asked, the numbers do not reconcile and lose trust, they are slow, or they describe what happened without pointing to an action."
+  - "Start every dashboard from a question and an owner: who looks at this, what decision do they make, and what would change their action. If you cannot answer that, do not build it yet."
+  - "Buy off-the-shelf BI when the questions are common and the data is clean; build custom when dashboards must live inside your own app, the logic is proprietary, or you need tight control over performance and access."
+  - "A dashboard is only as good as the model underneath it, and data teams spend roughly 45 percent of their time just loading and cleaning data before any analysis."
+  - "Speed is a feature people treat as a proxy for quality, so pre-aggregate, cache, and query a modeled layer to load in a second rather than spin for half a minute."
+faqs:
+  - q: "Why do most business intelligence dashboards get ignored?"
+    a: "Dashboards fail when they answer questions nobody is asking and become wallpaper, when their numbers do not match the source system and lose users' trust, or when they are slow and hard to filter so people route around them to a spreadsheet. A quieter failure is showing what happened without pointing toward an action. The ones that get used tie to a recurring decision that someone owns."
+  - q: "Should I buy an off-the-shelf BI tool or build a custom dashboard?"
+    a: "Buy an off-the-shelf BI tool when your questions are common and your data is clean, since building custom would be waste. Custom BI earns its keep when dashboards must live inside your own application for customers or field teams, when your calculations are genuinely proprietary, or when you need tight control over performance, access, and the exact interaction model. The rule is buy the commodity and build the differentiator."
+  - q: "How do I make a dashboard load fast?"
+    a: "Speed usually comes from pre-aggregating data, caching results, and querying a modeled analytics layer rather than raw operational tables. In practice that means materialized views or summary tables that roll millions of raw rows into the handful of aggregates a chart reads, so a query that would scan the full fact table in twenty seconds returns from a pre-computed rollup in under one. Match refresh cadence to the decision rather than the maximum the technology allows."
 ---
 
 Most companies have more dashboards than they have decisions those dashboards inform. Someone commissioned them, they looked impressive in the demo, and now they sit unopened while people export data to a spreadsheet to answer the question they actually have. It is not a small market to get wrong: the global business intelligence market was valued at about [$35.3 billion in 2025](https://www.polarismarketresearch.com/industry-analysis/business-intelligence-market) and is growing at roughly 9 percent a year, and the self-service BI segment alone was around [$10.7 billion in 2024](https://straitsresearch.com/report/self-service-bi-market). Building business intelligence dashboards that get used is less about the charting library and more about understanding what decision each view supports. This guide covers the design, data, and adoption work that separates a dashboard people rely on from one they ignore.

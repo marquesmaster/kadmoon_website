@@ -4,6 +4,21 @@ description: "React Native vs native app development compared on performance, na
 category: "Mobile Apps"
 primaryKeyword: "react native vs native"
 tags: ["cross-platform vs native", "react native pros and cons", "native app development", "app development cost"]
+takeaways:
+  - "The core trade is a single shared codebase versus the last measure of performance and platform fidelity, and for most business apps sharing code is the better deal."
+  - "For forms, lists, dashboards, and workflows, React Native performance is indistinguishable from native to the user, and native only pulls ahead at the extremes like real-time graphics, games, or heavy on-device processing."
+  - "React Native's escape hatch lets you write most of an app in shared code and drop into native for one performance-critical screen or exotic integration, so you rarely hit a hard wall."
+  - "Cross-platform builds run about 30 to 50 percent less than separate native iOS and Android apps, with the savings concentrated in engineering hours and ongoing maintenance."
+  - "React Native needs JavaScript and TypeScript developers, a much larger US talent pool at 62 and 43.4 percent usage, which lowers hiring cost and bus-factor risk on a long-lived app."
+faqs:
+  - q: "Is React Native as good as native app development?"
+    a: "For the vast majority of apps, forms, lists, dashboards, and workflows, React Native performance is indistinguishable from native to the person using it. It renders real native UI components rather than a web page in a wrapper. Native only pulls ahead at the extremes like heavy real-time graphics, complex animations, intensive on-device processing, and games."
+  - q: "How much cheaper is React Native than building two native apps?"
+    a: "Industry cost breakdowns consistently put cross-platform builds at 30 to 50 percent less than building and maintaining separate native iOS and Android apps, with savings concentrated in engineering hours. You build a feature once instead of twice and fix a bug once instead of twice. Two native codebases roughly double the ongoing cost of every change forever, not just the initial build."
+  - q: "When is native development worth the extra cost?"
+    a: "Native earns its cost in specific cases: the app is performance-critical in a way users feel, such as real-time graphics, AR, games, or heavy on-device ML; you need the newest platform features the moment they ship; you are building for one platform only; or it is a long-term flagship where the last increment of polish justifies maintaining two codebases. If none of these apply, native is likely paying a premium for benefits you never use."
+  - q: "How do I decide between React Native and native?"
+    a: "Work through four questions in order. Is it one platform or both, since one platform makes native reasonable? Is there a genuine performance ceiling or bleeding-edge OS feature need? How much will the app change after launch, since more ongoing work favors a single codebase? And what is your team and budget? For most B2B and internal business apps, React Native is the pragmatic default."
 ---
 
 The React Native vs native question comes down to one trade: a single shared codebase versus the last measure of performance and platform fidelity. For most business apps, sharing code is the better deal. For a specific set of apps, it is not. Knowing which side you are on saves you from either overbuilding or hitting a wall you cannot code around.

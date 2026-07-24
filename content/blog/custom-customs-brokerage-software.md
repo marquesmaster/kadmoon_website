@@ -4,6 +4,21 @@ description: "Custom customs brokerage software: the brokerage workflow end to e
 category: "Trade & Supply Chain"
 primaryKeyword: "customs brokerage software"
 tags: ["customs broker software", "brokerage automation", "custom broker platform", "ace filing"]
+takeaways:
+  - "The business case for brokerage software is throughput: if the system pre-populates and validates entries and surfaces only exceptions, one broker can oversee far more entries without the error rate climbing."
+  - "The ABI to ACE filing connection is the hardest part, requiring specific message formats, CBP certification, idempotent filing so retries never double-file, and clear status tracking through the response cycle."
+  - "Document capture with AI-assisted extraction plus a human-in-the-loop review moves broker effort from data entry to the decisions that actually need expertise."
+  - "Duty calculation must be correct and defensible, and tariff stacking means a single classification can carry base duties plus additional rates, so a defensible audit trail is mandatory."
+  - "The client portal becomes a moat because clients with their history, documents, and status in your system face real switching friction worth more than any single feature."
+faqs:
+  - q: "What is custom customs brokerage software?"
+    a: "It is a system built around how brokerage actually works, replacing the fragile mix of an aging legacy platform, spreadsheets, email, and institutional memory most brokers run on. It keeps the whole chain, from document validation and classification through ACE filing, billing, and recordkeeping, in one place with data flowing through it instead of being re-keyed between disconnected tools."
+  - q: "How does brokerage software connect to CBP for filing?"
+    a: "Entries file through ABI, the Automated Broker Interface, into ACE. That integration is unforgiving: message formats are specific, CBP validates strictly, and the response cycle of acceptance, rejection, release, and exam notices all flows back and must be surfaced to the broker. Building and certifying an ABI connection is a real project with CBP in the loop, and the software needs robust error handling and idempotent filing so a retry never double-files."
+  - q: "Should a customs broker build or buy software?"
+    a: "Buying can be right for a broker whose process matches a packaged product, and the market is growing from around $2.4 billion in 2024 toward $6.3 billion by 2033. The case for custom shows up when the packaged platform forces your operation to work its way, cannot represent your billing or client structure, locks your data where you cannot use it, or is a legacy system you cannot extend. A sensible path targets the most painful gap first and integrates with what you keep."
+  - q: "How does brokerage software help with compliance and audits?"
+    a: "It has to retain entries, documents, and the reasoning behind decisions for the required period and produce them cleanly if CBP asks, run denied-party screening against watchlists, and leave an audit trail on every consequential action, who classified what, who approved it, and when it filed. A system that captures this as a byproduct of normal work keeps a broker audit-ready without extra effort."
 ---
 
 Customs brokerage runs on deadlines, documents, and detail, at a scale that is easy to underestimate. In fiscal year 2024, CBP processed [more than $3.37 trillion in imports and collected over $88 billion in duties, taxes, and fees](https://www.cbp.gov/document/fact-sheets/fy-2024-cbp-trade-fact-sheet), and it moves through the system one entry at a time. A single entry touches commercial invoices, packing lists, classifications, valuation, duty calculations, and a filing to CBP that has to be right the first time. Most brokers run this on a mix of an aging legacy platform, spreadsheets, email, and institutional memory. Custom customs brokerage software exists to replace the fragile parts of that stack with a system built around how brokerage actually works. This guide covers the workflow, the core features, and how to decide whether to build.

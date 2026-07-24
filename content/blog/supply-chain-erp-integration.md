@@ -4,6 +4,21 @@ description: "Supply chain ERP integration explained: why data lives in silos, m
 category: "Trade & Supply Chain"
 primaryKeyword: "supply chain erp integration"
 tags: ["erp logistics integration", "netsuite supply chain", "erp wms tms integration", "inventory accuracy"]
+takeaways:
+  - "Supply chain ERP integration makes the ERP, WMS, and TMS tell one consistent story instead of disagreeing about inventory and orders."
+  - "Average US retail inventory accuracy sits near 63 percent, and inventory distortion is estimated to cost retailers roughly 1.77 trillion dollars a year worldwide."
+  - "Data mapping is the heart of the project: reconcile SKUs, inventory states, order lifecycles, and locations, and define the source of truth for each."
+  - "Use real-time or event-driven sync where lag causes bad decisions and batch for high-volume, less time-sensitive flows."
+  - "Designate a single source of truth per data type, commonly the WMS for physical on-hand and the ERP for financial and order state, and enforce it."
+faqs:
+  - q: "Why do supply chain systems disagree about inventory?"
+    a: "Supply chain software grew up in pieces: an ERP for finance and orders, a WMS for fulfillment, a TMS for freight, each bought to solve one problem and each keeping its own copy of the truth. The result is silos that overlap but disagree, for example the ERP showing 500 units available while the WMS knows 40 are damaged and 60 are allocated. None is lying, they just do not talk."
+  - q: "Should supply chain data sync in real time or batch?"
+    a: "Match the method to the need. Use real-time or event-driven sync for data where lag causes bad decisions, such as an inventory change that affects what you can promise a customer or a shipment status a client is watching. Use batch for high-volume, less time-sensitive flows like nightly financial reconciliation and bulk master-data updates. Most solid integrations mix the two per flow, which also respects API rate limits."
+  - q: "Which system should be the source of truth for inventory?"
+    a: "Decide per data type and enforce it. Commonly the WMS owns physical on-hand because it reflects reality on the floor, while the ERP owns financial and order state. The same discipline applies to orders, where one system owns the canonical status and the integration propagates changes outward. If two systems both think they are authoritative, you get drift that becomes oversells and stockouts."
+  - q: "Why do ERP integration projects fail?"
+    a: "Panorama Consulting's 2024 research found 55 to 75 percent of ERP projects fail to meet their stated objectives, and unclear data ownership is a recurring cause. The common pitfalls are no defined source of truth, ignoring failure handling like retries and idempotency, point-to-point sprawl, no reconciliation routine, and underestimating real transaction volume. Projects rarely collapse from one dramatic bug; they erode through accumulated small gaps."
 ---
 
 Your ERP knows what you own and what you owe. Your warehouse system knows what is physically on the shelf. Your transportation system knows where the freight is. When those three cannot agree, you get stockouts you did not see coming, orders that ship late, and a finance team that no longer trusts the numbers. The cost of that disagreement is measurable. Industry research puts average US retail inventory accuracy near [63 percent](https://www.retailinsight.io/blog/unveiling-the-true-cost-of-inventory-inaccuracy), and inventory distortion (the combination of stockouts, overstocks, and inaccurate stock records) is estimated to cost retailers roughly [$1.77 trillion a year worldwide](https://www.retailinsight.io/blog/unveiling-the-true-cost-of-inventory-inaccuracy). Supply chain ERP integration is the work of making these systems tell one consistent story. This guide covers why that is hard and how to architect it so it holds up.

@@ -4,6 +4,21 @@ description: "An ERP integration guide covering NetSuite, SAP, and Dynamics APIs
 category: "Integrations & APIs"
 primaryKeyword: "erp integration"
 tags: ["integrate erp", "erp api integration", "connect to erp"]
+takeaways:
+  - "ERP integration is rarely a simple API call; the data is a web of related records, the ERP enforces strict rules, and a bad sync can double inventory or post a wrong invoice."
+  - "The ERP market is fragmented, with the top vendor holding only about 6.5 percent share, so saying you run ERP tells you almost nothing about what integrating will take."
+  - "Most of the real work is data mapping and master data: decide the source of truth for each entity so two systems do not both think they own the master copy."
+  - "Match sync method to business need, real-time for time-sensitive flows and batch for high-volume or non-urgent data, to stay within ERP rate limits and keep the system stable."
+  - "Design for failure with retries and backoff, idempotency, a dead-letter path, reconciliation, and monitoring; skipping this layer is the most common reason integrations fail in production."
+faqs:
+  - q: "Why are ERP integrations so hard?"
+    a: "Three things make it harder than it looks. The data is complicated, since an order is a web of customers, items, tax codes, and statuses with their own rules. The ERP enforces those rules and rejects data other systems accepted. And the stakes are high, because a bad sync can double an inventory count or post a wrong invoice."
+  - q: "Should ERP integration use real-time or batch sync?"
+    a: "Match the method to the business need. Real-time or event-driven fits data where staleness causes problems, like a new order that must reach the warehouse now. Batch on a schedule fits high-volume or non-urgent data like nightly financial reconciliation. Many good integrations use both to stay within ERP rate limits."
+  - q: "What do NetSuite, SAP, and Dynamics APIs look like?"
+    a: "NetSuite offers SuiteTalk (SOAP and REST) plus RESTlets and SuiteScript, governed by usage limits. SAP spans OData services, BAPIs, and middleware depending on which product you run. Microsoft Dynamics 365 provides REST APIs and a data layer through Dataverse. Read the specific version's docs and rate limits before promising a timeline."
+  - q: "How do you keep an ERP integration reliable in production?"
+    a: "Design for failure from the start: retries with backoff for transient errors, idempotency so retries do not create duplicates, a dead-letter path for records that cannot be processed, reconciliation that confirms both systems agree on counts, and monitoring with alerts. Build a clear integration layer with its own durable store instead of wiring systems directly."
 ---
 
 Your ERP is the system of record for money, inventory, and orders, which means almost every other tool in your business eventually needs to talk to it. That is where the pain starts. ERP integration is rarely a simple API call. It is a project involving messy data, strict business rules, and a system you cannot afford to break. This guide covers what makes ERP integration hard and how to plan one that holds up in production.

@@ -2,6 +2,7 @@ import nodemailer from 'nodemailer';
 
 type Lead = {
   name: string;
+  email?: string;
   company: string;
   size?: string;
   need?: string;
@@ -13,6 +14,7 @@ function bodyText(lead: Lead): string {
     `New project inquiry from kadmoon.com`,
     ``,
     `Name:    ${lead.name}`,
+    `Email:   ${lead.email || '(not provided)'}`,
     `Company: ${lead.company}`,
     `Size:    ${lead.size || '(not provided)'}`,
     `Need:    ${lead.need || '(not provided)'}`,
@@ -47,6 +49,8 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
         access_key: web3Key,
         subject,
         from_name: 'Kadmoon Website',
+        // Web3Forms uses `email` as the reply-to, so a reply reaches the lead.
+        ...(lead.email ? { email: lead.email, replyto: lead.email } : {}),
         name: lead.name,
         company: lead.company,
         size: lead.size || '(not provided)',
@@ -68,7 +72,13 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
         Authorization: `Bearer ${resendKey}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ from, to, subject, text }),
+      body: JSON.stringify({
+        from,
+        to,
+        subject,
+        text,
+        ...(lead.email ? { reply_to: lead.email } : {}),
+      }),
     });
     if (!res.ok) {
       // Surface only the HTTP status, never the key or response body.
@@ -86,7 +96,7 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
     const secure = (process.env.SMTP_SECURE || (port === 465 ? 'true' : 'false')) === 'true';
     const from = process.env.CONTACT_FROM || `Kadmoon Website <${user}>`;
     const transporter = nodemailer.createTransport({ host, port, secure, auth: { user, pass } });
-    await transporter.sendMail({ from, to, subject, text });
+    await transporter.sendMail({ from, to, subject, text, replyTo: lead.email || undefined });
     return true;
   }
 

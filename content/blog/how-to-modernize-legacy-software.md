@@ -4,6 +4,21 @@ description: "How to modernize legacy software safely: spot the risk signs, choo
 category: "Legacy Modernization"
 primaryKeyword: "how to modernize legacy software"
 tags: ["legacy modernization", "modernize old software", "legacy system upgrade"]
+takeaways:
+  - "Legacy is about risk, not age: a system becomes a liability when few people understand it, it misses security patches, changes take weeks, or recovery depends on tribal knowledge."
+  - "There are four modernization moves that trade effort against payoff: rehost, replatform, refactor, and rebuild, and most systems end up as a mix."
+  - "The instinct to jump straight to rebuild is usually wrong, because rebuilds are expensive, slow, and prone to reproducing old bugs while introducing new ones."
+  - "Assess before you act, and treat recovering the undocumented business rules buried in the code as often the most valuable output of the assessment phase."
+  - "Prefer incremental modernization, such as the strangler pattern, over big-bang cutover, so every step is small, reversible, and validated in production."
+faqs:
+  - q: "How do I know if my legacy system is actually a risk?"
+    a: "Legacy is not about age; plenty of decade-old systems are stable. A system becomes a liability when specific warning signs appear: only one or two people understand it, it runs on a platform that no longer receives security patches, every change takes weeks and risks breaking something unrelated, it cannot integrate with modern tools, or downtime is rising and recovery depends on tribal knowledge. The knowledge and security items are the most urgent."
+  - q: "What is the difference between rehost, replatform, refactor, and rebuild?"
+    a: "Rehost, or lift-and-shift, moves the system to modern infrastructure with minimal code change: fastest and lowest risk, but it does not fix bad architecture. Replatform swaps components like the database while keeping most logic. Refactor restructures the code to improve maintainability without changing behavior. Rebuild replaces the system entirely, delivering the most value at the most risk and cost. Often the right answer is a sequence."
+  - q: "Should I modernize all at once or piece by piece?"
+    a: "Incremental is almost always the right call for anything the business depends on. Big-bang means building the full replacement then cutting over in one event, which is dangerous because everything has to work at once and there is no safe rollback. Incremental modernization, such as the strangler pattern, stands up new components alongside the old system and routes functionality gradually, so every step is small, reversible, and validated in production."
+  - q: "How do you modernize without taking the business down?"
+    a: "Even incremental work touches production, so plan for it. Keep the ability to fall back at every step so a problem means reverting one slice, not losing the whole system. Migrate and reconcile data carefully, since data problems surface after cutover and are hardest to unwind, and test against real data and load before routing live traffic to a new component."
 ---
 
 Legacy systems are rarely replaced because they stopped working. They get replaced because the cost of keeping them running, and the drag they put on everything around them, finally outweighs the fear of touching them. The scale of that drag is easy to underestimate. The [Government Accountability Office reports that federal agencies spend the majority of their more than $100 billion annual IT budget on operations and maintenance](https://www.gao.gov/products/gao-23-106821), roughly 80 percent, much of it keeping aging systems alive rather than building anything new. That fear of touching them is reasonable: the old system usually runs the business, and a botched migration can take revenue down with it. The goal of modernization is not a dramatic rewrite. It is moving off the risk without ever putting the business at risk.

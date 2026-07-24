@@ -4,6 +4,21 @@ description: "Compare software development vendors with a weighted scorecard tha
 category: "Buyer's Guide"
 primaryKeyword: "compare software development vendors"
 tags: ["software vendor comparison", "shortlist software companies", "vendor scorecard", "vendor selection"]
+takeaways:
+  - "Send one identical brief to every shortlisted firm, since the biggest reason quotes diverge is that each vendor scoped a different project."
+  - "Decide your category weights out of 100 before reading a single proposal, or you will unconsciously weight toward whoever you already liked."
+  - "Score technical fit on evidence like a case study or architecture doc, not confidence, because a firm that has done the hard part answers with mechanisms and trade-offs."
+  - "Normalize price by listing each proposal's inclusions and exclusions, then adding excluded items like QA, deployment, and integrations back at a reasonable cost."
+  - "A thin score margin means run more reference calls rather than sign, and confirm you get 100 percent of the IP, the repository, and credentials on delivery."
+faqs:
+  - q: "Why do software vendor quotes vary so much for the same project?"
+    a: "The biggest reason is that each vendor scoped a different project. Send three firms a two-paragraph email and you get three interpretations back. Write one brief stating the outcome, the systems it touches, hard constraints, and what done means for phase one, then send the identical version to everyone so a senior engineer at each firm estimates the same work."
+  - q: "How do I compare software quotes that are wildly different prices?"
+    a: "Normalize scope first. A 95k quote is not cheaper than a 180k quote if the first excludes QA, deployment, and the integration you need. For each proposal, list what is included and explicitly excluded, then add the excluded items back at a reasonable cost so you compare the same finished product. Common gaps in low bids include QA, CI/CD, integrations, support, and documentation."
+  - q: "How should I weight criteria when comparing vendors?"
+    a: "Decide weights before reading proposals, because deciding afterward means weighting toward whoever you already liked. A simple set works for most buyers: technical and architecture fit, domain expertise, communication and delivery process, team seniority and continuity, commercial terms and IP ownership, and total normalized price. Assign each a weight out of 100 and hold to it."
+  - q: "Should I just pick the vendor with the highest score?"
+    a: "Not automatically if the margin is thin. A two-point gap between two strong firms means run more reference calls, not sign the contract, while a twenty-point gap means you have your answer. Ask each reference whether the final invoice matched the quote, whether the team that pitched delivered, and what happened the first time a sprint went sideways."
 ---
 
 Three vendors, three proposals, three very different prices. One quotes $180k, another $95k, the third gives you a range and a shrug. Comparing them feels like comparing a sedan to a spreadsheet. The problem is rarely the vendors. It is that each one answered a slightly different question, so you never see them on the same axis. A structured comparison fixes that, and the stakes justify the effort. McKinsey and the University of Oxford studied more than 5,400 IT projects and found that large ones run [45 percent over budget and deliver 56 percent less value than predicted](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value), with 17 percent overrunning so badly they threaten the company itself. Vendor choice is where a lot of that risk gets set.

@@ -4,6 +4,21 @@ description: "A practical NetSuite integration guide: SuiteTalk, REST, and RESTl
 category: "Integrations & APIs"
 primaryKeyword: "netsuite integration"
 tags: ["integrate with netsuite", "netsuite api", "suitetalk suitescript", "netsuite governance limits"]
+takeaways:
+  - "There is no single NetSuite API; use SuiteTalk REST for standard records until it cannot do the job, then write a RESTlet for the specific operation that needs custom logic."
+  - "Decide the system of record per data domain before writing code, because a sync without a clear source of truth eventually produces two disagreeing databases and manual cleanup."
+  - "Governance is the trap for newcomers: NetSuite meters both a per-execution points budget, such as 5,000 units per RESTlet call, and account-level concurrency starting at 15 concurrent requests."
+  - "Match sync cadence to how fresh data needs to be, syncing time-sensitive orders and inventory near real time while pushing financial roll-ups on a schedule, to stay accurate and within limits."
+  - "A production-grade integration assumes failure with idempotent operations, a dead-letter queue, retries with backoff for transient 429s, and monitoring that surfaces failures before a customer does."
+faqs:
+  - q: "What are the options for integrating with NetSuite?"
+    a: "The main paths are SuiteTalk, which covers SOAP and REST web services, RESTlets, which are custom endpoints you write in SuiteScript, and for bulk work, CSV import and the SuiteAnalytics data warehouse connectors. Third-party iPaaS tools wrap these same mechanisms. Most real integrations use more than one path, typically SuiteTalk REST for standard record CRUD and a RESTlet for the one complex operation that does not map cleanly to a standard record."
+  - q: "What are NetSuite governance limits?"
+    a: "NetSuite meters usage with two separate mechanisms. The first is a per-execution points budget where every SuiteScript operation costs usage units against a fixed ceiling, with a RESTlet getting 5,000 units per call, user event scripts 1,000, and scheduled scripts 10,000. The second is account-level concurrency, which caps how many API calls run at once regardless of points, with a base allowance of 15 concurrent requests and roughly 10 more per SuiteCloud Plus license."
+  - q: "When should you use a RESTlet instead of SuiteTalk REST?"
+    a: "Use SuiteTalk REST as the modern default for standard records like customers, sales orders, items, and invoices, since it speaks JSON and is the least surprising option. Reach for a RESTlet when you need custom logic on the NetSuite side, such as complex validation, multi-record transactions, or an operation that would take many standard API calls. The cost is that you maintain SuiteScript code, and RESTlets cap payloads at 10 MB, so bulk moves have to be chunked."
+  - q: "How do you build a reliable NetSuite sync?"
+    a: "Assume failure and handle it gracefully. Use idempotent operations so a retry does not create a duplicate sales order, a dead-letter queue for records that fail repeatedly, and retries with backoff for transient errors, including the 429s that concurrency limits produce under load. Add monitoring for what synced, what failed, and why, with alerts when the failure rate crosses a threshold, so the first sign of trouble is not a customer asking where their order went."
 ---
 
 NetSuite sits at the center of a lot of US businesses, which means sooner or later something has to talk to it: a storefront, a warehouse system, a CRM, a custom app your team built. The platform runs [more than 41,000 customer accounts across 219 countries](https://www.appsruntheworld.com/customers-database/products/view/oracle-netsuite-erp) and holds [roughly 5.9% of the enterprise applications market](https://enlyft.com/tech/products/netsuite), and Oracle reported NetSuite revenue of about 1.0 billion dollars in its fiscal Q4 2025, up 18% year over year. So this is a connection engineers hit constantly, and it is only getting more common. NetSuite integration also has a reputation for being fiddly, and the reputation is earned. The platform is powerful and deeply customizable, which is exactly what makes connecting to it harder than a typical REST API. This guide walks through the real options, the traps, and how to build a sync that holds up.

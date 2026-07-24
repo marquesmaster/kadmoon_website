@@ -4,6 +4,21 @@ description: "A practical custom software RFP template and guide: describe the p
 category: "Buyer's Guide"
 primaryKeyword: "custom software rfp template"
 tags: ["software rfp", "request for proposal software", "how to write an rfp", "vendor evaluation"]
+takeaways:
+  - "An RFP is not a specification, so describe the business problem and outcomes rather than dictating tables, screens, and API calls."
+  - "Keep it tight at ten to fifteen pages, since 45% of software features are never used and another 19% are rarely used, meaning a giant feature list mostly buys cost and bug surface."
+  - "Share a budget range even a wide one, because hiding it just produces proposals scoped to wildly different assumptions."
+  - "Score proposals against a weighted rubric independently before comparing, weighting technical and domain expertise highest at around 30%."
+  - "Incomplete requirements and lack of user involvement drove the largest share of troubled projects, so a problem-first brief that invites vendor questions is direct risk control."
+faqs:
+  - q: "What should a custom software RFP include?"
+    a: "Include business context, the problem you are solving, measurable success metrics, scope with clear in and out boundaries, your technical environment and constraints, budget range and timeline, what you want from the vendor, and your evaluation criteria. Leave out a 90-page requirements dump and any demand for fixed pricing on unscoped work. Ten to fifteen pages is plenty for most mid-market projects."
+  - q: "Should you include a budget in a software RFP?"
+    a: "Yes. Hiding the budget usually just wastes everyone's time, because without a range vendors either guess high to be safe or low to win, and you end up comparing proposals built on wildly different assumptions. Sharing a range, even a wide one, is a mature ask that good firms respect and it produces comparable bids."
+  - q: "Why do good vendors decline to bid on some RFPs?"
+    a: "The strongest firms have more demand than capacity, so they self-select out of RFPs that look painful. Warning signs include no budget or range, impossible timelines, long committee-written requirements with no priority, a rigid Q&A process with no dialogue, and scoring that weights everything toward lowest price. Each signals a difficult client or a project that has not been aligned internally."
+  - q: "How should you describe your problem in an RFP?"
+    a: "Describe what is broken today, who feels the pain, and what it costs, rather than prescribing a solution. Saying your warehouse team re-keys every order into three systems for two hours a day gives an engineer far more to work with than asking for an order management module with real-time sync. This invites vendors to bring expertise and surface missing requirements early."
 ---
 
 A good request for proposal does two jobs at once. It tells serious vendors enough to bid accurately, and it filters out the ones who will over-promise now and change the price later. Most software RFPs fail at both because they read like a feature wish list written by committee. The stakes are real: McKinsey, studying more than 5,400 IT projects with the University of Oxford, found that [large IT projects run 45% over budget and 7% over time while delivering 56% less value than predicted](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value). A sharper RFP is one of the cheapest ways to move those odds. This guide walks through what to include, what to leave out, and gives you a reusable custom software RFP template you can adapt in an afternoon.

@@ -4,6 +4,21 @@ description: "How to vet a software vendor before you sign: verify technical cla
 category: "Buyer's Guide"
 primaryKeyword: "how to vet a software vendor"
 tags: ["software vendor evaluation", "due diligence software company", "check software references", "software project failure rate"]
+takeaways:
+  - "Treat every sales claim as a hypothesis to test, and confirm the senior people you evaluate are the ones who will actually write your code, since junior staff or subcontractors often deliver what seniors sold."
+  - "Reference calls surface the truth only with open-ended questions; ask what surprised them, how the vendor handled trouble, and whether final cost matched the estimate, and listen for hesitation."
+  - "Review sample code and architecture docs for maintainability, because poor software quality cost the US an estimated 2.41 trillion dollars in 2022 and sloppy code is a liability you carry for years."
+  - "Demand explicit answers on security: where credentials live, who has production access, and how dependencies are patched, since open-source weakness failures jumped 650 percent between 2020 and 2021."
+  - "De-risk with a small paid pilot of two to four weeks with written acceptance criteria, which shows how a team estimates, communicates, and hands over code for a fraction of the full budget."
+faqs:
+  - q: "What questions should you ask a software vendor's references?"
+    a: "Ask open-ended questions that get past the happy talk: what surprised them most, how the vendor handled things going wrong, whether final cost matched the original estimate, who owns the code and infrastructure now, and whether they would hire the vendor again for something larger. Listen for hesitation as much as content, and ask for a reference on a project similar in size and domain to yours."
+  - q: "Is a paid pilot worth it before committing to a software vendor?"
+    a: "Yes. A small paid pilot of roughly two to four weeks, scoped to one meaningful slice with measurable acceptance criteria written down first, is the best test available. It shows you how the team estimates, how they communicate when something slips, whether the demo works, and whether the code they hand over is clean, all for a fraction of the full budget."
+  - q: "How do you verify a software vendor's technical claims?"
+    a: "Treat every claim as a hypothesis to test. When a vendor says they built a real-time platform, ask what real-time meant in practice: event latency, throughput, data sources, and what broke first under load. Ask who specifically will be on your project and confirm they stay assigned, and push past case study summaries to what changed mid-project and what they would do differently."
+  - q: "What should you check about a software vendor's security posture?"
+    a: "Ask concrete questions rather than accepting generic reassurance: where credentials live, who has production access, and how dependencies are patched. For regulated data, ask about HIPAA experience, and for enterprise sales, expect a SOC 2 posture or at least an understanding of what SOC 2 requires. How a vendor manages third-party dependencies is a real risk question given the 650 percent jump in open-source weakness failures between 2020 and 2021."
 ---
 
 Most bad software engagements were predictable. The warning signs were there during sales, but the buyer was moving fast and took the polished pitch at face value. The numbers say the stakes are high. When McKinsey and the University of Oxford studied 5,400 large IT projects (initial budgets above $15 million), the average one ran [45% over budget and delivered 56% less value than predicted](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value), and 17% became "black swans" with overruns of 200 to 400 percent. Vetting a vendor properly takes a few extra weeks of work up front, and it is the cheapest insurance you will ever buy against a six-figure project that stalls. Here is a practical process for checking what a firm actually does before money changes hands.

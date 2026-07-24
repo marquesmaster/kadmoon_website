@@ -4,6 +4,21 @@ description: "AI in enterprise software: how to separate hype from value, find h
 category: "Data & AI"
 primaryKeyword: "ai in enterprise software"
 tags: ["enterprise ai", "ai business applications", "ai for business", "generative ai roi"]
+takeaways:
+  - "AI pays off when a task is high-volume, judgment-light-but-not-trivial, and expensive to do by hand, and it disappoints when the task is rare, needs deep contextual judgment, or must be exactly right with no room for review."
+  - "The reliable wins cluster in document processing, retrieval-grounded question answering, classification and matching, and forecasting and anomaly detection, all of which keep a human accountable for the call."
+  - "Data readiness, not the model, is where most enterprise AI projects fail; Gartner warned that through 2026 60% of AI projects will be abandoned if organizations lack AI-ready data."
+  - "You rarely need to train a large model yourself; most enterprise AI now combines a foundation model with your own data and business logic through retrieval and careful prompting."
+  - "Evaluation against real examples with known correct answers is the step teams most often skip, yet it is what lets you state an accuracy number, catch a degrading model update, and set a confidence threshold for auto-approval."
+faqs:
+  - q: "Where does AI actually pay off in enterprise software?"
+    a: "AI earns its cost on high-volume, review-tolerant tasks like extracting fields from documents, answering questions over your own knowledge base, classifying and matching records, and forecasting or anomaly detection. The common thread is leverage on existing labor rather than replacement of judgment, with a person confirming consequential results."
+  - q: "Why do so many enterprise AI projects fail?"
+    a: "Most fail on data, not the model. Gartner predicted at least 30% of generative AI projects would be abandoned after proof of concept by the end of 2025, citing poor data quality, weak risk controls, rising costs, and unclear business value, and warned that 60% would be abandoned through 2026 without AI-ready data."
+  - q: "Should we build or buy AI capabilities?"
+    a: "Most good solutions sit in the middle of the spectrum. Buy a packaged AI feature when the use case is generic and your data is not the differentiator, custom-build when your workflow, data, and accuracy bar are specific, and in between combine a foundation model with your own data and guardrails. You rarely need to train a large model yourself."
+  - q: "How do you deploy enterprise AI responsibly?"
+    a: "Pick one high-volume, painful, review-tolerant task, confirm the data is there, and ship a small version measured against how the task is done today before expanding. A responsible deployment includes evaluation against real examples before launch, continuous monitoring after, a human review step for consequential decisions, and an audit trail of what the system decided and why."
 ---
 
 Every vendor now claims their product has AI, and adoption backs the noise up. McKinsey's 2025 State of AI survey of 1,993 organizations found [88% now use AI in at least one function](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), with 79% using generative AI, up from 55% total adoption in 2023. Most of that surface activity is a chatbot bolted onto a settings page. Underneath, AI in enterprise software has reached the point where it genuinely changes the economics of certain tasks, especially anything that involves reading unstructured documents, matching messy records, or predicting a number from history.

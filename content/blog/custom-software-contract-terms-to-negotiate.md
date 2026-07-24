@@ -4,6 +4,21 @@ description: "The custom software contract terms that decide who owns the code, 
 category: "Buyer's Guide"
 primaryKeyword: "custom software contract terms"
 tags: ["software development agreement", "msa and sow", "negotiate software contract", "ip assignment"]
+takeaways:
+  - "Split the engagement into an MSA for durable terms like IP, liability, and warranties, and a SOW for project specifics like scope, price, and acceptance, so new projects do not reset your legal terms."
+  - "Under US copyright law software is not a work-made-for-hire category, so without a signed present-tense assignment the developer holds the copyright no matter how much you paid."
+  - "Ownership should be concrete: on delivery you get the repository, CI/CD pipelines, infrastructure-as-code, credentials, and a runbook, and escrow is a weak substitute for owning the repo outright."
+  - "Tie the final milestone payment to a clean warranty period (30 to 90 days is common) with a bug defined as a deviation from the agreed spec, which motivates the vendor through launch."
+  - "Negotiate liability caps with carve-outs for IP, data security, and confidentiality, plus termination for convenience and written transition-assistance hours."
+faqs:
+  - q: "Who owns custom software if the contract does not say?"
+    a: "The developer does. Under the US Copyright Act, work made for hire only covers employees or nine narrow categories of commissioned work, and software is not one of them, as the Copyright Office confirms in Circular 30. When an outside firm writes your code, it holds the copyright by default unless a signed written assignment transfers it to you, so insist on an explicit present-tense assignment that survives the contract."
+  - q: "What is the difference between an MSA and a SOW?"
+    a: "A master services agreement sets the durable legal frame, IP ownership, confidentiality, liability, warranties, and termination, and rarely changes. A statement of work covers one specific project's scope, deliverables, milestones, price, acceptance criteria, and timeline. Keep the split clean so you can start a new project without renegotiating legal terms, and be wary if a vendor buries IP assignment inside a single SOW."
+  - q: "What warranty terms should a software contract include?"
+    a: "Define acceptance precisely, tied to measurable criteria in the SOW with a defined review period and the right to reject with specific reasons. The warranty period is separate and covers defects found after acceptance, typically a 30 to 90 day free-fix window with a bug defined as a deviation from the agreed spec. Tie the final milestone payment to the end of a clean warranty period so the vendor stays motivated through launch."
+  - q: "What should a termination clause in a software contract cover?"
+    a: "Negotiate termination for convenience so you can exit with notice and pay for work done, alongside termination for cause on a material uncured breach. Without a convenience clause you can be locked into a vendor you have lost confidence in. Also include transition assistance: the vendor hands over all code, credentials, documentation, and data in usable form plus a defined number of hours at a set rate to help your next team."
 ---
 
 Most software disputes trace back to a contract that was signed too fast. The pricing looked fine and the timeline felt reasonable, so the legal terms got a quick skim. Then a defect shows up in month four, or the vendor wants a change order for something you assumed was included, and the paperwork suddenly matters a great deal. This is not a rare outcome. The Standish Group's CHAOS research has for years found that only about a third of software projects finish on time, on budget, and on scope, with [roughly two-thirds landing as challenged or outright failed](https://budgetoverrun.com/studies/standish-chaos-report), and large projects fare worse, succeeding just 9 percent of the time. The contract is where you decide who carries the risk when a project drifts into that majority. The terms below are the ones worth slowing down for, because each one shifts real exposure between you and the firm building your system.

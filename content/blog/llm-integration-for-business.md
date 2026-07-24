@@ -4,6 +4,21 @@ description: "A practical guide to LLM integration for business: choosing a mode
 category: "Data & AI"
 primaryKeyword: "llm integration"
 tags: ["integrate llm", "llm in production", "business llm applications", "llm cost control"]
+takeaways:
+  - "Gartner expects at least 30% of generative AI projects to be abandoned after proof of concept, usually from poor data quality, weak risk controls, escalating cost, and unclear value rather than a bad model."
+  - "Pick a model that is good enough for your task at an acceptable price and latency, tested on your real inputs, and build against a clean interface so you can swap models later."
+  - "Tool use, also called function calling, is how you connect an LLM to your real systems so it retrieves grounded answers instead of inventing them."
+  - "You cannot ship what you cannot evaluate: build an evaluation set from real examples with known-correct outcomes and rerun it every time you change a prompt, tool, or model."
+  - "Prompt injection is OWASP's number-one LLM risk for 2025, so strip sensitive fields before they reach the model, limit which tools it can call, and treat any ingested text as adversarial."
+faqs:
+  - q: "Why do so many LLM projects fail to reach production?"
+    a: "Gartner predicts at least 30% of generative AI projects will be abandoned after proof of concept, and the usual causes are poor data quality, weak risk controls, escalating costs, and unclear business value, not a weak model. The teams that succeed treat integration as an engineering problem with evaluation, monitoring, and clear boundaries rather than as a demo."
+  - q: "How do you control the cost of an LLM feature at scale?"
+    a: "LLM costs are usage-based and tied to how much text goes in and out, so a feature that is cheap in testing can become expensive once it is popular. Use prompt caching to reuse stable prompt prefixes, right-size the model by reserving the largest one for hard requests, trim context to what the task needs, and measure cost per request in production with alerts set before a runaway loop bills you."
+  - q: "What is function calling in LLM integration?"
+    a: "Function calling, also called tool use, lets you define tools the model is allowed to call, describe what each does, and let the model decide when to invoke them. The model asks to run a tool, your code executes it, and the result goes back into the conversation. This connects the model to your real systems and keeps it grounded, so it retrieves an answer instead of inventing one."
+  - q: "How do you ship an LLM feature safely?"
+    a: "Roll it out gradually. Start behind a feature flag with a small group of users, log inputs and outputs so you can see how it behaves on real traffic, and keep a human in the loop for anything consequential until the evaluation numbers earn your trust. Expand as the data supports it and keep the ability to fall back to the previous behavior if something goes wrong."
 ---
 
 Getting a large language model to do something impressive in a demo takes an afternoon. Getting it to do that reliably, safely, and affordably for thousands of real users is a different project. The gap between the two is where most business LLM efforts stall. Gartner predicts that [at least 30% of generative AI projects will be abandoned after proof of concept by the end of 2025](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025), citing poor data quality, weak risk controls, escalating costs, and unclear business value. This guide walks through the decisions that keep an LLM feature on the right side of that number once you move past the prototype and start caring about accuracy, cost, and trust.

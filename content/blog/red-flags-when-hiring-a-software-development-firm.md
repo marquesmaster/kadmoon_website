@@ -4,6 +4,21 @@ description: "The red flags software development company buyers miss, from vague
 category: "Buyer's Guide"
 primaryKeyword: "red flags software development company"
 tags: ["warning signs software vendor", "bad software developers", "avoid software agency", "software project failure"]
+takeaways:
+  - "Most failed software projects were predictable during the sales process, and the Standish CHAOS 2020 data shows only 31 percent of projects succeed while 50 percent are challenged and 19 percent fail outright."
+  - "A firm that gives a fast, tidy number before understanding your problem is guessing, since good firms scope before they price and tell you what would change the estimate."
+  - "Confirm in writing that you own 100 percent of the source code, the repository, the CI/CD pipeline, and the credentials, with a runbook at handover, and walk away if the vendor hesitates."
+  - "Small projects succeed roughly nine times out of ten while the largest succeed less than one time in ten, so a working demo every sprint and thin, frequent releases beat a single big-bang delivery."
+  - "You can design the sales process to expose problems on purpose by giving every vendor the same problem brief, insisting on a reference call, running a small paid pilot, and putting the important promises in the contract."
+faqs:
+  - q: "What are the biggest red flags when hiring a software development firm?"
+    a: "The most damaging ones are vague estimates with no breakdown, a salesperson who says yes to everything, no discovery or questions, an unverifiable portfolio, refusal to give you full IP and source-code ownership, and lock-in contract terms. Each has a concrete test, such as introducing a hard trade-off to see whether the firm pushes back."
+  - q: "How do I make sure I own the source code and IP?"
+    a: "Confirm in writing before signing that you will own 100 percent of the source code, the repository, the CI/CD pipeline, and the credentials, with a runbook delivered at handover. Some firms retain the IP, hold the credentials, or deploy only to infrastructure they control, which leaves you renting your own product. If a vendor hesitates on this, walk."
+  - q: "How can I test a software vendor before signing a contract?"
+    a: "Give every vendor the same short problem brief and grade the questions they ask, insist on a reference call with a client whose project resembles yours, and run a small paid pilot of about two weeks of real work. Then put IP ownership, acceptance criteria, team composition, and exit terms in the contract rather than the sales email."
+  - q: "Why do vague estimates predict project failure?"
+    a: "A number given before the firm understands your problem is a guess you will pay for later. McKinsey's data shows every additional year a project runs increases its cost overrun by 15 percent, so the confident fast-and-cheap pitch tends to unravel exactly where it hurts. Firms that scope before they price and name what would change the estimate are the safer bet."
 ---
 
 Most failed software projects were predictable during the sales process. The warning signs were there in the first two calls, buried under confident language and a polished deck. The base rates are sobering: the Standish Group's CHAOS 2020 study of roughly 50,000 projects found only [31 percent succeeded on time, on budget, and on scope, while 50 percent were challenged and 19 percent failed outright](https://thestory.is/en/journal/chaos-report/). Large efforts fare worse. McKinsey and the University of Oxford studied [more than 5,400 IT projects with budgets above $15 million and found they ran 45 percent over budget, 7 percent over time, and delivered 56 percent less value than promised](https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/McKinsey%20Digital/Our%20Insights/Delivering%20large%20scale%20IT%20projects%20on%20time%20on%20budget%20and%20on%20value/Delivering%20large%20scale%20IT%20projects%20on%20time%20on%20budget%20and%20on%20value.pdf). If you know what to listen for, you can screen out the firms most likely to burn your budget before you ever sign. Here are the red flags software development company buyers should treat as disqualifiers, and how to test for each one.

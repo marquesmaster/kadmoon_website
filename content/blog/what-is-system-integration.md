@@ -4,6 +4,21 @@ description: "What is system integration? A plain guide to integration patterns,
 category: "Integrations & APIs"
 primaryKeyword: "what is system integration"
 tags: ["system integration meaning", "software integration", "integrating business systems"]
+takeaways:
+  - "System integration connects independent applications so they share data and coordinate actions, turning one customer order into an inventory update, a shipment, and an invoice without anyone copying numbers between screens."
+  - "The average enterprise runs 897 applications with only 29 percent integrated, which is why integration is a large category of spend and a persistent source of silos."
+  - "Match the integration pattern to the freshness the business actually needs, since a reporting warehouse can lag an hour but an inventory check cannot, and real-time everything is expensive and rarely necessary."
+  - "Point-to-point connections grow as n(n-1)/2 and break independently, so a growing set of systems usually justifies middleware that keeps complexity from exploding."
+  - "Integrations fail in predictable ways, dirty data, no error handling, tight coupling, and unclear source of truth, so design for lost, duplicated, and out-of-order messages with retries, idempotency, and reconciliation."
+faqs:
+  - q: "What is system integration?"
+    a: "System integration is connecting independent software systems so they function as a coordinated whole, exchanging information and triggering each other's processes instead of each holding its own island of data. When a salesperson closes a deal in the CRM, integration is what makes the ERP create the customer, finance prepare to bill, and fulfillment get ready to ship, all from that one action. Done well it removes manual re-entry, cuts errors, and gives everyone a consistent view of the same facts."
+  - q: "What is the difference between point-to-point and middleware integration?"
+    a: "Point-to-point means each system talks directly to every other system that needs its data, which is simple for two systems but grows as n(n-1)/2, so ten systems can need forty-five connections that each break independently. Middleware puts a hub in the middle that handles routing, translation, and delivery, so adding a system means one connection to the hub instead of many new links. Point-to-point can suit two or three stable systems, while a growing set usually justifies a hub."
+  - q: "Why do integration projects fail?"
+    a: "They fail in predictable ways: dirty data such as the same customer spelled three ways or mismatched IDs, no error handling on happy-path integrations that assume every message arrives once and in order, tight coupling where changing one system breaks others, and an unclear source of truth where two systems both think they own a record. Integration also depends on systems and teams the project does not control, which is part of why only about 31 percent of IT projects fully succeed. The fixes are boring, essential work a rushed integration skips."
+  - q: "How should I approach an integration project?"
+    a: "Start by mapping reality before writing code: list the systems, the data each owns, and where the same information lives in more than one place, then decide the single source of truth for every important entity. Decide per connection how fresh the data must be, using real-time APIs where a person is waiting and batch where a nightly sync will do. Then design for failure openly with retries, idempotency, and reconciliation, favor loose coupling, and expose clean interfaces so the next integration is cheaper than the last."
 ---
 
 Most companies do not run one system. They run a lot of them. The 2025 MuleSoft Connectivity Benchmark puts the average enterprise at [897 separate applications, of which only 29 percent are integrated](https://www.salesforce.com/blog/mulesoft-connectivity-benchmark-2025/). The real work is getting those systems to agree with each other. System integration is the discipline of making separate applications share data and coordinate actions so a customer order in one tool becomes an inventory update, a shipment, and an invoice in three others, without a person copying numbers between screens. This guide explains what system integration is, the main patterns, and why so many integration projects go sideways.

@@ -4,6 +4,21 @@ description: "How to evaluate a software proposal: compare estimates that differ
 category: "Buyer's Guide"
 primaryKeyword: "how to evaluate a software proposal"
 tags: ["compare software quotes", "reading a software estimate", "software proposal review", "software project failure rate"]
+takeaways:
+  - "A strong proposal restates your problem, lists concrete deliverables rather than activities, describes an architecture, and names what is not included."
+  - "Vague scope is where budgets die, so read every deliverable and ask whether two reasonable people could disagree about whether it is done."
+  - "A 3x spread between bids is normal and usually means firms scoped different work, so normalize inclusions and exclusions against a common checklist before comparing."
+  - "The assumptions section is the most honest part of a proposal, because each assumption is a place your cost can move, and the change-order clause governs how."
+  - "Milestone payments tied to accepted deliverables align incentives, while large upfront payments with vague milestones shift all the risk to you."
+faqs:
+  - q: "What does a good software development proposal contain?"
+    a: "It restates your problem in the vendor's own words, lists concrete deliverables rather than activities, and describes an architecture at least at a high level, naming the stack, data flow, and hosting model. It also includes a phased timeline, an explicit team, and a section on what is not included, which matters more than the price."
+  - q: "Why do software estimates for the same project differ by 3x?"
+    a: "A 3x spread rarely means one firm is honest and another is gouging. It usually means they scoped different things. The cheap bid often assumes simpler requirements, uses more junior engineers, or plans to bill separately for what the fixed-price firm folded in. Normalize the proposals against a common checklist of inclusions and exclusions, and the gap usually shrinks to seniority and risk allocation."
+  - q: "What should I look for in a proposal's assumptions and change orders?"
+    a: "The assumptions section states what the vendor believes to be true, and each assumption is a place your cost can move when it turns out wrong. Read the change-order mechanics closely: good ones define what counts as a change, how it gets estimated, and how you approve it before work starts. Bad ones give the vendor unilateral authority to bill more with no ceiling."
+  - q: "How should payments be structured in a software contract?"
+    a: "Tie each payment to acceptance criteria you agreed to in advance, with a working demo at the end of each sprint so nothing is a surprise. Milestone-based payment tied to accepted deliverables aligns incentives, since the vendor gets paid when you get working software. Watch for large upfront payments with vague milestones and milestones defined by effort rather than outcome."
 ---
 
 You sent the same brief to three firms and got back three documents that barely resemble each other. One is eight pages with a fixed number at the bottom. One is thirty pages of methodology. One is a two-line email with a rate. Knowing how to evaluate a software proposal means reading past the price and figuring out what each vendor actually plans to build, who will build it, and what happens when reality diverges from the plan.

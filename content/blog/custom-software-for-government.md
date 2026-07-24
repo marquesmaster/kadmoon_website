@@ -4,6 +4,21 @@ description: "Custom software for government: accessibility law, security audits
 category: "Industry Guides"
 primaryKeyword: "custom software for government"
 tags: ["govtech software", "public sector software", "government software development", "legacy modernization"]
+takeaways:
+  - "Public-sector software must work for the entire public on old devices, slow connections, and assistive technology, because there is no churn, only a citizen who still needs the service."
+  - "Government systems run for a long time; a 2025 GAO review found critical federal systems ranging from about 8 to 51 years old, which makes owning the source code and full runbook essential."
+  - "Accessibility is a legal obligation anchored to WCAG and Section 508, and designing for it from the first wireframe is far cheaper than retrofitting it later."
+  - "Roughly 80 percent of federal IT spending goes to operating and maintaining existing systems, and 11 legacy systems GAO singled out cost about $337 million a year just to keep running."
+  - "Incremental modernization beats big-bang rewrites, since agencies had completed only three of ten modernizations GAO identified back in 2019 as of early 2025."
+faqs:
+  - q: "How is building software for government different from commercial software?"
+    a: "The constraints are structurally different: accessibility is a legal requirement, security is audited, the users often cannot be turned away for a competitor, and the buying process can take longer than the build itself. Government systems also serve the entire public, so they must work on old devices, slow connections, and assistive technology. Teams that treat a public-sector project like a commercial one discover these differences late and expensively."
+  - q: "Why is legacy modernization so hard in government?"
+    a: "A large share of government systems have run for decades, sometimes on mainframes in languages like COBOL and Assembly with a dwindling support pool. They are load-bearing, poorly documented, and understood by a shrinking group of people. About 80 percent of federal IT spending goes to operating and maintaining these systems rather than modernizing them, so every dollar nursing old code is a dollar not spent replacing it."
+  - q: "What is the safest way to modernize a critical public system?"
+    a: "The safer path is incremental: wrap the legacy system with APIs, move functionality piece by piece, and run old and new side by side until the transition is complete. That reduces the chance of a catastrophic cutover on a system citizens depend on. Phased work with acceptance gates ties spend to results and keeps a working system at every step rather than betting years of budget on a single go-live."
+  - q: "How does government procurement affect software delivery?"
+    a: "Government purchasing runs through formal solicitations and structured evaluations, so the timeline from need to signed contract can be long and requirements are often fixed before a vendor is selected. That means the up-front requirements carry more weight and must be right. Even inside a rigid contract, two-week sprints with a working demo catch misunderstandings early and produce the evidence trail oversight expects."
 ---
 
 Building software for a government agency is not just building software with more paperwork. The constraints are structurally different: accessibility is a legal requirement, security is audited, the users often cannot be turned away for a competitor, and the buying process can take longer than the build itself. Teams that treat a public-sector project like a commercial one tend to discover these differences late and expensively. This is what to plan for from the start.

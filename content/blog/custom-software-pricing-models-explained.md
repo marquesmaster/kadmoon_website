@@ -4,6 +4,21 @@ description: "Software development pricing models compared: fixed price, time an
 category: "Cost & Pricing"
 primaryKeyword: "software development pricing models"
 tags: ["pricing models software", "how software firms charge", "engagement pricing", "software development rates"]
+takeaways:
+  - "The pricing model decides who carries the risk of scope change, so match the model to how well you actually understand what you are building."
+  - "Fixed price fits stable, well-defined scope but carries a risk premium, since firms pad estimates against overruns that historically averaged 189% of the original estimate on challenged projects."
+  - "Time and materials fits evolving requirements because 52% of projects experience scope creep, but it demands a working demo each sprint and transparent hour tracking."
+  - "A dedicated team suits an ongoing product and compounds knowledge over time, while milestone and capped models split the risk for structure plus flexibility."
+  - "US custom shops bill roughly 75 to 250 dollars an hour, and typical build ranges run 100,000 to 200,000 for a small app, 200,000 to 400,000 for a mid-sized system, and 400,000 and up for enterprise platforms."
+faqs:
+  - q: "What are the main software development pricing models?"
+    a: "The four main models are fixed price, time and materials, dedicated team or retainer, and hybrids like milestone-based or capped time and materials. Fixed price puts scope risk on the firm, time and materials and dedicated teams put it on you, and hybrids share it. Each fits a different level of certainty about what you are building."
+  - q: "Is fixed price or time and materials better for software development?"
+    a: "Fixed price is better when requirements are genuinely stable and well understood, since you get cost certainty, though you pay a premium for it. Time and materials is better when requirements will evolve, because it lets you reprioritize each sprint without every change becoming a negotiation. The honest question is how well you understand what you are building down to the field level."
+  - q: "How much does custom software cost in the US?"
+    a: "US custom development shops typically bill 75 to 250 dollars per hour. By project size, a small app or single workflow runs roughly 100,000 to 200,000 dollars, a mid-sized business system 200,000 to 400,000 dollars, and an enterprise-grade platform 400,000 dollars and up. These are planning numbers, not quotes, since two projects with the same feature list can differ by a factor of two."
+  - q: "What is a dedicated team model in software development?"
+    a: "A dedicated team model is time and materials with commitment: you pay for a defined team, usually monthly, that works only on your roadmap. It resembles having your own engineering group without the hiring and management overhead, and velocity climbs as the team learns your domain. The trade-off is that you need enough sustained work to keep the team busy and must feed it a clear backlog."
 ---
 
 The way a firm charges you shapes how the project behaves. Pricing is not just a number at the bottom of a proposal, it decides who carries the risk when things change, how flexible the scope can be, and whether the incentives line up with your goals. It also sits on top of a real labor market. US software developers earned a median wage of [$133,080 in May 2024 with a mean hourly wage of $69.50](https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm) according to the Bureau of Labor Statistics, and US custom development shops typically bill in the [$75 to $250 per hour range](https://geomotiv.com/blog/software-engineer-hourly-rate-in-the-usa/) once overhead, benefits, and margin are added. Whatever model you pick sits on those numbers. This guide walks through the main software development pricing models, what each one hides, and how to match a model to the kind of project you actually have.

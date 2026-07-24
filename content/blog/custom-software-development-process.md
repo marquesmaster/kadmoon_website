@@ -4,6 +4,21 @@ description: "A walkthrough of the custom software development process, from dis
 category: "Custom Software"
 primaryKeyword: "custom software development process"
 tags: ["software development steps", "sdlc explained", "how software gets built"]
+takeaways:
+  - "Standish CHAOS data finds only about 31 percent of software projects succeed outright while 50 percent are challenged and 19 percent fail, so a good process front-loads thinking and ships in short cycles."
+  - "Discovery pays for itself because a defect caught in requirements costs a fraction of one caught later: roughly 6 times more during implementation, 15 times more during testing, and up to 100 times more in production."
+  - "Architecture decisions like the data model and scaling approach are cheap to change early and painful after launch, so senior people should make them deliberately."
+  - "Two-week sprints with a working demo each cycle are the honesty mechanism, catching misunderstandings in weeks and keeping the codebase in a releasable state."
+  - "DORA's 2023 research found elite teams keep a change failure rate around 5 percent and recover in under an hour while deploying far more often, showing speed and stability are correlated."
+faqs:
+  - q: "What are the steps in the custom software development process?"
+    a: "The work flows through discovery and requirements, architecture and design, iterative build in two-week sprints, QA and hardening, launch and deployment, and then support, iteration, and roadmap. Each stage front-loads thinking and ships working software in short cycles rather than one long march to a distant deadline, with clean handover so you own the result."
+  - q: "Why is the discovery phase so important?"
+    a: "Discovery defines what done looks like in measurable, testable terms before code exists, which is where a project is won or lost. It pays for itself because of a well-documented cost curve: a defect caught in requirements costs a fraction of one caught later, up to 100 times more once it reaches production. Skipping discovery feels efficient but resurfaces as expensive rework from assumptions nobody wrote down."
+  - q: "Why build software in two-week sprints?"
+    a: "Short repeatable cycles let the team commit to a slice of functionality, build it, and show a working demo you can click on rather than a status report you cannot verify. That catches misunderstandings within weeks instead of months and lets priorities shift as real usage reveals value. CHAOS data shows small, tightly scoped increments succeed around 90 percent of the time versus under 10 percent for very large deliveries."
+  - q: "Does moving faster mean lower software quality?"
+    a: "Not according to DORA's 2023 State of DevOps research, which found elite teams keep a change failure rate around 5 percent and recover from failures in under an hour while deploying far more frequently than low performers. Speed and stability turn out to be correlated, not traded against each other, when releases move through automated gates and a staging environment that mirrors production."
 ---
 
 The custom software development process is not mysterious, but it is easy to get wrong when a team skips steps to look fast. The data on what happens when you skip them is sobering. The Standish Group's CHAOS research, which tracks tens of thousands of projects, has for years found that only about [31 percent of software projects succeed outright, while 50 percent are challenged and 19 percent fail](https://thestory.is/en/journal/chaos-report/) on cost, schedule, or scope. A good process front-loads the thinking, ships working software in short cycles, and never lets quality or handover become an afterthought. Here is how the work flows from an idea to a running system you own, and what happens at each stage.

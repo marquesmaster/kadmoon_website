@@ -4,6 +4,21 @@ description: "A practical guide to import export compliance software for US trad
 category: "Trade & Supply Chain"
 primaryKeyword: "import export compliance software"
 tags: ["trade compliance software", "export controls software", "import compliance tools", "denied party screening"]
+takeaways:
+  - "US trade compliance spans multiple agencies (CBP, BIS, State/ITAR, Treasury/OFAC), and the legal standard is reasonable care, with the burden on the trader to be right and to prove it later."
+  - "Import compliance turns on three determinations, classification, valuation, and origin, and a systematic error repeated across thousands of entries compounds into large overpayments or an audit penalty."
+  - "Screening every party against government denied and sanctioned lists is the highest-leverage automated check, since OFAC assessed more than 1.5 billion dollars in penalties across 17 actions in 2023."
+  - "Regulations require retaining import and export records, generally five years, so software that captures the reasoning as a byproduct of each transaction turns an audit from a scramble into a query."
+  - "The value of compliance software is enforcing checks before a transaction commits and wiring them into the systems you already run, because compliance that lives in a silo gets skipped under pressure."
+faqs:
+  - q: "What does import export compliance software actually do?"
+    a: "It turns trade obligations into checks that run on every transaction instead of relying on memory and manual review. That covers accurate HTS classification, customs valuation, and country of origin on the import side, plus export classification, license determination, and denied-party screening on the export side, along with the recordkeeping needed to prove reasonable care during an audit."
+  - q: "Should I buy packaged trade compliance software or build custom?"
+    a: "Packaged tools work well when your operations are standard and the product's assumptions match how you work, giving you regulatory content and screening out of the box. Custom software makes sense when compliance is core to your business, when you need tight integration with your ERP, or when your product mix creates classification and origin logic the package cannot handle. Many operations use a hybrid: a screening or content provider with custom logic and integration built around it."
+  - q: "How long do I have to keep trade compliance records?"
+    a: "US regulations generally require traders to retain records of their import and export transactions for five years from the date of entry, and to produce them on demand during an audit. The obligation covers not just the filings but the supporting documentation and the basis for each determination, which is why software that captures the reasoning automatically is a strong argument over manual processes."
+  - q: "Why is denied party screening so important for exporters?"
+    a: "Dealing with a prohibited party is a serious violation regardless of intent, which makes screening every party against government denied and sanctioned lists the highest-leverage automated check. Those lists are moving targets, with OFAC's SDN list alone exceeding 12,000 entries, and 2023 was a record year with more than 1.5 billion dollars in OFAC penalties across 17 enforcement actions."
 ---
 
 US trade compliance is a field where a spreadsheet error can turn into a penalty, a seized shipment, or an audit. The scale is easy to underestimate. In fiscal year 2023, CBP processed [$3.33 trillion in imports across 36.7 million entries](https://www.cbp.gov/newsroom/stats/trade), and every one of those entries carried a classification, a value, and an origin that had to be right. As volumes grow, manual processes stop scaling and start creating risk. Import/export compliance software exists to make the rules enforceable in your daily operations rather than something a few experts hold in their heads. This guide walks through what these systems actually need to do for a US importer or exporter, and how to decide between buying a package and building something that fits your trade.

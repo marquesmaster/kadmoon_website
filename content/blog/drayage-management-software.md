@@ -4,6 +4,21 @@ description: "Drayage management software explained: container tracking and appo
 category: "Trade & Supply Chain"
 primaryKeyword: "drayage management software"
 tags: ["drayage software", "container drayage", "port trucking software", "demurrage detention"]
+takeaways:
+  - "Drayage is defined by constraints outside the carrier's control, like terminal appointment windows, chassis availability, and per-diem clocks, which is why generic trucking software does not model it well."
+  - "The charges are where margins are won or lost: the 2023 global average demurrage and detention charge was $2,008 per container per day, so a single container held four extra days can erase the margin on a whole move."
+  - "Software should watch three clocks at once, demurrage, per-diem and detention, and chassis, turning reactive firefighting into proactive scheduling that flags the container that must move today."
+  - "A timestamped record of every status change is a billing asset, because under the FMC rule (46 CFR Part 541) omitting any required invoice element eliminates the obligation to pay, and the billed party gets at least 30 days to dispute."
+  - "Integrating terminal, shipping line, and customer feeds is most of the engineering work and is what separates a real drayage platform from a glorified spreadsheet."
+faqs:
+  - q: "What is drayage management software?"
+    a: "It is software built specifically for drayage, the short container move from a port or rail terminal to its final stop. It tracks each container through its lifecycle, manages scarce terminal appointments, watches the demurrage, per-diem, and chassis clocks, coordinates driver and dispatch workflows, and integrates with terminal and shipping-line systems, all to keep demurrage and detention charges from eroding the margin on a move."
+  - q: "How does drayage software reduce demurrage and detention charges?"
+    a: "It makes the clocks visible so operators see a charge forming instead of discovering it weeks later on an invoice. It ties appointments to the demurrage clock to flag containers that must move today, and it records every status change with a timestamp. Because the 2023 global average charge was $2,008 per container per day, catching one at-risk container before free time expires can protect the margin on the whole move."
+  - q: "Can drayage software help dispute incorrect demurrage invoices?"
+    a: "Yes. Terminal and line invoices are frequently wrong, charging for days inside free time or for periods the terminal was closed. Under the FMC's billing rule (46 CFR Part 541) every invoice must carry specific data such as container numbers and free-time dates, and omitting any required element eliminates the obligation to pay. A system that records every status change with a timestamp gives you the paper trail to contest the charge and win, with at least 30 days to request a refund or waiver."
+  - q: "Should I build custom drayage software or buy an off-the-shelf tool?"
+    a: "Off-the-shelf drayage tools exist, but many operators outgrow them because their terminal relationships, chassis arrangements, and billing rules are specific enough that a generic product forces constant workarounds. Building custom lets the software match how you actually run and can start small with the highest-pain workflow, usually appointment and demurrage tracking, before expanding into dispatch, driver mobile, and billing."
 ---
 
 Drayage is the short move that causes outsized pain: getting a container from the port or rail terminal to its final stop, often just a few miles. The distance is small and the coordination is brutal. Appointment windows, chassis availability, terminal congestion, and per-diem clocks all collide, and a missed detail turns into demurrage and detention charges that eat the whole margin on a move. Those charges are not small. In 2023 the global average demurrage and detention charge ran [$2,008 per container per day, and six US ports (New York, Oakland, Los Angeles, Savannah, Long Beach, and Houston) ranked highest among 65 ports surveyed](https://www.container-xchange.com/press-center/average-demurrage-and-detention-charges-witness-a-25-dip-globally-in-2023-7-u-s-ports-rank-highest/). Software built specifically for drayage is how the better operators keep those charges from piling up.

@@ -4,6 +4,21 @@ description: "A practical guide to data pipeline architecture: batch vs streamin
 category: "Data & AI"
 primaryKeyword: "data pipeline architecture"
 tags: ["data pipelines", "etl vs elt", "streaming pipelines"]
+takeaways:
+  - "Batch is the honest default for most reporting and analytics; use streaming only where freshness genuinely matters, like fraud checks or live dashboards, because it adds out-of-order and exactly-once complexity."
+  - "Modern cloud warehouses made ELT the common choice, since landing raw data first lets you re-derive tables when logic changes without re-ingesting from the source."
+  - "An orchestrator's real product is unattended reliability: managing dependencies, retries, and alerting so pipelines only interrupt you when a decision is genuinely needed."
+  - "A pipeline that runs successfully but delivers wrong data is worse than one that fails loudly, and Gartner estimates poor data quality costs organizations $12.9 million a year on average."
+  - "Design for idempotency and first-class backfills so retries are always safe and reprocessing history does not require hand-built one-off scripts."
+faqs:
+  - q: "Should I use batch or streaming for my data pipeline?"
+    a: "Default to batch unless a real requirement forces streaming. Batch pipelines are simpler to build, easier to reason about, and cheaper to run, and they are sufficient for most reporting and analytics. Reserve streaming for cases where freshness genuinely matters, such as fraud detection, live operational dashboards, or anomaly alerting, and many teams run a mix."
+  - q: "What is the difference between ETL and ELT?"
+    a: "ETL extracts, transforms, then loads, reshaping data before it lands in the warehouse. ELT extracts, loads, then transforms, landing raw data first and transforming it inside the warehouse using its compute. ELT became the common choice with modern cloud warehouses because they transform large volumes cheaply and keeping raw data lets you re-derive tables when logic changes."
+  - q: "Why do data teams spend so much time on data preparation?"
+    a: "In the CrowdFlower survey covered by Forbes, practitioners reported spending about 80 percent of their time on data preparation, roughly 60 percent cleaning and organizing and 19 percent collecting data sets. Every hour spent reconciling a broken feed is an hour not spent on analysis, which is why moving quality checks upstream into the pipeline pays for itself."
+  - q: "How do you design a data pipeline to scale?"
+    a: "Scale is more about complexity and change than raw volume. Break the pipeline into modular stages with clear input and output contracts, separate storage from compute so each scales independently, version transformation logic like application code with review and tests, and favor incremental processing over reprocessing everything on every run."
 ---
 
 A data pipeline moves data from where it is created to where it gets used, and reshapes it along the way. Get the architecture right and analytics, reporting, and machine learning all sit on solid ground. Get it wrong and you spend your days chasing missing rows and numbers that do not reconcile. The volume you are designing for keeps climbing: IDC's [Global DataSphere](https://my.idc.com/getdoc.jsp?containerId=IDC_P38353) forecast puts worldwide data creation at 181 zettabytes in 2025, up from 64.2 zettabytes in 2020, a compound growth rate near 23 percent. This guide covers the patterns that hold up as that volume grows, and the trade-offs behind each one.

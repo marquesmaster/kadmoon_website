@@ -4,6 +4,21 @@ description: "Why a US-based software house wins on time-zone overlap, communica
 category: "Software House"
 primaryKeyword: "us-based software house"
 tags: ["onshore software development", "american software company", "domestic software team", "offshore rates"]
+takeaways:
+  - "The hourly rate is not the cost; the cost is the rate multiplied by the hours it actually takes to reach working software you trust, plus the risk you carry."
+  - "Time-zone overlap closes the question-and-answer loop in minutes rather than a full day per exchange, and that compounding delay quietly eats the offshore rate savings."
+  - "Domain nuance is where many offshore projects lose their savings, because the gap shows up not as a bug but as software that technically works and operationally does not fit."
+  - "A US contract lives under US law with enforceable recourse, which matters most for custom software where the whole point is owning a proprietary asset."
+  - "Offshore can still make sense for well-defined, self-contained, non-regulated work with strong internal technical leadership, but those conditions rarely hold for ambiguous, domain-heavy builds."
+faqs:
+  - q: "Is a US-based software house worth the higher hourly rate over offshore?"
+    a: "Often yes, because the hourly rate is not the total cost. North American developers average around $55 an hour against roughly $28 in Asia Pacific, but the real cost is the rate times the hours to reach software you trust, plus the risk you carry. For complex, evolving, or regulated custom software, the fuller accounting of extra hours, rework, and IP and compliance risk usually favors a US firm even at a higher headline rate."
+  - q: "How does time-zone overlap affect a software project?"
+    a: "Software gets built through constant back-and-forth, and when your team shares working hours with the developers, that loop closes in minutes. With a team ten or twelve hours ahead, each exchange can cost a full day, and if an answer raises another question, that is another day gone. None of these delays are dramatic alone, but compounded across a project they slow velocity enough to eat the rate savings."
+  - q: "When does offshore development still make sense?"
+    a: "Offshore can be reasonable when the work is well-defined and self-contained with little real-time ambiguity, when cost is the dominant constraint and the project can absorb slower iteration, when you have strong internal technical leadership to specify and review tightly, and when the software is not IP-critical or heavily regulated. Under those conditions savings of 40 to 70 percent are achievable. The mistake is assuming those conditions hold when they do not."
+  - q: "Does onshore development matter for compliance and data residency?"
+    a: "Yes, for regulated work it is often the deciding factor. A US-based team works natively inside SOC 2, HIPAA, trade-compliance, and data-residency requirements, understanding what controls require and how to keep protected data in-country. IBM put the average cost of a data breach at $4.88 million globally, and a development chain spread across several jurisdictions widens the surface a customer's security team has to worry about."
 ---
 
 The pitch for offshore development is simple: the hourly rate is lower. And the rate gap is real. Regional benchmarks put North American developers around [$55 an hour on average against roughly $37 in Eastern Europe and $28 in Asia Pacific](https://www.remotecrew.io/blog/software-developer-per-hour-rate-by-country), with individual Indian rates often quoted at $18 to $40. The pitch is also incomplete, because the hourly rate is not the cost. The cost is the rate multiplied by the hours it actually takes to reach working software you trust, plus the risk you carry along the way. A US-based software house usually loses the rate comparison and wins the total-cost comparison, for reasons that have little to do with patriotism and everything to do with how software actually gets built.

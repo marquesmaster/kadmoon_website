@@ -4,6 +4,21 @@ description: "Custom software IP ownership is not automatic. Learn how work-for-
 category: "Custom Software"
 primaryKeyword: "custom software ip ownership"
 tags: ["software intellectual property", "work for hire software", "own your source code"]
+takeaways:
+  - "Paying for custom software does not automatically make you its owner, because under US law copyright vests in the author, so contract silence can leave the vendor holding the code."
+  - "Work-for-hire language alone is not enough for general software, since the statutory category covers only nine enumerated work types, so a well-drafted contract pairs it with a present assignment as backup."
+  - "License hygiene is part of ownership: confirm open-source licenses are permissive with no surprise copyleft, and that any commercial component or API is licensed to you, not the vendor."
+  - "Direct, continuous access to the repository, CI/CD, and credentials throughout the project is stronger than escrow, which is only a safety net for a crisis you should avoid."
+  - "Copyright transfers only through a signed writing, so protective clauses must name the source code, repositories, and assignment explicitly rather than vaguely promising you own the deliverables."
+faqs:
+  - q: "Do you automatically own custom software you paid to have built?"
+    a: "No. Under US copyright law the person who writes the code often owns it by default, and copyright vests in the author the moment the work is fixed. If your agreement does not transfer ownership in writing, you may have only bought a license to use software the vendor still owns. The Supreme Court confirmed in Community for Creative Non-Violence v. Reid that paying for and directing commissioned work does not by itself make you the owner."
+  - q: "What is the difference between work-for-hire and an assignment clause?"
+    a: "Work made for hire is a narrow statutory category that, for commissioned work, only applies to nine enumerated types like contributions to collective works and translations, and general business software is not on that list. An assignment clause closes that gap by transferring all right, title, and interest to you. A well-drafted contract pairs a work-for-hire provision with a present assignment as backup, so whatever one does not capture, the other does."
+  - q: "Can you own open-source and third-party components in your software?"
+    a: "No, and no honest vendor will claim you can, since most modern applications rely heavily on open-source dependencies. What matters is that they are licensed so you can use, run, and modify your software freely. Confirm the open-source licenses are permissive enough with no copyleft term that could force you to open-source your own code, and that any commercial component or API is licensed to you rather than the vendor."
+  - q: "Do you need source-code escrow for custom software?"
+    a: "Escrow is a safety net some buyers use with vendors who host the code themselves, where a third party holds a copy released to you if the vendor fails or breaches. For most custom projects, direct continuous access is stronger: you hold the repository, CI/CD pipelines, and credentials throughout, so there is no moment your software lives only on a vendor's machine. Full access from the start beats a locked copy you can only reach in a crisis."
 ---
 
 Here is the fact that surprises most buyers: paying for custom software does not automatically make you its owner. Under US copyright law, the person who writes the code often owns it by default, contract silence and all. If your agreement does not say otherwise, you may have bought a license to use software that your vendor still owns. That is not a rare edge case. It is the default outcome when nobody addresses ownership on paper.

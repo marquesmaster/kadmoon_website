@@ -4,6 +4,21 @@ description: "How the strangler fig pattern replaces legacy systems incrementall
 category: "Legacy Modernization"
 primaryKeyword: "strangler fig pattern"
 tags: ["strangler pattern", "incremental modernization", "gradual system replacement", "legacy migration"]
+takeaways:
+  - "The strangler fig pattern replaces a legacy system incrementally by routing slices to new code while everything else keeps flowing to the old system."
+  - "Standish CHAOS found large projects succeed only about 9 percent of the time, so slicing a rewrite moves each unit of work into the high-success small-project row."
+  - "A routing or facade layer presents a stable interface and can translate between the new clean model and the legacy system's messier one."
+  - "Define, for each piece of data, which system is the source of truth at each stage so two systems never silently disagree about a record."
+  - "Actually finish the migration, because a stalled strangler where old and new run forever is its own kind of technical debt."
+faqs:
+  - q: "What is the strangler fig pattern?"
+    a: "It is a way to replace an old system without a single big-bang cutover. You place a routing layer in front of the legacy system, build one slice of functionality in a new system, and reroute just that slice to the new code while everything else keeps flowing to the old. Over time you move more slices across until the legacy system handles nothing and you switch it off."
+  - q: "Why do big-bang rewrites fail so often?"
+    a: "A full rewrite is the largest project you can pick, and Standish CHAOS found large projects succeed only about 9 percent of the time. During the long rewrite you deliver no value while maintaining two codebases, requirements drift so the target moves, and the cutover is a single catastrophic event. The legacy system also encodes years of undocumented business rules a rewrite has to rediscover."
+  - q: "How do you keep data consistent during a strangler migration?"
+    a: "While old and new systems run side by side, define for each piece of data which system is the source of truth at each stage, and write that rule down before you cut over the first slice. Workable approaches include a shared database during transition, synchronization between systems (often through events), or migrating data along with its capability. Change data capture is a practical tool that keeps the systems loosely coupled and gives you an audit trail."
+  - q: "What should you migrate first with the strangler pattern?"
+    a: "Good early candidates are relatively self-contained, carry real business value or pain, and are not so entangled that moving them is a project on its own. A sensible sequence often starts with a read-only or low-risk capability to prove the pattern and the routing layer, then progresses to more central functionality once the team trusts the approach."
 ---
 
 The strangler fig pattern is a way to replace an old system without the terrifying moment where you switch everything over at once and pray. It is named after a plant that grows around a host tree, gradually taking over until the original is gone, and the software version works the same way. You build the new system around the old one, move capability across piece by piece, and retire the legacy system only once nothing depends on it. This guide explains how it works and why it beats the alternative.

@@ -4,6 +4,21 @@ description: "Custom software vs SaaS compared on real economics, control, data,
 category: "Custom Software"
 primaryKeyword: "custom software vs saas"
 tags: ["saas vs bespoke", "subscription vs custom", "build vs subscribe", "saas cost"]
+takeaways:
+  - "SaaS optimizes for speed and shared cost but has to serve the average of everyone, so it fits generic work and constrains the workflows you compete on."
+  - "The honest comparison is total cost over three to five years, since SaaS is an operating expense that grows with seats and price hikes while custom flattens to a fraction of build cost per year."
+  - "SaaS is leaky: the average enterprise wastes about 18 million dollars a year on unused licenses, with only 49% of provisioned seats actually in use."
+  - "Custom gives you control of the roadmap, ownership of the data and schema, and near-zero marginal cost per new user, in exchange for owning maintenance, security, and uptime."
+  - "Decide by differentiation: buy SaaS for table stakes, build custom for the workflow that makes you different, and use hybrid architectures for the in-between."
+faqs:
+  - q: "Is custom software cheaper than SaaS over time?"
+    a: "It can be, but not in month one. SaaS looks cheap because there is no build cost, while custom is all up front. Over three to five years SaaS grows with seats and periodic price increases you do not control, while custom is a larger up-front investment plus maintenance that is typically a fraction of the build cost per year. For a build-heavy workflow at meaningful scale, custom often wins on a multi-year basis and you own the asset."
+  - q: "When should you build custom software instead of using SaaS?"
+    a: "Use one question: does this workflow make you different from competitors, or is it table stakes everyone runs the same way? For table stakes run the industry-standard way, buy SaaS and do not build. For a process core to your advantage or one no product models well, build custom and own it. For anything in between, buy the base and customize where it counts while keeping the option to replace the piece later."
+  - q: "What are the limits of SaaS as a company scales?"
+    a: "As you grow, the workflow you compete on gets bent to fit the tool's assumptions, integrations stay shallow, and your data lives in the vendor's schema. Per-seat pricing scales with headcount, so success makes the tool more expensive whether or not you use more of it, and the roadmap is the vendor's, so a feature you need may never ship. These become dealbreakers when the constrained workflow is central to how you make money."
+  - q: "What is a hybrid SaaS and custom architecture?"
+    a: "A hybrid stack keeps SaaS for the commodity layers and builds custom where you differentiate, connected through solid integrations. A distributor might keep NetSuite for accounting and build a custom pricing and fulfillment layer on top. This is usually the lowest-risk path, because you avoid rebuilding solved problems and spend your engineering budget only where it buys advantage."
 ---
 
 Every growing company faces this fork: subscribe to a SaaS product that mostly fits, or build software that fits exactly. The right answer is rarely all one or all the other. It depends on where a given workflow sits relative to your competitive advantage, and on how the economics look once you run them past year one. Here is how to think it through without the sales pitch from either side.

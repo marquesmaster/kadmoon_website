@@ -25,6 +25,12 @@ export function GET() {
   lines.push(
     `- [Software house](${siteConfig.url}/software-house): what a software house is and how Kadmoon works as a US software house`,
   );
+  lines.push(
+    `- [Custom software development company](${siteConfig.url}/custom-software-development-company): what a custom software development company delivers, cost, and how to choose one`,
+  );
+  lines.push(
+    `- [SaaS development company](${siteConfig.url}/saas-development-company): building multi-tenant SaaS platforms (tenancy, billing, auth, APIs) you own`,
+  );
   lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth, data-backed articles`);
   lines.push(
     `- [Locations](${siteConfig.url}/custom-software-development): custom software development across ${cities.length}+ US cities`,

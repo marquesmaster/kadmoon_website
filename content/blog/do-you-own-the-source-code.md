@@ -4,6 +4,21 @@ description: "Do you own the source code of custom software? What ownership mean
 category: "Custom Software"
 primaryKeyword: "do you own the source code"
 tags: ["source code ownership", "own your software code", "code ownership contract", "work made for hire"]
+takeaways:
+  - "Paying the invoice does not transfer ownership: under 17 U.S.C. 201(a) copyright starts with the author, and 17 U.S.C. 204(a) requires any transfer to be in writing and signed."
+  - "The 'work made for hire' doctrine does not cover software commissioned from an outside firm, since software is not among the nine narrow categories in 17 U.S.C. 101, so a contractor keeps copyright absent a written assignment."
+  - "Real ownership is more than the code; it includes the repository, CI/CD pipeline, cloud accounts, domain and DNS, and third-party and database credentials, and missing any one leaves a hole."
+  - "Documentation is the difference between owning software and being able to use it, and the portability test is whether a competent team could clone the repo, stand up the environment, and safely make a change."
+  - "Insist on a present-tense IP assignment effective on payment, explicit delivery of repository and infrastructure access, a handover obligation, a component inventory, and transition assistance, with source-code escrow only as a weaker fallback."
+faqs:
+  - q: "Do you automatically own custom software you paid for?"
+    a: "No. Under US copyright law, Section 201(a) vests copyright initially in the author who wrote the code, not whoever paid the invoice, and a transfer must be in writing and signed under 17 U.S.C. 204(a). A handshake, a paid invoice, or a verbal 'it's all yours' does not transfer copyright, so ownership lives in your contract or it does not exist."
+  - q: "Does work made for hire apply to custom software?"
+    a: "Usually not on its own. A work is made for hire only when an employee creates it inside their job, or when it is specially commissioned and falls into one of nine narrow categories in 17 U.S.C. 101, and software is not on that list. The Supreme Court confirmed in Community for Creative Non-Violence v. Reid that an independent contractor keeps the copyright absent a written agreement saying otherwise."
+  - q: "What do you need besides the code to truly own your software?"
+    a: "You need the written assignment of rights plus the assets to actually run the system: the source repository, the CI/CD pipeline, the cloud accounts and infrastructure, the domain, DNS, and TLS certs, and third-party and database credentials in your own vault. You also need enough documentation that a new team can operate it. Missing any one of these leaves your ownership with a hole."
+  - q: "What contract language should I insist on for source code ownership?"
+    a: "Ask for a present-tense assignment of all IP in the deliverables effective on payment, written as an assignment rather than a license, plus explicit delivery of the repository, CI/CD configuration, credentials, and infrastructure access, a documentation and handover obligation, a component inventory of open-source and third-party licenses, and transition assistance if the relationship ends. If you cannot hold the repo directly, source-code escrow is a weaker fallback."
 ---
 
 You paid for the software, so you own it. That assumption is where a lot of buyers get burned. Ownership of custom software is not automatic. It is a set of specific rights that either live in your contract or do not, and the gaps only show up when you try to leave or hand the system to someone else. This is a plain explanation of what owning the code actually means and how to make sure you have it.

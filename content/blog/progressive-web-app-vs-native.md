@@ -4,6 +4,21 @@ description: "Progressive web app vs native app compared: what a PWA can and can
 category: "Mobile Apps"
 primaryKeyword: "pwa vs native app"
 tags: ["progressive web app", "web app vs native", "pwa pros and cons", "pwa performance"]
+takeaways:
+  - "A PWA is one web codebase that installs to the home screen, works offline, and sends notifications, and for form, dashboard, and API-driven business apps it delivers an experience users perceive as a real app."
+  - "The PWA vs native decision comes down to whether your must-have features need native-only capabilities like deep hardware access, guaranteed background processing, top-tier graphics, or app store distribution."
+  - "PWAs are usually cheaper because there is no separate iOS and Android build or store review, you ship updates instantly, and you avoid app store commissions historically as high as 30%."
+  - "Real results back the performance case: Tinder's PWA cut time-to-interactive from 11.91 to 4.69 seconds at about 90% smaller than the native Android app, and AliExpress saw a 104% jump in new-user conversion."
+  - "Test iOS behavior before committing, since iPhones hold a clear US majority in the high 50s to low 60s percent and Apple's PWA support has historically lagged Android's."
+faqs:
+  - q: "What is the difference between a PWA and a native app?"
+    a: "A PWA is a website enhanced with a service worker and manifest so the browser can treat it like an installed app, delivered from one codebase that also serves desktop. A native app is platform-specific software built in each platform's toolchain and distributed through the app stores. The PWA runs inside the browser's sandbox, which limits access to certain hardware and OS features."
+  - q: "What can a PWA not do compared to native?"
+    a: "A PWA cannot reach every corner of the device. Deep hardware access like advanced camera controls, Bluetooth, and NFC, background processing that keeps running when the app is closed, tight integration with contacts or health data, and the highest tier of graphics performance all favor native. App store presence, in-app purchases, and MDM-managed distribution also require a native binary."
+  - q: "Is a PWA cheaper than a native app?"
+    a: "Usually, because it is one codebase serving web and mobile with no separate iOS and Android builds and no store review cycle. You ship updates instantly by deploying to your server, and you avoid the app store commission on in-app purchases, historically as high as 30%. Native costs more because you build and maintain platform-specific software and navigate store review."
+  - q: "When is a PWA enough instead of native?"
+    a: "List your must-have features and check whether any require native-only capabilities. If none do, a PWA gives most of the benefit at a fraction of the cost, and it fits internal tools, B2B dashboards, portals, and anything centered on displaying and editing data over the network. Many teams launch a PWA to validate quickly, then add native only for features that demand it."
 ---
 
 Not every mobile experience needs an app in the store. A progressive web app (PWA) is a website engineered to behave much like a native app: it can be installed to the home screen, work offline, and send notifications, all from a single codebase that also serves your desktop users. The PWA vs native app decision comes down to which native capabilities you actually need and how you want to reach users. Here is how to make that call without over-building, with real results from companies that shipped both.

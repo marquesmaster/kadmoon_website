@@ -4,6 +4,21 @@ description: "A step-by-step guide to legacy system replacement: when to replace
 category: "Legacy Modernization"
 primaryKeyword: "legacy system replacement"
 tags: ["replace legacy system", "system replacement project", "legacy replacement plan"]
+takeaways:
+  - "Replace rather than modernize when the technology is unmaintainable, every change breaks something else, or the platform simply cannot do what the business now needs."
+  - "The riskiest failure mode is rebuilding only documented behavior, so discovery has to reconstruct undocumented rules from the code, the data, and interviews with daily users."
+  - "Run the new and old systems in parallel on real work and compare outputs, which validates correctness on edge cases and keeps the old system as a fallback."
+  - "Treat data migration as its own project: profile the source, map and transform deliberately, validate every pass, and do repeated trial runs before the real cutover."
+  - "A big-bang overnight switch is the highest-risk option and should be a last resort; a gradual, reversible shift of load is far safer."
+faqs:
+  - q: "When should you replace a legacy system instead of modernizing it?"
+    a: "Replace when the technology is so old that hiring anyone to maintain it is nearly impossible, when the code is so tangled that every change breaks something else, or when the platform cannot do what the business now needs. If the system is aging but still functional, weigh lighter-touch options like rehosting or refactoring first, since replacement carries higher upfront cost and risk."
+  - q: "What is parallel running in a system replacement?"
+    a: "Parallel running means the new system operates alongside the old one on real work while you compare their outputs. When both produce the same results across a representative stretch of transactions, you gain evidence the replacement is correct, including on the edge cases you were worried about. It also gives you a fallback, since the old system is still running if the new one stumbles."
+  - q: "Why is data migration so hard in a replacement project?"
+    a: "Years of records in the old system carry duplicates, inconsistent formats, and values that made sense under rules nobody remembers, so moving them cleanly into a new model is a project inside the project. The safe approach is iterative: profile the source data first, map and transform each field deliberately, run automated validation checks on every pass, and repeat trial migrations into a test environment until the result is clean."
+  - q: "How do you reduce the risk of a legacy cutover?"
+    a: "Go incremental wherever the system allows, replacing one module or workflow at a time instead of all at once. Keep the old system available as a fallback until the new one has earned trust on real work, and test continuously against the documented behavior so you catch a divergence in a controlled setting. Resisting pressure to rush the cutover is the habit that separates smooth transitions from failed ones."
 ---
 
 Legacy system replacement is one of the riskiest projects a company takes on, because the old system usually runs something the business cannot afford to lose. It is also common and expensive. The GAO found that federal agencies spend roughly [80% of their more than $100 billion annual IT budget just operating and maintaining existing systems](https://www.gao.gov/products/gao-21-524t), and the ten most critical legacy systems it examined ranged from about 8 to 51 years old and cost around $337 million a year to keep running. Private companies carry the same weight in smaller form. The horror stories are real: botched cutovers, lost data, weeks of downtime. They are also avoidable. The difference is almost always process, not technology. This guide walks through deciding to replace, capturing what the old system really does, and switching over without betting the company on a single day.

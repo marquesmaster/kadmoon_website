@@ -4,6 +4,21 @@ description: "A clear-eyed guide to when to use microservices vs a monolith, the
 category: "Tech Stack"
 primaryKeyword: "when to use microservices"
 tags: ["microservices vs monolith", "microservices trade-offs", "should i use microservices", "modular monolith"]
+takeaways:
+  - "Microservices solve organizational scale and specific technical pressures like independent scaling and deployment, not code quality, since you can write clean, well-separated code in a single process."
+  - "Distribution is a permanent tax on every future feature, not a one-time setup cost, as Amazon Prime Video showed by cutting costs about 90% moving a service back to a monolith."
+  - "If you cannot point to a specific bottleneck a service split removes and name the team or load creating it, you probably do not need the split yet."
+  - "A modular monolith gives you clean module boundaries without network calls or distributed data, and below roughly 50 developers it usually beats microservices."
+  - "Start with a clean modular monolith and extract services only where a concrete signal justifies it, which gives you optionality without the upfront tax."
+faqs:
+  - q: "When should you use microservices instead of a monolith?"
+    a: "Reach for microservices when you have multiple teams needing independent deployment, a real and specific scaling or isolation requirement, and the operational maturity to run distributed systems. Even then you rarely need to start there. For a single team building a product a monolith serves fine, microservices solve a problem you do not have while creating several you do."
+  - q: "What are the hidden costs of microservices?"
+    a: "Splitting an application into services turns method calls into network calls, so you need retries, timeouts, and circuit breakers everywhere, and data consistency across several databases becomes genuinely hard. Operations multiply because you deploy, monitor, log, and trace many things, and debugging means tracing a request across services. This overhead is a permanent tax on every feature, not a one-time setup cost."
+  - q: "What is a modular monolith and when is it better?"
+    a: "A modular monolith is a single deployable application organized internally into clear modules with well-defined boundaries. You get the clean separation people think requires microservices without the network calls, distributed data, and operational overhead. Below around 50 developers it usually beats microservices, and because the boundaries are already clear you can extract a service later when a concrete signal justifies it."
+  - q: "Do microservices improve code quality?"
+    a: "No. The benefits of microservices are mostly about organizational scale and specific technical pressures, not code quality in the abstract. You can write clean, well-separated code in a single process, and you do not need a network boundary to enforce a module boundary. Treating microservices as a way to force good structure leaves you with the operational cost of distribution and none of the reason for it."
 ---
 
 Microservices got treated as a default for a while, as though splitting an application into many small services was automatically the mature choice. Adoption backs that up: Gartner data reported in 2024 put roughly [74% of organizations using microservices](https://www.contentstack.com/blog/composable/the-future-of-microservices-software-trends-in-2024), and the microservices architecture market was worth about [$6.27 billion in 2024, rising toward $7.45 billion in 2025 at close to 18.8% a year](https://www.thebusinessresearchcompany.com/report/microservices-architecture-global-market-report). Popularity is not the same as fit, though. For most teams, at most stages, microservices are the wrong call. They solve specific problems at a real and ongoing cost, and adopting them without those problems buys you the cost and none of the benefit. This guide lays out what they actually solve, what they actually cost, and how to tell which situation you are in.

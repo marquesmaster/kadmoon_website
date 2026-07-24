@@ -4,6 +4,21 @@ description: "Offshore vs onshore vs nearshore development compared on real rate
 category: "Comparisons"
 primaryKeyword: "offshore vs onshore vs nearshore"
 tags: ["nearshore development", "onshore vs offshore", "software outsourcing locations", "developer rates"]
+takeaways:
+  - "The three models are not a cheap-medium-expensive pricing tier but different trade-offs across time zones, communication, legal recourse, and the hidden cost of rework."
+  - "Indicative US onshore bill rates run about $90 to $150+ an hour, nearshore Latin America roughly $34 to $92, and offshore South Asia often lower, but the number that matters is cost per unit of working software, not per hour."
+  - "Time-zone overlap decides how a project feels day to day: an onshore question is answered in minutes, while a twelve-hour offshore gap turns each question into a full-day round trip."
+  - "Quality is not tied to geography, but recourse is: an onshore contract sits under US law and courts, while cross-border IP enforcement is slower, costlier, and less certain."
+  - "In Deloitte's 2024 survey cost is no longer the dominant driver of outsourcing, as access to skilled talent and speed have taken over from the roughly 70% who named cost savings first in 2020."
+faqs:
+  - q: "What is the difference between offshore, onshore, and nearshore development?"
+    a: "Onshore means the team is in your own country, so for a US buyer a US firm with US employees. Nearshore means a nearby country in a similar time zone, usually Latin America for US buyers, with a few hours of overlap. Offshore means a distant country roughly eight to twelve time zones away, where the workday barely intersects yours."
+  - q: "Is offshore development actually cheaper?"
+    a: "Not always, once you count total cost. A lower hourly rate can hide rework from miscommunicated requirements, extra management overhead, slower feedback loops, and the internal hours your team spends translating and reviewing. A cheaper rate with 40% more hours and heavier oversight is not cheaper, so compare cost per unit of working software rather than per hour."
+  - q: "How do I protect my IP and get legal recourse across models?"
+    a: "Geography changes your recourse when things go wrong. An onshore contract sits under US law with US courts, which is simpler if a relationship sours, while enforcing an assignment clause across borders is slower and less certain. Whatever model you pick, the contract should assign you 100% of the IP and hand over the repository, credentials, and CI/CD on delivery."
+  - q: "Which outsourcing model should I choose?"
+    a: "Start from your project, not a rate card. Offshore fits well-specified, lower-ambiguity work where cost dominates and you have strong internal management. Nearshore fits teams wanting meaningful time-zone overlap at lower cost than onshore. Onshore fits complex, ambiguous, or regulated work where domain nuance and legal clarity outweigh a lower rate."
 ---
 
 The three labels sound like a pricing tier, and that framing is where buyers get burned. Offshore, onshore, and nearshore are not cheap, medium, and expensive. They are different trade-offs across time zones, communication, legal recourse, and the hidden cost of rework. The lowest hourly rate can produce the highest total bill. Here is how the models actually differ, backed by real rates and market data, and how to pick.

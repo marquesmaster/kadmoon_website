@@ -103,14 +103,28 @@ export function ContactForm({
           <input id={id('name')} name="name" required className={field} placeholder="Jane Doe" />
         </div>
         <div>
+          <label htmlFor={id('email')} className={label}>
+            Work email
+          </label>
+          <input
+            id={id('email')}
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            className={field}
+            placeholder="jane@acme.com"
+          />
+        </div>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div>
           <label htmlFor={id('company')} className={label}>
             Company
           </label>
           <input id={id('company')} name="company" required className={field} placeholder="Acme Corp" />
         </div>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor={id('size')} className={label}>
             Company size
@@ -126,21 +140,22 @@ export function ContactForm({
             ))}
           </select>
         </div>
-        <div>
-          <label htmlFor={id('need')} className={label}>
-            What you need
-          </label>
-          <select id={id('need')} name="need" className={field} defaultValue="">
-            <option value="" disabled>
-              Select…
+      </div>
+
+      <div>
+        <label htmlFor={id('need')} className={label}>
+          What you need
+        </label>
+        <select id={id('need')} name="need" className={field} defaultValue="">
+          <option value="" disabled>
+            Select…
+          </option>
+          {contact.needOptions.map((opt) => (
+            <option key={opt} value={opt} className={optionClass}>
+              {opt}
             </option>
-            {contact.needOptions.map((opt) => (
-              <option key={opt} value={opt} className={optionClass}>
-                {opt}
-              </option>
-            ))}
-          </select>
-        </div>
+          ))}
+        </select>
       </div>
 
       <div>

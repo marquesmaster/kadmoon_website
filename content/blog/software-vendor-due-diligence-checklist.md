@@ -4,6 +4,21 @@ description: "A software vendor due diligence checklist covering company, techni
 category: "Buyer's Guide"
 primaryKeyword: "software vendor due diligence checklist"
 tags: ["vendor risk assessment", "software procurement checklist", "evaluate software firm", "third-party risk"]
+takeaways:
+  - "Across CHAOS research only around 16 percent of projects finish on time, on budget, and on scope, so screening vendors before you sign is cheap insurance."
+  - "Ask directly whether engineers are full-time employees or subcontractors, since McKinsey and Oxford found large projects run 45 percent over budget and deliver 56 percent less value."
+  - "Demand a technical walkthrough where strong teams explain trade-offs, plus evidence of automated tests, code review, CI/CD, and regular working demos."
+  - "You should own 100 percent of the IP (source code, repository, CI/CD config, credentials, and runbook) on delivery, not licensed or assigned only after full payment."
+  - "Two candid reference calls, especially one whose project hit trouble, tell you more than any polished portfolio."
+faqs:
+  - q: "What should a software vendor due diligence checklist include?"
+    a: "Cover company and team (legal entity, years in business, and whether engineers are employees or subcontractors), technical depth (a real system walkthrough, testing, code review, CI/CD, and working demos), security and compliance, and legal terms including IP ownership and acceptance criteria. Finish with reference checks and a simple weighted scorecard so you can compare vendors and defend the decision later."
+  - q: "How do I check a software vendor's security before signing?"
+    a: "Scale scrutiny to your risk, since the vendor becomes part of your attack surface the moment they touch production. Ask who can access your production systems and how that access is granted and revoked, how secrets and credentials are stored, what compliance evidence they can produce for standards like SOC 2 or HIPAA, and whether production data is ever copied into test environments. Get any SOC 2 report in writing before granting production access."
+  - q: "Who should own the intellectual property in a software contract?"
+    a: "You should own 100 percent of it: the source code, the repository, the CI/CD configuration, the credentials, and the runbook, all handed over on delivery. If the contract assigns IP only after full payment, or licenses the code to you instead of transferring it, you do not actually own your software. This is where buyers get burned quietly, often months after launch."
+  - q: "What questions should I ask a software vendor's references?"
+    a: "Ask to speak with a client whose project shipped and one whose project hit trouble, since the second call is more informative. Avoid yes-or-no questions. Ask what surprised them, how the vendor handled a missed estimate, who they actually worked with day to day, and whether they would hire the firm again for something harder. The reference who lived through a slipped deadline knows how the vendor behaves when a project stops going to plan."
 ---
 
 Due diligence on a software vendor is the work you do before money changes hands, and it is the cheapest insurance you will ever buy. The base rates justify the effort. Across decades of the Standish Group CHAOS research, only around 16 percent of software projects finish on time, on budget, and with the promised scope, while roughly a third are cancelled outright and the rest come in [challenged on cost, schedule, or features](https://www.standishgroup.com/products/project-resolution-benchmark). The failures are rarely random. They cluster around vendors you could have screened out. This software vendor due diligence checklist walks through the areas that actually predict trouble, with the specific questions and documents to ask for at each stage.

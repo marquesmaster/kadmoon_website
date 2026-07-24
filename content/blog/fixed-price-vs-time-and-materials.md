@@ -4,6 +4,21 @@ description: "Fixed price vs time and materials, compared honestly with real ove
 category: "Cost & Pricing"
 primaryKeyword: "fixed price vs time and materials"
 tags: ["fixed bid software", "t&m contract", "software billing models", "software cost overruns"]
+takeaways:
+  - "Fixed price and T&M are not good and bad versions of each other; they allocate risk differently, and the right choice depends on how much you actually know at the start."
+  - "Fixed price hides risk in two ways that both cost you: the vendor pads the estimate for certainty, and defends scope so every unwritten request becomes a change order."
+  - "T&M with guardrails (a not-to-exceed cap, sprint-level reporting, and the ability to stop at any sprint boundary) gives flexibility without an open-ended commitment."
+  - "Each model fails without its matching discipline: fixed price needs a strict change-order process, T&M needs a prioritized backlog and a demo every cycle."
+  - "The blend that fits most projects is a fixed-price discovery phase followed by a capped, reported T&M build, so you get predictability where it helps and flexibility where it matters."
+faqs:
+  - q: "Is fixed price or time and materials cheaper for software?"
+    a: "Neither is inherently cheaper; they allocate risk differently. Fixed price often costs a premium because the vendor pads the estimate to protect against the unknown, and locked scope turns unwritten requests into change orders. T&M avoids the padding but shifts the risk of how much effort the work needs onto you."
+  - q: "When should I choose time and materials over fixed price?"
+    a: "Choose T&M when requirements are genuinely uncertain or will evolve as you learn, so the team can build the right thing as understanding improves instead of the thing guessed at in a kickoff. Make it safe with a not-to-exceed cap, sprint-level reporting, and the ability to stop at any sprint boundary."
+  - q: "What is the fixed discovery then T&M model?"
+    a: "It is a blend that fits most projects. You start with a short, bounded fixed-price discovery phase where the team digs into requirements, sketches architecture, and produces a real backlog with estimates, capping your risk while the biggest unknowns get resolved. Then you build under T&M, now that both sides understand the work."
+  - q: "Should I trust a vendor who quotes a firm fixed price for unscoped work?"
+    a: "Treat it as a signal. If a vendor insists on a firm fixed price for work nobody has scoped yet, either the padding is large or the change orders are coming. The stronger move is to buy a small discovery, learn what the project really involves, and then choose the model that fits what you found."
 ---
 
 The pricing model you pick shapes almost everything about a software project: how scope gets negotiated, who absorbs the surprises, and how much trust the two sides need. Buyers often assume fixed price is safer because the number is known up front. Sometimes it is. Often it just hides the risk somewhere less obvious. The track record for large software work is sobering: a McKinsey study with the University of Oxford of more than 5,400 IT projects found that big ones (initial budgets above $15 million) ran on average [45% over budget and 7% over time while delivering 56% less value than predicted](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/delivering-large-scale-it-projects-on-time-on-budget-and-on-value). No contract wording makes uncertainty disappear. It only decides who pays for it. Here is how fixed price and time and materials actually behave once real work starts.

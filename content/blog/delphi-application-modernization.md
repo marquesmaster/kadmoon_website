@@ -4,6 +4,21 @@ description: "Delphi modernization options and a safe roadmap: rewrite vs increm
 category: "Legacy Modernization"
 primaryKeyword: "delphi modernization"
 tags: ["modernize delphi", "delphi legacy app", "delphi to web", "legacy modernization"]
+takeaways:
+  - "Delphi apps become liabilities slowly along predictable lines: thinning talent, Windows platform lock-in, dead third-party VCL and driver dependencies, and no clean way to integrate over modern APIs."
+  - "A big-bang rewrite is often the riskiest choice, since Standish data shows large projects succeed less than 10 percent of the time, so incremental modernization that carves off pieces one at a time is usually safer."
+  - "A web target on a stack like React with Node or Python is the strong default for most business apps because it removes the Windows dependency and often extends the system to field workers the desktop tool never reached."
+  - "The most valuable asset in an old Delphi app is the undocumented business logic buried in the code, so read the code as the real specification and run old and new in parallel to catch discrepancies before go-live."
+  - "Rehearse the data migration so you can test and roll it back many times, and never treat the first production run as the first real test."
+faqs:
+  - q: "Should I rewrite a Delphi application from scratch or modernize incrementally?"
+    a: "Incremental modernization is usually safer. A big-bang rewrite means a long stretch with no delivered value, a real chance of missing undocumented behavior, and a single terrifying cutover, and Standish data shows large projects succeed less than 10 percent of the time. Incremental modernization keeps the app running while you carve off and rebuild pieces one at a time, each step usable and reversible."
+  - q: "Should a modernized Delphi app be web or desktop?"
+    a: "For most business applications a web target is the strong default, because it removes the Windows dependency, makes remote and multi-location work trivial, and simplifies deployment to one place. Desktop or hybrid still makes sense for heavy local hardware integration, strict offline operation, or extremely latency-sensitive interactions, but choose based on the actual usage pattern."
+  - q: "How do you preserve business logic during Delphi modernization?"
+    a: "Read the existing code as the specification it really is, since comments and docs will be incomplete, and capture the rules explicitly so they end up in tested, documented form. Where possible, run the old and new systems in parallel on the same inputs and compare outputs so discrepancies surface during the project rather than after go-live, with measurable acceptance criteria for each migrated piece."
+  - q: "Why do Delphi applications become a liability?"
+    a: "No single factor forces an emergency, but together they raise cost and risk every year: Delphi developers are increasingly scarce and may be near retirement, desktop Delphi ties you to Windows machines, third-party components and drivers may be unsupported, and a classic Delphi app often has no clean way to expose or consume modern APIs, leaving it isolated as the rest of your stack moves on."
 ---
 
 Plenty of businesses still run on Delphi applications built in the 1990s or 2000s that quietly do critical work every day. The code is often solid. The trouble is everything around it: the talent pool has thinned, the components are unsupported, the app is chained to Windows desktops, and connecting it to anything modern is a fight. Delphi modernization is the process of getting off that liability without throwing away the business logic that still earns its keep.

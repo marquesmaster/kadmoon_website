@@ -4,6 +4,21 @@ description: "The SaaS metrics that drive real decisions: MRR, churn, net revenu
 category: "SaaS Development"
 primaryKeyword: "saas metrics"
 tags: ["saas analytics", "product metrics", "mrr churn ltv", "net revenue retention"]
+takeaways:
+  - "A metric earns its place only if a change in it would change a decision, which is the single filter that cuts most vanity metrics like total signups and page views."
+  - "Track MRR by its components (new, expansion, contraction, churned) rather than the total, because the total hides whether growth comes from acquisition or from keeping and growing existing accounts."
+  - "Net revenue retention above 100 percent means your base grows revenue even with no new customers, and median NRR for private SaaS slipped from about 105 percent in 2021 to roughly 101 percent in 2024, so it scales with deal size and is harder to hit."
+  - "Churn benchmarks are highly segment-dependent: monthly logo churn runs below 0.5 percent for enterprise, 0.5 to 1.5 percent for mid-market, and 2 to 4 percent for SMB, so compare against your own segment, not the blended average."
+  - "Activation and engagement are leading indicators that let you spot an at-risk account while there is still time to intervene, since revenue metrics only show churn weeks after the customer decided to leave."
+faqs:
+  - q: "Which SaaS metrics actually matter?"
+    a: "The small set that answers three questions: are we growing revenue durably, are customers sticking around and getting value, and are new users reaching the point where the product clicks. In practice that means MRR and its components, customer and revenue churn, net revenue retention, and activation and engagement. Total signups, page views, and raw user counts usually belong in a drawer."
+  - q: "What is a good net revenue retention rate for SaaS?"
+    a: "Above 100 percent is the signal of durable product-market fit, since your base grows revenue even without new customers. Median NRR for private SaaS was roughly 101 percent in 2024, and it scales with deal size: around 118 percent for enterprise accounts over 100K ACV, about 108 percent for mid-market, and near 97 percent for SMB under 25K. Compare yourself to your own segment."
+  - q: "How much does churn rate vary by customer segment?"
+    a: "A lot. Monthly logo churn tends to run below 0.5 percent for enterprise products, 0.5 to 1.5 percent for mid-market, and 2 to 4 percent for SMB and prosumer tools. The compounding is stark: 1 percent monthly churn retains about 89 percent of accounts over a year, while 3 percent retains only about 69 percent, which is why you benchmark against your own segment."
+  - q: "How do I instrument product analytics so the numbers are trustworthy?"
+    a: "Define an event taxonomy before you start so each event name means the same thing everywhere, capture revenue-related events server-side where client tracking gets blocked or duplicated, tie every event to a user and account so you can slice by cohort and segment, and instrument as you build features rather than retrofitting later, which is painful and always incomplete."
 ---
 
 Every SaaS dashboard shows dozens of numbers, and most of them do not change what anyone does on Monday. The metrics that matter are the small set that expose whether your business is actually healthy and where the leaks are. The rest is decoration. This is a guide to the SaaS metrics worth instrumenting, what each one tells you, and how to build the plumbing so the numbers are trustworthy.
