@@ -40,14 +40,18 @@ cp .env.example .env
 # Generate strong random values:
 sed -i "s/^POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$(openssl rand -hex 24)/" .env
 sed -i "s/^LEAD_IP_SALT=.*/LEAD_IP_SALT=$(openssl rand -hex 24)/" .env
-# Then edit .env and fill the SMTP_* values so lead emails are sent:
+# Set the Web3Forms access key so lead emails are sent (recommended):
+sed -i "s/^WEB3FORMS_ACCESS_KEY=.*/WEB3FORMS_ACCESS_KEY=YOUR_WEB3FORMS_KEY/" .env
+# Review the rest if needed:
 nano .env
 ```
 
-SMTP works with most providers (Zoho, Fastmail, Gmail app password, Amazon SES,
-etc.). Set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, and `CONTACT_TO`.
-If you leave SMTP empty, leads are still stored in the database; no email is
-sent.
+Email provider (first one set wins): **Web3Forms**, then Resend, then SMTP.
+The recommended path is Web3Forms: create an access key at web3forms.com tied
+to the inbox that should receive leads, and set `WEB3FORMS_ACCESS_KEY`. The key
+stays server-side and is never exposed to the browser. Leads are also stored in
+Postgres; if every email provider is empty the lead is still saved, just not
+emailed.
 
 ## 4. Build and run
 
@@ -118,7 +122,7 @@ docker image prune -f
 
 ```bash
 docker exec -it kadmoon-db psql -U kadmoon -d kadmoon -c \
-  'SELECT "createdAt", name, company, need FROM "Lead" ORDER BY "createdAt" DESC LIMIT 20;'
+  'SELECT "createdAt", name, email, company, need FROM "Lead" ORDER BY "createdAt" DESC LIMIT 20;'
 ```
 
 ## Analytics (Google Tag Manager)
