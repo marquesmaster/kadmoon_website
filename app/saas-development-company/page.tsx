@@ -156,7 +156,8 @@ export default function SaasDevelopmentCompanyPage() {
               Terraform). We are a <a href="/software-house">software house</a> and{' '}
               <a href="/custom-software-development-company">custom software development company</a>{' '}
               that builds across <a href="/industries">ten-plus industries</a>. Explore the{' '}
-              <a href="/services">capabilities</a> we deliver, or read the{' '}
+              <a href="/services">capabilities</a> we deliver, see the{' '}
+              <a href="/cases">systems we have delivered</a>, or read the{' '}
               <a href="/blog">blog</a> for practical, data-backed guides.
             </p>
           </div>

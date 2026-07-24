@@ -159,7 +159,8 @@ export default function CustomSoftwareDevelopmentCompanyPage() {
               <a href="/industries/trade-and-supply-chain">trade and supply chain software</a>, and
               we build across <a href="/industries">ten-plus industries</a>. Explore the{' '}
               <a href="/services">capabilities</a> we deliver, compare us against a{' '}
-              <a href="/software-house">software house</a>, or read the{' '}
+              <a href="/software-house">software house</a>, see the{' '}
+              <a href="/cases">systems we have delivered</a>, or read the{' '}
               <a href="/blog">blog</a> for practical, data-backed guides.
             </p>
           </div>

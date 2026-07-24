@@ -153,8 +153,11 @@ export default function SoftwareHousePage() {
               <a href="/industries/trade-and-supply-chain">trade and supply chain software</a>, and
               we build across{' '}
               <a href="/industries">ten-plus industries</a>. Explore the{' '}
-              <a href="/services">six capabilities</a> we deliver, or read the{' '}
-              <a href="/blog">blog</a> for practical, data-backed guides.
+              <a href="/services">six capabilities</a> we deliver, see the{' '}
+              <a href="/cases">systems we have delivered</a>, or read the{' '}
+              <a href="/blog">blog</a> for practical, data-backed guides. We also work as a{' '}
+              <a href="/custom-software-development-company">custom software development company</a>{' '}
+              and a <a href="/saas-development-company">SaaS development company</a>.
             </p>
           </div>
         </section>

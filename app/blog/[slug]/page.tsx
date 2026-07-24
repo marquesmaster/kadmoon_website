@@ -10,6 +10,7 @@ import {
   getRelatedPosts,
   categorySlug,
 } from '@/lib/blog';
+import { hubsForCategory } from '@/lib/hubs';
 import { siteConfig } from '@/lib/site';
 
 export function generateStaticParams() {
@@ -45,6 +46,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
   if (!post) notFound();
   const related = getRelatedPosts(post.slug, 3);
+  const hubs = hubsForCategory(post.category);
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -176,6 +178,26 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 </div>
               </section>
             )}
+
+            {/* Related resources: contextual internal links to hub pages. */}
+            <section className="mt-12 border-t border-line pt-8">
+              <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
+                Related resources
+              </h2>
+              <ul className="mt-4 space-y-2.5">
+                {hubs.map((h) => (
+                  <li key={h.href}>
+                    <a
+                      href={h.href}
+                      className="group inline-flex items-center gap-2 text-[15px] font-medium text-ink transition-colors hover:text-accent"
+                    >
+                      {h.label}
+                      <span aria-hidden className="text-ink-3 transition-transform group-hover:translate-x-0.5 group-hover:text-accent">→</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
           </div>
         </article>
 
