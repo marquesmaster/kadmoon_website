@@ -44,6 +44,19 @@ Rules are explicit thresholds you write by hand: alert if refunds exceed a set c
 
 Statistical methods learn the normal range from history and flag values that fall too far outside it, using techniques like moving averages, standard-deviation bands, or seasonal decomposition. They adapt to trends and daily or weekly cycles without you hardcoding every threshold, and they cover a large share of real business needs at modest cost.
 
+A standard-deviation band can be this simple: learn the recent mean and spread, then flag any point that falls too many deviations outside it.
+
+```python
+import statistics
+
+def is_anomaly(recent, value, sigma=3):
+    mean = statistics.mean(recent)
+    spread = statistics.pstdev(recent)
+    return abs(value - mean) > sigma * spread
+
+# recent = last N hourly refund counts, value = the latest one
+```
+
 Machine learning models handle high-dimensional data where "normal" depends on many interacting factors at once, which is common in fraud. They are the most powerful and the most demanding: they need good training data, ongoing evaluation, and someone who understands why they fire. Kadmoon engineers AI in from day one rather than bolting it on, which in practice means starting with the simplest method that works and escalating only when the problem genuinely requires it.
 
 ## Reducing false positives

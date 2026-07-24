@@ -31,6 +31,18 @@ Staff augmentation slots individual contractors into your existing team. They at
 
 A managed team is a self-contained delivery unit. It typically includes engineers plus the surrounding roles a project needs: a lead or project manager, QA, and often design. The vendor owns how the work gets organized and delivered against agreed goals. You set direction and priorities and review the output, but you are not assigning individual tickets. Kadmoon runs the managed model with senior in-house full-time employees, two-week sprints, a working demo each cycle, and acceptance criteria written into the contract, so the unit of accountability is a shipped increment, not a timesheet.
 
+Side by side, the two models split responsibility like this.
+
+| Dimension | Staff augmentation | Managed team |
+| --- | --- | --- |
+| What you buy | People, you keep the wheel | An outcome, you hand over the wheel |
+| Who directs daily work | Your engineering manager | The vendor's lead or PM |
+| Delivery risk | Stays with you | Sits with the vendor |
+| Management overhead | You write tickets, review PRs, unblock | Vendor absorbs the coordination |
+| Accountability | A timesheet | A shipped increment against acceptance criteria |
+| Hourly rate | Lower on paper | Includes the PM, QA, and delivery wrapper |
+| Flexibility | Scale person by person | More coherent over a longer engagement |
+
 ## Who owns delivery and outcomes
 
 This is the difference that matters most. Under staff augmentation, delivery risk stays with you. If the feature ships late or buggy, that is your management gap, not a contract breach. The contractors did what you told them to do. Under a managed team, the vendor is accountable for delivering what was agreed, and a well-written contract ties payment to measurable acceptance criteria rather than hours logged.

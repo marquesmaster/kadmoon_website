@@ -43,6 +43,21 @@ A custom integration layer is code you own that connects your systems directly, 
 
 In practice that means real infrastructure primitives you configure directly: a message queue that buffers spikes so a downstream system going offline never loses records, idempotency keys so a retried order does not post twice, and a dead-letter queue that parks the handful of records that fail validation for a human to inspect instead of silently dropping them. Those are the exact behaviors an iPaaS bundles and meters; in a custom layer you own them outright.
 
+In code those primitives are small but load-bearing, an idempotency check that drops duplicate deliveries and a dead-letter path for records that fail validation:
+
+```js
+async function handleOrder(order) {
+  if (await seen(order.idempotencyKey)) return; // retried delivery, skip
+  try {
+    await validate(order);
+    await postToErp(order);
+    await markSeen(order.idempotencyKey);
+  } catch (err) {
+    await deadLetter.push({ order, error: err.message }); // a human inspects
+  }
+}
+```
+
 The advantages are control and cost predictability. There is no per-task meter, so high volume does not translate into a bigger monthly invoice. The logic can be as complex as your business actually is, expressed in real code with real tests. And because you own the source, CI/CD, and runbooks, you are not dependent on a vendor's roadmap or subject to their price increases. The cost is the build itself and the ongoing responsibility to maintain it, which is a real commitment, not a footnote. Approaches like [API-first development](/blog/api-first-development) and patterns from an [enterprise API strategy](/blog/enterprise-api-strategy) make a custom layer far more durable.
 
 ## Cost and flexibility trade-offs

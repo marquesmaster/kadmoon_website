@@ -77,6 +77,16 @@ Design for failure from the start:
 - Reconciliation, a routine check that confirms both systems agree on counts and totals, so silent drift gets caught before finance does.
 - Monitoring and alerts, so you learn about a broken sync from a dashboard, not from an angry customer.
 
+A reconciliation check is often just a query that confirms both sides agree, run on a schedule so drift surfaces before finance does:
+
+```sql
+-- Flag orders whose totals disagree between the ERP and the app database
+select e.order_id, e.total as erp_total, a.total as app_total
+from erp_orders e
+join app_orders a on a.order_id = e.order_id
+where e.total <> a.total;
+```
+
 Skipping this layer is the most common reason integrations that pass testing fall apart in production.
 
 ## The integration layer and its stack

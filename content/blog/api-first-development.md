@@ -44,6 +44,30 @@ The contract is a written specification, and OpenAPI is the standard way to writ
 
 An OpenAPI document describes every endpoint, the parameters, the request and response schemas, the status codes, and the error shapes. It is machine-readable, so it is not just documentation that drifts out of date. You can generate client libraries, server stubs, validation, and interactive docs directly from it, which keeps the spec and the code honest with each other.
 
+A small slice of such a document shows the shape: one endpoint, its parameters, and every response it can return.
+
+```yaml
+paths:
+  /orders/{id}:
+    get:
+      summary: Fetch a single order
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The order
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Order"
+        "404":
+          description: Order not found
+```
+
 Writing the spec first surfaces disagreements early, on paper, where they are cheap to fix. That timing is the whole point. Defects caught in design cost a fraction of what they cost after release: the widely cited [cost-to-fix multipliers rise from roughly 1x in design to as much as 30x to 100x once a bug reaches production](https://www.blackduck.com/blog/cost-to-fix-bugs-during-each-sdlc-phase.html). When the frontend team and the backend team both review the contract before any code exists, you catch the mismatch about how errors are returned while it is a five-minute edit, not three weeks of rework.
 
 The spec also becomes the shared source of truth that outlives any conversation. Six months later, when a new engineer joins or a partner asks how the API behaves, the answer is in the OpenAPI document rather than in someone's memory or a stale wiki page. Because it is machine-readable and used to generate real artifacts, it cannot quietly rot the way prose documentation does. If it drifts from the implementation, the generated tests fail, which forces someone to reconcile the two.

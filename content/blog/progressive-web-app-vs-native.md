@@ -31,6 +31,18 @@ The performance ceiling is higher than skeptics assume. When Tinder rebuilt its 
 
 It also helps to be clear about what "progressive" means. A PWA degrades gracefully: the same site works as an ordinary web page on a browser that supports none of the app features, and progressively gains install, offline, and notification behavior on browsers that do. You are not building two things. You are building one web app that becomes more capable where the platform allows it.
 
+The rest of the comparison comes down to a handful of dimensions where the two diverge.
+
+| Dimension | PWA | Native |
+| --- | --- | --- |
+| Cost | Lower, one codebase | Higher, platform-specific builds |
+| Distribution | Install straight from a URL | App Store and Google Play |
+| Updates | Ship instantly on deploy | Store review, users accept |
+| Deep hardware access | Limited by the browser sandbox | Full |
+| Background processing | Limited | Runs when the app is closed |
+| Store commission | Avoided via your own checkout | Historically as high as 30% |
+| iOS support | Historically lags Android | Full |
+
 ## Install, offline, and notifications
 
 Installation from the web is friction-light: users visit a URL and choose to install, with no app store download. That is a genuine advantage for reach, though it is less discoverable than a store listing and the install prompt behaves differently across platforms. On Android the experience is close to native. On iOS it works but with more limitations, which matters if your audience is iPhone-heavy.

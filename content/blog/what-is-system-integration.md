@@ -58,6 +58,17 @@ File-based exchange is older and still everywhere, especially with legacy and pa
 
 Event-driven flows sit in between. Instead of one system asking repeatedly whether something changed, the source publishes an event when it does, and interested systems react. This scales well and keeps systems loosely coupled. The trade-off between reacting to events and asking on a schedule is covered in [webhooks vs polling](/blog/webhooks-vs-polling).
 
+In an event-driven flow the source announces what happened and does not care who listens, so the warehouse and billing systems each react on their own:
+
+```js
+// Storefront publishes once; interested systems subscribe independently
+await events.publish("order.placed", {
+  orderId: "SO-10231",
+  customerId: "C-882",
+  total: 149.0,
+});
+```
+
 ## Why integrations fail
 
 Integration projects fail in predictable ways, and knowing them is half of avoiding them. They also fail often: the Standish Group's CHAOS research, which draws on tens of thousands of projects, has for years found only [about 31 percent of IT projects fully succeed](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes), with the rest challenged or cancelled. Integration work is squarely in that risky category because it depends on systems and teams the project does not control.

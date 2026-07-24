@@ -32,6 +32,18 @@ Cross-platform means writing your app once and running it on both iOS and Androi
 
 Native, by contrast, means building separately for each platform with the platform's own tools: Swift with SwiftUI or UIKit for iOS, Kotlin with Jetpack Compose for Android. Two codebases, two skill sets, full and immediate access to everything each platform offers. The rest of the trade-offs flow from this basic split.
 
+Here is how the two approaches line up across the dimensions the rest of this article works through.
+
+| Dimension | Cross-platform | Native |
+| --- | --- | --- |
+| Cost and time-to-market | Lower, one codebase and team | Higher, you build twice |
+| Performance for standard apps | Indistinguishable from native | Full native |
+| Graphics-heavy or hardware-intensive work | Can hit limits | Strongest |
+| Platform look and feel | Very close | Exact per-platform control |
+| Maintenance | One codebase, fix once | Parallel maintenance forever |
+| Bleeding-edge platform features | Wait or bridge to native | First access |
+| Team fit | React and web teams | Established iOS and Android teams |
+
 ## Cost and time-to-market
 
 This is where cross-platform makes its strongest case. One codebase serving both platforms means roughly one team, one set of features to build, and one place to fix bugs. For most business apps, that is a meaningful reduction in build cost and calendar time compared to writing everything twice natively.

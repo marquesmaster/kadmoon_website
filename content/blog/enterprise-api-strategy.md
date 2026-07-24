@@ -50,6 +50,18 @@ The core standards worth setting organization-wide:
 - A uniform error format with meaningful status codes and machine-readable error bodies.
 - A clear versioning policy. Additive changes should never break clients; breaking changes require a new version and a deprecation window with real notice.
 
+A uniform error body is a small thing that pays off across every integration, because the same shape everywhere means consumers write their error handling once.
+
+```json
+{
+  "error": {
+    "code": "rate_limit_exceeded",
+    "message": "Too many requests. Retry after 30 seconds.",
+    "request_id": "req_8f2a1c"
+  }
+}
+```
+
 Contract-first design helps enormously here. Defining the API contract before implementation, and treating it as the source of truth, keeps the interface clean and lets frontend and backend work in parallel. [API-first development](/blog/api-first-development) goes deeper on that approach, and for the specific question of push versus pull, [webhooks vs polling](/blog/webhooks-vs-polling) covers when to use each.
 
 ## Security, auth, and rate limiting

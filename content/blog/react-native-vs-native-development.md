@@ -33,6 +33,18 @@ React Native lets you write the app once in JavaScript and TypeScript and run it
 
 The "drop into native when needed" part is important and often misunderstood. React Native is not all-or-nothing. You can write ninety-five percent of an app in shared code and implement one performance-critical screen or one exotic hardware integration in native code behind a clean interface. That escape hatch is what makes React Native a safe default for most projects: you rarely hit a hard wall, and when you approach one, you can solve that one piece natively without abandoning the shared codebase.
 
+At a glance, the two approaches trade off like this across the factors that follow.
+
+| Dimension | React Native | Native |
+| --- | --- | --- |
+| Codebase | One shared across iOS and Android | Two, one per platform |
+| Performance for standard apps | Indistinguishable from native | Full native |
+| Extreme performance and graphics | Native pulls ahead | Strongest |
+| Build cost | Roughly 30 to 50 percent less | Baseline, built twice |
+| Talent pool | JavaScript and TypeScript, large | iOS and Android specialists |
+| Maintenance | Fix once | Coordinate two releases |
+| Newest OS features | Catches up once a bridge exists | First access |
+
 ## Performance and native-feature access
 
 This is where the honest trade-offs live, and where a lot of internet arguments overstate the gap.

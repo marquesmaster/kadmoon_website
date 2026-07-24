@@ -37,6 +37,17 @@ Inside the boundary, platforms are fast and cheap to change. Outside it, you hit
 
 There is a middle zone worth naming, because it traps a lot of teams. Many platforms offer just enough scripting to make heavy customization look feasible, so a business keeps investing in the platform long past the point where a custom build would have been cheaper. Each customization works, but it depends on internal knowledge of the vendor's quirks, it has to be re-tested every time the vendor ships an upgrade, and it cannot be moved anywhere else. You end up with a custom system after all, except you do not own it and you are still paying subscription fees on top. The honest question is not whether the platform can technically do the thing, but what it costs to make it do the thing and keep it working.
 
+The trade-offs that follow from that boundary sort out like this.
+
+| Dimension | Platform solution | Custom software |
+| --- | --- | --- |
+| Day-one cost | Lower, predictable fees | Higher upfront investment |
+| Cost over three to five years | Scales with seats and add-ons | Front-loaded, then flattens |
+| Time to a working system | Live in weeks | Longer runway |
+| Change outside the vendor's boundary | Hits a wall | Build whatever the business needs |
+| Lock-in | Data, tooling, and reporting tied to the vendor | You own the code and database |
+| Reporting | Limited to the fields the vendor exposes | Whatever you build |
+
 ## Cost and time-to-value
 
 On day one, platforms win the cost comparison. Subscription fees are predictable, and you are live in weeks. Custom software has real upfront investment and a longer runway before the first users log in. If speed to a working system is the only thing that matters, the platform looks obvious.

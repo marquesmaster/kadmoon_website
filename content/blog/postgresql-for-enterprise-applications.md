@@ -45,6 +45,22 @@ Postgres gives you relational rigor without forcing everything into rigid column
 
 Its JSONB type stores and indexes JSON in a binary form, so you can keep flexible or evolving data in the same table as your structured columns, add GIN indexes over it, and query across both. You get schema where you want guarantees and flexibility where you want to move fast, without running a second database to hold the loose data.
 
+In practice that looks like a structured table with one JSONB column, a GIN index over it, and a query that filters on a key inside the document.
+
+```sql
+CREATE TABLE events (
+    id          bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    occurred_at timestamptz NOT NULL,
+    payload     jsonb NOT NULL
+);
+
+CREATE INDEX idx_events_payload ON events USING gin (payload);
+
+SELECT id, occurred_at
+FROM events
+WHERE payload @> '{"type": "checkout"}';
+```
+
 The extension system is the other reason Postgres stays relevant. Extensions add capabilities without changing the core: PostGIS for geospatial work, pg_trgm for fuzzy text matching, and pgvector for storing and searching the embedding vectors that power semantic search and retrieval for AI features. That last point matters as more applications add AI, because it lets you keep embeddings next to the records they describe instead of syncing to a separate vector store. If you are weighing document versus relational stores, [SQL vs NoSQL databases](/blog/sql-vs-nosql-databases) lays out the trade-offs.
 
 ## Scaling and performance

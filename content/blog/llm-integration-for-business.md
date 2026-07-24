@@ -46,6 +46,25 @@ A raw model generates text. A useful business feature usually needs the model to
 
 You define the tools the model is allowed to call, describe what each does, and let the model decide when to invoke them. The model asks to run a tool, your code executes it, and the result goes back into the conversation. This is how you connect an LLM to your real systems rather than leaving it to guess. It is also how you keep the model grounded: instead of inventing an answer, it retrieves one. For questions over your own documents and data, pairing this with retrieval is often the right pattern, which our primer on [RAG for business applications](/blog/rag-for-business-applications) covers in detail.
 
+A tool definition is just a description the model reads, naming the function and its parameters so it knows when and how to call it.
+
+```json
+{
+  "name": "get_order_status",
+  "description": "Look up the current status of a customer order by its id",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "order_id": {
+        "type": "string",
+        "description": "The order identifier, for example ORD-10432"
+      }
+    },
+    "required": ["order_id"]
+  }
+}
+```
+
 Keep prompts and tool definitions in version control and treat them like code, because a small wording change can shift behavior across every request.
 
 ## Guardrails and evaluation

@@ -29,6 +29,17 @@ Polling is the pull model. Your system calls an API on a schedule and asks, in e
 
 Webhooks are the push model. You register a URL with the source system, and when an event occurs (an order is paid, a shipment moves, a record changes), that system sends an HTTP request to your URL with the details. You are no longer asking. You are being told, close to the moment it happens. The cost is that you now have to run an endpoint that is always available to receive those calls, which is a different operational shape than a scheduled job. The event vocabulary can be large: GitHub alone can send [more than 70 distinct webhook event types](https://docs.github.com/en/webhooks-and-events/webhooks/webhook-events-and-payloads), each with its own payload, so part of the work is deciding which events you actually care about.
 
+The two models pull in opposite directions across the properties that matter for an integration.
+
+| Dimension | Polling | Webhooks |
+| --- | --- | --- |
+| Model | Pull, on your schedule | Push, the source calls your endpoint |
+| Latency | Bounded by your interval | Within seconds of the event |
+| Load for infrequent events | Wasteful, mostly empty requests | Traffic only when something happens |
+| Recovery after a failure | Next run catches up | Delivery can be lost unless the sender retries |
+| Endpoint | None required | Always-on public URL needed |
+| Security | Outbound, you authenticate the call | Must verify inbound signatures |
+
 ## Latency, load, and reliability
 
 The trade-offs fall out directly from pull versus push.
@@ -50,6 +61,19 @@ Event-driven integration only works if you plan for the messy realities of the n
 **Ordering.** Events may not arrive in the order they happened. A "shipment delivered" message can land before "shipment out for delivery" if one retry took longer than another. Do not assume sequence. Include a timestamp or version on each event and let the latest state win, rather than blindly applying events in arrival order.
 
 **Idempotency.** Because of retries, you will sometimes receive the same event twice. If processing it twice charges a card twice or creates two records, you have a serious bug. Give each event a unique ID, record the ones you have processed, and make handling an event you have already seen a safe no-op. Idempotency is not optional in any system that takes webhooks seriously.
+
+In practice that check is a few lines at the top of the handler:
+
+```js
+async function handleWebhook(event) {
+  // event.id is the unique identifier the sender assigns
+  if (await store.hasProcessed(event.id)) {
+    return; // already handled, so this retry is a safe no-op
+  }
+  await applyChange(event);
+  await store.markProcessed(event.id);
+}
+```
 
 ## Security for webhooks
 

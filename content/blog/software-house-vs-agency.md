@@ -43,6 +43,17 @@ The core distinction is depth versus breadth. An agency offers breadth across th
 
 This shows up in the outcomes. Complex builds fail often: the Standish Group's [CHAOS research](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes) found that across roughly 50,000 projects, only 31 percent succeeded outright in 2020 while 50 percent were challenged and 19 percent failed, and large projects succeed less than 10 percent of the time. Those odds get worse when the difficulty sits in engineering the firm is not built for. Ask an agency to build a data-heavy platform with tricky integrations and multi-tenant architecture, and you often get something that demos well and struggles in production. Ask a pure software house to run your rebrand and content strategy, and you are asking engineers to do a job they were not built for. The best outcomes come from matching the firm's depth to where your project's difficulty actually lives. If the risk is in the pixels, lean agency. If the risk is in the system, lean software house.
 
+The distinction shows up across every part of how the two are built.
+
+| Dimension | Digital agency | Software house |
+| --- | --- | --- |
+| Center of gravity | Marketing, brand, design, surface experience | Systems built to run for years |
+| Staffing | Designers, strategists, front-end, some contractors | Full-time in-house engineers |
+| Strength | Creative breadth | Engineering depth |
+| Technology approach | Often packaged platforms and CMS | Bespoke architecture, data, security |
+| Pricing | Project or retainer tied to deliverables | Effort, dedicated team, or milestones |
+| Best fit | Risk is in the pixels | Risk is in the system |
+
 ## How each prices and staffs work
 
 The staffing model drives the pricing model, and the two differ in instructive ways:

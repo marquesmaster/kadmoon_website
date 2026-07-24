@@ -49,6 +49,16 @@ The caution with LLMs is that they can produce a plausible answer even when the 
 
 No extraction is perfect, and in document processing a confident wrong answer is worse than an obvious blank. That is why validation is not optional. Every extracted field should carry a confidence signal, and the pipeline should check values against rules you define: does the math add up, is the date plausible, does the vendor exist in your system, does the total match the line items.
 
+Grounding the output means each field carries its value, a confidence score, and where on the page it came from, so low-confidence items can route to a person:
+
+```json
+{
+  "invoiceNumber": { "value": "INV-4471", "confidence": 0.99, "source": "page1:box_top_right" },
+  "total":         { "value": 1284.50, "confidence": 0.72, "source": "page1:box_bottom_right" },
+  "dueDate":       { "value": "2026-08-15", "confidence": 0.61, "source": "page1:line_14" }
+}
+```
+
 When confidence is low or a check fails, the document routes to a human to review and correct, rather than flowing silently into your systems. Those corrections should feed back to improve the pipeline over time. Done right, humans handle the exceptions instead of every document, which is where the leverage comes from. Given that fixing a single downstream data error can cost real staff time and rework, catching it before it lands beats correcting it after. This human-in-the-loop design is also what makes the system defensible when accuracy actually matters, the same principle behind reliable [RAG for business applications](/blog/rag-for-business-applications).
 
 ## Integrating into workflows

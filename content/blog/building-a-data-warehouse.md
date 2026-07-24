@@ -57,7 +57,17 @@ The core work is defining your facts (measurable events like orders or shipments
 
 A warehouse nobody trusts is worse than no warehouse, because people act on numbers that are quietly wrong. Given that the average large enterprise is already absorbing millions a year in bad-data costs, governance and quality are what keep the warehouse from adding to that total instead of cutting it.
 
-Practical quality means automated tests on your data: checking that keys are unique, that values fall in expected ranges, that row counts do not suddenly collapse because a source feed broke. When a test fails, someone should be alerted before a stakeholder finds the error in a board deck. Governance adds the human layer: clear ownership of each dataset, documentation of what each table means, and access controls so sensitive data is only visible to those who should see it. For US teams handling regulated data, this is also where encryption, audit logging, and compliance requirements get enforced at the data layer, a discipline related to [SaaS security and compliance](/blog/saas-security-and-compliance).
+Practical quality means automated tests on your data: checking that keys are unique, that values fall in expected ranges, that row counts do not suddenly collapse because a source feed broke. When a test fails, someone should be alerted before a stakeholder finds the error in a board deck.
+
+A quality test is usually a small query that should return zero rows, wired to alert when it does not, like this check that an order key is unique:
+
+```sql
+-- Should return no rows; any result means a duplicate key slipped in
+select order_id, count(*)
+from fct_orders
+group by order_id
+having count(*) > 1;
+``` Governance adds the human layer: clear ownership of each dataset, documentation of what each table means, and access controls so sensitive data is only visible to those who should see it. For US teams handling regulated data, this is also where encryption, audit logging, and compliance requirements get enforced at the data layer, a discipline related to [SaaS security and compliance](/blog/saas-security-and-compliance).
 
 ## Scaling and cost management
 

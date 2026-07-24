@@ -39,6 +39,22 @@ Second, embeddings: each chunk is converted into a vector, a list of numbers tha
 
 Third, retrieval strategy: pure vector search is a starting point, not the finish. Production systems usually combine it with keyword search (hybrid retrieval) and often a reranking step that reorders candidates for relevance. The quality of retrieval sets the ceiling on answer quality, so this is where the engineering effort concentrates.
 
+In code the flow is short: embed the question, pull the closest passages, and ask the model to answer only from them.
+
+```python
+question = "What does our vendor contract say about termination?"
+query_vector = embed(question)
+passages = vector_store.search(query_vector, top_k=5)
+
+context = "\n\n".join(p.text for p in passages)
+prompt = (
+    "Answer using only the context below. "
+    "If it does not contain the answer, say you do not know.\n\n"
+    f"Context:\n{context}\n\nQuestion: {question}"
+)
+answer = model.generate(prompt)
+```
+
 A concrete example makes the failure modes clear. Vector search alone can miss an exact product code or invoice number, because semantic similarity is not the same as an exact match, which is why hybrid retrieval that also does keyword search matters for business data full of identifiers. A 2025 comparative study on hallucination mitigation found that a [hybrid retriever produced the lowest hallucination rate](https://arxiv.org/abs/2504.05324) among the approaches tested, beating both keyword-only and semantic-only search. Reranking then earns its keep by pushing the genuinely relevant passage above the merely similar ones before the model ever sees them. Tuning these steps against real questions from your users, rather than accepting library defaults, is usually what moves a RAG system from "impressive demo" to "trustworthy tool."
 
 ## Grounding answers in your data

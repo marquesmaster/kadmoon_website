@@ -37,6 +37,19 @@ It helps to be concrete about the three you will actually reach for.
 - SuiteTalk SOAP is the older web services interface. It is still widely used and sometimes exposes fields or operations the REST layer does not, but it is heavier to work with. Reach for it when REST cannot do what you need.
 - RESTlets are custom endpoints written in SuiteScript that run inside NetSuite. They shine when you need custom logic on the NetSuite side: complex validation, multi-record transactions, or an operation that would take many standard API calls to accomplish. The cost is that you now maintain SuiteScript code, and RESTlets cap request and response payloads at 10 MB, so bulk moves have to be chunked.
 
+Creating a standard record through SuiteTalk REST is an ordinary JSON call over HTTPS, which is why it is the least surprising place to start:
+
+```bash
+curl -X POST \
+  "https://<account>.suitetalk.api.netsuite.com/services/rest/record/v1/salesOrder" \
+  -H "Authorization: OAuth ..." \
+  -H "Content-Type: application/json" \
+  -d '{
+        "entity": { "id": "1542" },
+        "item": { "items": [ { "item": { "id": "204" }, "quantity": 3 } ] }
+      }'
+```
+
 A useful rule: use SuiteTalk REST until it cannot do the job, then write a RESTlet for the specific operation that needs custom logic, rather than pushing everything through RESTlets by default.
 
 ## Common data flows

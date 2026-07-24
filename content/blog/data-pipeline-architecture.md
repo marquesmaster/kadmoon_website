@@ -80,6 +80,19 @@ Failures are not exceptions in data engineering, they are routine. A source is l
 
 Design for idempotency, meaning a step can run twice without doubling or corrupting data, so a retry is always safe. Make backfills first-class: when you need to reprocess a week of history because logic changed or a source was broken, the pipeline should handle it without a hand-built one-off script. Keeping raw ingested data is what makes clean backfills possible, which is another argument for the ELT pattern.
 
+An idempotent load is what makes a safe retry possible. A merge keyed on a stable id updates existing rows instead of duplicating them, so running the same batch twice lands the same result.
+
+```sql
+MERGE INTO orders AS target
+USING staging_orders AS source
+ON target.order_id = source.order_id
+WHEN MATCHED THEN
+  UPDATE SET status = source.status, updated_at = source.updated_at
+WHEN NOT MATCHED THEN
+  INSERT (order_id, status, updated_at)
+  VALUES (source.order_id, source.status, source.updated_at);
+```
+
 ## Designing for scale
 
 Scale is less about raw volume than about complexity and change. A pipeline that works at current volume can still collapse under a growing web of interdependent tables that no one can safely modify.

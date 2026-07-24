@@ -41,6 +41,17 @@ This gets you most of the maintainability benefit people attribute to microservi
 
 The most cited real example runs in this direction. In 2023 the Amazon Prime Video team rebuilt its audio and video quality monitoring service, moving from a distributed serverless design back to a single application, and [cut its operating cost by 90 percent](https://thenewstack.io/return-of-the-monolith-amazon-dumps-microservices-for-video-monitoring/). The distributed version paid a heavy tax on data passing between components and orchestration overhead. Collapsing it into one process, with data moving in memory instead of through storage and state machines, was both cheaper and easier to scale. The lesson is not "monoliths win." It is that the split has to earn its cost for the specific workload.
 
+With all three options now on the table, the differences that drive the decision look like this.
+
+| Dimension | Monolith | Modular monolith | Microservices |
+| --- | --- | --- | --- |
+| Boundaries | Logical, cheap to cross | Logical but enforced between modules | Physical, a network hop |
+| Deployment | Single | Single | Independent per service |
+| Database transactions | Across the whole request | Across the whole request | Must coordinate across stores |
+| Operational complexity | Low | Low | High, needs tracing and service discovery |
+| Best fit | Early stage | Growth, one product, growing team | Scale stage, many teams |
+| Changing a boundary | One edit | Refactor in an afternoon | Coordinate services and a migration |
+
 ## Operational complexity
 
 This is where the bill comes due, and it is the factor teams underestimate most. A monolith has one thing to deploy, one set of logs, and one place a request lives when it fails. You can reason about it.

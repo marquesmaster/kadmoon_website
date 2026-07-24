@@ -49,7 +49,20 @@ Framework maturity is worth a concrete look. On the Node side, Express remains t
 
 This is often the deciding factor, and it usually points one way. If your system does meaningful machine learning, data science, or heavy analytics, Python is the pragmatic default because that is where the entire toolchain lives. The major model providers ship first-class Python SDKs, and most published research and tutorials assume Python. Trying to force that work into a Node stack means fighting the ecosystem the whole way.
 
-That said, "the app uses AI" does not automatically mean the whole backend must be Python. A common and sensible pattern is a Node backend serving the API and real-time layer, with Python services handling the model and data work, communicating over well-defined interfaces. Building AI in from day one, as we do, does not require a single language. It requires putting each part of the system where its tools are strongest. Our overview of [LLM integration for business](/blog/llm-integration-for-business) and [AI in enterprise software](/blog/ai-in-enterprise-software) both assume this kind of mixed architecture rather than a monolithic language choice.
+That said, "the app uses AI" does not automatically mean the whole backend must be Python. A common and sensible pattern is a Node backend serving the API and real-time layer, with Python services handling the model and data work, communicating over well-defined interfaces. That split is simple in practice: the Node API layer calls the Python service over HTTP and passes the result along.
+
+```js
+// Node API layer delegating model work to a Python service
+app.post("/summarize", async (req, res) => {
+  const response = await fetch("http://ml-service:8000/summarize", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: req.body.text }),
+  })
+  const { summary } = await response.json()
+  res.json({ summary })
+})
+``` Building AI in from day one, as we do, does not require a single language. It requires putting each part of the system where its tools are strongest. Our overview of [LLM integration for business](/blog/llm-integration-for-business) and [AI in enterprise software](/blog/ai-in-enterprise-software) both assume this kind of mixed architecture rather than a monolithic language choice.
 
 ## Hiring and team factors
 

@@ -63,6 +63,20 @@ The core technical work in EDI is translation. An incoming 850 has to be mapped 
 
 This mapping is where the effort and the risk concentrate. Every partner has quirks: a field one retailer treats as optional, another requires; date formats differ; qualifier codes vary. A mapping layer translates between the EDI format and your internal representation, and it has to be validated carefully, because a malformed message can be rejected outright or, worse, accepted with wrong data. Building this on a clean internal API and treating EDI as one input channel keeps the mapping isolated and testable, rather than smearing partner-specific logic across your whole application.
 
+Whether a document arrives as an X12 850 or a partner API call, the mapping layer resolves it to one internal shape like this, so the rest of your software never sees the wire format:
+
+```json
+{
+  "orderId": "850-4471",
+  "buyer": "ACME-RETAIL",
+  "poNumber": "PO88213",
+  "requestedShipDate": "2026-08-01",
+  "lines": [
+    { "sku": "WIDGET-12", "qty": 240, "uom": "EA", "unitPrice": 4.15 }
+  ]
+}
+```
+
 ## Trading-partner onboarding
 
 Adding a new EDI partner is a project, not a config change, and underestimating this is a common planning mistake. Each partner provides an implementation guide, sometimes hundreds of pages, specifying exactly how they expect each transaction set. You map to their spec, then run through a testing and certification cycle where they validate your messages before going live.

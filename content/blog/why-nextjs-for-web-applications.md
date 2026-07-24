@@ -42,7 +42,19 @@ Next.js lets you choose the right approach per page:
 - Incremental static regeneration blends the two, serving static pages that quietly refresh in the background so they stay current without rebuilding everything.
 - Client-side rendering for the highly interactive parts where it makes sense.
 
-You are not forced into one model for the whole app. This granularity is why Next.js apps tend to load quickly and stay responsive. It maps directly onto Google's Core Web Vitals, the loading, interactivity, and visual-stability measurements that feed into search ranking and that punish exactly the blank-screen-then-hydrate pattern a plain single-page app produces. Serving real HTML from the server, or from a cache, is how you keep those metrics green on the mid-range phones most of your users actually carry.
+You are not forced into one model for the whole app. In the App Router you pick the strategy per route with a line or two; this page rebuilds itself at most once an hour, which is incremental static regeneration.
+
+```tsx
+// app/catalog/page.tsx
+export const revalidate = 3600 // regenerate at most once per hour
+
+export default async function CatalogPage() {
+  const products = await getProducts()
+  return <ProductGrid products={products} />
+}
+```
+
+This granularity is why Next.js apps tend to load quickly and stay responsive. It maps directly onto Google's Core Web Vitals, the loading, interactivity, and visual-stability measurements that feed into search ranking and that punish exactly the blank-screen-then-hydrate pattern a plain single-page app produces. Serving real HTML from the server, or from a cache, is how you keep those metrics green on the mid-range phones most of your users actually carry.
 
 ## SEO and developer experience
 
