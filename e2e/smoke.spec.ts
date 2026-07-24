@@ -31,6 +31,16 @@ test.describe('pages load', () => {
   });
 });
 
+test('stat counters finish without freezing mid-animation', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('dl').first().scrollIntoViewIfNeeded();
+  await page.waitForTimeout(2000);
+  const values = await page.$$eval('dl dd', (dds) =>
+    dds.map((d) => d.querySelector('span')?.textContent),
+  );
+  expect(values).toEqual(['50+', '10+', '0%', '100%']);
+});
+
 test('blog search filters results', async ({ page }) => {
   await page.goto('/blog');
   await page.getByPlaceholder('Search articles').fill('customs');
