@@ -53,7 +53,7 @@ When confidence is low or a check fails, the document routes to a human to revie
 
 ## Integrating into workflows
 
-Extraction that produces a spreadsheet nobody imports is a science project, not a solution. The value shows up when the structured data flows straight into the system that uses it: the ERP, the accounting package, the WMS, the case management tool. That means real integrations, an invoice's data landing as a draft bill in NetSuite, a customs document populating an entry, with the audit trail intact.
+Extraction that produces a spreadsheet nobody imports has not finished the job. The value shows up when the structured data flows straight into the system that uses it: the ERP, the accounting package, the WMS, the case management tool. That means real integrations, an invoice's data landing as a draft bill in NetSuite, a customs document populating an entry, with the audit trail intact.
 
 The pipeline also has to fit how documents actually arrive: an email inbox, an SFTP drop, an upload portal, an API. A production system watches those channels, processes automatically, and surfaces only the exceptions to a person. Building that end-to-end flow, ingestion through integration, is where [what we build](/#capabilities) tends to focus, because the model is the easy part and the plumbing is where projects succeed or stall.
 

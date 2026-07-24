@@ -67,7 +67,7 @@ This is where custom earns its cost.
 
 With an off-the-shelf product you accept the vendor's accuracy, and you cannot inspect or fix its mistakes beyond prompt tweaks. When it is wrong on your edge cases, you wait for the vendor or work around it. You also depend on their roadmap, their pricing, and their uptime.
 
-With a custom solution you control the data it sees, the rules around its output, and the evaluation that tells you how well it works. You can measure accuracy on your own test set, catch regressions, and improve the parts that matter to you. For anything that touches money, compliance, or customer trust, that control is often the deciding factor, not a nice-to-have. It is also the discipline that separates the 42% who abandon projects from the minority who ship: a system you can measure is a system you can defend.
+With a custom solution you control the data it sees, the rules around its output, and the evaluation that tells you how well it works. You can measure accuracy on your own test set, catch regressions, and improve the parts that matter to you. For anything that touches money, compliance, or customer trust, that control is often the deciding factor, not a nice-to-have. It is also the discipline that separates the 42% who abandon projects from the minority who ship, because you can only defend a system whose accuracy you can measure.
 
 ## Hybrid: foundation models plus your data
 

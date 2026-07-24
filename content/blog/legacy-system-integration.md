@@ -42,7 +42,7 @@ This buys you two things. It decouples everything you build next from the legacy
 Not every legacy system can be wrapped cleanly, and you work with what it gives you. In rough order of preference, here are the common access methods:
 
 - Database-level access: reading or writing the legacy database directly. Fast and reliable, but risky, because you bypass the application's business rules and can corrupt data if you misunderstand the schema.
-- File exchange: the system exports and imports flat files or EDI on a schedule. Unglamorous but robust, and often the officially supported path for older platforms.
+- File exchange: the system exports and imports flat files or EDI on a schedule. Unglamorous but reliable, and often the officially supported path for older platforms.
 - Screen scraping or terminal automation: driving the user interface programmatically when nothing else is exposed. A last resort, brittle by nature, but sometimes the only door available.
 
 Each method trades reliability against how invasive it is. Prefer the least invasive option that meets your latency needs. If the system supports a supported export, use it before you reach into its database. And when EDI is the language the legacy system speaks, our guide to [EDI integration for supply chain](/blog/edi-integration-for-supply-chain) covers the transaction sets and mapping involved.
@@ -68,7 +68,7 @@ The cost of skipping it is not hypothetical. Recall that Gartner has put the ave
 
 ## Incremental modernization via integration
 
-Integration is not just a way to keep the old system alive, it is a way to retire it slowly and safely. The strangler pattern is the standard approach: you route traffic through your new API layer, then rebuild one capability at a time behind it, redirecting each slice from the legacy system to a modern replacement as it is ready.
+Integration can do more than keep the old system alive. It can also retire it slowly and safely. The strangler pattern is the standard approach: you route traffic through your new API layer, then rebuild one capability at a time behind it, redirecting each slice from the legacy system to a modern replacement as it is ready.
 
 Because consumers talk to the stable facade, they never know which pieces have moved. You can modernize the highest-risk or highest-value module first, prove it in production, and continue at a pace the business can absorb. This is how you chip away at that 79% maintenance drag without a single terrifying cutover. Over months or years the legacy system shrinks until what remains can be switched off. This is far less dangerous than a big-bang rewrite. For the broader strategy of choosing between rehost, replatform, and rebuild, see [how to modernize legacy software](/blog/how-to-modernize-legacy-software).
 

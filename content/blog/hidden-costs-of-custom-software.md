@@ -63,10 +63,10 @@ Add these together and a clearer picture emerges. The build is the down payment.
 
 A rough lifecycle checklist to price before you commit:
 
-- **Build:** design, development, QA, and launch.
-- **Run:** hosting, third-party services, and monitoring, monthly. Assume roughly 28% of cloud spend is recoverable waste and manage for it.
-- **Maintain:** dependency updates, security patches, and bug fixes, at 15 to 25% of build cost a year.
-- **Change:** a reserve for the enhancements you cannot yet name.
-- **Internal:** your team's time across the whole lifecycle.
+- Build: design, development, QA, and launch.
+- Run: hosting, third-party services, and monitoring, monthly. Assume roughly 28% of cloud spend is recoverable waste and manage for it.
+- Maintain: dependency updates, security patches, and bug fixes, at 15 to 25% of build cost a year.
+- Change: a reserve for the enhancements you cannot yet name.
+- Internal: your team's time across the whole lifecycle.
 
 None of this makes custom software a bad investment. Done right, owning your source code and your roadmap pays back over years in ways a per-seat subscription never will. The point is to go in with the full number, not the flattering one. A partner worth hiring will help you build that view rather than hide it. If you want an estimate that includes the parts most quotes leave out, you can [get a technical proposal](/#contact), or read more cost breakdowns on [the blog](/blog).

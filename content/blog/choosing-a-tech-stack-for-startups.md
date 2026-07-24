@@ -67,10 +67,10 @@ The classic example is microservices. Splitting your system into many independen
 
 Pulling it together, a sensible default stack for a US startup building a web product looks like this, and you can deviate where you have a real reason:
 
-- **Frontend:** React with Next.js and TypeScript.
-- **Backend:** Node.js with TypeScript, or Python if data and AI are central.
-- **Database:** PostgreSQL, until proven otherwise.
-- **Infrastructure:** managed cloud services, kept simple, with containers and infrastructure-as-code once you need repeatability.
-- **AI:** planned in from the start where it adds value, rather than bolted on later.
+- Frontend: React with Next.js and TypeScript.
+- Backend: Node.js with TypeScript, or Python if data and AI are central.
+- Database: PostgreSQL, until proven otherwise.
+- Infrastructure: managed cloud services, kept simple, with containers and infrastructure-as-code once you need repeatability.
+- AI: planned in from the start where it adds value, rather than bolted on later.
 
 Every one of these choices lines up with what the largest pool of engineers already uses, which is exactly why they are easy to hire for and cheap to maintain. The goal of a startup stack is not to be impressive. It is to disappear, so your team spends its energy on the product and your customers, not on the plumbing. Choose proven tools, keep the architecture simple, and change it only when real usage demands it. If you want a second opinion on your stack before you commit, or help building the first version well, [start a project](/#contact) and we will pressure-test the choices against where you are actually headed. The mechanics of turning that stack into shipped software are in the [custom software development process](/blog/custom-software-development-process).

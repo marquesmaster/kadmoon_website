@@ -27,11 +27,11 @@ Anyone who answers "how much does custom software cost" with a single number is 
 
 Five factors explain most of the variance between a cheap quote and an expensive one.
 
-- **Scope:** how many features, and how deep each one goes. A login screen is not a feature; a role-based permission system with audit logging is.
-- **Complexity:** business rules, edge cases, and anything involving money, compliance, or real-time data. Complexity hides in the "just" ("just sync the inventory").
-- **Integrations:** every external system you touch (an ERP, a payment gateway, a customs filing endpoint) adds mapping, error handling, and testing that a self-contained app avoids.
-- **Non-functional requirements:** security, uptime, performance, and audit trails. These are invisible in a demo and account for a large share of serious engineering. They are also where cutting corners gets expensive: IBM put the [average data breach at $4.88 million in 2024](https://www.ibm.com/think/insights/whats-new-2024-cost-of-a-data-breach-report), which reframes a security line item as cheap insurance.
-- **Team seniority:** senior engineers cost more per hour and usually less per outcome, because they make fewer expensive architectural mistakes.
+- Scope: how many features, and how deep each one goes. A login screen is not a feature; a role-based permission system with audit logging is.
+- Complexity: business rules, edge cases, and anything involving money, compliance, or real-time data. Complexity hides in the "just" ("just sync the inventory").
+- Integrations: every external system you touch (an ERP, a payment gateway, a customs filing endpoint) adds mapping, error handling, and testing that a self-contained app avoids.
+- Non-functional requirements: security, uptime, performance, and audit trails. These are invisible in a demo and account for a large share of serious engineering. They are also where cutting corners gets expensive: IBM put the [average data breach at $4.88 million in 2024](https://www.ibm.com/think/insights/whats-new-2024-cost-of-a-data-breach-report), which reframes a security line item as cheap insurance.
+- Team seniority: senior engineers cost more per hour and usually less per outcome, because they make fewer expensive architectural mistakes.
 
 Change any one of these and the number moves a lot. That is why a real estimate starts with questions, not a price.
 
@@ -57,7 +57,7 @@ Coding the visible features is often less than half the total. On a typical buil
 - QA, automated testing, and hardening.
 - Security, deployment automation, and the pipeline that lets you ship safely.
 
-When a quote looks dramatically low, it usually means one of these buckets was left out and will return later as a change order. The screen you see is the tip; the estimate pays for the machinery under it.
+When a quote looks dramatically low, it usually means one of these buckets was left out and will return later as a change order. The visible screen is a small part of the work; the estimate pays for the engineering underneath it.
 
 A useful mental model: for a typical business system, plan on roughly a third of the effort going to the visible features, a third to the integrations and data work that connect the system to reality, and a third to the testing, security, and deployment that make it safe to run. The exact split shifts by project, but a quote that seems to assume the last two thirds are free is a quote you should question. The features are what you asked for; the rest is what makes the features hold up under real users, real data, and real load.
 

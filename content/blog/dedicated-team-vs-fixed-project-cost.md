@@ -21,7 +21,7 @@ faqs:
     a: "Yes, and a common middle path works well: run a fixed-scope discovery to define the problem, then move to a dedicated team for the build and beyond. That gives you a firm starting estimate without locking a moving target into a rigid contract."
 ---
 
-The dedicated team vs fixed price question usually gets answered with a gut feeling, and the gut is often wrong. A fixed project looks cheaper because you get a single number up front. A dedicated team looks open-ended because you pay monthly. But over a multi-phase roadmap, the model that costs less depends on how much your scope will change and how long you plan to keep building. Requirements change more than buyers expect: PMI's Pulse of the Profession research found scope creep hitting [52% of projects, up from 43% five years earlier](https://www.pmi.org/learning/library/scope-creep-rising-11308). Here is how the two models are actually priced and when each one wins.
+The dedicated team vs fixed price question usually gets answered with a gut feeling, and the gut is often wrong. A fixed project looks cheaper because you get a single number up front. A dedicated team looks open-ended because you pay monthly. But over a multi-phase roadmap, the model that costs less depends on how much your scope will change and how long you plan to keep building. Requirements change more than buyers expect: PMI's Pulse of the Profession research found scope creep hitting [52% of projects, up from 43% five years earlier](https://www.pmi.org/learning/library/scope-creep-rising-11308).
 
 ## How a dedicated team is priced
 

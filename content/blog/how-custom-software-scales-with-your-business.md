@@ -37,10 +37,10 @@ Designing for 10x does not mean building for 10x on day one. Over-engineering fo
 
 The choices that matter early:
 
-- **A clean data model.** Get the core entities and their relationships right. Reworking a schema after millions of rows are in production is the single most expensive kind of change.
-- **Clear service boundaries.** Separate concerns so the billing logic does not reach into the reporting logic. Boundaries let you scale, replace, or rewrite one part without touching the rest.
-- **Stateless application layers.** Keep the app tier free of local state so you can add instances behind a load balancer when demand grows.
-- **Async where it belongs.** Push slow work (emails, report generation, third-party calls) onto background queues so user-facing requests stay fast.
+- A clean data model. Get the core entities and their relationships right. Reworking a schema after millions of rows are in production is the single most expensive kind of change.
+- Clear service boundaries. Separate concerns so the billing logic does not reach into the reporting logic. Boundaries let you scale, replace, or rewrite one part without touching the rest.
+- Stateless application layers. Keep the app tier free of local state so you can add instances behind a load balancer when demand grows.
+- Async where it belongs. Push slow work (emails, report generation, third-party calls) onto background queues so user-facing requests stay fast.
 
 None of this is exotic. It is the default when senior engineers build the system, and it is exactly what gets skipped when a cheap build optimizes only for the demo. The payoff is visible in engineering time: McKinsey found that companies that actively manage their technical debt can free engineers to spend [up to 50 percent more of their time on work that supports business goals](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/tech-debt-reclaiming-tech-equity). One cloud provider's CIO described going from 75 percent of engineer time paying the debt "tax" down to 25 percent after reworking how they managed it.
 
@@ -54,10 +54,10 @@ Two things keep feature velocity flat as the system grows. First, an automated t
 
 Data is usually where technical scale actually shows up. A few patterns carry most systems a long way:
 
-- **Indexing and query discipline.** Most performance problems are slow queries, not weak servers. Proper indexes and reviewed queries fix more than bigger hardware does.
-- **Caching.** Put frequently read, rarely changed data in a cache so you are not hitting the database for the same answer thousands of times.
-- **Read replicas.** Offload reporting and read-heavy traffic to replicas so analytics does not slow down the transactional system.
-- **Partitioning when needed.** For very large tables, partitioning by date or tenant keeps queries fast without a full re-architecture.
+- Indexing and query discipline. Most performance problems are slow queries, not weak servers. Proper indexes and reviewed queries fix more than bigger hardware does.
+- Caching. Put frequently read, rarely changed data in a cache so you are not hitting the database for the same answer thousands of times.
+- Read replicas. Offload reporting and read-heavy traffic to replicas so analytics does not slow down the transactional system.
+- Partitioning when needed. For very large tables, partitioning by date or tenant keeps queries fast without a full re-architecture.
 
 The point is that these are incremental levers you pull as you grow, not a wall you hit. A sensible design leaves room to add them. PostgreSQL, for example, handles tables into the billions of rows with the right indexing and partitioning, so the ceiling most teams imagine is usually a design problem, not a database limit.
 

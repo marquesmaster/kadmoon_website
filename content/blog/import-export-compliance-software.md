@@ -23,7 +23,7 @@ faqs:
 
 US trade compliance is a field where a spreadsheet error can turn into a penalty, a seized shipment, or an audit. The scale is easy to underestimate. In fiscal year 2023, CBP processed [$3.33 trillion in imports across 36.7 million entries](https://www.cbp.gov/newsroom/stats/trade), and every one of those entries carried a classification, a value, and an origin that had to be right. As volumes grow, manual processes stop scaling and start creating risk. Import/export compliance software exists to make the rules enforceable in your daily operations rather than something a few experts hold in their heads. This guide walks through what these systems actually need to do for a US importer or exporter, and how to decide between buying a package and building something that fits your trade.
 
-## The US trade compliance landscape
+## The agencies that regulate US trade
 
 Compliance is not one rule. It is a web of agencies and requirements that touch every cross-border transaction.
 
@@ -53,13 +53,13 @@ The penalties for getting this wrong are not theoretical. 2023 was a record year
 
 ## Recordkeeping and audit readiness
 
-Compliance is not only about getting each transaction right. It is about proving you did, sometimes years later.
+Getting each transaction right is only half of compliance. You also have to prove you did, sometimes years later.
 
 US regulations require traders to retain records of their import and export transactions, generally for five years from the date of entry, and to produce them on demand during an audit. The obligation covers not just the filings but the supporting documentation and the basis for each determination. A system that captures this automatically, as a byproduct of processing each transaction, turns an audit from a scramble into a query. You want a complete, timestamped record of what you declared and why, retrievable without archaeology.
 
 This is one of the strongest arguments for software over manual processes. Consistent recordkeeping is hard to sustain by hand at volume, and it is exactly what an auditor wants to see.
 
-The related benefit is defensibility. Reasonable care is not only about being right. It is about being able to show that you had a sound process and followed it. A system that records who classified an item, on what basis, and against which reference data gives you a documented rationale for every decision. If a determination is later questioned, the difference between a well-documented judgment made in good faith and an unexplained entry with no supporting record can be the difference between a correction and a penalty. Software that captures the reasoning, not just the result, is what makes that case for you.
+The related benefit is defensibility. Reasonable care means more than being right. It means being able to show that you had a sound process and followed it. A system that records who classified an item, on what basis, and against which reference data gives you a documented rationale for every decision. If a determination is later questioned, the difference between a well-documented judgment made in good faith and an unexplained entry with no supporting record can be the difference between a correction and a penalty. Software that captures the reasoning, not just the result, is what makes that case for you.
 
 ## Automating compliance checks
 

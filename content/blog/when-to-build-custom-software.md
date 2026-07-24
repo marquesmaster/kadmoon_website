@@ -67,10 +67,10 @@ The single biggest predictor in that data is scope. Small, tightly scoped projec
 
 Building is the wrong choice more often than enthusiasm admits. Do not build when:
 
-- **A mature product already fits.** Email, accounting, payroll, and standard CRM are solved. Rebuilding them wins you nothing and costs you maintenance forever.
-- **The function is not core.** If the process is not a differentiator and the market tool is good enough, buy it and put your engineering budget where it actually moves the business.
-- **You lack the capacity to own it.** Custom software is not a one-time purchase. It needs maintenance, security patching, and iteration. If you have no plan and no budget to keep it alive, a hosted product that someone else maintains is the safer bet.
-- **You are trying to save money by cloning a cheap SaaS subscription.** The build and upkeep will cost far more than the license you were avoiding.
+- A mature product already fits. Email, accounting, payroll, and standard CRM are solved. Rebuilding them wins you nothing and costs you maintenance forever.
+- The function is not core. If the process is not a differentiator and the market tool is good enough, buy it and put your engineering budget where it actually moves the business.
+- You lack the capacity to own it. Custom software is not a one-time purchase. It needs maintenance, security patching, and iteration. If you have no plan and no budget to keep it alive, a hosted product that someone else maintains is the safer bet.
+- You are trying to save money by cloning a cheap SaaS subscription. The build and upkeep will cost far more than the license you were avoiding.
 
 The build-versus-buy call deserves its own structured look; [build vs buy software: a framework for the decision](/blog/build-vs-buy-software-decision) gives you one you can reuse.
 

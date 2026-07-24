@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Kadmoon, Inc. — custom software built for how your business actually runs.';
+export const alt = 'Kadmoon, Inc.: custom software built for how your business actually runs.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -50,7 +50,7 @@ export default function OpengraphImage() {
               maxWidth: 980,
             }}
           >
-            The custom software your operation runs on—built for your process, owned by you.
+            The custom software your operation runs on, built for your process, owned by you.
           </div>
         </div>
 

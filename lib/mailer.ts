@@ -100,6 +100,6 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
     return true;
   }
 
-  console.warn('[mailer] No email provider configured — lead saved but no email sent.');
+  console.warn('[mailer] No email provider configured. Lead saved but no email sent.');
   return false;
 }

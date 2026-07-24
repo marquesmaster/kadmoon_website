@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${siteConfig.url}/custom-software-development-company` },
   openGraph: {
-    title: 'Kadmoon — a US custom software development company',
+    title: 'Kadmoon: a US custom software development company',
     description:
       'A US custom software development company building systems you own. Senior in-house team, two-week sprints, measurable acceptance criteria.',
     url: `${siteConfig.url}/custom-software-development-company`,

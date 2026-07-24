@@ -31,6 +31,9 @@ export function GET() {
   lines.push(
     `- [SaaS development company](${siteConfig.url}/saas-development-company): building multi-tenant SaaS platforms (tenancy, billing, auth, APIs) you own`,
   );
+  lines.push(
+    `- [Cases](${siteConfig.url}/cases): case studies our engineering team has delivered (public sector, education, logistics, healthcare, trade, enterprise)`,
+  );
   lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth, data-backed articles`);
   lines.push(
     `- [Locations](${siteConfig.url}/custom-software-development): custom software development across ${cities.length}+ US cities`,

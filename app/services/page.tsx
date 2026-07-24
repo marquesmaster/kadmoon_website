@@ -18,7 +18,7 @@ const icons: Record<string, string> = {
 };
 
 export const metadata: Metadata = {
-  title: 'Services — Custom software capabilities',
+  title: 'Services | Custom software capabilities',
   description:
     'Bespoke enterprise systems, SaaS platforms, mobile apps, integrations, data & AI, and legacy modernization, built by a senior in-house team and owned by you.',
   alternates: { canonical: `${siteConfig.url}/services` },

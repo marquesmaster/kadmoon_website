@@ -21,7 +21,7 @@ faqs:
     a: "The one-line description does not set the price, the requirements behind it do. An app that lets drivers log deliveries is simple if it is a form and a list, but complex if it needs offline capture, photo upload, GPS tracking, and a sync back to a dispatch system. Feature count, custom logic, and integrations move a project between tiers once you look closely."
 ---
 
-The honest answer to what a mobile app costs is that it depends, but that is not useful on its own. What is useful is knowing which decisions move the number and by how much. A simple internal tool and a consumer app with payments, offline sync, and real-time updates can differ by an order of magnitude, and most of that gap comes from a handful of choices you make early. The market itself is worth building for: [global app revenue reached about $522.7 billion in 2024 and is forecast to keep climbing](https://www.statista.com/forecasts/1439636/revenue-app-app-market-worldwide) toward the high $600 billions by 2027, per Statista. Here is where the money actually goes.
+The cost to build a mobile app depends on scope, which is true but useless on its own. The question worth answering is which decisions move the number, and by how much. A simple internal tool and a consumer app with payments, offline sync, and real-time updates can differ by an order of magnitude, and most of that gap comes from a handful of choices you make early. The market itself is worth building for: [global app revenue reached about $522.7 billion in 2024 and is forecast to keep climbing](https://www.statista.com/forecasts/1439636/revenue-app-app-market-worldwide) toward the high $600 billions by 2027, per Statista. Here is where the money actually goes.
 
 ## What changes the price the most
 

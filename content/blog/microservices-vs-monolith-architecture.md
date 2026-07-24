@@ -69,8 +69,8 @@ Your data layer usually stays the same in either model, which is worth rememberi
 
 A rough guide that holds up in practice:
 
-- **Early stage or new product:** start with a modular monolith. Optimize for speed and for changing your mind cheaply. Keep clean internal boundaries so you can extract services later.
-- **Growth stage, one product, growing team:** stay monolithic but invest in module boundaries and test coverage. Extract a service only when a specific part has a concrete need, such as very different scaling or a separate compliance boundary.
-- **Scale stage, many teams:** selective microservices earn their cost. Split along team and domain lines, and only after your operational tooling (observability, CI/CD, on-call) is genuinely ready.
+- Early stage or new product: start with a modular monolith. Optimize for speed and for changing your mind cheaply. Keep clean internal boundaries so you can extract services later.
+- Growth stage, one product, growing team: stay monolithic but invest in module boundaries and test coverage. Extract a service only when a specific part has a concrete need, such as very different scaling or a separate compliance boundary.
+- Scale stage, many teams: selective microservices earn their cost. Split along team and domain lines, and only after your operational tooling (observability, CI/CD, on-call) is genuinely ready.
 
 The decision is reversible in one direction and painful in the other. Extracting a service from a clean monolith is routine. Merging sprawling microservices back into something maintainable is a rescue project, as the Prime Video team's reversal shows. When we design a system, we tend to start with the boundaries clear and the deployment simple, then distribute only where the evidence demands it. You can see [what we build](/#capabilities) and the stack we work in, or read [the custom software development process](/blog/custom-software-development-process) for how architecture decisions fit the wider build. If you want a second opinion on an architecture you are weighing, [start a project](/#contact) and we will walk through the trade-offs against your actual load and team.

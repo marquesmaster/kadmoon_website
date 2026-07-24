@@ -22,7 +22,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: `Custom software for ${ind.name}`,
     description: ind.intro.slice(0, 155),
     alternates: { canonical: url },
-    openGraph: { title: `${ind.name} software — Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website' },
+    openGraph: { title: `${ind.name} software | Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website' },
   };
 }
 

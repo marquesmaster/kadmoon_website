@@ -14,6 +14,7 @@ export const nav = {
   links: [
     { label: 'Services', href: '/services' },
     { label: 'Industries', href: '/industries' },
+    { label: 'Cases', href: '/cases' },
     { label: 'How to Choose', href: '/#how-to-choose' },
     { label: 'Process', href: '/process' },
     { label: 'Blog', href: '/blog' },
@@ -25,11 +26,11 @@ export const nav = {
 export const hero = {
   eyebrow: 'Custom software firm · Austin, TX',
   // The accent phrase is rendered in orange inside the H1.
-  headlineBefore: 'The custom software your operation runs on—built for ',
+  headlineBefore: 'The custom software your operation runs on, built for ',
   headlineAccent: 'your process',
   headlineAfter: ', owned by you.',
   subhead:
-    'Kadmoon builds bespoke enterprise systems, SaaS platforms, mobile apps, and AI into a single delivery—concept to production—with a senior in-house team. No off-the-shelf compromises. You own every line.',
+    'Kadmoon builds bespoke enterprise systems, SaaS platforms, mobile apps, and AI into a single delivery, from concept to production, with a senior in-house team. No off-the-shelf compromises. You own every line.',
   flagship: 'Flagship practice: Trade & Supply Chain software.',
   ctas: [
     { label: 'Start a project', href: '#contact', primary: true },
@@ -48,19 +49,19 @@ export const stats = [
 export const capabilities = {
   eyebrow: 'What we build',
   title: 'From the core system to the model in production.',
-  sub: 'Six competencies that cover the full lifecycle of enterprise software—each spec’d with measurable acceptance criteria and delivered in validated sprints.',
+  sub: 'Six competencies that cover the full lifecycle of enterprise software, each specified with measurable acceptance criteria and delivered in validated sprints.',
   items: [
     {
       title: 'Enterprise Systems',
-      body: 'ERPs, CRMs, and operational platforms designed around how your business actually runs—not generic software bent to fit. Every module is spec’d with measurable acceptance criteria.',
+      body: 'ERPs, CRMs, and operational platforms designed around how your business actually runs, not generic software bent to fit. Every module is specified with measurable acceptance criteria.',
     },
     {
       title: 'SaaS Platforms',
-      body: 'Multi-tenant products with recurring billing, white-label onboarding, analytics dashboards, and documented public APIs—architected to scale from 10 to 10,000 customers without a rewrite.',
+      body: 'Multi-tenant products with recurring billing, white-label onboarding, analytics dashboards, and documented public APIs. Architected to scale from 10 to 10,000 customers without a rewrite.',
     },
     {
       title: 'Mobile Apps',
-      body: 'Native and cross-platform (React Native) apps for iOS and Android—product-grade UX, offline-first when needed, and direct integration with your backend.',
+      body: 'Native and cross-platform (React Native) apps for iOS and Android, with product-grade UX, offline-first when needed, and direct integration with your backend.',
     },
     {
       title: 'Integrations & APIs',
@@ -68,7 +69,7 @@ export const capabilities = {
     },
     {
       title: 'Data & AI',
-      body: 'Ingestion pipelines, data warehouses, BI dashboards, ML models for forecasting and classification, and LLMs via RAG for semantic search, report generation, and intelligent automation—built into the system, not bolted on.',
+      body: 'Ingestion pipelines, data warehouses, BI dashboards, ML models for forecasting and classification, and LLMs via RAG for semantic search, report generation, and intelligent automation, built into the system rather than bolted on later.',
     },
     {
       title: 'Legacy Modernization',
@@ -92,15 +93,15 @@ export const why = {
     },
     {
       title: 'Granular contractual scope',
-      body: 'Every feature is described with measurable acceptance criteria in the contract. You know exactly what you’ll get, when, and how to validate it. No ambiguity, no “that was technically in scope.”',
+      body: 'Every feature is described with measurable acceptance criteria in the contract. You know exactly what you\'ll get, when, and how to validate it. No ambiguity, no "that was technically in scope."',
     },
     {
       title: 'AI built into every project',
-      body: 'Not a generic chatbot bolted on at the end. Predictive analysis, report generation, anomaly detection, and decision automation—engineered into the architecture from day one.',
+      body: 'Predictive analysis, report generation, anomaly detection, and decision automation, engineered into the architecture from day one instead of a generic chatbot bolted on at the end.',
     },
     {
       title: 'Modern stack, zero legacy',
-      body: 'React, Next.js, Node.js, Python, TypeScript, PostgreSQL, Kubernetes, Terraform. No project of ours is born with technical debt—stack chosen on merit: performance, security, long-term maintainability.',
+      body: 'React, Next.js, Node.js, Python, TypeScript, PostgreSQL, Kubernetes, Terraform. No project of ours is born with technical debt. We choose the stack on merit: performance, security, and long-term maintainability.',
     },
     {
       title: 'Continuous delivery with demos',
@@ -110,9 +111,9 @@ export const why = {
 };
 
 export const howToChoose = {
-  eyebrow: 'Buyer’s guide',
+  eyebrow: 'Buyer\'s guide',
   title: 'How to evaluate a software partner.',
-  sub: 'After 50+ delivered projects in regulated verticals, these are the six criteria we’d use ourselves to vet a vendor. Use it as a checklist before signing any contract—with Kadmoon or anyone else.',
+  sub: 'After 50+ delivered projects in regulated verticals, these are the six criteria we would use ourselves to vet a vendor. Use it as a checklist before signing any contract, with Kadmoon or anyone else.',
   items: [
     {
       num: '01',
@@ -123,22 +124,22 @@ export const howToChoose = {
     },
     {
       num: '02',
-      title: 'What’s in the contract',
-      body: 'Demand measurable acceptance criteria per feature—not promises that it’ll “turn out well.” If scope is vague, real cost becomes a black box.',
+      title: 'What\'s in the contract',
+      body: 'Demand measurable acceptance criteria per feature, not promises that it will "turn out well." If scope is vague, real cost becomes a black box.',
       answer:
         'Every deliverable has a defined, verifiable acceptance criterion in the contract. You know what you get, when, and how to validate it.',
     },
     {
       num: '03',
       title: 'Real portfolio, not logos',
-      body: 'Ask for concrete cases with problem, solution, and result—ideally in your vertical. A wall of logos without context proves nothing.',
+      body: 'Ask for concrete cases with problem, solution, and result, ideally in your vertical. A wall of logos without context proves nothing.',
       answer:
-        '50+ projects across 10+ industries, with detailed cases—including trade, logistics, and enterprise systems.',
+        '50+ projects across 10+ industries, with detailed cases including trade, logistics, and enterprise systems.',
     },
     {
       num: '04',
       title: 'Ownership & lock-in',
-      body: 'Confirm who owns the code, architecture, and infrastructure. If you don’t receive the repo and credentials, you’re hostage to the vendor.',
+      body: 'Confirm who owns the code, architecture, and infrastructure. If you don\'t receive the repo and credentials, you\'re hostage to the vendor.',
       answer:
         'IP is 100% yours. On delivery you get the Git repo, credentials, runbook, and documentation. No lock-in.',
     },
@@ -172,7 +173,7 @@ export const process = {
     {
       num: '02',
       title: 'Architecture & Design',
-      meta: 'Weeks 2–3',
+      meta: 'Weeks 2-3',
       body: 'Architecture definition (microservices, modular monolith, event-driven), design system, high-fidelity prototyping, and sprint planning with per-module estimates.',
     },
     {
@@ -205,7 +206,7 @@ export const process = {
 export const work = {
   eyebrow: 'Selected work',
   title: 'Delivered by our engineering team.',
-  sub: 'Cases from our team’s track record. The first US-specific case will join them as it lands.',
+  sub: 'Cases from our team\'s track record. The first US-specific case will join them as it lands.',
   // Framed honestly as the engineering team's record. Do NOT imply Microsoft
   // was the client unless that is true. TODO(founder): add the contract value
   // for case 2 and any NDA-cleared client names when available.
@@ -223,15 +224,97 @@ export const work = {
   ],
 };
 
+// ---------------------------------------------------------------------------
+// Case studies. These come from our engineering team's delivered work
+// (originally shipped under our Brazil-based practice) and are framed honestly.
+// Only the public-sector case carries hard figures, which are already approved
+// for use on the site. Do NOT add client names or metrics that are not verified.
+// ---------------------------------------------------------------------------
+
+export type CaseStudy = {
+  slug: string;
+  sector: string;
+  title: string;
+  challenge: string;
+  build: string;
+  stack: string[];
+  result?: string;
+};
+
+export const caseStudies: CaseStudy[] = [
+  {
+    slug: 'public-sector-delivery-at-scale',
+    sector: 'Government & Enterprise',
+    title: 'Sixteen stalled public-sector projects, delivered',
+    challenge:
+      'A top-tier IT consulting firm had sixteen public-sector digital transformation projects stalled for over a year, holding up a large pipeline of signed contracts.',
+    build:
+      'A dedicated in-house squad of engineers, data specialists, and AI engineers took over delivery end to end, shipping the sixteen initiatives across AI, data, and management systems while keeping the same team on the engagement the whole way through.',
+    stack: ['AI / ML', 'Data pipelines', 'Management systems', 'Cloud'],
+    result:
+      'Sixteen initiatives delivered in eleven months, over $100M in contracts unblocked, and 0% turnover across the engagement.',
+  },
+  {
+    slug: 'education-platform',
+    sector: 'Education',
+    title: 'One platform for administrators, teachers, and families',
+    challenge:
+      'Schools were running attendance, grades, and family communication across paper and disconnected tools, so information reached parents late and staff duplicated work.',
+    build:
+      'An integrated education platform that connects administrators, teachers, and families in real time, from a digital class diary and gradebook to report cards delivered on mobile.',
+    stack: ['Web app', 'Mobile app', 'Real-time sync', 'PostgreSQL'],
+  },
+  {
+    slug: 'fleet-management',
+    sector: 'Logistics',
+    title: 'From vehicle location to cost per kilometer',
+    challenge:
+      'Fleet operators had no single view of where vehicles were or what each one actually cost to run, so decisions were made on stale spreadsheets.',
+    build:
+      'A fleet management platform covering the full picture, from real-time vehicle location and route data to fuel, maintenance, and cost per kilometer driven.',
+    stack: ['Real-time tracking', 'Telematics / GPS', 'Dashboards', 'Mobile app'],
+  },
+  {
+    slug: 'electronic-health-records',
+    sector: 'Healthcare',
+    title: 'Interoperable electronic health records',
+    challenge:
+      'Clinical teams needed records that could schedule care and track medication without locking the organization into a rigid, closed vendor.',
+    build:
+      'An electronic health record system built on HL7 FHIR interoperability, covering appointment scheduling and medication dispensing, so data moves cleanly between systems.',
+    stack: ['HL7 FHIR', 'Web app', 'Integrations', 'PostgreSQL'],
+  },
+  {
+    slug: 'foreign-trade-operations',
+    sector: 'Trade & Supply Chain',
+    title: 'Import and export operations in one system',
+    challenge:
+      'A foreign-trade operation tracked customs steps, costs, and shipments across spreadsheets and siloed tools, which made landed cost and status hard to trust.',
+    build:
+      'Trade and customs operations software that brings import and export processes, landed cost calculation, and shipment tracking into one integrated system.',
+    stack: ['Customs / trade', 'Integrations', 'Reporting', 'Node.js'],
+  },
+  {
+    slug: 'microsoft-project-server-migration',
+    sector: 'Enterprise',
+    title: 'Migration inside the Microsoft Project ecosystem',
+    challenge:
+      'An enterprise client needed to move and customize project operations within the Microsoft Project ecosystem without losing history or disrupting active work.',
+    build:
+      'Migration and customization from Project Web App to Project Server, adapted to the client\'s reporting and governance needs.',
+    stack: ['Microsoft Project Server', 'Migration', '.NET', 'SQL Server'],
+  },
+];
+
 export const industries = {
   eyebrow: 'Industries',
   title: 'Custom software for 10+ sectors.',
-  sub: 'Every vertical carries its own regulatory, integration, and UX requirements. We’ve shipped across all of them.',
+  sub: 'Every vertical carries its own regulatory, integration, and UX requirements. We\'ve shipped across all of them.',
   items: [
     {
       name: 'Trade & Supply Chain',
       flagship: true,
-      body: 'Customs and trade operations, import/export, shipment tracking, landed cost, and end-to-end supply chain—integrated into one system.',
+      body: 'Customs and trade operations, import/export, shipment tracking, landed cost, and end-to-end supply chain, integrated into one system.',
       // TODO(founder): confirm project counts per vertical.
       count: '15+ projects',
     },
@@ -280,7 +363,7 @@ export const faq = {
   items: [
     {
       q: 'How do I choose a custom software firm, and what should I evaluate?',
-      a: 'Start with who writes the code. Ask whether the engineers are full-time employees or freelancers pulled in per project, because subcontracting is where quality and timelines usually slip. Then read the contract for acceptance criteria on each feature instead of vague promises. Ask for real cases in your vertical, with the problem, the solution, and the result. Confirm you receive the code, credentials, and documentation on delivery so you are not locked in. And ask how often you will see working software, plus what support looks like after go-live. The buyer’s guide above walks through all six criteria in detail.',
+      a: 'Start with who writes the code. Ask whether the engineers are full-time employees or freelancers pulled in per project, because subcontracting is where quality and timelines usually slip. Then read the contract for acceptance criteria on each feature instead of vague promises. Ask for real cases in your vertical, with the problem, the solution, and the result. Confirm you receive the code, credentials, and documentation on delivery so you are not locked in. And ask how often you will see working software, plus what support looks like after go-live. The buyer\'s guide above walks through all six criteria in detail.',
     },
     {
       q: 'What kinds of software does Kadmoon build?',
@@ -291,7 +374,7 @@ export const faq = {
       a: 'Scope, mostly. The number of features, how many systems you integrate with, your data volume, regulatory constraints, and how much design and UX the product needs. A focused internal tool costs far less than a multi-tenant platform with billing and public APIs. We give you a fixed scope with acceptance criteria per feature, so the price maps to something you can verify rather than an open-ended estimate.',
     },
     {
-      q: 'What’s a typical delivery timeline?',
+      q: 'What\'s a typical delivery timeline?',
       a: 'Discovery takes about a week. Architecture and design run two to three weeks. After that, development moves in two-week sprints with a working demo at the end of each one, so you see software running inside the first month. A first production release usually lands in a few months depending on scope. We plan the sprints up front with per-module estimates, so the timeline is not a guess.',
     },
     {
@@ -299,7 +382,7 @@ export const faq = {
       a: 'Two-week sprints with continuous delivery and a working demo every cycle. Your feedback goes straight into the backlog. Code review is mandatory, and we pair on the critical modules. Automated tests run at the unit, integration, and end-to-end levels, with manual QA each sprint and sign-off before anything ships. Deploys go through CI/CD with automatic rollback.',
     },
     {
-      q: 'Who’s on the team that works on my project?',
+      q: 'Who\'s on the team that works on my project?',
       a: 'Our permanent in-house team: engineers, designers, and architects who are full-time employees, not subcontractors. The people who start your project are the people who ship it, and turnover in operation is zero.',
     },
     {
@@ -324,16 +407,16 @@ export const contact = {
     'Other',
   ],
   sizeOptions: [
-    '1–50 employees',
-    '51–200 employees',
-    '201–1,000 employees',
+    '1-50 employees',
+    '51-200 employees',
+    '201-1,000 employees',
     '1,000+ employees',
   ],
 };
 
 export const footer = {
   tagline:
-    'A US custom-software firm building enterprise systems, SaaS platforms, and AI—engineered for how your business actually runs.',
+    'A US custom-software firm building enterprise systems, SaaS platforms, and AI, engineered for how your business actually runs.',
   columns: [
     {
       heading: 'Company',
@@ -341,6 +424,7 @@ export const footer = {
         { label: 'Software house', href: '/software-house' },
         { label: 'Services', href: '/services' },
         { label: 'Industries', href: '/industries' },
+        { label: 'Cases', href: '/cases' },
         { label: 'Process', href: '/process' },
         { label: 'About', href: '/about' },
       ],
@@ -411,7 +495,7 @@ export const engagement = {
 export const comparison = {
   eyebrow: 'Custom vs the alternatives',
   title: 'Why bespoke wins for real operations.',
-  sub: 'Off-the-shelf and low-code get you started fast. They also decide what your software can and cannot do. Here is the honest trade-off.',
+  sub: 'Off-the-shelf and low-code get you started fast. They also decide what your software can and cannot do.',
   columns: ['Custom (Kadmoon)', 'Off-the-shelf SaaS', 'Low-code platform'],
   rows: [
     { label: 'You own the source code', values: ['yes', 'no', 'partial'] },
@@ -424,7 +508,7 @@ export const comparison = {
 };
 
 export const credibility = {
-  text: 'Kadmoon is the US engineering arm of an established software house. The metrics and cases here come from our team’s delivered work, framed honestly; the first US-specific case joins them as it lands.',
+  text: 'Kadmoon is the US engineering arm of an established software house. The metrics and cases here come from our team\'s delivered work, framed honestly; the first US-specific case joins them as it lands.',
 };
 
 // ---------------------------------------------------------------------------

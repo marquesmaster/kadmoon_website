@@ -28,7 +28,7 @@ Quality assurance is not a phase at the end where someone clicks around looking 
 | Total cost of poor software quality | about $2.41 trillion |
 | Of which, accumulated technical debt | about $1.52 trillion |
 
-This explains what a real QA process covers, the levels and types of testing involved, and what it should look like from the outside if you are the client paying for it.
+A real QA process covers several levels and types of testing, and it should be recognizable from the outside if you are the client paying for it.
 
 ## What QA really covers
 

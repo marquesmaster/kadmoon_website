@@ -33,11 +33,11 @@ The practical payoff is control. When a policy changes, you edit a document and 
 
 ## Chunking, embeddings, and retrieval
 
-Three mechanics make retrieval work. First, **chunking**: you split documents into passages small enough to be specific but large enough to keep meaning. Chunk too big and you drown the model in irrelevant text; chunk too small and you sever the context a passage needs. Getting this right for your content type is more art than the tutorials admit.
+Three mechanics make retrieval work. First, chunking: you split documents into passages small enough to be specific but large enough to keep meaning. Chunk too big and you drown the model in irrelevant text; chunk too small and you sever the context a passage needs. Getting this right for your content type is more art than the tutorials admit.
 
-Second, **embeddings**: each chunk is converted into a vector, a list of numbers that captures its meaning, and stored in a vector database. A question gets embedded the same way, and you find the chunks whose vectors are closest to the question's. This is semantic search: it finds passages that mean the same thing even when they use different words. Document retrieval is the workhorse use case here, and Grand View Research reports it accounted for [32.4% of global RAG revenue in 2024](https://www.grandviewresearch.com/industry-analysis/retrieval-augmented-generation-rag-market-report), ahead of every other application.
+Second, embeddings: each chunk is converted into a vector, a list of numbers that captures its meaning, and stored in a vector database. A question gets embedded the same way, and you find the chunks whose vectors are closest to the question's. This is semantic search: it finds passages that mean the same thing even when they use different words. Document retrieval is the workhorse use case here, and Grand View Research reports it accounted for [32.4% of global RAG revenue in 2024](https://www.grandviewresearch.com/industry-analysis/retrieval-augmented-generation-rag-market-report), ahead of every other application.
 
-Third, **retrieval strategy**: pure vector search is a starting point, not the finish. Production systems usually combine it with keyword search (hybrid retrieval) and often a reranking step that reorders candidates for relevance. The quality of retrieval sets the ceiling on answer quality, so this is where the engineering effort concentrates.
+Third, retrieval strategy: pure vector search is a starting point, not the finish. Production systems usually combine it with keyword search (hybrid retrieval) and often a reranking step that reorders candidates for relevance. The quality of retrieval sets the ceiling on answer quality, so this is where the engineering effort concentrates.
 
 A concrete example makes the failure modes clear. Vector search alone can miss an exact product code or invoice number, because semantic similarity is not the same as an exact match, which is why hybrid retrieval that also does keyword search matters for business data full of identifiers. A 2025 comparative study on hallucination mitigation found that a [hybrid retriever produced the lowest hallucination rate](https://arxiv.org/abs/2504.05324) among the approaches tested, beating both keyword-only and semantic-only search. Reranking then earns its keep by pushing the genuinely relevant passage above the merely similar ones before the model ever sees them. Tuning these steps against real questions from your users, rather than accepting library defaults, is usually what moves a RAG system from "impressive demo" to "trustworthy tool."
 
@@ -53,10 +53,10 @@ For business use, an answer you cannot trace is an answer you cannot trust. Good
 
 Grounding cuts hallucinations sharply but does not zero them out. The same research literature that documents big reductions also finds that [RAG systems still hallucinate in a meaningful share of cases when retrieval fails](https://arxiv.org/abs/2504.05324) to surface the right passage. That is the whole argument for guardrails rather than blind trust. Production guardrails include:
 
-- **Confidence and abstention.** When retrieval returns nothing relevant, the system should decline rather than improvise.
-- **Access control.** Retrieval must respect who is allowed to see what, so the model never surfaces a document the user should not see.
-- **Evaluation.** A test set of real questions with known-good answers, run continuously, so you catch regressions when you change chunking, models, or prompts.
-- **Human review for high-stakes output.** Where a wrong answer is costly, keep a person in the loop.
+- The system should decline when retrieval returns nothing relevant, rather than improvise an answer.
+- Retrieval must respect who is allowed to see what, so the model never surfaces a document the user should not see.
+- A test set of real questions with known-good answers, run continuously, catches regressions when you change chunking, models, or prompts.
+- Where a wrong answer is costly, keep a person in the loop for high-stakes output.
 
 ## Where RAG beats fine-tuning
 

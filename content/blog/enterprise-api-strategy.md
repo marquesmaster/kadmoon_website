@@ -7,7 +7,7 @@ tags: ["api strategy", "api governance", "internal and external apis", "api secu
 takeaways:
   - "Treat APIs as long-lived infrastructure, not project byproducts; nearly two-thirds of organizations already manage more than 100 APIs and counts rose 167 percent in a single year."
   - "Design each API to its tier (internal, partner, or public), because the tier sets how much freedom you have to change it, and enforce that tier at the gateway."
-  - "Consistency is the whole game: one auth mechanism, pagination pattern, error shape, and naming convention lets consumers learn your platform once and reuse it everywhere."
+  - "Consistency is what makes an estate usable: one auth mechanism, pagination pattern, error shape, and naming convention lets consumers learn your platform once and reuse it everywhere."
   - "Security is part of the contract; 95 percent of respondents had production API security problems yet only 7.5 percent ran dedicated API testing, so security-first design beats retrofitting."
   - "Lightweight governance (a pre-ship review, a registry, deprecation timelines, and usage monitoring) is what keeps an estate from decaying back into inconsistent endpoints."
 faqs:
@@ -41,7 +41,7 @@ The tiers matter because they set how much freedom you have to change things. De
 
 ## Design, versioning, and standards
 
-Consistency is the whole game. When every API uses the same auth mechanism, the same pagination pattern, the same error shape, and the same naming conventions, consumers learn your platform once and reuse that knowledge everywhere. When each team improvises, every integration is a fresh puzzle.
+Consistency is what makes an estate usable. When every API uses the same auth mechanism, the same pagination pattern, the same error shape, and the same naming conventions, consumers learn your platform once and reuse that knowledge everywhere. When each team improvises, every integration is a fresh puzzle.
 
 The core standards worth setting organization-wide:
 

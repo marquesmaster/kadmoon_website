@@ -68,4 +68,4 @@ A practical starting sequence:
 - Design the field app for the job site, not the office.
 - Phase the roadmap so each release earns the next.
 
-Construction margins are thin enough that recovered hours and cleaner data show up on the bottom line fast, and the $177 billion rework figure is a reminder of how much of that money is avoidable. If you want an outside read on where custom software would pay off for your operation, [start a project](/#contact) or see [what we build](/#capabilities).
+Construction margins are thin enough that recovered hours and cleaner data show up on the bottom line fast, and the $177 billion rework figure shows how much of that money is avoidable. If you want an outside read on where custom software would pay off for your operation, [start a project](/#contact) or see [what we build](/#capabilities).

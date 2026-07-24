@@ -62,7 +62,7 @@ The cost curve is what makes this worth the effort. Study after study, from the 
 
 ## Linking criteria to sign-off
 
-Acceptance criteria are only powerful if they actually gate acceptance. The mechanism is simple: a piece of work is accepted when its criteria are demonstrably met, and payment or sprint sign-off is tied to that demonstration rather than to a general sense that things are going well.
+Acceptance criteria only work if they actually gate acceptance. The mechanism is simple: a piece of work is accepted when its criteria are demonstrably met, and payment or sprint sign-off is tied to that demonstration rather than to a general sense that things are going well.
 
 In a two-week sprint model, this happens at the demo. The team shows the working software against the agreed criteria, and you confirm each one passes. Because the criteria were set before the work started, the review is a checklist, not a negotiation. This is what keeps a project honest on both sides: the team knows exactly what it must deliver to get paid, and you know exactly what you are paying for. When criteria are woven into milestones this way, the whole engagement runs with less friction, which is a big part of what separates a [real software development partner](/blog/what-to-look-for-in-a-software-development-partner) from a firm that argues about scope.
 

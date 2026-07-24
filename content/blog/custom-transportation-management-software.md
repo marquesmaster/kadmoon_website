@@ -33,10 +33,10 @@ Around that core sit the connections that make it useful: integrations with your
 
 Off-the-shelf TMS platforms are built to serve a broad market, which means they are strong on the common cases and rigid everywhere else. The friction shows up in a few predictable places.
 
-- **Your logic does not fit their fields.** Routing rules, carrier-selection logic, and business constraints specific to your operation often cannot be expressed in the platform's configuration, so they end up living outside the system in spreadsheets and habit.
-- **Integration is gated.** Connecting a packaged TMS to your ERP, your customers' systems, or a specific carrier can require paid connectors, professional services, or capabilities the vendor simply does not offer.
-- **Pricing scales against you.** Many platforms charge per shipment, per user, or per module. As volume grows, so does the bill, with no way to change the architecture that drives it.
-- **You wait on the vendor's roadmap.** When you need a new capability, you are in a queue behind every other customer, and the answer is often no.
+- Your logic does not fit their fields. Routing rules, carrier-selection logic, and business constraints specific to your operation often cannot be expressed in the platform's configuration, so they end up living outside the system in spreadsheets and habit.
+- Integration is gated. Connecting a packaged TMS to your ERP, your customers' systems, or a specific carrier can require paid connectors, professional services, or capabilities the vendor simply does not offer.
+- Pricing scales against you. Many platforms charge per shipment, per user, or per module. As volume grows, so does the bill, with no way to change the architecture that drives it.
+- You wait on the vendor's roadmap. When you need a new capability, you are in a queue behind every other customer, and the answer is often no.
 
 None of that makes packaged TMS wrong. For a straightforward operation it can be the right buy. The problems appear when transportation is a core part of how you compete and the platform will not bend to how you actually run.
 

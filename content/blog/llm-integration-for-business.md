@@ -50,7 +50,7 @@ Keep prompts and tool definitions in version control and treat them like code, b
 
 ## Guardrails and evaluation
 
-The reason LLM projects fail in production is not that the model is bad. It is that no one measured whether it was good. You cannot ship what you cannot evaluate.
+LLM projects rarely fail in production because the model is bad. They fail because no one measured whether it was good. You cannot ship what you cannot evaluate.
 
 Build an evaluation set from real examples with known-correct outcomes, and run it every time you change a prompt, a tool, or a model. This turns a subjective sense that the feature seems fine into a number you can track. Add guardrails around the model too: validate its structured output against a schema, constrain what tools it can call, and put a human in the loop for high-stakes actions. For anything customer-facing or regulated, decide up front what the model is not allowed to do on its own. AI works best when it is engineered in with these controls from day one rather than bolted on after launch, a theme across our [Data and AI writing](/blog).
 

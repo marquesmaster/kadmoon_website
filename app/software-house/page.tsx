@@ -7,7 +7,7 @@ import { Button } from '@/components/Button';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'US Software House — Custom software built and owned by you',
+  title: 'US Software House | Custom software built and owned by you',
   description:
     'Kadmoon is a US software house in Austin, TX building custom enterprise systems, SaaS, mobile, and AI. Senior in-house team, measurable scope, and code you own.',
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${siteConfig.url}/software-house` },
   openGraph: {
-    title: 'Kadmoon — a US software house',
+    title: 'Kadmoon: a US software house',
     description:
       'A US software house building custom software you own. Senior in-house team, two-week sprints, measurable acceptance criteria.',
     url: `${siteConfig.url}/software-house`,

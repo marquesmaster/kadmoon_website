@@ -41,9 +41,9 @@ The deeper win is that entering data once, at quote or booking, lets it flow thr
 
 Forwarders rarely move freight one way, and each mode has its own rules, timelines, documents, and partners. Software that only models one mode forces the rest of your business back into spreadsheets, which defeats the purpose. The mode mix is not even, either: in Grand View's 2024 data, road held the largest share at [48.5% of the market](https://www.grandviewresearch.com/industry-analysis/freight-forwarding-market-report), with air the fastest growing, so most forwarders need real coverage of several modes rather than a tool tuned for one.
 
-- **Ocean:** container and less-than-container loads, longer transit times, port schedules, and charges like demurrage and detention that accrue if containers sit too long.
-- **Air:** faster and pricier, with its own documentation, weight-and-dimension rules, and tighter timelines.
-- **Ground:** the first and last legs, including drayage from ports and final delivery, each with their own scheduling and tracking needs.
+- Ocean: container and less-than-container loads, longer transit times, port schedules, and charges like demurrage and detention that accrue if containers sit too long.
+- Air: faster and pricier, with its own documentation, weight-and-dimension rules, and tighter timelines.
+- Ground: the first and last legs, including drayage from ports and final delivery, each with their own scheduling and tracking needs.
 
 A capable platform represents all the modes you actually use, and handles multimodal shipments where one movement crosses several. Many forwarders also connect to specialized systems for specific legs, such as [drayage management software](/blog/drayage-management-software) for port trucking, rather than forcing one tool to do everything. The integration between those pieces is often where the real engineering effort goes.
 
@@ -65,8 +65,8 @@ The honest answer for most forwarders is not purely build or purely buy. Package
 
 A practical way to decide:
 
-- **Buy** the commodity core if a packaged platform covers your standard workflow acceptably.
-- **Build** the pieces that are specific to how you compete, or where manual workarounds are costing the most, such as custom quoting logic or a differentiated customer portal.
-- **Integrate** the systems you keep, so quoting, customs, tracking, and accounting share one source of truth instead of forcing staff to reconcile them.
+- Buy the commodity core if a packaged platform covers your standard workflow acceptably.
+- Build the pieces that are specific to how you compete, or where manual workarounds are costing the most, such as custom quoting logic or a differentiated customer portal.
+- Integrate the systems you keep, so quoting, customs, tracking, and accounting share one source of truth instead of forcing staff to reconcile them.
 
 Whichever path you choose, insist on owning what gets built for you: the source code, the integrations, and the data. That way you are never locked out of the systems running your business, and you can evolve them as trade rules and customer expectations change. If you want help mapping which parts to buy, build, and integrate for your operation, [get a technical proposal](/#contact) and we will scope it against your real shipment flow. For more on trade software, browse [the blog](/blog).

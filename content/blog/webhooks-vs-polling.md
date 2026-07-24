@@ -21,7 +21,7 @@ faqs:
     a: "Because retries mean you will sometimes receive the same event twice, and if processing it twice charges a card twice or creates two records, you have a serious bug. Give each event a unique ID, record the ones you have already processed, and make handling a repeat a safe no-op. Idempotency is not optional in any system that takes webhooks seriously."
 ---
 
-When two systems need to stay in sync, one of them has to find out when something changed. There are two ways to do that. The receiver can keep asking (polling), or the source can announce it (webhooks). The choice sounds like a small technical detail, but it shapes latency, infrastructure cost, and reliability across an integration. Getting it right saves you from either hammering an API for nothing or missing events you needed. Here is how each works and when to reach for it.
+When two systems need to stay in sync, one of them has to find out when something changed. There are two ways to do that. The receiver can keep asking (polling), or the source can announce it (webhooks). The choice sounds like a small technical detail, but it shapes latency, infrastructure cost, and reliability across an integration. Getting it right saves you from either hammering an API for nothing or missing events you needed. Which one fits comes down to how fast you need the data and how much you control the source.
 
 ## How webhooks and polling work
 
@@ -45,7 +45,7 @@ Neither model is strictly better. Polling trades latency and efficiency for simp
 
 Event-driven integration only works if you plan for the messy realities of the network. Three of them matter most.
 
-**Retries.** Networks fail, and your endpoint will occasionally be unavailable. A well-behaved webhook sender retries with backoff, but as the GitHub example shows, you cannot assume every sender does, and you cannot assume retries succeed forever. Build a way to reconcile: a periodic catch-up poll, or an API you can query to fetch anything you might have missed. Belt and suspenders beats hope.
+**Retries.** Networks fail, and your endpoint will occasionally be unavailable. A well-behaved webhook sender retries with backoff, but as the GitHub example shows, you cannot assume every sender does, and you cannot assume retries succeed forever. Build a way to reconcile: a periodic catch-up poll, or an API you can query to fetch anything you might have missed. Do not rely on the sender's retries alone.
 
 **Ordering.** Events may not arrive in the order they happened. A "shipment delivered" message can land before "shipment out for delivery" if one retry took longer than another. Do not assume sequence. Include a timestamp or version on each event and let the latest state win, rather than blindly applying events in arrival order.
 
@@ -75,7 +75,7 @@ Company size and control also matter. If you own both systems, you have more fre
 
 ## Hybrid patterns in practice
 
-The strongest integrations usually combine the two rather than picking a side. A common and robust pattern: use webhooks for speed, and use a periodic reconciliation poll as a safety net. Webhooks keep your data fresh in near real time, and a low-frequency poll (say, hourly or nightly) sweeps up anything a failed delivery missed. On a source like GitHub that will not redeliver, that reconciliation poll is not optional, it is the only thing standing between you and silent data loss.
+The strongest integrations usually combine the two rather than picking a side. A common, reliable pattern: use webhooks for speed, and use a periodic reconciliation poll as a safety net. Webhooks keep your data fresh in near real time, and a low-frequency poll (say, hourly or nightly) sweeps up anything a failed delivery missed. On a source like GitHub that will not redeliver, that reconciliation poll is not optional, it is the only thing standing between you and silent data loss.
 
 Another pattern is webhook-triggered pull. The webhook does not carry the full payload; it just notifies you that something changed, and your system then calls the API to fetch the authoritative current state. This sidesteps ordering problems entirely, because you always read the latest truth rather than replaying a stream of partial events.
 

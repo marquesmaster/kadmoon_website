@@ -23,7 +23,7 @@ faqs:
 
 Onboarding and user management are the parts of a SaaS product that founders tend to treat as plumbing and buyers experience as the entire first impression. Get them wrong and users churn before they ever reach the value, or an enterprise deal stalls because your permission model cannot match their org chart. Get them right and the product feels like it was built for how teams actually work. Both are harder than they look, and both are worth the engineering.
 
-The stakes are front-loaded. SaaS retention benchmarks show that [about 75% of users who are going to leave do so within the first week](https://www.shno.co/marketing-statistics/saas-onboarding-statistics), which means the first session is not a soft opening, it is most of the game.
+The stakes are front-loaded. SaaS retention benchmarks show that [about 75% of users who are going to leave do so within the first week](https://www.shno.co/marketing-statistics/saas-onboarding-statistics), which means the first session is most of the game.
 
 ## First-run onboarding that converts
 

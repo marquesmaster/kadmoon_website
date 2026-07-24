@@ -90,11 +90,11 @@ Ask every vendor to state their assumptions and exclusions explicitly. That sing
 
 The strongest firms have more demand than capacity, so they self-select out of RFPs that look painful. A few patterns push them away.
 
-- **No budget and no range.** It reads as either indecision or a fishing expedition. Serious teams pass.
-- **Impossible timelines.** A twelve-week ask for six months of work tells experienced vendors you will be a difficult client, or that a less careful competitor will win with a lowball bid.
-- **Committee-written requirements.** Long, contradictory lists with no priority signal a project that has not been aligned internally. Remember that most of those features will go unused anyway. That risk shows up in delivery.
-- **A rigid Q&A process with no dialogue.** The best proposals come from vendors who got to ask real questions. Blocking that guarantees generic answers and reintroduces the exact requirements gaps the research warns about.
-- **Weighting everything toward lowest price.** You will get the bid that cut the most corners, and you will meet those corners during the build.
+- No budget and no range reads as either indecision or a fishing expedition, and serious teams pass.
+- An impossible timeline, like a twelve-week ask for six months of work, tells experienced vendors you will be a difficult client, or that a less careful competitor will win with a lowball bid.
+- Committee-written requirements, long and contradictory with no priority, signal a project that has not been aligned internally. Most of those features will go unused anyway, and that risk shows up in delivery.
+- A rigid Q&A process with no dialogue guarantees generic answers, because the best proposals come from vendors who got to ask real questions. Blocking that also reintroduces the exact requirements gaps the research warns about.
+- Weighting everything toward lowest price gets you the bid that cut the most corners, and you will meet those corners during the build.
 
 Write the RFP you would want to receive: honest about constraints, clear about the problem, open to expertise. That posture attracts the partners who do their best work with clients, not for them.
 

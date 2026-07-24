@@ -46,7 +46,7 @@ The order also decides when value starts arriving, which changes the economics o
 
 ## Your input and decisions
 
-The single biggest predictor of a smooth project is a client who shows up. Not to write code, but to make the calls only you can make. Sprint planning surfaces questions the team cannot answer alone: which of two features matters more this month, how a specific business rule should work, whether an edge case is worth handling now.
+The single biggest predictor of a smooth project is a client who shows up, not to write code but to make the calls only you can make. Sprint planning surfaces questions the team cannot answer alone: which of two features matters more this month, how a specific business rule should work, whether an edge case is worth handling now.
 
 Answer those quickly and the sprint runs at full speed. Leave them hanging and the team either stalls or guesses, and a guess about your business is usually wrong. That wrong guess is how the 47 percent requirements failure rate happens in practice: not one catastrophic misunderstanding, but a string of small ones nobody corrected in time. Designate one person with the authority to make product decisions, and give them the time to engage. A responsive decision-maker is worth more to a project than almost anything else, and it is a habit worth establishing during the [discovery phase](/blog/software-discovery-phase) before the first sprint even begins.
 

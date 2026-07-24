@@ -23,7 +23,7 @@ faqs:
 
 Most integration pain is self-inflicted. It comes from treating the API as something that falls out of the backend code rather than something you design on purpose. API-first flips that order. You define the contract before you write the implementation, and every consumer, including your own frontend, builds against that contract. The payoff shows up later, when a new partner, a mobile app, or an acquisition needs to plug into your system without a rewrite.
 
-The approach has gone mainstream. In [Postman's 2024 State of the API Report, 74% of respondents described themselves as API-first, up from 66% a year earlier](https://www.businesswire.com/news/home/20241015081863/en/Postmans-2024-State-of-the-API-Report-Finds-API-First-Approach-Yields-Tangible-Results), and the same report found that teams building this way ship faster: 63% could produce an API within a week, compared with 47% the previous year. This is not a style preference anymore, it is how most competent teams work.
+The approach has gone mainstream. In [Postman's 2024 State of the API Report, 74% of respondents described themselves as API-first, up from 66% a year earlier](https://www.businesswire.com/news/home/20241015081863/en/Postmans-2024-State-of-the-API-Report-Finds-API-First-Approach-Yields-Tangible-Results), and the same report found that teams building this way ship faster: 63% could produce an API within a week, compared with 47% the previous year. This is no longer a style preference; it is how most competent teams work.
 
 | Metric (Postman State of the API) | 2023 | 2024 |
 | --- | --- | --- |
@@ -58,7 +58,7 @@ This decoupling extends past your team. A mobile app, a partner integration, and
 
 ## Versioning and backward compatibility
 
-APIs are promises, and consumers depend on them not breaking. Versioning is how you evolve without betrayal.
+Consumers depend on your API not breaking. Versioning is how you change it without breaking them.
 
 - Additive changes, like a new optional field or a new endpoint, are safe. Existing consumers ignore what they do not know about.
 - Breaking changes, like removing a field or changing a type, require a new version so old clients keep working.

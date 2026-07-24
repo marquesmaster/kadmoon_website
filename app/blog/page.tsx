@@ -8,12 +8,12 @@ import { getAllPostMeta, getCategories } from '@/lib/blog';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Blog — Custom software, software house & trade tech insights',
+  title: 'Blog | Custom software, software house & trade tech insights',
   description:
     'Field notes on custom software, choosing a software house, trade & supply chain systems, SaaS, integrations, and AI, written for US buyers doing real due diligence.',
   alternates: { canonical: `${siteConfig.url}/blog` },
   openGraph: {
-    title: 'Kadmoon Blog — Custom software & software house insights',
+    title: 'Kadmoon Blog | Custom software & software house insights',
     description:
       'Practical guides on custom software, trade & supply chain systems, cost, and vendor evaluation for US B2B buyers.',
     url: `${siteConfig.url}/blog`,

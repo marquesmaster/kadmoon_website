@@ -33,9 +33,9 @@ The result is a plant that owns expensive software and still runs on workarounds
 
 Three areas drive most custom manufacturing builds, because they are where the gap between generic software and real operations is widest. Manufacturing operations management, the layer that sits between the ERP and the machines, is a [distinct and growing software segment](https://www.grandviewresearch.com/industry-analysis/manufacturing-operations-management-software-market-report) precisely because so many plants find the generic version does not fit.
 
-- **Manufacturing execution:** tracking work orders through each operation, capturing actual times and quantities, and giving supervisors a live view of what is running where.
-- **Quality management:** recording inspections and test results at the point they happen, enforcing checks before a unit can move on, and flagging out-of-spec conditions immediately rather than at end-of-shift.
-- **Scheduling and planning:** sequencing jobs against real constraints like machine capacity, tooling, changeover time, and material availability, not a simplified model that planners have to correct by hand.
+- Manufacturing execution tracks work orders through each operation, captures actual times and quantities, and gives supervisors a live view of what is running where.
+- Quality management records inspections and test results at the point they happen, enforces checks before a unit can move on, and flags out-of-spec conditions immediately rather than at end-of-shift.
+- Scheduling and planning sequences jobs against real constraints like machine capacity, tooling, changeover time, and material availability, not a simplified model that planners have to correct by hand.
 
 The common thread is that each of these encodes rules specific to your plant. A custom system can enforce your actual quality gates and your actual scheduling constraints, which is exactly what the packaged tool could not do. That specificity is also why manufacturing software carries real business logic, and why cost tracks complexity, as our guide to [how much custom software costs](/blog/how-much-does-custom-software-cost) explains.
 
@@ -65,9 +65,9 @@ A manufacturing software project has one non-negotiable constraint: production c
 
 A few principles keep these projects on track:
 
-- **Start with the sharpest pain.** Pick the process where workarounds cost the most and build there first, so value shows up early.
-- **Design for the floor.** Operators need fast, rugged interfaces that work with gloves, scanners, and imperfect connectivity, not desktop screens built for an office.
-- **Run in parallel during cutover.** Keep the old method alive until the new system is proven, then switch, rather than betting the plant on a single go-live.
-- **Own what you build.** The source code, integrations, and data belong to you, so you are never locked out of the system running your factory.
+- Start with the sharpest pain: the process where workarounds cost the most. Build there first, so value shows up early.
+- Design for the floor. Operators need fast, rugged interfaces that work with gloves, scanners, and imperfect connectivity, not desktop screens built for an office.
+- Run in parallel during cutover. Keep the old method alive until the new system is proven, then switch, rather than betting the plant on a single go-live.
+- Own what you build. The source code, integrations, and data belong to you, so you are never locked out of the system running your factory.
 
 Built this way, custom software becomes the layer that finally matches how your plant actually works, instead of one more tool your team has to work around. We work in two-week sprints, each ending in a working demo against measurable acceptance criteria, so you see the system running on real production data early rather than at the end. If you want to scope a first phase without touching production risk, [get a technical proposal](/#contact) and we will map it to your line, your ERP, and your compliance needs.

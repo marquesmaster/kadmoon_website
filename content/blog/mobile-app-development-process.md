@@ -33,7 +33,7 @@ Discovery produces the things the rest of the project depends on: the core workf
 
 Design for mobile is not shrinking a website. Screens are small, attention is short, and users are often moving, distracted, or working with one hand. Good mobile design starts from the workflow and removes everything that does not serve it.
 
-The work usually moves in two layers. UX (user experience) defines the flows and structure: what happens when, how a user gets from intent to result in the fewest taps, what the app does when there is no signal. UI (user interface) is the visual layer on top: layout, typography, and the platform conventions that make an app feel native rather than ported. Prototypes at this stage let you test the flow with real users before a line of production code is written, which is far cheaper than discovering a confusing flow after it is built. The best design decisions here are subtractions.
+The work usually moves in two layers. UX (user experience) defines the flows and structure: what happens when, how a user gets from intent to result in the fewest taps, what the app does when there is no signal. UI (user interface) is the visual layer on top: layout, typography, and the platform conventions that make an app feel native rather than ported. Prototypes at this stage let you test the flow with real users before a line of production code is written, which is far cheaper than discovering a confusing flow after it is built. The strongest decisions at this stage usually remove screens and steps rather than add them.
 
 ## Development and integration
 
@@ -47,10 +47,10 @@ Mobile testing is harder than web because the surface is fragmented. The app has
 
 Serious QA covers several fronts:
 
-- **Functional testing:** every flow does what it should, including the error paths.
-- **Device and OS coverage:** real behavior across the phones and versions your users actually carry, not just the developer's device.
-- **Connectivity testing:** how the app behaves on slow, flaky, or absent networks, which is exactly where field apps are used.
-- **Performance and battery:** an app that drains a battery or lags gets uninstalled regardless of how good the idea is.
+- Functional testing: every flow does what it should, including the error paths.
+- Device and OS coverage: real behavior across the phones and versions your users actually carry, not just the developer's device.
+- Connectivity testing: how the app behaves on slow, flaky, or absent networks, which is exactly where field apps are used.
+- Performance and battery: an app that drains a battery or lags gets uninstalled regardless of how good the idea is.
 
 Automated tests catch regressions as the app grows; manual testing on real devices catches the things emulators hide. Both matter.
 

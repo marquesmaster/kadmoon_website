@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Kadmoon builds bespoke enterprise systems, SaaS platforms, and AI for companies in 300+ US cities. Find custom software development in your market.',
   alternates: { canonical: `${siteConfig.url}/custom-software-development` },
   openGraph: {
-    title: 'Custom software development across the United States — Kadmoon',
+    title: 'Custom software development across the United States | Kadmoon',
     description:
       'Bespoke software for companies in 300+ US cities. Senior in-house team, US business hours, code you own.',
     url: `${siteConfig.url}/custom-software-development`,

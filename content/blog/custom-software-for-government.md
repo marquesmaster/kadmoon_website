@@ -25,7 +25,7 @@ Building software for a government agency is not just building software with mor
 
 ## Unique constraints in the public sector
 
-The first thing that changes is who the users are. A government system frequently serves the entire public, which means it has to work for people on old devices, slow connections, assistive technology, and every level of digital comfort. You cannot design for a narrow, tech-savvy segment and let the rest churn out. There is no churn. There is only a citizen who still needs the service.
+The first thing that changes is who the users are. A government system frequently serves the entire public, which means it has to work for people on old devices, slow connections, assistive technology, and every level of digital comfort. You cannot design for a narrow, tech-savvy segment and let the rest churn out. There is no churn, only a citizen who still needs the service.
 
 The second change is accountability. Public spending is scrutinized, records are often subject to open-records requirements, and decisions have to be defensible after the fact. That pushes toward thorough documentation, clear audit trails, and systems whose behavior can be explained, not just observed. Building for that from day one is very different from bolting it on later.
 

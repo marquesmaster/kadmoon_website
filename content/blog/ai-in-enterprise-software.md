@@ -42,7 +42,7 @@ The use cases that consistently earn their cost share a pattern. They automate w
 - Classification and matching: assigning tariff codes, categorizing tickets, deduplicating records, or matching a name against a watchlist.
 - Forecasting and anomaly detection: predicting demand, flagging transactions that do not fit the pattern, and spotting problems earlier than a threshold rule would.
 
-Notice what is missing: "AI that runs the business." The winners are narrow, measurable, and boring in the best way.
+Notice what is missing: "AI that runs the business." The winners are narrow, measurable, and unglamorous.
 
 The common thread is leverage on existing labor rather than replacement of judgment. A document-extraction system does not decide whether to approve a claim. It reads the paperwork so a person can decide faster. A classification model does not set your compliance policy. It applies the policy consistently at volume and flags the cases a person should look at. Framed this way, the ROI question gets simple: how many hours of expensive manual work does this remove, and what does it cost to run. If you cannot answer both, the use case is not ready.
 

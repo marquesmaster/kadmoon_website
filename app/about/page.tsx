@@ -9,7 +9,7 @@ import { why, stats, credibility } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'About — The US engineering arm of an established software house',
+  title: 'About | The US engineering arm of an established software house',
   description:
     'Kadmoon is a US custom-software firm in Austin, TX. Senior in-house team, measurable acceptance criteria, and code you own. Learn how we work and why.',
   alternates: { canonical: `${siteConfig.url}/about` },

@@ -37,7 +37,7 @@ Enterprise software cannot afford to silently corrupt or lose data, and this is 
 
 It is fully ACID compliant, so transactions either complete entirely or not at all, even through a crash. It manages concurrent access with multiversion concurrency control (MVCC), which lets readers and writers work at the same time without blocking each other and without reading half-finished changes. It enforces constraints at the database level: foreign keys, unique constraints, check constraints, and not-null rules that prevent invalid data from ever landing, regardless of a bug in the application above it. That matters because application code has bugs, and a constraint in the database is a backstop the application cannot accidentally bypass.
 
-This strictness is a feature, not friction. When money, compliance, or business records are involved, you want the database refusing bad data rather than trusting every caller to behave.
+This strictness helps more than it hinders. When money, compliance, or business records are involved, you want the database refusing bad data rather than trusting every caller to behave.
 
 ## JSON, extensions, and flexibility
 

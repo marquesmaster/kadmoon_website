@@ -21,7 +21,7 @@ faqs:
     a: "If entries are occasional, a service bureau is fine. Once you are filing thousands of entries a month, per-transaction bureau fees add up and the workflow constraints cost staff time, so a custom integration certified under your own or your broker's filer code pays back the investment when customs is core to your operation."
 ---
 
-For US importers and brokers, the Automated Commercial Environment is the door every entry passes through. The volume is not small. On a typical day in fiscal year 2024, CBP processed [$9.2 billion worth of imported goods, more than 105,000 entries of merchandise, and collected $241 million in duties, taxes, and fees](https://www.cbp.gov/newsroom/stats/typical-day-fy2024), nearly all of it flowing through ACE. Connecting your systems to it directly, instead of retyping data into someone else's portal, is what turns customs from a manual bottleneck into an automated flow. This guide explains what ACE integration software actually involves: how the system works, the message formats you have to speak, your options for connecting, and what it takes to get certified by CBP.
+For US importers and brokers, every import and export entry passes through the Automated Commercial Environment, and the volume is large. On a typical day in fiscal year 2024, CBP processed [$9.2 billion worth of imported goods, more than 105,000 entries of merchandise, and collected $241 million in duties, taxes, and fees](https://www.cbp.gov/newsroom/stats/typical-day-fy2024), nearly all of it flowing through ACE. Connecting your systems to it directly, instead of retyping data into someone else's portal, replaces that manual bottleneck with an automated flow. This guide explains what ACE integration software actually involves: how the system works, the message formats you have to speak, your options for connecting, and what it takes to get certified by CBP.
 
 ## What ACE is and why it matters
 
@@ -72,7 +72,7 @@ Build this on a modern, maintainable stack, keep the message-mapping logic well 
 
 ## Error handling and status messages
 
-ACE is a conversation, not a one-way submission. CBP responds, sometimes with acceptance, sometimes with a rejection citing a specific error, sometimes with a status change hours later. Your software has to handle all of it gracefully.
+Filing to ACE is a two-way exchange rather than a one-way submission. CBP responds, sometimes with acceptance, sometimes with a rejection citing a specific error, sometimes with a status change hours later. Your software has to handle all of it gracefully.
 
 Reject messages are routine, not exceptional. A code is wrong, a value fails validation, a required field is missing. Your integration should capture the specific reason, surface it clearly to the person who can fix it, and make resubmission easy. Status messages arrive asynchronously, so the system needs to match incoming updates to the right entry and keep everyone informed. Build in retries for transient transmission problems and idempotency so a resend does not create a duplicate filing. At the volumes CBP handles, roughly 105,000 entries every single day, getting this layer right is what separates software that runs at scale from software that generates a pile of stuck entries and missed release windows.
 

@@ -27,7 +27,7 @@ Demand for this kind of work is not niche anymore. The global custom software de
 
 ## Bespoke software in one sentence
 
-Bespoke software is a system designed and coded around your specific processes, data, and goals, owned by you rather than licensed from a vendor. Nobody else runs your exact build. When your workflow needs a behavior, it gets built, because there is no product roadmap you have to wait on and no configuration ceiling to hit. That is the whole idea in one line, and everything else follows from it.
+Bespoke software is a system designed and coded around your specific processes, data, and goals, owned by you rather than licensed from a vendor. Nobody else runs your exact build. When your workflow needs a behavior, it gets built, because there is no product roadmap you have to wait on and no configuration ceiling to hit. Everything else about bespoke software follows from that.
 
 The terms bespoke, custom, and tailor-made get used interchangeably, and that is fine. They all point at the same thing: software shaped to the buyer instead of the buyer shaped to the software. If you want the broader definition, [what is custom software development](/blog/what-is-custom-software-development) covers the same ground from a slightly different angle.
 

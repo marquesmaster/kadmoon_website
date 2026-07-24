@@ -21,7 +21,7 @@ faqs:
     a: "Assume failure and handle it gracefully. Use idempotent operations so a retry does not create a duplicate sales order, a dead-letter queue for records that fail repeatedly, and retries with backoff for transient errors, including the 429s that concurrency limits produce under load. Add monitoring for what synced, what failed, and why, with alerts when the failure rate crosses a threshold, so the first sign of trouble is not a customer asking where their order went."
 ---
 
-NetSuite sits at the center of a lot of US businesses, which means sooner or later something has to talk to it: a storefront, a warehouse system, a CRM, a custom app your team built. The platform runs [more than 41,000 customer accounts across 219 countries](https://www.appsruntheworld.com/customers-database/products/view/oracle-netsuite-erp) and holds [roughly 5.9% of the enterprise applications market](https://enlyft.com/tech/products/netsuite), and Oracle reported NetSuite revenue of about 1.0 billion dollars in its fiscal Q4 2025, up 18% year over year. So this is a connection engineers hit constantly, and it is only getting more common. NetSuite integration also has a reputation for being fiddly, and the reputation is earned. The platform is powerful and deeply customizable, which is exactly what makes connecting to it harder than a typical REST API. This guide walks through the real options, the traps, and how to build a sync that holds up.
+NetSuite sits at the center of a lot of US businesses, which means sooner or later something has to talk to it: a storefront, a warehouse system, a CRM, a custom app your team built. The platform runs [more than 41,000 customer accounts across 219 countries](https://www.appsruntheworld.com/customers-database/products/view/oracle-netsuite-erp) and holds [roughly 5.9% of the enterprise applications market](https://enlyft.com/tech/products/netsuite), and Oracle reported NetSuite revenue of about 1.0 billion dollars in its fiscal Q4 2025, up 18% year over year. So this is a connection engineers hit constantly, and it is only getting more common. NetSuite integration also has a reputation for being fiddly, and the reputation is earned. The platform is deeply customizable, which is exactly what makes connecting to it harder than a typical REST API. This guide walks through the real options, the traps, and how to build a sync that holds up.
 
 ## NetSuite integration options
 
@@ -49,7 +49,7 @@ Timing is the other decision baked into every flow: real-time or batch. Real-tim
 
 ## Rate limits and governance
 
-Here is the trap that catches teams new to NetSuite: governance. NetSuite meters usage with two separate mechanisms, and they trip up different things.
+The trap that catches teams new to NetSuite is governance. NetSuite meters usage with two separate mechanisms, and they trip up different things.
 
 The first is a per-execution points budget. Every SuiteScript operation costs usage units, and each script type has a fixed ceiling. Per [Oracle's SuiteScript governance documentation](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N3350651.html), a RESTlet gets 5,000 units per call, user event scripts get 1,000, and scheduled scripts get 10,000. A single record load or search can cost anywhere from a handful to dozens of units, so a naive script that loops through records one call at a time exhausts its budget and throws `SSS_REQUEST_LIMIT_EXCEEDED` in production even though it worked fine on a small test set.
 

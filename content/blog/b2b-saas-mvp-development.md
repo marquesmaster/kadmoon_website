@@ -27,7 +27,7 @@ A B2B SaaS MVP is not a smaller version of your eventual product. It is the smal
 
 The point of an MVP is to avoid the single most common way software companies die. CB Insights analyzed hundreds of startup post-mortems and found that ["no market need" was the top reason for failure at 42%](https://www.cbinsights.com/research/report/startup-failure-reasons-top/); its updated 2024 pass reframed this as poor product-market fit and put the figure at 43%. Building the wrong thing well is still failure. An MVP is the cheapest instrument you have for finding out you are wrong before it is expensive.
 
-Scope discipline matters for a second reason: big builds miss. The Standish Group's CHAOS research, which tracks tens of thousands of projects, has for years shown [only about 31% of software projects landing as clear successes, while small projects succeed roughly three times as often as large ones](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes). A tightly scoped MVP is not just faster to market, it is statistically far more likely to ship at all.
+Scope discipline matters for a second reason: big builds miss. The Standish Group's CHAOS research, which tracks tens of thousands of projects, has for years shown [only about 31% of software projects landing as clear successes, while small projects succeed roughly three times as often as large ones](https://opencommons.org/CHAOS_Report_on_IT_Project_Outcomes). A tightly scoped MVP ships faster, and it is statistically far more likely to ship at all.
 
 ## Why B2B MVPs differ from B2C
 
@@ -47,11 +47,11 @@ A useful test: can a customer stop doing the old thing entirely after adopting y
 
 Some foundations are not optional in B2B, even in a first release:
 
-- **Authentication** that is secure and, ideally, ready for the SSO business customers will eventually demand. This is not a hypothetical: SSOJet's research found [SSO now gates a large share of enterprise deals, blocking roughly half of enterprise SaaS purchases when it is missing and required by the overwhelming majority of six-figure contracts](https://aithority.com/saas/missing-sso-blocks-half-of-enterprise-saas-deals-ssojet-reports/).
-- **Roles and permissions.** Businesses have admins, managers, and regular users who should see different things. Multi-user with access control is a floor, not a feature.
-- **An admin surface.** Someone at the customer needs to invite users, manage their team, and configure the basics without emailing you.
-- **Organizations/tenancy.** Even the first version needs clean separation between customer accounts, because retrofitting [multi-tenant architecture](/blog/multi-tenant-saas-architecture) later is painful and risky.
-- **Reliable data handling.** Real audit trails and no data loss, because a business's data is the whole reason they trust you.
+- Authentication that is secure and, ideally, ready for the SSO business customers will eventually demand. This is not a hypothetical: SSOJet's research found [SSO now gates a large share of enterprise deals, blocking roughly half of enterprise SaaS purchases when it is missing and required by the overwhelming majority of six-figure contracts](https://aithority.com/saas/missing-sso-blocks-half-of-enterprise-saas-deals-ssojet-reports/).
+- Roles and permissions. Businesses have admins, managers, and regular users who should see different things. Multi-user access control is a floor, not an add-on.
+- An admin surface. Someone at the customer needs to invite users, manage their team, and configure the basics without emailing you.
+- Organizations and tenancy. Even the first version needs clean separation between customer accounts, because retrofitting [multi-tenant architecture](/blog/multi-tenant-saas-architecture) later is painful and risky.
+- Reliable data handling. Real audit trails and no data loss, because a business's data is the whole reason they trust you.
 
 These are the unglamorous parts that do not demo well but decide whether a company can actually run on your product. Building them right from the start is much cheaper than bolting them on after you have paying customers depending on the system. The full stack of these concerns is covered in [SaaS security and compliance](/blog/saas-security-and-compliance).
 

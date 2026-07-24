@@ -23,7 +23,7 @@ faqs:
 
 Selling to, buying from, or shipping to a party on a US government restricted list is a violation whether or not you knew. Sanctions liability under the International Emergency Economic Powers Act is strict, and the maximum civil penalty per violation is [the greater of $377,700 or twice the value of the underlying transaction](https://home.treasury.gov/system/files/206/Notice-Inflation-Adjustment-to-Maximum-Civil-Monetary-Penalty.pdf) as of the 2024 inflation adjustment. That is what makes denied party screening software a compliance requirement rather than a convenience: the obligation is strict, the penalties are steep, and "we did not check" is not a defense. The job of the software is to check every relevant party against every relevant list, every time, and to prove it did.
 
-This guide covers why screening is mandatory, which lists matter, how matching actually works, and how to decide whether to build or buy the engine. A few figures set the stakes:
+Screening spans several watchlists, careful matching logic, real-time checks at the point of sale, and a build-or-buy decision. A few figures set the stakes:
 
 | Metric | Figure | Year / source |
 | --- | --- | --- |

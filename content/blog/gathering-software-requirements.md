@@ -42,7 +42,7 @@ The cost of getting this wrong compounds the longer it hides. Drawing on IBM Sys
 
 A requirements error is just text until someone builds on it. After that it gets expensive fast, which is why the cheapest place to catch a misunderstanding is a conversation, not a bug report.
 
-The antidote is not more documentation. It is talking to the right people, watching real work, and treating requirements as something you refine rather than freeze. This is the heart of a good [software discovery phase](/blog/software-discovery-phase).
+The antidote is not more documentation. It is talking to the right people, watching real work, and treating requirements as something you refine rather than freeze. This is what a good [software discovery phase](/blog/software-discovery-phase) is for.
 
 ## Interviews and workshops
 

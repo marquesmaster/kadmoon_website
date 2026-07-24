@@ -21,10 +21,10 @@ export function generateMetadata({
   if (!cat) return {};
   const url = `${siteConfig.url}/blog/category/${cat.slug}`;
   return {
-    title: `${cat.name} — Kadmoon blog`,
+    title: `${cat.name} | Kadmoon blog`,
     description: `${cat.count} articles on ${cat.name.toLowerCase()} for US software buyers: practical, specific, and written for people doing real vendor due diligence.`,
     alternates: { canonical: url },
-    openGraph: { title: `${cat.name} — Kadmoon blog`, url, type: 'website' },
+    openGraph: { title: `${cat.name} | Kadmoon blog`, url, type: 'website' },
   };
 }
 

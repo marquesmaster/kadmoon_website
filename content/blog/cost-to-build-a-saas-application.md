@@ -21,7 +21,7 @@ faqs:
     a: "Spend in stages that each answer a question so you can stop or change direction before the big money goes out. Start with a short paid discovery phase, then build the smallest product a real customer will pay for, and only invest in the fuller platform after customers use it. Two-week sprints with a working demo each cycle turn one large uncertain bet into a series of small visible ones."
 ---
 
-The honest answer to what a SaaS product costs is that it depends on what you build, but that is not useful when you need a budget. This breakdown gives you the real drivers of the cost to build a SaaS application, ranges tied to scope, and a way to phase spending so you find out whether the product works before you spend everything. The goal is a budget you can defend to a board, not a single number pulled from the air.
+What a SaaS product costs depends on what you build, which does not help when you need a budget number. This breakdown covers the real drivers of the cost to build a SaaS application, ranges tied to scope, and a way to phase spending so you learn whether the product works before you spend everything. The goal is a budget you can defend to a board, not a single number pulled from the air.
 
 ## MVP vs full-platform cost ranges
 

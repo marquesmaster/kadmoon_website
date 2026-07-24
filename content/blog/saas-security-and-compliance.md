@@ -21,7 +21,7 @@ faqs:
     a: "Retrofitting encryption, rebuilding a permission model, or reconstructing audit trails into a live product is expensive, risky, and slow, and it usually happens under deadline pressure because a deal is waiting. Modeling access and tenancy carefully up front, turning on encryption and logging from the first release, and adopting gated deployments turns the security review into a form you fill out confidently."
 ---
 
-SaaS security and compliance stop being abstract the first time a prospect sends you a security questionnaire or asks for your SOC 2 report before signing. At that point, security is not an engineering nicety, it is a sales requirement. It is also a real financial exposure: IBM put the [average cost of a data breach at $4.88 million in 2024, a 10 percent jump from the prior year](https://newsroom.ibm.com/2024-07-30-ibm-report-escalating-data-breach-disruption-pushes-costs-to-new-highs) and the largest on record. This guide covers what B2B buyers actually expect, the controls that matter most, and why building them in from the start is far cheaper than bolting them on after a deal stalls.
+SaaS security and compliance stop being abstract the first time a prospect sends you a security questionnaire or asks for your SOC 2 report before signing. At that point, security stops being an engineering nicety and becomes a sales requirement. It is also a real financial exposure: IBM put the [average cost of a data breach at $4.88 million in 2024, a 10 percent jump from the prior year](https://newsroom.ibm.com/2024-07-30-ibm-report-escalating-data-breach-disruption-pushes-costs-to-new-highs) and the largest on record. This guide covers what B2B buyers actually expect, the controls that matter most, and why building them in from the start is far cheaper than bolting them on after a deal stalls.
 
 ## Security expectations B2B buyers have
 
@@ -33,9 +33,9 @@ Meeting that bar is increasingly the price of entry. Buyers assume encryption, r
 
 Access control is the foundation, because most breaches trace back to someone getting in who should not have, or an insider seeing more than they should. IBM's 2024 data backs this up: [stolen or compromised credentials were the single most common initial attack vector at 16 percent of breaches, with phishing close behind at 15 percent](https://www.cybersecuritydive.com/news/ibm-data-breach-cost-credentials-phishing/722689/), and credential-based breaches took the longest to spot and shut down, an average of 292 days. Three layers matter.
 
-- **Strong authentication:** proper password handling, multi-factor authentication, and protection against common attacks on login.
-- **Single sign-on (SSO):** enterprise customers expect to manage access through their own identity provider, so employees log in with corporate credentials and lose access automatically when they leave.
-- **Role-based access control (RBAC):** users see and do only what their role permits, enforced on the server, not just hidden in the interface.
+- Strong authentication: proper password handling, multi-factor authentication, and protection against common attacks on login.
+- Single sign-on (SSO), where enterprise customers manage access through their own identity provider, so employees log in with corporate credentials and lose access automatically when they leave.
+- Role-based access control (RBAC), where users see and do only what their role permits, enforced on the server, not just hidden in the interface.
 
 For larger customers, SSO and automated user provisioning move from nice-to-have to mandatory, since their IT teams will not manage accounts by hand. In practice that means supporting SAML or OIDC against providers like Okta, Entra ID, or Google Workspace, and ideally SCIM so that when someone is deprovisioned in the customer's directory, their access to your product disappears the same day rather than lingering as a forgotten account. Those orphaned accounts are exactly the credentials attackers reuse, which is why enforcing MFA and killing stale sessions is not box-ticking. Building a clean permission model early is important because retrofitting one into a live product is painful and error-prone. The broader design of roles, teams, and provisioning is covered in [SaaS onboarding and user management](/blog/saas-onboarding-and-user-management).
 
@@ -65,9 +65,9 @@ The consistent theme is that security and compliance are dramatically cheaper wh
 
 Building it in early means a few concrete choices at the start:
 
-- **Model access and tenancy carefully** before you have real customer data to migrate.
-- **Turn on encryption and logging from the first release,** not after the first audit request.
-- **Adopt controlled, gated deployments** so change management is already part of how you ship.
-- **Engineer security as a feature,** with the same rigor as the product itself.
+- Model access and tenancy carefully before you have real customer data to migrate.
+- Turn on encryption and logging from the first release, not after the first audit request.
+- Adopt controlled, gated deployments so change management is already part of how you ship.
+- Engineer security as a feature, with the same rigor as the product itself.
 
 Done this way, the security questionnaire becomes a form you fill out confidently and the SOC 2 audit becomes a checkpoint you are ready for, instead of a fire drill that stalls revenue. If you are building a SaaS product that will need to clear enterprise security review, [get a technical proposal](/#contact) and we will design the access, data, and compliance foundations in from the first sprint. For more on building SaaS well, browse [the blog](/blog).

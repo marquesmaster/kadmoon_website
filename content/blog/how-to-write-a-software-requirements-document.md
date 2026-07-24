@@ -62,10 +62,10 @@ For each integration, capture the direction of data flow, roughly how often it s
 
 Not everything can ship in version one, and pretending otherwise guarantees a blown timeline. Scope creep is not a rare event: PMI's 2018 research found [52% of projects experience scope creep, up from 43% five years earlier](https://projectmanagementacademy.net/resources/blog/pmp-scope-creep/). A ranked requirements list is your best defense. MoSCoW is a simple way to do it:
 
-- **Must have:** the product is worthless without it.
-- **Should have:** important, but there is a painful workaround.
-- **Could have:** valuable if time allows, easy to drop.
-- **Won't have (this time):** explicitly out of scope for now.
+- Must have: the product is worthless without it.
+- Should have: important, but there is a painful workaround.
+- Could have: valuable if time allows, easy to drop.
+- Won't have (this time): explicitly out of scope for now.
 
 The discipline is in being honest about the Must list. If everything is a must, you have not prioritized, you have just relabeled a wish list. A tight Must set lets a vendor propose a phased plan where an early release proves the core, and later phases add the Should and Could items once real usage tells you what matters. That phased approach also protects your budget, since you can see value before committing the full spend.
 

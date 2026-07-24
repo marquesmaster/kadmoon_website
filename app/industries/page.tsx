@@ -8,7 +8,7 @@ import { industryPages } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Industries — Custom software for 10+ sectors',
+  title: 'Industries | Custom software for 10+ sectors',
   description:
     'Custom software for trade & supply chain, logistics, financial services, healthcare, retail, manufacturing, education, and government. Built for each sector’s requirements.',
   alternates: { canonical: `${siteConfig.url}/industries` },

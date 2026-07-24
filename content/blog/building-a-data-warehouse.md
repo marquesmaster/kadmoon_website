@@ -31,9 +31,9 @@ That disagreement is expensive. [Gartner has estimated that poor data quality co
 
 Three terms get thrown around, and the distinction is practical, not academic.
 
-- **Data warehouse:** structured, modeled data optimized for SQL analytics and reporting. Best when most of your data is tabular and your main job is business intelligence.
-- **Data lake:** raw storage for any format, including logs, images, and JSON, cheap to fill but requiring more work to make useful. Best when you have large volumes of varied, semi-structured data.
-- **Lakehouse:** a hybrid that adds warehouse-like structure and querying on top of lake storage, aiming to serve both analytics and data-science workloads from one place.
+- Data warehouse: structured, modeled data optimized for SQL analytics and reporting. Best when most of your data is tabular and your main job is business intelligence.
+- Data lake: raw storage for any format, including logs, images, and JSON, cheap to fill but requiring more work to make useful. Best when you have large volumes of varied, semi-structured data.
+- Lakehouse: a hybrid that adds warehouse-like structure and querying on top of lake storage, meant to serve both analytics and data-science workloads from one place.
 
 For most companies whose analytics needs are dashboards, reporting, and metrics from business systems, a warehouse is the right starting point. Reach for a lake or lakehouse when you genuinely have large volumes of unstructured data or heavy machine-learning workloads. Choosing the more complex option because it sounds advanced is a common and expensive mistake.
 

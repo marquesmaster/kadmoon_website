@@ -49,11 +49,11 @@ A return is not a reversed sale. It involves restocking decisions, refunds or ex
 
 ## Order management and fulfillment
 
-Order management is the engine room, and it is where generic platforms most often fall short as volume grows. A real order lifecycle involves sourcing decisions (which location ships this?), splitting shipments, handling backorders, managing returns, and routing exceptions to a human before they become a customer complaint.
+Order management is where generic platforms most often break down as volume grows. A real order lifecycle involves sourcing decisions (which location ships this?), splitting shipments, handling backorders, managing returns, and routing exceptions to a human before they become a customer complaint.
 
 The pricing and promotion logic underneath orders is frequently proprietary and frequently the reason a brand wins. Tiered wholesale pricing, bundle rules, loyalty adjustments, and channel-specific discounts are exactly the kind of business logic that custom software captures cleanly and packaged tools force into awkward configuration. Getting fulfillment right, sourcing from the optimal location and communicating accurately with the customer, protects both margin and trust on every order.
 
-Sourcing logic is where the money hides. When an order can ship from three warehouses and two stores, the choice affects shipping cost, delivery speed, and whether you strand a size that a nearby store could have cleared. A packaged tool usually picks the nearest location or the one with the most stock and calls it done. Custom software lets you weight the decision the way your economics actually run: prioritize the location closest to selling out, keep flagship stores stocked for walk-ins, or bias toward the carrier lane with the best on-time record for that zip. Those rules are worth real margin at volume, and they are almost never configurable in the depth a growing brand needs.
+Sourcing logic has a direct effect on margin. When an order can ship from three warehouses and two stores, the choice affects shipping cost, delivery speed, and whether you strand a size that a nearby store could have cleared. A packaged tool usually picks the nearest location or the one with the most stock and calls it done. Custom software lets you weight the decision the way your economics actually run: prioritize the location closest to selling out, keep flagship stores stocked for walk-ins, or bias toward the carrier lane with the best on-time record for that zip. Those rules are worth real margin at volume, and they are almost never configurable in the depth a growing brand needs.
 
 ## Integrations across the stack
 

@@ -35,10 +35,10 @@ Security is not a feature you add near launch here; it is the foundation you pou
 
 The baseline that serious buyers and auditors expect:
 
-- **Encryption everywhere:** data encrypted in transit and at rest, with real key management rather than secrets pasted in config files.
-- **Strong authentication and least privilege:** multi-factor authentication, role-based access control, and permissions scoped so no one holds more access than their job requires.
-- **SOC 2 alignment:** even before formal certification, building to SOC 2 controls (access, change management, monitoring) sets the bar that enterprise and regulated clients will ask about.
-- **Segregation of duties:** the person who initiates a sensitive action should not be the only one who can approve it, enforced in software.
+- Encryption in transit and at rest, with real key management rather than secrets pasted in config files.
+- Multi-factor authentication and role-based access control, with permissions scoped so no one holds more access than their job requires.
+- SOC 2 alignment: even before formal certification, building to SOC 2 controls for access, change management, and monitoring sets the bar that enterprise and regulated clients will ask about.
+- Segregation of duties enforced in software, so the person who initiates a sensitive action is not the only one who can approve it.
 
 None of this is optional in practice. A gap in any of it is the finding that stalls a deal or an exam. Compliance-minded architecture is covered more broadly in [SaaS security and compliance](/blog/saas-security-and-compliance).
 
@@ -46,11 +46,11 @@ None of this is optional in practice. A gap in any of it is the finding that sta
 
 Custom builds in financial services cluster around a few high-value problems where packaged tools do not fit the firm's specific rules or risk appetite:
 
-- **Onboarding and KYC workflows** that collect, verify, and document customer identity while producing an audit trail automatically.
-- **Loan or credit origination** platforms that encode a firm's own underwriting logic rather than a vendor's generic model.
-- **Portfolio, treasury, or reconciliation tools** that pull from multiple sources and surface breaks a spreadsheet would hide.
-- **Compliance and reporting automation** that turns manual, deadline-driven filings into repeatable, logged processes.
-- **Client portals** that give customers secure, real-time visibility without exposing back-office systems.
+- Onboarding and KYC workflows that collect, verify, and document customer identity while producing an audit trail automatically.
+- Loan or credit origination platforms that encode a firm's own underwriting logic rather than a vendor's generic model.
+- Portfolio, treasury, or reconciliation tools that pull from multiple sources and surface breaks a spreadsheet would hide.
+- Compliance and reporting automation that turns manual, deadline-driven filings into repeatable, logged processes.
+- Client portals that give customers secure, real-time visibility without exposing back-office systems.
 
 The common thread is proprietary logic. When your underwriting, pricing, or risk process is a differentiator, encoding it in custom software protects it. When it is a commodity, buy the tool. That build-versus-buy line is worth drawing deliberately in this industry, where compliance overhead makes every build heavier.
 

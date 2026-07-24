@@ -33,11 +33,11 @@ The friction shows up in familiar ways. The tool does not model your specific pr
 
 Whatever you build or buy, serious import operations tend to need the same core capabilities:
 
-- **Entry management:** creating, tracking, and managing customs entries from commercial documents through filing and release, in one place rather than across email and spreadsheets.
-- **Classification support:** assigning and maintaining Harmonized Tariff Schedule codes accurately, since the HTS code drives the duty you pay and the compliance exposure you carry.
-- **Landed cost visibility:** knowing the true cost of imported goods, duties, tariffs, freight, fees, before the goods arrive, ideally at quote time.
-- **Document handling:** managing commercial invoices, packing lists, and the supporting records each entry requires.
-- **Compliance and recordkeeping:** an audit trail and retained records that satisfy CBP's requirements without a manual scramble.
+- Entry management: creating, tracking, and managing customs entries from commercial documents through filing and release, in one place rather than across email and spreadsheets.
+- Classification support: assigning and maintaining Harmonized Tariff Schedule codes accurately, since the HTS code drives the duty you pay and the compliance exposure you carry.
+- Landed cost visibility: knowing the true cost of imported goods, duties, tariffs, freight, fees, before the goods arrive, ideally at quote time.
+- Document handling: managing commercial invoices, packing lists, and the supporting records each entry requires.
+- Compliance and recordkeeping: an audit trail and retained records that satisfy CBP's requirements without a manual scramble.
 
 The depth you need in each depends on your volume and product mix. An importer with a few stable SKUs has different needs than one with thousands of classifications changing constantly. Custom software lets you go deep where it matters and stay simple where it does not, which is precisely what packaged tools cannot do.
 

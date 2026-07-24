@@ -35,6 +35,15 @@ export function Work() {
           </Reveal>
         ))}
       </div>
+
+      <div className="mt-10 flex justify-center">
+        <a
+          href="/cases"
+          className="inline-flex items-center gap-2 text-sm font-medium text-ink-2 transition-colors hover:text-accent"
+        >
+          See all case studies <span aria-hidden>→</span>
+        </a>
+      </div>
     </Section>
   );
 }

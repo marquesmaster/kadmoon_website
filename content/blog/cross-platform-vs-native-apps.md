@@ -25,7 +25,7 @@ The choice between cross-platform and native is one of the first real decisions 
 
 ## The main cross-platform frameworks
 
-Cross-platform means writing your app once and running it on both iOS and Android from largely shared code. Two frameworks dominate serious work, and they take opposite technical routes to the same goal. The scale of their use is worth knowing: in the [2024 Stack Overflow Developer Survey of more than 65,000 developers, Flutter was used by about 9.4% and React Native by about 8.4%](https://survey.stackoverflow.co/2024/technology), making them the two leading cross-platform choices by a clear margin.
+Cross-platform means writing your app once and running it on both iOS and Android from largely shared code. Two frameworks dominate serious work, and they take opposite technical routes to the same goal. The scale of their use is worth knowing: in the [2024 Stack Overflow Developer Survey of more than 65,000 developers, Flutter was used by about 9.4% and React Native by about 8.4%](https://survey.stackoverflow.co/2024/technology). They are the two leading cross-platform choices by a clear margin.
 
 - React Native, maintained by Meta, uses JavaScript and TypeScript with React and renders real native UI components rather than a webview. Its newer architecture (the Fabric renderer and the JavaScript Interface that replaced the old asynchronous bridge) narrows the gap with native by letting JavaScript call into native code more directly. It is a strong fit for teams already working in the React and web ecosystem, since much of the knowledge and tooling carries over. Our deeper comparison of [React Native vs native app development](/blog/react-native-vs-native-development) covers this in more detail.
 - Flutter, maintained by Google, uses the Dart language and draws its own UI with its own rendering engine instead of mapping to platform widgets. That gives tight control over appearance and smooth animation, and it compiles ahead-of-time to native ARM machine code, at the cost of learning a less common language and shipping the engine with your app.
@@ -50,7 +50,7 @@ The difference shows up at the edges. Graphics-heavy apps, real-time video proce
 
 ## Maintenance and single-codebase gains
 
-The build is the smaller part of an app's life. Maintenance runs for years, and this is where a single codebase keeps paying off. One fix, one place. A new feature ships to both platforms at once. Your team holds one mental model of the app instead of two.
+The build is the smaller part of an app's life. Maintenance runs for years, and this is where a single codebase keeps paying off. A fix lands in one place, and a new feature ships to both platforms at once. Your team holds one mental model of the app instead of two.
 
 Native's two codebases mean parallel maintenance forever. A bug fixed on iOS still has to be fixed on Android, and the two can drift apart in subtle ways as separate teams make separate decisions. Both platforms also move under you: Apple and Google ship a major OS version every year and periodically force migrations, such as the shift toward SwiftUI and Jetpack Compose, and with native you absorb each of those twice. For a small team, that ongoing duplication is a real drag on velocity, and it compounds. When you are weighing long-term cost of ownership, the maintenance side often tips the decision toward cross-platform more than the initial build savings do.
 

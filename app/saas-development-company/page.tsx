@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${siteConfig.url}/saas-development-company` },
   openGraph: {
-    title: 'Kadmoon — a US SaaS development company',
+    title: 'Kadmoon: a US SaaS development company',
     description:
       'A US SaaS development company building multi-tenant platforms you own. Billing, auth, analytics, and APIs, delivered by a senior in-house team.',
     url: `${siteConfig.url}/saas-development-company`,

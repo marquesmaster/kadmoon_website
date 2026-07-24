@@ -21,7 +21,7 @@ faqs:
     a: "Go incremental wherever the system allows, replacing one module or workflow at a time instead of all at once. Keep the old system available as a fallback until the new one has earned trust on real work, and test continuously against the documented behavior so you catch a divergence in a controlled setting. Resisting pressure to rush the cutover is the habit that separates smooth transitions from failed ones."
 ---
 
-Legacy system replacement is one of the riskiest projects a company takes on, because the old system usually runs something the business cannot afford to lose. It is also common and expensive. The GAO found that federal agencies spend roughly [80% of their more than $100 billion annual IT budget just operating and maintaining existing systems](https://www.gao.gov/products/gao-21-524t), and the ten most critical legacy systems it examined ranged from about 8 to 51 years old and cost around $337 million a year to keep running. Private companies carry the same weight in smaller form. The horror stories are real: botched cutovers, lost data, weeks of downtime. They are also avoidable. The difference is almost always process, not technology. This guide walks through deciding to replace, capturing what the old system really does, and switching over without betting the company on a single day.
+Legacy system replacement is one of the riskiest projects a company takes on, because the old system usually runs something the business cannot afford to lose. It is also common and expensive. The GAO found that federal agencies spend roughly [80% of their more than $100 billion annual IT budget just operating and maintaining existing systems](https://www.gao.gov/products/gao-21-524t), and the ten most critical legacy systems it examined ranged from about 8 to 51 years old and cost around $337 million a year to keep running. Private companies carry the same weight in smaller form. The failure modes are real: botched cutovers, lost data, weeks of downtime. They are also avoidable, and the difference is usually process, not technology. This guide walks through deciding to replace, capturing what the old system really does, and switching over without betting the company on a single day.
 
 ## When replacement beats modernization
 
@@ -31,7 +31,7 @@ The clearest triggers: the technology is so old that hiring anyone to maintain i
 
 ## Documenting existing behavior
 
-Here is the trap that sinks replacement projects: nobody actually knows everything the old system does. Over years, it accumulated business rules, edge cases, and quiet fixes that live only in the code and in the heads of a few long-tenured staff. If you rebuild only the documented behavior, you will ship something that is subtly, painfully wrong.
+The trap that sinks replacement projects is that nobody actually knows everything the old system does. Over years, it accumulated business rules, edge cases, and quiet fixes that live only in the code and in the heads of a few long-tenured staff. If you rebuild only the documented behavior, you will ship something that is subtly, painfully wrong.
 
 So the first real work is discovery, and it takes longer than teams expect. You reconstruct behavior from several sources: the code itself, the data it produces, and interviews with the people who use it daily, especially about the exceptions. Pay attention to the weird cases, the "oh, except when the customer is tax-exempt in these three states" rules, because those are exactly what an incomplete rebuild misses. Missed requirements are not cheap to discover late. A NIST-commissioned study estimated software defects cost the US economy about [$59.5 billion a year, with over half of errors going undetected until late in development or after release](https://www.accountingtoday.com/news/software-bugs-cost-595-billion-annually), where they are most expensive to fix. Capturing behavior as testable requirements with acceptance criteria gives you a target you can verify against, and [how to write a software requirements document](/blog/how-to-write-a-software-requirements-document) covers how to record it well.
 
@@ -55,10 +55,10 @@ Data migration is usually the hardest and most underestimated part of replacemen
 
 Treat it iteratively, never as one risky import:
 
-- **Profile the source first.** Understand the real state of the data before you map anything, including how bad the messy parts are.
-- **Map and transform deliberately.** Decide how each field lands in the new model, and how you handle records that do not fit.
-- **Validate every pass.** Run automated checks that counts, totals, and key relationships match between old and new, and reconcile any gaps.
-- **Do trial runs.** Migrate into a test environment repeatedly until the result is clean, so the real migration holds no surprises.
+- Profile the source first. Understand the real state of the data before you map anything, including how bad the messy parts are.
+- Map and transform deliberately. Decide how each field lands in the new model, and how you handle records that do not fit.
+- Validate every pass. Run automated checks that counts, totals, and key relationships match between old and new, and reconcile any gaps.
+- Do trial runs. Migrate into a test environment repeatedly until the result is clean, so the real migration holds no surprises.
 
 The parallel-running period doubles as a validation check on the data, since both systems working from the same inputs should agree.
 

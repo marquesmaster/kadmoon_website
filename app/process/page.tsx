@@ -9,7 +9,7 @@ import { process, engagement } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Process — From the problem to software in production',
+  title: 'Process | From the problem to software in production',
   description:
     'How Kadmoon delivers: discovery, architecture, two-week sprints with a working demo each cycle, continuous QA, zero-downtime deploys, and ongoing support.',
   alternates: { canonical: `${siteConfig.url}/process` },

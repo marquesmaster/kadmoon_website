@@ -21,7 +21,7 @@ faqs:
     a: "Ask for a present-tense assignment of all IP in the deliverables effective on payment, written as an assignment rather than a license, plus explicit delivery of the repository, CI/CD configuration, credentials, and infrastructure access, a documentation and handover obligation, a component inventory of open-source and third-party licenses, and transition assistance if the relationship ends. If you cannot hold the repo directly, source-code escrow is a weaker fallback."
 ---
 
-You paid for the software, so you own it. That assumption is where a lot of buyers get burned. Ownership of custom software is not automatic. It is a set of specific rights that either live in your contract or do not, and the gaps only show up when you try to leave or hand the system to someone else. This is a plain explanation of what owning the code actually means and how to make sure you have it.
+You paid for the software, so you own it. That assumption is where a lot of buyers get burned. Ownership of custom software is not automatic. It is a set of specific rights that either live in your contract or do not, and the gaps only show up when you try to leave or hand the system to someone else.
 
 ## What "owning the code" actually means
 

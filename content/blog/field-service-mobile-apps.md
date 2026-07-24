@@ -29,7 +29,7 @@ The category is not niche. The field service management software market is a lar
 
 Before any features, understand the day. A technician gets assigned jobs, drives to sites, diagnoses and fixes problems, records what they did, captures parts and time, gets a customer signature, and moves to the next call. They do this while holding tools, standing in a mechanical room, or sitting in a truck. Connectivity is unreliable. Their hands are dirty. They are measured on jobs completed, not on data entered.
 
-Design from that reality and the right features become obvious. Design from the dispatcher's spreadsheet and you build something technicians quietly route around, defeating the entire purpose. This is why we start field projects with the actual workflow, the same principle behind [how to build a B2B mobile app](/blog/how-to-build-a-b2b-mobile-app) your teams will genuinely use.
+Design from that reality and the right features become obvious. Design from the dispatcher's spreadsheet and you build something technicians quietly route around, which defeats the entire purpose. This is why we start field projects with the actual workflow, the same principle behind [how to build a B2B mobile app](/blog/how-to-build-a-b2b-mobile-app) your teams will genuinely use.
 
 ## Scheduling, routing, and dispatch
 
@@ -51,10 +51,10 @@ Offline-first is not a toggle you add at the end. It changes the data model: the
 
 The paperwork of field service is where a good app pays for itself. The pieces that matter:
 
-- **Forms and checklists** tailored to each job type, with required fields so nothing gets missed, and conditional logic so a technician only sees what is relevant to the work in front of them.
-- **Customer signatures** captured on the device as proof of completion, tied to the job and time-stamped.
-- **Parts and inventory** tracking so the technician records what was used, which drives billing and keeps truck stock accurate.
-- **Time capture** that is a tap, not a form, because anything harder gets filled in inaccurately later or not at all.
+- Forms and checklists tailored to each job type, with required fields so nothing gets missed, and conditional logic so a technician only sees what is relevant to the work in front of them.
+- Customer signatures captured on the device as proof of completion, tied to the job and time-stamped.
+- Parts and inventory tracking so the technician records what was used, which drives billing and keeps truck stock accurate.
+- Time capture that is a tap, not a form, because anything harder gets filled in inaccurately later or not at all.
 
 The unifying rule is fewer taps. Every field you can pre-fill from the job record, every default you can set intelligently, every screen you can remove is a direct contribution to adoption. Technicians reward apps that get out of their way.
 

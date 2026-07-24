@@ -55,7 +55,7 @@ The natural question is why not just use APIs. The honest comparison, EDI vs API
 
 APIs are real-time, easier for developers to work with, and better suited to interactive systems. EDI is often batch-oriented, older, and stricter about format. If you were designing partner integrations from scratch today, you would reach for APIs. But you rarely get to design from scratch. Your trading partners already speak EDI, they have mandated it in contracts, and they are not going to change their systems for you.
 
-In practice, most supply chain operations run both: EDI for established partners who require it, APIs for newer integrations and internal systems. The engineering job is to make both feed the same clean internal data model so the rest of your software does not care which channel a document arrived on. That principle sits at the heart of good [system integration](/blog/what-is-system-integration).
+In practice, most supply chain operations run both: EDI for established partners who require it, APIs for newer integrations and internal systems. The engineering job is to make both feed the same clean internal data model so the rest of your software does not care which channel a document arrived on. Good [system integration](/blog/what-is-system-integration) depends on exactly that principle.
 
 ## Translation and mapping
 

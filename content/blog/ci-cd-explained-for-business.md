@@ -52,10 +52,10 @@ The automation only protects you if it actually checks the right things, and tha
 
 Good pipelines layer several kinds of checks:
 
-- **Automated tests** that verify features still behave correctly, so a fix in one place does not silently break another.
-- **Security scans** that flag known-vulnerable dependencies or risky code before release.
-- **Code review** by another engineer, required before anything merges.
-- **Build and environment checks** that confirm the software actually assembles and runs cleanly.
+- Automated tests that verify features still behave correctly, so a fix in one place does not silently break another.
+- Security scans that flag known-vulnerable dependencies or risky code before release.
+- Code review by another engineer, required before anything merges.
+- Build and environment checks that confirm the software actually assembles and runs cleanly.
 
 The strength of these gates is the real measure of a CI/CD setup. A pipeline that deploys fast but tests little just ships bugs faster. What you want is a pipeline that makes it hard to release something broken, which also underpins the security discipline covered in [SaaS security and compliance](/blog/saas-security-and-compliance).
 
@@ -75,9 +75,9 @@ The business effects are concrete. Features and fixes reach customers in days in
 
 You do not need to inspect pipeline configuration, but you should expect certain things from any team building software you depend on. Ask a few plain questions and listen for confident, specific answers.
 
-- **How often can you release?** A mature team should be able to ship safely on demand, not only on a fixed schedule.
-- **What happens when a release breaks?** They should describe automatic detection and a fast, low-drama rollback, not an all-hands panic.
-- **What runs automatically before a change ships?** Expect a clear description of tests, reviews, and security checks as required gates.
-- **Do we own the pipeline?** On a custom build, the deployment pipeline, credentials, and infrastructure config should be yours, delivered with the code.
+- How often can you release? A mature team should be able to ship safely on demand, not only on a fixed schedule.
+- What happens when a release breaks? They should describe automatic detection and a fast, low-drama rollback, not an all-hands panic.
+- What runs automatically before a change ships? Expect a clear description of tests, reviews, and security checks as required gates.
+- Do we own the pipeline? On a custom build, the deployment pipeline, credentials, and infrastructure config should be yours, delivered with the code.
 
 A team that answers these well is managing risk on your behalf every day, quietly. CI/CD is a big part of how the [custom software development process](/blog/custom-software-development-process) turns steady work into steady, low-drama releases. If you want to see how a disciplined delivery pipeline would work for your project, [start a project](/#contact) and we will walk you through what shipping safely looks like in practice.

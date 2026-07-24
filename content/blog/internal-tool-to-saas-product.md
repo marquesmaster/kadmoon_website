@@ -27,10 +27,10 @@ Some of the best SaaS products started as something a company built to solve its
 
 Not every internal tool should become a product. The ones worth productizing share a few traits.
 
-- **Others ask about it.** People at other companies, or new hires from them, describe the same painful problem your tool already solves.
-- **The problem is common but the solutions are bad.** Your industry limps along with spreadsheets or a clunky legacy tool, and yours is genuinely better.
-- **The value is not tangled up in your specific company.** If the tool only works because of your unique data or org chart, it will not travel. If the core workflow is general, it can.
-- **You would pay for it.** The sharpest test: if a vendor offered exactly your tool as a product, would you buy it instead of maintaining your own?
+- Others ask about it. People at other companies, or new hires from them, describe the same painful problem your tool already solves.
+- The problem is common but the solutions are bad. Your industry limps along with spreadsheets or a clunky legacy tool, and yours is genuinely better.
+- The value is not tangled up in your specific company. If the tool only works because of your unique data or org chart, it will not travel. If the core workflow is general, it can.
+- You would pay for it. The sharpest test: if a vendor offered exactly your tool as a product, would you buy it instead of maintaining your own?
 
 If several of these are true, you likely have a product hiding inside an internal tool. If only one is, you may just have a good internal tool, which is fine. Productizing is a serious commitment, not a free upside.
 
@@ -56,9 +56,9 @@ An internal tool operates inside a circle of trust. Everyone using it is an empl
 
 That raises the bar across the board:
 
-- **Authentication and access control** that assume hostile users: proper login, role-based permissions, and increasingly SSO once you sell to larger companies.
-- **Security posture** worth trusting: encryption in transit and at rest, sensible secrets handling, and readiness for the SOC 2 questions enterprise buyers will ask. For most B2B deals above a certain size, a SOC 2 report is not a nice-to-have, it is a gate you clear before procurement will sign.
-- **Support and reliability** as a promise, not a favor: when the tool was internal, downtime annoyed colleagues; when it is a product, downtime breaks customer trust and can breach an SLA.
+- Authentication and access control that assume hostile users: proper login, role-based permissions, and increasingly SSO once you sell to larger companies.
+- Security posture worth trusting: encryption in transit and at rest, sensible secrets handling, and readiness for the SOC 2 questions enterprise buyers will ask. For most B2B deals above a certain size, a SOC 2 report is a gate you clear before procurement will sign.
+- Support and reliability as a promise, not a favor: when the tool was internal, downtime annoyed colleagues; when it is a product, downtime breaks customer trust and can breach an SLA.
 
 This is often underestimated because the internal version already "works." It works for people who will not attack it and forgive an outage. Paying customers do neither. [SaaS security and compliance](/blog/saas-security-and-compliance) covers what serious buyers expect.
 

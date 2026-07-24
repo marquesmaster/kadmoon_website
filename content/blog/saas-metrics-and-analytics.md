@@ -33,7 +33,7 @@ The core set for a B2B SaaS clusters into three questions. Are we growing revenu
 
 ## MRR, churn, and retention
 
-Monthly recurring revenue is the heartbeat of a subscription business. Track it, but track its components, because the total hides the story. New MRR from new customers, expansion MRR from existing customers upgrading, contraction MRR from downgrades, and churned MRR from cancellations together tell you whether growth is coming from acquisition or from keeping and growing accounts you already have.
+Monthly recurring revenue is the core number in a subscription business. Track it, but track its components, because the total hides the story. New MRR from new customers, expansion MRR from existing customers upgrading, contraction MRR from downgrades, and churned MRR from cancellations together tell you whether growth is coming from acquisition or from keeping and growing accounts you already have.
 
 Churn is the number that quietly decides your ceiling. Watch both customer churn (how many accounts leave) and revenue churn (how much money leaves), because losing one large account is very different from losing several small ones. As a benchmark, the [2025 Recurly churn analysis put median annual logo churn around 3.5%, with under 5% considered healthy](https://optif.ai/learn/questions/b2b-saas-churn-rate-benchmark/) for B2B SaaS. That number is highly segment-dependent: monthly logo churn tends to run below 0.5% for enterprise products, 0.5% to 1.5% for mid-market, and 2% to 4% for SMB and prosumer tools, so compare yourself to your own segment, not the blended average.
 

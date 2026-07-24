@@ -78,6 +78,10 @@ export async function POST(req: Request) {
   // is missing or the submission is implausibly fast, drop it silently.
   if (data.startedAt && Date.now() - data.startedAt < 2500) return ok();
 
+  // Persisting the lead is best-effort. If the database is unavailable (for
+  // example on a host without Postgres), we still send the email so the lead is
+  // never lost. Log only a safe label, never the full error or any submitted data.
+  let persisted = false;
   try {
     await prisma.lead.create({
       data: {
@@ -91,17 +95,14 @@ export async function POST(req: Request) {
         userAgent: (req.headers.get('user-agent') || '').slice(0, 300),
       },
     });
+    persisted = true;
   } catch (err) {
-    // Log only a safe label, never the full error (which can carry connection
-    // details) or any submitted data.
     console.error('[contact] lead persist failed:', safeErr(err));
-    return NextResponse.json({ ok: false, error: 'server' }, { status: 500 });
   }
 
-  // Fire the email but never fail the request if SMTP has a hiccup; the lead
-  // is already saved.
+  let emailed = false;
   try {
-    await sendLeadEmail({
+    emailed = await sendLeadEmail({
       name: data.name,
       email: data.email,
       company: data.company,
@@ -111,6 +112,11 @@ export async function POST(req: Request) {
     });
   } catch (err) {
     console.error('[contact] lead email failed:', safeErr(err));
+  }
+
+  // Only fail the request if neither channel captured the lead.
+  if (!persisted && !emailed) {
+    return NextResponse.json({ ok: false, error: 'server' }, { status: 500 });
   }
 
   return ok();

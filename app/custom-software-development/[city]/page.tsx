@@ -37,7 +37,7 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
     ],
     alternates: { canonical: url },
     openGraph: {
-      title: `${title} — Kadmoon`,
+      title: `${title} | Kadmoon`,
       description: `Bespoke software for ${city.name}, ${city.stateAbbr} companies. Built by a senior in-house team, owned by you.`,
       url,
       type: 'website',

@@ -43,9 +43,9 @@ Read across those rows and the pattern is clear: Android wins raw worldwide reac
 
 The two platforms are not equal in engineering effort, and the differences run in both directions.
 
-- **Device fragmentation.** Apple sells a limited range of devices with a narrow set of screen sizes and a fast-updating user base, so testing surface is smaller. Android spans thousands of device models, screen sizes, and OS versions, which means more testing and more edge cases to handle. That generally makes thorough Android QA more expensive.
-- **Release process.** Apple's App Store review is stricter and can add delay and rejection risk, especially for a first submission. Google's process is faster and more permissive, which speeds iteration but shifts more responsibility onto you.
-- **Tooling.** Both platforms have mature native toolchains. Neither is meaningfully cheaper to start; the cost difference shows up over the life of the app, mostly in testing.
+- Device fragmentation. Apple sells a limited range of devices with a narrow set of screen sizes and a fast-updating user base, so testing surface is smaller. Android spans thousands of device models, screen sizes, and OS versions, which means more testing and more edge cases to handle. That generally makes thorough Android QA more expensive.
+- Release process. Apple's App Store review is stricter and can add delay and rejection risk, especially for a first submission. Google's process is faster and more permissive, which speeds iteration but shifts more responsibility onto you.
+- Tooling. Both platforms have mature native toolchains. Neither is meaningfully cheaper to start; the cost difference shows up over the life of the app, mostly in testing.
 
 There is a second cost buried in maintenance. Apple ships a major iOS version once a year and a large share of active devices move to it within a few months, so you can reasonably support the current version and one back and cover almost everyone. Android version adoption is slower and more spread out because updates depend on device makers and carriers, so a real-world Android app often has to keep working across several OS generations at once. That widens your regression testing on every release, not just at launch.
 

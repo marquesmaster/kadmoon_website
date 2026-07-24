@@ -31,12 +31,12 @@ The strongest case is when your sales or service process is genuinely unusual an
 
 CRM cost scales with modules and the rules inside them. A contact and pipeline core is relatively cheap. The budget grows as you add capability:
 
-- **Accounts, contacts, and pipeline:** the foundation, usually the smallest slice.
-- **Quoting and configure-price-quote:** pricing rules, approvals, and document generation add real effort.
-- **Activity and communication tracking:** email sync, call logging, and timelines.
-- **Reporting and dashboards:** flexible reporting is deceptively expensive to build well.
-- **Permissions and territories:** role-based access, sharing rules, and audit trails.
-- **Automation:** assignment rules, reminders, and workflow triggers.
+- Accounts, contacts, and pipeline: the foundation, usually the smallest slice.
+- Quoting and configure-price-quote: pricing rules, approvals, and document generation add real effort.
+- Activity and communication tracking: email sync, call logging, and timelines.
+- Reporting and dashboards: flexible reporting is deceptively expensive to build well.
+- Permissions and territories: role-based access, sharing rules, and audit trails.
+- Automation: assignment rules, reminders, and workflow triggers.
 
 Published ranges give a rough sense of scale. Industry estimates put a basic CRM with contact management, pipeline, and reporting at roughly [$30,000 to $60,000, and an enterprise build with AI-driven insights, custom workflows, and ERP integration at $100,000 to $200,000 or more](https://www.cleveroad.com/blog/crm-development-cost/). Those numbers move sharply with developer rates. The same source pegs blended offshore rates near $20 to $25 an hour against $70 to $100 an hour for US and Western European teams, so where the work is done can triple the total on identical scope.
 
@@ -72,8 +72,8 @@ The bigger risk to plan against is adoption, not code. Analysts have put the CRM
 
 Every project is different, so treat these as relative shapes rather than quotes:
 
-- **Focused pipeline tool:** a small team, a simple sales process, a handful of integrations. The lowest tier, closer in cost to a well-scoped MVP and in line with the $30,000 to $60,000 basic range above.
-- **Departmental CRM:** quoting, reporting, role-based access, and two or three real integrations. The middle of the range, where most serious custom builds land.
-- **Enterprise CRM platform:** complex pricing, multi-team workflows, ERP and billing integration, heavy data migration, and strict security. The top tier at $100,000 to $200,000 or more, and the one where a phased rollout matters most.
+- Focused pipeline tool: a small team, a simple sales process, a handful of integrations. The lowest tier, closer in cost to a well-scoped MVP and in line with the $30,000 to $60,000 basic range above.
+- Departmental CRM: quoting, reporting, role-based access, and two or three real integrations. The middle of the range, where most serious custom builds land.
+- Enterprise CRM platform: complex pricing, multi-team workflows, ERP and billing integration, heavy data migration, and strict security. The top tier at $100,000 to $200,000 or more, and the one where a phased rollout matters most.
 
 To get from a shape to a number, the process matters more than a calculator. A short discovery phase that turns your rules and integrations into measurable acceptance criteria produces a far more accurate estimate than a spreadsheet ever will. Compare that against your current licensing over three to five years, and the build-versus-buy answer usually gets clear. When you want that comparison run against your real numbers, [get a technical proposal](/#contact) and we will scope it against your process, not a generic template.

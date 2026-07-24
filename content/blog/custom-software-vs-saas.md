@@ -56,7 +56,7 @@ SaaS is an operating expense that grows with seats and usage, forever, with peri
 | Marginal cost per new user | Another subscription | Near zero |
 | Who owns the data and roadmap | The vendor | You |
 
-The waste is not only in idle seats; it is in redundancy. Zylo's data shows the average organization carrying [15 duplicative online training apps, 11 project management tools, and 10 team collaboration apps at once](https://zylo.com/news/2024-saas-management-index/), each with its own contract and renewal. Nobody chose that on purpose. It accretes because subscribing is frictionless and nobody owns the total. Custom software cannot sprawl the same way, because you are the one deciding what gets built and maintained. That does not make it automatically cheaper, but it does mean the money you spend maps to something you chose rather than something that crept onto the invoice.
+Idle seats are only part of the waste. Redundancy is the other part. Zylo's data shows the average organization carrying [15 duplicative online training apps, 11 project management tools, and 10 team collaboration apps at once](https://zylo.com/news/2024-saas-management-index/), each with its own contract and renewal. Nobody chose that on purpose. It accretes because subscribing is frictionless and nobody owns the total. Custom software cannot sprawl the same way, because you are the one deciding what gets built and maintained. That does not make it automatically cheaper, but it does mean the money you spend maps to something you chose rather than something that crept onto the invoice.
 
 ## Control, data, and customization
 

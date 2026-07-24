@@ -39,16 +39,16 @@ AWS is the oldest and broadest. It has the largest service catalog and the deepe
 
 For a typical custom application (an API backend, a PostgreSQL database, some background jobs, and a React frontend), all three will run it well. The differences show up at the edges: identity, compliance paperwork, specialized services, and total cost as you scale.
 
-One framing helps before you compare feature checklists: the cloud is a long-term relationship, not a purchase. You will run on it for years, hire people who know it, and build habits around its tools. Feature parity at the core is close enough that softer factors (your contracts, your team, your obligations) usually decide the outcome, and those are the factors that still matter three years from now.
+Keep one thing in mind before comparing feature checklists: choosing a cloud is a multi-year commitment, not a one-time purchase. You will run on it for years, hire people who know it, and build habits around its tools. Feature parity at the core is close enough that softer factors (your contracts, your team, your obligations) usually decide the outcome, and those are the factors that still matter three years from now.
 
 ## Services and maturity
 
 Compute, storage, and managed relational databases are close to a tie. Where the providers diverge:
 
-- **Managed Kubernetes**: EKS, AKS, and GKE all work, but GKE is the most mature and has the best defaults. If Kubernetes is central to your architecture, that counts.
-- **Serverless**: AWS Lambda has the widest ecosystem and event-source coverage. Azure Functions and Cloud Functions are solid but trail on integrations.
-- **Data and analytics**: BigQuery on GCP is often the reason teams pick Google at all. It is fast, cheap to start, and low-maintenance.
-- **Enterprise identity**: Azure Entra ID (formerly Azure AD) is a real advantage if your organization already lives in the Microsoft identity world.
+- Managed Kubernetes: EKS, AKS, and GKE all work, but GKE is the most mature and has the best defaults. If Kubernetes is central to your architecture, that counts.
+- Serverless: AWS Lambda has the widest ecosystem and event-source coverage. Azure Functions and Cloud Functions are solid but trail on integrations.
+- Data and analytics: BigQuery on GCP is often the reason teams pick Google at all. It is fast, cheap to start, and low-maintenance.
+- Enterprise identity: Azure Entra ID (formerly Azure AD) is a real advantage if your organization already lives in the Microsoft identity world.
 
 Maturity also means documentation, community answers, and third-party tooling. AWS wins here by volume, which shortens debugging cycles for your engineers.
 
@@ -78,9 +78,9 @@ The pragmatic middle path we use: build on portable foundations (containers on K
 
 A short decision guide that holds up in practice:
 
-- **Already a Microsoft shop** (Entra ID, Windows, Dynamics, existing EA): default to Azure. The identity and licensing integration is worth real money.
-- **Data and analytics are the core of the product**: lean toward GCP for BigQuery and its ML tooling.
-- **You want the widest talent pool, largest service catalog, and most third-party support**: AWS is the safe default, and for most greenfield US apps it is where we land. The 48% developer-usage figure is not an accident.
-- **No strong pull in any direction**: pick the cloud your team knows best. Operational familiarity beats a marginal feature advantage almost every time.
+- Already a Microsoft shop (Entra ID, Windows, Dynamics, existing EA): default to Azure. The identity and licensing integration is worth real money.
+- Data and analytics are the core of the product: lean toward GCP for BigQuery and its ML tooling.
+- You want the widest talent pool, largest service catalog, and most third-party support: AWS is the safe default, and for most greenfield US apps it is where we land. The 48% developer-usage figure backs that up.
+- No strong pull in any direction: pick the cloud your team knows best. Operational familiarity beats a marginal feature advantage almost every time.
 
 The choice matters less than how you use it. A well-architected system on any of the three will outperform a sloppy one on the "perfect" cloud. If you want help mapping your workload to a provider and a cost model, [get a technical proposal](/#contact) or see [what we build](/#capabilities). For the broader vendor question, [how to choose a software partner](/#how-to-choose) covers the criteria that outlast any single cloud decision.

@@ -9,7 +9,7 @@ export const siteConfig = {
   regionCode: 'TX',
   country: 'United States',
   countryCode: 'US',
-  defaultTitle: 'Kadmoon — US Custom Software House | Austin, TX',
+  defaultTitle: 'Kadmoon: US Custom Software House | Austin, TX',
   titleTemplate: '%s | Kadmoon',
   // Kept to 120-160 chars, no em dashes (SEO + humanizer).
   description:

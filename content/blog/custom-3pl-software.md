@@ -38,25 +38,25 @@ A few numbers set the scale of what this software has to support:
 
 On top of that, each client tends to want things done their way: their packing rules, their carriers, their reporting formats, their SLAs. A 3PL that can flex to a client's requirements wins the account; one that forces every client into the same rigid mold loses to a competitor who bends. That flexibility is exactly where packaged systems tend to be weakest, and it is the core case for [custom software over off-the-shelf](/blog/custom-software-vs-off-the-shelf).
 
-There is also a growth dynamic specific to 3PLs. Every new client you sign brings new requirements, new systems to connect, and often new billing arrangements, so your software is never finished the way a single-company system eventually is. The platform has to make onboarding a new client fast and low-risk, because onboarding speed directly caps how quickly you can grow. A 3PL whose software fights every new account is a 3PL that turns away business it cannot service, which is why the software is not back-office plumbing here. It is the operating system of the company.
+There is also a growth dynamic specific to 3PLs. Every new client you sign brings new requirements, new systems to connect, and often new billing arrangements, so your software is never finished the way a single-company system eventually is. The platform has to make onboarding a new client fast and low-risk, because onboarding speed directly caps how quickly you can grow. A 3PL whose software fights every new account turns away business it cannot service, which is why the software here is not back-office plumbing. It runs the business.
 
 ## Multi-client warehousing and billing
 
 Two capabilities define 3PL software and are the hardest to buy off the shelf.
 
-**Multi-client warehousing** means true data isolation between clients layered over a shared physical space. Inventory is tracked per client, even when two clients' goods sit in adjacent bins. Staff pick across clients but the system keeps ownership clean. Getting this wrong causes the worst kind of error: shipping one client's goods against another's order. The underlying warehouse-system market is growing fast for a reason, with Grand View Research valuing the [warehouse management systems market at $4.39 billion in 2024 and projecting double-digit annual growth](https://www.grandviewresearch.com/industry-analysis/warehouse-management-system-wms-market) as fulfillment complexity rises.
+Multi-client warehousing means true data isolation between clients layered over a shared physical space. Inventory is tracked per client, even when two clients' goods sit in adjacent bins. Staff pick across clients but the system keeps ownership clean. Getting this wrong causes the worst kind of error: shipping one client's goods against another's order. The underlying warehouse-system market is growing fast for a reason, with Grand View Research valuing the [warehouse management systems market at $4.39 billion in 2024 and projecting double-digit annual growth](https://www.grandviewresearch.com/industry-analysis/warehouse-management-system-wms-market) as fulfillment complexity rises.
 
-**Billing** is where 3PLs make or lose margin, and it is notoriously complex. A 3PL charges for storage (by pallet, by cubic foot, by SKU, over time), for handling (receiving, picking, packing), for value-added services, and for pass-through freight, and each client's contract can price these differently. Activity-based billing has to capture every billable event automatically as work happens, because anything counted by hand leaks revenue. This billing engine is frequently the single reason a 3PL outgrows generic software and needs something built for its actual rate structures.
+Billing is where 3PLs make or lose margin, and it is notoriously complex. A 3PL charges for storage (by pallet, by cubic foot, by SKU, over time), for handling (receiving, picking, packing), for value-added services, and for pass-through freight, and each client's contract can price these differently. Activity-based billing has to capture every billable event automatically as work happens, because anything counted by hand leaks revenue. This billing engine is frequently the single reason a 3PL outgrows generic software and needs something built for its actual rate structures.
 
 ## Order, inventory, and fulfillment flows
 
 Under the multi-client layer sits the operational core, and it has to be fast and accurate:
 
-- **Receiving and putaway** per client, with each client's inbound rules respected.
-- **Inventory** tracked in real time by client, location, lot, and expiration where relevant, with cycle counts to keep accuracy high.
-- **Order management** ingesting orders from each client's channels, then routing them to pick, pack, and ship.
-- **Picking and packing** optimized across clients so staff move efficiently while the system keeps each order tied to the right owner.
-- **Shipping** with the right carrier and service per order, generating labels and documents automatically.
+- Receiving and putaway per client, with each client's inbound rules respected.
+- Inventory tracked in real time by client, location, lot, and expiration where relevant, with cycle counts to keep accuracy high.
+- Order management that ingests orders from each client's channels, then routes them to pick, pack, and ship.
+- Picking and packing optimized across clients so staff move efficiently while the system keeps each order tied to the right owner.
+- Shipping with the right carrier and service per order, generating labels and documents automatically.
 
 The shared theme is accuracy at speed, and the cost of getting it wrong is measurable. The National Retail Federation reported a US ecommerce return rate of [20.4% in 2024, worth roughly $362 billion in returned merchandise](https://www.trackingmore.com/blog/ecommerce-returns-benchmark/), and surveys tie about 23% of returns to shoppers receiving the wrong item. In a 3PL, every mispick feeds that number and lands as a chargeback or a lost account. Errors here are expensive twice: they cost the fix and they damage a client relationship, because the client sees your mistake as a failure they are paying you to prevent. Building these flows to match how your operation actually runs is far more effective than bending your operation to fit a tool, a point covered in [when to build custom software](/blog/when-to-build-custom-software).
 
@@ -72,10 +72,10 @@ The portal is also where you can differentiate on brand. A packaged system gives
 
 A 3PL platform is a hub, and its value depends on how well it connects to everything around it. The integrations that matter:
 
-- **Carriers**, for rating, label generation, and tracking across the parcel and LTL/FTL carriers your clients use.
-- **Client systems**, since each client runs their own e-commerce platform, ERP, or order system that must feed orders in and receive status and inventory back.
-- **Your accounting and ERP**, so billing and financials stay consistent without re-keying.
-- **EDI**, because many established clients still transact over [EDI](/blog/edi-integration-for-supply-chain) and expect their 3PL to speak it.
+- Carriers, for rating, label generation, and tracking across the parcel and LTL/FTL carriers your clients use.
+- Client systems, since each client runs their own e-commerce platform, ERP, or order system that must feed orders in and receive status and inventory back.
+- Your accounting and ERP, so billing and financials stay consistent without re-keying.
+- EDI, because many established clients still transact over [EDI](/blog/edi-integration-for-supply-chain) and expect their 3PL to speak it.
 
 Each new client brings its own systems to connect, so onboarding speed is a competitive factor: a 3PL that can integrate a new client quickly wins business a slower competitor loses. Bad data compounds across every one of these connections, and Gartner has estimated that poor data quality costs organizations [$12.9 million a year on average](https://www.gartner.com/en/data-analytics/topics/data-quality). This is a genuine [supply chain ERP integration](/blog/supply-chain-erp-integration) challenge, and doing it reliably (with proper mapping, error handling, and reconciliation) is what keeps client data trustworthy.
 

@@ -23,7 +23,7 @@ faqs:
 
 Custom software is not automatically better than a packaged product. For a lot of needs, a well-supported off-the-shelf tool is the right call and building your own would be a waste. The benefits of custom software show up in a specific situation: when your workflow is a source of advantage, when the tools you can buy force you to work in ways that slow you down, or when the systems you depend on refuse to talk to each other.
 
-More companies are landing in that situation. Grand View Research valued the global custom software development market at [USD 43.16 billion in 2024 and projects USD 146.18 billion by 2030](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report), a 22.6 percent compound annual growth rate, with North America holding over 34 percent of that spend. That kind of growth is not fashion. It is companies deciding that a handful of their systems are worth owning outright. Here are the benefits that actually drive that decision.
+More companies are landing in that situation. Grand View Research valued the global custom software development market at [USD 43.16 billion in 2024 and projects USD 146.18 billion by 2030](https://www.grandviewresearch.com/industry-analysis/custom-software-development-market-report), a 22.6 percent compound annual growth rate, with North America holding over 34 percent of that spend. That growth reflects companies deciding that a handful of their systems are worth owning outright. Here are the benefits that actually drive that decision.
 
 ## Fit to your exact workflow
 
