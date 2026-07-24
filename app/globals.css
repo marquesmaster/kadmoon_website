@@ -292,6 +292,14 @@ button {
   font-weight: 600;
   color: rgb(var(--ink));
 }
+/* Let wide comparison tables scroll on small screens instead of forcing the
+   page to scroll horizontally. */
+@media (max-width: 640px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html {
