@@ -102,6 +102,31 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
             <div className="mt-8 border-t border-line pt-8" />
 
+            {post.toc.filter((t) => t.level === 2).length >= 3 && (
+              <nav
+                aria-label="Table of contents"
+                className="mb-10 rounded-2xl border border-line bg-mist p-6"
+              >
+                <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
+                  In this article
+                </h2>
+                <ol className="mt-3 space-y-2">
+                  {post.toc
+                    .filter((t) => t.level === 2)
+                    .map((t) => (
+                      <li key={t.id}>
+                        <a
+                          href={`#${t.id}`}
+                          className="text-[15px] text-ink-2 transition-colors hover:text-accent"
+                        >
+                          {t.text}
+                        </a>
+                      </li>
+                    ))}
+                </ol>
+              </nav>
+            )}
+
             <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
         </article>

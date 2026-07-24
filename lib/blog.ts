@@ -7,11 +7,34 @@ import { categorySlug, type PostMeta, type PostCategory } from './blog-shared';
 export { categorySlug };
 export type { PostMeta, PostCategory };
 
-export type Post = PostMeta & { html: string };
+export type TocItem = { id: string; text: string; level: number };
+export type Post = PostMeta & { html: string; toc: TocItem[] };
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
 marked.setOptions({ gfm: true, breaks: false });
+
+/**
+ * Add stable ids to the H2/H3 headings in the rendered HTML and return the
+ * table of contents. Anchor ids power in-page navigation and help search
+ * engines and AI extractors understand the article structure.
+ */
+function withHeadingAnchors(html: string): { html: string; toc: TocItem[] } {
+  const toc: TocItem[] = [];
+  let i = 0;
+  const out = html.replace(/<h([23])>([\s\S]*?)<\/h\1>/g, (_m, level: string, inner: string) => {
+    const text = inner.replace(/<[^>]+>/g, '').trim();
+    const base = text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')
+      .slice(0, 60);
+    const id = `${base || 'section'}-${i++}`;
+    toc.push({ id, text, level: Number(level) });
+    return `<h${level} id="${id}">${inner}</h${level}>`;
+  });
+  return { html: out, toc };
+}
 
 /**
  * Deterministic publish date from the slug so the build is reproducible and
@@ -49,7 +72,8 @@ export function getAllPosts(): Post[] {
     const raw = fs.readFileSync(path.join(BLOG_DIR, file), 'utf8');
     const { data, content } = matter(raw);
     const wordCount = content.trim().split(/\s+/).length;
-    const html = marked.parse(content) as string;
+    const parsed = marked.parse(content) as string;
+    const { html, toc } = withHeadingAnchors(parsed);
     return {
       slug,
       title: String(data.title ?? slug),
@@ -61,6 +85,7 @@ export function getAllPosts(): Post[] {
       readingTime: readingTimeFor(wordCount),
       wordCount,
       html,
+      toc,
     } satisfies Post;
   });
   posts.sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -69,7 +94,7 @@ export function getAllPosts(): Post[] {
 }
 
 export function getAllPostMeta(): PostMeta[] {
-  return getAllPosts().map(({ html, ...meta }) => meta);
+  return getAllPosts().map(({ html, toc, ...meta }) => meta);
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
@@ -86,7 +111,7 @@ export function getRelatedPosts(slug: string, limit = 3): PostMeta[] {
   const rest = all.filter(
     (p) => p.slug !== slug && p.category !== current.category,
   );
-  return [...sameCategory, ...rest].slice(0, limit).map(({ html, ...m }) => m);
+  return [...sameCategory, ...rest].slice(0, limit).map(({ html, toc, ...m }) => m);
 }
 
 export function getCategories(): { name: string; slug: string; count: number }[] {
