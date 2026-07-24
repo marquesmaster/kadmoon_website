@@ -9,11 +9,11 @@ export const siteConfig = {
   regionCode: 'TX',
   country: 'United States',
   countryCode: 'US',
-  defaultTitle: 'Kadmoon — Custom Software Engineering Firm | Austin, TX',
+  defaultTitle: 'Kadmoon — US Custom Software House | Austin, TX',
   titleTemplate: '%s | Kadmoon',
   // Kept to 120-160 chars, no em dashes (SEO + humanizer).
   description:
-    'Kadmoon builds bespoke enterprise systems, SaaS platforms, mobile apps, and AI, from concept to production, with a senior in-house team. You own every line.',
+    'Kadmoon is a US custom software house in Austin, TX. Bespoke enterprise systems, SaaS, mobile, and AI, built by a senior in-house team. You own every line.',
   ogImageAlt: 'Kadmoon, Inc., custom software built for how your business actually runs.',
   keywords: [
     'custom software',

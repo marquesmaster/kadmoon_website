@@ -338,6 +338,7 @@ export const footer = {
     {
       heading: 'Company',
       links: [
+        { label: 'Software house', href: '/software-house' },
         { label: 'Services', href: '/services' },
         { label: 'Industries', href: '/industries' },
         { label: 'Process', href: '/process' },

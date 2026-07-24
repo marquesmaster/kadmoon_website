@@ -22,6 +22,9 @@ export function GET() {
   lines.push('');
   lines.push('## Key pages');
   lines.push(`- [Home](${siteConfig.url}/): positioning, capabilities, process, how to choose a partner`);
+  lines.push(
+    `- [Software house](${siteConfig.url}/software-house): what a software house is and how Kadmoon works as a US software house`,
+  );
   lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth, data-backed articles`);
   lines.push(
     `- [Locations](${siteConfig.url}/custom-software-development): custom software development across ${cities.length}+ US cities`,
