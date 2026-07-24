@@ -32,6 +32,15 @@ export function GET() {
     `- [SaaS development company](${siteConfig.url}/saas-development-company): building multi-tenant SaaS platforms (tenancy, billing, auth, APIs) you own`,
   );
   lines.push(
+    `- [Software development company](${siteConfig.url}/software-development-company): what a software development company does, how to choose one, in-house vs offshore, cost`,
+  );
+  lines.push(
+    `- [Mobile app development company](${siteConfig.url}/mobile-app-development-company): native and React Native apps for iOS and Android, native vs cross-platform, cost, ownership`,
+  );
+  lines.push(
+    `- [Enterprise software development](${siteConfig.url}/enterprise-software-development): ERPs, CRMs, integrations, security and compliance, and legacy modernization at enterprise scale`,
+  );
+  lines.push(
     `- [Cases](${siteConfig.url}/cases): case studies our engineering team has delivered (public sector, education, logistics, healthcare, trade, enterprise)`,
   );
   lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth, data-backed articles`);

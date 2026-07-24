@@ -29,7 +29,7 @@ const byCategory: Record<string, HubLink[]> = {
   ],
   'Custom Software': [
     CUSTOM_CO,
-    { label: 'Enterprise systems we build', href: '/services/enterprise-systems' },
+    { label: 'Enterprise software development', href: '/enterprise-software-development' },
     SOFTWARE_HOUSE,
   ],
   "Buyer's Guide": [
@@ -50,8 +50,8 @@ const byCategory: Record<string, HubLink[]> = {
     CASES,
   ],
   'Mobile Apps': [
+    { label: 'Mobile app development company', href: '/mobile-app-development-company' },
     { label: 'Mobile app development', href: '/services/mobile-apps' },
-    SOFTWARE_HOUSE,
     CASES,
   ],
   'Legacy Modernization': [

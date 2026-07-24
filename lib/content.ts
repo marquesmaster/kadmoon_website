@@ -433,6 +433,9 @@ export const footer = {
       heading: 'Explore',
       links: [
         { label: 'Custom software company', href: '/custom-software-development-company' },
+        { label: 'Software development company', href: '/software-development-company' },
+        { label: 'Mobile app development', href: '/mobile-app-development-company' },
+        { label: 'Enterprise software', href: '/enterprise-software-development' },
         { label: 'SaaS development company', href: '/saas-development-company' },
         { label: 'Blog', href: '/blog' },
         { label: 'How to Choose', href: '/#how-to-choose' },
