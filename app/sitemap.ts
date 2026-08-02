@@ -3,6 +3,7 @@ import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
 import { getAllCities } from '@/lib/cities-utils';
 import { services, industryPages, caseStudies } from '@/lib/content';
+import { solutions } from '@/lib/solutions';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
@@ -49,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     { url: `${base}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/solutions`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/industries`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/cases`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/process`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
@@ -72,6 +74,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
+    })),
+    ...solutions.map((s) => ({
+      url: `${base}/solutions/${s.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     })),
   ];
 

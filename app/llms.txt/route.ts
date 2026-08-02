@@ -41,6 +41,9 @@ export function GET() {
     `- [Enterprise software development](${siteConfig.url}/enterprise-software-development): ERPs, CRMs, integrations, security and compliance, and legacy modernization at enterprise scale`,
   );
   lines.push(
+    `- [Solutions](${siteConfig.url}/solutions): custom software solutions we build (ERP, CRM, warehouse management, fleet management, hospital management, school management)`,
+  );
+  lines.push(
     `- [Cases](${siteConfig.url}/cases): case studies our engineering team has delivered (public sector, education, logistics, healthcare, trade, enterprise)`,
   );
   lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth, data-backed articles`);
