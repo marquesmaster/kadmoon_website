@@ -44,6 +44,9 @@ export function GET() {
     `- [Solutions](${siteConfig.url}/solutions): custom software solutions we build (ERP, CRM, warehouse management, fleet management, hospital management, school management)`,
   );
   lines.push(
+    `- [Staff augmentation](${siteConfig.url}/staff-augmentation), [Dedicated team](${siteConfig.url}/dedicated-development-team), [Hire AI engineers](${siteConfig.url}/hire-ai-engineers): engagement models for adding senior engineers to your team`,
+  );
+  lines.push(
     `- [Cases](${siteConfig.url}/cases): case studies our engineering team has delivered (public sector, education, logistics, healthcare, trade, enterprise)`,
   );
   lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth, data-backed articles`);

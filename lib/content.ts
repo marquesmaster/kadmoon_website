@@ -519,6 +519,15 @@ export const footer = {
         { label: 'Start a project', href: '/#contact' },
       ],
     },
+    {
+      heading: 'Hire',
+      links: [
+        { label: 'Staff augmentation', href: '/staff-augmentation' },
+        { label: 'Dedicated team', href: '/dedicated-development-team' },
+        { label: 'Hire AI engineers', href: '/hire-ai-engineers' },
+        { label: 'Engagement models', href: '/#engagement' },
+      ],
+    },
   ],
 };
 

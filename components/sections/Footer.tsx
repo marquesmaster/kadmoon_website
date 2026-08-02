@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-paper">
       <div className="mx-auto max-w-shell px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
             <Wordmark />
             <p className="mt-4 text-[15px] leading-relaxed text-ink-2">{footer.tagline}</p>
