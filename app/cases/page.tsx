@@ -51,9 +51,10 @@ export default function CasesPage() {
         <section className="mx-auto max-w-shell px-6 pb-16">
           <div className="grid gap-6 md:grid-cols-2">
             {caseStudies.map((c) => (
-              <article
+              <a
                 key={c.slug}
-                className="flex flex-col overflow-hidden rounded-2xl border border-line bg-paper shadow-card"
+                href={`/cases/${c.slug}`}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-paper shadow-card transition-all hover:-translate-y-0.5"
               >
                 <div className="relative flex h-28 items-end bg-navy p-6">
                   <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
@@ -62,7 +63,7 @@ export default function CasesPage() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-7 md:p-8">
-                  <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-ink">
+                  <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-ink group-hover:text-accent">
                     {c.title}
                   </h2>
 
@@ -95,8 +96,14 @@ export default function CasesPage() {
                       </span>
                     ))}
                   </div>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent">
+                    Read the case study{' '}
+                    <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </span>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </section>

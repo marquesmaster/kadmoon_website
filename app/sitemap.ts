@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
 import { getAllCities } from '@/lib/cities-utils';
-import { services, industryPages } from '@/lib/content';
+import { services, industryPages, caseStudies } from '@/lib/content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
@@ -66,6 +66,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    })),
+    ...caseStudies.map((c) => ({
+      url: `${base}/cases/${c.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
     })),
   ];
 

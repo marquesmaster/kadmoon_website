@@ -235,8 +235,11 @@ export type CaseStudy = {
   slug: string;
   sector: string;
   title: string;
+  summary: string;
   challenge: string;
   build: string;
+  whatWeBuilt: string[];
+  outcomes: string[];
   stack: string[];
   result?: string;
 };
@@ -246,10 +249,22 @@ export const caseStudies: CaseStudy[] = [
     slug: 'public-sector-delivery-at-scale',
     sector: 'Government & Enterprise',
     title: 'Sixteen stalled public-sector projects, delivered',
+    summary:
+      'A dedicated in-house squad took over sixteen stalled digital transformation projects and shipped all of them, unblocking a large contract pipeline.',
     challenge:
       'A top-tier IT consulting firm had sixteen public-sector digital transformation projects stalled for over a year, holding up a large pipeline of signed contracts.',
     build:
       'A dedicated in-house squad of engineers, data specialists, and AI engineers took over delivery end to end, shipping the sixteen initiatives across AI, data, and management systems while keeping the same team on the engagement the whole way through.',
+    whatWeBuilt: [
+      'A single senior squad that owned delivery across all sixteen initiatives instead of scattered vendors.',
+      'AI, data, and management systems built to the requirements of each public-sector program.',
+      'A steady sprint cadence that turned a stalled pipeline into shipped software.',
+    ],
+    outcomes: [
+      'Sixteen initiatives delivered in eleven months.',
+      'Over $100M in contracts unblocked.',
+      '0% turnover across the engagement.',
+    ],
     stack: ['AI / ML', 'Data pipelines', 'Management systems', 'Cloud'],
     result:
       'Sixteen initiatives delivered in eleven months, over $100M in contracts unblocked, and 0% turnover across the engagement.',
@@ -258,50 +273,110 @@ export const caseStudies: CaseStudy[] = [
     slug: 'education-platform',
     sector: 'Education',
     title: 'One platform for administrators, teachers, and families',
+    summary:
+      'An integrated platform that replaced paper and disconnected tools, connecting administrators, teachers, and families in real time.',
     challenge:
       'Schools were running attendance, grades, and family communication across paper and disconnected tools, so information reached parents late and staff duplicated work.',
     build:
       'An integrated education platform that connects administrators, teachers, and families in real time, from a digital class diary and gradebook to report cards delivered on mobile.',
+    whatWeBuilt: [
+      'A digital class diary and gradebook for teachers to record attendance and grades once.',
+      'A family-facing mobile experience that delivers report cards and updates in real time.',
+      'An administration layer tying schedules, staff, and communication into one system.',
+    ],
+    outcomes: [
+      'One source of truth in place of paper and scattered tools.',
+      'Information reaches families in real time instead of days later.',
+      'Less duplicated data entry for teachers and staff.',
+    ],
     stack: ['Web app', 'Mobile app', 'Real-time sync', 'PostgreSQL'],
   },
   {
     slug: 'fleet-management',
     sector: 'Logistics',
     title: 'From vehicle location to cost per kilometer',
+    summary:
+      'A fleet platform that gave operators one live view of where vehicles were and what each one actually cost to run.',
     challenge:
       'Fleet operators had no single view of where vehicles were or what each one actually cost to run, so decisions were made on stale spreadsheets.',
     build:
       'A fleet management platform covering the full picture, from real-time vehicle location and route data to fuel, maintenance, and cost per kilometer driven.',
+    whatWeBuilt: [
+      'Real-time vehicle location and route tracking through telematics and GPS.',
+      'Fuel and maintenance tracking that rolls up into cost per kilometer driven.',
+      'Operator dashboards and a mobile view for the field.',
+    ],
+    outcomes: [
+      'One live view of the fleet in place of stale spreadsheets.',
+      'Cost per kilometer visible per vehicle.',
+      'Decisions based on current data, not last week\'s.',
+    ],
     stack: ['Real-time tracking', 'Telematics / GPS', 'Dashboards', 'Mobile app'],
   },
   {
     slug: 'electronic-health-records',
     sector: 'Healthcare',
     title: 'Interoperable electronic health records',
+    summary:
+      'An electronic health record system built on HL7 FHIR so scheduling and medication data moves cleanly between systems, with no closed-vendor lock-in.',
     challenge:
       'Clinical teams needed records that could schedule care and track medication without locking the organization into a rigid, closed vendor.',
     build:
       'An electronic health record system built on HL7 FHIR interoperability, covering appointment scheduling and medication dispensing, so data moves cleanly between systems.',
+    whatWeBuilt: [
+      'An electronic health record core for clinical data.',
+      'Appointment scheduling and medication dispensing workflows.',
+      'HL7 FHIR interoperability so records move between systems.',
+    ],
+    outcomes: [
+      'Scheduling and medication data connected rather than siloed.',
+      'Interoperability instead of a closed, rigid vendor.',
+      'A record the organization owns and can extend.',
+    ],
     stack: ['HL7 FHIR', 'Web app', 'Integrations', 'PostgreSQL'],
   },
   {
     slug: 'foreign-trade-operations',
     sector: 'Trade & Supply Chain',
     title: 'Import and export operations in one system',
+    summary:
+      'Trade and customs software that pulled import and export processes, landed cost, and shipment tracking out of spreadsheets and into one integrated system.',
     challenge:
       'A foreign-trade operation tracked customs steps, costs, and shipments across spreadsheets and siloed tools, which made landed cost and status hard to trust.',
     build:
       'Trade and customs operations software that brings import and export processes, landed cost calculation, and shipment tracking into one integrated system.',
+    whatWeBuilt: [
+      'Import and export process workflows in one place.',
+      'Landed cost calculation across duties, freight, and fees.',
+      'Shipment tracking tied to the same records as costs and customs steps.',
+    ],
+    outcomes: [
+      'Landed cost and shipment status you can trust.',
+      'One system in place of spreadsheets and siloed tools.',
+      'Customs steps, costs, and shipments on one record.',
+    ],
     stack: ['Customs / trade', 'Integrations', 'Reporting', 'Node.js'],
   },
   {
     slug: 'microsoft-project-server-migration',
     sector: 'Enterprise',
     title: 'Migration inside the Microsoft Project ecosystem',
+    summary:
+      'A move from Project Web App to Project Server, customized to the client\'s reporting and governance needs without losing history or disrupting active work.',
     challenge:
       'An enterprise client needed to move and customize project operations within the Microsoft Project ecosystem without losing history or disrupting active work.',
     build:
       'Migration and customization from Project Web App to Project Server, adapted to the client\'s reporting and governance needs.',
+    whatWeBuilt: [
+      'A migration path from Project Web App to Project Server that preserved history.',
+      'Customization mapped to the client\'s reporting and governance needs.',
+      'A cutover planned to avoid disrupting active project work.',
+    ],
+    outcomes: [
+      'Project history preserved through the migration.',
+      'Reporting and governance shaped to the client\'s process.',
+      'No disruption to active work during cutover.',
+    ],
     stack: ['Microsoft Project Server', 'Migration', '.NET', 'SQL Server'],
   },
 ];
