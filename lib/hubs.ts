@@ -16,29 +16,32 @@ const SAAS_CO: HubLink = { label: 'SaaS development company', href: '/saas-devel
 const SERVICES: HubLink = { label: 'What we build', href: '/services' };
 const INDUSTRIES: HubLink = { label: 'Industries we serve', href: '/industries' };
 const PROCESS: HubLink = { label: 'How we deliver', href: '/process' };
+const SOLUTIONS: HubLink = { label: 'Software solutions we build', href: '/solutions' };
 const TRADE: HubLink = {
   label: 'Trade and supply chain software',
   href: '/industries/trade-and-supply-chain',
 };
 
+// Solution pages
+const CUSTOM_ERP: HubLink = { label: 'Custom ERP development', href: '/solutions/custom-erp-development' };
+const CUSTOM_CRM: HubLink = { label: 'Custom CRM development', href: '/solutions/custom-crm-development' };
+const WMS: HubLink = { label: 'Warehouse management software', href: '/solutions/warehouse-management-software' };
+
+// Engagement / hire pages
+const STAFF_AUG: HubLink = { label: 'IT staff augmentation', href: '/staff-augmentation' };
+const DEDICATED_TEAM: HubLink = { label: 'Dedicated development team', href: '/dedicated-development-team' };
+const HIRE_AI: HubLink = { label: 'Hire AI engineers', href: '/hire-ai-engineers' };
+
 const byCategory: Record<string, HubLink[]> = {
-  'Trade & Supply Chain': [
-    TRADE,
-    { label: 'Integrations and APIs', href: '/services/integrations-and-apis' },
-    CASES,
-  ],
-  'Custom Software': [
-    CUSTOM_CO,
-    { label: 'Enterprise software development', href: '/enterprise-software-development' },
-    SOFTWARE_HOUSE,
-  ],
+  'Trade & Supply Chain': [TRADE, WMS, CASES],
+  'Custom Software': [CUSTOM_ERP, CUSTOM_CRM, CUSTOM_CO],
   "Buyer's Guide": [
     SOFTWARE_HOUSE,
     { label: 'How to choose a software partner', href: '/#how-to-choose' },
     CASES,
   ],
-  'Cost & Pricing': [CUSTOM_CO, SOFTWARE_HOUSE, CASES],
-  'Software House': [SOFTWARE_HOUSE, CUSTOM_CO, CASES],
+  'Cost & Pricing': [CUSTOM_CO, SOLUTIONS, CASES],
+  'Software House': [SOFTWARE_HOUSE, STAFF_AUG, DEDICATED_TEAM],
   'SaaS Development': [
     SAAS_CO,
     { label: 'SaaS platforms we build', href: '/services/saas-platforms' },
@@ -46,7 +49,7 @@ const byCategory: Record<string, HubLink[]> = {
   ],
   'Data & AI': [
     { label: 'Data and AI engineering', href: '/services/data-and-ai' },
-    SOFTWARE_HOUSE,
+    HIRE_AI,
     CASES,
   ],
   'Mobile Apps': [
@@ -56,20 +59,20 @@ const byCategory: Record<string, HubLink[]> = {
   ],
   'Legacy Modernization': [
     { label: 'Legacy modernization', href: '/services/legacy-modernization' },
-    SOFTWARE_HOUSE,
+    { label: 'Enterprise software development', href: '/enterprise-software-development' },
     CASES,
   ],
   'Integrations & APIs': [
     { label: 'Integrations and APIs', href: '/services/integrations-and-apis' },
-    TRADE,
+    WMS,
     CASES,
   ],
-  'Industry Guides': [INDUSTRIES, SOFTWARE_HOUSE, CASES],
-  'Process & Delivery': [PROCESS, SOFTWARE_HOUSE, CASES],
-  Comparisons: [SOFTWARE_HOUSE, CUSTOM_CO, CASES],
-  'Tech Stack': [SERVICES, SOFTWARE_HOUSE, CASES],
+  'Industry Guides': [SOLUTIONS, INDUSTRIES, CASES],
+  'Process & Delivery': [PROCESS, DEDICATED_TEAM, CASES],
+  Comparisons: [SOFTWARE_HOUSE, STAFF_AUG, CUSTOM_CO],
+  'Tech Stack': [SERVICES, SOLUTIONS, CASES],
 };
 
 export function hubsForCategory(category: string): HubLink[] {
-  return byCategory[category] ?? [SOFTWARE_HOUSE, CUSTOM_CO, CASES];
+  return byCategory[category] ?? [SOFTWARE_HOUSE, SOLUTIONS, CASES];
 }
