@@ -1,6 +1,6 @@
 ---
-title: "The software discovery phase: why it de-risks your project"
-description: "What the software discovery phase produces, from aligned outcomes to architecture and a phased estimate, and why skipping discovery costs far more."
+title: "Software Discovery Phase: What It Is and Why It Matters"
+description: "What the software discovery phase is, what it produces from aligned outcomes to architecture and a phased estimate, and why skipping discovery costs far more."
 category: "Process & Delivery"
 primaryKeyword: "software discovery phase"
 tags: ["discovery workshop", "project discovery", "software discovery process"]

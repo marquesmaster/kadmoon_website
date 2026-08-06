@@ -1,6 +1,6 @@
 ---
-title: "Custom 3PL software: platforms for third-party logistics"
-description: "Custom 3PL software explained: multi-client warehousing and billing, order and inventory flows, client portals, and integrations, plus when to build."
+title: "Custom 3PL Software: Build vs Buy for Logistics Providers"
+description: "Custom 3PL software explained: multi-client warehousing, activity-based billing, order and inventory flows, client portals, integrations, and when to build."
 category: "Trade & Supply Chain"
 primaryKeyword: "custom 3pl software"
 tags: ["3pl software", "third party logistics platform", "3pl warehouse software", "wms integration"]

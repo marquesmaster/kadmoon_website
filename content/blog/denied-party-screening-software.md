@@ -1,5 +1,5 @@
 ---
-title: "Denied party screening software: automating restricted-party checks"
+title: "Denied Party Screening Software: Restricted-Party Checks"
 description: "Denied party screening software explained: US watchlists, fuzzy matching, false positives, real-time checks, audit logs, OFAC penalties, and build vs buy."
 category: "Trade & Supply Chain"
 primaryKeyword: "denied party screening software"

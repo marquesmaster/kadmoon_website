@@ -1,6 +1,6 @@
 ---
-title: "Custom customs brokerage software: features and build guide"
-description: "Custom customs brokerage software: the brokerage workflow end to end, entry and document handling, ACE/ABI filing, client portals, compliance, and build vs buy."
+title: "Customs Broker Software: Features and Build vs Buy Guide"
+description: "Customs broker software explained: the full brokerage workflow, ACE and ABI filing, document handling, client portals, compliance, and how to decide build vs buy."
 category: "Trade & Supply Chain"
 primaryKeyword: "customs brokerage software"
 tags: ["customs broker software", "brokerage automation", "custom broker platform", "ace filing"]

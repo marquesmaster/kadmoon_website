@@ -1,6 +1,6 @@
 ---
-title: "SaaS metrics and analytics every product needs"
-description: "The SaaS metrics that drive real decisions: MRR, churn, net revenue retention, activation, and engagement, plus how to instrument analytics and act on them."
+title: "SaaS Metrics: The Product Numbers That Actually Matter"
+description: "The SaaS product metrics that drive real decisions: MRR, churn, net revenue retention, activation, and engagement, plus how to instrument them and act."
 category: "SaaS Development"
 primaryKeyword: "saas metrics"
 tags: ["saas analytics", "product metrics", "mrr churn ltv", "net revenue retention"]

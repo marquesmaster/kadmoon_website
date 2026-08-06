@@ -1,6 +1,6 @@
 ---
-title: "Cloud migration strategy: the 6 Rs and how to choose"
-description: "A practical cloud migration strategy: the 6 Rs explained, how to assess your portfolio, control cost and risk, and avoid lift-and-shift regret."
+title: "The 6 Rs of Cloud Migration and How to Choose a Strategy"
+description: "The 6 Rs of cloud migration explained (rehost, replatform, refactor, repurchase, retire, retain), plus how to build a strategy that controls cost and risk."
 category: "Legacy Modernization"
 primaryKeyword: "cloud migration strategy"
 tags: ["migrate to the cloud", "cloud migration approaches", "lift and shift vs refactor", "cloud cost overruns"]

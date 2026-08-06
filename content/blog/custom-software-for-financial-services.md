@@ -1,6 +1,6 @@
 ---
-title: "Custom software for financial services firms"
-description: "Custom software for financial services: how to handle regulation, security, compliance, integrations, and auditability when building fintech and banking software."
+title: "Custom Software for Financial Services: What to Know"
+description: "Custom software for financial services: how to handle regulation, security, compliance, integrations, and auditability in fintech and banking builds."
 category: "Industry Guides"
 primaryKeyword: "custom software for financial services"
 tags: ["fintech software development", "financial software", "banking software", "compliance software"]

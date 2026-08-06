@@ -1,6 +1,6 @@
 ---
-title: "A guide to ACE integration software for importers"
-description: "A guide to ACE integration software: what ACE is, ABI and EDI message types, connection options, building a custom integration, error handling, and CBP testing."
+title: "ACE Customs Software: ABI Filing and Integration Guide"
+description: "ACE customs software guide: what ACE is, ABI and EDI message types, connection options, building a custom integration, error handling, and CBP certification."
 category: "Trade & Supply Chain"
 primaryKeyword: "ace integration software"
 tags: ["ace filing software", "automated commercial environment", "cbp ace api", "abi entry summary"]

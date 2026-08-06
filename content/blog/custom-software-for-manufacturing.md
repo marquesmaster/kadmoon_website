@@ -1,5 +1,5 @@
 ---
-title: "Custom software for manufacturing operations"
+title: "Custom Software for Manufacturing: When to Build It"
 description: "How custom software for manufacturing fills the gaps packaged MES and ERP leave, from shop-floor data and scheduling to traceability and compliance."
 category: "Industry Guides"
 primaryKeyword: "custom software for manufacturing"

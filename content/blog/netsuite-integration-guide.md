@@ -1,6 +1,6 @@
 ---
-title: "NetSuite integration: a practical guide for teams"
-description: "A practical NetSuite integration guide: SuiteTalk, REST, and RESTlets compared, governance and concurrency limits, common data flows, error handling, and reliable syncs."
+title: "NetSuite Integration: API Guide, Limits, and Reliable Syncs"
+description: "NetSuite integration guide: SuiteTalk REST, RESTlets, and the API options compared, plus governance and concurrency limits, data flows, and reliable syncs."
 category: "Integrations & APIs"
 primaryKeyword: "netsuite integration"
 tags: ["integrate with netsuite", "netsuite api", "suitetalk suitescript", "netsuite governance limits"]

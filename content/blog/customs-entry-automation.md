@@ -1,6 +1,6 @@
 ---
-title: "Customs entry automation: cutting manual filing work"
-description: "Customs entry automation explained: how to ingest commercial documents, auto-populate entry data, run compliance checks, and reconcile ACE status."
+title: "Customs Entry Automation: How to Cut Manual Filing Work"
+description: "Customs entry automation explained: ingest commercial documents, auto-populate entry data, run compliance checks, and reconcile ACE status with less manual keying."
 category: "Trade & Supply Chain"
 primaryKeyword: "customs entry automation"
 tags: ["automate customs entries", "entry filing software", "customs workflow automation", "ACE entry summary"]

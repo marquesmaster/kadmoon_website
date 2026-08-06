@@ -1,6 +1,6 @@
 ---
-title: "How to budget for a custom software project"
-description: "How to budget for a software project: separate build, run, and change costs, size contingency, plan 3-year TCO, and get approval with confidence."
+title: "Software Project Budget: How to Plan Build, Run, and Change"
+description: "How to build a software project budget: separate build, run, and change costs, size contingency, plan a 3-year TCO, and get approval with confidence."
 category: "Cost & Pricing"
 primaryKeyword: "how to budget for a software project"
 tags: ["software project budget", "software cost planning", "budgeting for development", "software total cost of ownership"]

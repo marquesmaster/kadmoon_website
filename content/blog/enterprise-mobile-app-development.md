@@ -1,6 +1,6 @@
 ---
-title: "Enterprise mobile app development: what leaders should know"
-description: "A leader's guide to enterprise mobile app development: security and MDM, backend integration, offline field use, rollout, and choosing the right build approach."
+title: "Enterprise Mobile App Development: A Leader's Guide"
+description: "Enterprise mobile app development explained for leaders: security and MDM, backend integration, offline field use, rollout, and choosing how to build."
 category: "Mobile Apps"
 primaryKeyword: "enterprise mobile app development"
 tags: ["enterprise apps", "b2b mobile apps", "corporate mobile software", "mdm"]

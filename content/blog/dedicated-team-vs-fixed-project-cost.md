@@ -1,6 +1,6 @@
 ---
-title: "Dedicated team vs fixed project: which costs less over time?"
-description: "Dedicated team vs fixed price: how each is priced, total cost across a multi-phase roadmap, what scope creep does to each, and how to choose the cheaper model."
+title: "Dedicated Team vs Fixed Project: Which Costs Less Over Time"
+description: "Dedicated team vs a fixed project: how each is priced, total cost across a multi-phase roadmap, what scope creep does to each, and how to pick the cheaper model."
 category: "Cost & Pricing"
 primaryKeyword: "dedicated team vs fixed price"
 tags: ["dedicated development team cost", "retainer vs project", "ongoing team pricing", "software project cost overrun"]

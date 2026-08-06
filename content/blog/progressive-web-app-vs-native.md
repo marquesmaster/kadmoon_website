@@ -1,6 +1,6 @@
 ---
-title: "Progressive web app vs native app: which do you need?"
-description: "Progressive web app vs native app compared: what a PWA can and cannot do, offline and install behavior, native-only features, and real case-study results."
+title: "PWA vs Native App: How to Choose and What It Costs"
+description: "PWA vs native app compared: what a PWA can and cannot do, offline and install behavior, native-only features, cost, and real case-study results."
 category: "Mobile Apps"
 primaryKeyword: "pwa vs native app"
 tags: ["progressive web app", "web app vs native", "pwa pros and cons", "pwa performance"]

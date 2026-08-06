@@ -1,6 +1,6 @@
 ---
-title: "Import/export compliance software: what US traders need"
-description: "A practical guide to import export compliance software for US traders: classification, valuation, origin, export controls, recordkeeping, and custom vs packaged tools."
+title: "Import/Export Compliance Software: Guide for US Traders"
+description: "Import export compliance software for US traders: classification, valuation, origin, export controls, denied party screening, recordkeeping, and build vs buy."
 category: "Trade & Supply Chain"
 primaryKeyword: "import export compliance software"
 tags: ["trade compliance software", "export controls software", "import compliance tools", "denied party screening"]

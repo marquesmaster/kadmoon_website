@@ -1,6 +1,6 @@
 ---
-title: "Gathering software requirements: techniques that work"
-description: "Practical requirements gathering techniques: interviews, workshops, observing real workflows, prototypes, and how to prioritize, document, and keep requirements current."
+title: "Requirements Gathering: Techniques That Actually Work"
+description: "Requirements gathering techniques that work: interviews, workshops, observing real workflows, prototypes, and how to prioritize, document, and keep them current."
 category: "Process & Delivery"
 primaryKeyword: "gathering software requirements"
 tags: ["requirements gathering", "elicitation techniques", "capturing requirements", "requirements failure"]

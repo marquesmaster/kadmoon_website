@@ -1,6 +1,6 @@
 ---
-title: "Custom WMS: building warehouse management software that fits"
-description: "Custom WMS software built around your real flows: receiving, putaway, picking, scanning, inventory accuracy, and ERP and TMS integration. Build vs off-the-shelf."
+title: "Custom Warehouse Management Software (WMS): Build Guide"
+description: "Custom warehouse management software (WMS) built around your real flows: receiving, putaway, picking, scanning, inventory accuracy, and ERP and TMS integration."
 category: "Trade & Supply Chain"
 primaryKeyword: "custom wms software"
 tags: ["warehouse management system", "wms development", "custom warehouse software", "inventory accuracy"]

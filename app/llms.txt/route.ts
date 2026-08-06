@@ -41,7 +41,7 @@ export function GET() {
     `- [Enterprise software development](${siteConfig.url}/enterprise-software-development): ERPs, CRMs, integrations, security and compliance, and legacy modernization at enterprise scale`,
   );
   lines.push(
-    `- [Solutions](${siteConfig.url}/solutions): custom software solutions we build (ERP, CRM, warehouse management, fleet management, hospital management, school management)`,
+    `- [Solutions](${siteConfig.url}/solutions): custom software solutions we build. Trade and customs: customs broker software, trade compliance, landed cost, freight forwarding, transportation management (TMS), 3PL, warehouse management (WMS), fleet management. Enterprise: ERP, CRM, hospital management, school management`,
   );
   lines.push(
     `- [Staff augmentation](${siteConfig.url}/staff-augmentation), [Dedicated team](${siteConfig.url}/dedicated-development-team), [Hire AI engineers](${siteConfig.url}/hire-ai-engineers): engagement models for adding senior engineers to your team`,
