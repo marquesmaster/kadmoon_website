@@ -25,24 +25,35 @@ export const nav = {
 export const hero = {
   eyebrow: '100% Microsoft ecosystem · Austin, TX',
   // The accent phrase is rendered in orange inside the H1.
-  headlineBefore: 'Data intelligence that becomes ',
-  headlineAccent: 'decisions',
+  headlineBefore: 'Microsoft data your whole company ',
+  headlineAccent: 'trusts',
   headlineAfter: '.',
   subhead:
-    'Kadmoon is a Power BI and Microsoft Power Platform consultancy. We take scattered raw data to the dashboard your leadership opens every Monday, on a governed foundation of Microsoft Fabric, Synapse, and Azure.',
-  flagship: 'Signature practice: tenant-to-tenant and legacy BI migrations.',
+    'Kadmoon is a US Power BI and Microsoft Power Platform consultancy. We turn scattered, conflicting data into one governed source of truth on Microsoft Fabric and Azure, so finance, IT, and operations decide from the same numbers. First dashboards go live in week two.',
+  flagship: 'Signature practice: Tableau, Qlik, and Premium-to-Fabric migrations, with no lost history.',
   ctas: [
     { label: 'Talk to an expert', href: '#contact', primary: true },
     { label: 'See dashboards', href: '/dashboards', primary: false },
   ],
+  // What the client owns in their own tenant at the end of an engagement.
+  panelLabel: 'On delivery, you own',
+  deliverables: [
+    'A governed semantic model',
+    'Power BI reports in your tenant',
+    'Reliable, documented data pipelines',
+    'Row-level security and governance',
+    'A trained team and full handover',
+  ],
+  panelFooter: 'Built in your tenant. No lock-in, no permanent dependency on us.',
 };
 
-// TODO(founder): replace with real, defensible figures (clients, dashboards
-// delivered, migrations, years) before launch.
+// These four are defensible positioning signals, not invented metrics. When you
+// have real headline numbers (years in business, reports migrated, months of
+// close cut to days), send them and we swap two of these for hard proof.
 export const stats = [
   { value: '100%', label: 'Microsoft ecosystem' },
-  { value: 'Week 2', label: 'first dashboards live' },
-  { value: '0%', label: 'turnover in operation' },
+  { value: 'Week 2', label: 'to first dashboards' },
+  { value: 'Senior', label: 'in-house, certified team' },
   { value: 'SLA', label: 'managed BI support' },
 ];
 
@@ -88,8 +99,8 @@ export const why = {
       body: 'We build a semantic layer so revenue, margin, and churn mean the same thing in every report. No more three versions of the truth in one meeting.',
     },
     {
-      title: 'Senior in-house team, 0% turnover',
-      body: 'No subcontractors. The Power BI, data, and Power Platform engineers who start your project are the ones who ship it and support it.',
+      title: 'A senior, certified in-house team',
+      body: 'No subcontractors and no rotating juniors. The Microsoft-certified Power BI, data, and Power Platform engineers who start your project are the ones who ship it and support it.',
     },
     {
       title: 'Value from week two',
@@ -120,7 +131,7 @@ export const howToChoose = {
       title: 'Who builds it',
       body: 'Ask whether the Power BI and data engineers are full-time employees or rotating freelancers. Data projects live or die on the people who understand your model six months later.',
       answer:
-        '100% in-house, full-time senior team. No pass-through to third parties. 0% turnover in operation.',
+        'A full-time, senior, Microsoft-certified in-house team. The people who build your model are the ones who support it. No pass-through to third parties.',
     },
     {
       num: '02',
@@ -697,7 +708,7 @@ export const comparison = {
 };
 
 export const credibility = {
-  text: 'Kadmoon is the US Microsoft data practice. The dashboards you can open at /dashboards are illustrative demos, built with the real structure we ship on live projects, and detailed client cases are available under NDA.',
+  text: 'Kadmoon is a US Power BI and Microsoft Power Platform practice run by a senior, Microsoft-certified team. The dashboards you can open at /dashboards are illustrative demos built with the exact structure we ship on live projects; detailed client results are available under NDA.',
 };
 
 // ---------------------------------------------------------------------------

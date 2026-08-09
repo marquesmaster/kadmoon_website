@@ -3,14 +3,6 @@ import { Eyebrow } from '../Eyebrow';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 
-const delivery = [
-  'The Git repository',
-  'CI/CD pipelines',
-  'Infrastructure credentials',
-  'An operational runbook',
-  'Full documentation',
-];
-
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36">
@@ -64,11 +56,11 @@ export function Hero() {
                 <div className="flex items-center gap-2.5">
                   <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
                   <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">
-                    On delivery, you own
+                    {hero.panelLabel}
                   </span>
                 </div>
                 <ul className="mt-6 space-y-4">
-                  {delivery.map((item) => (
+                  {hero.deliverables.map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent">
                         <Icon name="qa" className="h-4 w-4" />
@@ -79,7 +71,7 @@ export function Hero() {
                 </ul>
                 <div className="mt-7 border-t border-white/10 pt-5">
                   <p className="text-[13px] leading-relaxed text-white/60">
-                    No lock-in. No permanent dependency. Every line is yours.
+                    {hero.panelFooter}
                   </p>
                 </div>
               </div>
