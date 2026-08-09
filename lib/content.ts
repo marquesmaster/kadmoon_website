@@ -214,6 +214,37 @@ export const work = {
   ],
 };
 
+// Signature-practice highlight on the homepage: tenant-to-tenant migration.
+// The inventory panel is an explicitly labeled example, not a real client's
+// figures.
+export const migrationHighlight = {
+  eyebrow: 'Our specialty',
+  title: 'Tenant-to-tenant migration without erasing six years of history',
+  body: 'A merger, acquisition, or reorg forces you to move an entire Microsoft environment from one tenant to another. It is one of the most delicate operations there is, and we run it inventoried and phased: workspaces, models, reports, flows, and permissions all arrive intact on the other side.',
+  points: [
+    'Full inventory before a single asset moves',
+    'Flows, apps, and gateways remapped and revalidated',
+    'Phased cutover, with no information blackout',
+  ],
+  ctas: [
+    { label: 'See the methodology', href: '/services/tenant-to-tenant-migration', primary: true },
+    { label: 'Talk about a migration', href: '#contact', primary: false },
+  ],
+  panel: {
+    label: 'Tenant inventory',
+    caption: 'example · pre-migration',
+    rows: [
+      { label: 'Workspaces', value: '148', status: 'mapped' },
+      { label: 'Semantic models', value: '96', status: 'mapped' },
+      { label: 'Reports and apps', value: '1,204', status: 'mapped' },
+      { label: 'Power Automate flows', value: '312', status: 'review' },
+      { label: 'Power Apps', value: '41', status: 'mapped' },
+      { label: 'Gateways and connections', value: '18', status: 'review' },
+      { label: 'Groups and permissions', value: '2,870', status: 'mapped' },
+    ],
+  },
+};
+
 // ---------------------------------------------------------------------------
 // Case studies. These come from our engineering team's delivered work
 // (originally shipped under our Brazil-based practice) and are framed honestly.
