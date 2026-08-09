@@ -47,13 +47,14 @@ export const hero = {
   panelFooter: 'Built in your tenant. No lock-in, no permanent dependency on us.',
 };
 
-// These four are defensible positioning signals, not invented metrics. When you
-// have real headline numbers (years in business, reports migrated, months of
-// close cut to days), send them and we swap two of these for hard proof.
+// '35+' is a real, owner-confirmed figure (clients served). The other three are
+// defensible positioning signals. When you have more hard numbers (years in
+// business, reports migrated, months of close cut to days), send them and we
+// swap in more proof.
 export const stats = [
+  { value: '35+', label: 'clients served' },
   { value: '100%', label: 'Microsoft ecosystem' },
   { value: 'Week 2', label: 'to first dashboards' },
-  { value: 'Senior', label: 'in-house, certified team' },
   { value: 'SLA', label: 'managed BI support' },
 ];
 
@@ -708,7 +709,7 @@ export const comparison = {
 };
 
 export const credibility = {
-  text: 'Kadmoon is a US Power BI and Microsoft Power Platform practice run by a senior, Microsoft-certified team. The dashboards you can open at /dashboards are illustrative demos built with the exact structure we ship on live projects; detailed client results are available under NDA.',
+  text: 'Kadmoon is a US Power BI and Microsoft Power Platform practice run by a senior, Microsoft-certified team, with more than 35 clients served. The dashboards you can open at /dashboards are illustrative demos built with the exact structure we ship on live projects; detailed client results are available under NDA.',
 };
 
 // ---------------------------------------------------------------------------
