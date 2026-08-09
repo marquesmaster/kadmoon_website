@@ -55,6 +55,29 @@ const nextConfig = {
       { source: '/en/contact', destination: '/#contact', permanent: true },
       { source: '/en/blog/:slug*', destination: '/blog', permanent: true },
       { source: '/en/:path*', destination: '/', permanent: true },
+
+      // Retired custom-software pages (pivot to Microsoft data platform).
+      { source: '/software-house', destination: '/services', permanent: true },
+      { source: '/software-development-company', destination: '/services', permanent: true },
+      { source: '/custom-software-development-company', destination: '/services', permanent: true },
+      { source: '/enterprise-software-development', destination: '/services', permanent: true },
+      { source: '/saas-development-company', destination: '/services', permanent: true },
+      { source: '/mobile-app-development-company', destination: '/services/power-platform', permanent: true },
+      { source: '/staff-augmentation', destination: '/services', permanent: true },
+      { source: '/dedicated-development-team', destination: '/services', permanent: true },
+      { source: '/hire-ai-engineers', destination: '/services/analytics-and-ai', permanent: true },
+      { source: '/solutions', destination: '/industries', permanent: true },
+      { source: '/solutions/:slug*', destination: '/industries', permanent: true },
+
+      // Old service/industry slugs -> closest Microsoft data platform page.
+      { source: '/services/data-and-ai', destination: '/services/analytics-and-ai', permanent: true },
+      { source: '/services/enterprise-systems', destination: '/services', permanent: true },
+      { source: '/services/saas-platforms', destination: '/services', permanent: true },
+      { source: '/services/mobile-apps', destination: '/services/power-platform', permanent: true },
+      { source: '/services/integrations-and-apis', destination: '/services/data-engineering', permanent: true },
+      { source: '/services/legacy-modernization', destination: '/services/tenant-to-tenant-migration', permanent: true },
+      { source: '/industries/trade-and-supply-chain', destination: '/industries/supply-chain', permanent: true },
+      { source: '/industries/government-and-enterprise', destination: '/industries', permanent: true },
     ];
   },
 };

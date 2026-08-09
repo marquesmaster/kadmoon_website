@@ -1,6 +1,6 @@
 import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
-import { getAllCities } from '@/lib/cities-utils';
+import { services, industryPages } from '@/lib/content';
 
 export const dynamic = 'force-static';
 
@@ -9,7 +9,6 @@ export const dynamic = 'force-static';
 export function GET() {
   const posts = getAllPostMeta();
   const categories = getCategories();
-  const cities = getAllCities();
 
   const lines: string[] = [];
   lines.push(`# ${siteConfig.legalName}`);
@@ -17,45 +16,29 @@ export function GET() {
   lines.push(`> ${siteConfig.description}`);
   lines.push('');
   lines.push(
-    `Kadmoon is a US custom-software engineering firm based in ${siteConfig.city}, ${siteConfig.regionCode}. It builds bespoke enterprise systems (ERP/CRM), SaaS platforms, mobile apps, integrations and APIs, data and AI, and legacy modernization. Flagship practice: Trade & Supply Chain software (US Customs/CBP/ACE, logistics, import/export, landed cost). Senior in-house team, two-week sprints, measurable acceptance criteria, and the client owns 100% of the IP.`,
+    `Kadmoon is a US Power BI and Microsoft Power Platform consultancy based in ${siteConfig.city}, ${siteConfig.regionCode}. We turn scattered data into decisions on the Microsoft stack: Power BI, Microsoft Fabric, Azure Synapse and Data Factory, Power Platform (Power Apps, Power Automate, Power Pages, Copilot Studio), Dataverse, Azure Machine Learning, and Microsoft Purview. Signature work: tenant-to-tenant migrations and legacy BI migrations (Tableau, Qlik, Cognos) to Power BI and Fabric. Senior in-house team, one definition per KPI, governed by default, and everything built in your own tenant.`,
   );
   lines.push('');
   lines.push('## Key pages');
-  lines.push(`- [Home](${siteConfig.url}/): positioning, capabilities, process, how to choose a partner`);
+  lines.push(`- [Home](${siteConfig.url}/): positioning, what we do, four-phase process, how to choose a data partner`);
   lines.push(
-    `- [Software house](${siteConfig.url}/software-house): what a software house is and how Kadmoon works as a US software house`,
+    `- [Dashboards](${siteConfig.url}/dashboards): ten interactive Power BI dashboard demos with three-level drill-down, granular tables, and cross-cut matrices (illustrative data, real structure)`,
   );
   lines.push(
-    `- [Custom software development company](${siteConfig.url}/custom-software-development-company): what a custom software development company delivers, cost, and how to choose one`,
+    `- [Cases](${siteConfig.url}/cases): BI and migration case studies (QlikView to Power BI, Fabric data platform, executive OEE BI, predictive analytics, S&OP, logistics OTIF, management P&L, and more), each with its dashboard`,
   );
-  lines.push(
-    `- [SaaS development company](${siteConfig.url}/saas-development-company): building multi-tenant SaaS platforms (tenancy, billing, auth, APIs) you own`,
-  );
-  lines.push(
-    `- [Software development company](${siteConfig.url}/software-development-company): what a software development company does, how to choose one, in-house vs offshore, cost`,
-  );
-  lines.push(
-    `- [Mobile app development company](${siteConfig.url}/mobile-app-development-company): native and React Native apps for iOS and Android, native vs cross-platform, cost, ownership`,
-  );
-  lines.push(
-    `- [Enterprise software development](${siteConfig.url}/enterprise-software-development): ERPs, CRMs, integrations, security and compliance, and legacy modernization at enterprise scale`,
-  );
-  lines.push(
-    `- [Solutions](${siteConfig.url}/solutions): custom software solutions we build. Trade and customs: customs broker software, trade compliance, landed cost, freight forwarding, transportation management (TMS), 3PL, warehouse management (WMS), fleet management. Enterprise: ERP, CRM, hospital management, school management`,
-  );
-  lines.push(
-    `- [Staff augmentation](${siteConfig.url}/staff-augmentation), [Dedicated team](${siteConfig.url}/dedicated-development-team), [Hire AI engineers](${siteConfig.url}/hire-ai-engineers): engagement models for adding senior engineers to your team`,
-  );
-  lines.push(
-    `- [Cases](${siteConfig.url}/cases): case studies our engineering team has delivered (public sector, education, logistics, healthcare, trade, enterprise)`,
-  );
-  lines.push(
-    `- [Dashboards](${siteConfig.url}/dashboards): interactive Power BI dashboard demos with drill-down, granular tables, and cross-cut matrices (illustrative data, real structure)`,
-  );
-  lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth, data-backed articles`);
-  lines.push(
-    `- [Locations](${siteConfig.url}/custom-software-development): custom software development across ${cities.length}+ US cities`,
-  );
+  lines.push('');
+  lines.push('## Services');
+  for (const s of services) {
+    lines.push(`- [${s.title}](${siteConfig.url}/services/${s.slug}): ${s.tagline}`);
+  }
+  lines.push('');
+  lines.push('## Industries');
+  for (const i of industryPages) {
+    lines.push(`- [${i.name}](${siteConfig.url}/industries/${i.slug})`);
+  }
+  lines.push('');
+  lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth articles`);
   lines.push(`- Contact: ${siteConfig.email}`);
   lines.push('');
   lines.push('## Blog topics');

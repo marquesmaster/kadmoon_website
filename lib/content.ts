@@ -13,7 +13,6 @@ export const nav = {
   suffix: 'INC.',
   links: [
     { label: 'Services', href: '/services' },
-    { label: 'Solutions', href: '/solutions' },
     { label: 'Industries', href: '/industries' },
     { label: 'Cases', href: '/cases' },
     { label: 'Dashboards', href: '/dashboards' },
@@ -571,9 +570,9 @@ export const footer = {
       heading: 'Company',
       links: [
         { label: 'Services', href: '/services' },
-        { label: 'Solutions', href: '/solutions' },
         { label: 'Cases', href: '/cases' },
         { label: 'Dashboards', href: '/dashboards' },
+        { label: 'Industries', href: '/industries' },
         { label: 'Process', href: '/process' },
         { label: 'About', href: '/about' },
       ],
