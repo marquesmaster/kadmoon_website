@@ -30,6 +30,8 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
   const c = caseStudies.find((x) => x.slug === params.slug);
   if (!c) notFound();
   const others = caseStudies.filter((x) => x.slug !== c.slug).slice(0, 3);
+  const dash = getDashboard(c.slug);
+  const kpis = dash?.kpis.slice(0, 4) ?? [];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -75,6 +77,30 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
                   </span>
                 ))}
               </div>
+
+              {kpis.length > 0 && (
+                <div className="mt-8">
+                  <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                    {kpis.map((k) => (
+                      <div
+                        key={k.label}
+                        className="rounded-xl border border-line bg-paper p-4 shadow-card"
+                      >
+                        <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+                          {k.label}
+                        </dt>
+                        <dd className="mt-1 font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
+                          {k.value}
+                        </dd>
+                        <dd className="mt-1 text-[12px] leading-snug text-ink-2">{k.sub}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+                    Illustrative figures · fictitious client · under NDA
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </section>

@@ -5,6 +5,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
 import { DashboardPreview } from '@/components/cases/DashboardPreview';
+import { getDashboard } from '@/lib/cases/dashboards';
 import { caseStudies, credibility } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Kadmoon case studies',
     description:
-      'Real systems our engineering team has built and shipped, across public sector, education, logistics, healthcare, and trade.',
+      'Power BI, Microsoft Fabric, and Power Platform work across retail, finance, manufacturing, logistics, and healthcare. Illustrative data, real structure.',
     url: `${siteConfig.url}/cases`,
     type: 'website',
   },
@@ -51,7 +52,9 @@ export default function CasesPage() {
 
         <section className="mx-auto max-w-shell px-6 pb-16">
           <div className="grid gap-6 md:grid-cols-2">
-            {caseStudies.map((c) => (
+            {caseStudies.map((c) => {
+              const kpis = getDashboard(c.slug)?.kpis.slice(0, 2) ?? [];
+              return (
               <a
                 key={c.slug}
                 href={`/cases/${c.slug}`}
@@ -68,6 +71,21 @@ export default function CasesPage() {
                   <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-ink group-hover:text-accent">
                     {c.title}
                   </h2>
+
+                  {kpis.length > 0 && (
+                    <dl className="mt-4 grid grid-cols-2 gap-3">
+                      {kpis.map((k) => (
+                        <div key={k.label} className="rounded-xl border border-line bg-mist p-3">
+                          <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+                            {k.label}
+                          </dt>
+                          <dd className="mt-0.5 font-display text-xl font-semibold tracking-[-0.02em] text-ink">
+                            {k.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  )}
 
                   <p className="mt-4 text-[13px] font-medium uppercase tracking-[0.08em] text-ink-3">
                     The challenge
@@ -106,7 +124,8 @@ export default function CasesPage() {
                   </span>
                 </div>
               </a>
-            ))}
+              );
+            })}
           </div>
         </section>
 

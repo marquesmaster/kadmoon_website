@@ -1,4 +1,4 @@
-// Fynx — dados dos painéis exibidos em cada case.
+// Dashboard data shown on each case (illustrative, seeded per slug).
 //
 // IMPORTANTE: todos os clientes estão sob NDA. Nada aqui é dado real.
 // Os números são gerados por um PRNG com semente fixa, para que o painel
@@ -246,7 +246,7 @@ export const caseDashboards: DashboardDef[] = [
       { label: 'Reports migrated', value: '1,247', sub: 'of 1,312 after rationalization', delta: '+96 this wave', up: true },
       { label: 'Parity validated', value: '98.6%', sub: 'checked number by number', delta: '+1.4 p.p.', up: true },
       { label: 'Current wave', value: '6 of 8', sub: 'phased cutover, no blackout', delta: 'on track', up: true },
-      { label: 'Cumulative effort', value: '4,180 h', sub: 'Fynx team + client squad', delta: '-12% vs plan', up: true },
+      { label: 'Cumulative effort', value: '4,180 h', sub: 'Our team + client squad', delta: '-12% vs plan', up: true },
     ],
     trend: {
       title: 'Reports migrated per month',
