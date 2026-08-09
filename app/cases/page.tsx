@@ -4,17 +4,18 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { DashboardPreview } from '@/components/cases/DashboardPreview';
 import { caseStudies, credibility } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Case studies | custom software our team has delivered',
+  title: 'BI case studies and dashboards | Kadmoon',
   description:
-    'Real systems Kadmoon\'s engineering team has built and shipped: public-sector delivery at scale, an education platform, fleet management, interoperable health records, foreign-trade operations, and enterprise migration.',
+    'Power BI and Microsoft Fabric case studies: legacy BI migration, executive dashboards, data platforms, and Power Platform automation across retail, finance, manufacturing, healthcare, and more. Illustrative data, real structure.',
   keywords: [
-    'software house case studies',
-    'custom software case studies',
-    'enterprise software portfolio',
+    'power bi case studies',
+    'microsoft fabric case studies',
+    'bi dashboard examples',
     'kadmoon cases',
   ],
   alternates: { canonical: `${siteConfig.url}/cases` },
@@ -39,7 +40,7 @@ export default function CasesPage() {
             <div className="mt-6 max-w-3xl">
               <Eyebrow>Case studies</Eyebrow>
               <h1 className="mt-4 font-display text-display-lg text-ink">
-                Systems our team has built and shipped.
+                Dashboards we have built and shipped.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-ink-2">
                 {credibility.text}
@@ -56,9 +57,10 @@ export default function CasesPage() {
                 href={`/cases/${c.slug}`}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-paper shadow-card transition-all hover:-translate-y-0.5"
               >
-                <div className="relative flex h-28 items-end bg-navy p-6">
+                <div className="relative flex h-44 items-end overflow-hidden bg-navy p-6">
                   <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
-                  <span className="relative font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">
+                  <DashboardPreview slug={c.slug} className="absolute inset-x-6 top-6 opacity-95" />
+                  <span className="relative rounded-full bg-white/15 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-white backdrop-blur">
                     {c.sector}
                   </span>
                 </div>

@@ -5,6 +5,8 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { CaseDashboard } from '@/components/cases/CaseDashboard';
+import { getDashboard } from '@/lib/cases/dashboards';
 import { caseStudies } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -108,17 +110,31 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
           </div>
         </section>
 
+        {/* Delivered dashboard (illustrative demo) */}
+        {getDashboard(c.slug) && (
+          <section className="mx-auto max-w-shell px-6 pb-8">
+            <h2 className="mb-4 font-display text-display-sm text-ink">The dashboard we delivered</h2>
+            <div className="overflow-x-auto rounded-2xl border border-line">
+              <CaseDashboard slug={c.slug} />
+            </div>
+            <p className="mt-3 text-[13px] text-ink-3">
+              Illustrative dashboard with the structure delivered on the project. Client names and
+              figures are fictitious and under NDA.
+            </p>
+          </section>
+        )}
+
         {/* CTA */}
         <section className="mx-auto max-w-3xl px-6 pb-16">
           <div className="relative overflow-hidden rounded-2xl bg-navy p-8 md:p-10">
             <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
             <div className="relative">
               <h2 className="font-display text-2xl font-semibold text-white">
-                Want a system like this for your operation?
+                Want a dashboard like this on your data?
               </h2>
               <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-white/70">
-                Tell us about your project and get a technical proposal within one business day,
-                covering scope, architecture, timeline, and investment.
+                Tell us your scenario and get a diagnosis and a proposal with an investment range
+                within a few business days.
               </p>
               <a
                 href="/#contact"

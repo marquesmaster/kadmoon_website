@@ -24,202 +24,193 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: 'Custom software firm · Austin, TX',
+  eyebrow: '100% Microsoft ecosystem · Austin, TX',
   // The accent phrase is rendered in orange inside the H1.
-  headlineBefore: 'The custom software your operation runs on, built for ',
-  headlineAccent: 'your process',
-  headlineAfter: ', owned by you.',
+  headlineBefore: 'Data intelligence that becomes ',
+  headlineAccent: 'decisions',
+  headlineAfter: '.',
   subhead:
-    'Kadmoon builds bespoke enterprise systems, SaaS platforms, mobile apps, and AI into a single delivery, from concept to production, with a senior in-house team. No off-the-shelf compromises. You own every line.',
-  flagship: 'Flagship practice: Trade & Supply Chain software.',
+    'Kadmoon is a Power BI and Microsoft Power Platform consultancy. We take scattered raw data to the dashboard your leadership opens every Monday, on a governed foundation of Microsoft Fabric, Synapse, and Azure.',
+  flagship: 'Signature practice: tenant-to-tenant and legacy BI migrations.',
   ctas: [
-    { label: 'Start a project', href: '#contact', primary: true },
-    { label: 'See capabilities', href: '#capabilities', primary: false },
+    { label: 'Talk to an expert', href: '#contact', primary: true },
+    { label: 'See dashboards', href: '/dashboards', primary: false },
   ],
 };
 
-// TODO(founder): confirm these figures are honestly defensible before launch.
+// TODO(founder): replace with real, defensible figures (clients, dashboards
+// delivered, migrations, years) before launch.
 export const stats = [
-  { value: '50+', label: 'systems delivered' },
-  { value: '10+', label: 'industries served' },
+  { value: '100%', label: 'Microsoft ecosystem' },
+  { value: 'Week 2', label: 'first dashboards live' },
   { value: '0%', label: 'turnover in operation' },
-  { value: '100%', label: 'senior in-house team' },
+  { value: 'SLA', label: 'managed BI support' },
 ];
 
 export const capabilities = {
-  eyebrow: 'What we build',
-  title: 'From the core system to the model in production.',
-  sub: 'Six competencies that cover the full lifecycle of enterprise software, each specified with measurable acceptance criteria and delivered in validated sprints.',
+  eyebrow: 'What we do',
+  title: 'From raw data to the decision, in the Microsoft ecosystem.',
+  sub: 'We cover the full data value chain: foundation, visualization, automation, intelligence, and support, with the depth of a team that has shipped on Power BI, Fabric, and Azure.',
   items: [
     {
-      title: 'Enterprise Systems',
-      body: 'ERPs, CRMs, and operational platforms designed around how your business actually runs, not generic software bent to fit. Every module is specified with measurable acceptance criteria.',
+      title: 'Power BI',
+      body: 'From raw, scattered data to the dashboard your leadership opens every Monday. Governed models, one definition per KPI, and reports people actually use.',
     },
     {
-      title: 'SaaS Platforms',
-      body: 'Multi-tenant products with recurring billing, white-label onboarding, analytics dashboards, and documented public APIs. Architected to scale from 10 to 10,000 customers without a rewrite.',
+      title: 'Tenant-to-tenant migration',
+      body: 'Move your whole Microsoft environment to a new tenant without erasing years of BI and automation history. Inventoried, remapped, and cut over in phases.',
     },
     {
-      title: 'Mobile Apps',
-      body: 'Native and cross-platform (React Native) apps for iOS and Android, with product-grade UX, offline-first when needed, and direct integration with your backend.',
+      title: 'Power Platform',
+      body: 'Power Apps, Power Automate, Power Pages, and Copilot Studio: low-code apps and automations that solve real processes, governed from day one.',
     },
     {
-      title: 'Integrations & APIs',
-      body: 'We connect your ecosystem: legacy ERPs, US Customs/ACE, payment gateways, marketplaces, and any third-party REST/SOAP API. Resilient middleware with retry, dead-letter, and full observability.',
+      title: 'Data engineering',
+      body: 'The foundation that makes BI stop lying. Pipelines and warehouses on Microsoft Fabric, Azure Synapse, and Data Factory, with a semantic layer over clean data.',
     },
     {
-      title: 'Data & AI',
-      body: 'Ingestion pipelines, data warehouses, BI dashboards, ML models for forecasting and classification, and LLMs via RAG for semantic search, report generation, and intelligent automation, built into the system rather than bolted on later.',
+      title: 'Analytics & AI',
+      body: 'From what happened to what will happen, and what to do about it. Forecasting and classification models, Azure ML, and Copilot where it earns its place.',
     },
     {
-      title: 'Legacy Modernization',
-      body: 'Migration of COBOL, Delphi, VB6, and legacy .NET/PHP to a modern stack. Monolith-to-microservices refactoring, cloud migration, and elimination of critical technical debt.',
+      title: 'Data governance',
+      body: 'Scale BI without turning data into risk. Row-level security, Microsoft Purview, workspace and DLP policy, and a Power Platform Center of Excellence.',
     },
   ],
 };
 
 export const why = {
   eyebrow: 'Why Kadmoon',
-  title: 'A software house you can build your business on.',
-  sub: 'Each of these is an engineering and management decision we made so your project ships with quality, predictability, and full ownership.',
+  title: 'A data partner you can build decisions on.',
+  sub: 'Each of these is a decision we made so your BI stops being a pile of conflicting reports and becomes a source of truth the whole company trusts.',
   items: [
     {
-      title: 'You own the IP',
-      body: 'Source code, architecture, documentation, and every artifact are 100% yours. On delivery you get the Git repo, CI/CD pipelines, infrastructure credentials, and an operational runbook. No lock-in, no permanent dependency.',
+      title: 'One definition per KPI',
+      body: 'We build a semantic layer so revenue, margin, and churn mean the same thing in every report. No more three versions of the truth in one meeting.',
     },
     {
       title: 'Senior in-house team, 0% turnover',
-      body: 'No subcontractors. Every engineer, designer, and architect is on our permanent team. The team that starts your project is the team that ships it.',
+      body: 'No subcontractors. The Power BI, data, and Power Platform engineers who start your project are the ones who ship it and support it.',
     },
     {
-      title: 'Granular contractual scope',
-      body: 'Every feature is described with measurable acceptance criteria in the contract. You know exactly what you\'ll get, when, and how to validate it. No ambiguity, no "that was technically in scope."',
+      title: 'Value from week two',
+      body: 'We start from the decision, not the tool. You see working dashboards early instead of waiting months for a data project with nothing to show.',
     },
     {
-      title: 'AI built into every project',
-      body: 'Predictive analysis, report generation, anomaly detection, and decision automation, engineered into the architecture from day one instead of a generic chatbot bolted on at the end.',
+      title: 'Governed by default',
+      body: 'Row-level security, Microsoft Purview, workspace structure, and DLP policy are part of the build, not a cleanup later. BI that scales without becoming a risk.',
     },
     {
-      title: 'Modern stack, zero legacy',
-      body: 'React, Next.js, Node.js, Python, TypeScript, PostgreSQL, Kubernetes, Terraform. No project of ours is born with technical debt. We choose the stack on merit: performance, security, and long-term maintainability.',
+      title: '100% Microsoft ecosystem',
+      body: 'Power BI, Microsoft Fabric, Azure Synapse and Data Factory, Power Platform, and Dataverse. Deep in one stack instead of shallow across five.',
     },
     {
-      title: 'Continuous delivery with demos',
-      body: 'Two-week sprints with a working demo at the end of every cycle. You track progress in real time and never wait months to see software running.',
+      title: 'You own it',
+      body: 'Everything is built in your tenant: your data, your workspaces, your reports, your Power Platform environments. No lock-in and no dependency on us to keep the lights on.',
     },
   ],
 };
 
 export const howToChoose = {
   eyebrow: 'Buyer\'s guide',
-  title: 'How to evaluate a software partner.',
-  sub: 'After 50+ delivered projects in regulated verticals, these are the six criteria we would use ourselves to vet a vendor. Use it as a checklist before signing any contract, with Kadmoon or anyone else.',
+  title: 'How to choose a Power BI and data partner.',
+  sub: 'These are the six questions we would ask before hiring any BI or Power Platform consultancy. Use them as a checklist before you sign, with Kadmoon or anyone else.',
   items: [
     {
       num: '01',
-      title: 'Who writes the code',
-      body: 'Ask whether the team is in-house or subcontracted, and whether engineers are full-time employees or rotating freelancers. Cascading subcontracting is the #1 cause of projects that slip and lose quality.',
+      title: 'Who builds it',
+      body: 'Ask whether the Power BI and data engineers are full-time employees or rotating freelancers. Data projects live or die on the people who understand your model six months later.',
       answer:
-        '100% in-house, full-time team. No pass-through to third parties. 0% turnover in operation.',
+        '100% in-house, full-time senior team. No pass-through to third parties. 0% turnover in operation.',
     },
     {
       num: '02',
-      title: 'What\'s in the contract',
-      body: 'Demand measurable acceptance criteria per feature, not promises that it will "turn out well." If scope is vague, real cost becomes a black box.',
+      title: 'The semantic model',
+      body: 'Ask whether they define one source of truth per KPI, or just wire charts to tables. Without a governed semantic layer you end up with three versions of revenue in one meeting.',
       answer:
-        'Every deliverable has a defined, verifiable acceptance criterion in the contract. You know what you get, when, and how to validate it.',
+        'We build a governed semantic layer so revenue, margin, and churn mean one thing across every report.',
     },
     {
       num: '03',
-      title: 'Real portfolio, not logos',
-      body: 'Ask for concrete cases with problem, solution, and result, ideally in your vertical. A wall of logos without context proves nothing.',
+      title: 'Real dashboards, not logos',
+      body: 'Ask to see actual dashboards and the outcomes they drove in your sector. A wall of logos without a report behind it proves nothing.',
       answer:
-        '50+ projects across 10+ industries, with detailed cases including trade, logistics, and enterprise systems.',
+        'Sector dashboards you can open at /dashboards, plus detailed cases under NDA. The structure is what shipped.',
     },
     {
       num: '04',
-      title: 'Ownership & lock-in',
-      body: 'Confirm who owns the code, architecture, and infrastructure. If you don\'t receive the repo and credentials, you\'re hostage to the vendor.',
+      title: 'Ownership and your tenant',
+      body: 'Confirm everything is built in your own Microsoft tenant. If the models and workspaces live somewhere you cannot reach, you are hostage to the vendor.',
       answer:
-        'IP is 100% yours. On delivery you get the Git repo, credentials, runbook, and documentation. No lock-in.',
+        'Everything is built in your tenant: your data, workspaces, reports, and Power Platform environments. No lock-in.',
     },
     {
       num: '05',
-      title: 'Cadence & visibility',
-      body: 'Real software shows up early. Be wary of anyone who only reveals results at the end. Ask for frequent demos and a way to track progress.',
+      title: 'Cadence and visibility',
+      body: 'Data projects fail when they start from the available data and disappear for months. Ask when you will see a working dashboard.',
       answer:
-        'Two-week sprints with a working demo each cycle. You see software running from the first month.',
+        'We start from the decision. First dashboards are live by week two and validated with each area every cycle.',
     },
     {
       num: '06',
-      title: 'What happens after go-live',
-      body: 'Ask about support, SLA, and bug fixes after delivery. A project with no maintenance plan becomes technical debt in your lap.',
+      title: 'Governance and support',
+      body: 'Ask how they handle row-level security, workspace structure, and support after go-live. Ungoverned BI becomes a risk as it scales.',
       answer:
-        'Post-delivery support with a defined SLA and three engagement models to keep evolving the product.',
+        'Governance is part of the build (RLS, Purview, DLP, a CoE), with managed BI support on a defined SLA after go-live.',
     },
   ],
 };
 
 export const process = {
   eyebrow: 'How we work',
-  title: 'From the problem to software in production.',
+  title: 'Four phases, working dashboards from week two.',
   steps: [
     {
       num: '01',
-      title: 'Discovery & Requirements',
-      meta: 'Week 1',
-      body: 'Immersion in the business problem. We map processes, pain points, integrations, data volumes, and regulatory constraints. Output: a validated requirements document with acceptance criteria.',
+      title: 'Discovery',
+      meta: 'Week 1-2',
+      body: 'We start from the decision, not the tool. We map the business questions that need data, the sources, the indicators, and the owner of each number. Output: a diagnosis and an architecture plan.',
     },
     {
       num: '02',
-      title: 'Architecture & Design',
-      meta: 'Weeks 2-3',
-      body: 'Architecture definition (microservices, modular monolith, event-driven), design system, high-fidelity prototyping, and sprint planning with per-module estimates.',
+      title: 'Foundation',
+      meta: 'Week 3-4',
+      body: 'We build the right foundation for your volume, whether that is a warehouse, a lakehouse, or Microsoft Fabric, plus the semantic layer that gives one definition per KPI. Output: the data model and first indicators.',
     },
     {
       num: '03',
-      title: 'Development',
-      meta: 'Sprint 1+',
-      body: 'Two-week sprints with continuous delivery. Working demo each cycle. Client feedback goes straight into the backlog. Mandatory code review, pair programming on critical modules.',
+      title: 'Build',
+      meta: 'Week 5-8',
+      body: 'We deliver in short cycles: reliable pipelines, DAX measures, and dashboards validated with each area as we go. No multi-month project with nothing to show. Output: governed dashboards in production.',
     },
     {
       num: '04',
-      title: 'Testing & QA',
-      meta: 'Continuous',
-      body: 'Automated unit, integration, and E2E tests. Manual QA each sprint. Nothing ships without test coverage and QA sign-off. Bug and regression report per sprint.',
-    },
-    {
-      num: '05',
-      title: 'Deploy & Go-live',
-      meta: 'Milestone',
-      body: 'CI/CD via GitHub Actions. Infrastructure provisioned with Terraform. Monitoring with Datadog/Grafana. Zero-downtime deploy with automatic rollback.',
-    },
-    {
-      num: '06',
-      title: 'Evolution & Support',
-      meta: 'Post-delivery',
-      body: 'Ongoing support with a defined SLA. P1 fixes within 4 hours. Planned evolution on a quarterly roadmap. Full handoff with documentation, runbook, and team training.',
+      title: 'Sustain',
+      meta: 'Ongoing',
+      body: 'We train the users, measure real usage, and support the environment with an SLA. A data project does not end at go-live, that is where it starts. Output: evolution and a support SLA.',
     },
   ],
 };
 
 export const work = {
   eyebrow: 'Selected work',
-  title: 'Delivered by our engineering team.',
-  sub: 'Cases from our team\'s track record. The first US-specific case will join them as it lands.',
-  // Framed honestly as the engineering team's record. Do NOT imply Microsoft
-  // was the client unless that is true. TODO(founder): add the contract value
-  // for case 2 and any NDA-cleared client names when available.
+  title: 'The report behind each engagement.',
+  sub: 'Sector dashboards we have built. Client names and figures are illustrative and under NDA; the structure is what shipped.',
   cases: [
     {
-      tag: 'Microsoft Project ecosystem',
-      title: 'Microsoft Project Server migration',
-      body: 'Migration and customization within the Microsoft Project ecosystem (Project Web App to Project Server), delivered for an enterprise client.',
+      tag: 'Business Intelligence',
+      title: 'QlikView to Power BI migration',
+      body: 'Legacy BI migrated to Power BI with full inventory and dependency mapping, rebuilt on a governed model with no information blackout.',
     },
     {
-      tag: 'Public sector · at scale',
-      title: 'Enterprise delivery at scale',
-      body: '16 stalled public-sector projects delivered in 11 months, unlocking over $100M in contracts, with 0% turnover across the engagement. AI, data, and management systems, shipped by a senior in-house team.',
+      tag: 'Retail',
+      title: 'Single source of truth on Microsoft Fabric',
+      body: 'Sales, inventory, and margin from stores and e-commerce consolidated in OneLake and served to Power BI via Direct Lake.',
+    },
+    {
+      tag: 'Manufacturing',
+      title: 'Executive OEE and cost BI',
+      body: 'MES and ERP data crossed for OEE, loss, and cost per line and product, refreshed for the people on the shop floor.',
     },
   ],
 };
@@ -246,187 +237,272 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: 'public-sector-delivery-at-scale',
-    sector: 'Government & Enterprise',
-    title: 'Sixteen stalled public-sector projects, delivered',
+    slug: 'migracao-qlik-powerbi',
+    sector: 'Business Intelligence',
+    title: 'QlikView to Power BI migration',
     summary:
-      'A dedicated in-house squad took over sixteen stalled digital transformation projects and shipped all of them, unblocking a large contract pipeline.',
+      'A full legacy BI estate moved to Power BI with inventory, dependency mapping, and a rebuild on a governed model, with no information blackout.',
     challenge:
-      'A top-tier IT consulting firm had sixteen public-sector digital transformation projects stalled for over a year, holding up a large pipeline of signed contracts.',
+      'A large report estate on legacy BI was expensive to license and hard to trust, and the business needed to move to Power BI without losing years of logic or leaving users without reports mid-migration.',
     build:
-      'A dedicated in-house squad of engineers, data specialists, and AI engineers took over delivery end to end, shipping the sixteen initiatives across AI, data, and management systems while keeping the same team on the engagement the whole way through.',
+      'We inventoried every report, mapped dependencies, and rebuilt the estate in Power BI over a governed semantic model, migrating in waves so each business unit kept working the whole way through.',
     whatWeBuilt: [
-      'A single senior squad that owned delivery across all sixteen initiatives instead of scattered vendors.',
-      'AI, data, and management systems built to the requirements of each public-sector program.',
-      'A steady sprint cadence that turned a stalled pipeline into shipped software.',
+      'A full inventory and dependency map of the legacy estate before moving a single report.',
+      'A governed Power BI semantic model so KPIs carry one definition.',
+      'A phased, wave-by-wave cutover with parity validation at each step.',
     ],
     outcomes: [
-      'Sixteen initiatives delivered in eleven months.',
-      'Over $100M in contracts unblocked.',
-      '0% turnover across the engagement.',
+      'Reports rebuilt on a governed model instead of copied one for one.',
+      'Migration in waves with no information blackout.',
+      'Lower licensing cost on the Microsoft stack.',
     ],
-    stack: ['AI / ML', 'Data pipelines', 'Management systems', 'Cloud'],
-    result:
-      'Sixteen initiatives delivered in eleven months, over $100M in contracts unblocked, and 0% turnover across the engagement.',
+    stack: ['Power BI', 'Azure Synapse', 'DAX', 'Power Query'],
   },
   {
-    slug: 'education-platform',
+    slug: 'plataforma-dados-fabric-varejo',
+    sector: 'Retail',
+    title: 'A single source of truth on Microsoft Fabric',
+    summary:
+      'Sales, inventory, and margin from stores and e-commerce consolidated in OneLake and served to Power BI through Direct Lake.',
+    challenge:
+      'An omnichannel retailer had three versions of the truth, with sales, inventory, and margin living in separate systems for physical stores and e-commerce, so no report agreed.',
+    build:
+      'We consolidated the sources into OneLake on Microsoft Fabric and served Power BI through Direct Lake, so store and online data meet on one governed model with fast reports.',
+    whatWeBuilt: [
+      'A consolidated data platform in OneLake on Microsoft Fabric.',
+      'A governed model unifying store and e-commerce sales, inventory, and margin.',
+      'Power BI on Direct Lake for fast reports without a copy step.',
+    ],
+    outcomes: [
+      'One source of truth in place of three conflicting ones.',
+      'Store and online performance on the same page.',
+      'Reports that stay fast as data grows.',
+    ],
+    stack: ['Microsoft Fabric', 'OneLake', 'Direct Lake', 'Power BI'],
+  },
+  {
+    slug: 'bi-executivo-industria-oee',
+    sector: 'Manufacturing',
+    title: 'Executive OEE and cost BI',
+    summary:
+      'MES and ERP data crossed for OEE, loss, and cost per line and product, refreshed for the people on the shop floor.',
+    challenge:
+      'A multi-plant manufacturer could not see OEE and cost per line in time to act, because machine data and financials lived apart and reports arrived days late.',
+    build:
+      'We brought MES and sensor data together with the ERP financials on a governed model and built executive Power BI dashboards for OEE, loss, and cost per line and product.',
+    whatWeBuilt: [
+      'A pipeline joining MES and sensor data with ERP financials.',
+      'OEE, availability, performance, and quality by line, plant, and shift.',
+      'Cost and loss per line and product in one executive view.',
+    ],
+    outcomes: [
+      'OEE and cost visible in time to react.',
+      'Shop floor and finance on the same numbers.',
+      'Loss traced to the line and product that caused it.',
+    ],
+    stack: ['Power BI', 'Azure Data Factory', 'Azure Synapse', 'DAX'],
+  },
+  {
+    slug: 'automacao-power-platform-aprovacoes',
+    sector: 'Corporate Processes',
+    title: 'Purchasing and approvals on Power Platform',
+    summary:
+      'A purchasing and approval workflow rebuilt on Power Apps and Power Automate, with a live view of every request from intake to sign-off.',
+    challenge:
+      'A purchasing process ran on email and spreadsheets, so requests stalled, approvals were hard to track, and no one could see where a given order actually was.',
+    build:
+      'We rebuilt the flow on Power Apps and Power Automate with a governed environment, and put a Power BI view on top so leaders can see volume, aging, and bottlenecks by stage.',
+    whatWeBuilt: [
+      'A Power Apps intake and a Power Automate approval flow.',
+      'Governed environments and DLP policy from day one.',
+      'A Power BI view of requests by stage and age.',
+    ],
+    outcomes: [
+      'Requests move through a defined flow instead of email.',
+      'Every order is trackable from intake to sign-off.',
+      'Bottlenecks by stage are visible and fixable.',
+    ],
+    stack: ['Power Apps', 'Power Automate', 'Dataverse', 'Power BI'],
+  },
+  {
+    slug: 'analytics-preditivo-inadimplencia',
+    sector: 'Financial Services',
+    title: 'Predictive credit risk and collections',
+    summary:
+      'A predictive score and a collections ladder built on Azure ML and Power BI, so the team acts on the accounts most likely to slip.',
+    challenge:
+      'A lender managed a large portfolio with a rear-view mirror, seeing delinquency only after it happened, and could not prioritize collections by real risk.',
+    build:
+      'We built the data foundation, trained a risk model on Azure Machine Learning, and served the score and a collections ladder through Power BI so the team works the highest-risk accounts first.',
+    whatWeBuilt: [
+      'A governed portfolio data model by cohort and aging bucket.',
+      'A predictive risk score trained on Azure Machine Learning.',
+      'A Power BI collections ladder that ranks accounts by risk.',
+    ],
+    outcomes: [
+      'Collections effort aimed at the accounts most likely to slip.',
+      'Delinquency seen ahead of time, not after.',
+      'Portfolio risk visible by cohort and aging bucket.',
+    ],
+    stack: ['Azure Machine Learning', 'Microsoft Fabric', 'Power BI', 'DAX'],
+  },
+  {
+    slug: 'sop-planejamento-demanda-supply',
+    sector: 'Supply Chain',
+    title: 'S&OP and demand planning',
+    summary:
+      'A demand and supply planning view that measures forecast accuracy by family and horizon, so the S&OP cycle argues from one set of numbers.',
+    challenge:
+      'An S&OP process ran on disconnected spreadsheets, so forecast accuracy was unknown and every function came to the meeting with a different number.',
+    build:
+      'We built a governed planning model and Power BI dashboards that track demand, supply, and forecast accuracy by product family and horizon, giving the S&OP cycle one shared view.',
+    whatWeBuilt: [
+      'A governed planning model over demand and supply data.',
+      'Forecast accuracy by family and planning horizon.',
+      'A shared S&OP dashboard for every function.',
+    ],
+    outcomes: [
+      'One set of numbers for the S&OP cycle.',
+      'Forecast accuracy measured instead of assumed.',
+      'Demand and supply lined up by horizon.',
+    ],
+    stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'DAX'],
+  },
+  {
+    slug: 'bi-logistica-frete-otif',
+    sector: 'Transport and Distribution',
+    title: 'Freight cost and OTIF service-level BI',
+    summary:
+      'Freight cost and on-time in-full performance by carrier and region, so distribution decisions run on service level and cost, not anecdotes.',
+    challenge:
+      'A distribution network could not tell which carriers and regions were hurting service and cost, because tracking, freight, and orders lived in separate systems.',
+    build:
+      'We consolidated carrier, freight, and order data on a governed model and built Power BI dashboards for OTIF and freight cost by carrier, lane, and region.',
+    whatWeBuilt: [
+      'A consolidated model over carrier, freight, and order data.',
+      'OTIF and freight cost by carrier, lane, and region.',
+      'Drill-down to the delivery behind every number.',
+    ],
+    outcomes: [
+      'Service and cost problems traced to the carrier and region.',
+      'Freight cost visible against service level.',
+      'Distribution decisions on data, not anecdotes.',
+    ],
+    stack: ['Power BI', 'Azure Synapse', 'Power Query', 'DAX'],
+  },
+  {
+    slug: 'dre-gerencial-multiempresa',
+    sector: 'Finance',
+    title: 'Management P&L across entities',
+    summary:
+      'A waterfall management P&L consolidated across entities, with actual versus budget and variance the finance team can trust.',
+    challenge:
+      'A group with several entities closed a management P&L by hand each month, so it arrived late, differed by preparer, and was hard to trust or drill into.',
+    build:
+      'We built a governed financial model and a Power BI waterfall P&L that consolidates entities, compares actual to budget, and drills from the statement line to the transaction.',
+    whatWeBuilt: [
+      'A governed consolidation model across entities.',
+      'A waterfall management P&L with actual, budget, and variance.',
+      'Drill-down from the statement line to detail.',
+    ],
+    outcomes: [
+      'A management P&L that is the same every month.',
+      'Actual versus budget with explainable variance.',
+      'Consolidation without a manual close.',
+    ],
+    stack: ['Power BI', 'Microsoft Fabric', 'DAX', 'Power Query'],
+  },
+  {
+    slug: 'bi-educacional-matriculas-evasao',
     sector: 'Education',
-    title: 'One platform for administrators, teachers, and families',
+    title: 'Enrollment and dropout BI',
     summary:
-      'An integrated platform that replaced paper and disconnected tools, connecting administrators, teachers, and families in real time.',
+      'Enrollment, dropout, and results by program and term, so an education network can see risk early instead of at the end of the semester.',
     challenge:
-      'Schools were running attendance, grades, and family communication across paper and disconnected tools, so information reached parents late and staff duplicated work.',
+      'An education network saw enrollment and dropout only after the term closed, too late to intervene, with data spread across academic and financial systems.',
     build:
-      'An integrated education platform that connects administrators, teachers, and families in real time, from a digital class diary and gradebook to report cards delivered on mobile.',
+      'We built a governed model over the academic and financial data and Power BI dashboards for enrollment, dropout, and results by campus, program, and term, with early-risk signals.',
     whatWeBuilt: [
-      'A digital class diary and gradebook for teachers to record attendance and grades once.',
-      'A family-facing mobile experience that delivers report cards and updates in real time.',
-      'An administration layer tying schedules, staff, and communication into one system.',
+      'A governed model over academic and financial data.',
+      'Enrollment, dropout, and results by campus, program, and term.',
+      'Early-risk signals to act before the term ends.',
     ],
     outcomes: [
-      'One source of truth in place of paper and scattered tools.',
-      'Information reaches families in real time instead of days later.',
-      'Less duplicated data entry for teachers and staff.',
+      'Dropout risk visible early, not after the fact.',
+      'Enrollment and results on one governed model.',
+      'Intervention while it still matters.',
     ],
-    stack: ['Web app', 'Mobile app', 'Real-time sync', 'PostgreSQL'],
+    stack: ['Power BI', 'Azure Synapse', 'DAX', 'Power Query'],
   },
   {
-    slug: 'fleet-management',
-    sector: 'Logistics',
-    title: 'From vehicle location to cost per kilometer',
-    summary:
-      'A fleet platform that gave operators one live view of where vehicles were and what each one actually cost to run.',
-    challenge:
-      'Fleet operators had no single view of where vehicles were or what each one actually cost to run, so decisions were made on stale spreadsheets.',
-    build:
-      'A fleet management platform covering the full picture, from real-time vehicle location and route data to fuel, maintenance, and cost per kilometer driven.',
-    whatWeBuilt: [
-      'Real-time vehicle location and route tracking through telematics and GPS.',
-      'Fuel and maintenance tracking that rolls up into cost per kilometer driven.',
-      'Operator dashboards and a mobile view for the field.',
-    ],
-    outcomes: [
-      'One live view of the fleet in place of stale spreadsheets.',
-      'Cost per kilometer visible per vehicle.',
-      'Decisions based on current data, not last week\'s.',
-    ],
-    stack: ['Real-time tracking', 'Telematics / GPS', 'Dashboards', 'Mobile app'],
-  },
-  {
-    slug: 'electronic-health-records',
+    slug: 'bi-hospitalar-glosas-permanencia',
     sector: 'Healthcare',
-    title: 'Interoperable electronic health records',
+    title: 'Claims denial and length-of-stay BI',
     summary:
-      'An electronic health record system built on HL7 FHIR so scheduling and medication data moves cleanly between systems, with no closed-vendor lock-in.',
+      'Clinical operations and billing on one model, tracking claim denials by payer and reason and length of stay by unit and specialty.',
     challenge:
-      'Clinical teams needed records that could schedule care and track medication without locking the organization into a rigid, closed vendor.',
+      'A hospital network lost revenue to claim denials it could not explain and could not see length of stay in time to manage capacity, with clinical and billing data apart.',
     build:
-      'An electronic health record system built on HL7 FHIR interoperability, covering appointment scheduling and medication dispensing, so data moves cleanly between systems.',
+      'We brought clinical operations and billing onto a governed model and built Power BI dashboards for claim denials by payer and reason and length of stay by unit and specialty, built with HIPAA in mind.',
     whatWeBuilt: [
-      'An electronic health record core for clinical data.',
-      'Appointment scheduling and medication dispensing workflows.',
-      'HL7 FHIR interoperability so records move between systems.',
+      'A governed model joining clinical operations and billing.',
+      'Claim denials by payer and reason.',
+      'Length of stay by unit and specialty.',
     ],
     outcomes: [
-      'Scheduling and medication data connected rather than siloed.',
-      'Interoperability instead of a closed, rigid vendor.',
-      'A record the organization owns and can extend.',
+      'Denials traced to payer and reason so they can be worked.',
+      'Length of stay visible in time to manage capacity.',
+      'Clinical and billing on the same numbers.',
     ],
-    stack: ['HL7 FHIR', 'Web app', 'Integrations', 'PostgreSQL'],
-  },
-  {
-    slug: 'foreign-trade-operations',
-    sector: 'Trade & Supply Chain',
-    title: 'Import and export operations in one system',
-    summary:
-      'Trade and customs software that pulled import and export processes, landed cost, and shipment tracking out of spreadsheets and into one integrated system.',
-    challenge:
-      'A foreign-trade operation tracked customs steps, costs, and shipments across spreadsheets and siloed tools, which made landed cost and status hard to trust.',
-    build:
-      'Trade and customs operations software that brings import and export processes, landed cost calculation, and shipment tracking into one integrated system.',
-    whatWeBuilt: [
-      'Import and export process workflows in one place.',
-      'Landed cost calculation across duties, freight, and fees.',
-      'Shipment tracking tied to the same records as costs and customs steps.',
-    ],
-    outcomes: [
-      'Landed cost and shipment status you can trust.',
-      'One system in place of spreadsheets and siloed tools.',
-      'Customs steps, costs, and shipments on one record.',
-    ],
-    stack: ['Customs / trade', 'Integrations', 'Reporting', 'Node.js'],
-  },
-  {
-    slug: 'microsoft-project-server-migration',
-    sector: 'Enterprise',
-    title: 'Migration inside the Microsoft Project ecosystem',
-    summary:
-      'A move from Project Web App to Project Server, customized to the client\'s reporting and governance needs without losing history or disrupting active work.',
-    challenge:
-      'An enterprise client needed to move and customize project operations within the Microsoft Project ecosystem without losing history or disrupting active work.',
-    build:
-      'Migration and customization from Project Web App to Project Server, adapted to the client\'s reporting and governance needs.',
-    whatWeBuilt: [
-      'A migration path from Project Web App to Project Server that preserved history.',
-      'Customization mapped to the client\'s reporting and governance needs.',
-      'A cutover planned to avoid disrupting active project work.',
-    ],
-    outcomes: [
-      'Project history preserved through the migration.',
-      'Reporting and governance shaped to the client\'s process.',
-      'No disruption to active work during cutover.',
-    ],
-    stack: ['Microsoft Project Server', 'Migration', '.NET', 'SQL Server'],
+    stack: ['Power BI', 'Microsoft Fabric', 'DAX', 'Microsoft Purview'],
   },
 ];
 
 export const industries = {
   eyebrow: 'Industries',
-  title: 'Custom software for 10+ sectors.',
-  sub: 'Every vertical carries its own regulatory, integration, and UX requirements. We\'ve shipped across all of them.',
+  title: 'Business intelligence for your sector.',
+  sub: 'Every sector measures itself differently. We build the governed Power BI model and the dashboards that fit how yours actually runs.',
   items: [
     {
-      name: 'Trade & Supply Chain',
-      flagship: true,
-      body: 'Customs and trade operations, import/export, shipment tracking, landed cost, and end-to-end supply chain, integrated into one system.',
-      // TODO(founder): confirm project counts per vertical.
-      count: '15+ projects',
-    },
-    {
-      name: 'Logistics',
-      body: 'Fleet management, routing, real-time tracking, warehouse and transport operations.',
-      count: '8+ projects',
-    },
-    {
-      name: 'Financial Services',
-      body: 'Analytics, forecasting, risk, reconciliation, compliance-heavy platforms.',
-      count: '6+ projects',
-    },
-    {
-      name: 'Healthcare',
-      body: 'Clinical platforms, records, operational systems for regulated environments.',
-      count: '5+ projects',
-    },
-    {
       name: 'Retail',
-      body: 'POS, retail ERP, integrated inventory management.',
-      count: '7+ projects',
+      flagship: true,
+      body: 'Sales, inventory, and margin from stores and e-commerce on one governed model your buyers and finance both trust.',
+      count: 'Power BI',
+    },
+    {
+      name: 'Financial services',
+      body: 'Portfolio, risk, and reconciliation with one definition per KPI and an audit trail that holds up.',
+      count: 'Power BI',
     },
     {
       name: 'Manufacturing',
-      body: 'Production, inventory, and operations systems built for the floor.',
-      count: '5+ projects',
+      body: 'OEE, loss, and cost per line and product, with the shop floor and finance reading the same numbers.',
+      count: 'Fabric',
+    },
+    {
+      name: 'Logistics and transport',
+      body: 'Freight cost and OTIF service level by carrier, lane, and region, drillable to the delivery behind it.',
+      count: 'Power BI',
+    },
+    {
+      name: 'Healthcare',
+      body: 'Claim denials by payer and reason and length of stay by unit, built with HIPAA in mind.',
+      count: 'Power BI',
     },
     {
       name: 'Education',
-      body: 'School/organization management platforms, LMS, parent and staff portals.',
-      count: '4+ projects',
+      body: 'Enrollment, dropout, and results by campus, program, and term, with risk visible early.',
+      count: 'Power BI',
     },
     {
-      name: 'Government & Enterprise',
-      body: 'Transparency portals, digital transformation, analytics at scale.',
-      count: '6+ projects',
+      name: 'Supply chain',
+      body: 'S&OP and demand planning with forecast accuracy measured by family and horizon.',
+      count: 'Fabric',
+    },
+    {
+      name: 'Corporate finance',
+      body: 'A waterfall management P&L consolidated across entities, with actual versus budget you can explain.',
+      count: 'Power BI',
     },
   ],
 };
@@ -437,48 +513,46 @@ export const faq = {
   title: 'Questions a serious buyer asks.',
   items: [
     {
-      q: 'How do I choose a custom software firm, and what should I evaluate?',
-      a: 'Start with who writes the code. Ask whether the engineers are full-time employees or freelancers pulled in per project, because subcontracting is where quality and timelines usually slip. Then read the contract for acceptance criteria on each feature instead of vague promises. Ask for real cases in your vertical, with the problem, the solution, and the result. Confirm you receive the code, credentials, and documentation on delivery so you are not locked in. And ask how often you will see working software, plus what support looks like after go-live. The buyer\'s guide above walks through all six criteria in detail.',
+      q: 'What does Kadmoon do?',
+      a: 'We are a Power BI and Microsoft Power Platform consultancy. We take scattered raw data to the dashboards your leadership actually opens, on a governed foundation of Microsoft Fabric, Azure Synapse, and Azure. That covers the data engineering underneath, the semantic model with one definition per KPI, the reports on top, and the Power Platform apps and automations around them. Everything is built in your tenant and owned by you.',
     },
     {
-      q: 'What kinds of software does Kadmoon build?',
-      a: 'Enterprise systems like ERPs and CRMs, multi-tenant SaaS products, native and React Native mobile apps, integrations and APIs, data and AI features, and legacy modernization. Trade and supply chain is our flagship practice, but we build across industries. Every system is custom and owned by you. We do not resell a platform.',
+      q: 'Do you only work in the Microsoft ecosystem?',
+      a: 'Yes, on purpose. We go deep in Power BI, Microsoft Fabric, Azure, Power Platform, and Dataverse rather than spreading thin across five stacks. That focus is why we can move fast, govern by default, and support what we ship. If your data lives in other systems, we connect to them, but the analytics and BI layer we build and run is Microsoft.',
     },
     {
-      q: 'What drives the cost of custom software?',
-      a: 'Scope, mostly. The number of features, how many systems you integrate with, your data volume, regulatory constraints, and how much design and UX the product needs. A focused internal tool costs far less than a multi-tenant platform with billing and public APIs. We give you a fixed scope with acceptance criteria per feature, so the price maps to something you can verify rather than an open-ended estimate.',
+      q: 'How much does a Power BI project cost?',
+      a: 'It depends on scope: how many sources we connect, the state of the data underneath, how many dashboards and KPIs you need, and whether governance and a data platform are part of the work. A focused set of dashboards on clean data is a small fixed-scope project. A full data platform on Fabric with governance is larger. We scope it with acceptance criteria and milestone billing, so the price maps to something you can verify rather than an open estimate.',
     },
     {
-      q: 'What\'s a typical delivery timeline?',
-      a: 'Discovery takes about a week. Architecture and design run two to three weeks. After that, development moves in two-week sprints with a working demo at the end of each one, so you see software running inside the first month. A first production release usually lands in a few months depending on scope. We plan the sprints up front with per-module estimates, so the timeline is not a guess.',
+      q: 'We already have Power BI but it is a mess. Can you help?',
+      a: 'Yes, this is common and it is a lot of our work. We inventory the existing reports, find where KPIs disagree, and rebuild on a governed semantic layer so revenue, margin, and churn mean one thing everywhere. We add row-level security, workspace structure, and Purview where they are missing. You keep working the whole time; we fix the foundation underneath rather than starting over.',
     },
     {
-      q: 'How does your delivery methodology work?',
-      a: 'Two-week sprints with continuous delivery and a working demo every cycle. Your feedback goes straight into the backlog. Code review is mandatory, and we pair on the critical modules. Automated tests run at the unit, integration, and end-to-end levels, with manual QA each sprint and sign-off before anything ships. Deploys go through CI/CD with automatic rollback.',
+      q: 'How does a project start?',
+      a: 'With a one to two week discovery. We start from the decisions you need to make, not the data you happen to have, and map the business questions, the sources, the indicators, and the owner of each number. You leave discovery with a diagnosis and an architecture plan. First working dashboards are typically live by week two, then validated with each area every cycle.',
     },
     {
-      q: 'Who\'s on the team that works on my project?',
-      a: 'Our permanent in-house team: engineers, designers, and architects who are full-time employees, not subcontractors. The people who start your project are the people who ship it, and turnover in operation is zero.',
+      q: 'What about tenant-to-tenant migration?',
+      a: 'It is a signature practice for us. When you move to a new Microsoft tenant, after a merger, divestiture, or restructure, your Power BI reports, datasets, workspaces, and Power Platform environments do not come along by default. We inventory everything, remap dependencies, and cut over in phases so you do not lose years of BI and automation history or leave users without reports mid-move.',
     },
     {
-      q: 'Do I own the intellectual property?',
-      a: 'Yes, completely. Source code, architecture, and documentation are yours. On delivery you get the Git repository, CI/CD pipelines, infrastructure credentials, and an operational runbook. No lock-in and no permanent dependency on us.',
-    },
-    {
-      q: 'Which regions do you serve?',
-      a: 'We are based in Austin, Texas and work with clients across the United States. Our engineering team delivers remotely, with in-person sessions when a project calls for it.',
+      q: 'Which regions and company sizes do you serve?',
+      a: 'We are based in Austin, Texas and work with clients across the United States. We deliver remotely with in-person sessions when a project calls for it. We work with mid-market companies and enterprise teams; the common thread is that data matters enough to govern it. We are a fit whether you need a first governed dashboard or a full Fabric platform with managed support.',
     },
   ],
 };
 
 export const contact = {
   eyebrow: 'Start a project',
-  title: 'Have a project in mind?',
-  sub: 'Tell us about your challenge. Within one business day you get a technical proposal with scope, architecture, timeline, and investment.',
+  title: 'Turn your data into decisions.',
+  sub: 'Tell us what your leadership needs to see. Within one business day you get a proposal with scope, architecture, timeline, and investment.',
   needOptions: [
-    'New system',
-    'Modernize or migrate',
-    'Dedicated engineering',
+    'Power BI dashboards',
+    'Migrate to Power BI or Fabric',
+    'Data platform (Fabric/Azure)',
+    'Power Platform app',
+    'Managed BI / support',
     'Other',
   ],
   sizeOptions: [
@@ -491,16 +565,15 @@ export const contact = {
 
 export const footer = {
   tagline:
-    'A US custom-software firm building enterprise systems, SaaS platforms, and AI, engineered for how your business actually runs.',
+    'A US Power BI and Microsoft Power Platform consultancy turning scattered data into decisions your leadership can trust, all on the Microsoft stack and in your tenant.',
   columns: [
     {
       heading: 'Company',
       links: [
-        { label: 'Software house', href: '/software-house' },
         { label: 'Services', href: '/services' },
         { label: 'Solutions', href: '/solutions' },
-        { label: 'Industries', href: '/industries' },
         { label: 'Cases', href: '/cases' },
+        { label: 'Dashboards', href: '/dashboards' },
         { label: 'Process', href: '/process' },
         { label: 'About', href: '/about' },
       ],
@@ -508,24 +581,13 @@ export const footer = {
     {
       heading: 'Explore',
       links: [
-        { label: 'Custom software company', href: '/custom-software-development-company' },
-        { label: 'Software development company', href: '/software-development-company' },
-        { label: 'Mobile app development', href: '/mobile-app-development-company' },
-        { label: 'Enterprise software', href: '/enterprise-software-development' },
-        { label: 'SaaS development company', href: '/saas-development-company' },
+        { label: 'Power BI', href: '/services/power-bi' },
+        { label: 'Microsoft Fabric', href: '/services/microsoft-fabric' },
+        { label: 'Tenant-to-tenant migration', href: '/services/tenant-to-tenant-migration' },
+        { label: 'Power Platform', href: '/services/power-platform' },
+        { label: 'Data engineering', href: '/services/data-engineering' },
         { label: 'Blog', href: '/blog' },
-        { label: 'How to Choose', href: '/#how-to-choose' },
-        { label: 'Locations', href: '/custom-software-development' },
         { label: 'Start a project', href: '/#contact' },
-      ],
-    },
-    {
-      heading: 'Hire',
-      links: [
-        { label: 'Staff augmentation', href: '/staff-augmentation' },
-        { label: 'Dedicated team', href: '/dedicated-development-team' },
-        { label: 'Hire AI engineers', href: '/hire-ai-engineers' },
-        { label: 'Engagement models', href: '/#engagement' },
       ],
     },
   ],
@@ -537,20 +599,19 @@ export const footer = {
 
 export const techStack = {
   eyebrow: 'Our stack',
-  title: 'Modern by default, chosen on merit.',
-  sub: 'No project of ours is born with technical debt. We pick tools for performance, security, and long-term maintainability, not familiarity.',
+  title: 'The Microsoft data stack, in depth.',
+  sub: 'We go deep in one ecosystem instead of shallow across five. Visualization, Power Platform, the data foundation, and the governance and AI that hold it together, all in your tenant.',
   groups: [
-    { label: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'React Native', 'Tailwind CSS'] },
-    { label: 'Backend', items: ['Node.js', 'Python', 'Go', 'PostgreSQL', 'Redis', 'GraphQL'] },
-    { label: 'Data & AI', items: ['dbt', 'Airflow', 'LLMs / RAG', 'PyTorch', 'BigQuery', 'Snowflake'] },
-    { label: 'Infra & DevOps', items: ['Kubernetes', 'Terraform', 'Docker', 'AWS', 'GitHub Actions', 'Datadog'] },
-    { label: 'Integrations', items: ['US Customs / ACE', 'NetSuite', 'SAP', 'Dynamics', 'Stripe', 'REST / SOAP'] },
+    { label: 'Visualization', items: ['Power BI', 'Power BI Report Builder', 'DAX', 'Power Query'] },
+    { label: 'Power Platform', items: ['Power Apps', 'Power Automate', 'Power Pages', 'Copilot Studio', 'Dataverse'] },
+    { label: 'Data platform', items: ['Microsoft Fabric', 'OneLake', 'Azure Synapse', 'Azure Data Factory', 'SQL Server'] },
+    { label: 'AI & governance', items: ['Azure Machine Learning', 'Microsoft Purview', 'Microsoft 365'] },
   ],
   // Flattened for the marquee.
   marquee: [
-    'React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'Go', 'PostgreSQL', 'Redis',
-    'GraphQL', 'React Native', 'Kubernetes', 'Terraform', 'Docker', 'AWS', 'GitHub Actions',
-    'Datadog', 'LLMs / RAG', 'PyTorch', 'Snowflake', 'Stripe', 'NetSuite', 'SAP', 'US Customs / ACE',
+    'Power BI', 'Power BI Report Builder', 'DAX', 'Power Query', 'Power Apps', 'Power Automate',
+    'Power Pages', 'Copilot Studio', 'Dataverse', 'Microsoft Fabric', 'OneLake', 'Azure Synapse',
+    'Azure Data Factory', 'SQL Server', 'Azure Machine Learning', 'Microsoft Purview', 'Microsoft 365',
   ],
 };
 
@@ -560,43 +621,43 @@ export const engagement = {
   sub: 'Every model runs on the same senior in-house team, measurable acceptance criteria, and code you own.',
   models: [
     {
-      name: 'Fixed-scope project',
+      name: 'Fixed-scope BI project',
       best: 'Best when the outcome is well defined',
-      body: 'A defined build with measurable acceptance criteria per feature and milestone-based billing. You know exactly what you get, when, and how to validate it.',
-      points: ['Per-feature acceptance criteria', 'Milestone billing', 'Fixed timeline'],
+      body: 'A defined build, from data foundation to dashboards, with measurable acceptance criteria per deliverable and milestone-based billing. You know exactly what you get, when, and how to validate it.',
+      points: ['Acceptance criteria per deliverable', 'Milestone billing', 'Fixed timeline'],
     },
     {
-      name: 'Dedicated team',
+      name: 'Dedicated data squad',
       best: 'Best for an evolving roadmap',
-      body: 'A senior squad embedded on your roadmap: engineers, a designer, and an architect working in two-week sprints against your priorities.',
-      points: ['Two-week sprints', 'Direct backlog control', 'Monthly engagement'],
+      body: 'Senior Power BI and data engineers embedded on your roadmap, working in two-week cycles against your priorities. The same people who build your models stay to evolve them.',
+      points: ['Two-week cycles', 'Direct backlog control', 'Monthly engagement'],
     },
     {
-      name: 'Evolution & support',
+      name: 'Managed BI and support',
       best: 'Best after go-live',
-      body: 'Post-delivery support with a defined SLA, P1 fixes within 4 hours, and planned evolution on a quarterly roadmap.',
-      points: ['Defined SLA', 'P1 fixes in 4 hours', 'Quarterly roadmap'],
+      body: 'We run and evolve your BI estate on a defined SLA: refreshes, RLS and Purview governance, new reports as needs change, and a roadmap for what comes next.',
+      points: ['Defined SLA', 'RLS and Purview governance', 'Evolution roadmap'],
     },
   ],
 };
 
 export const comparison = {
-  eyebrow: 'Custom vs the alternatives',
-  title: 'Why bespoke wins for real operations.',
-  sub: 'Off-the-shelf and low-code get you started fast. They also decide what your software can and cannot do.',
-  columns: ['Custom (Kadmoon)', 'Off-the-shelf SaaS', 'Low-code platform'],
+  eyebrow: 'Power BI vs the alternatives',
+  title: 'Why Power BI on a governed model wins.',
+  sub: 'Legacy BI and spreadsheets get you a chart fast. They also let every team walk into the meeting with a different number.',
+  columns: ['Governed Power BI (Kadmoon)', 'Legacy BI (Tableau/Qlik)', 'Spreadsheets'],
   rows: [
-    { label: 'You own the source code', values: ['yes', 'no', 'partial'] },
-    { label: 'Fits your exact process', values: ['yes', 'no', 'partial'] },
+    { label: 'One definition per KPI', values: ['yes', 'partial', 'no'] },
     { label: 'Scales without a rewrite', values: ['yes', 'partial', 'no'] },
-    { label: 'No per-seat lock-in', values: ['yes', 'no', 'no'] },
-    { label: 'AI engineered into the core', values: ['yes', 'partial', 'no'] },
-    { label: 'Fast to a first version', values: ['partial', 'yes', 'yes'] },
+    { label: 'Row-level security and governance', values: ['yes', 'partial', 'no'] },
+    { label: 'Low cost per user', values: ['yes', 'no', 'partial'] },
+    { label: 'AI and Copilot built in', values: ['yes', 'partial', 'no'] },
+    { label: 'Fast to a first dashboard', values: ['yes', 'partial', 'yes'] },
   ],
 };
 
 export const credibility = {
-  text: 'Kadmoon is the US engineering arm of an established software house. The metrics and cases here come from our team\'s delivered work, framed honestly; the first US-specific case joins them as it lands.',
+  text: 'Kadmoon is the US Microsoft data practice. The dashboards you can open at /dashboards are illustrative demos, built with the real structure we ship on live projects, and detailed client cases are available under NDA.',
 };
 
 // ---------------------------------------------------------------------------
@@ -615,124 +676,205 @@ export type ServicePage = {
 
 export const services: ServicePage[] = [
   {
-    slug: 'enterprise-systems',
-    title: 'Enterprise Systems',
-    tagline: 'ERPs, CRMs, and operational platforms built around your process.',
+    slug: 'power-bi',
+    title: 'Power BI',
+    tagline: 'From scattered data to the dashboard your leadership opens every Monday.',
     intro:
-      'When your operation runs on spreadsheets, disconnected tools, or an ERP that fights the way you actually work, a bespoke system pays for itself. We design the modules around your real workflow and spec each one with measurable acceptance criteria.',
+      'Most Power BI estates grow into a pile of conflicting reports where every team defends a different number. We build on a governed semantic layer so each KPI carries one definition, then design reports people actually use to make decisions.',
     includes: [
-      'Custom ERP and CRM modules mapped to your process',
-      'Role-based access control and audit trails',
-      'Reporting, dashboards, and export pipelines',
-      'Integration with your existing systems and data',
-      'Migration from legacy tools with no data loss',
+      'Governed semantic model with one definition per KPI',
+      'Executive and operational dashboards designed for real decisions',
+      'DAX measures and Power Query transformations',
+      'Row-level security and workspace structure',
+      'Paginated reports with Power BI Report Builder',
+      'User training and adoption support',
     ],
     outcomes: [
-      'One system of record instead of scattered tools',
-      'Workflows that match how your team actually works',
-      'Full ownership of the code and infrastructure',
-    ],
-    blogCategory: 'Custom Software',
-  },
-  {
-    slug: 'saas-platforms',
-    title: 'SaaS Platforms',
-    tagline: 'Multi-tenant products engineered to scale from 10 to 10,000 customers.',
-    intro:
-      'Turning an idea or an internal tool into a product means solving multi-tenancy, billing, onboarding, and observability without painting yourself into an architectural corner. We build SaaS that scales without a rewrite.',
-    includes: [
-      'Multi-tenant architecture with tenant isolation',
-      'Recurring billing and subscription management',
-      'White-label onboarding and admin tooling',
-      'Analytics dashboards and documented public APIs',
-      'Security and compliance groundwork (SOC 2 ready)',
-    ],
-    outcomes: [
-      'A product that scales without re-platforming',
-      'Self-serve onboarding and billing',
-      'A public API your customers can build on',
-    ],
-    blogCategory: 'SaaS Development',
-  },
-  {
-    slug: 'mobile-apps',
-    title: 'Mobile Apps',
-    tagline: 'Native and cross-platform apps with product-grade UX.',
-    intro:
-      'Field teams, customers, and operators expect apps that work offline, sync cleanly, and talk directly to your backend. We build for iOS and Android with React Native or native where it matters.',
-    includes: [
-      'Native and React Native apps for iOS and Android',
-      'Offline-first data and background sync',
-      'Direct integration with your backend and APIs',
-      'Push notifications and device features',
-      'App Store and Play Store release management',
-    ],
-    outcomes: [
-      'One codebase serving both platforms when it fits',
-      'Apps that keep working with poor connectivity',
-      'A release pipeline you control',
-    ],
-    blogCategory: 'Mobile Apps',
-  },
-  {
-    slug: 'integrations-and-apis',
-    title: 'Integrations & APIs',
-    tagline: 'Resilient middleware that connects your entire ecosystem.',
-    intro:
-      'Most enterprise pain lives in the seams between systems. We build the connective tissue: middleware with retry, dead-letter queues, and full observability so integrations fail loudly and recover cleanly.',
-    includes: [
-      'Integration with legacy ERPs and third-party APIs',
-      'US Customs / ACE, payment gateways, and marketplaces',
-      'REST and SOAP adapters with schema validation',
-      'Retry, dead-letter, and idempotency handling',
-      'End-to-end monitoring and alerting',
-    ],
-    outcomes: [
-      'Systems that stay in sync automatically',
-      'Failures that are visible and recoverable',
-      'One integration layer instead of brittle scripts',
-    ],
-    blogCategory: 'Integrations & APIs',
-  },
-  {
-    slug: 'data-and-ai',
-    title: 'Data & AI',
-    tagline: 'Pipelines, dashboards, and models engineered into the system.',
-    intro:
-      'AI that ships value is engineered into the architecture, not bolted on at the end. We build the data foundation first, then the models and LLM features that ride on top of clean, governed data.',
-    includes: [
-      'Ingestion pipelines and data warehouses',
-      'BI dashboards and self-serve reporting',
-      'ML models for forecasting and classification',
-      'LLMs via RAG for search and report generation',
-      'Anomaly detection and decision automation',
-    ],
-    outcomes: [
-      'Decisions backed by governed, current data',
-      'AI features tied to real workflows',
-      'Automation that removes manual review',
+      'One source of truth instead of three versions in a meeting',
+      'First working dashboards live by week two',
+      'Reports your leadership opens without asking who is right',
     ],
     blogCategory: 'Data & AI',
   },
   {
-    slug: 'legacy-modernization',
-    title: 'Legacy Modernization',
-    tagline: 'Migrate off aging stacks without a risky big-bang rewrite.',
+    slug: 'microsoft-fabric',
+    title: 'Microsoft Fabric',
+    tagline: 'The unified data platform that makes BI stop lying.',
     intro:
-      'Legacy systems run the business until they cannot. We modernize incrementally: strangle the monolith, migrate data, and eliminate the technical debt that slows every release, without stopping operations.',
+      'When sources disagree and refreshes crawl, the problem is the foundation, not the report. We build your data platform on Microsoft Fabric and OneLake, with Power BI served over Direct Lake so reports stay fast as the data grows.',
     includes: [
-      'Migration of COBOL, Delphi, VB6, and legacy .NET/PHP',
-      'Monolith-to-microservices refactoring',
-      'Cloud migration and infrastructure as code',
-      'Incremental cutover with the strangler pattern',
-      'Documentation and knowledge transfer',
+      'Lakehouse and warehouse design on OneLake',
+      'Ingestion pipelines with Data Factory and Fabric',
+      'Medallion architecture from raw to governed layers',
+      'Power BI on Direct Lake for fast reports without copies',
+      'Capacity sizing and cost management',
     ],
     outcomes: [
-      'A modern stack without a big-bang cutover',
-      'Lower maintenance cost and faster releases',
-      'Critical technical debt retired for good',
+      'One governed foundation feeding every report',
+      'Reports that stay fast as data volume grows',
+      'A platform that scales without a rebuild',
     ],
-    blogCategory: 'Legacy Modernization',
+    blogCategory: 'Data & AI',
+  },
+  {
+    slug: 'tenant-to-tenant-migration',
+    title: 'Tenant-to-tenant migration',
+    tagline: 'Move your Microsoft environment to a new tenant without erasing your BI history.',
+    intro:
+      'A merger, divestiture, or restructure means a new Microsoft tenant, and your Power BI reports, datasets, workspaces, and Power Platform environments do not come along by default. We inventory everything, remap dependencies, and cut over in phases so nothing is lost.',
+    includes: [
+      'Full inventory of reports, datasets, workspaces, and flows',
+      'Dependency mapping across BI and Power Platform',
+      'Phased, wave-by-wave cutover plan',
+      'Remapping of data sources, gateways, and connections',
+      'Parity validation at each step',
+    ],
+    outcomes: [
+      'Years of BI and automation history carried over intact',
+      'A phased cutover with no information blackout',
+      'Users working the whole way through',
+    ],
+    blogCategory: 'Data & AI',
+  },
+  {
+    slug: 'power-platform',
+    title: 'Power Platform',
+    tagline: 'Low-code apps and automations that solve real processes, governed from day one.',
+    intro:
+      'Processes running on email and spreadsheets stall and hide where work actually is. We rebuild them on Power Apps, Power Automate, Power Pages, and Copilot Studio, in governed environments, with a Power BI view on top so leaders can see volume, aging, and bottlenecks.',
+    includes: [
+      'Power Apps for intake and internal workflows',
+      'Power Automate approval and process flows',
+      'Power Pages external portals',
+      'Copilot Studio conversational agents',
+      'Dataverse data model with governed environments',
+    ],
+    outcomes: [
+      'Processes that run on a defined flow instead of email',
+      'Every request trackable from intake to sign-off',
+      'Automation governed instead of sprawling',
+    ],
+    blogCategory: 'Data & AI',
+  },
+  {
+    slug: 'power-platform-coe',
+    title: 'Power Platform Center of Excellence',
+    tagline: 'Scale low-code across the company without losing control of it.',
+    intro:
+      'Once Power Platform catches on, apps and flows multiply faster than anyone can track. A Center of Excellence gives you visibility and guardrails, so citizen development accelerates the business instead of becoming shadow IT.',
+    includes: [
+      'CoE Starter Kit deployment and configuration',
+      'Environment strategy and DLP policy',
+      'App and flow inventory and monitoring',
+      'Governance guardrails and maker onboarding',
+      'Usage analytics in Power BI',
+    ],
+    outcomes: [
+      'Full visibility of every app and flow in the tenant',
+      'Citizen development with guardrails, not shadow IT',
+      'Policy enforced by default across environments',
+    ],
+    blogCategory: 'Data & AI',
+  },
+  {
+    slug: 'data-engineering',
+    title: 'Data engineering',
+    tagline: 'The pipelines and warehouses that make your BI trustworthy.',
+    intro:
+      'BI is only as good as the data underneath it. We build reliable ingestion, transformation, and warehousing on Microsoft Fabric, Azure Synapse, and Data Factory, with a semantic layer over clean, governed data.',
+    includes: [
+      'Ingestion pipelines from ERP, CRM, and operational systems',
+      'Warehouse and lakehouse modeling',
+      'Transformations on Fabric, Synapse, and Data Factory',
+      'SQL Server integration and optimization',
+      'Data quality checks and monitoring',
+    ],
+    outcomes: [
+      'Reports built on clean, current, governed data',
+      'Refreshes that are reliable instead of fragile',
+      'A semantic layer every report can share',
+    ],
+    blogCategory: 'Data & AI',
+  },
+  {
+    slug: 'analytics-and-ai',
+    title: 'Analytics and AI',
+    tagline: 'From what happened to what will happen, and what to do about it.',
+    intro:
+      'Descriptive dashboards tell you the past. We add the forecasting, classification, and Copilot features that help teams act, built on Azure Machine Learning and served where people already work, in Power BI and Power Platform.',
+    includes: [
+      'Forecasting and classification models on Azure ML',
+      'Predictive scores served into Power BI',
+      'Copilot and Copilot Studio where it earns its place',
+      'Anomaly detection and alerting',
+      'Decision automation tied to real workflows',
+    ],
+    outcomes: [
+      'Signals ahead of time, not after the fact',
+      'Models tied to decisions, not demos',
+      'AI where it adds value, not for its own sake',
+    ],
+    blogCategory: 'Data & AI',
+  },
+  {
+    slug: 'data-governance',
+    title: 'Data governance',
+    tagline: 'Scale BI without turning data into risk.',
+    intro:
+      'Ungoverned BI becomes a liability as it spreads. We build row-level security, Microsoft Purview, workspace structure, and DLP policy into the work from the start, so governance is part of the build rather than a cleanup later.',
+    includes: [
+      'Row-level security design and implementation',
+      'Microsoft Purview cataloging and lineage',
+      'Workspace structure and access model',
+      'DLP policy across Power BI and Power Platform',
+      'Sensitivity labeling and compliance mapping',
+    ],
+    outcomes: [
+      'BI that scales without becoming a risk',
+      'Access controlled by role, not by trust',
+      'Lineage and sensitivity you can audit',
+    ],
+    blogCategory: 'Data & AI',
+  },
+  {
+    slug: 'bi-sustainment',
+    title: 'Managed BI and support',
+    tagline: 'We run and evolve your BI estate so it keeps earning its keep.',
+    intro:
+      'A data project does not end at go-live; that is where it starts. We support your BI environment on a defined SLA, keep refreshes and governance healthy, and evolve the reports as your questions change.',
+    includes: [
+      'Defined SLA for issues and refreshes',
+      'Ongoing RLS and Purview governance',
+      'New reports and measures as needs change',
+      'Usage monitoring and adoption support',
+      'A quarterly evolution roadmap',
+    ],
+    outcomes: [
+      'BI that stays healthy instead of drifting',
+      'A defined SLA instead of best effort',
+      'Reports that keep pace with the business',
+    ],
+    blogCategory: 'Data & AI',
+  },
+  {
+    slug: 'discovery-assessment',
+    title: 'Data and BI discovery',
+    tagline: 'Start from the decision, not the data you happen to have.',
+    intro:
+      'Before building anything, we map the decisions your leadership needs to make, the sources behind them, and the state of what you have today. You leave with a diagnosis and an architecture plan you can act on, with or without us.',
+    includes: [
+      'Business question and KPI mapping',
+      'Source and data quality assessment',
+      'Current Power BI and Fabric estate review',
+      'Target architecture and roadmap',
+      'Effort and cost estimate by phase',
+    ],
+    outcomes: [
+      'A clear diagnosis of where the data stands',
+      'An architecture plan mapped to real decisions',
+      'A phased roadmap with honest estimates',
+    ],
+    blogCategory: 'Data & AI',
   },
 ];
 
@@ -748,82 +890,103 @@ export type IndustryPage = {
 
 export const industryPages: IndustryPage[] = [
   {
-    slug: 'trade-and-supply-chain',
-    name: 'Trade & Supply Chain',
+    slug: 'retail',
+    name: 'Retail',
     flagship: true,
     intro:
-      'Our deepest domain. We build customs and trade operations, import/export, shipment tracking, landed cost, and end-to-end supply chain visibility into one system, integrated with US Customs and ACE.',
+      'Omnichannel retail runs on three versions of the truth, with sales, inventory, and margin living in separate systems for stores and e-commerce. We consolidate them on a governed model so buyers and finance read the same numbers.',
     systems: [
-      'Customs entry and brokerage software',
-      'Landed cost and duty calculation',
-      'Shipment tracking and supply chain visibility',
-      'Trade compliance and denied-party screening',
+      'Sales and margin by store, channel, and category',
+      'Inventory and stock cover across locations',
+      'Basket, promotion, and price performance',
+      'Store versus e-commerce on one governed model',
     ],
-    integrations: ['US Customs / ACE / ABI', 'Freight forwarders and carriers', 'ERPs and TMS/WMS'],
-    keyword: 'trade',
-  },
-  {
-    slug: 'logistics',
-    name: 'Logistics',
-    intro:
-      'Fleet, routing, warehouse, and transport operations that need real-time data and tight integration. We build the systems that move goods and the visibility layer on top of them.',
-    systems: ['Fleet and route management', 'Real-time tracking', 'Warehouse and transport operations', 'Drayage and 3PL software'],
-    integrations: ['Telematics and GPS', 'TMS and WMS', 'EDI with partners'],
-    keyword: 'logistics',
+    integrations: ['Retail ERP and POS', 'E-commerce platform', 'Payment processors', 'Marketplaces'],
+    keyword: 'retail',
   },
   {
     slug: 'financial-services',
     name: 'Financial Services',
     intro:
-      'Compliance-heavy platforms where reconciliation, reporting, and audit trails have to be right. We build analytics, forecasting, and risk systems for regulated finance teams.',
-    systems: ['Reconciliation and reporting', 'Risk and forecasting', 'Compliance workflows', 'Analytics platforms'],
-    integrations: ['Core banking and ledgers', 'Payment gateways', 'Data warehouses'],
+      'Regulated finance teams need one definition per KPI and an audit trail that holds up. We build governed portfolio, risk, and reconciliation reporting so the numbers agree and every figure is traceable.',
+    systems: [
+      'Portfolio and delinquency by cohort and aging',
+      'Predictive risk scores and collections ladder',
+      'Reconciliation and management reporting',
+      'Compliance and audit dashboards',
+    ],
+    integrations: ['Core banking and ledgers', 'Payment gateways', 'CRM', 'Data warehouse'],
     keyword: 'financial',
-  },
-  {
-    slug: 'healthcare',
-    name: 'Healthcare',
-    intro:
-      'Clinical and operational systems for regulated environments. We build records, workflows, and integrations that hold up to HIPAA and the realities of care delivery.',
-    systems: ['Clinical and records platforms', 'Operational and scheduling systems', 'Patient and staff portals', 'Analytics'],
-    integrations: ['EHR/EMR systems', 'HL7 / FHIR', 'Billing and claims'],
-    keyword: 'healthcare',
-  },
-  {
-    slug: 'retail',
-    name: 'Retail',
-    intro:
-      'POS, retail ERP, and inventory that actually talk to each other. We build the connective tissue and the systems on top so stores and e-commerce run on one source of truth.',
-    systems: ['POS and retail ERP', 'Integrated inventory management', 'E-commerce integration', 'Loyalty and analytics'],
-    integrations: ['Payment processors', 'Marketplaces', 'ERPs and 3PLs'],
-    keyword: 'retail',
   },
   {
     slug: 'manufacturing',
     name: 'Manufacturing',
     intro:
-      'Production, inventory, and floor operations built for the way the plant actually runs, not generic ERP bent to fit. We connect the floor to the office.',
-    systems: ['Production and MES', 'Inventory and operations', 'Quality and traceability', 'Floor dashboards'],
-    integrations: ['PLCs and OPC-UA / MQTT', 'ERP systems', 'IoT and sensors'],
+      'Machine data and financials live apart, so OEE and cost per line arrive too late to act on. We cross MES and ERP on a governed model and put OEE, loss, and cost in front of the shop floor and finance at once.',
+    systems: [
+      'OEE, availability, performance, and quality by line',
+      'Loss and downtime by cause, shift, and plant',
+      'Cost per line and product',
+      'Executive and shop-floor dashboards',
+    ],
+    integrations: ['MES and shop-floor systems', 'ERP', 'IoT and sensor data', 'SQL Server'],
     keyword: 'manufacturing',
+  },
+  {
+    slug: 'logistics',
+    name: 'Logistics and transport',
+    intro:
+      'When tracking, freight, and orders live in separate systems, no one can tell which carriers and regions are hurting service and cost. We consolidate them so distribution decisions run on service level and cost, not anecdotes.',
+    systems: [
+      'OTIF and on-time performance by carrier and lane',
+      'Freight cost by carrier, region, and route',
+      'Service level against cost',
+      'Drill-down to the delivery behind every number',
+    ],
+    integrations: ['TMS and WMS', 'Telematics and GPS', 'EDI with partners', 'ERP'],
+    keyword: 'logistics',
+  },
+  {
+    slug: 'healthcare',
+    name: 'Healthcare',
+    intro:
+      'Clinical and billing data sit apart, so denials go unexplained and length of stay is invisible until it is too late. We bring them onto one governed model, built with HIPAA in mind.',
+    systems: [
+      'Claim denials by payer and reason',
+      'Length of stay by unit and specialty',
+      'Capacity and occupancy',
+      'Clinical operations and billing on one model',
+    ],
+    integrations: ['EHR/EMR systems', 'HL7 / FHIR', 'Billing and claims', 'Scheduling systems'],
+    keyword: 'healthcare',
   },
   {
     slug: 'education',
     name: 'Education',
     intro:
-      'School and organization management platforms, LMS, and portals for parents and staff. We build the systems that run programs and keep everyone informed.',
-    systems: ['School/org management', 'Learning management (LMS)', 'Parent and staff portals', 'Reporting'],
-    integrations: ['SIS systems', 'Payment and billing', 'SSO and identity'],
+      'Enrollment and dropout show up only after the term closes, too late to intervene, with data spread across academic and financial systems. We build a governed model that surfaces risk early.',
+    systems: [
+      'Enrollment and retention by campus, program, and term',
+      'Dropout risk signals ahead of the term',
+      'Academic results and outcomes',
+      'Academic and financial data on one model',
+    ],
+    integrations: ['SIS systems', 'LMS', 'Payment and billing', 'SSO and identity'],
     keyword: 'education',
   },
   {
-    slug: 'government-and-enterprise',
-    name: 'Government & Enterprise',
+    slug: 'supply-chain',
+    name: 'Supply chain',
     intro:
-      'Transparency portals, digital transformation, and analytics at scale, delivered on a schedule with everything documented. That is how we work by default.',
-    systems: ['Transparency and public portals', 'Digital transformation platforms', 'Analytics at scale', 'Management systems'],
-    integrations: ['Legacy government systems', 'Identity and access', 'Data platforms'],
-    keyword: 'government',
+      'S&OP that runs on disconnected spreadsheets means forecast accuracy is unknown and every function brings a different number. We build a governed planning model so the cycle argues from one shared view.',
+    systems: [
+      'Demand and supply by product family and horizon',
+      'Forecast accuracy measured, not assumed',
+      'Inventory and service-level trade-offs',
+      'A shared S&OP dashboard for every function',
+    ],
+    integrations: ['ERP and planning systems', 'Data warehouse', 'Supplier and order data', 'E-commerce and demand signals'],
+    keyword: 'supply chain',
   },
 ];
 
