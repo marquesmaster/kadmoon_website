@@ -9,9 +9,9 @@ import { why, stats, credibility } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'About | The US engineering arm of an established software house',
+  title: 'About | US Power BI and Microsoft Power Platform consultancy',
   description:
-    'Kadmoon is a US custom-software firm in Austin, TX. Senior in-house team, measurable acceptance criteria, and code you own. Learn how we work and why.',
+    'Kadmoon is a US Power BI and Microsoft Power Platform consultancy in Austin, TX. Senior in-house team, one definition per KPI, and everything built in your tenant. How we work and why.',
   alternates: { canonical: `${siteConfig.url}/about` },
 };
 
@@ -27,12 +27,13 @@ export default function AboutPage() {
             <div className="mt-6 max-w-3xl">
               <Eyebrow>About Kadmoon</Eyebrow>
               <h1 className="mt-4 font-display text-display-lg text-ink">
-                The American engineering arm of an established software house.
+                The US Microsoft data practice you can build decisions on.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-ink-2">
-                Kadmoon, Inc. is a custom-software firm based in {siteConfig.city},{' '}
-                {siteConfig.regionCode}. We build bespoke systems for companies that want software
-                built for their exact process, not forced into off-the-shelf SaaS. {credibility.text}
+                Kadmoon, Inc. is a Power BI and Microsoft Power Platform consultancy based in{' '}
+                {siteConfig.city}, {siteConfig.regionCode}. We turn scattered data into decisions on
+                the Microsoft stack, with one definition per KPI and everything built in your own
+                tenant. {credibility.text}
               </p>
             </div>
           </div>
@@ -85,7 +86,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mx-auto max-w-shell px-6 pb-20 text-center">
-          <h2 className="font-display text-display-sm text-ink">Let’s build something you own.</h2>
+          <h2 className="font-display text-display-sm text-ink">Let us turn your data into decisions.</h2>
           <div className="mt-8 flex justify-center">
             <Button href="/#contact" size="lg">
               Start a project <span aria-hidden>→</span>

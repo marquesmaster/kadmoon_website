@@ -78,6 +78,10 @@ const nextConfig = {
       { source: '/services/legacy-modernization', destination: '/services/tenant-to-tenant-migration', permanent: true },
       { source: '/industries/trade-and-supply-chain', destination: '/industries/supply-chain', permanent: true },
       { source: '/industries/government-and-enterprise', destination: '/industries', permanent: true },
+
+      // City pages repurposed from custom software to Power BI by city.
+      { source: '/custom-software-development', destination: '/power-bi', permanent: true },
+      { source: '/custom-software-development/:city*', destination: '/power-bi/:city*', permanent: true },
     ];
   },
 };

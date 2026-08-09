@@ -7,12 +7,7 @@ import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
 import { BlogCard } from '@/components/BlogCard';
 import { getAllCities, getCityBySlug, getNearbyCities } from '@/lib/cities-utils';
-import {
-  cityIntro,
-  cityWhyLocal,
-  cityIndustryAngle,
-  cityFaqs,
-} from '@/lib/city-content';
+import { cityIntro, cityWhyLocal, cityIndustryAngle, cityFaqs } from '@/lib/city-content';
 import { capabilities } from '@/lib/content';
 import { getAllPostMeta } from '@/lib/blog';
 import { siteConfig } from '@/lib/site';
@@ -24,21 +19,21 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { city: string } }): Metadata {
   const city = getCityBySlug(params.city);
   if (!city) return {};
-  const url = `${siteConfig.url}/custom-software-development/${city.slug}`;
-  const title = `Custom Software Development in ${city.name}, ${city.stateAbbr}`;
+  const url = `${siteConfig.url}/power-bi/${city.slug}`;
+  const title = `Power BI Consulting in ${city.name}, ${city.stateAbbr}`;
   return {
     title,
-    description: `Kadmoon builds bespoke enterprise systems, SaaS platforms, mobile apps, and AI for ${city.name}, ${city.state} companies. Senior in-house team, code you own. Get a proposal in one business day.`,
+    description: `Kadmoon delivers Power BI, Microsoft Fabric, and Power Platform for ${city.name}, ${city.state} companies. Governed models, one definition per KPI, built in your tenant. Get a proposal in a few business days.`,
     keywords: [
-      `custom software development ${city.name}`,
-      `software development company ${city.name}`,
-      `${city.name} software house`,
-      `bespoke software ${city.name} ${city.stateAbbr}`,
+      `power bi consulting ${city.name}`,
+      `power bi consultant ${city.name}`,
+      `microsoft fabric ${city.name}`,
+      `power bi developer ${city.name} ${city.stateAbbr}`,
     ],
     alternates: { canonical: url },
     openGraph: {
       title: `${title} | Kadmoon`,
-      description: `Bespoke software for ${city.name}, ${city.stateAbbr} companies. Built by a senior in-house team, owned by you.`,
+      description: `Power BI and Microsoft data platform for ${city.name}, ${city.stateAbbr} companies. Built by a senior in-house team, in your tenant.`,
       url,
       type: 'website',
     },
@@ -60,11 +55,11 @@ export default function CityPage({ params }: { params: { city: string } }) {
         ).filter((p, i, arr) => arr.findIndex((x) => x.slug === p.slug) === i)
       : [];
 
-  const url = `${siteConfig.url}/custom-software-development/${city.slug}`;
+  const url = `${siteConfig.url}/power-bi/${city.slug}`;
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: 'Custom software development',
+    serviceType: 'Power BI consulting',
     provider: {
       '@type': 'Organization',
       name: siteConfig.legalName,
@@ -82,7 +77,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       containedInPlace: { '@type': 'State', name: city.state },
     },
     url,
-    description: `Custom software development for companies in ${city.name}, ${city.state}.`,
+    description: `Power BI and Microsoft data platform consulting for companies in ${city.name}, ${city.state}.`,
   };
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -114,23 +109,22 @@ export default function CityPage({ params }: { params: { city: string } }) {
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Locations', href: '/custom-software-development' },
+                { label: 'Power BI by city', href: '/power-bi' },
                 { label: `${city.name}, ${city.stateAbbr}` },
               ]}
             />
             <div className="mt-6 max-w-3xl">
-              <Eyebrow>Custom software firm · serving {city.name}, {city.stateAbbr}</Eyebrow>
+              <Eyebrow>Power BI and Power Platform · serving {city.name}, {city.stateAbbr}</Eyebrow>
               <h1 className="mt-4 font-display text-display-lg text-ink">
-                Custom software development in{' '}
-                <span className="text-accent">{city.name}</span>.
+                Power BI consulting in <span className="text-accent">{city.name}</span>.
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-ink-2">{cityIntro(city)}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/#contact" size="lg">
-                  Start a project <span aria-hidden>→</span>
+                  Talk to an expert <span aria-hidden>→</span>
                 </Button>
-                <Button href="/#capabilities" size="lg" variant="ghost">
-                  See capabilities
+                <Button href="/dashboards" size="lg" variant="ghost">
+                  See dashboards
                 </Button>
               </div>
               <div className="mt-8 flex flex-wrap gap-2">
@@ -165,7 +159,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         {/* Capabilities */}
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-shell px-6">
-            <Eyebrow>What we build for {city.name} teams</Eyebrow>
+            <Eyebrow>What we deliver for {city.name} teams</Eyebrow>
             <h2 className="mt-4 max-w-2xl font-display text-display-sm text-ink">
               {capabilities.title}
             </h2>
@@ -185,25 +179,26 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </div>
         </section>
 
-        {/* Flagship callout */}
+        {/* Migration callout */}
         <section className="mx-auto max-w-shell px-6 pb-16 md:pb-24">
           <div className="relative overflow-hidden rounded-2xl bg-navy p-8 md:p-12">
             <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
             <div className="relative max-w-2xl">
-              <Eyebrow onDark>Flagship practice</Eyebrow>
+              <Eyebrow onDark>Signature practice</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm text-white">
-                Trade &amp; supply chain software, wherever you ship.
+                Migrating to Power BI and Microsoft Fabric.
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-white/70 md:text-base">
-                Customs and trade operations, US Customs/ACE integration, shipment tracking, landed
-                cost, and end-to-end supply chain visibility in one system. It is our deepest
-                domain, and it travels well to any {city.name} operation that moves goods.
+                Moving off Tableau, Qlik, or Cognos, or from Azure Synapse to Microsoft Fabric, is
+                our deepest work: full inventory, dependency mapping, and a rebuild on a governed
+                model, in waves, with no information blackout. It travels well to any {city.name}
+                {' '}team that has outgrown its current BI.
               </p>
               <a
                 href="/#contact"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
               >
-                Talk to an engineer <span aria-hidden>→</span>
+                Talk to an expert <span aria-hidden>→</span>
               </a>
             </div>
           </div>
@@ -213,7 +208,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <section className="bg-mist py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6">
             <h2 className="font-display text-display-sm text-ink">
-              Custom software in {city.name}: common questions
+              Power BI in {city.name}: common questions
             </h2>
             <div className="mt-8 divide-y divide-line border-y border-line">
               {faqs.map((f) => (
@@ -241,14 +236,12 @@ export default function CityPage({ params }: { params: { city: string } }) {
         {/* Nearby cities */}
         {nearby.length > 0 && (
           <section className="mx-auto max-w-shell px-6 pb-24">
-            <h2 className="mb-6 font-display text-display-sm text-ink">
-              Nearby markets we serve
-            </h2>
+            <h2 className="mb-6 font-display text-display-sm text-ink">Nearby markets we serve</h2>
             <div className="flex flex-wrap gap-2">
               {nearby.map((c) => (
                 <a
                   key={c.slug}
-                  href={`/custom-software-development/${c.slug}`}
+                  href={`/power-bi/${c.slug}`}
                   className="rounded-full border border-line bg-paper px-4 py-2 text-sm font-medium text-ink-2 transition-colors hover:border-navy/30 hover:text-ink"
                 >
                   {c.name}, {c.stateAbbr}
