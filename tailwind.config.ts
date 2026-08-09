@@ -21,6 +21,30 @@ const config: Config = {
         accent: 'rgb(var(--accent) / <alpha-value>)',
         line: 'rgb(var(--line) / <alpha-value>)',
         success: 'rgb(var(--success) / <alpha-value>)',
+        // Aliases mapping the imported dashboard components' design tokens onto
+        // Kadmoon's palette, so those components render without class edits.
+        bg: {
+          DEFAULT: 'rgb(var(--paper) / <alpha-value>)',
+          card: 'rgb(var(--paper) / <alpha-value>)',
+          soft: 'rgb(var(--mist) / <alpha-value>)',
+          ink: 'rgb(var(--navy) / <alpha-value>)',
+        },
+        border: {
+          DEFAULT: 'rgb(var(--line) / <alpha-value>)',
+          strong: 'rgb(var(--ink-3) / <alpha-value>)',
+        },
+        text: {
+          primary: 'rgb(var(--ink) / <alpha-value>)',
+          secondary: 'rgb(var(--ink-2) / <alpha-value>)',
+          muted: 'rgb(var(--ink-3) / <alpha-value>)',
+          onink: '#ffffff',
+        },
+        brand: {
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          deep: '#B8461A',
+          soft: 'rgba(234, 90, 31, 0.10)',
+        },
+        warning: '#D9822B',
       },
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],

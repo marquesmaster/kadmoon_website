@@ -49,6 +49,9 @@ export function GET() {
   lines.push(
     `- [Cases](${siteConfig.url}/cases): case studies our engineering team has delivered (public sector, education, logistics, healthcare, trade, enterprise)`,
   );
+  lines.push(
+    `- [Dashboards](${siteConfig.url}/dashboards): interactive Power BI dashboard demos with drill-down, granular tables, and cross-cut matrices (illustrative data, real structure)`,
+  );
   lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth, data-backed articles`);
   lines.push(
     `- [Locations](${siteConfig.url}/custom-software-development): custom software development across ${cities.length}+ US cities`,
