@@ -4,7 +4,6 @@ import { z } from 'zod';
 import { prisma } from '@/lib/prisma';
 import { rateLimit } from '@/lib/rate-limit';
 import { sendLeadEmail } from '@/lib/mailer';
-import { createOdooLead, isOdooConfigured } from '@/lib/odoo';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -113,24 +112,6 @@ export async function POST(req: Request) {
     });
   } catch (err) {
     console.error('[contact] lead email failed:', safeErr(err));
-  }
-
-  // Push the lead into Odoo CRM if configured. Best-effort: the lead is already
-  // stored and emailed, so a CRM hiccup must never fail the request. Never log
-  // the payload or credentials, only a safe error label.
-  if (isOdooConfigured()) {
-    try {
-      await createOdooLead({
-        name: data.name,
-        email: data.email,
-        company: data.company,
-        size: data.size,
-        need: data.need,
-        message: data.message,
-      });
-    } catch (err) {
-      console.error('[contact] odoo lead failed:', safeErr(err));
-    }
   }
 
   // Only fail the request if neither channel captured the lead.

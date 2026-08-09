@@ -24,10 +24,6 @@ yarn-error.log*
 .env
 .env*.local
 
-# odoo back-office secrets (keep the .example files tracked)
-/deploy/odoo/.env
-/deploy/odoo/config/odoo.conf
-
 # vercel
 .vercel
 
