@@ -578,14 +578,24 @@ export const footer = {
       ],
     },
     {
-      heading: 'Explore',
+      heading: 'Services',
       links: [
         { label: 'Power BI', href: '/services/power-bi' },
         { label: 'Microsoft Fabric', href: '/services/microsoft-fabric' },
-        { label: 'Tenant-to-tenant migration', href: '/services/tenant-to-tenant-migration' },
         { label: 'Power Platform', href: '/services/power-platform' },
         { label: 'Data engineering', href: '/services/data-engineering' },
-        { label: 'Blog', href: '/blog' },
+        { label: 'Power Platform CoE', href: '/services/power-platform-coe' },
+        { label: 'Managed BI', href: '/services/bi-sustainment' },
+      ],
+    },
+    {
+      heading: 'Migrations',
+      links: [
+        { label: 'Tableau to Power BI', href: '/tableau-to-power-bi-migration' },
+        { label: 'Qlik to Power BI', href: '/qlik-to-power-bi-migration' },
+        { label: 'Cognos to Power BI', href: '/cognos-to-power-bi-migration' },
+        { label: 'Synapse to Fabric', href: '/synapse-to-fabric-migration' },
+        { label: 'Tenant-to-tenant', href: '/services/tenant-to-tenant-migration' },
         { label: 'Start a project', href: '/#contact' },
       ],
     },
