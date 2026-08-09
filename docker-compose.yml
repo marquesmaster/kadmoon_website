@@ -44,6 +44,12 @@ services:
       - SMTP_SECURE=${SMTP_SECURE:-false}
       - CONTACT_TO=${CONTACT_TO:-comercial@kadmoon.com}
       - CONTACT_FROM=${CONTACT_FROM:-}
+      # Odoo CRM (optional). When all four are set, website leads are also
+      # created as crm.lead records. Use an Odoo API key, never a password.
+      - ODOO_URL=${ODOO_URL:-}
+      - ODOO_DB=${ODOO_DB:-}
+      - ODOO_LOGIN=${ODOO_LOGIN:-}
+      - ODOO_API_KEY=${ODOO_API_KEY:-}
 
 volumes:
   kadmoon-db-data:

@@ -1,0 +1,45 @@
+# Odoo back-office stack (Community edition, open source, no license needed).
+# Runs independently from the website stack. Deploy on the same VPS under a
+# subdomain (e.g. app.kadmoon.com) reverse-proxied by nginx. See README.md.
+services:
+  odoo-db:
+    image: postgres:15
+    container_name: odoo-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=${ODOO_DB_PASSWORD:?set ODOO_DB_PASSWORD in deploy/odoo/.env}
+      - POSTGRES_DB=postgres
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U odoo']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  odoo:
+    image: odoo:18
+    container_name: odoo
+    restart: unless-stopped
+    depends_on:
+      odoo-db:
+        condition: service_healthy
+    # Bound to localhost only; nginx on the host terminates TLS and proxies in.
+    # 8069 = web, 8072 = websocket/longpolling (Discuss, live notifications).
+    ports:
+      - "127.0.0.1:8069:8069"
+      - "127.0.0.1:8072:8072"
+    environment:
+      # The official image reads these for the DB connection.
+      - HOST=odoo-db
+      - USER=odoo
+      - PASSWORD=${ODOO_DB_PASSWORD}
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:

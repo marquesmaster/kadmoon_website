@@ -1,0 +1,29 @@
+[options]
+; Copy this file to odoo.conf (same folder) and set admin_passwd before first run.
+;   cp config/odoo.conf.example config/odoo.conf
+; odoo.conf is gitignored so the master password never lands in the repo.
+
+; Master ("database management") password. Set a long random string.
+admin_passwd = CHANGE_ME_TO_A_LONG_RANDOM_STRING
+
+; Custom modules go in ./addons (mounted at /mnt/extra-addons).
+addons_path = /mnt/extra-addons
+data_dir = /var/lib/odoo
+
+; Behind an nginx reverse proxy that terminates TLS.
+proxy_mode = True
+
+; Do not expose the database manager / selector publicly. We create the single
+; "kadmoon" database once via CLI (see README) and pin to it.
+list_db = False
+dbfilter = ^kadmoon$
+
+; Small-VPS tuning. Raise workers if you give the box more CPU/RAM.
+workers = 2
+limit_time_cpu = 120
+limit_time_real = 240
+limit_memory_soft = 671088640
+limit_memory_hard = 805306368
+
+; DB host/user/password come from the compose environment (HOST/USER/PASSWORD),
+; so they are intentionally not written here.
