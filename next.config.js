@@ -222,6 +222,13 @@ const nextConfig = {
       // City pages repurposed from custom software to Power BI by city.
       { source: '/custom-software-development', destination: '/power-bi', permanent: true },
       { source: '/custom-software-development/:city*', destination: '/power-bi/:city*', permanent: true },
+      // Off-brand blog articles retired in the Power BI content pivot, sent to
+      // the closest Microsoft data platform page.
+      { source: '/blog/saas-metrics-and-analytics', destination: '/services/power-bi', permanent: true },
+      { source: '/blog/writing-acceptance-criteria', destination: '/process', permanent: true },
+      { source: '/blog/aws-vs-azure-vs-gcp', destination: '/services/data-engineering', permanent: true },
+      { source: '/blog/ai-in-enterprise-software', destination: '/services/analytics-and-ai', permanent: true },
+      { source: '/blog/custom-ai-vs-off-the-shelf-ai', destination: '/services/analytics-and-ai', permanent: true },
       // Retired custom-software blog articles (pivot to Microsoft data platform).
       ...retiredBlogSlugs.map((slug) => ({
         source: `/blog/${slug}`,

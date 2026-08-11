@@ -18,9 +18,9 @@ const icons: Record<string, string> = {
 };
 
 export const metadata: Metadata = {
-  title: 'Services | Custom software capabilities',
+  title: 'Services | Power BI, Fabric, and Power Platform',
   description:
-    'Bespoke enterprise systems, SaaS platforms, mobile apps, integrations, data & AI, and legacy modernization, built by a senior in-house team and owned by you.',
+    'Power BI, Microsoft Fabric, data engineering, Power Platform, governance, migrations, and managed BI, built by a senior, Microsoft-certified team and owned by you in your tenant.',
   alternates: { canonical: `${siteConfig.url}/services` },
 };
 
@@ -34,13 +34,14 @@ export default function ServicesIndex() {
           <div className="relative mx-auto max-w-shell px-6">
             <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
             <div className="mt-6 max-w-3xl">
-              <Eyebrow>What we build</Eyebrow>
+              <Eyebrow>What we do</Eyebrow>
               <h1 className="mt-4 font-display text-display-lg text-ink">
-                Six competencies, one delivery.
+                The full Microsoft data value chain.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-ink-2">
-                From the core system to the model in production. Each capability is spec’d with
-                measurable acceptance criteria and delivered in validated two-week sprints.
+                From the data foundation to the dashboard your leadership trusts: Power BI,
+                Microsoft Fabric, data engineering, Power Platform, governance, and migrations. Each
+                engagement is scoped with measurable acceptance criteria and built in your tenant.
               </p>
             </div>
           </div>

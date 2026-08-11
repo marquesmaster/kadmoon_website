@@ -8,9 +8,9 @@ import { industryPages } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Industries | Custom software for 10+ sectors',
+  title: 'Industries | Power BI and analytics by sector',
   description:
-    'Custom software for trade & supply chain, logistics, financial services, healthcare, retail, manufacturing, education, and government. Built for each sector’s requirements.',
+    'Power BI and Microsoft data platforms for retail, financial services, manufacturing, logistics, healthcare, education, and supply chain. Built for each sector, in your tenant.',
   alternates: { canonical: `${siteConfig.url}/industries` },
 };
 
@@ -26,11 +26,12 @@ export default function IndustriesIndex() {
             <div className="mt-6 max-w-3xl">
               <Eyebrow>Industries</Eyebrow>
               <h1 className="mt-4 font-display text-display-lg text-ink">
-                Custom software for 10+ sectors.
+                Power BI built for your sector.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-ink-2">
-                Every vertical carries its own regulatory, integration, and UX requirements. Trade
-                and supply chain is our flagship practice; we’ve shipped across the rest.
+                Every industry has its own systems, KPIs, and regulatory weight. We know the data
+                sources and the metrics that matter in each, so your model speaks the language your
+                operation already runs on.
               </p>
             </div>
           </div>

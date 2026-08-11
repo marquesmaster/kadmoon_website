@@ -19,10 +19,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!ind) return {};
   const url = `${siteConfig.url}/industries/${ind.slug}`;
   return {
-    title: `Custom software for ${ind.name}`,
+    title: `Power BI for ${ind.name}`,
     description: ind.intro.slice(0, 155),
     alternates: { canonical: url },
-    openGraph: { title: `${ind.name} software | Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website' },
+    openGraph: { title: `Power BI for ${ind.name} | Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website' },
   };
 }
 
@@ -40,7 +40,7 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: `Custom software for ${ind.name}`,
+    serviceType: `Power BI and analytics for ${ind.name}`,
     provider: { '@type': 'Organization', name: siteConfig.legalName, url: siteConfig.url },
     areaServed: { '@type': 'Country', name: siteConfig.country },
     description: ind.intro,
@@ -69,7 +69,7 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
             <div className="mt-6 max-w-3xl">
               <Eyebrow>{ind.flagship ? 'Flagship practice' : 'Industry'}</Eyebrow>
               <h1 className="mt-4 font-display text-display-lg text-ink">
-                Custom software for <span className="text-accent">{ind.name}</span>.
+                Power BI for <span className="text-accent">{ind.name}</span>.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-ink-2">{ind.intro}</p>
               <div className="mt-8 flex flex-wrap gap-3">

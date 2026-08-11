@@ -57,7 +57,7 @@ The numbers below frame the market you are buying into before you decide to buil
 | Self-service BI growth rate | ~14% per year | [Straits Research](https://straitsresearch.com/report/self-service-bi-market) |
 | Data-team time spent on prep/cleaning | ~45% | [Anaconda survey](https://www.hpcwire.com/bigdatawire/2020/07/06/data-prep-still-dominates-data-scientists-time-survey-finds/) |
 
-Custom BI earns its keep in specific situations. When dashboards must live inside your own application for customers or field teams, an embedded packaged tool often looks bolted-on and costs per seat in a way that does not scale. When your logic is genuinely proprietary, the calculations your business runs on may not fit a drag-and-drop tool. And when you need tight control over performance, access, and the exact interaction model, custom gives you the whole surface. The broader trade-off is the same one covered in [custom AI vs off-the-shelf AI](/blog/custom-ai-vs-off-the-shelf-ai): buy the commodity, build the differentiator.
+Custom BI earns its keep in specific situations. When dashboards must live inside your own application for customers or field teams, an embedded packaged tool often looks bolted-on and costs per seat in a way that does not scale. When your logic is genuinely proprietary, the calculations your business runs on may not fit a drag-and-drop tool. And when you need tight control over performance, access, and the exact interaction model, custom gives you the whole surface. The same trade-off shows up when you weigh a governed [Power BI semantic model](/blog/power-bi-semantic-model-best-practices) against ad hoc reports: standardize the commodity, invest where your business is genuinely different.
 
 ## Data modeling behind dashboards
 

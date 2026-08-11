@@ -20,16 +20,14 @@ const SERVICES: HubLink = { label: 'What we do', href: '/services' };
 // Until the content is fully re-themed, every category resolves to a valid set
 // of Microsoft data platform hubs, defaulting to Power BI, dashboards, cases.
 const byCategory: Record<string, HubLink[]> = {
-  'Data & AI': [ANALYTICS_AI, POWER_BI, DASHBOARDS],
-  'Tech Stack': [FABRIC, DATA_ENG, POWER_BI],
+  'Power BI': [POWER_BI, GOVERNANCE, DASHBOARDS],
+  'Microsoft Fabric': [FABRIC, DATA_ENG, POWER_BI],
+  'Data engineering': [DATA_ENG, FABRIC, POWER_BI],
+  'Analytics & AI': [ANALYTICS_AI, POWER_BI, DASHBOARDS],
+  'Power Platform': [POWER_PLATFORM, ANALYTICS_AI, CASES],
+  Migration: [T2T, FABRIC, POWER_BI],
   Comparisons: [POWER_BI, FABRIC, CASES],
   'Cost & Pricing': [POWER_BI, SERVICES, CASES],
-  'Process & Delivery': [SERVICES, DASHBOARDS, CASES],
-  'Integrations & APIs': [DATA_ENG, POWER_PLATFORM, CASES],
-  'Legacy Modernization': [T2T, FABRIC, DASHBOARDS],
-  'Software House': [SERVICES, POWER_BI, CASES],
-  "Buyer's Guide": [POWER_BI, GOVERNANCE, CASES],
-  'Industry Guides': [POWER_BI, DASHBOARDS, CASES],
 };
 
 export function hubsForCategory(category: string): HubLink[] {

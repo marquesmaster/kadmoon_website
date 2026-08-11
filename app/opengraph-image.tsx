@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Kadmoon, Inc.: custom software built for how your business actually runs.';
+export const alt = 'Kadmoon, Inc.: Microsoft data your whole company trusts. Power BI and Power Platform.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -38,7 +38,7 @@ export default function OpengraphImage() {
               marginBottom: 20,
             }}
           >
-            Custom software firm · Austin, TX
+            Power BI &amp; Power Platform · Austin, TX
           </div>
           <div
             style={{
@@ -50,12 +50,12 @@ export default function OpengraphImage() {
               maxWidth: 980,
             }}
           >
-            The custom software your operation runs on, built for your process, owned by you.
+            Microsoft data your whole company trusts. Built in your tenant.
           </div>
         </div>
 
         <div style={{ fontSize: 22, color: 'rgba(255,255,255,0.65)' }}>
-          Enterprise systems · SaaS · Mobile · Data &amp; AI · Trade &amp; Supply Chain
+          Power BI · Microsoft Fabric · Power Platform · Azure · Migrations
         </div>
       </div>
     ),

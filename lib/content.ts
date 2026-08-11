@@ -756,7 +756,7 @@ export const services: ServicePage[] = [
       'First working dashboards live by week two',
       'Reports your leadership opens without asking who is right',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Power BI',
   },
   {
     slug: 'microsoft-fabric',
@@ -776,7 +776,7 @@ export const services: ServicePage[] = [
       'Reports that stay fast as data volume grows',
       'A platform that scales without a rebuild',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Microsoft Fabric',
   },
   {
     slug: 'tenant-to-tenant-migration',
@@ -796,7 +796,7 @@ export const services: ServicePage[] = [
       'A phased cutover with no information blackout',
       'Users working the whole way through',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Migration',
   },
   {
     slug: 'power-platform',
@@ -816,7 +816,7 @@ export const services: ServicePage[] = [
       'Every request trackable from intake to sign-off',
       'Automation governed instead of sprawling',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Power Platform',
   },
   {
     slug: 'power-platform-coe',
@@ -836,7 +836,7 @@ export const services: ServicePage[] = [
       'Citizen development with guardrails, not shadow IT',
       'Policy enforced by default across environments',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Power Platform',
   },
   {
     slug: 'data-engineering',
@@ -856,7 +856,7 @@ export const services: ServicePage[] = [
       'Refreshes that are reliable instead of fragile',
       'A semantic layer every report can share',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Data engineering',
   },
   {
     slug: 'analytics-and-ai',
@@ -876,7 +876,7 @@ export const services: ServicePage[] = [
       'Models tied to decisions, not demos',
       'AI where it adds value, not for its own sake',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Analytics & AI',
   },
   {
     slug: 'data-governance',
@@ -896,7 +896,7 @@ export const services: ServicePage[] = [
       'Access controlled by role, not by trust',
       'Lineage and sensitivity you can audit',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Power BI',
   },
   {
     slug: 'bi-sustainment',
@@ -916,7 +916,7 @@ export const services: ServicePage[] = [
       'A defined SLA instead of best effort',
       'Reports that keep pace with the business',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Power BI',
   },
   {
     slug: 'discovery-assessment',
@@ -936,7 +936,7 @@ export const services: ServicePage[] = [
       'An architecture plan mapped to real decisions',
       'A phased roadmap with honest estimates',
     ],
-    blogCategory: 'Data & AI',
+    blogCategory: 'Power BI',
   },
 ];
 
