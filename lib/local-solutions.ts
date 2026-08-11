@@ -114,6 +114,57 @@ export const localSolutions: LocalSolution[] = [
       sub: 'Cost-driven migrations off Tableau, Qlik, and Cognos onto Power BI and Fabric, run inventoried and in waves. Find your market below.',
     },
   },
+  {
+    slug: 'power-apps-development',
+    label: 'Power Apps development',
+    h1: 'Power Apps development',
+    eyebrow: 'Power Apps and Dataverse',
+    serviceType: 'Power Apps development',
+    governedThing: 'governed Power Apps built on Dataverse',
+    whatWeBuild:
+      'canvas and model-driven Power Apps, Power Automate flows, and a Dataverse data model, governed with a Center of Excellence and reported in Power BI',
+    blurb:
+      'Low-code business apps on Power Apps and Dataverse, governed and built in your tenant.',
+    keywordStems: ['power apps developer', 'power apps consultant', 'power apps development'],
+    hub: {
+      title: 'Power Apps development by city',
+      sub: 'Custom low-code business apps on Power Apps, Power Automate, and Dataverse, governed at scale. Find your market below.',
+    },
+  },
+  {
+    slug: 'copilot-consulting',
+    label: 'Microsoft Copilot consulting',
+    h1: 'Microsoft Copilot consulting',
+    eyebrow: 'Copilot Studio and Azure OpenAI',
+    serviceType: 'Microsoft Copilot consulting',
+    governedThing: 'Copilot grounded on your own governed data',
+    whatWeBuild:
+      'Copilot Studio agents, Azure OpenAI solutions grounded on your data, and Copilot in Power BI and Power Platform, with data privacy and governance in your tenant',
+    blurb:
+      'Copilot and Azure OpenAI grounded on your own data, private and governed in your tenant.',
+    keywordStems: ['microsoft copilot consultant', 'copilot studio consulting', 'azure openai consultant'],
+    hub: {
+      title: 'Microsoft Copilot consulting by city',
+      sub: 'Copilot Studio, Azure OpenAI, and Copilot in Power BI, grounded on your data and governed in your tenant. Find your market below.',
+    },
+  },
+  {
+    slug: 'data-governance',
+    label: 'Data governance',
+    h1: 'Data governance and Microsoft Purview consulting',
+    eyebrow: 'Purview, RLS, and DLP',
+    serviceType: 'Data governance consulting',
+    governedThing: 'governed, secured, auditable data',
+    whatWeBuild:
+      'row-level security, Microsoft Purview cataloging and lineage, workspace structure, and DLP policy across Power BI and Power Platform',
+    blurb:
+      'Row-level security, Microsoft Purview, and DLP so BI scales without becoming a risk.',
+    keywordStems: ['data governance consultant', 'microsoft purview consultant', 'power bi security consultant'],
+    hub: {
+      title: 'Data governance by city',
+      sub: 'Row-level security, Microsoft Purview, and DLP that let BI scale without turning data into risk. Find your market below.',
+    },
+  },
 ];
 
 export function getLocalSolution(slug: string): LocalSolution | undefined {

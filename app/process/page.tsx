@@ -28,8 +28,8 @@ export default function ProcessPage() {
               <Eyebrow>{process.eyebrow}</Eyebrow>
               <h1 className="mt-4 font-display text-display-lg text-ink">{process.title}</h1>
               <p className="mt-5 text-lg leading-relaxed text-ink-2">
-                No black boxes. You see working software from the first month and know exactly what
-                ships, when, and how to validate it.
+                No black boxes. You see working dashboards from week two and know exactly what
+                ships, when, and how to validate every number in them.
               </p>
             </div>
           </div>
