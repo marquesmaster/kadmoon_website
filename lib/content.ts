@@ -642,6 +642,16 @@ export const footer = {
         { label: 'Start a project', href: '/#contact' },
       ],
     },
+    {
+      heading: 'By city',
+      links: [
+        { label: 'Power BI by city', href: '/power-bi' },
+        { label: 'Microsoft Fabric by city', href: '/microsoft-fabric' },
+        { label: 'Power Platform by city', href: '/power-platform' },
+        { label: 'Azure data engineering', href: '/azure-data-engineering' },
+        { label: 'Power BI migration', href: '/power-bi-migration' },
+      ],
+    },
   ],
 };
 

@@ -4,6 +4,7 @@ import { getAllPostMeta, getCategories } from '@/lib/blog';
 import { services, industryPages, caseStudies } from '@/lib/content';
 import { caseDashboards } from '@/lib/cases/dashboards';
 import { getAllCities } from '@/lib/cities-utils';
+import { localSolutions } from '@/lib/local-solutions';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
@@ -17,7 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/cognos-to-power-bi-migration`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/synapse-to-fabric-migration`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/industries`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/power-bi`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/cases`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/dashboards`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
@@ -65,12 +65,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  const cities: MetadataRoute.Sitemap = getAllCities().map((c) => ({
-    url: `${base}/power-bi/${c.slug}`,
+  // Local solution hubs (one per solution) plus the full solution x city matrix.
+  const allCities = getAllCities();
+  const solutionHubs: MetadataRoute.Sitemap = localSolutions.map((s) => ({
+    url: `${base}/${s.slug}`,
     lastModified: now,
     changeFrequency: 'monthly',
-    priority: 0.6,
+    priority: 0.8,
   }));
+  const cities: MetadataRoute.Sitemap = localSolutions.flatMap((s) =>
+    allCities.map((c) => ({
+      url: `${base}/${s.slug}/${c.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+  );
 
-  return [...staticRoutes, ...posts, ...categories, ...cities];
+  return [...staticRoutes, ...solutionHubs, ...posts, ...categories, ...cities];
 }

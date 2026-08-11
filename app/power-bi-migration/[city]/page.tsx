@@ -4,7 +4,7 @@ import { getAllCities, getCityBySlug } from '@/lib/cities-utils';
 import { getLocalSolution } from '@/lib/local-solutions';
 import { SolutionCityPage, solutionCityMetadata } from '@/components/city/SolutionCityPage';
 
-const sol = getLocalSolution('power-bi')!;
+const sol = getLocalSolution('power-bi-migration')!;
 
 export function generateStaticParams() {
   return getAllCities().map((c) => ({ city: c.slug }));

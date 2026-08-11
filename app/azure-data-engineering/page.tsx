@@ -1,7 +1,7 @@
 import { getLocalSolution } from '@/lib/local-solutions';
 import { SolutionCityIndex, solutionIndexMetadata } from '@/components/city/SolutionCityIndex';
 
-const sol = getLocalSolution('power-bi')!;
+const sol = getLocalSolution('azure-data-engineering')!;
 
 export const metadata = solutionIndexMetadata(sol);
 
