@@ -1,4 +1,5 @@
 import type { City } from './cities';
+import type { StateGroup } from './cities-utils';
 import type { LocalSolution } from './local-solutions';
 
 /**
@@ -83,6 +84,55 @@ export function cityFaqs(sol: LocalSolution, city: City): { q: string; a: string
     {
       q: `How fast can a ${city.name} project start?`,
       a: `Tell us your scenario and you get a diagnosis and a proposal with an investment range within a few business days. First results are usually live by week two of a signed scope.`,
+    },
+  ];
+}
+
+// ---------------------------------------------------------------------------
+// State-level hubs (e.g. /power-bi/texas): an SEO layer between the national
+// hub and the individual city pages, with its own copy and internal links.
+// ---------------------------------------------------------------------------
+
+function stateSeed(st: StateGroup): number {
+  // Stable per-state seed so variants do not need Math.random.
+  return st.slug.split('').reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
+}
+
+export function stateIntro(sol: LocalSolution, st: StateGroup): string {
+  const industries = listPhrase(st.industries.slice(0, 3));
+  const topCities = listPhrase(st.cities.slice(0, 3).map((c) => c.name));
+  const variants = [
+    `Kadmoon delivers ${sol.label} for companies across ${st.state}, from ${topCities} to the rest of the state. ${st.state}'s economy leans on ${industries}, and those operations reward ${sol.governedThing} where every KPI means the same thing.`,
+    `We build ${sol.label} for ${st.state} businesses tired of three versions of the truth. With employers concentrated in ${industries}, teams from ${topCities} onward need ${sol.governedThing} on the Microsoft stack, from raw data to the dashboard leadership opens every Monday.`,
+    `Companies throughout ${st.state} come to Kadmoon for ${sol.label} when their reports stop agreeing. We serve ${topCities} and every market in between, with a senior, Microsoft-certified team building ${sol.governedThing} that stays in your tenant.`,
+  ];
+  return pick(variants, stateSeed(st));
+}
+
+export function stateWhyLocal(sol: LocalSolution, st: StateGroup): { title: string; body: string } {
+  return {
+    title: `${sol.label} for how ${st.state} companies actually run`,
+    body: `Kadmoon works with clients across ${st.state} from our Austin, TX base: a senior, Microsoft-certified in-house team, US business hours, and results you can validate from the first cycle. Whether your team sits in ${listPhrase(
+      st.cities.slice(0, 2).map((c) => c.name),
+    )} or a smaller market, the model is the same, one definition per KPI, and everything built in your own Microsoft tenant. No offshore handoffs, no rotating freelancers on your ${st.state} work.`,
+  };
+}
+
+export function stateFaqs(sol: LocalSolution, st: StateGroup): { q: string; a: string }[] {
+  return [
+    {
+      q: `Do you do ${sol.label} for companies in ${st.state}?`,
+      a: `Yes. Kadmoon works with clients across ${st.state} and the wider United States from our base in Austin, TX. We handle discovery, the data foundation, the semantic model, delivery, and managed support, all with a senior, Microsoft-certified in-house team on US business hours.`,
+    },
+    {
+      q: `Which ${st.state} cities do you serve?`,
+      a: `We work with companies statewide, including ${listPhrase(
+        st.cities.slice(0, 6).map((c) => c.name),
+      )} and beyond. Delivery is remote by default, with in-person sessions when a project calls for it.`,
+    },
+    {
+      q: `What do you build for ${st.state} businesses?`,
+      a: `${capitalize(sol.whatWeBuild)}. Everything is built in your own Microsoft tenant, and we can also cover migrations from Tableau, Qlik, and Cognos and tenant-to-tenant moves.`,
     },
   ];
 }

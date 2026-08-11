@@ -3,7 +3,7 @@ import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
 import { services, industryPages, caseStudies } from '@/lib/content';
 import { caseDashboards } from '@/lib/cases/dashboards';
-import { getAllCities } from '@/lib/cities-utils';
+import { getAllCities, getAllStates } from '@/lib/cities-utils';
 import { localSolutions } from '@/lib/local-solutions';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -65,14 +65,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  // Local solution hubs (one per solution) plus the full solution x city matrix.
+  // Local solution hubs (one per solution), the per-state hubs, and the full
+  // solution x city matrix.
   const allCities = getAllCities();
+  const allStates = getAllStates();
   const solutionHubs: MetadataRoute.Sitemap = localSolutions.map((s) => ({
     url: `${base}/${s.slug}`,
     lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
+  const stateHubs: MetadataRoute.Sitemap = localSolutions.flatMap((s) =>
+    allStates.map((st) => ({
+      url: `${base}/${s.slug}/${st.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  );
   const cities: MetadataRoute.Sitemap = localSolutions.flatMap((s) =>
     allCities.map((c) => ({
       url: `${base}/${s.slug}/${c.slug}`,
@@ -82,5 +92,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...staticRoutes, ...solutionHubs, ...posts, ...categories, ...cities];
+  return [...staticRoutes, ...solutionHubs, ...stateHubs, ...posts, ...categories, ...cities];
 }

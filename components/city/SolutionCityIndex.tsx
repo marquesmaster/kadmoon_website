@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import type { LocalSolution } from '@/lib/local-solutions';
 import { localSolutions } from '@/lib/local-solutions';
-import { getAllCities, citiesByState } from '@/lib/cities-utils';
+import { getAllCities, citiesByState, getAllStates } from '@/lib/cities-utils';
 import { siteConfig } from '@/lib/site';
 
 export function solutionIndexMetadata(sol: LocalSolution): Metadata {
@@ -28,6 +28,8 @@ export function SolutionCityIndex({ sol }: { sol: LocalSolution }) {
   const states = citiesByState();
   const top = cities.slice(0, 12);
   const otherSolutions = localSolutions.filter((s) => s.slug !== sol.slug);
+  // States that have their own hub page (2+ cities), for linking the headings.
+  const stateHubSlug = new Map(getAllStates().map((s) => [s.state, s.slug]));
 
   return (
     <>
@@ -64,7 +66,16 @@ export function SolutionCityIndex({ sol }: { sol: LocalSolution }) {
             {states.map((s) => (
               <div key={s.state}>
                 <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
-                  {s.state}
+                  {stateHubSlug.has(s.state) ? (
+                    <a
+                      href={`/${sol.slug}/${stateHubSlug.get(s.state)}`}
+                      className="underline decoration-line decoration-1 underline-offset-4 transition-colors hover:decoration-accent"
+                    >
+                      {s.state}
+                    </a>
+                  ) : (
+                    s.state
+                  )}
                 </h2>
                 <ul className="mt-3 space-y-2 border-t border-line pt-3">
                   {s.cities.map((c) => (
