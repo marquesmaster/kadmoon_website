@@ -51,7 +51,7 @@ export function Nav() {
         <div className="flex items-center gap-3">
           <a
             href={nav.cta.href}
-            className="hidden rounded-full bg-navy px-5 py-2.5 text-sm font-medium text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-navy/90 sm:inline-flex"
+            className="hidden rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90 sm:inline-flex"
           >
             {nav.cta.label}
           </a>
@@ -103,7 +103,7 @@ export function Nav() {
             <a
               href={nav.cta.href}
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-navy px-5 py-3 text-sm font-medium text-white"
+              className="mt-2 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white"
             >
               {nav.cta.label}
             </a>

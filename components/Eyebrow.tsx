@@ -12,8 +12,8 @@ export function Eyebrow({
     <div className={`flex items-center gap-2.5 ${center ? 'justify-center' : ''}`}>
       <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
       <span
-        className={`font-mono text-[11px] font-medium uppercase tracking-[0.12em] sm:text-xs ${
-          onDark ? 'text-white/70' : 'text-ink-2'
+        className={`font-sans text-[12px] font-semibold uppercase tracking-[0.16em] ${
+          onDark ? 'text-accent' : 'text-accent'
         }`}
       >
         {children}

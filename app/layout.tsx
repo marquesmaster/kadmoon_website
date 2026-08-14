@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
+import { Public_Sans, Source_Serif_4, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/lib/site';
 import { JsonLd } from '@/components/JsonLd';
@@ -8,18 +8,19 @@ import { FloatingContact } from '@/components/FloatingContact';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { CookieConsent } from '@/components/CookieConsent';
 
-const display = Plus_Jakarta_Sans({
+// Serif display + humanist sans, matching the Kadmoon editorial identity.
+const display = Source_Serif_4({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
-  weight: ['500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
 });
 
-const sans = Inter({
+const sans = Public_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
 });
 
 const mono = JetBrains_Mono({
@@ -30,7 +31,7 @@ const mono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#0C1D44',
+  themeColor: '#0C1017',
   width: 'device-width',
   initialScale: 1,
   colorScheme: 'light',

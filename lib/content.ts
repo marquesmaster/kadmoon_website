@@ -19,17 +19,17 @@ export const nav = {
     { label: 'Blog', href: '/blog' },
     { label: 'About', href: '/about' },
   ],
-  cta: { label: 'Start a project', href: '/#contact' },
+  cta: { label: 'Book a discovery call', href: '/#contact' },
 };
 
 export const hero = {
-  eyebrow: '100% Microsoft ecosystem · Austin, TX',
+  eyebrow: 'Microsoft Data & AI Consultancy · United States',
   // The accent phrase is rendered in orange inside the H1.
-  headlineBefore: 'Microsoft data your whole company ',
-  headlineAccent: 'trusts',
+  headlineBefore: 'Enterprise analytics, delivered on ',
+  headlineAccent: 'Microsoft',
   headlineAfter: '.',
   subhead:
-    'Kadmoon is a US Power BI and Microsoft Power Platform consultancy. We turn scattered, conflicting data into one governed source of truth on Microsoft Fabric and Azure, so finance, IT, and operations decide from the same numbers. First dashboards go live in week two.',
+    'Kadmoon is a US data and AI consultancy. We build your analytics on the Microsoft platform, from Fabric and Power BI to Synapse and Azure SQL, so your leaders get numbers they trust and results they can measure.',
   flagship: 'Signature practice: Tableau, Qlik, and Premium-to-Fabric migrations, with no lost history.',
   ctas: [
     { label: 'Talk to an expert', href: '#contact', primary: true },
