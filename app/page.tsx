@@ -3,6 +3,7 @@ import { Hero } from '@/components/sections/Hero';
 import { StatsBand } from '@/components/sections/StatsBand';
 import { Credibility } from '@/components/sections/Credibility';
 import { Capabilities } from '@/components/sections/Capabilities';
+import { MicrosoftPlatform } from '@/components/sections/MicrosoftPlatform';
 import { MigrationHighlight } from '@/components/sections/MigrationHighlight';
 import { TechStack } from '@/components/sections/TechStack';
 import { WhyKadmoon } from '@/components/sections/WhyKadmoon';
@@ -27,6 +28,7 @@ export default function HomePage() {
         <StatsBand />
         <Credibility />
         <ClientLogos />
+        <MicrosoftPlatform />
         <Capabilities />
         <MigrationHighlight />
         <WhyKadmoon />

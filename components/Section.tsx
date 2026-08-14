@@ -9,11 +9,12 @@ export function Section({
   id?: string;
   children: ReactNode;
   className?: string;
-  tone?: 'paper' | 'mist' | 'navy';
+  tone?: 'paper' | 'mist' | 'ice' | 'navy';
 }) {
   const tones = {
     paper: 'bg-paper',
     mist: 'bg-mist',
+    ice: 'bg-ice',
     navy: 'bg-navy',
   };
   return (
