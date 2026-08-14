@@ -19,7 +19,7 @@ export const nav = {
     { label: 'Blog', href: '/blog' },
     { label: 'About', href: '/about' },
   ],
-  cta: { label: 'Book a discovery call', href: '/#contact' },
+  cta: { label: 'Book a discovery call', href: '/contact' },
 };
 
 export const hero = {
@@ -616,8 +616,8 @@ export const footer = {
         { label: 'Cases', href: '/cases' },
         { label: 'Dashboards', href: '/dashboards' },
         { label: 'Industries', href: '/industries' },
-        { label: 'Process', href: '/process' },
         { label: 'About', href: '/about' },
+        { label: 'Contact', href: '/contact' },
       ],
     },
     {
