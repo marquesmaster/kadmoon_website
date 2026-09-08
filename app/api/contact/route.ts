@@ -111,7 +111,11 @@ export async function POST(req: Request) {
       message: data.message,
     });
   } catch (err) {
-    console.error('[contact] lead email failed:', safeErr(err));
+    // The mailer only ever throws its own coded messages (e.g.
+    // "web3forms_http_401") or a transport error, none of which contain
+    // credentials or submitted data, so logging the message here is safe and
+    // makes provider failures diagnosable.
+    console.error('[contact] lead email failed:', err instanceof Error ? err.message : 'unknown');
   }
 
   // Only fail the request if neither channel captured the lead.
