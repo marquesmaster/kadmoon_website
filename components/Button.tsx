@@ -3,20 +3,20 @@ import type { ReactNode } from 'react';
 type Variant = 'primary' | 'ghost' | 'light';
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-xl font-semibold tracking-[-0.005em] transition-all focus-visible:outline-2';
+  'inline-flex items-center justify-center gap-2.5 rounded-full font-medium leading-none tracking-[-0.005em] transition-all focus-visible:outline-2';
 
 const sizes = {
-  md: 'px-5 py-3 text-sm',
-  lg: 'px-6 py-4 text-[15px]',
+  md: 'px-[22px] py-[14px] text-[15px]',
+  lg: 'px-[26px] py-[16px] text-base',
 };
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-accent text-white shadow-[0_16px_34px_-14px_rgba(232,73,43,.7)] hover:-translate-y-0.5 hover:bg-accent/90',
+    'bg-accent text-white hover:-translate-y-px hover:bg-[#E55A0D]',
   ghost:
-    'border border-line bg-white text-ink hover:-translate-y-0.5 hover:border-ink-3/60 hover:shadow-card',
+    'border border-ink-3/40 bg-transparent text-ink hover:border-ink',
   light:
-    'bg-white text-ink shadow-card hover:-translate-y-0.5 hover:bg-white/90',
+    'bg-white text-navy shadow-card hover:-translate-y-px hover:bg-white/90',
 };
 
 export function Button({

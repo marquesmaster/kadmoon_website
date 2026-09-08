@@ -7,18 +7,19 @@
    ========================================================= */
 
 :root {
-  --paper: 245 241 234; /* #F5F1EA warm cream base background */
-  --mist: 234 227 214; /* #EAE3D6 tan soft section background */
-  --ice: 251 234 227; /* #FBEAE3 peach accent-tinted panel */
-  --ink: 11 14 20; /* #0B0E14 primary text (near-black) */
-  --ink-2: 74 79 88; /* #4A4F58 secondary text */
-  --ink-3: 138 143 152; /* #8A8F98 muted / captions */
-  --navy: 12 16 23; /* #0C1017 dark sections */
-  --accent: 232 73 43; /* #E8492B warm orange-red accent */
-  --line: 224 219 210; /* #E0DBD2 warm borders / hairlines */
-  --success: 18 165 148; /* #12A594 teal, secondary accent */
+  /* Bradata design language: light, navy-dominant, orange accent. */
+  --paper: 255 255 255; /* #FFFFFF paper */
+  --mist: 242 244 248; /* #F2F4F8 mist soft section */
+  --ice: 247 245 240; /* #F7F5F0 cream alt panel */
+  --ink: 10 22 40; /* #0A1628 primary text (navy ink) */
+  --ink-2: 90 107 132; /* #5A6B84 secondary text */
+  --ink-3: 132 147 168; /* #8493A8 muted / captions */
+  --navy: 12 29 68; /* #0C1D44 brand navy */
+  --accent: 255 106 26; /* #FF6A1A brand orange */
+  --line: 228 232 239; /* #E4E8EF borders / hairlines */
+  --success: 22 163 74; /* #16A34A status */
 
-  --grid-line: rgba(11, 14, 20, 0.05);
+  --grid-line: rgba(10, 22, 40, 0.05);
 }
 
 html {
@@ -116,7 +117,7 @@ button {
 }
 .hover-glow:hover {
   border-color: rgb(var(--accent) / 0.4);
-  box-shadow: 0 2px 4px rgb(11 14 20 / 0.05), 0 24px 48px -22px rgb(232 73 43 / 0.25);
+  box-shadow: 0 2px 4px rgb(10 22 40 / 0.05), 0 24px 48px -22px rgb(255 106 26 / 0.25);
 }
 
 /* Hero ambient blobs (drift slowly) */

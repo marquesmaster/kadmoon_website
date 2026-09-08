@@ -49,19 +49,18 @@ export default function ServicesPage() {
     <>
       <Nav />
       <main>
-        {/* Dark hero */}
-        <section className="relative overflow-hidden bg-ink text-paper">
-          <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-60" aria-hidden />
-          <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(1000px 520px at 85% -20%, rgba(240,85,59,.18), transparent 60%)' }} />
-          <div className="relative mx-auto max-w-4xl px-6 pb-24 pt-36 md:pt-40">
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-white/15 px-4 py-2 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-white/80">
-              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
+        {/* Hero */}
+        <section className="relative overflow-hidden bg-paper">
+          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-60" aria-hidden />
+          <div className="relative mx-auto max-w-4xl px-6 pb-14 pt-36 md:pt-40">
+            <span className="inline-flex items-center gap-2 rounded-full border border-line bg-mist px-3.5 py-2 font-mono text-sm tracking-[0.04em] text-ink">
+              <span aria-hidden className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
               Services
             </span>
-            <h1 className="mt-6 max-w-3xl font-display text-display-lg font-semibold text-white">
+            <h1 className="mt-6 max-w-3xl font-display text-display-lg font-semibold text-ink">
               Everything we build runs on Microsoft.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/65">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
               Capabilities that carry your data from raw source to trusted decision, delivered by
               senior practitioners, governed from day one, and handed over for your team to own.
             </p>
