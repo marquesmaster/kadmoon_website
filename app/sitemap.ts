@@ -3,8 +3,6 @@ import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
 import { services, industryPages, caseStudies } from '@/lib/content';
 import { caseDashboards } from '@/lib/cases/dashboards';
-import { getAllCities, getAllStates } from '@/lib/cities-utils';
-import { localSolutions } from '@/lib/local-solutions';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
@@ -66,32 +64,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  // Local solution hubs (one per solution), the per-state hubs, and the full
-  // solution x city matrix.
-  const allCities = getAllCities();
-  const allStates = getAllStates();
-  const solutionHubs: MetadataRoute.Sitemap = localSolutions.map((s) => ({
-    url: `${base}/${s.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }));
-  const stateHubs: MetadataRoute.Sitemap = localSolutions.flatMap((s) =>
-    allStates.map((st) => ({
-      url: `${base}/${s.slug}/${st.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-  );
-  const cities: MetadataRoute.Sitemap = localSolutions.flatMap((s) =>
-    allCities.map((c) => ({
-      url: `${base}/${s.slug}/${c.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-  );
-
-  return [...staticRoutes, ...solutionHubs, ...stateHubs, ...posts, ...categories, ...cities];
+  return [...staticRoutes, ...posts, ...categories];
 }

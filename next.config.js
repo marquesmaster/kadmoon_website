@@ -219,9 +219,27 @@ const nextConfig = {
       { source: '/industries/trade-and-supply-chain', destination: '/industries/supply-chain', permanent: true },
       { source: '/industries/government-and-enterprise', destination: '/industries', permanent: true },
 
-      // City pages repurposed from custom software to Power BI by city.
-      { source: '/custom-software-development', destination: '/power-bi', permanent: true },
-      { source: '/custom-software-development/:city*', destination: '/power-bi/:city*', permanent: true },
+      // Retired the programmatic solution x city local-SEO system (lean rebuild:
+      // avoid scaled/thin content). Each solution and all its city/state pages
+      // consolidate to the matching evergreen page.
+      { source: '/custom-software-development', destination: '/services/power-bi', permanent: true },
+      { source: '/custom-software-development/:city*', destination: '/services/power-bi', permanent: true },
+      { source: '/power-bi', destination: '/services/power-bi', permanent: true },
+      { source: '/power-bi/:city*', destination: '/services/power-bi', permanent: true },
+      { source: '/microsoft-fabric', destination: '/services/microsoft-fabric', permanent: true },
+      { source: '/microsoft-fabric/:city*', destination: '/services/microsoft-fabric', permanent: true },
+      { source: '/power-platform', destination: '/services/power-platform', permanent: true },
+      { source: '/power-platform/:city*', destination: '/services/power-platform', permanent: true },
+      { source: '/power-apps-development', destination: '/services/power-platform', permanent: true },
+      { source: '/power-apps-development/:city*', destination: '/services/power-platform', permanent: true },
+      { source: '/azure-data-engineering', destination: '/services/data-engineering', permanent: true },
+      { source: '/azure-data-engineering/:city*', destination: '/services/data-engineering', permanent: true },
+      { source: '/copilot-consulting', destination: '/services/analytics-and-ai', permanent: true },
+      { source: '/copilot-consulting/:city*', destination: '/services/analytics-and-ai', permanent: true },
+      { source: '/data-governance', destination: '/services/data-governance', permanent: true },
+      { source: '/data-governance/:city*', destination: '/services/data-governance', permanent: true },
+      { source: '/power-bi-migration', destination: '/tableau-to-power-bi-migration', permanent: true },
+      { source: '/power-bi-migration/:city*', destination: '/tableau-to-power-bi-migration', permanent: true },
       // Off-brand blog articles retired in the Power BI content pivot, sent to
       // the closest Microsoft data platform page.
       { source: '/blog/saas-metrics-and-analytics', destination: '/services/power-bi', permanent: true },

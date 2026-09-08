@@ -19,7 +19,7 @@ export function Footer() {
   return (
     <footer className="bg-ink text-[#E7E4DE]">
       <div className="mx-auto max-w-shell px-6 py-16 md:py-20">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.5fr_repeat(4,1fr)] lg:gap-12">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_repeat(3,1fr)] lg:gap-12">
           <div className="max-w-sm">
             <a href="/" aria-label="Kadmoon home" className="inline-flex items-center gap-3">
               <BarMark />
