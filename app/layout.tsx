@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
+import { Inter, Fraunces, Space_Mono } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/lib/site';
 import { JsonLd } from '@/components/JsonLd';
@@ -8,12 +8,13 @@ import { FloatingContact } from '@/components/FloatingContact';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { CookieConsent } from '@/components/CookieConsent';
 
-// Bradata design language: geometric sans display + humanist sans body.
-const display = Plus_Jakarta_Sans({
+// Brex 2025 design language: Inter carries display + body (heavy, tight),
+// Fraunces for editorial serif moments, Space Mono for numeric callouts.
+const display = Inter({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
-  weight: ['500', '600', '700', '800'],
+  weight: ['600', '700', '800'],
 });
 
 const sans = Inter({
@@ -23,15 +24,23 @@ const sans = Inter({
   weight: ['400', '500', '600'],
 });
 
-const mono = JetBrains_Mono({
+const serif = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+  style: ['normal', 'italic'],
+  weight: ['400', '500', '600'],
+});
+
+const mono = Space_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
   display: 'swap',
-  weight: ['400', '500'],
+  weight: ['400', '700'],
 });
 
 export const viewport: Viewport = {
-  themeColor: '#0C1D44',
+  themeColor: '#15191E',
   width: 'device-width',
   initialScale: 1,
   colorScheme: 'light',
@@ -91,7 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en-US"
-      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+      className={`${display.variable} ${sans.variable} ${serif.variable} ${mono.variable}`}
     >
       <head>
         {/* Google Consent Mode: deny all until the user accepts (see the

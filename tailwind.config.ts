@@ -49,13 +49,14 @@ const config: Config = {
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       fontSize: {
-        'display-xl': ['clamp(40px, 5.5vw, 76px)', { lineHeight: '0.98', letterSpacing: '-0.035em', fontWeight: '600' }],
-        'display-lg': ['clamp(32px, 4.4vw, 56px)', { lineHeight: '1.04', letterSpacing: '-0.03em', fontWeight: '600' }],
-        'display-md': ['clamp(28px, 3.6vw, 44px)', { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '600' }],
-        'display-sm': ['clamp(22px, 2.4vw, 30px)', { lineHeight: '1.2', letterSpacing: '-0.02em', fontWeight: '600' }],
+        'display-xl': ['clamp(42px, 5.8vw, 82px)', { lineHeight: '0.96', letterSpacing: '-0.04em', fontWeight: '700' }],
+        'display-lg': ['clamp(33px, 4.6vw, 60px)', { lineHeight: '1.02', letterSpacing: '-0.035em', fontWeight: '700' }],
+        'display-md': ['clamp(28px, 3.6vw, 46px)', { lineHeight: '1.08', letterSpacing: '-0.03em', fontWeight: '700' }],
+        'display-sm': ['clamp(22px, 2.4vw, 31px)', { lineHeight: '1.18', letterSpacing: '-0.022em', fontWeight: '600' }],
       },
       maxWidth: {
         shell: '1280px',
@@ -78,8 +79,8 @@ const config: Config = {
         },
       },
       boxShadow: {
-        card: '0 1px 2px rgb(10 22 40 / 0.04), 0 14px 34px -20px rgb(10 22 40 / 0.16)',
-        'card-hover': '0 2px 4px rgb(10 22 40 / 0.05), 0 26px 54px -30px rgb(10 22 40 / 0.28)',
+        card: '0 1px 2px rgb(21 25 30 / 0.04), 0 14px 34px -20px rgb(21 25 30 / 0.16)',
+        'card-hover': '0 2px 4px rgb(21 25 30 / 0.05), 0 26px 54px -30px rgb(21 25 30 / 0.28)',
       },
     },
   },

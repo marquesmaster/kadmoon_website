@@ -24,17 +24,17 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: 'Microsoft Data & AI Consultancy · United States',
+  eyebrow: 'Microsoft Data & AI · United States',
   // The accent phrase is rendered in orange inside the H1.
-  headlineBefore: 'Enterprise analytics, delivered on ',
-  headlineAccent: 'Microsoft',
+  headlineBefore: 'Your Microsoft data team, ',
+  headlineAccent: 'on subscription',
   headlineAfter: '.',
   subhead:
-    'Kadmoon is a US data and AI consultancy. We build your analytics on the Microsoft platform, from Fabric and Power BI to Synapse and Azure SQL, so your leaders get numbers they trust and results they can measure.',
-  flagship: 'Signature practice: Tableau, Qlik, and Premium-to-Fabric migrations, with no lost history.',
+    'A dedicated Power BI, Fabric, and Power Platform team working your business hours for a fixed monthly fee. The output of a full team, without the overhead of hiring one.',
+  flagship: 'Defined capacity · a clear SLA · unlimited requests within your hours · built in your tenant.',
   ctas: [
-    { label: 'Talk to an expert', href: '#contact', primary: true },
-    { label: 'See dashboards', href: '/dashboards', primary: false },
+    { label: 'See plans', href: '/packages', primary: true },
+    { label: 'Talk to us', href: '#contact', primary: false },
   ],
   // What the client owns in their own tenant at the end of an engagement.
   panelLabel: 'On delivery, you own',

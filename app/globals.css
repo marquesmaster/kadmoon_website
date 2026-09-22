@@ -7,19 +7,20 @@
    ========================================================= */
 
 :root {
-  /* Bradata design language: light, navy-dominant, orange accent. */
-  --paper: 255 255 255; /* #FFFFFF paper */
-  --mist: 242 244 248; /* #F2F4F8 mist soft section */
-  --ice: 247 245 240; /* #F7F5F0 cream alt panel */
-  --ink: 10 22 40; /* #0A1628 primary text (navy ink) */
-  --ink-2: 90 107 132; /* #5A6B84 secondary text */
-  --ink-3: 132 147 168; /* #8493A8 muted / captions */
-  --navy: 12 29 68; /* #0C1D44 brand navy */
-  --accent: 255 106 26; /* #FF6A1A brand orange */
-  --line: 228 232 239; /* #E4E8EF borders / hairlines */
+  /* Brex 2025 design language (Studio Freight): off-white canvas, near-black
+     ink, single voltage-orange CTA, warm neutrals, color-blocking. */
+  --paper: 252 252 253; /* #FCFCFD canvas / surfaces */
+  --mist: 242 243 245; /* #F2F3F5 soft section panel */
+  --ice: 246 243 237; /* #F6F3ED warm cream color-block */
+  --ink: 21 25 30; /* #15191E primary text (near-black) */
+  --ink-2: 91 100 112; /* #5B6470 secondary text */
+  --ink-3: 138 146 158; /* #8A929E muted / captions */
+  --navy: 21 25 30; /* #15191E dark sections (ink black) */
+  --accent: 255 89 0; /* #FF5900 voltage orange (sole CTA color) */
+  --line: 229 231 235; /* #E5E7EB borders / hairlines */
   --success: 22 163 74; /* #16A34A status */
 
-  --grid-line: rgba(10, 22, 40, 0.05);
+  --grid-line: rgba(21, 25, 30, 0.045);
 }
 
 html {
@@ -117,7 +118,7 @@ button {
 }
 .hover-glow:hover {
   border-color: rgb(var(--accent) / 0.4);
-  box-shadow: 0 2px 4px rgb(10 22 40 / 0.05), 0 24px 48px -22px rgb(255 106 26 / 0.25);
+  box-shadow: 0 2px 4px rgb(21 25 30 / 0.05), 0 24px 48px -22px rgb(255 89 0 / 0.25);
 }
 
 /* Hero ambient blobs (drift slowly) */
