@@ -8,6 +8,8 @@
  * comments so they are easy to find and swap.
  */
 
+import { siteConfig } from './site';
+
 export const nav = {
   wordmark: 'Kadmoon',
   suffix: 'INC.',
@@ -20,7 +22,7 @@ export const nav = {
     { label: 'Blog', href: '/blog' },
     { label: 'About', href: '/about' },
   ],
-  cta: { label: 'Book a discovery call', href: '/contact' },
+  cta: { label: 'Book a meeting', href: siteConfig.bookingsUrl },
 };
 
 export const hero = {
@@ -33,8 +35,8 @@ export const hero = {
     'A dedicated Power BI, Fabric, and Power Platform team working your business hours for a fixed monthly fee. The output of a full team, without the overhead of hiring one.',
   flagship: 'Defined capacity · a clear SLA · unlimited requests within your hours · built in your tenant.',
   ctas: [
-    { label: 'See plans', href: '/packages', primary: true },
-    { label: 'Talk to us', href: '#contact', primary: false },
+    { label: 'Book a meeting', href: siteConfig.bookingsUrl, primary: true },
+    { label: 'See plans', href: '/packages', primary: false },
   ],
   // What the client owns in their own tenant at the end of an engagement.
   panelLabel: 'On delivery, you own',

@@ -57,11 +57,11 @@ export default function PackagesPage() {
               hours. The output of a full team, for less than the overhead of one in-house hire.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="#plans" size="lg">
-                See plans <span aria-hidden>→</span>
+              <Button href={siteConfig.bookingsUrl} size="lg">
+                Book a meeting <span aria-hidden>→</span>
               </Button>
-              <Button href="/contact" size="lg" variant="ghost">
-                Talk to us
+              <Button href="#plans" size="lg" variant="ghost">
+                See plans
               </Button>
             </div>
           </div>
@@ -105,8 +105,8 @@ export default function PackagesPage() {
               right tier to run it, at a fixed, low-commitment scope.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
-              <Button href="/contact" size="lg">
-                Book the assessment <span aria-hidden>→</span>
+              <Button href={siteConfig.bookingsUrl} size="lg">
+                Book a meeting <span aria-hidden>→</span>
               </Button>
               <a
                 href="/services"

@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { siteConfig } from './site';
 
 type Lead = {
   name: string;
@@ -101,5 +102,82 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
   }
 
   console.warn('[mailer] No email provider configured. Lead saved but no email sent.');
+  return false;
+}
+
+/**
+ * Auto-reply to the prospect who submitted the form: sends the sales
+ * presentation and the meeting-scheduling link. Best-effort; returns false if
+ * no provider is configured or no prospect email is present. Never sends the
+ * lead's data anywhere but back to their own address.
+ *
+ * Uses Resend (RESEND_API_KEY) if set, otherwise SMTP. Web3Forms is skipped
+ * because its free tier only emails the account owner, not arbitrary prospects.
+ * Config: NEXT_PUBLIC_BOOKINGS_URL (Microsoft Bookings public page).
+ */
+export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
+  if (!lead.email) return false;
+
+  const deckUrl = `${siteConfig.url}/kadmoon-overview.pdf`;
+  const bookingsUrl = process.env.NEXT_PUBLIC_BOOKINGS_URL || `${siteConfig.url}/contact`;
+  const first = lead.name.split(' ')[0] || 'there';
+  const subject = 'Your Microsoft data team, on subscription — Kadmoon';
+
+  const text = [
+    `Hi ${first},`,
+    ``,
+    `Thanks for reaching out to Kadmoon. Here is a short overview of how we work:`,
+    `a dedicated Power BI, Fabric, and Power Platform team on a monthly subscription,`,
+    `working your business hours, built in your own tenant.`,
+    ``,
+    `Presentation: ${deckUrl}`,
+    `Book a meeting: ${bookingsUrl}`,
+    ``,
+    `Pick a time that suits you and we will walk through the fastest path to`,
+    `measurable results for ${lead.company}.`,
+    ``,
+    `Talk soon,`,
+    `The Kadmoon team`,
+    `${siteConfig.url}`,
+  ].join('\n');
+
+  const html = `<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#15191E;max-width:560px;line-height:1.55">
+    <p>Hi ${first},</p>
+    <p>Thanks for reaching out to Kadmoon. Here is a short overview of how we work: a dedicated Power BI, Fabric, and Power Platform team on a monthly subscription, working your business hours, built in your own tenant.</p>
+    <p style="margin:26px 0">
+      <a href="${bookingsUrl}" style="background:#FF5900;color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block">Book a meeting &rarr;</a>
+      &nbsp;&nbsp;
+      <a href="${deckUrl}" style="color:#15191E;font-weight:600">View the presentation (PDF)</a>
+    </p>
+    <p>Pick a time that suits you and we will walk through the fastest path to measurable results for ${lead.company}.</p>
+    <p style="margin-top:24px">Talk soon,<br/>The Kadmoon team<br/><a href="${siteConfig.url}" style="color:#5B6470">${siteConfig.url.replace('https://', '')}</a></p>
+  </div>`;
+
+  // Resend.
+  const resendKey = process.env.RESEND_API_KEY;
+  if (resendKey) {
+    const from = process.env.CONTACT_FROM || 'Kadmoon <comercial@kadmoon.com>';
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ from, to: lead.email, subject, text, html }),
+    });
+    if (!res.ok) throw new Error(`resend_http_${res.status}`);
+    return true;
+  }
+
+  // SMTP.
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+  if (host && user && pass) {
+    const port = Number(process.env.SMTP_PORT || 587);
+    const secure = (process.env.SMTP_SECURE || (port === 465 ? 'true' : 'false')) === 'true';
+    const from = process.env.CONTACT_FROM || `Kadmoon <${user}>`;
+    const transporter = nodemailer.createTransport({ host, port, secure, auth: { user, pass } });
+    await transporter.sendMail({ from, to: lead.email, subject, text, html });
+    return true;
+  }
+
   return false;
 }

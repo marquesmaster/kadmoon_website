@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '../Button';
+import { siteConfig } from '@/lib/site';
 
 // Term options. Longer commitment = deeper discount on the monthly fee.
 const terms = [
@@ -201,11 +202,11 @@ export function SubscriptionPlans() {
 
                 <div className="mt-6 flex-1" />
                 <Button
-                  href="/contact"
+                  href={siteConfig.bookingsUrl}
                   variant={tier.featured ? 'primary' : 'ghost'}
                   className="w-full justify-center"
                 >
-                  {tier.base != null ? 'Get started' : 'Talk to us'}
+                  {tier.base != null ? 'Book a meeting' : 'Talk to us'}
                 </Button>
               </article>
             );

@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 import { z } from 'zod';
 import { prisma } from '@/lib/prisma';
 import { rateLimit } from '@/lib/rate-limit';
-import { sendLeadEmail } from '@/lib/mailer';
+import { sendLeadEmail, sendProspectAutoReply } from '@/lib/mailer';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -116,6 +116,21 @@ export async function POST(req: Request) {
     // credentials or submitted data, so logging the message here is safe and
     // makes provider failures diagnosable.
     console.error('[contact] lead email failed:', err instanceof Error ? err.message : 'unknown');
+  }
+
+  // Auto-reply to the prospect with the presentation + booking link. Purely
+  // best-effort: a failure here never affects the lead capture or the response.
+  try {
+    await sendProspectAutoReply({
+      name: data.name,
+      email: data.email,
+      company: data.company,
+      size: data.size,
+      need: data.need,
+      message: data.message,
+    });
+  } catch (err) {
+    console.error('[contact] auto-reply failed:', err instanceof Error ? err.message : 'unknown');
   }
 
   // Only fail the request if neither channel captured the lead.
