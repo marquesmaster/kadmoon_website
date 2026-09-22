@@ -6,7 +6,9 @@ import { caseDashboards } from '@/lib/cases/dashboards';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
-  const now = new Date('2026-06-01');
+  // Relaunch date. Bumping this on a real content/structure change nudges
+  // Google to re-crawl after the pivot instead of trusting a stale cache.
+  const now = new Date('2026-09-22');
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },
