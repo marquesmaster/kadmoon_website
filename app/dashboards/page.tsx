@@ -4,6 +4,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { PageHero } from '@/components/sections/PageHero';
 import { CaseDashboard } from '@/components/cases/CaseDashboard';
 import { caseDashboards } from '@/lib/cases/dashboards';
 import { siteConfig } from '@/lib/site';
@@ -37,28 +38,22 @@ export default function DashboardsPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionLd) }}
         />
 
-        <section className="relative overflow-hidden pb-10 pt-28 md:pt-36">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
-          <div className="relative mx-auto max-w-shell px-6">
-            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Dashboards' }]} />
-            <div className="mt-6 max-w-3xl">
-              <Eyebrow>Dashboards</Eyebrow>
-              <h1 className="mt-4 font-display text-display-lg text-ink">
-                The report behind each engagement.
-              </h1>
-              <p className="mt-5 text-lg leading-relaxed text-ink-2">
-                Every project opens into the dashboard it delivered: the KPIs that matter for the
-                sector, the cross-cuts, and the detail line down to the item. Client names and
-                figures are illustrative and under NDA; the structure is what actually shipped.
-              </p>
-              <div className="mt-8">
-                <Button href="/#contact" size="lg">
-                  Talk to an expert <span aria-hidden>→</span>
-                </Button>
-              </div>
-            </div>
+        <PageHero
+          eyebrow="Dashboards"
+          title="The report behind each engagement."
+          breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Dashboards' }]} />}
+        >
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
+            Every project opens into the dashboard it delivered: the KPIs that matter for the
+            sector, the cross-cuts, and the detail line down to the item. Client names and
+            figures are illustrative and under NDA; the structure is what actually shipped.
+          </p>
+          <div className="mt-8">
+            <Button href="/#contact" size="lg">
+              Talk to an expert <span aria-hidden>→</span>
+            </Button>
           </div>
-        </section>
+        </PageHero>
 
         <section className="mx-auto max-w-shell px-6 pb-20">
           <div className="flex flex-col gap-20">

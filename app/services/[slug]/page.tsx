@@ -5,6 +5,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { PageHero } from '@/components/sections/PageHero';
 import { BlogCard } from '@/components/BlogCard';
 import { services } from '@/lib/content';
 import { getPostsByCategorySlug, categorySlug } from '@/lib/blog';
@@ -52,9 +53,10 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        <section className="relative overflow-hidden pb-14 pt-28 md:pt-36">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
-          <div className="relative mx-auto max-w-shell px-6">
+        <PageHero
+          eyebrow="Capability"
+          title={s.title}
+          breadcrumbs={
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
@@ -62,22 +64,19 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
                 { label: s.title },
               ]}
             />
-            <div className="mt-6 max-w-3xl">
-              <Eyebrow>Capability</Eyebrow>
-              <h1 className="mt-4 font-display text-display-lg text-ink">{s.title}</h1>
-              <p className="mt-4 text-xl font-medium text-navy">{s.tagline}</p>
-              <p className="mt-5 text-lg leading-relaxed text-ink-2">{s.intro}</p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="/#contact" size="lg">
-                  Start a project <span aria-hidden>→</span>
-                </Button>
-                <Button href="/services" size="lg" variant="ghost">
-                  All services
-                </Button>
-              </div>
-            </div>
+          }
+        >
+          <p className="mt-5 max-w-2xl text-xl font-medium text-navy">{s.tagline}</p>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-2">{s.intro}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/#contact" size="lg">
+              Start a project <span aria-hidden>→</span>
+            </Button>
+            <Button href="/services" size="lg" variant="ghost">
+              All services
+            </Button>
           </div>
-        </section>
+        </PageHero>
 
         <section className="bg-mist py-16 md:py-20">
           <div className="mx-auto max-w-shell px-6">

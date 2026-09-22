@@ -5,6 +5,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { PageHero } from '@/components/sections/PageHero';
 import { CaseDashboard } from '@/components/cases/CaseDashboard';
 import { getDashboard } from '@/lib/cases/dashboards';
 import { caseStudies } from '@/lib/content';
@@ -53,9 +54,10 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        <section className="relative overflow-hidden pb-10 pt-28 md:pt-36">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
-          <div className="relative mx-auto max-w-3xl px-6">
+        <PageHero
+          eyebrow={c.sector}
+          title={c.title}
+          breadcrumbs={
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
@@ -63,47 +65,44 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
                 { label: c.title },
               ]}
             />
-            <div className="mt-6">
-              <Eyebrow>{c.sector}</Eyebrow>
-              <h1 className="mt-4 font-display text-display-lg text-ink">{c.title}</h1>
-              <p className="mt-5 text-lg leading-relaxed text-ink-2">{c.summary}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {c.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-line bg-mist px-3 py-1 font-mono text-[11px] text-ink-2"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-
-              {kpis.length > 0 && (
-                <div className="mt-8">
-                  <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                    {kpis.map((k) => (
-                      <div
-                        key={k.label}
-                        className="rounded-xl border border-line bg-paper p-4 shadow-card"
-                      >
-                        <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
-                          {k.label}
-                        </dt>
-                        <dd className="mt-1 font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
-                          {k.value}
-                        </dd>
-                        <dd className="mt-1 text-[12px] leading-snug text-ink-2">{k.sub}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
-                    Illustrative figures · fictitious client · under NDA
-                  </p>
-                </div>
-              )}
-            </div>
+          }
+        >
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">{c.summary}</p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {c.stack.map((s) => (
+              <span
+                key={s}
+                className="rounded-full border border-line bg-mist px-3 py-1 font-mono text-[11px] text-ink-2"
+              >
+                {s}
+              </span>
+            ))}
           </div>
-        </section>
+
+          {kpis.length > 0 && (
+            <div className="mt-8">
+              <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                {kpis.map((k) => (
+                  <div
+                    key={k.label}
+                    className="rounded-xl border border-line bg-paper p-4 shadow-card"
+                  >
+                    <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+                      {k.label}
+                    </dt>
+                    <dd className="mt-1 font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
+                      {k.value}
+                    </dd>
+                    <dd className="mt-1 text-[12px] leading-snug text-ink-2">{k.sub}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+                Illustrative figures · fictitious client · under NDA
+              </p>
+            </div>
+          )}
+        </PageHero>
 
         {c.result && (
           <section className="mx-auto max-w-3xl px-6 pb-4">

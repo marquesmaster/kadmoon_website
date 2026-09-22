@@ -5,6 +5,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { PageHero } from '@/components/sections/PageHero';
 import { BlogCard } from '@/components/BlogCard';
 import { industryPages } from '@/lib/content';
 import { getAllPostMeta } from '@/lib/blog';
@@ -56,9 +57,14 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        <section className="relative overflow-hidden pb-14 pt-28 md:pt-36">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
-          <div className="relative mx-auto max-w-shell px-6">
+        <PageHero
+          eyebrow={ind.flagship ? 'Flagship practice' : 'Industry'}
+          title={
+            <>
+              Power BI for <span className="text-accent">{ind.name}</span>.
+            </>
+          }
+          breadcrumbs={
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
@@ -66,23 +72,18 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
                 { label: ind.name },
               ]}
             />
-            <div className="mt-6 max-w-3xl">
-              <Eyebrow>{ind.flagship ? 'Flagship practice' : 'Industry'}</Eyebrow>
-              <h1 className="mt-4 font-display text-display-lg text-ink">
-                Power BI for <span className="text-accent">{ind.name}</span>.
-              </h1>
-              <p className="mt-5 text-lg leading-relaxed text-ink-2">{ind.intro}</p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="/#contact" size="lg">
-                  Start a project <span aria-hidden>→</span>
-                </Button>
-                <Button href="/industries" size="lg" variant="ghost">
-                  All industries
-                </Button>
-              </div>
-            </div>
+          }
+        >
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">{ind.intro}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/#contact" size="lg">
+              Start a project <span aria-hidden>→</span>
+            </Button>
+            <Button href="/industries" size="lg" variant="ghost">
+              All industries
+            </Button>
           </div>
-        </section>
+        </PageHero>
 
         <section className="bg-mist py-16 md:py-20">
           <div className="mx-auto max-w-shell px-6">
