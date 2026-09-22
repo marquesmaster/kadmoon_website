@@ -126,7 +126,8 @@ export function SubscriptionPlans() {
             ))}
           </div>
           <p className="text-[13px] text-ink-3">
-            Prices are &ldquo;from&rdquo; and depend on your environment. 12-month minimum term.
+            Prices are &ldquo;from&rdquo; and depend on your environment. Billed monthly in advance,
+            on a 12-month term.
           </p>
         </div>
 
