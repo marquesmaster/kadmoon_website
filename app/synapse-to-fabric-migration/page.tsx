@@ -4,6 +4,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { PageHero } from '@/components/sections/PageHero';
 import { siteConfig } from '@/lib/site';
 
 const title = 'Synapse to Fabric Migration';
@@ -72,35 +73,31 @@ export default function SynapseToFabricPage() {
         />
 
         {/* Hero */}
-        <section className="relative overflow-hidden pb-14 pt-28 md:pt-36">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
-          <div className="relative mx-auto max-w-shell px-6">
+        <PageHero
+          eyebrow="Azure Synapse to Microsoft Fabric"
+          title="Migrate from Azure Synapse to Microsoft Fabric."
+          breadcrumbs={
             <Breadcrumbs
               items={[{ label: 'Home', href: '/' }, { label: 'Synapse to Fabric migration' }]}
             />
-            <div className="mt-6 max-w-3xl">
-              <Eyebrow>Azure Synapse to Microsoft Fabric</Eyebrow>
-              <h1 className="mt-4 font-display text-display-lg text-ink">
-                Migrate from Azure Synapse to Microsoft Fabric.
-              </h1>
-              <p className="mt-6 text-lg leading-relaxed text-ink-2">
-                A Synapse to Fabric migration moves your dedicated SQL pools, pipelines, and Spark
-                workloads, along with your Power BI Premium capacity, onto Microsoft Fabric and
-                OneLake as one unified platform. We rebuild on governed Fabric artifacts, cut over
-                wave by wave with parity checks, and keep the business running the whole time, all
-                inside your own Microsoft tenant.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="/#contact" size="lg">
-                  Talk to an expert <span aria-hidden>→</span>
-                </Button>
-                <Button href="/dashboards" size="lg" variant="ghost">
-                  See dashboards
-                </Button>
-              </div>
-            </div>
+          }
+        >
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
+            A Synapse to Fabric migration moves your dedicated SQL pools, pipelines, and Spark
+            workloads, along with your Power BI Premium capacity, onto Microsoft Fabric and
+            OneLake as one unified platform. We rebuild on governed Fabric artifacts, cut over
+            wave by wave with parity checks, and keep the business running the whole time, all
+            inside your own Microsoft tenant.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/#contact" size="lg">
+              Talk to an expert <span aria-hidden>→</span>
+            </Button>
+            <Button href="/dashboards" size="lg" variant="ghost">
+              See dashboards
+            </Button>
           </div>
-        </section>
+        </PageHero>
 
         {/* Body */}
         <section className="mx-auto max-w-3xl px-6 pb-4">

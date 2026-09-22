@@ -4,6 +4,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
 import { Reveal } from '@/components/Reveal';
+import { PageHero } from '@/components/sections/PageHero';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -41,22 +42,12 @@ export default function AboutPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-paper">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-60" aria-hidden />
-          <div className="relative mx-auto max-w-4xl px-6 pb-14 pt-36 md:pt-40">
-            <span className="inline-flex items-center gap-2 rounded-full border border-line bg-mist px-3.5 py-2 font-mono text-sm tracking-[0.04em] text-ink">
-              <span aria-hidden className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-              About Kadmoon
-            </span>
-            <h1 className="mt-6 max-w-3xl font-display text-display-lg font-semibold text-ink">
-              A specialist Microsoft data partner, based in the US.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-              We do one thing, and we do it deeply: turn the Microsoft data platform into decisions
-              your business can trust.
-            </p>
-          </div>
-        </section>
+        <PageHero eyebrow="About Kadmoon" title="A specialist Microsoft data partner, based in the US.">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
+            We do one thing, and we do it deeply: turn the Microsoft data platform into decisions
+            your business can trust.
+          </p>
+        </PageHero>
 
         {/* Why we exist */}
         <section className="bg-paper py-24">

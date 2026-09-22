@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/sections/Footer';
 import { ContactForm } from '@/components/ContactForm';
+import { PageHero } from '@/components/sections/PageHero';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -23,23 +24,13 @@ export default function ContactPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-paper">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-60" aria-hidden />
-          <div className="relative mx-auto max-w-4xl px-6 pb-12 pt-36 md:pt-40">
-            <span className="inline-flex items-center gap-2 rounded-full border border-line bg-mist px-3.5 py-2 font-mono text-sm tracking-[0.04em] text-ink">
-              <span aria-hidden className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-              Contact
-            </span>
-            <h1 className="mt-6 max-w-3xl font-display text-display-lg font-semibold text-ink">
-              Let us put your Microsoft platform to work.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-              Tell us where you are today. You get a senior point of view on the fastest path to
-              measurable results, starting with a 30-minute discovery call, at no cost and no
-              obligation.
-            </p>
-          </div>
-        </section>
+        <PageHero eyebrow="Contact" title="Let us put your Microsoft platform to work.">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
+            Tell us where you are today. You get a senior point of view on the fastest path to
+            measurable results, starting with a 30-minute discovery call, at no cost and no
+            obligation.
+          </p>
+        </PageHero>
 
         {/* Form + sidebar */}
         <section id="book" className="bg-paper py-20 md:py-24">

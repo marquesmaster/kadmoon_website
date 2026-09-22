@@ -4,6 +4,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { PageHero } from '@/components/sections/PageHero';
 import { siteConfig } from '@/lib/site';
 
 const route = '/tableau-to-power-bi-migration';
@@ -73,37 +74,33 @@ export default function TableauToPowerBiPage() {
         />
 
         {/* Hero */}
-        <section className="relative overflow-hidden pb-14 pt-28 md:pt-36">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
-          <div className="relative mx-auto max-w-shell px-6">
+        <PageHero
+          eyebrow="Migration"
+          title="Tableau to Power BI migration."
+          breadcrumbs={
             <Breadcrumbs
               items={[{ label: 'Home', href: '/' }, { label: 'Tableau to Power BI migration' }]}
             />
-            <div className="mt-6 max-w-3xl">
-              <Eyebrow>Migration</Eyebrow>
-              <h1 className="mt-4 font-display text-display-lg text-ink">
-                Tableau to Power BI migration.
-              </h1>
-              <p className="mt-5 text-lg leading-relaxed text-ink-2">
-                A Tableau to Power BI migration moves your workbooks, calculated fields, and data
-                sources onto a governed{' '}
-                <a href="/services/power-bi" className="text-accent underline-offset-4 hover:underline">
-                  Power BI
-                </a>{' '}
-                semantic model in your own Microsoft tenant. We rebuild on one definition per KPI,
-                validate parity wave by wave, and cut over without a reporting blackout.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="/#contact" size="lg">
-                  Talk to an expert <span aria-hidden>→</span>
-                </Button>
-                <Button href="/dashboards" size="lg" variant="ghost">
-                  See dashboards
-                </Button>
-              </div>
-            </div>
+          }
+        >
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
+            A Tableau to Power BI migration moves your workbooks, calculated fields, and data
+            sources onto a governed{' '}
+            <a href="/services/power-bi" className="text-accent underline-offset-4 hover:underline">
+              Power BI
+            </a>{' '}
+            semantic model in your own Microsoft tenant. We rebuild on one definition per KPI,
+            validate parity wave by wave, and cut over without a reporting blackout.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/#contact" size="lg">
+              Talk to an expert <span aria-hidden>→</span>
+            </Button>
+            <Button href="/dashboards" size="lg" variant="ghost">
+              See dashboards
+            </Button>
           </div>
-        </section>
+        </PageHero>
 
         {/* Body */}
         <section className="mx-auto max-w-3xl px-6 py-8 md:py-12">

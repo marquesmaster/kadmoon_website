@@ -4,6 +4,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { PageHero } from '@/components/sections/PageHero';
 import { siteConfig } from '@/lib/site';
 
 const title = 'Qlik to Power BI Migration';
@@ -74,35 +75,31 @@ export default function QlikToPowerBiPage() {
         />
 
         {/* Hero */}
-        <section className="relative overflow-hidden pb-14 pt-28 md:pt-36">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
-          <div className="relative mx-auto max-w-shell px-6">
+        <PageHero
+          eyebrow="Migration"
+          title="Qlik to Power BI migration, done properly."
+          breadcrumbs={
             <Breadcrumbs
               items={[{ label: 'Home', href: '/' }, { label: 'Qlik to Power BI Migration' }]}
             />
-            <div className="mt-6 max-w-3xl">
-              <Eyebrow>Migration</Eyebrow>
-              <h1 className="mt-4 font-display text-display-lg text-ink">
-                Qlik to Power BI migration, done properly.
-              </h1>
-              <p className="mt-6 text-lg leading-relaxed text-ink-2">
-                A Qlik to Power BI migration moves your QlikView or Qlik Sense reporting onto the
-                Microsoft stack: load scripts become Power Query, set analysis becomes DAX, and
-                section access becomes row-level security. We rebuild on a governed semantic model,
-                validate every KPI against the old numbers, and cut over wave by wave with no
-                reporting blackout, all inside your own Microsoft tenant.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="/#contact" size="lg">
-                  Talk to an expert <span aria-hidden>→</span>
-                </Button>
-                <Button href="/dashboards" size="lg" variant="ghost">
-                  See dashboards
-                </Button>
-              </div>
-            </div>
+          }
+        >
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
+            A Qlik to Power BI migration moves your QlikView or Qlik Sense reporting onto the
+            Microsoft stack: load scripts become Power Query, set analysis becomes DAX, and
+            section access becomes row-level security. We rebuild on a governed semantic model,
+            validate every KPI against the old numbers, and cut over wave by wave with no
+            reporting blackout, all inside your own Microsoft tenant.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/#contact" size="lg">
+              Talk to an expert <span aria-hidden>→</span>
+            </Button>
+            <Button href="/dashboards" size="lg" variant="ghost">
+              See dashboards
+            </Button>
           </div>
-        </section>
+        </PageHero>
 
         {/* Prose body */}
         <section className="mx-auto max-w-3xl px-6 pb-4">

@@ -3,6 +3,7 @@ import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/sections/Footer';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { PageHero } from '@/components/sections/PageHero';
 import { industryPages } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -29,22 +30,12 @@ export default function IndustriesPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-paper">
-          <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-60" aria-hidden />
-          <div className="relative mx-auto max-w-4xl px-6 pb-14 pt-36 md:pt-40">
-            <span className="inline-flex items-center gap-2 rounded-full border border-line bg-mist px-3.5 py-2 font-mono text-sm tracking-[0.04em] text-ink">
-              <span aria-hidden className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-              Industries
-            </span>
-            <h1 className="mt-6 max-w-3xl font-display text-display-lg font-semibold text-ink">
-              Built for the industries that run on data.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-              We bring the same Microsoft-native rigor to every sector, tuned to the metrics,
-              regulations, and realities of your business.
-            </p>
-          </div>
-        </section>
+        <PageHero eyebrow="Industries" title="Built for the industries that run on data.">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
+            We bring the same Microsoft-native rigor to every sector, tuned to the metrics,
+            regulations, and realities of your business.
+          </p>
+        </PageHero>
 
         {/* Industry cards (data-driven, linked to detail pages) */}
         <section className="bg-paper py-24">
