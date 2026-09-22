@@ -3,11 +3,14 @@ import { Reveal } from '../Reveal';
 
 export function Credibility() {
   return (
-    <section className="border-b border-line bg-paper">
-      <div className="mx-auto max-w-shell px-6 py-8 md:py-10">
-        <Reveal className="flex items-start gap-4">
-          <span aria-hidden className="mt-2 h-8 w-1 shrink-0 rounded-full bg-accent" />
-          <p className="max-w-4xl text-[15px] leading-relaxed text-ink-2 md:text-base">
+    <section className="border-y border-line bg-paper">
+      <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
+        <Reveal>
+          <span aria-hidden className="block h-1.5 w-10 rounded-full bg-accent" />
+          <p
+            className="mt-7 font-serif text-2xl leading-[1.4] text-ink md:text-[34px] md:leading-[1.32]"
+            style={{ textWrap: 'balance' }}
+          >
             {credibility.text}
           </p>
         </Reveal>
