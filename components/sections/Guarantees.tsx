@@ -1,5 +1,3 @@
-import { Eyebrow } from '../Eyebrow';
-
 const guarantees = [
   {
     t: 'Working dashboards by week two',
@@ -29,20 +27,19 @@ const guarantees = [
 
 export function Guarantees() {
   return (
-    <section className="relative overflow-hidden bg-navy py-20 md:py-28">
-      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden
-        style={{ backgroundImage: 'radial-gradient(900px 480px at 15% 110%, rgba(255,106,26,.16), transparent 60%)' }}
-      />
+    <section className="relative overflow-hidden bg-accent py-20 md:py-28">
       <div className="relative mx-auto max-w-shell px-6">
         <div className="max-w-2xl">
-          <Eyebrow onDark>Our commitments</Eyebrow>
-          <h2 className="mt-4 font-display text-display-sm font-semibold text-white">
+          <span className="inline-flex items-center gap-2.5">
+            <span aria-hidden className="h-1.5 w-6 rounded-full bg-ink" />
+            <span className="font-display text-[13px] font-semibold uppercase tracking-[0.16em] text-ink">
+              Our commitments
+            </span>
+          </span>
+          <h2 className="mt-4 font-display text-display-sm font-bold text-ink">
             Built to remove your risk, not add to it.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-white/65">
+          <p className="mt-5 text-lg leading-relaxed text-ink/75">
             Data projects fail quietly: they run long, drift in scope, and hand back numbers nobody
             trusts. Every engagement is set up to make that impossible.
           </p>
@@ -53,15 +50,15 @@ export function Guarantees() {
             <div key={g.t} className="flex gap-4">
               <span
                 aria-hidden
-                className="mt-0.5 grid h-7 w-7 flex-none place-items-center rounded-lg bg-accent/15 text-accent"
+                className="mt-0.5 grid h-7 w-7 flex-none place-items-center rounded-lg bg-ink text-white"
               >
                 <svg viewBox="0 0 20 20" fill="none" className="h-4 w-4">
                   <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
               <div>
-                <h3 className="font-display text-lg font-semibold text-white">{g.t}</h3>
-                <p className="mt-1.5 text-[15px] leading-relaxed text-white/60">{g.d}</p>
+                <h3 className="font-display text-lg font-semibold text-ink">{g.t}</h3>
+                <p className="mt-1.5 text-[15px] leading-relaxed text-ink/70">{g.d}</p>
               </div>
             </div>
           ))}

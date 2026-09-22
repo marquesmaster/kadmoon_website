@@ -2,15 +2,15 @@ import { Section } from '../Section';
 import { Eyebrow } from '../Eyebrow';
 import { Reveal } from '../Reveal';
 
-// The Microsoft workloads Kadmoon builds on. Gradient tiles echo each product's
-// brand color; no external assets needed.
+// The Microsoft workloads Kadmoon builds on. Monochrome ink tiles with a single
+// orange accent (Brex restraint); Fabric — the backbone — carries the accent.
 const platform = [
-  { name: 'Microsoft Fabric', grad: 'linear-gradient(135deg,#7c3aed,#22b3ff)', body: 'One analytics platform for your lakehouse, pipelines, and real-time data. It is the backbone of most of what we build.' },
-  { name: 'Power BI', grad: 'linear-gradient(135deg,#F2C811,#e8a400)', body: 'Dashboards and semantic models your executives trust and open every day.' },
-  { name: 'Power Apps', grad: 'linear-gradient(135deg,#742774,#b14ad8)', body: 'Business apps and automated workflows on the Power Platform, wired straight to your data.' },
-  { name: 'Azure Synapse', grad: 'linear-gradient(135deg,#0089d6,#00b7c3)', body: 'Data warehousing and large-scale processing that holds up as you grow.' },
-  { name: 'Azure SQL & SQL Pool', grad: 'linear-gradient(135deg,#003b73,#0078d4)', body: 'Dedicated SQL pools and Azure SQL for fast, structured workloads.' },
-  { name: 'Purview & governance', grad: 'linear-gradient(135deg,#118d57,#3bd07a)', body: 'Cataloging, lineage, and access control, so people can find data and trust what they find.' },
+  { name: 'Microsoft Fabric', mark: 'F', accent: true, body: 'One analytics platform for your lakehouse, pipelines, and real-time data. It is the backbone of most of what we build.' },
+  { name: 'Power BI', mark: 'BI', body: 'Dashboards and semantic models your executives trust and open every day.' },
+  { name: 'Power Apps', mark: 'PA', body: 'Business apps and automated workflows on the Power Platform, wired straight to your data.' },
+  { name: 'Azure Synapse', mark: 'SY', body: 'Data warehousing and large-scale processing that holds up as you grow.' },
+  { name: 'Azure SQL & SQL Pool', mark: 'SQL', body: 'Dedicated SQL pools and Azure SQL for fast, structured workloads.' },
+  { name: 'Purview & governance', mark: 'PV', body: 'Cataloging, lineage, and access control, so people can find data and trust what they find.' },
 ];
 
 export function MicrosoftPlatform() {
@@ -36,7 +36,14 @@ export function MicrosoftPlatform() {
             delay={(i % 3) * 80}
             className="hover-glow rounded-2xl border border-line bg-white p-7"
           >
-            <span aria-hidden className="block h-10 w-10 rounded-[10px]" style={{ background: p.grad }} />
+            <span
+              aria-hidden
+              className={`grid h-11 w-11 place-items-center rounded-xl font-display text-sm font-bold tracking-tight ${
+                p.accent ? 'bg-accent text-white' : 'bg-ink text-white'
+              }`}
+            >
+              {p.mark}
+            </span>
             <h3 className="mt-4 font-display text-xl font-semibold text-ink">{p.name}</h3>
             <p className="mt-2.5 text-[15px] leading-relaxed text-ink-2">{p.body}</p>
           </Reveal>

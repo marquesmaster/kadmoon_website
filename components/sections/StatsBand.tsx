@@ -4,7 +4,7 @@ import { StatCounter } from '../StatCounter';
 
 export function StatsBand() {
   return (
-    <section className="relative overflow-hidden bg-navy">
+    <section className="relative overflow-hidden border-t-2 border-accent bg-navy">
       <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-60" aria-hidden />
       <div className="relative mx-auto max-w-shell px-6 py-14 md:py-16">
         <dl className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
@@ -14,7 +14,9 @@ export function StatsBand() {
               <dd>
                 <StatCounter
                   value={stat.value}
-                  className="block font-display text-4xl font-semibold tracking-[-0.03em] text-white md:text-5xl"
+                  className={`block font-display text-4xl font-bold tracking-[-0.035em] md:text-5xl ${
+                    i === 0 ? 'text-accent' : 'text-white'
+                  }`}
                 />
                 <span className="mt-2 block font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">
                   {stat.label}
