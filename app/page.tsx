@@ -2,6 +2,7 @@ import { Nav } from '@/components/Nav';
 import { Hero } from '@/components/sections/Hero';
 import { Credibility } from '@/components/sections/Credibility';
 import { StatsBand } from '@/components/sections/StatsBand';
+import { Credentials } from '@/components/sections/Credentials';
 import { MicrosoftPlatform } from '@/components/sections/MicrosoftPlatform';
 import { Capabilities } from '@/components/sections/Capabilities';
 import { MigrationHighlight } from '@/components/sections/MigrationHighlight';
@@ -23,6 +24,7 @@ export default function HomePage() {
         <Hero />
         <Credibility />
         <StatsBand />
+        <Credentials />
         <MicrosoftPlatform />
         <Capabilities />
         <MigrationHighlight />
