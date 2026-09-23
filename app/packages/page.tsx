@@ -3,6 +3,7 @@ import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/sections/Footer';
 import { Button } from '@/components/Button';
 import { SubscriptionPlans } from '@/components/sections/SubscriptionPlans';
+import { WhyKadmoon } from '@/components/sections/WhyKadmoon';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -84,6 +85,9 @@ export default function PackagesPage() {
 
         {/* Subscription tiers (client component: term toggle) */}
         <SubscriptionPlans />
+
+        {/* Why Kadmoon */}
+        <WhyKadmoon />
 
         {/* Dark CTA */}
         <section className="relative overflow-hidden bg-ink text-paper">

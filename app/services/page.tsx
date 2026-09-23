@@ -4,6 +4,8 @@ import { Footer } from '@/components/sections/Footer';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
 import { PageHero } from '@/components/sections/PageHero';
+import { Accelerators } from '@/components/sections/Accelerators';
+import { HowToChoose } from '@/components/sections/HowToChoose';
 import { services } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -160,21 +162,25 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Reusable IP + buyer's guide */}
+        <Accelerators />
+        <HowToChoose />
+
         {/* Dark CTA */}
         <section className="relative overflow-hidden bg-ink text-paper">
           <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
-          <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(240,85,59,.24), transparent 60%)' }} />
+          <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(255,89,0,.22), transparent 60%)' }} />
           <div className="relative mx-auto max-w-2xl px-6 py-28 text-center">
             <h2 className="font-display text-display-md font-semibold text-white">
               Not sure where to start?
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
-              Book a discovery call. We will point you to the right first step, usually a fixed-scope
+              Book a meeting. We will point you to the right first step, usually a fixed-scope
               assessment.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
-              <Button href="/contact" size="lg">
-                Book a discovery call <span aria-hidden>→</span>
+              <Button href={siteConfig.bookingsUrl} size="lg">
+                Book a meeting <span aria-hidden>→</span>
               </Button>
               <a
                 href="/dashboards"
