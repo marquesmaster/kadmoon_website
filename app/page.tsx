@@ -6,6 +6,7 @@ import { MicrosoftPlatform } from '@/components/sections/MicrosoftPlatform';
 import { Capabilities } from '@/components/sections/Capabilities';
 import { MigrationHighlight } from '@/components/sections/MigrationHighlight';
 import { Guarantees } from '@/components/sections/Guarantees';
+import { PlansTeaser } from '@/components/sections/PlansTeaser';
 import { Work } from '@/components/sections/Work';
 import { Faq } from '@/components/sections/Faq';
 import { Contact } from '@/components/sections/Contact';
@@ -26,6 +27,7 @@ export default function HomePage() {
         <Capabilities />
         <MigrationHighlight />
         <Guarantees />
+        <PlansTeaser />
         <Work />
         <Faq />
         <Contact />

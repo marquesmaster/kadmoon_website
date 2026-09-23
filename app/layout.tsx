@@ -7,6 +7,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { FloatingContact } from '@/components/FloatingContact';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { CookieConsent } from '@/components/CookieConsent';
+import { Analytics } from '@/components/Analytics';
 
 // Brex 2025 design language: Inter carries display + body (heavy, tight),
 // Fraunces for editorial serif moments, Space Mono for numeric callouts.
@@ -152,6 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <FloatingContact />
         <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );
