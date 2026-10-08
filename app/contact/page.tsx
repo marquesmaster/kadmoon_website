@@ -6,16 +6,16 @@ import { PageHero } from '@/components/sections/PageHero';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Contact | Book a discovery call',
+  title: 'Contact | Request a quote',
   description:
-    'Tell us where you are today and get a senior point of view on the fastest path to measurable results on the Microsoft data platform. Response within one business day.',
+    'Tell us how your trade operation works and where the friction is. Within one business day you get a response with a clear path forward and a quote.',
   alternates: { canonical: `${siteConfig.url}/contact` },
 };
 
 const firstCall = [
-  'A senior perspective on your Microsoft data estate',
-  'A candid read on your fastest, highest-value wins',
-  'A clear next step, not a sales pitch',
+  'A senior read on your trade software needs',
+  'Where a ready platform fits and where custom makes sense',
+  'A clear next step and a quote, not a sales pitch',
 ];
 
 export default function ContactPage() {
@@ -24,11 +24,10 @@ export default function ContactPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="Contact" title="Let us put your Microsoft platform to work.">
+        <PageHero eyebrow="Request a quote" title="Tell us what you move. Get a quote.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            Tell us where you are today. You get a senior point of view on the fastest path to
-            measurable results, starting with a 30-minute discovery call, at no cost and no
-            obligation.
+            Tell us how your operation works and where the friction is. You get a senior point of
+            view and a quote, starting with a short call, at no cost and no obligation.
           </p>
         </PageHero>
 

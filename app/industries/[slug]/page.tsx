@@ -20,10 +20,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!ind) return {};
   const url = `${siteConfig.url}/industries/${ind.slug}`;
   return {
-    title: `Power BI for ${ind.name}`,
+    title: `Software for ${ind.name}`,
     description: ind.intro.slice(0, 155),
     alternates: { canonical: url },
-    openGraph: { title: `Power BI for ${ind.name} | Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website' },
+    openGraph: { title: `Software for ${ind.name} | Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website' },
   };
 }
 
@@ -41,7 +41,7 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: `Power BI and analytics for ${ind.name}`,
+    serviceType: `Trade software for ${ind.name}`,
     provider: { '@type': 'Organization', name: siteConfig.legalName, url: siteConfig.url },
     areaServed: { '@type': 'Country', name: siteConfig.country },
     description: ind.intro,
@@ -61,7 +61,7 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
           eyebrow={ind.flagship ? 'Flagship practice' : 'Industry'}
           title={
             <>
-              Power BI for <span className="text-accent">{ind.name}</span>.
+              Software for <span className="text-accent">{ind.name}</span>.
             </>
           }
           breadcrumbs={

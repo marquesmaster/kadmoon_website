@@ -11,20 +11,20 @@ import { caseStudies, credibility } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'BI case studies and dashboards | Kadmoon',
+  title: 'Selected work | Kadmoon',
   description:
-    'Power BI and Microsoft Fabric case studies: legacy BI migration, executive dashboards, data platforms, and Power Platform automation across retail, finance, manufacturing, healthcare, and more. Illustrative data, real structure.',
+    'Trade software we build: customs filing and compliance platforms, trade ERP with landed cost, vessel and cargo security vision, and shipment visibility. Illustrative examples, real structure.',
   keywords: [
-    'power bi case studies',
-    'microsoft fabric case studies',
-    'bi dashboard examples',
-    'kadmoon cases',
+    'trade software case studies',
+    'customs software examples',
+    'logistics software examples',
+    'kadmoon work',
   ],
   alternates: { canonical: `${siteConfig.url}/cases` },
   openGraph: {
-    title: 'Kadmoon case studies',
+    title: 'Kadmoon selected work',
     description:
-      'Power BI, Microsoft Fabric, and Power Platform work across retail, finance, manufacturing, logistics, and healthcare. Illustrative data, real structure.',
+      'Customs and compliance, trade ERP, security vision, and logistics software for cross-border operations. Illustrative examples, real structure.',
     url: `${siteConfig.url}/cases`,
     type: 'website',
   },
