@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { ContactForm } from './ContactForm';
 
 /**
- * Floating contact popup (same pattern as the Bradata site): a pill button
- * fixed bottom-right that opens a panel with the contact form embedded. The
- * button appears after a short delay or once the visitor scrolls.
+ * Floating contact popup: a pill button fixed bottom-right that opens a panel
+ * with the contact form embedded. The button appears after a short delay or
+ * once the visitor scrolls.
  */
 export function FloatingContact() {
   const [visible, setVisible] = useState(false);

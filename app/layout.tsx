@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Inter, Fraunces, Space_Mono } from 'next/font/google';
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/lib/site';
 import { JsonLd } from '@/components/JsonLd';
@@ -9,13 +9,13 @@ import { ScrollProgress } from '@/components/ScrollProgress';
 import { CookieConsent } from '@/components/CookieConsent';
 import { Analytics } from '@/components/Analytics';
 
-// Brex 2025 design language: Inter carries display + body (heavy, tight),
-// Fraunces for editorial serif moments, Space Mono for numeric callouts.
-const display = Inter({
+// Kadmoon trade-software identity: Space Grotesk for display (technical,
+// geometric), Inter for body, JetBrains Mono for data/eyebrows.
+const display = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
-  weight: ['600', '700', '800'],
+  weight: ['500', '600', '700'],
 });
 
 const sans = Inter({
@@ -25,23 +25,15 @@ const sans = Inter({
   weight: ['400', '500', '600'],
 });
 
-const serif = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-serif',
-  display: 'swap',
-  style: ['normal', 'italic'],
-  weight: ['400', '500', '600'],
-});
-
-const mono = Space_Mono({
+const mono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
   display: 'swap',
-  weight: ['400', '700'],
+  weight: ['400', '500'],
 });
 
 export const viewport: Viewport = {
-  themeColor: '#15191E',
+  themeColor: '#0B1A2E',
   width: 'device-width',
   initialScale: 1,
   colorScheme: 'light',
@@ -101,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en-US"
-      className={`${display.variable} ${sans.variable} ${serif.variable} ${mono.variable}`}
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
       <head>
         {/* Google Consent Mode: deny all until the user accepts (see the

@@ -9,32 +9,32 @@ import { Comparison } from '@/components/sections/Comparison';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'About | A specialist Microsoft data partner in the US',
+  title: 'About | A US software company built for foreign trade',
   description:
-    'Kadmoon is a US consultancy with a deliberately narrow focus: the Microsoft data platform, and nothing else. Senior specialists, governance from day one, and you own it after we leave.',
+    'Kadmoon is a US software company focused entirely on foreign trade. Senior, US-based engineers who speak customs, logistics, and compliance, building software you own.',
   alternates: { canonical: `${siteConfig.url}/about` },
 };
 
 const principles = [
-  { n: '01', t: 'Microsoft-only focus', d: 'Deep on one stack instead of shallow on ten. That depth shows up in cleaner builds.' },
-  { n: '02', t: 'Senior-only teams', d: 'The people who scope your work are the people who build it. No juniors on your budget.' },
-  { n: '03', t: 'Governance from day one', d: 'Security, lineage, and cost controls are designed in, not bolted on after the audit.' },
-  { n: '04', t: 'You own it after we leave', d: 'Documentation and enablement in every engagement. No black boxes, no lock-in.' },
+  { n: '01', t: 'Foreign trade is all we do', d: 'Deep in one domain instead of shallow across ten. It shows in software that fits how you actually trade.' },
+  { n: '02', t: 'Senior, US-based teams', d: 'The people who scope your system build and support it. No rotating subcontractors.' },
+  { n: '03', t: 'Compliance by default', d: 'Screening, classification, and audit trails are part of the build, not bolted on after the fact.' },
+  { n: '04', t: 'You own it', d: 'Your software, your data, documented and handed over. No black boxes, no lock-in.' },
 ];
 
 const steps = [
-  { n: '1', t: 'Discover', d: 'A 30-minute call to understand your data, your Microsoft footprint, and the decisions you need to make.', last: false },
-  { n: '2', t: 'Assess & roadmap', d: 'A two-week, fixed-scope assessment producing a costed, prioritized roadmap you can act on.', last: false },
-  { n: '3', t: 'Design', d: 'We design the target architecture on Fabric, Synapse, and Azure SQL, with governance built in.', last: false },
-  { n: '4', t: 'Build & migrate', d: 'Senior engineers deliver in short, reviewable increments: build, migrate, validate, repeat.', last: false },
-  { n: '5', t: 'Enable & govern', d: 'We hand over documentation, training, and governance so your team owns the platform for good.', last: true },
+  { n: '1', t: 'Discover', d: 'A call to understand how goods, documents, and money move through your operation and where the friction is.', last: false },
+  { n: '2', t: 'Scope & plan', d: 'A short discovery that produces a scope and an architecture plan you can act on.', last: false },
+  { n: '3', t: 'Foundation', d: 'A ready platform tailored to you or a custom base, with your data model, compliance rules, and integrations.', last: false },
+  { n: '4', t: 'Build', d: 'Delivery in short cycles, each one a working piece of your operation wired to your partners.', last: false },
+  { n: '5', t: 'Sustain', d: 'Training, support, and compliance kept current as rules and partners change and your trade grows.', last: true },
 ];
 
 const team = [
-  { mono: 'PA', role: 'Principal Data Architect', desc: 'Owns your target architecture on Fabric and keeps it coherent from ingestion to reporting.' },
-  { mono: 'BI', role: 'Power BI & Analytics Lead', desc: 'Designs the semantic models and dashboards your executives rely on every day.' },
-  { mono: 'MS', role: 'Migration Specialist', desc: 'Runs tenant-to-tenant moves and legacy modernizations without the drama.' },
-  { mono: 'GE', role: 'Governance & Enablement Lead', desc: 'Sets up Purview, security, and the training that hands the platform to your team.' },
+  { mono: 'TA', role: 'Trade Solutions Architect', desc: 'Owns the system design and keeps it coherent from sourcing to delivery.' },
+  { mono: 'CC', role: 'Customs & Compliance Lead', desc: 'Builds classification, screening, and filing that keep shipments clear and auditable.' },
+  { mono: 'IN', role: 'Integrations Lead', desc: 'Connects carriers, brokers, ACE, and marketplaces so data flows instead of being retyped.' },
+  { mono: 'CV', role: 'Computer Vision Lead', desc: 'Builds the security vision over cargo, containers, and the perimeter.' },
 ];
 
 export default function AboutPage() {
@@ -43,10 +43,10 @@ export default function AboutPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="About Kadmoon" title="A specialist Microsoft data partner, based in the US.">
+        <PageHero eyebrow="About Kadmoon" title="A US software company built for foreign trade.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We do one thing, and we do it deeply: turn the Microsoft data platform into decisions
-            your business can trust.
+            We do one thing, and we do it deeply: build the software that moves goods across borders,
+            for the companies that do it.
           </p>
         </PageHero>
 
@@ -56,24 +56,24 @@ export default function AboutPage() {
             <div>
               <Eyebrow>Why we exist</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
-                Powerful licenses, a fraction of the value.
+                Trade software, built by people who speak trade.
               </h2>
             </div>
             <div className="space-y-5 md:col-span-2">
               <p className="text-lg leading-relaxed text-ink-2">
-                Most companies own powerful Microsoft licenses but capture a fraction of their value.
-                Data sits in silos, reports disagree, and decisions wait on someone to reconcile a
-                spreadsheet.
+                Most trade operations run on generic ERPs and spreadsheets that were never built for
+                customs, landed cost, or bonded inventory, so the software fights the operation
+                instead of fitting it.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
-                Kadmoon is a US-based consultancy with a deliberately narrow focus: the Microsoft
-                data platform, and nothing else. That focus lets us move faster, architect cleaner,
-                and stand behind every system we build.
+                Kadmoon is a US software company with a deliberately narrow focus: foreign trade, and
+                nothing else. That focus lets us model your operation correctly, move faster, and
+                stand behind every system we build.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
-                Every engagement is run by senior practitioners and handed over with documentation
-                and training. Our goal is not to become a dependency, it is to leave your team owning
-                a platform they trust.
+                Every engagement is run by senior, US-based engineers and handed over with
+                documentation and training. Our goal is not to become a dependency, it is to leave
+                you owning software you trust.
               </p>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default function AboutPage() {
           <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(255,89,0,.22), transparent 60%)' }} />
           <div className="relative mx-auto max-w-2xl px-6 py-28 text-center">
             <h2 className="font-display text-display-md font-semibold text-white">
-              Let us talk about your Microsoft data.
+              Let us talk about your trade operation.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
               A 30-minute discovery call is the fastest way to see whether we are a fit, and where

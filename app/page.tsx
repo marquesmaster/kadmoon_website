@@ -2,20 +2,18 @@ import { Nav } from '@/components/Nav';
 import { Hero } from '@/components/sections/Hero';
 import { Credibility } from '@/components/sections/Credibility';
 import { StatsBand } from '@/components/sections/StatsBand';
-import { Credentials } from '@/components/sections/Credentials';
-import { MicrosoftPlatform } from '@/components/sections/MicrosoftPlatform';
 import { Capabilities } from '@/components/sections/Capabilities';
 import { MigrationHighlight } from '@/components/sections/MigrationHighlight';
-import { Guarantees } from '@/components/sections/Guarantees';
-import { PlansTeaser } from '@/components/sections/PlansTeaser';
+import { Industries } from '@/components/sections/Industries';
+import { Process } from '@/components/sections/Process';
+import { Comparison } from '@/components/sections/Comparison';
 import { Work } from '@/components/sections/Work';
 import { Faq } from '@/components/sections/Faq';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
 
-// Lean, Brex-style home: a tight sequence of strong blocks with an alternating
-// color rhythm (canvas / ink / cream / orange), instead of a long scroll.
-// Depth lives on the dedicated pages (/services, /packages, /industries, ...).
+// Lean trade-software home: a tight sequence of strong blocks with an
+// alternating color rhythm. Depth lives on the dedicated pages.
 export default function HomePage() {
   return (
     <>
@@ -24,12 +22,11 @@ export default function HomePage() {
         <Hero />
         <Credibility />
         <StatsBand />
-        <Credentials />
-        <MicrosoftPlatform />
         <Capabilities />
         <MigrationHighlight />
-        <Guarantees />
-        <PlansTeaser />
+        <Industries />
+        <Process />
+        <Comparison />
         <Work />
         <Faq />
         <Contact />

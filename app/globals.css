@@ -7,20 +7,20 @@
    ========================================================= */
 
 :root {
-  /* Brex 2025 design language (Studio Freight): off-white canvas, near-black
-     ink, single voltage-orange CTA, warm neutrals, color-blocking. */
-  --paper: 252 252 253; /* #FCFCFD canvas / surfaces */
-  --mist: 242 243 245; /* #F2F3F5 soft section panel */
-  --ice: 246 243 237; /* #F6F3ED warm cream color-block */
-  --ink: 21 25 30; /* #15191E primary text (near-black) */
-  --ink-2: 91 100 112; /* #5B6470 secondary text */
-  --ink-3: 138 146 158; /* #8A929E muted / captions */
-  --navy: 21 25 30; /* #15191E dark sections (ink black) */
-  --accent: 255 89 0; /* #FF5900 voltage orange (sole CTA color) */
-  --line: 229 231 235; /* #E5E7EB borders / hairlines */
+  /* Kadmoon trade-software identity: deep maritime navy, electric-blue accent,
+     cool neutrals. Signals trust, technology, and movement across borders. */
+  --paper: 247 249 251; /* #F7F9FB cool canvas */
+  --mist: 237 241 246; /* #EDF1F6 soft section panel */
+  --ice: 232 239 248; /* #E8EFF8 cool color-block */
+  --ink: 11 26 46; /* #0B1A2E deep maritime navy (text + dark) */
+  --ink-2: 74 90 110; /* #4A5A6E secondary text */
+  --ink-3: 133 149 166; /* #8595A6 muted / captions */
+  --navy: 11 26 46; /* #0B1A2E dark sections */
+  --accent: 23 99 247; /* #1763F7 electric blue (sole CTA color) */
+  --line: 222 229 238; /* #DEE5EE borders / hairlines */
   --success: 22 163 74; /* #16A34A status */
 
-  --grid-line: rgba(21, 25, 30, 0.045);
+  --grid-line: rgba(11, 26, 46, 0.045);
 }
 
 html {
@@ -118,7 +118,7 @@ button {
 }
 .hover-glow:hover {
   border-color: rgb(var(--accent) / 0.4);
-  box-shadow: 0 2px 4px rgb(21 25 30 / 0.05), 0 24px 48px -22px rgb(255 89 0 / 0.25);
+  box-shadow: 0 2px 4px rgb(11 26 46 / 0.06), 0 24px 48px -22px rgb(23 99 247 / 0.28);
 }
 
 /* Hero ambient blobs (drift slowly) */

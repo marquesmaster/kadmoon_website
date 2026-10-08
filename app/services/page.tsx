@@ -4,47 +4,46 @@ import { Footer } from '@/components/sections/Footer';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
 import { PageHero } from '@/components/sections/PageHero';
-import { Accelerators } from '@/components/sections/Accelerators';
 import { HowToChoose } from '@/components/sections/HowToChoose';
 import { services } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Services | Power BI, Fabric, and Power Platform',
+  title: 'Solutions | Trade ERP, Customs, Inventory, Security & Logistics',
   description:
-    'Capabilities that carry your data from raw source to trusted decision on the Microsoft platform: Power BI, Fabric, data engineering, Power Platform, governance, and migrations. Delivered by senior practitioners, governed from day one.',
+    'Software for foreign trade: trade ERP and CRM, customs and compliance, inventory and WMS, vessel and port security vision, supply chain and logistics, and custom development. Built by a US team that speaks trade.',
   alternates: { canonical: `${siteConfig.url}/services` },
 };
 
 const engage = [
   {
-    kicker: 'Assessment',
-    title: 'Fixed scope · 2 weeks',
-    body: 'A costed roadmap, architecture review, and prioritized backlog, so you decide with a plan, not a pitch.',
-    cta: 'Book an assessment',
+    kicker: 'Platform + tailoring',
+    title: 'Fastest start',
+    body: 'Start on a ready Kadmoon platform, trade ERP, compliance, inventory, or logistics, and we tailor it to your flow and integrate it with your partners.',
+    cta: 'Book a call',
     featured: true,
   },
   {
-    kicker: 'Build & migrate',
-    title: 'Project-based',
-    body: 'We design, build, and migrate in short, reviewable increments, with validation and enablement at every step.',
-    cta: 'Scope a project',
+    kicker: 'Custom build',
+    title: 'Built to your operation',
+    body: 'A system built from scratch around how you actually trade, with clear acceptance criteria per deliverable and delivery in short, reviewable cycles.',
+    cta: 'Scope a build',
     featured: false,
   },
   {
-    kicker: 'Managed enablement',
-    title: 'Monthly retainer',
-    body: 'Governance, optimization, and hands-on support after go-live, so your platform keeps getting better.',
-    cta: 'Talk retainers',
+    kicker: 'Support & evolution',
+    title: 'After go-live',
+    body: 'We keep integrations and compliance current as rules and partners change, support the software on a defined agreement, and evolve it as your trade grows.',
+    cta: 'Talk support',
     featured: false,
   },
 ];
 
 const faqs = [
-  { q: 'Do you offer fixed-price engagements?', a: 'Yes. Most work starts with a fixed-scope, fixed-price assessment, so you know the cost and timeline before any build begins.' },
-  { q: 'Can you work alongside our internal team?', a: 'Absolutely. We embed with your data and IT teams, and enablement is built into every engagement so ownership transfers to you.' },
-  { q: 'What size projects do you take on?', a: 'From a single Power BI model to a full Fabric platform build or a multi-tenant migration. If it runs on Microsoft data tooling, it is in scope.' },
-  { q: 'Do you provide ongoing support after go-live?', a: 'Yes, through a managed enablement retainer covering governance, optimization, and support once your platform is in production.' },
+  { q: 'Do you build products or custom software?', a: 'Both. Start on a ready Kadmoon platform for the common trade problems and tailor it, or have us build fully custom where your operation is genuinely different. Most clients use a mix.' },
+  { q: 'Can you work alongside our internal team?', a: 'Yes. We embed with your operations and IT teams, and a full handover with documentation is part of every engagement so ownership transfers to you.' },
+  { q: 'What size projects do you take on?', a: 'From a single integration or module to a full trade ERP with compliance, inventory, and logistics. If it moves goods across borders, it is in scope.' },
+  { q: 'Do you provide ongoing support after launch?', a: 'Yes, on a defined support agreement: integrations and compliance kept current as rules change, plus an evolution roadmap as your trade grows.' },
 ];
 
 export default function ServicesPage() {
@@ -53,10 +52,10 @@ export default function ServicesPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="Services" title="Everything we build runs on Microsoft.">
+        <PageHero eyebrow="Solutions" title="Every system a cross-border operation runs on.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            Capabilities that carry your data from raw source to trusted decision, delivered by
-            senior practitioners, governed from day one, and handed over for your team to own.
+            Trade ERP, customs and compliance, inventory, security vision, and logistics, built as
+            ready platforms and custom development, by a US team that speaks trade.
           </p>
         </PageHero>
 
@@ -162,8 +161,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Reusable IP + buyer's guide */}
-        <Accelerators />
+        {/* Buyer's guide */}
         <HowToChoose />
 
         {/* Dark CTA */}

@@ -8,20 +8,20 @@ import { industryPages } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Industries | Power BI and analytics by sector',
+  title: 'Industries | Software for every link in the trade chain',
   description:
-    'Power BI and Microsoft data platforms for financial services, retail, manufacturing, logistics, healthcare, education, and supply chain. Built for each sector, in your tenant.',
+    'Software for importers, exporters, customs brokers, freight forwarders, 3PLs, ports, and the manufacturers and distributors that trade across borders. Built for how each one operates.',
   alternates: { canonical: `${siteConfig.url}/industries` },
 };
 
 // Illustrative outcomes, clearly labeled. Replaced with real, cleared client
 // results when the founder provides them.
 const cases = [
-  { metric: '-63%', title: 'Refresh time cut on a re-platformed retail estate', desc: 'Nightly reporting moved from a legacy warehouse to Microsoft Fabric, with a governed semantic layer for the exec team.', tag: 'Retail · Fabric & Power BI' },
-  { metric: '6 → 1', title: 'Tenants consolidated in a global T2T migration', desc: 'Six Microsoft tenants merged into one, with Power BI workspaces, gateways, and Power Platform apps moved with lineage intact.', tag: 'Financial services · T2T migration' },
-  { metric: '$1.2M', title: 'Annual run-rate saved by consolidating tooling', desc: 'Three overlapping BI and warehouse tools retired in favor of a single Synapse and Azure SQL foundation.', tag: 'Manufacturing · Synapse & Azure SQL' },
-  { metric: '4×', title: 'Faster month-end close for a services firm', desc: 'Manual spreadsheet consolidation replaced with automated Fabric pipelines and a governed finance model.', tag: 'Professional services · Fabric' },
-  { metric: '70+', title: 'Governed Power BI models rolled out enterprise-wide', desc: 'A workspace strategy and Purview lineage brought scattered reports under one trusted, secured framework.', tag: 'Healthcare · Power BI & Purview' },
+  { metric: '5 → 1', title: 'Systems replaced by one trade ERP', desc: 'A generic ERP and four spreadsheets consolidated into one platform with true landed cost for an importer.', tag: 'Importers · Trade ERP' },
+  { metric: '100%', title: 'Shipments screened before departure', desc: 'Denied-party screening and HTS classification built into the order flow, with an auditable record per entry.', tag: 'Customs brokers · Compliance' },
+  { metric: 'Real-time', title: 'Shipment visibility across carriers', desc: 'Carrier and shipment data unified over EDI and API, with a self-service customer portal.', tag: 'Freight forwarders · Logistics' },
+  { metric: '24/7', title: 'Automated port security monitoring', desc: 'Computer vision over yard and perimeter cameras, with real-time alerts routed to the security desk.', tag: 'Ports · Security vision' },
+  { metric: 'Audit-ready', title: 'Every entry classified and documented', desc: 'ACE-ready filing with a complete audit trail replacing spreadsheets and disconnected tools.', tag: 'Customs brokers · Compliance' },
 ];
 
 export default function IndustriesPage() {
@@ -30,10 +30,10 @@ export default function IndustriesPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="Industries" title="Built for the industries that run on data.">
+        <PageHero eyebrow="Industries" title="Built for the companies that move goods.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We bring the same Microsoft-native rigor to every sector, tuned to the metrics,
-            regulations, and realities of your business.
+            We build software tuned to how each link in the trade chain actually operates, from
+            importers and brokers to forwarders, 3PLs, and ports.
           </p>
         </PageHero>
 
@@ -72,7 +72,7 @@ export default function IndustriesPage() {
             <div className="max-w-2xl">
               <Eyebrow>Case studies & results</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
-                Outcomes we have delivered on Microsoft.
+                What the software delivers.
               </h2>
             </div>
             <div className="mt-11 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -96,7 +96,7 @@ export default function IndustriesPage() {
               >
                 <span className="font-display text-lg font-semibold text-ink">See the full case studies</span>
                 <span className="mt-2 text-[14px] text-ink-2">
-                  With the interactive dashboards behind each one <span aria-hidden>→</span>
+                  With the systems behind each one <span aria-hidden>→</span>
                 </span>
               </a>
             </div>
@@ -110,18 +110,18 @@ export default function IndustriesPage() {
         {/* Dark CTA */}
         <section className="relative overflow-hidden bg-ink text-paper">
           <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
-          <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(240,85,59,.24), transparent 60%)' }} />
+          <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(23,99,247,.24), transparent 60%)' }} />
           <div className="relative mx-auto max-w-2xl px-6 py-28 text-center">
             <h2 className="font-display text-display-md font-semibold text-white">
-              Want results like these in your industry?
+              Want software built for your corner of trade?
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
-              Book a discovery call and we will share the approach that fits your sector, your data,
-              and your Microsoft footprint.
+              Book a call and we will share the approach that fits your operation, your systems, and
+              your partners.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
-              <Button href="/contact" size="lg">
-                Book a discovery call <span aria-hidden>→</span>
+              <Button href={siteConfig.bookingsUrl} size="lg">
+                Book a call <span aria-hidden>→</span>
               </Button>
               <a
                 href="/services"

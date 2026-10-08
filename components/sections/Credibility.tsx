@@ -8,7 +8,7 @@ export function Credibility() {
         <Reveal>
           <span aria-hidden className="block h-1.5 w-10 rounded-full bg-accent" />
           <p
-            className="mt-7 font-serif text-2xl leading-[1.4] text-ink md:text-[34px] md:leading-[1.32]"
+            className="mt-7 font-display text-2xl font-medium leading-[1.3] tracking-[-0.01em] text-ink md:text-[32px] md:leading-[1.25]"
             style={{ textWrap: 'balance' }}
           >
             {credibility.text}

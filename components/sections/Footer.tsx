@@ -65,7 +65,7 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <span className="font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-[#9AA0A9]">
-              Built 100% on Microsoft
+              Built for foreign trade · United States
             </span>
             <a href="/privacy" className="text-[13px] text-[#71767F] transition-colors hover:text-white">
               Privacy

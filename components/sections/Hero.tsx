@@ -1,21 +1,20 @@
 import { hero } from '@/lib/content';
 import { Button } from '../Button';
 
-// Illustrative dashboard mock — a stylized product visual (Brex-style), not
-// real client data. Labeled "Sample" so it is never mistaken for a metric.
-function DashboardMock() {
-  const bars = [38, 52, 46, 63, 58, 74, 69, 88];
+// Illustrative product UI — a stylized trade operations console, not real
+// client data. Labeled "Sample" so it is never mistaken for a live figure.
+function TradeConsoleMock() {
+  const checks = [
+    'HTS classified',
+    'Parties screened',
+    'Duty & landed cost',
+    'ACE filing ready',
+  ];
   return (
     <div className="relative">
-      {/* Color-block behind the card (Brex color-blocking motif) */}
-      <div
-        aria-hidden
-        className="absolute -right-4 -top-5 h-40 w-40 rounded-3xl bg-accent md:h-52 md:w-52"
-      />
-      <div
-        aria-hidden
-        className="absolute -bottom-6 -left-5 hidden h-28 w-28 rounded-3xl bg-ice md:block"
-      />
+      {/* Color-block accents */}
+      <div aria-hidden className="absolute -right-4 -top-5 h-40 w-40 rounded-3xl bg-accent md:h-52 md:w-52" />
+      <div aria-hidden className="absolute -bottom-6 -left-5 hidden h-28 w-28 rounded-3xl bg-ice md:block" />
 
       <div className="relative overflow-hidden rounded-3xl border border-line bg-white shadow-card-hover">
         {/* Window chrome */}
@@ -24,7 +23,7 @@ function DashboardMock() {
           <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
           <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
           <span className="ml-2 font-mono text-[11px] tracking-[0.02em] text-ink-3">
-            executive-overview.pbix
+            kadmoon · trade console
           </span>
           <span className="ml-auto rounded-full bg-mist px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.12em] text-ink-3">
             Sample
@@ -35,49 +34,42 @@ function DashboardMock() {
           {/* KPI tiles */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { k: 'Revenue', v: '$4.2M', d: '+8.1%' },
-              { k: 'Margin', v: '31.4%', d: '+2.2pt' },
-              { k: 'On-time', v: '96%', d: '+1.4pt' },
+              { k: 'In transit', v: '24' },
+              { k: 'Cleared today', v: '18' },
+              { k: 'Flags', v: '2' },
             ].map((t) => (
               <div key={t.k} className="rounded-xl bg-mist px-3 py-3">
-                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
-                  {t.k}
-                </div>
-                <div className="mt-1 font-display text-lg font-bold tracking-tight text-ink">
-                  {t.v}
-                </div>
-                <div className="font-mono text-[10px] font-bold text-success">{t.d}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">{t.k}</div>
+                <div className="mt-1 font-display text-xl font-bold tracking-tight text-ink">{t.v}</div>
               </div>
             ))}
           </div>
 
-          {/* Bar chart */}
+          {/* Compliance checklist */}
           <div className="mt-5 rounded-xl border border-line p-4">
             <div className="flex items-center justify-between">
               <span className="font-sans text-[12px] font-semibold text-ink">
-                Revenue by month
+                Shipment #IM-4821 · pre-departure
               </span>
-              <span className="font-mono text-[10px] text-ink-3">FY, indexed</span>
+              <span className="rounded-full bg-success/12 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] text-success">
+                Ready
+              </span>
             </div>
-            <svg viewBox="0 0 320 96" className="mt-3 h-24 w-full" role="img" aria-label="Illustrative revenue trend, rising">
-              {bars.map((h, i) => {
-                const x = 8 + i * 38;
-                const barH = (h / 100) * 76;
-                const y = 84 - barH;
-                return (
-                  <rect
-                    key={i}
-                    x={x}
-                    y={y}
-                    width="22"
-                    height={barH}
-                    rx="4"
-                    className="fill-accent"
-                    opacity={0.35 + (i / bars.length) * 0.65}
-                  />
-                );
-              })}
-            </svg>
+            <ul className="mt-3 space-y-2.5">
+              {checks.map((c) => (
+                <li key={c} className="flex items-center gap-3">
+                  <span
+                    aria-hidden
+                    className="grid h-5 w-5 flex-none place-items-center rounded-md bg-accent text-white"
+                  >
+                    <svg viewBox="0 0 20 20" fill="none" className="h-3 w-3">
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <span className="text-[14px] text-ink">{c}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -128,9 +120,9 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Right: illustrative dashboard */}
+          {/* Right: illustrative trade console */}
           <div className="lg:pl-6">
-            <DashboardMock />
+            <TradeConsoleMock />
           </div>
         </div>
       </div>
