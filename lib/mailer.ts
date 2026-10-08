@@ -121,35 +121,35 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
   const deckUrl = `${siteConfig.url}/kadmoon-overview.pdf`;
   const bookingsUrl = process.env.NEXT_PUBLIC_BOOKINGS_URL || `${siteConfig.url}/contact`;
   const first = lead.name.split(' ')[0] || 'there';
-  const subject = 'Your Microsoft data team, on subscription — Kadmoon';
+  const subject = 'Software for your trade operation — Kadmoon';
 
   const text = [
     `Hi ${first},`,
     ``,
-    `Thanks for reaching out to Kadmoon. Here is a short overview of how we work:`,
-    `a dedicated Power BI, Fabric, and Power Platform team on a monthly subscription,`,
-    `working your business hours, built in your own tenant.`,
+    `Thanks for reaching out to Kadmoon. We build software for foreign trade:`,
+    `trade ERP, customs and compliance, inventory, vessel security, and logistics,`,
+    `as ready platforms and custom development.`,
     ``,
-    `Presentation: ${deckUrl}`,
-    `Book a meeting: ${bookingsUrl}`,
+    `Overview: ${deckUrl}`,
+    `Book a call: ${bookingsUrl}`,
     ``,
-    `Pick a time that suits you and we will walk through the fastest path to`,
-    `measurable results for ${lead.company}.`,
+    `Pick a time that suits you and we will talk through how this fits ${lead.company}`,
+    `and what a quote would look like.`,
     ``,
     `Talk soon,`,
     `The Kadmoon team`,
     `${siteConfig.url}`,
   ].join('\n');
 
-  const html = `<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#15191E;max-width:560px;line-height:1.55">
+  const html = `<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#092642;max-width:560px;line-height:1.55">
     <p>Hi ${first},</p>
-    <p>Thanks for reaching out to Kadmoon. Here is a short overview of how we work: a dedicated Power BI, Fabric, and Power Platform team on a monthly subscription, working your business hours, built in your own tenant.</p>
+    <p>Thanks for reaching out to Kadmoon. We build software for foreign trade: trade ERP, customs and compliance, inventory, vessel security, and logistics, as ready platforms and custom development.</p>
     <p style="margin:26px 0">
-      <a href="${bookingsUrl}" style="background:#FF5900;color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block">Book a meeting &rarr;</a>
+      <a href="${bookingsUrl}" style="background:#145CE6;color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block">Book a call &rarr;</a>
       &nbsp;&nbsp;
-      <a href="${deckUrl}" style="color:#15191E;font-weight:600">View the presentation (PDF)</a>
+      <a href="${deckUrl}" style="color:#092642;font-weight:600">View the overview (PDF)</a>
     </p>
-    <p>Pick a time that suits you and we will walk through the fastest path to measurable results for ${lead.company}.</p>
+    <p>Pick a time that suits you and we will talk through how this fits ${lead.company} and what a quote would look like.</p>
     <p style="margin-top:24px">Talk soon,<br/>The Kadmoon team<br/><a href="${siteConfig.url}" style="color:#5B6470">${siteConfig.url.replace('https://', '')}</a></p>
   </div>`;
 
