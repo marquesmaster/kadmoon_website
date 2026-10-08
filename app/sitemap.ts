@@ -2,25 +2,18 @@ import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
 import { services, industryPages, caseStudies } from '@/lib/content';
-import { caseDashboards } from '@/lib/cases/dashboards';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
   // Relaunch date. Bumping this on a real content/structure change nudges
-  // Google to re-crawl after the pivot instead of trusting a stale cache.
-  const now = new Date('2026-09-22');
+  // Google to re-crawl after the rebrand instead of trusting a stale cache.
+  const now = new Date('2026-10-08');
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },
     { url: `${base}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/packages`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/tableau-to-power-bi-migration`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/qlik-to-power-bi-migration`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/cognos-to-power-bi-migration`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/synapse-to-fabric-migration`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/industries`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/cases`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/dashboards`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/process`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/about`, lastModified: now, changeFrequency: 'yearly', priority: 0.6 },
@@ -44,12 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
-    })),
-    ...caseDashboards.map((d) => ({
-      url: `${base}/dashboards#${d.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
     })),
   ];
 

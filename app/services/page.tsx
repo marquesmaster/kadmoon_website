@@ -26,7 +26,7 @@ const engage = [
   {
     kicker: 'Custom build',
     title: 'Built to your operation',
-    body: 'A system built from scratch around how you actually trade, with clear acceptance criteria per deliverable and delivery in short, reviewable cycles.',
+    body: 'A system built from scratch around how you trade, with clear acceptance criteria per deliverable and delivery in short, reviewable cycles.',
     cta: 'Scope a build',
     featured: false,
   },

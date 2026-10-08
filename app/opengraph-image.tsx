@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Kadmoon, Inc.: Microsoft data your whole company trusts. Power BI and Power Platform.';
+export const alt = 'Kadmoon: software for foreign trade. Trade ERP, customs, inventory, security, and logistics.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -14,7 +14,7 @@ export default function OpengraphImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: '#0C1D44',
+          background: '#07203A',
           padding: '72px',
           fontFamily: 'sans-serif',
         }}
@@ -23,7 +23,7 @@ export default function OpengraphImage() {
           <span style={{ fontSize: 40, fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em' }}>
             Kadmoon
           </span>
-          <span style={{ fontSize: 18, fontWeight: 600, color: '#EA5A1F', letterSpacing: '0.16em' }}>
+          <span style={{ fontSize: 18, fontWeight: 600, color: '#4C8DFF', letterSpacing: '0.16em' }}>
             INC.
           </span>
         </div>
@@ -32,13 +32,13 @@ export default function OpengraphImage() {
           <div
             style={{
               fontSize: 24,
-              color: '#EA5A1F',
+              color: '#4C8DFF',
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
               marginBottom: 20,
             }}
           >
-            Power BI &amp; Power Platform · Austin, TX
+            Software for foreign trade · United States
           </div>
           <div
             style={{
@@ -50,12 +50,12 @@ export default function OpengraphImage() {
               maxWidth: 980,
             }}
           >
-            Microsoft data your whole company trusts. Built in your tenant.
+            The software your import and export operation runs on.
           </div>
         </div>
 
         <div style={{ fontSize: 22, color: 'rgba(255,255,255,0.65)' }}>
-          Power BI · Microsoft Fabric · Power Platform · Azure · Migrations
+          Trade ERP · Customs · Inventory · Security · Logistics
         </div>
       </div>
     ),

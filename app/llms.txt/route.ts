@@ -16,16 +16,16 @@ export function GET() {
   lines.push(`> ${siteConfig.description}`);
   lines.push('');
   lines.push(
-    `Kadmoon is a US Power BI and Microsoft Power Platform consultancy based in ${siteConfig.city}, ${siteConfig.regionCode}. We turn scattered data into decisions on the Microsoft stack: Power BI, Microsoft Fabric, Azure Synapse and Data Factory, Power Platform (Power Apps, Power Automate, Power Pages, Copilot Studio), Dataverse, Azure Machine Learning, and Microsoft Purview. Signature work: tenant-to-tenant migrations and legacy BI migrations (Tableau, Qlik, Cognos) to Power BI and Fabric. Senior in-house team, one definition per KPI, governed by default, and everything built in your own tenant.`,
+    `Kadmoon is a US software company focused entirely on foreign trade, based in ${siteConfig.city}, ${siteConfig.regionCode}. We build the software that cross-border operations run on: trade ERP, CRM, inventory and warehouse management, customs and compliance (HTS classification, denied-party screening, duty and landed cost, ACE-ready filing), computer vision for vessel and port security, and supply-chain and logistics software. We offer ready platforms and custom development, with integrations to carriers, brokers, marketplaces, and ACE. Senior US-based team; you own the software and the data.`,
   );
   lines.push('');
   lines.push('## Key pages');
-  lines.push(`- [Home](${siteConfig.url}/): positioning, what we do, four-phase process, how to choose a data partner`);
+  lines.push(`- [Home](${siteConfig.url}/): positioning, what we build, four-phase process, how to choose a trade software partner`);
   lines.push(
-    `- [Dashboards](${siteConfig.url}/dashboards): ten interactive Power BI dashboard demos with three-level drill-down, granular tables, and cross-cut matrices (illustrative data, real structure)`,
+    `- [Solutions](${siteConfig.url}/services): trade ERP, customs and compliance, inventory and WMS, vessel and port security vision, supply chain and logistics, trade CRM, custom development, and integrations`,
   );
   lines.push(
-    `- [Cases](${siteConfig.url}/cases): BI and migration case studies (QlikView to Power BI, Fabric data platform, executive OEE BI, predictive analytics, S&OP, logistics OTIF, management P&L, and more), each with its dashboard`,
+    `- [Work](${siteConfig.url}/cases): illustrative case studies of trade software we build (customs filing platform, trade ERP with landed cost, vessel security vision, shipment visibility)`,
   );
   lines.push('');
   lines.push('## Services');

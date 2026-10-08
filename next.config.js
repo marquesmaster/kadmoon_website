@@ -188,66 +188,77 @@ const nextConfig = {
         destination: 'https://kadmoon.com/:path*',
         permanent: true,
       },
-      // Old /en/* URLs (previous site) no longer exist; send to the closest
-      // new page so indexed links keep their value instead of 404ing.
+      // Old /en/* URLs (previous site) no longer exist.
       { source: '/en', destination: '/', permanent: true },
-      { source: '/en/contato', destination: '/#contact', permanent: true },
-      { source: '/en/contact', destination: '/#contact', permanent: true },
       { source: '/en/blog/:slug*', destination: '/blog', permanent: true },
       { source: '/en/:path*', destination: '/', permanent: true },
 
-      // Retired custom-software pages (pivot to Microsoft data platform).
+      // Retired Power BI / Microsoft service pages (rebrand to foreign-trade
+      // software). Everything consolidates to the solutions listing.
+      { source: '/services/power-bi', destination: '/services', permanent: true },
+      { source: '/services/microsoft-fabric', destination: '/services', permanent: true },
+      { source: '/services/power-platform', destination: '/services', permanent: true },
+      { source: '/services/power-platform-coe', destination: '/services', permanent: true },
+      { source: '/services/data-engineering', destination: '/services/trade-integrations', permanent: true },
+      { source: '/services/analytics-and-ai', destination: '/services', permanent: true },
+      { source: '/services/data-governance', destination: '/services/customs-compliance', permanent: true },
+      { source: '/services/tenant-to-tenant-migration', destination: '/services', permanent: true },
+      { source: '/services/bi-sustainment', destination: '/services', permanent: true },
+      { source: '/services/discovery-assessment', destination: '/services', permanent: true },
+
+      // Retired Power BI migration landing pages.
+      { source: '/tableau-to-power-bi-migration', destination: '/services', permanent: true },
+      { source: '/qlik-to-power-bi-migration', destination: '/services', permanent: true },
+      { source: '/cognos-to-power-bi-migration', destination: '/services', permanent: true },
+      { source: '/synapse-to-fabric-migration', destination: '/services', permanent: true },
+
+      // Retired subscription and dashboards pages.
+      { source: '/packages', destination: '/services', permanent: true },
+      { source: '/dashboards', destination: '/cases', permanent: true },
+
+      // Old retired Power BI industry slugs -> new trade industries.
+      { source: '/industries/retail', destination: '/industries/manufacturers-distributors', permanent: true },
+      { source: '/industries/financial-services', destination: '/industries', permanent: true },
+      { source: '/industries/manufacturing', destination: '/industries/manufacturers-distributors', permanent: true },
+      { source: '/industries/logistics', destination: '/industries/freight-forwarders', permanent: true },
+      { source: '/industries/healthcare', destination: '/industries', permanent: true },
+      { source: '/industries/education', destination: '/industries', permanent: true },
+      { source: '/industries/supply-chain', destination: '/industries/third-party-logistics', permanent: true },
+
+      // Older retired pages from previous iterations.
       { source: '/software-house', destination: '/services', permanent: true },
       { source: '/software-development-company', destination: '/services', permanent: true },
       { source: '/custom-software-development-company', destination: '/services', permanent: true },
       { source: '/enterprise-software-development', destination: '/services', permanent: true },
       { source: '/saas-development-company', destination: '/services', permanent: true },
-      { source: '/mobile-app-development-company', destination: '/services/power-platform', permanent: true },
+      { source: '/mobile-app-development-company', destination: '/services', permanent: true },
       { source: '/staff-augmentation', destination: '/services', permanent: true },
       { source: '/dedicated-development-team', destination: '/services', permanent: true },
-      { source: '/hire-ai-engineers', destination: '/services/analytics-and-ai', permanent: true },
-      { source: '/solutions', destination: '/industries', permanent: true },
-      { source: '/solutions/:slug*', destination: '/industries', permanent: true },
+      { source: '/hire-ai-engineers', destination: '/services', permanent: true },
+      { source: '/solutions', destination: '/services', permanent: true },
+      { source: '/solutions/:slug*', destination: '/services', permanent: true },
 
-      // Old service/industry slugs -> closest Microsoft data platform page.
-      { source: '/services/data-and-ai', destination: '/services/analytics-and-ai', permanent: true },
-      { source: '/services/enterprise-systems', destination: '/services', permanent: true },
-      { source: '/services/saas-platforms', destination: '/services', permanent: true },
-      { source: '/services/mobile-apps', destination: '/services/power-platform', permanent: true },
-      { source: '/services/integrations-and-apis', destination: '/services/data-engineering', permanent: true },
-      { source: '/services/legacy-modernization', destination: '/services/tenant-to-tenant-migration', permanent: true },
-      { source: '/industries/trade-and-supply-chain', destination: '/industries/supply-chain', permanent: true },
-      { source: '/industries/government-and-enterprise', destination: '/industries', permanent: true },
+      // Retired programmatic solution x city pages.
+      { source: '/custom-software-development', destination: '/services', permanent: true },
+      { source: '/custom-software-development/:city*', destination: '/services', permanent: true },
+      { source: '/power-bi', destination: '/services', permanent: true },
+      { source: '/power-bi/:city*', destination: '/services', permanent: true },
+      { source: '/microsoft-fabric', destination: '/services', permanent: true },
+      { source: '/microsoft-fabric/:city*', destination: '/services', permanent: true },
+      { source: '/power-platform', destination: '/services', permanent: true },
+      { source: '/power-platform/:city*', destination: '/services', permanent: true },
+      { source: '/power-apps-development', destination: '/services', permanent: true },
+      { source: '/power-apps-development/:city*', destination: '/services', permanent: true },
+      { source: '/azure-data-engineering', destination: '/services', permanent: true },
+      { source: '/azure-data-engineering/:city*', destination: '/services', permanent: true },
+      { source: '/copilot-consulting', destination: '/services', permanent: true },
+      { source: '/copilot-consulting/:city*', destination: '/services', permanent: true },
+      { source: '/data-governance', destination: '/services/customs-compliance', permanent: true },
+      { source: '/data-governance/:city*', destination: '/services/customs-compliance', permanent: true },
+      { source: '/power-bi-migration', destination: '/services', permanent: true },
+      { source: '/power-bi-migration/:city*', destination: '/services', permanent: true },
 
-      // Retired the programmatic solution x city local-SEO system (lean rebuild:
-      // avoid scaled/thin content). Each solution and all its city/state pages
-      // consolidate to the matching evergreen page.
-      { source: '/custom-software-development', destination: '/services/power-bi', permanent: true },
-      { source: '/custom-software-development/:city*', destination: '/services/power-bi', permanent: true },
-      { source: '/power-bi', destination: '/services/power-bi', permanent: true },
-      { source: '/power-bi/:city*', destination: '/services/power-bi', permanent: true },
-      { source: '/microsoft-fabric', destination: '/services/microsoft-fabric', permanent: true },
-      { source: '/microsoft-fabric/:city*', destination: '/services/microsoft-fabric', permanent: true },
-      { source: '/power-platform', destination: '/services/power-platform', permanent: true },
-      { source: '/power-platform/:city*', destination: '/services/power-platform', permanent: true },
-      { source: '/power-apps-development', destination: '/services/power-platform', permanent: true },
-      { source: '/power-apps-development/:city*', destination: '/services/power-platform', permanent: true },
-      { source: '/azure-data-engineering', destination: '/services/data-engineering', permanent: true },
-      { source: '/azure-data-engineering/:city*', destination: '/services/data-engineering', permanent: true },
-      { source: '/copilot-consulting', destination: '/services/analytics-and-ai', permanent: true },
-      { source: '/copilot-consulting/:city*', destination: '/services/analytics-and-ai', permanent: true },
-      { source: '/data-governance', destination: '/services/data-governance', permanent: true },
-      { source: '/data-governance/:city*', destination: '/services/data-governance', permanent: true },
-      { source: '/power-bi-migration', destination: '/tableau-to-power-bi-migration', permanent: true },
-      { source: '/power-bi-migration/:city*', destination: '/tableau-to-power-bi-migration', permanent: true },
-      // Off-brand blog articles retired in the Power BI content pivot, sent to
-      // the closest Microsoft data platform page.
-      { source: '/blog/saas-metrics-and-analytics', destination: '/services/power-bi', permanent: true },
-      { source: '/blog/writing-acceptance-criteria', destination: '/process', permanent: true },
-      { source: '/blog/aws-vs-azure-vs-gcp', destination: '/services/data-engineering', permanent: true },
-      { source: '/blog/ai-in-enterprise-software', destination: '/services/analytics-and-ai', permanent: true },
-      { source: '/blog/custom-ai-vs-off-the-shelf-ai', destination: '/services/analytics-and-ai', permanent: true },
-      // Retired custom-software blog articles (pivot to Microsoft data platform).
+      // Retired blog articles from previous iterations.
       ...retiredBlogSlugs.map((slug) => ({
         source: `/blog/${slug}`,
         destination: '/blog',

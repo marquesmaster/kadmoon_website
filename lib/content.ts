@@ -24,11 +24,11 @@ export const nav = {
 export const hero = {
   eyebrow: 'Software for foreign trade · United States',
   // The accent phrase is rendered in the accent color inside the H1.
-  headlineBefore: 'Clear customs, move cargo, ',
-  headlineAccent: 'run it all',
-  headlineAfter: ' in one platform.',
+  headlineBefore: 'The software your ',
+  headlineAccent: 'import and export',
+  headlineAfter: ' operation runs on.',
   subhead:
-    'Kadmoon builds the software US importers, exporters, brokers, and forwarders run on: trade ERP, customs and compliance, inventory, vessel security, and logistics. Ready platforms and custom builds, shaped to how you move goods.',
+    'Kadmoon builds trade ERP, customs and compliance, inventory, vessel security, and logistics software for US importers, exporters, brokers, and forwarders. Ready platforms and custom builds.',
   flagship: 'Trade ERP · Customs & compliance · Inventory & WMS · Vessel security vision · Supply chain & logistics',
   ctas: [
     { label: 'Request a quote', href: '/contact', primary: true },
@@ -43,7 +43,7 @@ export const hero = {
     'Your data in your systems',
     'US-based team and full handover',
   ],
-  panelFooter: 'Built for how US trade actually runs. Yours to own, not to rent.',
+  panelFooter: 'Built for US trade operations. You own the software and the data.',
 };
 
 // Positioning signals rather than fabricated metrics.
@@ -57,7 +57,7 @@ export const stats = [
 export const capabilities = {
   eyebrow: 'What we build',
   title: 'Every system a cross-border operation runs on.',
-  sub: 'One partner for the whole trade stack: the ERP that runs operations, the compliance that keeps you clear, the inventory and logistics that move goods, and the security that protects them, built as platforms and tailored to you.',
+  sub: 'We build across the whole trade operation: ERP, customs and compliance, inventory, logistics, and security. Start on a ready platform or build custom.',
   items: [
     {
       title: 'Trade ERP',
@@ -81,15 +81,15 @@ export const capabilities = {
     },
     {
       title: 'Custom development',
-      body: 'When an off-the-shelf tool does not fit how you trade, we build it: integrations, portals, and the workflows your operation actually depends on.',
+      body: 'When an off-the-shelf tool does not fit how you trade, we build it: integrations, portals, and the workflows your operation depends on.',
     },
   ],
 };
 
 export const why = {
   eyebrow: 'Why Kadmoon',
-  title: 'A software partner that speaks trade.',
-  sub: 'We do one thing: software for companies that move goods across borders. That focus is why the systems fit your operation instead of forcing your operation to fit the software.',
+  title: 'A software team that knows trade.',
+  sub: 'We build software only for companies that move goods across borders. That focus is why the systems match how your operation works.',
   items: [
     {
       title: 'Foreign trade is all we do',
@@ -101,7 +101,7 @@ export const why = {
     },
     {
       title: 'Platforms plus custom',
-      body: 'Start on a ready Kadmoon platform and tailor it, or have us build from scratch. Either way you get software shaped to how your operation really works.',
+      body: 'Start on a ready Kadmoon platform and tailor it, or have us build from scratch. Either way you get software built to match how your operation works.',
     },
     {
       title: 'Compliance by default',
@@ -154,7 +154,7 @@ export const howToChoose = {
     {
       num: '05',
       title: 'Integrations',
-      body: 'Ask how it connects to carriers, brokers, marketplaces, and ACE. Software that cannot exchange data turns your team into a data-entry department.',
+      body: 'Ask how it connects to carriers, brokers, marketplaces, and ACE. Software that cannot exchange data turns your team into a manual data entry.',
       answer:
         'We build the EDI and API links your operation needs, so ERP, compliance, inventory, and logistics stay in sync with each other and your partners.',
     },
@@ -176,7 +176,7 @@ export const process = {
       num: '01',
       title: 'Discovery',
       meta: 'Week 1-2',
-      body: 'We map how goods, documents, and money actually move through your operation: the trade lanes, the compliance checkpoints, the systems, and where the friction is. Output: a scope and an architecture plan.',
+      body: 'We map how goods, documents, and money move through your operation: the trade lanes, the compliance checkpoints, the systems, and where the friction is. Output: a scope and an architecture plan.',
     },
     {
       num: '02',
@@ -227,7 +227,7 @@ export const work = {
 export const migrationHighlight = {
   eyebrow: 'Our specialty',
   title: 'Customs and compliance, built into the software, not bolted on',
-  body: 'The fastest way to lose money in trade is a shipment held at the border or a screening you cannot prove you ran. We build classification, denied-party screening, duty and landed-cost, and filing into the core of the system, so every order is clear and auditable before it ships.',
+  body: 'A shipment held at the border, or a screening you cannot prove you ran, costs real money. We build classification, denied-party screening, duty and landed-cost, and filing into the core of the system, so every order is clear and documented before it ships.',
   points: [
     'HTS classification and duty calculation in the order flow',
     'Denied-party and sanctions screening on every counterparty',
@@ -364,7 +364,7 @@ export const caseStudies: CaseStudy[] = [
 export const industries = {
   eyebrow: 'Who we serve',
   title: 'Built for the companies that move goods.',
-  sub: 'Every link in the trade chain runs on different systems and rules. We build software tuned to how yours actually operates.',
+  sub: 'Every link in the trade chain runs on different systems and rules. We build software tuned to how yours operates.',
   items: [
     {
       name: 'Importers & exporters',
@@ -428,7 +428,7 @@ export const faq = {
     },
     {
       q: 'How does a project start?',
-      a: 'With a short discovery, usually one to two weeks. We map how goods, documents, and money actually move through your operation: the trade lanes, the compliance checkpoints, the systems you use, and where the friction is. You leave with a scope and an architecture plan you can act on, with a clear path whether you start on a platform or build custom.',
+      a: 'With a short discovery, usually one to two weeks. We map how goods, documents, and money move through your operation: the trade lanes, the compliance checkpoints, the systems you use, and where the friction is. You leave with a scope and an architecture plan you can act on, with a clear path whether you start on a platform or build custom.',
     },
     {
       q: 'Do we own the software and the data?',
@@ -538,7 +538,7 @@ export const engagement = {
     {
       name: 'Custom build',
       best: 'Best when you are genuinely different',
-      body: 'A system built from scratch around how your operation actually works, with clear acceptance criteria per deliverable and delivery in short, reviewable cycles. You know what ships and when.',
+      body: 'A system built from scratch around how your operation works, with clear acceptance criteria per deliverable and delivery in short, reviewable cycles. You know what ships and when.',
       points: ['Acceptance criteria per deliverable', 'Short delivery cycles', 'Built to your operation'],
     },
     {
@@ -553,7 +553,7 @@ export const engagement = {
 export const comparison = {
   eyebrow: 'Built for trade vs the alternatives',
   title: 'Why trade-native software wins.',
-  sub: 'A generic ERP or a stack of point tools can get you running. They also leave compliance, landed cost, and the border to spreadsheets and hope.',
+  sub: 'A generic ERP or a set of point tools can get you running, but they leave compliance, landed cost, and customs to spreadsheets and manual work.',
   columns: ['Kadmoon (trade-native)', 'Generic ERP', 'Spreadsheets & point tools'],
   rows: [
     { label: 'Customs & compliance built in', values: ['yes', 'no', 'no'] },
@@ -589,7 +589,7 @@ export const services: ServicePage[] = [
     title: 'Trade ERP',
     tagline: 'The operating system for an import and export business.',
     intro:
-      'Generic ERPs do not understand trade. They cannot model freight, duty, and fees, so landed cost becomes a spreadsheet and margin is a guess. We build a trade ERP around how you actually source, ship, and sell across borders, with purchase orders, shipments, documents, and true landed cost in one place.',
+      'Generic ERPs do not understand trade. They cannot model freight, duty, and fees, so landed cost becomes a spreadsheet and margin is a guess. We build a trade ERP around how you source, ship, and sell across borders, with purchase orders, shipments, documents, and true landed cost in one place.',
     includes: [
       'Purchase orders, shipments, and document management built for trade',
       'Landed-cost allocation of freight, duty, and fees to the unit',
@@ -694,7 +694,7 @@ export const services: ServicePage[] = [
     title: 'Trade CRM',
     tagline: 'Manage suppliers, customers, and deals across borders.',
     intro:
-      'Cross-border relationships are more than a contact list: quotes, terms, incoterms, credit, and compliance all ride on them. We build a CRM around trade, so your team manages suppliers and customers with the context that actually matters in international commerce.',
+      'Cross-border relationships are more than a contact list: quotes, terms, incoterms, credit, and compliance all ride on them. We build a CRM around trade, so your team manages suppliers and customers with the context that matters in international commerce.',
     includes: [
       'Supplier and customer management with trade context',
       'Quotes and terms with incoterms and currency',
@@ -725,7 +725,7 @@ export const services: ServicePage[] = [
       'A senior, US-based team from scope to support',
     ],
     outcomes: [
-      'Software shaped to how you actually work',
+      'Software built to match how you work',
       'The integrations and workflows no product covers',
       'A partner who already speaks trade',
     ],
@@ -736,7 +736,7 @@ export const services: ServicePage[] = [
     title: 'Trade integrations',
     tagline: 'Connect your systems, your partners, and the government.',
     intro:
-      'Trade runs on data moving between parties. When it does not flow, your team becomes a data-entry department and errors multiply. We build the EDI and API connections that keep your ERP, compliance, inventory, and logistics in sync with each other and the outside world.',
+      'Trade runs on data moving between parties. When it does not flow, your team becomes a manual data entry and errors multiply. We build the EDI and API connections that keep your ERP, compliance, inventory, and logistics in sync with each other and the outside world.',
     includes: [
       'EDI with carriers, brokers, and partners',
       'ACE and government-system integration',
@@ -854,7 +854,7 @@ export const industryPages: IndustryPage[] = [
     slug: 'shipping-carriers',
     name: 'Ocean & Shipping Carriers',
     intro:
-      'The companies that carry the cargo need operations and visibility software that integrates with terminals, partners, and customers. We build it around how carriers actually run.',
+      'The companies that carry the cargo need operations and visibility software that integrates with terminals, partners, and customers. We build it around how carriers run.',
     systems: [
       'Operations and booking management',
       'Shipment and cargo visibility',

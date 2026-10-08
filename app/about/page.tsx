@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const principles = [
-  { n: '01', t: 'Foreign trade is all we do', d: 'Deep in one domain instead of shallow across ten. It shows in software that fits how you actually trade.' },
+  { n: '01', t: 'Foreign trade is all we do', d: 'Deep in one domain instead of shallow across ten. It shows in software that fits how you trade.' },
   { n: '02', t: 'Senior, US-based teams', d: 'The people who scope your system build and support it. No rotating subcontractors.' },
   { n: '03', t: 'Compliance by default', d: 'Screening, classification, and audit trails are part of the build, not bolted on after the fact.' },
   { n: '04', t: 'You own it', d: 'Your software, your data, documented and handed over. No black boxes, no lock-in.' },
@@ -174,8 +174,7 @@ export default function AboutPage() {
               Let us talk about your trade operation.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
-              A 30-minute discovery call is the fastest way to see whether we are a fit, and where
-              your quickest wins are.
+              A short call is a simple way to see whether we are a fit and where to start.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
               <Button href={siteConfig.bookingsUrl} size="lg">

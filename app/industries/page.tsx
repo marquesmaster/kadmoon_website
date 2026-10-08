@@ -32,7 +32,7 @@ export default function IndustriesPage() {
         {/* Hero */}
         <PageHero eyebrow="Industries" title="Built for the companies that move goods.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We build software tuned to how each link in the trade chain actually operates, from
+            We build software tuned to how each link in the trade chain operates, from
             importers and brokers to forwarders, 3PLs, and ports.
           </p>
         </PageHero>
