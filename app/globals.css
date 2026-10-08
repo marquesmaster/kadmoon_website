@@ -7,20 +7,21 @@
    ========================================================= */
 
 :root {
-  /* Kadmoon trade-software identity: deep maritime navy, electric-blue accent,
-     cool neutrals. Signals trust, technology, and movement across borders. */
-  --paper: 247 249 251; /* #F7F9FB cool canvas */
-  --mist: 237 241 246; /* #EDF1F6 soft section panel */
-  --ice: 232 239 248; /* #E8EFF8 cool color-block */
-  --ink: 11 26 46; /* #0B1A2E deep maritime navy (text + dark) */
-  --ink-2: 74 90 110; /* #4A5A6E secondary text */
-  --ink-3: 133 149 166; /* #8595A6 muted / captions */
-  --navy: 11 26 46; /* #0B1A2E dark sections */
-  --accent: 23 99 247; /* #1763F7 electric blue (sole CTA color) */
-  --line: 222 229 238; /* #DEE5EE borders / hairlines */
+  /* Kadmoon trade identity: deep ocean blue + white, mercantile and maritime.
+     White-dominant surfaces, deep-ocean navy for text and dark blocks, a strong
+     ocean-blue accent for calls to action. */
+  --paper: 250 251 253; /* #FAFBFD near-white canvas */
+  --mist: 236 242 249; /* #ECF2F9 soft blue panel */
+  --ice: 224 235 247; /* #E0EBF7 ocean-tint color-block */
+  --ink: 9 38 66; /* #092642 deep ocean navy-blue (text + dark) */
+  --ink-2: 64 85 110; /* #40556E secondary text */
+  --ink-3: 122 140 163; /* #7A8CA3 muted / captions */
+  --navy: 7 32 58; /* #07203A deepest ocean (dark sections) */
+  --accent: 20 92 230; /* #145CE6 ocean blue (sole CTA color) */
+  --line: 219 227 238; /* #DBE3EE borders / hairlines */
   --success: 22 163 74; /* #16A34A status */
 
-  --grid-line: rgba(11, 26, 46, 0.045);
+  --grid-line: rgba(9, 38, 66, 0.05);
 }
 
 html {
@@ -118,7 +119,7 @@ button {
 }
 .hover-glow:hover {
   border-color: rgb(var(--accent) / 0.4);
-  box-shadow: 0 2px 4px rgb(11 26 46 / 0.06), 0 24px 48px -22px rgb(23 99 247 / 0.28);
+  box-shadow: 0 2px 4px rgb(9 38 66 / 0.07), 0 24px 48px -22px rgb(20 92 230 / 0.3);
 }
 
 /* Hero ambient blobs (drift slowly) */

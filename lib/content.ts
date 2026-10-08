@@ -8,8 +8,6 @@
  * engagement is scoped to the client. Do NOT invent client names or metrics.
  */
 
-import { siteConfig } from './site';
-
 export const nav = {
   wordmark: 'Kadmoon',
   suffix: 'INC.',
@@ -20,21 +18,21 @@ export const nav = {
     { label: 'Blog', href: '/blog' },
     { label: 'About', href: '/about' },
   ],
-  cta: { label: 'Book a call', href: siteConfig.bookingsUrl },
+  cta: { label: 'Request a quote', href: '/contact' },
 };
 
 export const hero = {
   eyebrow: 'Software for foreign trade · United States',
   // The accent phrase is rendered in the accent color inside the H1.
-  headlineBefore: 'Software built for ',
-  headlineAccent: 'global trade',
-  headlineAfter: '.',
+  headlineBefore: 'Clear customs, move cargo, ',
+  headlineAccent: 'run it all',
+  headlineAfter: ' in one platform.',
   subhead:
-    'Kadmoon builds the software that moves goods across borders: trade ERP, CRM, inventory, customs and compliance, vessel and port security, and logistics. Ready platforms and custom development, for US importers, exporters, and the companies that serve them.',
+    'Kadmoon builds the software US importers, exporters, brokers, and forwarders run on: trade ERP, customs and compliance, inventory, vessel security, and logistics. Ready platforms and custom builds, shaped to how you move goods.',
   flagship: 'Trade ERP · Customs & compliance · Inventory & WMS · Vessel security vision · Supply chain & logistics',
   ctas: [
-    { label: 'Book a call', href: siteConfig.bookingsUrl, primary: true },
-    { label: 'Explore solutions', href: '/services', primary: false },
+    { label: 'Request a quote', href: '/contact', primary: true },
+    { label: 'See the platform', href: '/services', primary: false },
   ],
   // What ships with a Kadmoon engagement.
   panelLabel: 'What you get',
@@ -444,9 +442,9 @@ export const faq = {
 };
 
 export const contact = {
-  eyebrow: 'Start a project',
-  title: 'Let us build the software your trade runs on.',
-  sub: 'Tell us how your operation works and where the friction is. Within one business day you get a response with a path forward: scope, approach, and next steps.',
+  eyebrow: 'Request a quote',
+  title: 'Tell us what you move. Get a quote.',
+  sub: 'Share how your operation works and where the friction is. Within one business day you get a response with a clear path forward and a quote, no obligation.',
   needOptions: [
     'Trade ERP',
     'Customs & compliance',
