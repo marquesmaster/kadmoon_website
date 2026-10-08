@@ -32,13 +32,12 @@ export default function BlogIndex() {
       <main>
         <PageHero
           eyebrow="Insights"
-          title="Notes on data worth trusting."
+          title="Notes on the business of trade."
           breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />}
         >
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-            Practical writing on Power BI, Microsoft Fabric, semantic models, governance, and BI
-            migrations, and the questions a serious data leader should ask. {posts.length} articles
-            and counting.
+            Practical writing on customs and compliance, landed cost, inventory, logistics, and the
+            software that runs a cross-border operation. {posts.length} articles and counting.
           </p>
         </PageHero>
 

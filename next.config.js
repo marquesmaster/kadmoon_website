@@ -172,6 +172,24 @@ const retiredBlogSlugs = [
   'writing-acceptance-criteria',
 ];
 
+const retiredPowerBiBlogSlugs = [
+  'ai-document-processing', 'anomaly-detection-for-business', 'azure-synapse-vs-microsoft-fabric',
+  'building-a-data-warehouse', 'business-intelligence-dashboards', 'cognos-to-power-bi-what-changes',
+  'data-pipeline-architecture', 'dax-patterns-for-business', 'demand-forecasting-software',
+  'direct-lake-explained', 'how-much-does-a-power-bi-project-cost', 'how-to-choose-a-power-bi-consultant',
+  'import-vs-directquery-vs-direct-lake', 'in-house-bi-analyst-vs-managed-power-bi',
+  'llm-integration-for-business', 'managed-power-bi-services', 'medallion-architecture-fabric',
+  'microsoft-fabric-capacity-planning', 'power-bi-adoption-playbook', 'power-bi-consulting-rates',
+  'power-bi-deployment-pipelines-alm', 'power-bi-governance-guide', 'power-bi-governance-overhaul-signs',
+  'power-bi-incremental-refresh', 'power-bi-kpis-for-financial-services', 'power-bi-kpis-for-healthcare',
+  'power-bi-kpis-for-logistics', 'power-bi-kpis-for-manufacturing', 'power-bi-kpis-for-retail',
+  'power-bi-premium-to-fabric', 'power-bi-premium-vs-fabric-cost', 'power-bi-semantic-model-best-practices',
+  'power-bi-vs-excel-for-reporting', 'power-platform-center-of-excellence-guide',
+  'predictive-analytics-for-supply-chain', 'qlik-to-power-bi-what-carries-over', 'rag-for-business-applications',
+  'row-level-security-power-bi', 'star-schema-for-power-bi', 'tableau-to-power-bi-migration-cost',
+  'tableau-vs-power-bi', 'tenant-to-tenant-migration-guide', 'what-is-a-semantic-model', 'what-is-microsoft-fabric',
+];
+
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -260,6 +278,12 @@ const nextConfig = {
 
       // Retired blog articles from previous iterations.
       ...retiredBlogSlugs.map((slug) => ({
+        source: `/blog/${slug}`,
+        destination: '/blog',
+        permanent: true,
+      })),
+      // Retired Power BI blog articles (rebrand to foreign trade).
+      ...retiredPowerBiBlogSlugs.map((slug) => ({
         source: `/blog/${slug}`,
         destination: '/blog',
         permanent: true,
