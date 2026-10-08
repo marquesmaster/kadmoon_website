@@ -46,12 +46,12 @@ export const hero = {
   panelFooter: 'Built for US trade operations. You own the software and the data.',
 };
 
-// Positioning signals rather than fabricated metrics.
+// Positioning signals and the one metric we can state plainly: client volume.
 export const stats = [
   { value: '100%', label: 'foreign-trade focus' },
+  { value: '35+', label: 'clients served' },
   { value: 'US', label: 'based and operated' },
   { value: 'End-to-end', label: 'quote to delivery' },
-  { value: 'Custom', label: 'built to your flow' },
 ];
 
 export const capabilities = {
@@ -566,7 +566,7 @@ export const comparison = {
 };
 
 export const credibility = {
-  text: 'Kadmoon is a US software company focused entirely on foreign trade, run by a senior, US-based team. We build trade ERP, customs and compliance, inventory, security vision, and logistics software as ready platforms and custom development. The systems shown on the site are illustrative of what we build; detailed client work is available under NDA.',
+  text: 'Kadmoon is a US software company focused entirely on foreign trade, run by a senior, US-based team, with more than 35 clients served. We build trade ERP, customs and compliance, inventory, security vision, and logistics software as ready platforms and custom development. The systems shown on the site are illustrative of what we build; detailed client work is available under NDA.',
 };
 
 // ---------------------------------------------------------------------------

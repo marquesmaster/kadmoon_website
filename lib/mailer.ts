@@ -107,19 +107,18 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
 
 /**
  * Auto-reply to the prospect who submitted the form: sends the sales
- * presentation and the meeting-scheduling link. Best-effort; returns false if
- * no provider is configured or no prospect email is present. Never sends the
+ * presentation and a link back to the contact page. Best-effort; returns false
+ * if no provider is configured or no prospect email is present. Never sends the
  * lead's data anywhere but back to their own address.
  *
  * Uses Resend (RESEND_API_KEY) if set, otherwise SMTP. Web3Forms is skipped
  * because its free tier only emails the account owner, not arbitrary prospects.
- * Config: NEXT_PUBLIC_BOOKINGS_URL (Microsoft Bookings public page).
  */
 export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
   if (!lead.email) return false;
 
   const deckUrl = `${siteConfig.url}/kadmoon-overview.pdf`;
-  const bookingsUrl = process.env.NEXT_PUBLIC_BOOKINGS_URL || `${siteConfig.url}/contact`;
+  const contactUrl = `${siteConfig.url}/contact`;
   const first = lead.name.split(' ')[0] || 'there';
   const subject = 'Software for your trade operation — Kadmoon';
 
@@ -131,10 +130,10 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
     `as ready platforms and custom development.`,
     ``,
     `Overview: ${deckUrl}`,
-    `Book a call: ${bookingsUrl}`,
+    `Request a quote: ${contactUrl}`,
     ``,
-    `Pick a time that suits you and we will talk through how this fits ${lead.company}`,
-    `and what a quote would look like.`,
+    `Tell us how ${lead.company} trades and we will come back with a clear next`,
+    `step and a quote.`,
     ``,
     `Talk soon,`,
     `The Kadmoon team`,
@@ -145,11 +144,11 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
     <p>Hi ${first},</p>
     <p>Thanks for reaching out to Kadmoon. We build software for foreign trade: trade ERP, customs and compliance, inventory, vessel security, and logistics, as ready platforms and custom development.</p>
     <p style="margin:26px 0">
-      <a href="${bookingsUrl}" style="background:#145CE6;color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block">Book a call &rarr;</a>
+      <a href="${contactUrl}" style="background:#145CE6;color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block">Request a quote &rarr;</a>
       &nbsp;&nbsp;
       <a href="${deckUrl}" style="color:#092642;font-weight:600">View the overview (PDF)</a>
     </p>
-    <p>Pick a time that suits you and we will talk through how this fits ${lead.company} and what a quote would look like.</p>
+    <p>Tell us how ${lead.company} trades and we will come back with a clear next step and a quote.</p>
     <p style="margin-top:24px">Talk soon,<br/>The Kadmoon team<br/><a href="${siteConfig.url}" style="color:#5B6470">${siteConfig.url.replace('https://', '')}</a></p>
   </div>`;
 

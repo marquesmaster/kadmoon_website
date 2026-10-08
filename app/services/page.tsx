@@ -20,7 +20,7 @@ const engage = [
     kicker: 'Platform + tailoring',
     title: 'Fastest start',
     body: 'Start on a ready Kadmoon platform, trade ERP, compliance, inventory, or logistics, and we tailor it to your flow and integrate it with your partners.',
-    cta: 'Book a call',
+    cta: 'Request a quote',
     featured: true,
   },
   {
@@ -173,18 +173,18 @@ export default function ServicesPage() {
               Not sure where to start?
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
-              Book a meeting. We will point you to the right first step, usually a fixed-scope
-              assessment.
+              Tell us how you trade. We will point you to the right first step, usually a
+              fixed-scope assessment, and send a quote.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
-              <Button href={siteConfig.bookingsUrl} size="lg">
-                Book a meeting <span aria-hidden>→</span>
+              <Button href="/contact" size="lg">
+                Request a quote <span aria-hidden>→</span>
               </Button>
               <a
-                href="/dashboards"
+                href="/cases"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-4 text-[15px] font-semibold text-paper transition-colors hover:border-white/50 hover:bg-white/5"
               >
-                See dashboards
+                See our work
               </a>
             </div>
           </div>

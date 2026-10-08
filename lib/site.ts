@@ -26,10 +26,6 @@ export const siteConfig = {
   ],
   // The contact form posts to the site's own secure API route.
   contactApi: '/api/contact',
-  // Microsoft Bookings public scheduling page. Set NEXT_PUBLIC_BOOKINGS_URL on
-  // the server to the real Bookings link; until then, CTAs fall back to the
-  // contact form (which auto-replies with the presentation and this link).
-  bookingsUrl: process.env.NEXT_PUBLIC_BOOKINGS_URL || '/contact',
   // Sales presentation served from /public, emailed to prospects on submit.
   presentationUrl: '/kadmoon-overview.pdf',
   // Google Tag Manager container id. Public value; overridable via env.

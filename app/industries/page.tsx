@@ -116,12 +116,12 @@ export default function IndustriesPage() {
               Want software built for your corner of trade?
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
-              Book a call and we will share the approach that fits your operation, your systems, and
-              your partners.
+              Request a quote and we will share the approach that fits your operation, your systems,
+              and your partners.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
-              <Button href={siteConfig.bookingsUrl} size="lg">
-                Book a call <span aria-hidden>→</span>
+              <Button href="/contact" size="lg">
+                Request a quote <span aria-hidden>→</span>
               </Button>
               <a
                 href="/services"

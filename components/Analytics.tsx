@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import { siteConfig } from '@/lib/site';
 
 // Non-invasive CTA tracking. Delegates one capture-phase click listener and
 // pushes a `cta` event to the GTM dataLayer for the key funnel actions, so we
@@ -10,14 +9,7 @@ export function Analytics() {
   useEffect(() => {
     function classify(href: string): string | null {
       if (href.includes('kadmoon-overview.pdf')) return 'presentation_view';
-      if (
-        (siteConfig.bookingsUrl !== '/contact' && href === siteConfig.bookingsUrl) ||
-        href.includes('office365.com/book') ||
-        href.includes('/bookings')
-      )
-        return 'book_meeting';
-      if (href.includes('/packages')) return 'view_plans';
-      if (href.includes('/contact') || href.includes('#contact')) return 'contact';
+      if (href.includes('/contact') || href.includes('#contact')) return 'quote_request';
       return null;
     }
 

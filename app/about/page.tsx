@@ -177,8 +177,8 @@ export default function AboutPage() {
               A short call is a simple way to see whether we are a fit and where to start.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
-              <Button href={siteConfig.bookingsUrl} size="lg">
-                Book a meeting <span aria-hidden>→</span>
+              <Button href="/contact" size="lg">
+                Request a quote <span aria-hidden>→</span>
               </Button>
               <a
                 href="/services"
