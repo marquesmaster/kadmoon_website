@@ -2,14 +2,14 @@ import { test, expect } from '@playwright/test';
 
 test.describe('pages load', () => {
   const pages = [
-    ['/', 'The custom software'],
-    ['/services', 'competencies'],
-    ['/services/data-and-ai', 'Data & AI'],
-    ['/industries', 'sectors'],
-    ['/industries/trade-and-supply-chain', 'Trade & Supply Chain'],
+    ['/', 'import and export'],
+    ['/services', 'cross-border'],
+    ['/services/trade-erp', 'Trade ERP'],
+    ['/industries', 'move goods'],
+    ['/industries/importers-exporters', 'Importers & Exporters'],
     ['/process', 'production'],
-    ['/about', 'engineering arm'],
-    ['/blog', 'building software'],
+    ['/about', 'foreign trade'],
+    ['/blog', 'business of trade'],
     ['/custom-software-development', 'United States'],
     ['/custom-software-development/austin-tx', 'Austin'],
     ['/privacy', 'Privacy'],
@@ -33,12 +33,13 @@ test.describe('pages load', () => {
 
 test('stat counters finish without freezing mid-animation', async ({ page }) => {
   await page.goto('/');
-  await page.locator('dl').first().scrollIntoViewIfNeeded();
+  const band = page.locator('dl').first();
+  await band.scrollIntoViewIfNeeded();
   await page.waitForTimeout(2000);
-  const values = await page.$$eval('dl dd', (dds) =>
+  const values = await band.locator('dd').evaluateAll((dds) =>
     dds.map((d) => d.querySelector('span')?.textContent),
   );
-  expect(values).toEqual(['50+', '10+', '0%', '100%']);
+  expect(values).toEqual(['100%', '35+', 'US', 'End-to-end']);
 });
 
 test('blog search filters results', async ({ page }) => {
@@ -86,7 +87,13 @@ test.describe('contact API guards', () => {
 
   test('honeypot submission returns generic success', async ({ request }) => {
     const res = await request.post('/api/contact', {
-      data: { name: 'Bot', company: 'X', message: 'hello there', company_website: 'spam' },
+      data: {
+        name: 'Bot',
+        email: 'bot@example.com',
+        company: 'X',
+        message: 'hello there',
+        company_website: 'spam',
+      },
     });
     expect(res.status()).toBe(200);
     expect(await res.json()).toEqual({ ok: true });
