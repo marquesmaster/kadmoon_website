@@ -8,16 +8,148 @@
  * engagement is scoped to the client. Do NOT invent client names or metrics.
  */
 
+export type NavLink = { label: string; href: string; desc?: string };
+export type NavGroup = { title: string; items: NavLink[] };
+export type NavFeatured = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  href: string;
+  cta: string;
+};
+export type NavItem =
+  | { label: string; href: string }
+  | { label: string; panel: { groups: NavGroup[]; featured?: NavFeatured } };
+
+// Mega-menu navigation (full-width panels on desktop, accordion on mobile).
+// Every href points to a page that exists, so the menu never dead-ends.
+export const navMenu: NavItem[] = [
+  {
+    label: 'Solutions',
+    panel: {
+      groups: [
+        {
+          title: 'Analytics',
+          items: [
+            { label: 'Landed cost & margin', href: '/cases/landed-cost-analytics', desc: 'Freight, duty, and fees to the unit' },
+            { label: 'Duty & tariff exposure', href: '/cases/tariff-duty-exposure', desc: 'Model a rate change the same day' },
+            { label: 'Shipment visibility & OTIF', href: '/cases/shipment-visibility-analytics', desc: 'Milestones unified over EDI and API' },
+            { label: 'Customs & compliance analytics', href: '/cases/entry-throughput-analytics', desc: 'Throughput, clearance, exceptions' },
+          ],
+        },
+        {
+          title: 'Platforms we build',
+          items: [
+            { label: 'Trade ERP', href: '/services/trade-erp', desc: 'The operating system for trade' },
+            { label: 'Customs & compliance', href: '/services/customs-compliance', desc: 'Classification, screening, filing' },
+            { label: 'Inventory & WMS', href: '/services/inventory-wms', desc: 'Bonded and FTZ handling' },
+            { label: 'Supply chain & logistics', href: '/services/supply-chain-logistics', desc: 'Freight and shipment management' },
+          ],
+        },
+      ],
+      featured: {
+        eyebrow: 'Start here',
+        title: 'A trade data assessment',
+        body: 'First dashboards in about two weeks, scoped and fixed. You get a clear next step and a quote.',
+        href: '/contact',
+        cta: 'Request a quote',
+      },
+    },
+  },
+  {
+    label: 'Industries',
+    panel: {
+      groups: [
+        {
+          title: 'Who we serve',
+          items: [
+            { label: 'Importers & exporters', href: '/industries/importers-exporters', desc: 'Landed cost, margin, compliance' },
+            { label: 'Customs brokers', href: '/industries/customs-brokers', desc: 'Throughput, screening, filing' },
+            { label: 'Freight forwarders', href: '/industries/freight-forwarders', desc: 'Visibility, OTIF, cost per lane' },
+            { label: 'Third-party logistics', href: '/industries/third-party-logistics', desc: 'Inventory and fulfillment' },
+          ],
+        },
+        {
+          title: 'More sectors',
+          items: [
+            { label: 'Ports & terminals', href: '/industries/ports-terminals', desc: 'Dwell time and throughput' },
+            { label: 'Manufacturers & distributors', href: '/industries/manufacturers-distributors', desc: 'S&OP and product P&L' },
+            { label: 'Shipping & carriers', href: '/industries/shipping-carriers', desc: 'Fleet and service analytics' },
+          ],
+        },
+      ],
+      featured: {
+        eyebrow: 'All industries',
+        title: 'Built for the trade chain',
+        body: 'Every link in the trade chain measures itself differently. See how we fit each one.',
+        href: '/industries',
+        cta: 'Explore industries',
+      },
+    },
+  },
+  { label: 'Cases', href: '/cases' },
+  {
+    label: 'Docs',
+    panel: {
+      groups: [
+        {
+          title: 'Get started',
+          items: [
+            { label: 'Overview', href: '/docs', desc: 'What the docs cover' },
+            { label: 'Methodology', href: '/docs/methodology', desc: 'How we scope and deliver' },
+            { label: 'Engagement models', href: '/docs/engagement-models', desc: 'Project, squad, or managed' },
+          ],
+        },
+        {
+          title: 'Reference',
+          items: [
+            { label: 'Data integration', href: '/docs/data-integration', desc: 'SAP, Microsoft, Oracle, EDI, ACE' },
+            { label: 'Security & your tenant', href: '/docs/security', desc: 'Where data lives and who can see it' },
+            { label: 'KPI library', href: '/docs/kpi-library', desc: 'The trade metrics we model' },
+            { label: 'Glossary', href: '/docs/glossary', desc: 'Trade analytics terms' },
+          ],
+        },
+      ],
+      featured: {
+        eyebrow: 'Documentation',
+        title: 'How we work, in the open',
+        body: 'Our methodology, data integration, security model, and the KPIs we build, documented.',
+        href: '/docs',
+        cta: 'Open the docs',
+      },
+    },
+  },
+  {
+    label: 'Company',
+    panel: {
+      groups: [
+        {
+          title: 'Company',
+          items: [
+            { label: 'About', href: '/about', desc: 'A US firm built for trade' },
+            { label: 'Process', href: '/process', desc: 'Four phases, value from week two' },
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
+            { label: 'Blog', href: '/blog', desc: 'Notes on the business of trade' },
+            { label: 'Cases', href: '/cases', desc: 'Analytics we have built' },
+            { label: 'Contact', href: '/contact', desc: 'Request a quote' },
+          ],
+        },
+      ],
+    },
+  },
+];
+
 export const nav = {
   wordmark: 'Kadmoon',
   suffix: 'INC.',
-  links: [
-    { label: 'Solutions', href: '/services' },
-    { label: 'Industries', href: '/industries' },
-    { label: 'Work', href: '/cases' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'About', href: '/about' },
-  ],
+  menu: navMenu,
+  // Secondary top-bar action: access is provisioned per engagement, so this
+  // routes to contact rather than a login nobody can complete yet.
+  access: { label: 'Request access', href: '/contact' },
   cta: { label: 'Request a quote', href: '/contact' },
 };
 
@@ -369,7 +501,8 @@ export const footer = {
       links: [
         { label: 'Solutions', href: '/services' },
         { label: 'Industries', href: '/industries' },
-        { label: 'Work', href: '/cases' },
+        { label: 'Cases', href: '/cases' },
+        { label: 'Docs', href: '/docs' },
         { label: 'Blog', href: '/blog' },
         { label: 'About', href: '/about' },
         { label: 'Contact', href: '/contact' },

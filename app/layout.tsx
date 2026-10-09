@@ -8,6 +8,7 @@ import { FloatingContact } from '@/components/FloatingContact';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { CookieConsent } from '@/components/CookieConsent';
 import { Analytics } from '@/components/Analytics';
+import { SearchOverlay } from '@/components/SearchOverlay';
 
 // Kadmoon trade-software identity: Space Grotesk for display (technical,
 // geometric), Inter for body, JetBrains Mono for data/eyebrows.
@@ -145,6 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <FloatingContact />
         <CookieConsent />
+        <SearchOverlay />
         <Analytics />
       </body>
     </html>
