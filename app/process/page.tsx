@@ -10,9 +10,9 @@ import { process, engagement } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Process | How we build trade software',
+  title: 'Process | How we deliver trade analytics',
   description:
-    'How Kadmoon delivers: discovery of how goods and documents move, a tailored platform or custom foundation, delivery in short cycles, and support that keeps compliance current.',
+    'How Kadmoon delivers: discovery of the decisions and the data behind them, a semantic model in your tenant, dashboards in short cycles from week two, and support that keeps governance current.',
   alternates: { canonical: `${siteConfig.url}/process` },
 };
 
@@ -80,13 +80,13 @@ export default function ProcessPage() {
         </section>
 
         <section className="mx-auto max-w-shell px-6 py-16 text-center md:py-20">
-          <h2 className="font-display text-display-sm text-ink">Ready to scope your project?</h2>
+          <h2 className="font-display text-display-sm text-ink">Ready to see your numbers?</h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-2">
-            Tell us about it and you get a technical proposal within one business day.
+            Tell us where your data lives and you get a scoped plan and a quote within one business day.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button href="/#contact" size="lg">
-              Start a project <span aria-hidden>→</span>
+            <Button href="/contact" size="lg">
+              Request a quote <span aria-hidden>→</span>
             </Button>
           </div>
         </section>

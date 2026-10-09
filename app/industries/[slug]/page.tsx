@@ -20,10 +20,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!ind) return {};
   const url = `${siteConfig.url}/industries/${ind.slug}`;
   return {
-    title: `Software for ${ind.name}`,
+    title: `Analytics for ${ind.name}`,
     description: ind.intro.slice(0, 155),
     alternates: { canonical: url },
-    openGraph: { title: `Software for ${ind.name} | Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website' },
+    openGraph: { title: `Analytics for ${ind.name} | Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website' },
   };
 }
 
@@ -41,7 +41,7 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: `Trade software for ${ind.name}`,
+    serviceType: `Trade analytics for ${ind.name}`,
     provider: { '@type': 'Organization', name: siteConfig.legalName, url: siteConfig.url },
     areaServed: { '@type': 'Country', name: siteConfig.country },
     description: ind.intro,
@@ -61,7 +61,7 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
           eyebrow={ind.flagship ? 'Flagship practice' : 'Industry'}
           title={
             <>
-              Software for <span className="text-accent">{ind.name}</span>.
+              Analytics for <span className="text-accent">{ind.name}</span>.
             </>
           }
           breadcrumbs={
@@ -76,8 +76,8 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
         >
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">{ind.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/#contact" size="lg">
-              Start a project <span aria-hidden>→</span>
+            <Button href="/contact" size="lg">
+              Request a quote <span aria-hidden>→</span>
             </Button>
             <Button href="/industries" size="lg" variant="ghost">
               All industries
@@ -90,7 +90,7 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
               <div>
                 <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
-                  Systems we build
+                  What we measure
                 </h2>
                 <ul className="mt-5 space-y-3">
                   {ind.systems.map((item) => (
@@ -103,7 +103,7 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
               </div>
               <div>
                 <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
-                  Common integrations
+                  Data we connect
                 </h2>
                 <ul className="mt-5 space-y-3">
                   {ind.integrations.map((item) => (

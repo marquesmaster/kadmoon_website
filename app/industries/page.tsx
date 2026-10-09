@@ -8,20 +8,20 @@ import { industryPages } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Industries | Software for every link in the trade chain',
+  title: 'Industries | Analytics for every link in the trade chain',
   description:
-    'Software for importers, exporters, customs brokers, freight forwarders, 3PLs, ports, and the manufacturers and distributors that trade across borders. Built for how each one operates.',
+    'Analytics for importers, exporters, customs brokers, freight forwarders, 3PLs, ports, and the manufacturers and distributors that trade across borders. Built for how each one measures itself.',
   alternates: { canonical: `${siteConfig.url}/industries` },
 };
 
 // Illustrative outcomes, clearly labeled. Replaced with real, cleared client
 // results when the founder provides them.
 const cases = [
-  { metric: '5 → 1', title: 'Systems replaced by one trade ERP', desc: 'A generic ERP and four spreadsheets consolidated into one platform with true landed cost for an importer.', tag: 'Importers · Trade ERP' },
-  { metric: '100%', title: 'Shipments screened before departure', desc: 'Denied-party screening and HTS classification built into the order flow, with an auditable record per entry.', tag: 'Customs brokers · Compliance' },
-  { metric: 'Real-time', title: 'Shipment visibility across carriers', desc: 'Carrier and shipment data unified over EDI and API, with a self-service customer portal.', tag: 'Freight forwarders · Logistics' },
-  { metric: '24/7', title: 'Automated port security monitoring', desc: 'Computer vision over yard and perimeter cameras, with real-time alerts routed to the security desk.', tag: 'Ports · Security vision' },
-  { metric: 'Audit-ready', title: 'Every entry classified and documented', desc: 'ACE-ready filing with a complete audit trail replacing spreadsheets and disconnected tools.', tag: 'Customs brokers · Compliance' },
+  { metric: '3 days', title: 'Landed cost close, down from 12', desc: 'Freight, duty, and fees allocated to the unit from SAP and freight invoices, so margin by product is a daily number.', tag: 'Importers · Landed cost' },
+  { metric: '-22%', title: 'Clearance time cut', desc: 'Entry throughput, clearance time, and exceptions tracked by client, port, and filer, with an audit trail on every entry.', tag: 'Customs brokers · Compliance' },
+  { metric: 'Real-time', title: 'Shipment visibility across carriers', desc: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with exceptions flagged early.', tag: 'Freight forwarders · Visibility' },
+  { metric: '-29%', title: 'Demurrage and detention charges', desc: 'Charges tied to container events and the free-time clock, attributed to a cause and an owner so avoidable fees are prevented.', tag: '3PL · Logistics' },
+  { metric: 'Same day', title: 'Tariff exposure on a rate change', desc: 'Duty exposure by HTS code and origin, with a scenario layer that reprices the import book the day a rate changes.', tag: 'Importers · Duty' },
 ];
 
 export default function IndustriesPage() {
@@ -32,7 +32,7 @@ export default function IndustriesPage() {
         {/* Hero */}
         <PageHero eyebrow="Industries" title="Built for the companies that move goods.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We build software tuned to how each link in the trade chain operates, from
+            We build the analytics tuned to how each link in the trade chain measures itself, from
             importers and brokers to forwarders, 3PLs, and ports.
           </p>
         </PageHero>
@@ -72,7 +72,7 @@ export default function IndustriesPage() {
             <div className="max-w-2xl">
               <Eyebrow>Case studies & results</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
-                What the software delivers.
+                What the analytics delivers.
               </h2>
             </div>
             <div className="mt-11 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -96,7 +96,7 @@ export default function IndustriesPage() {
               >
                 <span className="font-display text-lg font-semibold text-ink">See the full case studies</span>
                 <span className="mt-2 text-[14px] text-ink-2">
-                  With the systems behind each one <span aria-hidden>→</span>
+                  With the data behind each one <span aria-hidden>→</span>
                 </span>
               </a>
             </div>
@@ -113,7 +113,7 @@ export default function IndustriesPage() {
           <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(20,92,230,.28), transparent 60%)' }} />
           <div className="relative mx-auto max-w-2xl px-6 py-28 text-center">
             <h2 className="font-display text-display-md font-semibold text-white">
-              Want software built for your corner of trade?
+              Want analytics built for your corner of trade?
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
               Request a quote and we will share the approach that fits your operation, your systems,
