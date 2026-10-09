@@ -16,19 +16,22 @@ export function GET() {
   lines.push(`> ${siteConfig.description}`);
   lines.push('');
   lines.push(
-    `Kadmoon is a US software company focused entirely on foreign trade, based in ${siteConfig.city}, ${siteConfig.regionCode}. We build the software that cross-border operations run on: trade ERP, CRM, inventory and warehouse management, customs and compliance (HTS classification, denied-party screening, duty and landed cost, ACE-ready filing), computer vision for vessel and port security, and supply-chain and logistics software. We offer ready platforms and custom development, with integrations to carriers, brokers, marketplaces, and ACE. Senior US-based team; you own the software and the data.`,
+    `Kadmoon is a US analytics firm focused entirely on foreign trade, based in ${siteConfig.city}, ${siteConfig.regionCode}. We turn the data in a cross-border operation's customs, logistics, and ERP systems into decisions: landed cost and margin, duty and tariff exposure, shipment visibility and OTIF, customs and compliance analytics, inventory and warehouse analytics, and an executive control tower. Data comes from the systems clients already run (SAP, Microsoft, Oracle, NetSuite, broker and carrier systems, EDI and ACE, or spreadsheets), and analytics is delivered on the Microsoft stack (Fabric, Power BI, Azure) inside the client's own tenant. We also build the trade platforms (customs filing, trade ERP, inventory, security vision) as engagements deepen. Senior US-based team; you own the model and the data.`,
   );
   lines.push('');
   lines.push('## Key pages');
-  lines.push(`- [Home](${siteConfig.url}/): positioning, what we build, four-phase process, how to choose a trade software partner`);
+  lines.push(`- [Home](${siteConfig.url}/): positioning, what we deliver, four-phase process, how to choose a trade analytics partner`);
   lines.push(
-    `- [Solutions](${siteConfig.url}/services): trade ERP, customs and compliance, inventory and WMS, vessel and port security vision, supply chain and logistics, trade CRM, custom development, and integrations`,
+    `- [Solutions](${siteConfig.url}/services): analytics (landed cost, duty exposure, shipment visibility and OTIF, customs and compliance analytics, inventory, executive control tower) plus the platforms we build`,
   );
   lines.push(
-    `- [Work](${siteConfig.url}/cases): illustrative case studies of trade software we build (customs filing platform, trade ERP with landed cost, vessel security vision, shipment visibility)`,
+    `- [Cases](${siteConfig.url}/cases): illustrative analytics case studies across importers, customs brokers, forwarders, 3PLs, manufacturers, and ports, plus a few software builds`,
+  );
+  lines.push(
+    `- [Docs](${siteConfig.url}/docs): methodology, engagement models, data integration, security and tenant model, KPI library, and glossary`,
   );
   lines.push('');
-  lines.push('## Services');
+  lines.push('## Platforms we build');
   for (const s of services) {
     lines.push(`- [${s.title}](${siteConfig.url}/services/${s.slug}): ${s.tagline}`);
   }

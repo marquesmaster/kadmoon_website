@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Kadmoon: software for foreign trade. Trade ERP, customs, inventory, security, and logistics.';
+export const alt = 'Kadmoon: analytics for foreign trade. Landed cost, duty exposure, visibility, and compliance.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -38,7 +38,7 @@ export default function OpengraphImage() {
               marginBottom: 20,
             }}
           >
-            Software for foreign trade · United States
+            Analytics for foreign trade · United States
           </div>
           <div
             style={{
@@ -50,12 +50,12 @@ export default function OpengraphImage() {
               maxWidth: 980,
             }}
           >
-            The software your import and export operation runs on.
+            The numbers your import and export operation can finally trust.
           </div>
         </div>
 
         <div style={{ fontSize: 22, color: 'rgba(255,255,255,0.65)' }}>
-          Trade ERP · Customs · Inventory · Security · Logistics
+          Landed cost · Duty exposure · Visibility & OTIF · Customs analytics
         </div>
       </div>
     ),

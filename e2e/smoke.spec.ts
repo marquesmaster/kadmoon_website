@@ -39,7 +39,7 @@ test('stat counters finish without freezing mid-animation', async ({ page }) => 
   const values = await band.locator('dd').evaluateAll((dds) =>
     dds.map((d) => d.querySelector('span')?.textContent),
   );
-  expect(values).toEqual(['100%', '35+', 'US', 'End-to-end']);
+  expect(values).toEqual(['100%', '35+', 'US', 'Week 2']);
 });
 
 test('blog search filters results', async ({ page }) => {
