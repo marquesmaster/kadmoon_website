@@ -825,6 +825,44 @@ export const services: ServicePage[] = [
   },
 ];
 
+// Analytics tie-in per platform: the analytics we deliver first, which is where
+// each platform grows from. `cases` are slugs in lib/cases/studies.ts; titles
+// are resolved at render time so labels never drift.
+export const serviceAnalytics: Record<string, { note: string; cases: string[] }> = {
+  'trade-erp': {
+    note: 'A trade ERP is only as good as the numbers it runs on. We usually start by modeling those numbers, landed cost, margin, and product P&L, so the platform is built on a foundation your leaders already trust.',
+    cases: ['landed-cost-analytics', 'import-margin-analytics', 'product-pnl-landed-cost'],
+  },
+  'customs-compliance': {
+    note: 'Before compliance lives in software, we measure it: where entries stall, how consistent classification is, and whether screening is provable. The analytics shapes what the platform automates.',
+    cases: ['entry-throughput-analytics', 'hts-classification-analytics', 'denied-party-screening-analytics'],
+  },
+  'inventory-wms': {
+    note: 'We model inventory before we move it into a system: what is aging, where fill rate slips, and how fast goods go dock to stock. The WMS is built to fix what the analytics exposes.',
+    cases: ['multi-warehouse-inventory-analytics', 'inventory-aging-analytics', 'receiving-throughput-analytics'],
+  },
+  'vessel-security-vision': {
+    note: 'Vision sits on top of an operation we already measure. Dwell time and yard throughput show where incidents and bottlenecks cluster, so the cameras and alerts go where they matter.',
+    cases: ['terminal-dwell-time-analytics', 'trade-control-tower'],
+  },
+  'supply-chain-logistics': {
+    note: 'Logistics software works best when it targets the real cost and failure points. We measure OTIF, cost per lane, and visibility first, then build the platform around what moves the number.',
+    cases: ['shipment-visibility-analytics', 'otif-performance-analytics', 'freight-spend-analytics'],
+  },
+  'trade-crm': {
+    note: 'A trade CRM carries the relationships behind the numbers. Supplier and carrier performance analytics tell you which relationships to protect, and the CRM is built around that context.',
+    cases: ['supplier-performance-analytics', 'carrier-scorecard-analytics'],
+  },
+  'custom-development': {
+    note: 'Custom builds grow out of what the data reveals. Often a control tower or an audit model surfaces the workflow worth building, and we build it.',
+    cases: ['trade-control-tower', 'freight-invoice-audit-analytics'],
+  },
+  'trade-integrations': {
+    note: 'Integrations are what make analytics and software trustworthy: data has to flow before it can be measured or acted on. We map the same EDI, ACE, and API connections that feed our dashboards.',
+    cases: ['shipment-visibility-analytics', 'ace-filing-error-analytics'],
+  },
+};
+
 export type IndustryPage = {
   slug: string;
   name: string;
