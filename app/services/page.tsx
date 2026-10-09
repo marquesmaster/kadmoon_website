@@ -5,45 +5,45 @@ import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
 import { PageHero } from '@/components/sections/PageHero';
 import { HowToChoose } from '@/components/sections/HowToChoose';
-import { services } from '@/lib/content';
+import { analyticsSolutions, services } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Solutions | Trade ERP, Customs, Inventory, Security & Logistics',
+  title: 'Solutions | Analytics for foreign trade',
   description:
-    'Software for foreign trade: trade ERP and CRM, customs and compliance, inventory and WMS, vessel and port security vision, supply chain and logistics, and custom development. Built by a US team that speaks trade.',
+    'Analytics for foreign trade: landed cost and margin, duty and tariff exposure, shipment visibility and OTIF, customs and compliance analytics, inventory, and an executive control tower. Plus the trade platforms we build. Delivered on the Microsoft stack, in your tenant.',
   alternates: { canonical: `${siteConfig.url}/services` },
 };
 
 const engage = [
   {
-    kicker: 'Platform + tailoring',
-    title: 'Fastest start',
-    body: 'Start on a ready Kadmoon platform, trade ERP, compliance, inventory, or logistics, and we tailor it to your flow and integrate it with your partners.',
+    kicker: 'Trade data assessment',
+    title: 'Best first step',
+    body: 'A short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks, with a scope and a quote grounded in your real data.',
     cta: 'Request a quote',
     featured: true,
   },
   {
-    kicker: 'Custom build',
-    title: 'Built to your operation',
-    body: 'A system built from scratch around how you trade, with clear acceptance criteria per deliverable and delivery in short, reviewable cycles.',
-    cta: 'Scope a build',
+    kicker: 'Fixed-scope project',
+    title: 'When the outcome is defined',
+    body: 'A defined build from data foundation to dashboards, with acceptance criteria per deliverable and milestone billing. You know what you get, when, and how to validate it.',
+    cta: 'Scope a project',
     featured: false,
   },
   {
-    kicker: 'Support & evolution',
+    kicker: 'Managed analytics',
     title: 'After go-live',
-    body: 'We keep integrations and compliance current as rules and partners change, support the software on a defined agreement, and evolve it as your trade grows.',
+    body: 'We run and evolve your analytics on a defined agreement: refreshes, governance, new reports as needs change, and a roadmap for what comes next.',
     cta: 'Talk support',
     featured: false,
   },
 ];
 
 const faqs = [
-  { q: 'Do you build products or custom software?', a: 'Both. Start on a ready Kadmoon platform for the common trade problems and tailor it, or have us build fully custom where your operation is genuinely different. Most clients use a mix.' },
-  { q: 'Can you work alongside our internal team?', a: 'Yes. We embed with your operations and IT teams, and a full handover with documentation is part of every engagement so ownership transfers to you.' },
-  { q: 'What size projects do you take on?', a: 'From a single integration or module to a full trade ERP with compliance, inventory, and logistics. If it moves goods across borders, it is in scope.' },
-  { q: 'Do you provide ongoing support after launch?', a: 'Yes, on a defined support agreement: integrations and compliance kept current as rules change, plus an evolution roadmap as your trade grows.' },
+  { q: 'Do you do analytics or build software?', a: 'Both, and analytics leads. We deliver trade analytics today, landed cost, duty, visibility, compliance, and inventory, and build the operational software (customs, ERP, WMS, security vision) as the relationship deepens and the data shows what to build.' },
+  { q: 'Do we have to be on Microsoft?', a: 'No. Your data can live in SAP, Oracle, NetSuite, Dynamics, broker and carrier systems, EDI and ACE, or spreadsheets. We read from the system of record and deliver the analytics on the Microsoft stack, in your own tenant.' },
+  { q: 'How fast do we see something?', a: 'A trade data assessment delivers first dashboards in about two weeks, so you validate real value early instead of waiting on a long data project with nothing to show.' },
+  { q: 'Do we own the analytics and the data?', a: 'Yes. The semantic model, the reports, and the data live in your own tenant with documentation and a full handover. Access follows your identity provider. No lock-in.' },
 ];
 
 export default function ServicesPage() {
@@ -52,52 +52,105 @@ export default function ServicesPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="Solutions" title="Every system a cross-border operation runs on.">
+        <PageHero eyebrow="Solutions" title="Analytics for foreign trade, and the platforms we build.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            Trade ERP, customs and compliance, inventory, security vision, and logistics, built as
-            ready platforms and custom development, by a US team that speaks trade.
+            We turn the data in your customs, logistics, and ERP systems into decisions, delivered on
+            the Microsoft stack in your own tenant, plus the platforms we build for cross-border
+            operations as the work deepens.
           </p>
         </PageHero>
 
-        {/* Service cards (data-driven, linked to detail pages) */}
+        {/* Analytics we deliver */}
         <section className="bg-paper py-24">
-          <div className="mx-auto grid max-w-shell gap-5 px-6 md:grid-cols-2">
-            {services.map((s, i) => (
-              <a
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="hover-glow group flex flex-col rounded-2xl border border-line bg-white p-8"
-              >
-                <div className="flex items-baseline gap-3.5">
-                  <span className="font-sans text-sm font-semibold text-accent">
-                    {String(i + 1).padStart(2, '0')}
+          <div className="mx-auto max-w-shell px-6">
+            <div className="max-w-2xl">
+              <Eyebrow>What we deliver</Eyebrow>
+              <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
+                Analytics we deliver today.
+              </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
+                One governed model fed from the systems you already run, so every number means one
+                thing and your leaders act on it.
+              </p>
+            </div>
+            <div className="mt-11 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {analyticsSolutions.map((s, i) => (
+                <a
+                  key={s.title}
+                  href={s.href}
+                  className="hover-glow group flex flex-col rounded-2xl border border-line bg-white p-8"
+                >
+                  <div className="flex items-baseline gap-3.5">
+                    <span className="font-sans text-sm font-semibold text-accent">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="font-display text-xl font-semibold text-ink group-hover:text-accent">
+                      {s.title}
+                    </h3>
+                  </div>
+                  <p className="mt-3.5 flex-1 text-[15px] leading-relaxed text-ink-2">{s.body}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
+                    See the case{' '}
+                    <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
                   </span>
-                  <h3 className="font-display text-2xl font-semibold text-ink group-hover:text-accent">
-                    {s.title}
-                  </h3>
-                </div>
-                <p className="mt-3.5 text-[15px] leading-relaxed text-ink-2">{s.tagline}</p>
-                <div className="mt-5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-ink-3">
-                  What is included
-                </div>
-                <ul className="mt-3.5 space-y-2.5">
-                  {s.includes.slice(0, 4).map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span aria-hidden className="mt-2 h-1.5 w-1.5 flex-none rounded-sm bg-accent" />
-                      <span className="text-[15px] leading-relaxed text-ink-2">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
-                  Explore <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
-                </span>
-              </a>
-            ))}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Platforms we build (software roadmap) */}
+        <section className="border-t border-line bg-mist py-24">
+          <div className="mx-auto max-w-shell px-6">
+            <div className="max-w-2xl">
+              <Eyebrow>What we build</Eyebrow>
+              <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
+                Platforms we build on top of the data.
+              </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
+                Living in your trade data is where our software starts. As the operation becomes
+                clear, we build the systems that run it. These are the platforms we build and keep
+                extending.
+              </p>
+            </div>
+            <div className="mt-11 grid gap-5 md:grid-cols-2">
+              {services.map((s, i) => (
+                <a
+                  key={s.slug}
+                  href={`/services/${s.slug}`}
+                  className="hover-glow group flex flex-col rounded-2xl border border-line bg-white p-8"
+                >
+                  <div className="flex items-baseline gap-3.5">
+                    <span className="font-sans text-sm font-semibold text-accent">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="font-display text-2xl font-semibold text-ink group-hover:text-accent">
+                      {s.title}
+                    </h3>
+                  </div>
+                  <p className="mt-3.5 text-[15px] leading-relaxed text-ink-2">{s.tagline}</p>
+                  <div className="mt-5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-ink-3">
+                    What is included
+                  </div>
+                  <ul className="mt-3.5 space-y-2.5">
+                    {s.includes.slice(0, 4).map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span aria-hidden className="mt-2 h-1.5 w-1.5 flex-none rounded-sm bg-accent" />
+                        <span className="text-[15px] leading-relaxed text-ink-2">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
+                    Explore <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Ways to engage */}
-        <section className="border-t border-line bg-mist py-24">
+        <section className="bg-paper py-24">
           <div className="mx-auto max-w-shell px-6">
             <div className="max-w-2xl">
               <Eyebrow>Ways to engage</Eyebrow>
@@ -142,7 +195,7 @@ export default function ServicesPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-paper py-24">
+        <section className="border-t border-line bg-mist py-24">
           <div className="mx-auto max-w-3xl px-6">
             <div className="mb-11 text-center">
               <Eyebrow center>FAQ</Eyebrow>
@@ -173,8 +226,8 @@ export default function ServicesPage() {
               Not sure where to start?
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
-              Tell us how you trade. We will point you to the right first step, usually a
-              fixed-scope assessment, and send a quote.
+              Tell us how you trade. We will point you to the right first step, usually a trade data
+              assessment, and send a quote.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
               <Button href="/contact" size="lg">

@@ -8,42 +8,174 @@
  * engagement is scoped to the client. Do NOT invent client names or metrics.
  */
 
+export type NavLink = { label: string; href: string; desc?: string };
+export type NavGroup = { title: string; items: NavLink[] };
+export type NavFeatured = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  href: string;
+  cta: string;
+};
+export type NavItem =
+  | { label: string; href: string }
+  | { label: string; panel: { groups: NavGroup[]; featured?: NavFeatured } };
+
+// Mega-menu navigation (full-width panels on desktop, accordion on mobile).
+// Every href points to a page that exists, so the menu never dead-ends.
+export const navMenu: NavItem[] = [
+  {
+    label: 'Solutions',
+    panel: {
+      groups: [
+        {
+          title: 'Analytics',
+          items: [
+            { label: 'Landed cost & margin', href: '/cases/landed-cost-analytics', desc: 'Freight, duty, and fees to the unit' },
+            { label: 'Duty & tariff exposure', href: '/cases/tariff-duty-exposure', desc: 'Model a rate change the same day' },
+            { label: 'Shipment visibility & OTIF', href: '/cases/shipment-visibility-analytics', desc: 'Milestones unified over EDI and API' },
+            { label: 'Customs & compliance analytics', href: '/cases/entry-throughput-analytics', desc: 'Throughput, clearance, exceptions' },
+          ],
+        },
+        {
+          title: 'Platforms we build',
+          items: [
+            { label: 'Trade ERP', href: '/services/trade-erp', desc: 'The operating system for trade' },
+            { label: 'Customs & compliance', href: '/services/customs-compliance', desc: 'Classification, screening, filing' },
+            { label: 'Inventory & WMS', href: '/services/inventory-wms', desc: 'Bonded and FTZ handling' },
+            { label: 'Supply chain & logistics', href: '/services/supply-chain-logistics', desc: 'Freight and shipment management' },
+          ],
+        },
+      ],
+      featured: {
+        eyebrow: 'Start here',
+        title: 'A trade data assessment',
+        body: 'First dashboards in about two weeks, scoped and fixed. You get a clear next step and a quote.',
+        href: '/contact',
+        cta: 'Request a quote',
+      },
+    },
+  },
+  {
+    label: 'Industries',
+    panel: {
+      groups: [
+        {
+          title: 'Who we serve',
+          items: [
+            { label: 'Importers & exporters', href: '/industries/importers-exporters', desc: 'Landed cost, margin, compliance' },
+            { label: 'Customs brokers', href: '/industries/customs-brokers', desc: 'Throughput, screening, filing' },
+            { label: 'Freight forwarders', href: '/industries/freight-forwarders', desc: 'Visibility, OTIF, cost per lane' },
+            { label: 'Third-party logistics', href: '/industries/third-party-logistics', desc: 'Inventory and fulfillment' },
+          ],
+        },
+        {
+          title: 'More sectors',
+          items: [
+            { label: 'Ports & terminals', href: '/industries/ports-terminals', desc: 'Dwell time and throughput' },
+            { label: 'Manufacturers & distributors', href: '/industries/manufacturers-distributors', desc: 'S&OP and product P&L' },
+            { label: 'Shipping & carriers', href: '/industries/shipping-carriers', desc: 'Fleet and service analytics' },
+          ],
+        },
+      ],
+      featured: {
+        eyebrow: 'All industries',
+        title: 'Built for the trade chain',
+        body: 'Every link in the trade chain measures itself differently. See how we fit each one.',
+        href: '/industries',
+        cta: 'Explore industries',
+      },
+    },
+  },
+  { label: 'Cases', href: '/cases' },
+  {
+    label: 'Docs',
+    panel: {
+      groups: [
+        {
+          title: 'Get started',
+          items: [
+            { label: 'Overview', href: '/docs', desc: 'What the docs cover' },
+            { label: 'Methodology', href: '/docs/methodology', desc: 'How we scope and deliver' },
+            { label: 'Engagement models', href: '/docs/engagement-models', desc: 'Project, squad, or managed' },
+          ],
+        },
+        {
+          title: 'Reference',
+          items: [
+            { label: 'Data integration', href: '/docs/data-integration', desc: 'SAP, Microsoft, Oracle, EDI, ACE' },
+            { label: 'Security & your tenant', href: '/docs/security', desc: 'Where data lives and who can see it' },
+            { label: 'KPI library', href: '/docs/kpi-library', desc: 'The trade metrics we model' },
+            { label: 'Glossary', href: '/docs/glossary', desc: 'Trade analytics terms' },
+          ],
+        },
+      ],
+      featured: {
+        eyebrow: 'Documentation',
+        title: 'How we work, in the open',
+        body: 'Our methodology, data integration, security model, and the KPIs we build, documented.',
+        href: '/docs',
+        cta: 'Open the docs',
+      },
+    },
+  },
+  {
+    label: 'Company',
+    panel: {
+      groups: [
+        {
+          title: 'Company',
+          items: [
+            { label: 'About', href: '/about', desc: 'A US firm built for trade' },
+            { label: 'Process', href: '/process', desc: 'Four phases, value from week two' },
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
+            { label: 'Blog', href: '/blog', desc: 'Notes on the business of trade' },
+            { label: 'Cases', href: '/cases', desc: 'Analytics we have built' },
+            { label: 'Contact', href: '/contact', desc: 'Request a quote' },
+          ],
+        },
+      ],
+    },
+  },
+];
+
 export const nav = {
   wordmark: 'Kadmoon',
   suffix: 'INC.',
-  links: [
-    { label: 'Solutions', href: '/services' },
-    { label: 'Industries', href: '/industries' },
-    { label: 'Work', href: '/cases' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'About', href: '/about' },
-  ],
+  menu: navMenu,
+  // Secondary top-bar action: access is provisioned per engagement, so this
+  // routes to contact rather than a login nobody can complete yet.
+  access: { label: 'Request access', href: '/contact' },
   cta: { label: 'Request a quote', href: '/contact' },
 };
 
 export const hero = {
-  eyebrow: 'Software for foreign trade · United States',
+  eyebrow: 'Foreign-trade analytics · United States',
   // The accent phrase is rendered in the accent color inside the H1.
-  headlineBefore: 'The software your ',
+  headlineBefore: 'The numbers your ',
   headlineAccent: 'import and export',
-  headlineAfter: ' operation runs on.',
+  headlineAfter: ' operation can finally trust.',
   subhead:
-    'Kadmoon builds trade ERP, customs and compliance, inventory, vessel security, and logistics software for US importers, exporters, brokers, and forwarders. Ready platforms and custom builds.',
-  flagship: 'Trade ERP · Customs & compliance · Inventory & WMS · Vessel security vision · Supply chain & logistics',
+    'Kadmoon turns the data buried in your customs, logistics, and ERP systems into decisions: landed cost, duty exposure, shipment visibility, and compliance. Delivered on the Microsoft stack, in your own tenant.',
+  flagship: 'Landed cost · Duty exposure · Shipment visibility & OTIF · Customs analytics · Executive control tower',
   ctas: [
     { label: 'Request a quote', href: '/contact', primary: true },
-    { label: 'See the platform', href: '/services', primary: false },
+    { label: 'See case studies', href: '/cases', primary: false },
   ],
-  // What ships with a Kadmoon engagement.
+  // What ships with a Kadmoon analytics engagement.
   panelLabel: 'What you get',
   deliverables: [
-    'Software tuned to your trade operation',
-    'Customs and compliance built in',
-    'Integrations to carriers, brokers, and ACE',
-    'Your data in your systems',
+    'A governed model with one definition per KPI',
+    'Dashboards your leaders open and trust',
+    'Data from SAP, Microsoft, and the systems you run',
+    'Everything built in your own tenant',
     'US-based team and full handover',
   ],
-  panelFooter: 'Built for US trade operations. You own the software and the data.',
+  panelFooter: 'Built in your tenant. You own the model and the data.',
 };
 
 // Positioning signals and the one metric we can state plainly: client volume.
@@ -51,37 +183,37 @@ export const stats = [
   { value: '100%', label: 'foreign-trade focus' },
   { value: '35+', label: 'clients served' },
   { value: 'US', label: 'based and operated' },
-  { value: 'End-to-end', label: 'quote to delivery' },
+  { value: 'Week 2', label: 'first dashboards' },
 ];
 
 export const capabilities = {
-  eyebrow: 'What we build',
-  title: 'Every system a cross-border operation runs on.',
-  sub: 'We build across the whole trade operation: ERP, customs and compliance, inventory, logistics, and security. Start on a ready platform or build custom.',
+  eyebrow: 'What we deliver',
+  title: 'From scattered data to the decision.',
+  sub: 'We build the analytics a cross-border operation runs on: landed cost, duty exposure, visibility, compliance, and inventory, on one governed model fed from the systems you already use.',
   items: [
     {
-      title: 'Trade ERP',
-      body: 'Purchase orders, shipments, documents, landed cost, and finance in one system built around import and export, not bolted onto a generic ERP.',
+      title: 'Landed cost & margin',
+      body: 'Freight, duty, insurance, and brokerage allocated to the unit from SAP and freight invoices, so margin by SKU, supplier, and shipment is a daily number, not a monthly spreadsheet.',
     },
     {
-      title: 'Customs & compliance',
-      body: 'HTS classification, denied-party screening, duty and landed-cost calculation, and filing workflows that keep every shipment clear and auditable.',
+      title: 'Duty & tariff exposure',
+      body: 'Duty owed by HTS code, origin, and product line, with a scenario layer that reprices your import book the same day a tariff changes.',
     },
     {
-      title: 'Inventory & WMS',
-      body: 'Multi-warehouse inventory, bonded and FTZ handling, receiving, picking, and stock visibility across every location you move goods through.',
+      title: 'Shipment visibility & OTIF',
+      body: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with OTIF, dwell, and delay measured by lane and carrier.',
     },
     {
-      title: 'Vessel & port security vision',
-      body: 'Computer vision for cargo, container, and vessel security: anomaly detection, access and perimeter monitoring, and automated inspection support.',
+      title: 'Customs & compliance analytics',
+      body: 'Clearance time, entry throughput, classification consistency, and screening coverage, with an audit trail that answers a regulator from a report.',
     },
     {
-      title: 'Supply chain & logistics',
-      body: 'Freight, carrier, and shipment management with end-to-end visibility from supplier to door, and the EDI and API links that keep partners in sync.',
+      title: 'Inventory & warehouse analytics',
+      body: 'Days on hand, aging, and fill rate across sites, bonded and FTZ stock included, so cash and space tied up in the wrong inventory become visible.',
     },
     {
-      title: 'Custom development',
-      body: 'When an off-the-shelf tool does not fit how you trade, we build it: integrations, portals, and the workflows your operation depends on.',
+      title: 'Executive control tower',
+      body: 'Cost, service, risk, and compliance in one governed executive view, every KPI defined once and drillable to the shipment, entry, or order behind it.',
     },
   ],
 };
@@ -120,104 +252,139 @@ export const why = {
 
 export const howToChoose = {
   eyebrow: 'Buyer\'s guide',
-  title: 'How to choose a trade software partner.',
-  sub: 'Six questions worth asking before you hire anyone to build the software your cross-border operation runs on, us or anyone else.',
+  title: 'How to choose a trade analytics partner.',
+  sub: 'Six questions worth asking before you hire anyone to build the analytics your cross-border operation runs on, us or anyone else.',
   items: [
     {
       num: '01',
       title: 'Do they know trade?',
-      body: 'Ask whether they have built customs, landed-cost, or logistics software before. Generic developers will model your operation wrong because they do not know what incoterms or a denied-party screen are.',
+      body: 'Ask whether they have modeled landed cost, duty, OTIF, or customs before. A generic BI shop will define your metrics wrong because it does not know what an incoterm or a denied-party screen is.',
       answer:
-        'Foreign trade is the only thing we build for. Customs, compliance, inventory, and logistics are our native vocabulary, not a new domain we are learning on your budget.',
+        'Foreign trade is the only thing we build analytics for. Landed cost, duty, OTIF, and customs are the metrics we model every day, not a new domain we learn on your budget.',
     },
     {
       num: '02',
       title: 'Who builds it',
-      body: 'Ask whether the engineers are full-time employees or rotating freelancers. The software that runs your operation needs people who still understand it a year later.',
+      body: 'Ask whether the analytics engineers are full-time employees or rotating freelancers. The model that runs your reporting needs people who still understand it a year later.',
       answer:
-        'A senior, US-based in-house team. The people who scope your system build it and support it. No pass-through to third parties.',
+        'A senior, US-based in-house team. The people who scope your model build it and support it. No pass-through to third parties.',
     },
     {
       num: '03',
-      title: 'Buy, build, or both',
-      body: 'Ask whether you are forced into a rigid product or an endless custom build. The right answer is usually a proven platform tailored to your flow.',
+      title: 'One definition per KPI',
+      body: 'Ask whether they build one governed definition per KPI or just wire charts to tables. Without a semantic layer you end up with three versions of landed cost in one meeting.',
       answer:
-        'Both. Start on a ready Kadmoon platform and tailor it, or have us build custom. You get a shortcut where one exists and a fit where it matters.',
+        'We build a governed semantic layer so landed cost, margin, OTIF, and duty exposure each mean one thing across every report.',
     },
     {
       num: '04',
-      title: 'Compliance and audit',
-      body: 'Confirm screening, classification, and audit trails are built in. Trade software that ignores compliance becomes a liability the first time CBP asks a question.',
+      title: 'Which systems they read',
+      body: 'Confirm they can read your real sources: SAP, Oracle, NetSuite, carrier EDI, and ACE. Analytics that cannot reach your data becomes another spreadsheet.',
       answer:
-        'Compliance is part of the build: denied-party screening, HTS classification, and auditable records, so you stay clear as you scale.',
+        'We read from the system of record wherever it runs, SAP, Microsoft, Oracle, NetSuite, EDI, ACE, and carrier feeds, and parse EDI and customs messages into measurable events.',
     },
     {
       num: '05',
-      title: 'Integrations',
-      body: 'Ask how it connects to carriers, brokers, marketplaces, and ACE. Software that cannot exchange data turns your team into a manual data entry.',
+      title: 'Ownership and your tenant',
+      body: 'Confirm everything is built in your own tenant. If the model and reports live somewhere you cannot reach, you are hostage to the vendor.',
       answer:
-        'We build the EDI and API links your operation needs, so ERP, compliance, inventory, and logistics stay in sync with each other and your partners.',
+        'Everything is built in your own tenant: your data, your model, your reports. You own it, with documentation and a full handover. No lock-in.',
     },
     {
       num: '06',
-      title: 'Ownership and support',
-      body: 'Confirm you own the software and the data, and ask how support works after launch. Software you cannot reach or change is a trap.',
+      title: 'Governance and support',
+      body: 'Ask how they handle row-level security, lineage, and support after go-live. Ungoverned analytics becomes a risk as it scales.',
       answer:
-        'You own the software and the data, with documentation and a full handover. We support and evolve it on a defined agreement after go-live.',
+        'Governance is part of the build: row-level security, lineage, and access that follows your identity provider, with managed support on a defined agreement after go-live.',
     },
   ],
 };
 
+// Analytics offerings for the Solutions page: what we deliver today. Each links
+// to a representative case study, so nothing dead-ends.
+export const analyticsSolutions = [
+  {
+    title: 'Landed cost & margin',
+    body: 'Freight, duty, insurance, and brokerage allocated to the unit, so margin by SKU, supplier, and shipment is known at receipt instead of at month end.',
+    href: '/cases/landed-cost-analytics',
+  },
+  {
+    title: 'Duty & tariff exposure',
+    body: 'Duty owed by HTS code, origin, and product line, with a scenario layer that reprices your import book the same day a rate changes.',
+    href: '/cases/tariff-duty-exposure',
+  },
+  {
+    title: 'Shipment visibility & OTIF',
+    body: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with OTIF, dwell, and delay measured by lane and carrier.',
+    href: '/cases/shipment-visibility-analytics',
+  },
+  {
+    title: 'Customs & compliance analytics',
+    body: 'Clearance time, entry throughput, classification consistency, and screening coverage, with an audit trail that answers a regulator from a report.',
+    href: '/cases/entry-throughput-analytics',
+  },
+  {
+    title: 'Inventory & warehouse analytics',
+    body: 'Days on hand, aging, and fill rate across sites, bonded and FTZ stock included, so cash and space in the wrong inventory become visible.',
+    href: '/cases/multi-warehouse-inventory-analytics',
+  },
+  {
+    title: 'Executive control tower',
+    body: 'Cost, service, risk, and compliance in one governed executive view, every KPI defined once and drillable to the shipment, entry, or order behind it.',
+    href: '/cases/trade-control-tower',
+  },
+];
+
 export const process = {
   eyebrow: 'How we work',
-  title: 'Four phases, from trade flow to live software.',
+  title: 'Four phases, dashboards from week two.',
   steps: [
     {
       num: '01',
       title: 'Discovery',
       meta: 'Week 1-2',
-      body: 'We map how goods, documents, and money move through your operation: the trade lanes, the compliance checkpoints, the systems, and where the friction is. Output: a scope and an architecture plan.',
+      body: 'We start from the decisions your leaders need to make, then map the questions behind them, the source systems, and the owner of each number. Output: a diagnosis and an architecture plan.',
     },
     {
       num: '02',
       title: 'Foundation',
       meta: 'Week 3-4',
-      body: 'We stand up the core, a ready platform tailored to you or a custom base, with the data model, compliance rules, and integrations your flow needs. Output: the working core and first integrations.',
+      body: 'We land your data in your tenant and build the semantic layer that gives one definition per KPI, fed from SAP, Microsoft, EDI, ACE, and the rest. Output: the data model and first dashboards.',
     },
     {
       num: '03',
       title: 'Build',
       meta: 'Ongoing cycles',
-      body: 'We deliver in short cycles, each one a working piece of your operation you can validate: orders, filings, inventory, logistics, or security, wired to your partners as we go. Output: software in production.',
+      body: 'We deliver in short cycles, validating each report with the area that uses it: landed cost, visibility, compliance, or inventory. Output: governed dashboards in production.',
     },
     {
       num: '04',
       title: 'Sustain',
       meta: 'Ongoing',
-      body: 'We train your team, keep integrations and compliance current as rules change, and evolve the software as your trade grows. Output: a system that keeps pace with your business.',
+      body: 'We train your team, keep refreshes and governance current as rules and partners change, and evolve the analytics as your trade grows. Output: analytics that keeps pace with your business.',
     },
   ],
 };
 
 export const work = {
   eyebrow: 'Selected work',
-  title: 'Software behind real trade operations.',
-  sub: 'The kinds of systems we build for cross-border operations. Client names and figures are illustrative and under NDA; the structure is what ships.',
+  title: 'Analytics behind real trade operations.',
+  sub: 'The analytics we build for cross-border operations, drawing on SAP, Microsoft, and the systems you already run. Client names and figures are illustrative and under NDA; the structure is what ships.',
   cases: [
     {
-      tag: 'Customs Brokerage',
-      title: 'Customs filing and compliance platform',
-      body: 'HTS classification, denied-party screening, and ACE-ready filing workflows in one auditable system, replacing spreadsheets and disconnected tools.',
-    },
-    {
       tag: 'Importers',
-      title: 'Trade ERP with landed cost',
-      body: 'Purchase orders, shipments, documents, and true landed cost in one platform built around import operations, not a generic ERP.',
+      title: 'Landed cost by SKU and supplier',
+      body: 'Freight, duty, and fees allocated to the unit from SAP and freight invoices, so margin by product is a daily number instead of a monthly spreadsheet.',
     },
     {
-      tag: 'Ports & Security',
-      title: 'Vessel and cargo security vision',
-      body: 'Computer vision over yard and berth cameras for container, cargo, and perimeter monitoring, with anomaly alerts routed to the security desk.',
+      tag: 'Customs Brokers',
+      title: 'Entry throughput and clearance time',
+      body: 'Entry volume, clearance time, and exceptions by client, port, and filer, so problem lanes and staffing are managed on evidence.',
+    },
+    {
+      tag: 'Freight Forwarders',
+      title: 'Shipment visibility and milestones',
+      body: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with exceptions flagged before delivery.',
     },
   ],
 };
@@ -226,181 +393,79 @@ export const work = {
 // The panel is an explicitly labeled example, not a real client's figures.
 export const migrationHighlight = {
   eyebrow: 'Our specialty',
-  title: 'Customs and compliance, built into the software, not bolted on',
-  body: 'A shipment held at the border, or a screening you cannot prove you ran, costs real money. We build classification, denied-party screening, duty and landed-cost, and filing into the core of the system, so every order is clear and documented before it ships.',
+  title: 'True landed cost, in one model your team trusts',
+  body: 'Most importers rebuild landed cost by hand each month, so margin by product is a lagging guess and pricing runs on stale numbers. We allocate freight, duty, and fees to the unit from the systems you already run, so landed cost and margin are known at receipt, not at month end.',
   points: [
-    'HTS classification and duty calculation in the order flow',
-    'Denied-party and sanctions screening on every counterparty',
-    'ACE-ready filing and a full, auditable record',
+    'Freight, duty, insurance, and brokerage allocated to the unit',
+    'Margin by SKU, supplier, and shipment, refreshed daily',
+    'Sourced from SAP, freight invoices, and duty tables',
   ],
   ctas: [
-    { label: 'See the approach', href: '/services/customs-compliance', primary: true },
+    { label: 'See the case', href: '/cases/landed-cost-analytics', primary: true },
     { label: 'Talk to us', href: '#contact', primary: false },
   ],
   panel: {
-    label: 'Shipment compliance',
-    caption: 'example · pre-departure',
+    label: 'Landed cost',
+    caption: 'example · per shipment',
     rows: [
-      { label: 'HTS classified', value: '100%', status: 'mapped' },
-      { label: 'Parties screened', value: '100%', status: 'mapped' },
-      { label: 'Duty & landed cost', value: 'calculated', status: 'mapped' },
-      { label: 'Documents complete', value: '42 / 42', status: 'mapped' },
-      { label: 'ACE filing', value: 'ready', status: 'mapped' },
-      { label: 'Flags to review', value: '2', status: 'review' },
-      { label: 'Audit record', value: 'complete', status: 'mapped' },
+      { label: 'Product cost', value: '$84,200', status: 'mapped' },
+      { label: 'Ocean freight', value: '$6,480', status: 'mapped' },
+      { label: 'Duty (HTS)', value: '$5,910', status: 'mapped' },
+      { label: 'Brokerage & fees', value: '$1,240', status: 'mapped' },
+      { label: 'Landed cost', value: '$97,830', status: 'mapped' },
+      { label: 'Margin at receipt', value: '27.4%', status: 'mapped' },
+      { label: 'Variance vs quote', value: '+1.2%', status: 'review' },
     ],
   },
 };
 
 // ---------------------------------------------------------------------------
-// Case studies. Illustrative structures of systems we build for cross-border
-// operations. Do NOT add client names or metrics that are not verified.
+// Case studies live in lib/cases/studies.ts (30+ analytics cases plus a few
+// software builds). Re-exported here so existing imports keep working.
 // ---------------------------------------------------------------------------
-
-export type CaseStudy = {
-  slug: string;
-  sector: string;
-  title: string;
-  summary: string;
-  challenge: string;
-  build: string;
-  whatWeBuilt: string[];
-  outcomes: string[];
-  stack: string[];
-  result?: string;
-};
-
-export const caseStudies: CaseStudy[] = [
-  {
-    slug: 'customs-filing-platform',
-    sector: 'Customs Brokerage',
-    title: 'Customs filing and compliance platform',
-    summary:
-      'A customs broker moved off spreadsheets and disconnected tools onto one auditable platform for classification, screening, and filing.',
-    challenge:
-      'Entries were prepared across spreadsheets and email, screening was manual and hard to prove, and a single missed step could hold a shipment at the border or trigger a penalty.',
-    build:
-      'We built one platform that classifies goods, screens every party, calculates duty and landed cost, and produces an ACE-ready filing with a complete audit trail, wired to the systems the broker already used.',
-    whatWeBuilt: [
-      'HTS classification with duty and landed-cost calculation in the entry flow.',
-      'Automated denied-party and sanctions screening on every counterparty.',
-      'ACE-ready filing workflows with a full, auditable record per entry.',
-    ],
-    outcomes: [
-      'Every entry classified, screened, and documented before it ships.',
-      'A provable compliance record instead of scattered spreadsheets.',
-      'Fewer holds and faster clearance.',
-    ],
-    stack: ['Web platform', 'EDI / ACE integration', 'Rules engine', 'Audit log'],
-  },
-  {
-    slug: 'trade-erp-landed-cost',
-    sector: 'Importers',
-    title: 'Trade ERP with true landed cost',
-    summary:
-      'An importer replaced a generic ERP and spreadsheets with a platform built around purchase orders, shipments, and landed cost.',
-    challenge:
-      'A generic ERP could not model freight, duty, and fees, so landed cost was a monthly spreadsheet exercise and margin by product was always a guess.',
-    build:
-      'We built a trade ERP around the import flow: purchase orders, shipments, and documents, with freight, duty, and fees allocated to every unit so landed cost and margin are known in real time.',
-    whatWeBuilt: [
-      'Purchase order, shipment, and document management built for import.',
-      'Landed-cost allocation of freight, duty, and fees to the unit.',
-      'Real-time margin by product, supplier, and shipment.',
-    ],
-    outcomes: [
-      'Landed cost known at receipt, not at month end.',
-      'Margin by product and supplier instead of a guess.',
-      'One system from PO to stock instead of ERP plus spreadsheets.',
-    ],
-    stack: ['Trade ERP', 'Integrations', 'Reporting', 'Document management'],
-  },
-  {
-    slug: 'vessel-security-vision',
-    sector: 'Ports & Security',
-    title: 'Vessel and cargo security vision',
-    summary:
-      'A terminal operator added computer vision over existing cameras for container, cargo, and perimeter monitoring with real-time alerts.',
-    challenge:
-      'Security relied on staff watching dozens of camera feeds, so incidents at the perimeter, on the yard, or at the berth were caught late or missed entirely.',
-    build:
-      'We layered computer vision over the existing camera network to detect anomalies, unauthorized access, and cargo events, routing real-time alerts to the security desk with the clip and location attached.',
-    whatWeBuilt: [
-      'Computer-vision models over yard, berth, and perimeter cameras.',
-      'Anomaly, access, and cargo-event detection with real-time alerts.',
-      'An incident console with clip, location, and audit trail.',
-    ],
-    outcomes: [
-      'Incidents caught in real time instead of after the fact.',
-      'A watch team that acts on alerts instead of scanning feeds.',
-      'An auditable record of every flagged event.',
-    ],
-    stack: ['Computer vision', 'Edge / streaming', 'Alerting', 'Web console'],
-  },
-  {
-    slug: 'freight-visibility-platform',
-    sector: 'Freight & Logistics',
-    title: 'Shipment visibility and logistics platform',
-    summary:
-      'A forwarder unified carrier, shipment, and document data into one platform with end-to-end visibility and partner integrations.',
-    challenge:
-      'Shipment status lived in carrier portals, email, and spreadsheets, so customers called for updates the team had to go dig up, and exceptions surfaced too late.',
-    build:
-      'We built a logistics platform that consolidates carrier and shipment data over EDI and API, tracks every shipment end to end, and flags exceptions early, with a portal customers can self-serve.',
-    whatWeBuilt: [
-      'Carrier and shipment data unified over EDI and API.',
-      'End-to-end tracking from supplier to door with exception flags.',
-      'A customer portal for self-service status and documents.',
-    ],
-    outcomes: [
-      'Shipment status in one place instead of five portals.',
-      'Exceptions caught early instead of at delivery.',
-      'Customers self-serve instead of calling for updates.',
-    ],
-    stack: ['Logistics platform', 'EDI / API', 'Customer portal', 'Alerting'],
-  },
-];
+export type { CaseStudy, CaseMetric } from './cases/studies';
+export { caseStudies } from './cases/studies';
 
 export const industries = {
   eyebrow: 'Who we serve',
   title: 'Built for the companies that move goods.',
-  sub: 'Every link in the trade chain runs on different systems and rules. We build software tuned to how yours operates.',
+  sub: 'Every link in the trade chain measures itself differently. We build the analytics tuned to how each one operates.',
   items: [
     {
       name: 'Importers & exporters',
       flagship: true,
-      body: 'Trade ERP, landed cost, and compliance in one platform built around how you source, ship, and sell across borders.',
-      count: 'Trade ERP',
+      body: 'Landed cost by SKU and supplier, duty exposure, and margin, drawn from your ERP and freight invoices into one model.',
+      count: 'Landed cost',
     },
     {
       name: 'Customs brokers',
-      body: 'Classification, screening, and ACE-ready filing in one auditable system instead of spreadsheets and disconnected tools.',
+      body: 'Entry throughput, clearance time, classification consistency, and screening coverage, with an audit trail on every entry.',
       count: 'Compliance',
     },
     {
       name: 'Freight forwarders',
-      body: 'Shipment, carrier, and document management with end-to-end visibility and a portal your customers can self-serve.',
-      count: 'Logistics',
+      body: 'Shipment visibility, OTIF, cost per lane, and demurrage, with carrier milestones unified over EDI and API.',
+      count: 'Visibility',
     },
     {
       name: '3PL & warehousing',
-      body: 'Multi-warehouse inventory with bonded and FTZ handling, receiving, picking, and stock visibility across locations.',
-      count: 'WMS',
+      body: 'Inventory across sites, bonded and FTZ included, with aging, fill rate, and dock-to-stock throughput measured.',
+      count: 'Inventory',
     },
     {
       name: 'Ports & terminals',
-      body: 'Computer-vision security over cargo, containers, and the perimeter, with real-time alerts to the security desk.',
-      count: 'Vision',
+      body: 'Dwell time, gate and berth throughput, and congestion flags, so the yard is managed on evidence instead of feel.',
+      count: 'Throughput',
     },
     {
       name: 'Manufacturers & distributors',
-      body: 'Source, import, and distribute on one system, with landed cost, inventory, and compliance connected end to end.',
-      count: 'ERP',
+      body: 'S&OP, forecast accuracy, and product P&L with true landed cost in COGS, across the cross-border network.',
+      count: 'S&OP',
     },
     {
       name: 'Ocean & shipping carriers',
-      body: 'Operations and visibility software for the companies that carry the cargo, integrated with partners and terminals.',
-      count: 'Logistics',
+      body: 'Service, cost, and utilization analytics for the companies that carry the cargo, tied to partners and terminals.',
+      count: 'Service',
     },
   ],
 };
@@ -412,31 +477,35 @@ export const faq = {
   items: [
     {
       q: 'What does Kadmoon do?',
-      a: 'We are a US software company focused entirely on foreign trade. We build the systems that cross-border operations run on: trade ERP, CRM, inventory and warehouse management, customs and compliance, computer vision for port and vessel security, and supply-chain and logistics software. You can start on a ready Kadmoon platform and tailor it to your operation, or have us build custom software from scratch. Either way you own the software and the data.',
+      a: 'We are a US analytics firm focused entirely on foreign trade. We turn the data buried in your customs, logistics, and ERP systems into decisions: landed cost and margin, duty and tariff exposure, shipment visibility and OTIF, customs and compliance analytics, inventory, and an executive control tower. Everything is built on a governed model, delivered on the Microsoft stack, and lives in your own tenant.',
     },
     {
-      q: 'Do you build products or custom software?',
-      a: 'Both, and most clients use a mix. We have platforms for the common trade problems, ERP, customs and compliance, inventory, logistics, so you are not paying to rebuild what already exists. Then we tailor and extend them, or build fully custom where your operation is genuinely different. The goal is software shaped to how you trade, reached by the shortest path that gets you there.',
+      q: 'Do we have to be a Microsoft shop?',
+      a: 'No. Your data can live anywhere: SAP, Oracle, NetSuite, Microsoft Dynamics, broker and carrier systems, EDI and ACE, or spreadsheets. We read from the system of record wherever it runs. We deliver the analytics on the Microsoft stack, Fabric, Power BI, and Azure, because it is a strong, governed place to build, but the platform is the how, not the point.',
     },
     {
       q: 'Why only foreign trade?',
-      a: 'Because trade software fails when it is built by people who do not know trade. Incoterms, landed cost, bonded inventory, HTS classification, denied-party screening, and ACE filing are not edge cases to us, they are the core of what we build. That focus is why our systems model your operation correctly instead of forcing it into a generic template.',
+      a: 'Because trade analytics fails when it is built by people who do not know trade. Landed cost, duty, incoterms, bonded inventory, HTS classification, denied-party screening, and ACE are not edge cases to us, they are the metrics we model every day. That focus is why we arrive with the trade data model and KPIs ready instead of learning your business on your budget.',
     },
     {
-      q: 'Can you integrate with our carriers, brokers, and ACE?',
-      a: 'Yes, integration is central to what we do. Trade runs on data moving between parties: carriers, brokers, marketplaces, terminals, and government systems like ACE. We build the EDI and API connections so your ERP, compliance, inventory, and logistics stay in sync with each other and with your partners, instead of your team retyping the same data into five systems.',
+      q: 'Where does the data come from?',
+      a: 'From the systems you already run. We land raw data in your tenant, shape it into a governed semantic model, and feed the dashboards from there. Carrier EDI and customs messages are parsed into structured events, so milestones, exceptions, and filings become data you can measure instead of documents you have to read. The data integration doc goes into detail.',
     },
     {
       q: 'How does a project start?',
-      a: 'With a short discovery, usually one to two weeks. We map how goods, documents, and money move through your operation: the trade lanes, the compliance checkpoints, the systems you use, and where the friction is. You leave with a scope and an architecture plan you can act on, with a clear path whether you start on a platform or build custom.',
+      a: 'Usually with a trade data assessment: a short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks. It de-risks the larger build and produces a scope and a quote grounded in your real data. You leave with working analytics, not a slide deck.',
     },
     {
-      q: 'Do we own the software and the data?',
-      a: 'Yes. Everything we build is yours: the software, the source, and the data, deployed in your environment with documentation and a full handover. We support and evolve it on a defined agreement after launch, but you are never locked in or dependent on us to keep operating. Software that runs your business should belong to your business.',
+      q: 'Do you build software too?',
+      a: 'Yes, and it grows out of the analytics. Living in a client’s trade data is where our software starts: once we understand the operation, we build the systems that run it, customs filing, trade ERP, inventory, and security vision. Analytics is what we lead with and deliver today; the software is what we build as the relationship deepens.',
+    },
+    {
+      q: 'Do we own the analytics and the data?',
+      a: 'Yes. Everything we build is yours: the semantic model, the reports, and the data, all inside your own tenant, with documentation and a full handover. Access is provisioned per engagement against your identity provider and policies. We support and evolve it on a defined agreement after launch, but you are never locked in or dependent on us to keep operating.',
     },
     {
       q: 'Which regions and company sizes do you serve?',
-      a: 'We are a US company serving American importers, exporters, brokers, forwarders, 3PLs, ports, and the manufacturers and distributors that trade across borders. We work with growing operations and established enterprises alike; the common thread is that moving goods across borders is central to the business and the software has to get it right.',
+      a: 'We are a US firm serving American importers, exporters, brokers, forwarders, 3PLs, ports, and the manufacturers and distributors that trade across borders. We work with growing operations and established enterprises alike; the common thread is that moving goods across borders is central to the business and the numbers have to be right.',
     },
   ],
 };
@@ -446,12 +515,13 @@ export const contact = {
   title: 'Tell us what you move. Get a quote.',
   sub: 'Share how your operation works and where the friction is. Within one business day you get a response with a clear path forward and a quote, no obligation.',
   needOptions: [
-    'Trade ERP',
-    'Customs & compliance',
-    'Inventory / WMS',
-    'Vessel / port security vision',
-    'Supply chain & logistics',
-    'Custom software',
+    'Landed cost & margin analytics',
+    'Duty & tariff exposure',
+    'Shipment visibility & OTIF',
+    'Customs & compliance analytics',
+    'Inventory & warehouse analytics',
+    'Executive control tower',
+    'Software build (ERP, customs, WMS)',
     'Other',
   ],
   sizeOptions: [
@@ -464,28 +534,29 @@ export const contact = {
 
 export const footer = {
   tagline:
-    'A US software company focused 100% on foreign trade: trade ERP, customs and compliance, inventory, security vision, and logistics, built as platforms and custom development for the companies that move goods across borders.',
+    'A US analytics firm focused 100% on foreign trade. We turn the data in your customs, logistics, and ERP systems into decisions, on the Microsoft stack and in your own tenant, for the companies that move goods across borders.',
   columns: [
     {
       heading: 'Company',
       links: [
         { label: 'Solutions', href: '/services' },
         { label: 'Industries', href: '/industries' },
-        { label: 'Work', href: '/cases' },
+        { label: 'Cases', href: '/cases' },
+        { label: 'Docs', href: '/docs' },
         { label: 'Blog', href: '/blog' },
         { label: 'About', href: '/about' },
         { label: 'Contact', href: '/contact' },
       ],
     },
     {
-      heading: 'Solutions',
+      heading: 'Analytics',
       links: [
-        { label: 'Trade ERP', href: '/services/trade-erp' },
-        { label: 'Customs & compliance', href: '/services/customs-compliance' },
-        { label: 'Inventory & WMS', href: '/services/inventory-wms' },
-        { label: 'Security vision', href: '/services/vessel-security-vision' },
-        { label: 'Supply chain & logistics', href: '/services/supply-chain-logistics' },
-        { label: 'Custom development', href: '/services/custom-development' },
+        { label: 'Landed cost & margin', href: '/cases/landed-cost-analytics' },
+        { label: 'Duty & tariff exposure', href: '/cases/tariff-duty-exposure' },
+        { label: 'Shipment visibility & OTIF', href: '/cases/shipment-visibility-analytics' },
+        { label: 'Customs & compliance analytics', href: '/cases/entry-throughput-analytics' },
+        { label: 'Methodology', href: '/docs/methodology' },
+        { label: 'Platforms we build', href: '/services' },
       ],
     },
     {
@@ -527,46 +598,46 @@ export const techStack = {
 export const engagement = {
   eyebrow: 'How we engage',
   title: 'Three ways to work with us.',
-  sub: 'Every model runs on the same senior, US-based team, clear acceptance criteria, and software you own.',
+  sub: 'Every model runs on the same senior, US-based team, clear acceptance criteria, and analytics you own in your tenant.',
   models: [
     {
-      name: 'Platform + tailoring',
-      best: 'Best for a fast start',
-      body: 'Start on a ready Kadmoon platform, trade ERP, compliance, inventory, or logistics, and we tailor it to your flow and integrate it with your partners. The shortest path to software that fits.',
-      points: ['Proven core', 'Tailored to your flow', 'Live faster'],
+      name: 'Trade data assessment',
+      best: 'Best first step',
+      body: 'A short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks. It de-risks the larger build and produces a scope and a quote grounded in your real data.',
+      points: ['Fixed scope', 'First dashboards in ~2 weeks', 'Scope and quote'],
     },
     {
-      name: 'Custom build',
-      best: 'Best when you are genuinely different',
-      body: 'A system built from scratch around how your operation works, with clear acceptance criteria per deliverable and delivery in short, reviewable cycles. You know what ships and when.',
-      points: ['Acceptance criteria per deliverable', 'Short delivery cycles', 'Built to your operation'],
+      name: 'Fixed-scope project',
+      best: 'Best when the outcome is defined',
+      body: 'A defined build from data foundation to dashboards, with acceptance criteria per deliverable and milestone billing. You know exactly what you get, when, and how to validate it.',
+      points: ['Acceptance criteria per deliverable', 'Milestone billing', 'Fixed timeline'],
     },
     {
-      name: 'Support & evolution',
+      name: 'Managed analytics',
       best: 'Best after go-live',
-      body: 'We keep integrations and compliance current as rules and partners change, support the software on a defined agreement, and evolve it as your trade grows.',
-      points: ['Defined support agreement', 'Compliance kept current', 'Evolution roadmap'],
+      body: 'We run and evolve your analytics estate on a defined agreement: refreshes, governance, new reports as needs change, and a roadmap for what comes next.',
+      points: ['Defined service agreement', 'Governance kept current', 'Evolution roadmap'],
     },
   ],
 };
 
 export const comparison = {
-  eyebrow: 'Built for trade vs the alternatives',
-  title: 'Why trade-native software wins.',
-  sub: 'A generic ERP or a set of point tools can get you running, but they leave compliance, landed cost, and customs to spreadsheets and manual work.',
-  columns: ['Kadmoon (trade-native)', 'Generic ERP', 'Spreadsheets & point tools'],
+  eyebrow: 'Trade analytics vs the alternatives',
+  title: 'Why trade-native analytics wins.',
+  sub: 'A generic BI shop or a stack of spreadsheets can draw a chart, but they leave landed cost, duty, and customs to manual work and let every team walk in with a different number.',
+  columns: ['Kadmoon (trade-native)', 'Generic BI', 'Spreadsheets'],
   rows: [
-    { label: 'Customs & compliance built in', values: ['yes', 'no', 'no'] },
-    { label: 'True landed cost', values: ['yes', 'partial', 'partial'] },
-    { label: 'Carrier, broker & ACE integration', values: ['yes', 'partial', 'no'] },
-    { label: 'Bonded / FTZ inventory', values: ['yes', 'partial', 'no'] },
-    { label: 'Tailored to your trade flow', values: ['yes', 'partial', 'yes'] },
-    { label: 'You own the software and data', values: ['yes', 'partial', 'yes'] },
+    { label: 'One definition per KPI', values: ['yes', 'partial', 'no'] },
+    { label: 'Trade-native metrics (landed cost, OTIF, duty)', values: ['yes', 'no', 'partial'] },
+    { label: 'Reads SAP, EDI, ACE, and carriers', values: ['yes', 'partial', 'no'] },
+    { label: 'Governed and row-level secure', values: ['yes', 'partial', 'no'] },
+    { label: 'Lives in your own tenant', values: ['yes', 'partial', 'yes'] },
+    { label: 'First dashboards in about two weeks', values: ['yes', 'partial', 'partial'] },
   ],
 };
 
 export const credibility = {
-  text: 'Kadmoon is a US software company focused entirely on foreign trade, run by a senior, US-based team, with more than 35 clients served. We build trade ERP, customs and compliance, inventory, security vision, and logistics software as ready platforms and custom development. The systems shown on the site are illustrative of what we build; detailed client work is available under NDA.',
+  text: 'Kadmoon is a US analytics firm focused entirely on foreign trade, run by a senior, US-based team, with more than 35 clients served. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant. The dashboards shown on the site are illustrative of what we ship; detailed client work is available under NDA.',
 };
 
 // ---------------------------------------------------------------------------

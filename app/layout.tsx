@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import { siteConfig } from '@/lib/site';
 import { JsonLd } from '@/components/JsonLd';
@@ -8,28 +8,44 @@ import { FloatingContact } from '@/components/FloatingContact';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { CookieConsent } from '@/components/CookieConsent';
 import { Analytics } from '@/components/Analytics';
+import { SearchOverlay } from '@/components/SearchOverlay';
 
 // Kadmoon trade-software identity: Space Grotesk for display (technical,
 // geometric), Inter for body, JetBrains Mono for data/eyebrows.
-const display = Space_Grotesk({
-  subsets: ['latin'],
+//
+// Self-hosted (latin woff2 in ./fonts) via next/font/local, so the build has
+// no network dependency on Google Fonts. This removes a class of CI and
+// production build flakes where next/font/google could not fetch at build time.
+const display = localFont({
   variable: '--font-display',
   display: 'swap',
-  weight: ['500', '600', '700'],
+  fallback: ['system-ui', 'sans-serif'],
+  src: [
+    { path: './fonts/spacegrotesk-500.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/spacegrotesk-600.woff2', weight: '600', style: 'normal' },
+    { path: './fonts/spacegrotesk-700.woff2', weight: '700', style: 'normal' },
+  ],
 });
 
-const sans = Inter({
-  subsets: ['latin'],
+const sans = localFont({
   variable: '--font-sans',
   display: 'swap',
-  weight: ['400', '500', '600'],
+  fallback: ['system-ui', 'sans-serif'],
+  src: [
+    { path: './fonts/inter-400.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/inter-500.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/inter-600.woff2', weight: '600', style: 'normal' },
+  ],
 });
 
-const mono = JetBrains_Mono({
-  subsets: ['latin'],
+const mono = localFont({
   variable: '--font-mono',
   display: 'swap',
-  weight: ['400', '500'],
+  fallback: ['ui-monospace', 'monospace'],
+  src: [
+    { path: './fonts/jetbrainsmono-400.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/jetbrainsmono-500.woff2', weight: '500', style: 'normal' },
+  ],
 });
 
 export const viewport: Viewport = {
@@ -145,6 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <FloatingContact />
         <CookieConsent />
+        <SearchOverlay />
         <Analytics />
       </body>
     </html>

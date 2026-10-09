@@ -1,14 +1,14 @@
 import { hero } from '@/lib/content';
 import { Button } from '../Button';
 
-// Illustrative product UI — a stylized trade operations console, not real
+// Illustrative product UI — a stylized trade analytics console, not real
 // client data. Labeled "Sample" so it is never mistaken for a live figure.
 function TradeConsoleMock() {
-  const checks = [
-    'HTS classified',
-    'Parties screened',
-    'Duty & landed cost',
-    'ACE filing ready',
+  const breakdown = [
+    { k: 'Product cost', v: '$84,200' },
+    { k: 'Ocean freight', v: '$6,480' },
+    { k: 'Duty (HTS)', v: '$5,910' },
+    { k: 'Brokerage & fees', v: '$1,240' },
   ];
   return (
     <div className="relative">
@@ -23,7 +23,7 @@ function TradeConsoleMock() {
           <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
           <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
           <span className="ml-2 font-mono text-[11px] tracking-[0.02em] text-ink-3">
-            kadmoon · trade console
+            kadmoon · trade analytics
           </span>
           <span className="ml-auto rounded-full bg-mist px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.12em] text-ink-3">
             Sample
@@ -34,9 +34,9 @@ function TradeConsoleMock() {
           {/* KPI tiles */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { k: 'In transit', v: '24' },
-              { k: 'Cleared today', v: '18' },
-              { k: 'Flags', v: '2' },
+              { k: 'Landed cost', v: '$97.8k' },
+              { k: 'Gross margin', v: '27.4%' },
+              { k: 'OTIF', v: '94%' },
             ].map((t) => (
               <div key={t.k} className="rounded-xl bg-mist px-3 py-3">
                 <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">{t.k}</div>
@@ -45,30 +45,27 @@ function TradeConsoleMock() {
             ))}
           </div>
 
-          {/* Compliance checklist */}
+          {/* Landed cost breakdown */}
           <div className="mt-5 rounded-xl border border-line p-4">
             <div className="flex items-center justify-between">
               <span className="font-sans text-[12px] font-semibold text-ink">
-                Shipment #IM-4821 · pre-departure
+                Landed cost · shipment IM-4821
               </span>
               <span className="rounded-full bg-success/12 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] text-success">
-                Ready
+                Modeled
               </span>
             </div>
-            <ul className="mt-3 space-y-2.5">
-              {checks.map((c) => (
-                <li key={c} className="flex items-center gap-3">
-                  <span
-                    aria-hidden
-                    className="grid h-5 w-5 flex-none place-items-center rounded-md bg-accent text-white"
-                  >
-                    <svg viewBox="0 0 20 20" fill="none" className="h-3 w-3">
-                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  <span className="text-[14px] text-ink">{c}</span>
+            <ul className="mt-3 space-y-2">
+              {breakdown.map((row) => (
+                <li key={row.k} className="flex items-center justify-between text-[13px]">
+                  <span className="text-ink-2">{row.k}</span>
+                  <span className="font-mono tabular-nums text-ink">{row.v}</span>
                 </li>
               ))}
+              <li className="mt-1 flex items-center justify-between border-t border-line pt-2.5 text-[13px]">
+                <span className="font-semibold text-ink">Landed cost</span>
+                <span className="font-mono tabular-nums font-semibold text-accent">$97,830</span>
+              </li>
             </ul>
           </div>
         </div>
