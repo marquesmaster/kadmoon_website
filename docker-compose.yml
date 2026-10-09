@@ -44,6 +44,9 @@ services:
       - SMTP_SECURE=${SMTP_SECURE:-false}
       - CONTACT_TO=${CONTACT_TO:-comercial@kadmoon.com}
       - CONTACT_FROM=${CONTACT_FROM:-}
+      # Leads into the Conecta CRM; both empty = not sent.
+      - SUITE_URL=${SUITE_URL:-}
+      - SUITE_INTAKE_SECRET=${SUITE_INTAKE_SECRET:-}
 
 volumes:
   kadmoon-db-data:
