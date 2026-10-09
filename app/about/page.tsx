@@ -9,32 +9,32 @@ import { Comparison } from '@/components/sections/Comparison';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'About | A US software company built for foreign trade',
+  title: 'About | A US analytics firm built for foreign trade',
   description:
-    'Kadmoon is a US software company focused entirely on foreign trade. Senior, US-based engineers who speak customs, logistics, and compliance, building software you own.',
+    'Kadmoon is a US analytics firm focused entirely on foreign trade. Senior, US-based engineers who speak customs, logistics, and compliance, turning your data into decisions in your own tenant.',
   alternates: { canonical: `${siteConfig.url}/about` },
 };
 
 const principles = [
-  { n: '01', t: 'Foreign trade is all we do', d: 'Deep in one domain instead of shallow across ten. It shows in software that fits how you trade.' },
-  { n: '02', t: 'Senior, US-based teams', d: 'The people who scope your system build and support it. No rotating subcontractors.' },
-  { n: '03', t: 'Compliance by default', d: 'Screening, classification, and audit trails are part of the build, not bolted on after the fact.' },
-  { n: '04', t: 'You own it', d: 'Your software, your data, documented and handed over. No black boxes, no lock-in.' },
+  { n: '01', t: 'Foreign trade is all we do', d: 'Deep in one domain instead of shallow across ten. It shows in metrics modeled the way trade actually works.' },
+  { n: '02', t: 'Senior, US-based teams', d: 'The people who scope your model build and support it. No rotating subcontractors.' },
+  { n: '03', t: 'One definition per KPI', d: 'Landed cost, OTIF, and duty exposure each mean one thing across every report, governed and documented.' },
+  { n: '04', t: 'You own it', d: 'Your model, your reports, your data, in your own tenant, documented and handed over. No lock-in.' },
 ];
 
 const steps = [
-  { n: '1', t: 'Discover', d: 'A call to understand how goods, documents, and money move through your operation and where the friction is.', last: false },
-  { n: '2', t: 'Scope & plan', d: 'A short discovery that produces a scope and an architecture plan you can act on.', last: false },
-  { n: '3', t: 'Foundation', d: 'A ready platform tailored to you or a custom base, with your data model, compliance rules, and integrations.', last: false },
-  { n: '4', t: 'Build', d: 'Delivery in short cycles, each one a working piece of your operation wired to your partners.', last: false },
-  { n: '5', t: 'Sustain', d: 'Training, support, and compliance kept current as rules and partners change and your trade grows.', last: true },
+  { n: '1', t: 'Discover', d: 'A call to understand the decisions your leaders need to make, the questions behind them, and where the numbers live.', last: false },
+  { n: '2', t: 'Scope & plan', d: 'A short assessment that produces a scope and an architecture plan you can act on, with first dashboards in about two weeks.', last: false },
+  { n: '3', t: 'Foundation', d: 'We land your data in your tenant and build the semantic layer that gives one definition per KPI.', last: false },
+  { n: '4', t: 'Build', d: 'Delivery in short cycles, each one a dashboard validated with the area that uses it.', last: false },
+  { n: '5', t: 'Sustain', d: 'Training, support, and governance kept current as rules and partners change and your trade grows.', last: true },
 ];
 
 const team = [
-  { mono: 'TA', role: 'Trade Solutions Architect', desc: 'Owns the system design and keeps it coherent from sourcing to delivery.' },
-  { mono: 'CC', role: 'Customs & Compliance Lead', desc: 'Builds classification, screening, and filing that keep shipments clear and auditable.' },
-  { mono: 'IN', role: 'Integrations Lead', desc: 'Connects carriers, brokers, ACE, and marketplaces so data flows instead of being retyped.' },
-  { mono: 'CV', role: 'Computer Vision Lead', desc: 'Builds the security vision over cargo, containers, and the perimeter.' },
+  { mono: 'TA', role: 'Trade Analytics Lead', desc: 'Owns the metrics and keeps them coherent from sourcing to delivery.' },
+  { mono: 'DE', role: 'Data Engineering Lead', desc: 'Builds the pipelines and semantic model that feed every report from clean data.' },
+  { mono: 'CC', role: 'Customs & Compliance Lead', desc: 'Models classification, screening, and clearance so the numbers hold up to an audit.' },
+  { mono: 'PL', role: 'Platform Lead', desc: 'Builds the trade software, customs, ERP, and inventory, that grows out of the analytics.' },
 ];
 
 export default function AboutPage() {
@@ -43,10 +43,10 @@ export default function AboutPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="About Kadmoon" title="A US software company built for foreign trade.">
+        <PageHero eyebrow="About Kadmoon" title="A US analytics firm built for foreign trade.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We do one thing, and we do it deeply: build the software that moves goods across borders,
-            for the companies that do it.
+            We do one thing, and we do it deeply: turn the data behind cross-border trade into
+            decisions, for the companies that move the goods.
           </p>
         </PageHero>
 
@@ -56,24 +56,24 @@ export default function AboutPage() {
             <div>
               <Eyebrow>Why we exist</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
-                Trade software, built by people who speak trade.
+                Trade analytics, built by people who speak trade.
               </h2>
             </div>
             <div className="space-y-5 md:col-span-2">
               <p className="text-lg leading-relaxed text-ink-2">
-                Most trade operations run on generic ERPs and spreadsheets that were never built for
-                customs, landed cost, or bonded inventory, so the software fights the operation
-                instead of fitting it.
+                Most trade operations read their numbers off generic BI and spreadsheets that were
+                never built for customs, landed cost, or bonded inventory, so every team walks into
+                the meeting with a different figure.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
-                Kadmoon is a US software company with a deliberately narrow focus: foreign trade, and
-                nothing else. That focus lets us model your operation correctly, move faster, and
-                stand behind every system we build.
+                Kadmoon is a US analytics firm with a deliberately narrow focus: foreign trade, and
+                nothing else. That focus lets us arrive with the trade data model and KPIs ready, move
+                faster, and stand behind every number we ship.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
-                Every engagement is run by senior, US-based engineers and handed over with
-                documentation and training. Our goal is not to become a dependency, it is to leave
-                you owning software you trust.
+                Every engagement is run by senior, US-based engineers, built in your own tenant, and
+                handed over with documentation and training. Our goal is not to become a dependency,
+                it is to leave you owning analytics you trust.
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function AboutPage() {
             <div className="mb-12 max-w-2xl">
               <Eyebrow>How we work</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
-                From first call to running platform.
+                From first call to live dashboards.
               </h2>
             </div>
             <div className="relative">
