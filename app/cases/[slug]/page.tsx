@@ -3,11 +3,7 @@ import { notFound } from 'next/navigation';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { Eyebrow } from '@/components/Eyebrow';
-import { Button } from '@/components/Button';
 import { PageHero } from '@/components/sections/PageHero';
-import { CaseDashboard } from '@/components/cases/CaseDashboard';
-import { getDashboard } from '@/lib/cases/dashboards';
 import { caseStudies } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -30,9 +26,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 export default function CaseDetailPage({ params }: { params: { slug: string } }) {
   const c = caseStudies.find((x) => x.slug === params.slug);
   if (!c) notFound();
-  const others = caseStudies.filter((x) => x.slug !== c.slug).slice(0, 3);
-  const dash = getDashboard(c.slug);
-  const kpis = dash?.kpis.slice(0, 4) ?? [];
+  const others = caseStudies.filter((x) => x.slug !== c.slug && x.kind === c.kind).slice(0, 3);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -55,7 +49,7 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
         />
 
         <PageHero
-          eyebrow={c.sector}
+          eyebrow={`${c.kind === 'software' ? 'Software build' : 'Analytics'} · ${c.sector}`}
           title={c.title}
           breadcrumbs={
             <Breadcrumbs
@@ -79,29 +73,24 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
             ))}
           </div>
 
-          {kpis.length > 0 && (
-            <div className="mt-8">
-              <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                {kpis.map((k) => (
-                  <div
-                    key={k.label}
-                    className="rounded-xl border border-line bg-paper p-4 shadow-card"
-                  >
-                    <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
-                      {k.label}
-                    </dt>
-                    <dd className="mt-1 font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
-                      {k.value}
-                    </dd>
-                    <dd className="mt-1 text-[12px] leading-snug text-ink-2">{k.sub}</dd>
-                  </div>
-                ))}
-              </dl>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
-                Illustrative figures · fictitious client · under NDA
-              </p>
-            </div>
-          )}
+          <div className="mt-8">
+            <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {c.metrics.map((k) => (
+                <div key={k.label} className="rounded-xl border border-line bg-paper p-4 shadow-card">
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+                    {k.label}
+                  </dt>
+                  <dd className="mt-1 font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
+                    {k.value}
+                  </dd>
+                  {k.sub && <dd className="mt-1 text-[12px] leading-snug text-ink-2">{k.sub}</dd>}
+                </div>
+              ))}
+            </dl>
+            <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+              Illustrative figures · fictitious client · under NDA
+            </p>
+          </div>
         </PageHero>
 
         {c.result && (
@@ -135,19 +124,26 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
           </div>
         </section>
 
-        {/* Delivered dashboard (illustrative demo) */}
-        {getDashboard(c.slug) && (
-          <section className="mx-auto max-w-shell px-6 pb-8">
-            <h2 className="mb-4 font-display text-display-sm text-ink">The dashboard we delivered</h2>
-            <div className="overflow-x-auto rounded-2xl border border-line">
-              <CaseDashboard slug={c.slug} />
-            </div>
-            <p className="mt-3 text-[13px] text-ink-3">
-              Illustrative dashboard with the structure delivered on the project. Client names and
-              figures are fictitious and under NDA.
-            </p>
-          </section>
-        )}
+        {/* Data sources */}
+        <section className="mx-auto max-w-3xl px-6 pb-10">
+          <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
+            Where the data came from
+          </h2>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {c.dataSources.map((d) => (
+              <span
+                key={d}
+                className="rounded-full border border-line bg-paper px-3.5 py-1.5 text-[13px] font-medium text-ink-2"
+              >
+                {d}
+              </span>
+            ))}
+          </div>
+          <p className="mt-3 text-[13px] leading-relaxed text-ink-3">
+            Data is drawn from the systems the operation already runs on and delivered in the
+            client&rsquo;s own tenant.
+          </p>
+        </section>
 
         {/* CTA */}
         <section className="mx-auto max-w-3xl px-6 pb-16">
@@ -155,17 +151,17 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
             <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
             <div className="relative">
               <h2 className="font-display text-2xl font-semibold text-white">
-                Want a dashboard like this on your data?
+                Want this on your trade data?
               </h2>
               <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-white/70">
-                Tell us your scenario and get a diagnosis and a proposal with an investment range
-                within a few business days.
+                Tell us where your numbers live and what leadership needs to see. You get a scoped
+                plan and a quote within one business day.
               </p>
               <a
-                href="/#contact"
+                href="/contact"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
               >
-                Start a project <span aria-hidden>→</span>
+                Request a quote <span aria-hidden>→</span>
               </a>
             </div>
           </div>

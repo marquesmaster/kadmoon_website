@@ -210,6 +210,12 @@ const nextConfig = {
       { source: '/en', destination: '/', permanent: true },
       { source: '/en/blog/:slug*', destination: '/blog', permanent: true },
       { source: '/en/:path*', destination: '/', permanent: true },
+      // Renamed case study.
+      {
+        source: '/cases/freight-visibility-platform',
+        destination: '/cases/shipment-visibility-portal',
+        permanent: true,
+      },
 
       // Retired Power BI / Microsoft service pages (rebrand to foreign-trade
       // software). Everything consolidates to the solutions listing.

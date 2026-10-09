@@ -201,23 +201,23 @@ export const process = {
 
 export const work = {
   eyebrow: 'Selected work',
-  title: 'Software behind real trade operations.',
-  sub: 'The kinds of systems we build for cross-border operations. Client names and figures are illustrative and under NDA; the structure is what ships.',
+  title: 'Analytics behind real trade operations.',
+  sub: 'The analytics we build for cross-border operations, drawing on SAP, Microsoft, and the systems you already run. Client names and figures are illustrative and under NDA; the structure is what ships.',
   cases: [
     {
-      tag: 'Customs Brokerage',
-      title: 'Customs filing and compliance platform',
-      body: 'HTS classification, denied-party screening, and ACE-ready filing workflows in one auditable system, replacing spreadsheets and disconnected tools.',
-    },
-    {
       tag: 'Importers',
-      title: 'Trade ERP with landed cost',
-      body: 'Purchase orders, shipments, documents, and true landed cost in one platform built around import operations, not a generic ERP.',
+      title: 'Landed cost by SKU and supplier',
+      body: 'Freight, duty, and fees allocated to the unit from SAP and freight invoices, so margin by product is a daily number instead of a monthly spreadsheet.',
     },
     {
-      tag: 'Ports & Security',
-      title: 'Vessel and cargo security vision',
-      body: 'Computer vision over yard and berth cameras for container, cargo, and perimeter monitoring, with anomaly alerts routed to the security desk.',
+      tag: 'Customs Brokers',
+      title: 'Entry throughput and clearance time',
+      body: 'Entry volume, clearance time, and exceptions by client, port, and filer, so problem lanes and staffing are managed on evidence.',
+    },
+    {
+      tag: 'Freight Forwarders',
+      title: 'Shipment visibility and milestones',
+      body: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with exceptions flagged before delivery.',
     },
   ],
 };
@@ -253,113 +253,11 @@ export const migrationHighlight = {
 };
 
 // ---------------------------------------------------------------------------
-// Case studies. Illustrative structures of systems we build for cross-border
-// operations. Do NOT add client names or metrics that are not verified.
+// Case studies live in lib/cases/studies.ts (30+ analytics cases plus a few
+// software builds). Re-exported here so existing imports keep working.
 // ---------------------------------------------------------------------------
-
-export type CaseStudy = {
-  slug: string;
-  sector: string;
-  title: string;
-  summary: string;
-  challenge: string;
-  build: string;
-  whatWeBuilt: string[];
-  outcomes: string[];
-  stack: string[];
-  result?: string;
-};
-
-export const caseStudies: CaseStudy[] = [
-  {
-    slug: 'customs-filing-platform',
-    sector: 'Customs Brokerage',
-    title: 'Customs filing and compliance platform',
-    summary:
-      'A customs broker moved off spreadsheets and disconnected tools onto one auditable platform for classification, screening, and filing.',
-    challenge:
-      'Entries were prepared across spreadsheets and email, screening was manual and hard to prove, and a single missed step could hold a shipment at the border or trigger a penalty.',
-    build:
-      'We built one platform that classifies goods, screens every party, calculates duty and landed cost, and produces an ACE-ready filing with a complete audit trail, wired to the systems the broker already used.',
-    whatWeBuilt: [
-      'HTS classification with duty and landed-cost calculation in the entry flow.',
-      'Automated denied-party and sanctions screening on every counterparty.',
-      'ACE-ready filing workflows with a full, auditable record per entry.',
-    ],
-    outcomes: [
-      'Every entry classified, screened, and documented before it ships.',
-      'A provable compliance record instead of scattered spreadsheets.',
-      'Fewer holds and faster clearance.',
-    ],
-    stack: ['Web platform', 'EDI / ACE integration', 'Rules engine', 'Audit log'],
-  },
-  {
-    slug: 'trade-erp-landed-cost',
-    sector: 'Importers',
-    title: 'Trade ERP with true landed cost',
-    summary:
-      'An importer replaced a generic ERP and spreadsheets with a platform built around purchase orders, shipments, and landed cost.',
-    challenge:
-      'A generic ERP could not model freight, duty, and fees, so landed cost was a monthly spreadsheet exercise and margin by product was always a guess.',
-    build:
-      'We built a trade ERP around the import flow: purchase orders, shipments, and documents, with freight, duty, and fees allocated to every unit so landed cost and margin are known in real time.',
-    whatWeBuilt: [
-      'Purchase order, shipment, and document management built for import.',
-      'Landed-cost allocation of freight, duty, and fees to the unit.',
-      'Real-time margin by product, supplier, and shipment.',
-    ],
-    outcomes: [
-      'Landed cost known at receipt, not at month end.',
-      'Margin by product and supplier instead of a guess.',
-      'One system from PO to stock instead of ERP plus spreadsheets.',
-    ],
-    stack: ['Trade ERP', 'Integrations', 'Reporting', 'Document management'],
-  },
-  {
-    slug: 'vessel-security-vision',
-    sector: 'Ports & Security',
-    title: 'Vessel and cargo security vision',
-    summary:
-      'A terminal operator added computer vision over existing cameras for container, cargo, and perimeter monitoring with real-time alerts.',
-    challenge:
-      'Security relied on staff watching dozens of camera feeds, so incidents at the perimeter, on the yard, or at the berth were caught late or missed entirely.',
-    build:
-      'We layered computer vision over the existing camera network to detect anomalies, unauthorized access, and cargo events, routing real-time alerts to the security desk with the clip and location attached.',
-    whatWeBuilt: [
-      'Computer-vision models over yard, berth, and perimeter cameras.',
-      'Anomaly, access, and cargo-event detection with real-time alerts.',
-      'An incident console with clip, location, and audit trail.',
-    ],
-    outcomes: [
-      'Incidents caught in real time instead of after the fact.',
-      'A watch team that acts on alerts instead of scanning feeds.',
-      'An auditable record of every flagged event.',
-    ],
-    stack: ['Computer vision', 'Edge / streaming', 'Alerting', 'Web console'],
-  },
-  {
-    slug: 'freight-visibility-platform',
-    sector: 'Freight & Logistics',
-    title: 'Shipment visibility and logistics platform',
-    summary:
-      'A forwarder unified carrier, shipment, and document data into one platform with end-to-end visibility and partner integrations.',
-    challenge:
-      'Shipment status lived in carrier portals, email, and spreadsheets, so customers called for updates the team had to go dig up, and exceptions surfaced too late.',
-    build:
-      'We built a logistics platform that consolidates carrier and shipment data over EDI and API, tracks every shipment end to end, and flags exceptions early, with a portal customers can self-serve.',
-    whatWeBuilt: [
-      'Carrier and shipment data unified over EDI and API.',
-      'End-to-end tracking from supplier to door with exception flags.',
-      'A customer portal for self-service status and documents.',
-    ],
-    outcomes: [
-      'Shipment status in one place instead of five portals.',
-      'Exceptions caught early instead of at delivery.',
-      'Customers self-serve instead of calling for updates.',
-    ],
-    stack: ['Logistics platform', 'EDI / API', 'Customer portal', 'Alerting'],
-  },
-];
+export type { CaseStudy, CaseMetric } from './cases/studies';
+export { caseStudies } from './cases/studies';
 
 export const industries = {
   eyebrow: 'Who we serve',
