@@ -7,7 +7,7 @@ import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
 import { PageHero } from '@/components/sections/PageHero';
 import { BlogCard } from '@/components/BlogCard';
-import { services } from '@/lib/content';
+import { services, serviceAnalytics, caseStudies } from '@/lib/content';
 import { getPostsByCategorySlug, categorySlug } from '@/lib/blog';
 import { siteConfig } from '@/lib/site';
 
@@ -33,6 +33,13 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
 
   const related = getPostsByCategorySlug(categorySlug(s.blogCategory)).slice(0, 3);
   const others = services.filter((x) => x.slug !== s.slug);
+
+  // Analytics tie-in: the analytics we deliver first, which this platform grows
+  // from. Resolve case slugs to their titles so labels never drift.
+  const tie = serviceAnalytics[s.slug];
+  const tieCases = (tie?.cases ?? [])
+    .map((slug) => caseStudies.find((c) => c.slug === slug))
+    .filter((c): c is (typeof caseStudies)[number] => Boolean(c));
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -69,11 +76,11 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
           <p className="mt-5 max-w-2xl text-xl font-medium text-navy">{s.tagline}</p>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-2">{s.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/#contact" size="lg">
-              Start a project <span aria-hidden>→</span>
+            <Button href="/contact" size="lg">
+              Request a quote <span aria-hidden>→</span>
             </Button>
             <Button href="/services" size="lg" variant="ghost">
-              All services
+              All solutions
             </Button>
           </div>
         </PageHero>
@@ -111,8 +118,49 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
           </div>
         </section>
 
-        {related.length > 0 && (
+        {/* Analytics tie-in: analytics-first, software as what grows from it */}
+        {tie && tieCases.length > 0 && (
           <section className="mx-auto max-w-shell px-6 py-16 md:py-20">
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+              <div>
+                <Eyebrow>Analytics first</Eyebrow>
+                <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
+                  The analytics behind it.
+                </h2>
+                <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-2">{tie.note}</p>
+                <a
+                  href="/docs/data-integration"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent"
+                >
+                  How we integrate your data <span aria-hidden>→</span>
+                </a>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {tieCases.map((c) => (
+                  <a
+                    key={c.slug}
+                    href={`/cases/${c.slug}`}
+                    className="group flex flex-col rounded-2xl border border-line bg-paper p-6 shadow-card transition-all hover:-translate-y-0.5"
+                  >
+                    <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent">
+                      {c.sector}
+                    </span>
+                    <span className="mt-2 font-display text-[15px] font-semibold leading-snug text-ink group-hover:text-accent">
+                      {c.title}
+                    </span>
+                    <span className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium text-accent">
+                      See the case{' '}
+                      <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {related.length > 0 && (
+          <section className="mx-auto max-w-shell px-6 pb-16 md:pb-20">
             <h2 className="mb-6 font-display text-display-sm text-ink">Related reading</h2>
             <div className="grid gap-5 md:grid-cols-3">
               {related.map((p) => (
