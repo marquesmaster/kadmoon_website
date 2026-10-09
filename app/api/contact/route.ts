@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { prisma } from '@/lib/prisma';
 import { rateLimit } from '@/lib/rate-limit';
 import { sendLeadEmail, sendProspectAutoReply } from '@/lib/mailer';
+import { sendToSuite, toSuiteLead } from '@/lib/suite-intake';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -99,6 +100,9 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error('[contact] lead persist failed:', safeErr(err));
   }
+
+  // Lead into the Conecta CRM. Fire-and-forget: retries never delay the response.
+  void sendToSuite(toSuiteLead(data, req.headers.get('referer'))).catch(() => {});
 
   let emailed = false;
   try {
