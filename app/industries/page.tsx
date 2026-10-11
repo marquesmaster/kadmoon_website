@@ -3,6 +3,7 @@ import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/sections/Footer';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { PageHero } from '@/components/sections/PageHero';
 import { industryPages } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
@@ -30,7 +31,11 @@ export default function IndustriesPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="Industries" title="Built for the companies that move goods.">
+        <PageHero
+          eyebrow="Industries"
+          title="Built for the companies that move goods."
+          breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries' }]} />}
+        >
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
             We build the analytics tuned to how each link in the trade chain measures itself, from
             importers and brokers to forwarders, 3PLs, and ports.

@@ -3,6 +3,7 @@ import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/sections/Footer';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { PageHero } from '@/components/sections/PageHero';
 import { HowToChoose } from '@/components/sections/HowToChoose';
 import { analyticsSolutions, services } from '@/lib/content';
@@ -52,7 +53,11 @@ export default function ServicesPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="Solutions" title="Analytics for foreign trade, and the platforms we build.">
+        <PageHero
+          eyebrow="Solutions"
+          title="Analytics for foreign trade, and the platforms we build."
+          breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions' }]} />}
+        >
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
             We turn the data in your customs, logistics, and ERP systems into decisions, delivered on
             the Microsoft stack in your own tenant, plus the platforms we build for cross-border
