@@ -27,11 +27,20 @@ export function Industries() {
           const slug = slugFor(item.name);
           const inner = (
             <>
-              {item.flagship && (
-                <span className="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-white">
-                  Flagship
+              <div className="mb-3 flex items-center justify-between gap-2">
+                <span
+                  className={`font-mono text-[10px] uppercase tracking-[0.14em] ${
+                    item.flagship ? 'text-[#8FB8FF]' : 'text-accent'
+                  }`}
+                >
+                  {item.count}
                 </span>
-              )}
+                {item.flagship && (
+                  <span className="inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-white">
+                    Flagship
+                  </span>
+                )}
+              </div>
               <h3
                 className={`font-display text-lg font-semibold tracking-[-0.02em] ${
                   item.flagship ? 'text-white' : 'text-ink'
