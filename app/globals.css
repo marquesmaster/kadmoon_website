@@ -95,9 +95,9 @@ button {
 /* Scroll reveal — hidden until the .is-visible class is added by the observer */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98),
-    transform 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+  transform: translateY(14px);
+  transition: opacity 0.6s cubic-bezier(0.21, 0.47, 0.32, 0.98),
+    transform 0.6s cubic-bezier(0.21, 0.47, 0.32, 0.98);
   will-change: opacity, transform;
 }
 .reveal.is-visible {

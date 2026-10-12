@@ -18,7 +18,7 @@ export function Section({
     navy: 'bg-navy',
   };
   return (
-    <section id={id} className={`${tones[tone]} py-20 md:py-28 ${className}`}>
+    <section id={id} className={`${tones[tone]} py-16 md:py-24 ${className}`}>
       <div className="mx-auto max-w-shell px-6">{children}</div>
     </section>
   );
