@@ -11,7 +11,19 @@ const featured = ['landed-cost-analytics', 'entry-throughput-analytics', 'shipme
 export function Work() {
   return (
     <Section id="work" tone="paper">
-      <SectionHeader eyebrow={work.eyebrow} title={work.title} sub={work.sub} />
+      <SectionHeader
+        eyebrow={work.eyebrow}
+        title={work.title}
+        sub={work.sub}
+        action={
+          <a
+            href="/cases"
+            className="inline-flex items-center gap-2 rounded-lg border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink-2 transition-colors hover:border-ink-3/40 hover:text-ink"
+          >
+            All case studies <span aria-hidden>→</span>
+          </a>
+        }
+      />
 
       <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {featured.map((c, i) => (
