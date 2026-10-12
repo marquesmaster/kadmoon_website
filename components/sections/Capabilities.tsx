@@ -4,7 +4,9 @@ import { SectionHeader } from '../SectionHeader';
 import { Reveal } from '../Reveal';
 import { Icon } from '../Icon';
 
-const icons = ['enterprise', 'saas', 'mobile', 'integrations', 'dataai', 'legacy'];
+// Icons mapped to each analytics capability, in order: landed cost, duty
+// exposure, shipment visibility, customs & compliance, inventory, control tower.
+const icons = ['stack', 'target', 'delivery', 'qa', 'architecture', 'enterprise'];
 
 export function Capabilities() {
   return (
