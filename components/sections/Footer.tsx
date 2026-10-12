@@ -6,7 +6,7 @@ function BarMark() {
     <span
       aria-hidden
       className="inline-flex h-7 w-7 items-end gap-[3px] rounded-lg p-1.5"
-      style={{ background: 'linear-gradient(150deg,#F0553B,#E1421F)' }}
+      style={{ background: 'linear-gradient(150deg,#4C8DFF,#145CE6)' }}
     >
       <span className="w-[3px] rounded-[2px] bg-white" style={{ height: 6 }} />
       <span className="w-[3px] rounded-[2px] bg-white" style={{ height: 10 }} />
@@ -32,7 +32,7 @@ export function Footer() {
               <span
                 aria-hidden
                 className="h-[7px] w-[7px] rounded-full bg-accent"
-                style={{ boxShadow: '0 0 0 4px rgba(232,73,43,.16)' }}
+                style={{ boxShadow: '0 0 0 4px rgba(20,92,230,.16)' }}
               />
               {siteConfig.city}, {siteConfig.regionCode} · United States
             </div>

@@ -13,9 +13,15 @@ export const metadata: Metadata = {
 };
 
 const firstCall = [
-  'A senior read on your trade software needs',
-  'Where a ready platform fits and where custom makes sense',
+  'A senior read on your trade data and analytics needs',
+  'Where analytics delivers first and where software fits',
   'A clear next step and a quote, not a sales pitch',
+];
+
+const heroChips = [
+  'First dashboards in ~2 weeks',
+  'Built in your own tenant',
+  'Response within one business day',
 ];
 
 export default function ContactPage() {
@@ -29,10 +35,21 @@ export default function ContactPage() {
             Tell us how your operation works and where the friction is. You get a senior point of
             view and a quote, starting with a short call, at no cost and no obligation.
           </p>
+          <div className="mt-7 flex flex-wrap gap-2">
+            {heroChips.map((chip) => (
+              <span
+                key={chip}
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-[13px] font-medium text-ink-2"
+              >
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
+                {chip}
+              </span>
+            ))}
+          </div>
         </PageHero>
 
         {/* Form + sidebar */}
-        <section id="book" className="bg-paper py-20 md:py-24">
+        <section id="book" className="bg-paper pb-20 pt-8 md:pb-24 md:pt-10">
           <div className="mx-auto flex max-w-6xl flex-wrap items-start gap-7 px-6">
             {/* Form */}
             <div className="min-w-0 flex-1 basis-[440px]">
@@ -66,7 +83,7 @@ export default function ContactPage() {
                   {siteConfig.email}
                 </a>
                 <div className="mt-5 flex items-center gap-2.5 text-[14px] font-medium text-ink-2">
-                  <span aria-hidden className="h-2 w-2 rounded-full bg-accent" style={{ boxShadow: '0 0 0 4px rgba(232,73,43,.14)' }} />
+                  <span aria-hidden className="h-2 w-2 rounded-full bg-accent" style={{ boxShadow: '0 0 0 4px rgba(20,92,230,.14)' }} />
                   United States · Serving clients nationwide
                 </div>
                 <div className="mt-3 text-[14px] font-medium text-ink-2">
