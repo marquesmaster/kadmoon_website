@@ -4,20 +4,21 @@ import { SectionHeader } from '../SectionHeader';
 import { Reveal } from '../Reveal';
 import { Icon } from '../Icon';
 
-const icons = ['discovery', 'architecture', 'code', 'qa', 'deploy', 'support'];
+// One icon per phase: discovery, foundation (data model), build, sustain.
+const icons = ['discovery', 'architecture', 'stack', 'support'];
 
 export function Process() {
   return (
     <Section id="process" tone="mist">
       <SectionHeader eyebrow={process.eyebrow} title={process.title} />
 
-      <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+      <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
         {process.steps.map((step, i) => (
           <Reveal
             as="li"
             key={step.num}
-            delay={(i % 3) * 80}
-            className="group relative bg-paper p-7 md:p-8"
+            delay={(i % 4) * 70}
+            className="group relative bg-paper p-6 md:p-7"
           >
             <div className="flex items-center justify-between">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy/5 text-navy transition-colors group-hover:bg-accent/10 group-hover:text-accent">
