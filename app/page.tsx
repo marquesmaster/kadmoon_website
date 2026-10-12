@@ -8,6 +8,7 @@ import { Industries } from '@/components/sections/Industries';
 import { Process } from '@/components/sections/Process';
 import { Comparison } from '@/components/sections/Comparison';
 import { Work } from '@/components/sections/Work';
+import { CtaBand } from '@/components/sections/CtaBand';
 import { Faq } from '@/components/sections/Faq';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
@@ -28,6 +29,7 @@ export default function HomePage() {
         <Process />
         <Comparison />
         <Work />
+        <CtaBand />
         <Faq />
         <Contact />
       </main>
