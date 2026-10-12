@@ -112,9 +112,16 @@ export function Hero() {
               ))}
             </div>
 
-            <p className="mt-8 max-w-md font-mono text-[12px] leading-relaxed tracking-[0.01em] text-ink-3">
-              {hero.flagship}
-            </p>
+            <div className="mt-8 flex max-w-lg flex-wrap gap-2">
+              {hero.flagship.split(' · ').map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-line bg-white px-3 py-1.5 font-mono text-[11px] text-ink-3"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Right: illustrative trade console */}
