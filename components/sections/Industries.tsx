@@ -12,9 +12,17 @@ export function Industries() {
         eyebrow={industries.eyebrow}
         title={industries.title}
         sub={industries.sub}
+        action={
+          <a
+            href="/industries"
+            className="inline-flex items-center gap-2 rounded-lg border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink-2 transition-colors hover:border-ink-3/40 hover:text-ink"
+          >
+            All industries <span aria-hidden>→</span>
+          </a>
+        }
       />
 
-      <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {industries.items.map((item, i) => {
           const slug = slugFor(item.name);
           const inner = (

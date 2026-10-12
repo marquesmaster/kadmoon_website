@@ -24,6 +24,15 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // If the element is already in (or near) the viewport on mount, show it
+    // right away so nothing sits invisible on first paint.
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 1.1) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -33,10 +42,16 @@ export function Reveal({
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      { threshold: 0, rootMargin: '0px 0px 12% 0px' },
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Safety net: never leave content hidden if the observer does not fire.
+    const fallback = window.setTimeout(() => setVisible(true), 1600);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, []);
 
   return (

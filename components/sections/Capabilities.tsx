@@ -13,9 +13,17 @@ export function Capabilities() {
         eyebrow={capabilities.eyebrow}
         title={capabilities.title}
         sub={capabilities.sub}
+        action={
+          <a
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-lg border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink-2 transition-colors hover:border-ink-3/40 hover:text-ink"
+          >
+            All solutions <span aria-hidden>→</span>
+          </a>
+        }
       />
 
-      <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
         {capabilities.items.map((item, i) => (
           <Reveal
             as="article"

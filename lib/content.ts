@@ -637,6 +637,15 @@ export const comparison = {
 };
 
 export const credibility = {
+  eyebrow: 'Why Kadmoon',
+  title: 'Analytics built only for foreign trade.',
+  lead: 'A senior, US-based team, with more than 35 clients served. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant.',
+  points: [
+    { title: 'One definition per KPI', body: 'Landed cost, OTIF, and duty exposure mean one thing across every report.' },
+    { title: 'Built in your tenant', body: 'Your data, your model, your reports. You own it, with no lock-in.' },
+    { title: 'Senior, US-based team', body: 'The people who scope your model build it and support it.' },
+  ],
+  // Full statement, kept for reference and any schema use.
   text: 'Kadmoon is a US analytics firm focused entirely on foreign trade, run by a senior, US-based team, with more than 35 clients served. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant. The dashboards shown on the site are illustrative of what we ship; detailed client work is available under NDA.',
 };
 
