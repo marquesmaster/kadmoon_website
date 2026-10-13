@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('pages load', () => {
   const pages = [
     ['/', 'import and export'],
+    ['/platform', 'Trade Intelligence'],
     ['/services', 'cross-border'],
     ['/services/trade-erp', 'Trade ERP'],
     ['/industries', 'move goods'],
