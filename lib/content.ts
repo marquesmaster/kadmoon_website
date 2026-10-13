@@ -1,10 +1,12 @@
 /**
  * All landing-page copy for Kadmoon, Inc.
  *
- * Kadmoon is a US software company focused 100% on foreign trade / international
- * commerce: trade ERP, CRM, inventory/WMS, customs & compliance, computer vision
- * for port and vessel security, and supply-chain & logistics software, delivered
- * as ready platforms and as custom development. We do not publish prices; every
+ * Kadmoon is a US analytics firm focused 100% on foreign trade / international
+ * commerce: landed cost & margin, duty & tariff exposure, shipment visibility,
+ * customs & compliance, and inventory analytics, delivered on the Microsoft stack
+ * (Fabric, Power BI, Azure) in the client's own tenant. The analytics are packaged
+ * as a trade intelligence platform (the EIP); trade software is the roadmap we
+ * build on top of the data, not the lead. We do not publish prices; every
  * engagement is scoped to the client. Do NOT invent client names or metrics.
  */
 
@@ -56,6 +58,7 @@ export const navMenu: NavItem[] = [
       },
     },
   },
+  { label: 'Platform', href: '/platform' },
   {
     label: 'Industries',
     panel: {
@@ -1002,3 +1005,77 @@ export const testimonials: Testimonial[] = [];
 
 // Client names to show as a logo/wordmark marquee (real, approved clients only).
 export const clientLogos: string[] = [];
+
+// ---------------------------------------------------------------------------
+// Platform page ("Kadmoon Trade Intelligence", the EIP). The productized core:
+// connectors + one governed trade data model + a KPI library + the reports and
+// alerts, delivered in the client's tenant or provisioned and run by us.
+// ---------------------------------------------------------------------------
+export const platform = {
+  eyebrow: 'The platform',
+  title: 'One trade intelligence layer over the systems you already run.',
+  lead:
+    'Kadmoon Trade Intelligence reads from your ERP, broker, carrier, EDI and ACE, and spreadsheets, builds one governed model of your trade, and delivers the reports and alerts your team acts on. It runs in your own Microsoft tenant, or we provision and run it for you.',
+  ctas: [
+    { label: 'Request a quote', href: '/contact', primary: true },
+    { label: 'See case studies', href: '/cases', primary: false },
+  ],
+  pillars: [
+    {
+      step: '01',
+      icon: 'integrations',
+      title: 'Connect your systems',
+      body: 'We read from SAP, Oracle, NetSuite, Microsoft, broker and carrier systems, EDI and ACE, and spreadsheets. The data stays where it lives; we meet it there.',
+    },
+    {
+      step: '02',
+      icon: 'stack',
+      title: 'Model it once',
+      body: 'One governed trade data model, every KPI defined a single time, with landed cost, duty, HTS, origin, and incoterms built in instead of rebuilt per report.',
+    },
+    {
+      step: '03',
+      icon: 'dataai',
+      title: 'Decide from it',
+      body: 'Landed cost, duty exposure, shipment visibility, compliance, and inventory as governed reports and alerts, each number drillable to the shipment or entry behind it.',
+    },
+    {
+      step: '04',
+      icon: 'qa',
+      title: 'Run it your way',
+      body: 'In your own Microsoft tenant, or in a dedicated tenant we provision and manage for you. Your data stays isolated, documented, and yours.',
+    },
+  ],
+  reports: {
+    eyebrow: 'Built reports',
+    title: 'The reports your team opens every morning.',
+    sub: 'A sample of what ships: landed cost to the unit, duty exposure by product line, and on-time performance over time. Figures are illustrative; the structure is what you get.',
+    disclaimer: 'Illustrative figures · fictitious client · under NDA',
+  },
+  engage: {
+    eyebrow: 'How an engagement works',
+    title: 'Start small, prove it, then run on it.',
+    steps: [
+      {
+        name: 'Trade data assessment',
+        meta: 'Fixed scope · ~2 weeks',
+        body: 'A short, fixed-price engagement that maps your decisions and data and delivers the first reports. You leave with a scope and a quote, and the fee credits toward the subscription.',
+      },
+      {
+        name: 'Trade intelligence subscription',
+        meta: 'Monthly · the core',
+        body: 'The platform as a subscription: connectors, the trade data model, the KPI library, and the reports kept current, with governance and support. Scoped to the domains and data you run.',
+      },
+      {
+        name: 'Managed Microsoft',
+        meta: 'Optional add-on',
+        body: 'We provision and bill the Microsoft capacity the analytics runs on, so licensing and cloud arrive on one invoice with your platform instead of a separate project.',
+      },
+    ],
+    note: 'Dedicated capacity and enterprise terms are scoped in a conversation, not sold off a page.',
+  },
+  cta: {
+    title: 'See it on your own data.',
+    body: 'Tell us where your trade data lives. You get a scoped plan and a quote within one business day, and first reports in about two weeks.',
+  },
+};
