@@ -12,7 +12,7 @@ const sizes = {
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-accent text-white hover:-translate-y-px hover:bg-[#E55A0D]',
+    'bg-accent text-white hover:-translate-y-px hover:bg-accent/90',
   ghost:
     'border border-ink-3/40 bg-transparent text-ink hover:border-ink',
   light:

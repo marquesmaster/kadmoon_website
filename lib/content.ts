@@ -59,6 +59,7 @@ export const navMenu: NavItem[] = [
     },
   },
   { label: 'Platform', href: '/platform' },
+  { label: 'Pricing', href: '/pricing' },
   {
     label: 'Industries',
     panel: {
@@ -1005,6 +1006,89 @@ export const testimonials: Testimonial[] = [];
 
 // Client names to show as a logo/wordmark marquee (real, approved clients only).
 export const clientLogos: string[] = [];
+
+// ---------------------------------------------------------------------------
+// Pricing / engagement page. No public prices: every engagement is scoped and
+// quoted. The page explains the model, what each subscription scope includes,
+// and the Microsoft add-on, and routes to "Request a quote".
+// ---------------------------------------------------------------------------
+export const pricing = {
+  eyebrow: 'Pricing',
+  title: 'Priced to the scope of your trade, not a seat count.',
+  lead: 'Every engagement is scoped to the systems you run and the decisions you need, so you pay for the analytics you use. Here is how it works and what each level includes. We quote per engagement; tell us what you move and you get a number within one business day.',
+  model: [
+    {
+      name: 'Trade data assessment',
+      meta: 'Fixed scope · ~2 weeks',
+      body: 'A short, fixed-price engagement that maps your decisions and data and ships the first reports. You leave with a scope and a quote, and the fee credits toward the subscription.',
+    },
+    {
+      name: 'Trade intelligence subscription',
+      meta: 'Monthly · the core',
+      body: 'The platform as a subscription: connectors, the trade data model, the KPI library, and the reports kept current, with governance and support. Scoped by the domains, data sources, and users you need.',
+    },
+    {
+      name: 'Managed Microsoft',
+      meta: 'Optional add-on',
+      body: 'We provision and bill the Microsoft capacity the analytics runs on (Fabric, Power BI, Azure), so licensing and cloud arrive on one invoice with your platform.',
+    },
+  ],
+  scopes: [
+    {
+      name: 'Starter',
+      best: 'A growing operation, one priority',
+      includes: [
+        'One analytics domain (e.g. landed cost or visibility)',
+        'Up to ~3 data sources connected',
+        'One KPI pack, refreshed daily',
+        'Support during business hours',
+      ],
+    },
+    {
+      name: 'Growth',
+      best: 'Multiple domains across the operation',
+      includes: [
+        'Two to three analytics domains',
+        'More sources and multiple KPI packs',
+        'Alerts and exception monitoring',
+        'A stronger response SLA',
+      ],
+      featured: true,
+    },
+    {
+      name: 'Control Tower',
+      best: 'Enterprise, the full suite',
+      includes: [
+        'The full suite: landed cost, duty, visibility, compliance, inventory, executive',
+        'Dedicated governance and a success manager',
+        'Quarterly reviews and roadmap',
+        'Priority support',
+      ],
+    },
+  ],
+  faq: [
+    {
+      q: 'Do you publish prices?',
+      a: 'No. Trade operations differ too much for a sticker price to be honest. We scope to your data and decisions and quote per engagement, usually within one business day of a first conversation.',
+    },
+    {
+      q: 'How does billing work?',
+      a: 'The assessment is a fixed price. The platform is a monthly or annual subscription scoped to what you use. If you take managed Microsoft, the Microsoft capacity is billed with it on one invoice.',
+    },
+    {
+      q: 'Is there a long contract?',
+      a: 'The assessment stands alone. The subscription is a defined term you agree up front; you own the model, the reports, and the data in your own tenant, so you are never locked in to keep operating.',
+    },
+    {
+      q: 'What about dedicated capacity or enterprise terms?',
+      a: 'We scope those in a conversation, not off a page. If you want a dedicated team or custom terms, tell us in the quote request and we will put together a proposal.',
+    },
+  ],
+  cta: {
+    title: 'Tell us what you move. Get a number.',
+    body: 'A short description of your operation is enough for a scoped plan and a quote within one business day.',
+  },
+};
 
 // ---------------------------------------------------------------------------
 // Platform page ("Kadmoon Trade Intelligence", the EIP). The productized core:

@@ -4,6 +4,7 @@ test.describe('pages load', () => {
   const pages = [
     ['/', 'import and export'],
     ['/platform', 'Trade Intelligence'],
+    ['/pricing', 'per engagement'],
     ['/services', 'cross-border'],
     ['/services/trade-erp', 'Trade ERP'],
     ['/industries', 'move goods'],
