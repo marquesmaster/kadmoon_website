@@ -35,7 +35,7 @@ function bodyText(lead: Lead): string {
  *         CONTACT_FROM.
  */
 export async function sendLeadEmail(lead: Lead): Promise<boolean> {
-  const to = process.env.CONTACT_TO || 'comercial@kadmoon.com';
+  const to = process.env.CONTACT_TO || 'commercial@kadmoon.com';
   const subject = `New lead: ${lead.company} (${lead.need || 'inquiry'})`;
   const text = bodyText(lead);
 
@@ -66,7 +66,7 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
   // 2) Resend.
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
-    const from = process.env.CONTACT_FROM || 'Kadmoon Website <comercial@kadmoon.com>';
+    const from = process.env.CONTACT_FROM || 'Kadmoon Website <commercial@kadmoon.com>';
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -155,7 +155,7 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
   // Resend.
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
-    const from = process.env.CONTACT_FROM || 'Kadmoon <comercial@kadmoon.com>';
+    const from = process.env.CONTACT_FROM || 'Kadmoon <commercial@kadmoon.com>';
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },

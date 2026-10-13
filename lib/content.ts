@@ -163,11 +163,11 @@ export const hero = {
   headlineAccent: 'import and export',
   headlineAfter: ' operation can finally trust.',
   subhead:
-    'Kadmoon turns the data buried in your customs, logistics, and ERP systems into decisions: landed cost, duty exposure, shipment visibility, and compliance. Delivered on the Microsoft stack, in your own tenant.',
+    'Kadmoon Trade Intelligence turns the data in your customs, logistics, and ERP systems into decisions: landed cost, duty exposure, shipment visibility, and compliance. One governed platform, on the Microsoft stack, in your own tenant.',
   flagship: 'Landed cost · Duty exposure · Shipment visibility & OTIF · Customs analytics · Executive control tower',
   ctas: [
     { label: 'Request a quote', href: '/contact', primary: true },
-    { label: 'See case studies', href: '/cases', primary: false },
+    { label: 'See the platform', href: '/platform', primary: false },
   ],
   // What ships with a Kadmoon analytics engagement.
   panelLabel: 'What you get',

@@ -106,7 +106,7 @@ from it.
 
 ```bash
 apt install -y certbot python3-certbot-nginx
-certbot --nginx -d kadmoon.com -d www.kadmoon.com --redirect --agree-tos -m comercial@kadmoon.com --no-eff-email
+certbot --nginx -d kadmoon.com -d www.kadmoon.com --redirect --agree-tos -m commercial@kadmoon.com --no-eff-email
 ```
 
 ## Updating the site later
