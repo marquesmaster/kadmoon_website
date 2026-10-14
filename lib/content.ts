@@ -543,6 +543,8 @@ export const footer = {
     {
       heading: 'Company',
       links: [
+        { label: 'Platform', href: '/platform' },
+        { label: 'Pricing', href: '/pricing' },
         { label: 'Solutions', href: '/services' },
         { label: 'Industries', href: '/industries' },
         { label: 'Cases', href: '/cases' },
@@ -555,6 +557,7 @@ export const footer = {
     {
       heading: 'Analytics',
       links: [
+        { label: 'The platform', href: '/platform' },
         { label: 'Landed cost & margin', href: '/cases/landed-cost-analytics' },
         { label: 'Duty & tariff exposure', href: '/cases/tariff-duty-exposure' },
         { label: 'Shipment visibility & OTIF', href: '/cases/shipment-visibility-analytics' },

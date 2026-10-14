@@ -181,10 +181,10 @@ export default function AboutPage() {
                 Request a quote <span aria-hidden>→</span>
               </Button>
               <a
-                href="/services"
+                href="/platform"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-4 text-[15px] font-semibold text-paper transition-colors hover:border-white/50 hover:bg-white/5"
               >
-                Explore services
+                See the platform
               </a>
             </div>
           </div>
