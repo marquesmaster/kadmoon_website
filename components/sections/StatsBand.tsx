@@ -7,7 +7,7 @@ export function StatsBand() {
     <section className="relative overflow-hidden border-t-2 border-accent bg-navy">
       <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-60" aria-hidden />
       <div className="relative mx-auto max-w-shell px-6 py-12 md:py-14">
-        <dl className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+        <dl data-testid="stat-band" className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
           {stats.map((stat, i) => (
             <Reveal as="div" key={stat.label} delay={i * 70} className="text-center md:text-left">
               <dt className="sr-only">{stat.label}</dt>

@@ -3,7 +3,7 @@ import { Hero } from '@/components/sections/Hero';
 import { Credibility } from '@/components/sections/Credibility';
 import { StatsBand } from '@/components/sections/StatsBand';
 import { Capabilities } from '@/components/sections/Capabilities';
-import { PlatformTeaser } from '@/components/sections/PlatformTeaser';
+import { ReportsBand } from '@/components/sections/ReportsBand';
 import { Industries } from '@/components/sections/Industries';
 import { Process } from '@/components/sections/Process';
 import { Comparison } from '@/components/sections/Comparison';
@@ -21,10 +21,10 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
+        <ReportsBand />
         <Credibility />
         <StatsBand />
         <Capabilities />
-        <PlatformTeaser />
         <Industries />
         <Process />
         <Comparison />

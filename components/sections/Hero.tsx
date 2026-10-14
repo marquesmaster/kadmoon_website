@@ -76,7 +76,7 @@ function TradeConsoleMock() {
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-paper pb-16 pt-28 md:pb-24 md:pt-36">
+    <section id="top" className="relative overflow-hidden bg-gradient-to-b from-paper via-paper to-mist pb-16 pt-28 md:pb-24 md:pt-36">
       <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
 
       <div className="relative mx-auto max-w-shell px-6">

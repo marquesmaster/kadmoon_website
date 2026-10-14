@@ -35,7 +35,7 @@ test.describe('pages load', () => {
 
 test('stat counters finish without freezing mid-animation', async ({ page }) => {
   await page.goto('/');
-  const band = page.locator('dl').first();
+  const band = page.locator('[data-testid="stat-band"]');
   await band.scrollIntoViewIfNeeded();
   await page.waitForTimeout(2000);
   const values = await band.locator('dd').evaluateAll((dds) =>

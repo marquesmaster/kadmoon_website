@@ -1,0 +1,68 @@
+import { Reveal } from '../Reveal';
+import { KpiTiles, LandedCostCard, DutyExposureCard, OtifCard } from '../reports/SampleReports';
+
+// Dense, high-contrast analytics showcase placed right after the hero: real
+// built reports on a navy ground so the home leads with analytics and reads
+// with depth and firmness, not white-on-white. Doubles as the platform teaser.
+export function ReportsBand() {
+  return (
+    <section id="platform" className="relative overflow-hidden border-y-2 border-accent/60 bg-navy">
+      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden
+        style={{ backgroundImage: 'radial-gradient(1100px 520px at 50% -12%, rgba(20,92,230,.28), transparent 62%)' }}
+      />
+      <div className="relative mx-auto max-w-shell px-6 py-16 md:py-24">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#8FB8FF]">
+              The platform · in your own tenant
+            </span>
+            <h2 className="mt-4 font-display text-display-sm font-semibold text-white">
+              The reports your team opens every morning.
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-white/70">
+              Landed cost to the unit, duty exposure by product line, and on-time performance over
+              time, built on one governed model fed from the systems you already run.
+            </p>
+          </div>
+          <a
+            href="/platform"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-paper transition-colors hover:border-white/50 hover:bg-white/5"
+          >
+            See the platform <span aria-hidden>→</span>
+          </a>
+        </div>
+
+        <div className="mt-10">
+          <KpiTiles />
+        </div>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
+          <Reveal as="div">
+            <LandedCostCard />
+          </Reveal>
+          <Reveal as="div" delay={90}>
+            <DutyExposureCard />
+          </Reveal>
+          <Reveal as="div" delay={180}>
+            <OtifCard />
+          </Reveal>
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
+          >
+            Request a quote <span aria-hidden>→</span>
+          </a>
+          <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/45">
+            Illustrative figures · fictitious client · under NDA
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
