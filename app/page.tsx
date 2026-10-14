@@ -4,6 +4,7 @@ import { Credibility } from '@/components/sections/Credibility';
 import { StatsBand } from '@/components/sections/StatsBand';
 import { Capabilities } from '@/components/sections/Capabilities';
 import { ReportsBand } from '@/components/sections/ReportsBand';
+import { GroupExperience } from '@/components/sections/GroupExperience';
 import { Industries } from '@/components/sections/Industries';
 import { Process } from '@/components/sections/Process';
 import { Comparison } from '@/components/sections/Comparison';
@@ -24,6 +25,7 @@ export default function HomePage() {
         <ReportsBand />
         <Credibility />
         <StatsBand />
+        <GroupExperience />
         <Capabilities />
         <Industries />
         <Process />

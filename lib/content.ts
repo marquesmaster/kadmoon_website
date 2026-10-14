@@ -1011,6 +1011,35 @@ export const testimonials: Testimonial[] = [];
 export const clientLogos: string[] = [];
 
 // ---------------------------------------------------------------------------
+// Group experience band. Framed as the track record of the TEAM/GROUP behind
+// Kadmoon (delivered-for and partner organizations), NOT as Kadmoon's own
+// foreign-trade clients. Names are shown as text wordmarks; swap for approved
+// logo assets when provided, and only display organizations that have given
+// permission. This intentionally references organizations outside the US and
+// outside foreign trade, a deliberate exception to the no-Brazil site rule,
+// per an explicit positioning decision.
+// ---------------------------------------------------------------------------
+export const groupExperience = {
+  eyebrow: 'Experience behind Kadmoon',
+  line: 'Kadmoon is built by a team that has delivered data, analytics, and software platforms for organizations across government, education, sports, real estate, and technology.',
+  note: 'Delivery by the team and group behind Kadmoon, across sectors.',
+  orgs: [
+    'Ministério da Educação',
+    'Paraná Educação',
+    'Santos FC',
+    'Sky HDTV',
+    'Tecnisa',
+    'ESPM',
+    'CREA-SP',
+    'Finep',
+    'APAS',
+    'Autodoc',
+    'Brasoftware',
+    'Xertica',
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Pricing / engagement page. No public prices: every engagement is scoped and
 // quoted. The page explains the model, what each subscription scope includes,
 // and the Microsoft add-on, and routes to "Request a quote".
