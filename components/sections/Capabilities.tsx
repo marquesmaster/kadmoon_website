@@ -25,13 +25,13 @@ export function Capabilities() {
         }
       />
 
-      <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {capabilities.items.map((item, i) => (
           <Reveal
             as="article"
             key={item.title}
             delay={(i % 3) * 80}
-            className="group flex flex-col bg-paper p-7 transition-colors hover:bg-mist md:p-8"
+            className="group flex flex-col rounded-2xl border border-line bg-white p-7 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover md:p-8"
           >
             <div className="flex items-center justify-between">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy/5 text-navy transition-colors group-hover:bg-accent/10 group-hover:text-accent">

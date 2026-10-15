@@ -79,8 +79,8 @@ const config: Config = {
         },
       },
       boxShadow: {
-        card: '0 1px 2px rgb(21 25 30 / 0.04), 0 14px 34px -20px rgb(21 25 30 / 0.16)',
-        'card-hover': '0 2px 4px rgb(21 25 30 / 0.05), 0 26px 54px -30px rgb(21 25 30 / 0.28)',
+        card: '0 1px 2px rgb(16 24 40 / 0.06), 0 6px 16px -4px rgb(16 24 40 / 0.10)',
+        'card-hover': '0 2px 6px rgb(16 24 40 / 0.08), 0 16px 32px -8px rgb(16 24 40 / 0.18)',
       },
     },
   },
