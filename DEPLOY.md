@@ -28,7 +28,7 @@ rm -rf /opt/kadmoon-website
 
 ```bash
 cd /opt
-git clone -b claude/kadmoon-website-build-xchjwo https://github.com/marquesmaster/kadmoon_website.git kadmoon-website
+git clone -b main https://github.com/marquesmaster/kadmoon_website.git kadmoon-website
 # git prompts: Username = marquesmaster, Password = your PAT
 cd /opt/kadmoon-website
 ```
@@ -113,7 +113,7 @@ certbot --nginx -d kadmoon.com -d www.kadmoon.com --redirect --agree-tos -m comm
 
 ```bash
 cd /opt/kadmoon-website
-git pull
+git pull origin main
 docker compose up -d --build
 docker image prune -f
 ```
