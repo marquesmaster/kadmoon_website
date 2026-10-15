@@ -43,4 +43,4 @@ Integrations fail. A partner's system goes down, a message is malformed, a recor
 
 ## What it adds up to
 
-Done well, integration turns a pile of portals and inboxes into one operation where data flows. You book once and it propagates, you file from data you already have, and status lives in one place instead of five. If your team spends its day moving data between systems by hand, the connections are usually the highest-return thing to fix. [Tell us which systems you run](/contact), or see how we build [trade integrations](/services/trade-integrations).
+Done well, integration turns a pile of portals and inboxes into one operation where data flows. You book once and it propagates, you file from data you already have, and status lives in one place instead of five. Integration is also the foundation of the analytics: the same connections that remove rekeying feed the governed model behind landed cost, duty, and visibility. If your team spends its day moving data between systems by hand, [see the platform](/platform), [tell us which systems you run](/contact), or read about [trade integrations](/services/trade-integrations).

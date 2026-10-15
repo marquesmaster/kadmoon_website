@@ -49,4 +49,4 @@ Not every operation needs custom software, and not every operation fits a produc
 
 Two questions decide whether a trade ERP is a tool or a trap. First, do you own the software and the data, deployed where you control it, with documentation and a handover? Software that holds your operation hostage is not worth the fit. Second, does it integrate with what you already use, your carriers, brokers, marketplaces, and CBP? A trade ERP that cannot exchange data turns your team into a data-entry function and defeats the purpose.
 
-If trade is central to your business and your software was not built for it, the gap shows up every day in late landed cost and manual compliance. [Tell us how your operation runs](/contact), or see how we build [trade ERP](/services/trade-erp).
+At Kadmoon the analytics come first: we model your trade data, then build the systems that run on it, trade ERP included, so the numbers are trustworthy before the software is. If trade is central to your business, [see the platform](/platform), [tell us how your operation runs](/contact), or read about [trade ERP](/services/trade-erp).

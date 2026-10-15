@@ -41,4 +41,4 @@ A warehouse-management system built for trade tracks the customs dimension along
 
 One more capability ties it together: inventory should be valued at true [landed cost](/blog/landed-cost-calculation), not supplier price. When the WMS carries landed cost per unit, finance and operations read the same numbers, and the value of what is sitting in bond or in a zone is accurate. That matters for reporting, for insurance, and for deciding what to withdraw and when.
 
-If you use bonded storage or an FTZ and track the customs side in a spreadsheet next to your WMS, that gap is where the risk lives. [Tell us how your inventory moves](/contact), or see how we build [inventory and WMS](/services/inventory-wms).
+Seeing that clearly, inventory valued at true landed cost with bonded and FTZ stock and the duty deferred, is an analytics problem first; the WMS then acts on it. If you use bonded storage or an FTZ and track the customs side in a spreadsheet, [see the platform](/platform), [tell us how your inventory moves](/contact), or read about [inventory and WMS](/services/inventory-wms).

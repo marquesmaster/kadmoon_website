@@ -41,4 +41,4 @@ Once status is unified and current, the highest-return feature is often a custom
 
 A single, current view of shipments is not only useful to the people tracking them. Customer service answers faster, planning sees what is actually inbound, and finance can tie shipments to costs. Status that lives in one place becomes a feed the rest of the operation can use, rather than a question each team answers on its own by logging into portals.
 
-If your team spends its day chasing status across carrier portals, consolidating it is usually the fastest service and efficiency win available. [Tell us which carriers you work with](/contact), or see how we build [supply chain and logistics](/services/supply-chain-logistics) software.
+Consolidating status starts as an analytics problem: one planned-versus-actual view with OTIF and dwell measured by lane and carrier, which the software then operationalizes. If your team spends its day chasing status across carrier portals, [see the platform](/platform), [tell us which carriers you work with](/contact), or read about [supply chain and logistics](/services/supply-chain-logistics).
