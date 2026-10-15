@@ -20,13 +20,20 @@ deployed via Docker on a Hostinger VPS.
 - Software is "what we build on top of the data", introduced as it grows from
   the analytics. Do not make it the headline.
 - Primary CTA everywhere is **"Request a quote"** → `/contact`. There is no
-  booking/scheduling tool and no public login; "Request access" also → `/contact`
-  (access is provisioned per engagement inside the client tenant).
+  booking/scheduling tool. The top-bar secondary action is **"Client sign-in"**
+  → Power BI (`app.powerbi.com`): the analytics run in the client's own Microsoft
+  tenant, so access is signing in there, not a Kadmoon login. Existing clients
+  who need access provisioned or a new report use `/contact` (the "Looking for
+  client access?" block on `/docs`).
 
 ## Hard content rules
 
 - **Never reference Brazil or the Portuguese language** anywhere in site-facing
-  content, copy, metadata, or data.
+  content, copy, metadata, or data. **One approved exception:** the
+  `groupExperience` band (`lib/content.ts`) names the team/group's prior
+  organizations as cross-sector experience (not Kadmoon's trade clients). Keep
+  the exception limited to that band; do not reintroduce Brazil/Portuguese
+  elsewhere.
 - **Never invent clients, testimonials, or logos.** `testimonials` and
   `clientLogos` in `lib/content.ts` render only when populated; leave them empty
   until real, approved data is provided.
