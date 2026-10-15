@@ -12,13 +12,13 @@ export function Process() {
     <Section id="process" tone="mist">
       <SectionHeader eyebrow={process.eyebrow} title={process.title} />
 
-      <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
+      <ol className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {process.steps.map((step, i) => (
           <Reveal
             as="li"
             key={step.num}
             delay={(i % 4) * 70}
-            className="group relative bg-paper p-6 md:p-7"
+            className="group relative rounded-2xl border border-line bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover md:p-7"
           >
             <div className="flex items-center justify-between">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy/5 text-navy transition-colors group-hover:bg-accent/10 group-hover:text-accent">

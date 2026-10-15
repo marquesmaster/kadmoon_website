@@ -71,7 +71,7 @@ export function Industries() {
           const cls = `group flex flex-col rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 ${
             item.flagship
               ? 'border-navy/15 bg-navy text-white shadow-card-hover sm:col-span-2 lg:col-span-2'
-              : 'border-line bg-paper shadow-card hover:shadow-card-hover'
+              : 'border-line bg-white shadow-card hover:shadow-card-hover'
           }`;
 
           return (
