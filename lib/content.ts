@@ -151,9 +151,10 @@ export const nav = {
   wordmark: 'Kadmoon',
   suffix: 'INC.',
   menu: navMenu,
-  // Secondary top-bar action: access is provisioned per engagement, so this
-  // routes to contact rather than a login nobody can complete yet.
-  access: { label: 'Request access', href: '/contact' },
+  // Secondary top-bar action for existing clients. The analytics run in the
+  // client's own Microsoft tenant, so "access" is signing in to Power BI, not a
+  // Kadmoon login. Prospects use "Request a quote" instead.
+  access: { label: 'Client sign-in', href: 'https://app.powerbi.com' },
   cta: { label: 'Request a quote', href: '/contact' },
 };
 

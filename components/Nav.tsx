@@ -139,6 +139,8 @@ export function Nav() {
           <SearchButton />
           <a
             href={nav.access.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-lg border border-line px-4 py-2 text-sm font-semibold text-ink-2 transition-colors hover:border-ink-3/40 hover:text-ink"
           >
             {nav.access.label}
@@ -293,6 +295,8 @@ export function Nav() {
             <div className="mt-4 flex flex-col gap-2.5">
               <a
                 href={nav.access.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center rounded-lg border border-line px-5 py-3 text-sm font-semibold text-ink"
               >
