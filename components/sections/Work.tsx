@@ -10,7 +10,7 @@ const featured = ['landed-cost-analytics', 'entry-throughput-analytics', 'shipme
 
 export function Work() {
   return (
-    <Section id="work" tone="paper">
+    <Section id="work" tone="paper" className="border-t border-line">
       <SectionHeader
         eyebrow={work.eyebrow}
         title={work.title}

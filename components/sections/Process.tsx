@@ -9,7 +9,7 @@ const icons = ['discovery', 'architecture', 'stack', 'support'];
 
 export function Process() {
   return (
-    <Section id="process" tone="mist">
+    <Section id="process" tone="mist" className="border-t border-line">
       <SectionHeader eyebrow={process.eyebrow} title={process.title} />
 
       <ol className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">

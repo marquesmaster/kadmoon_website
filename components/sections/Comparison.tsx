@@ -40,7 +40,8 @@ export function Comparison() {
     <Section id="comparison" tone="paper">
       <SectionHeader eyebrow={comparison.eyebrow} title={comparison.title} sub={comparison.sub} />
 
-      <Reveal className="mt-12 overflow-x-auto">
+      <Reveal className="mt-12 rounded-2xl border border-line bg-white p-4 shadow-card md:p-6">
+        <div className="overflow-x-auto">
         <table className="w-full min-w-[640px] border-collapse text-left">
           <thead>
             <tr>
@@ -90,6 +91,7 @@ export function Comparison() {
             })}
           </tbody>
         </table>
+        </div>
       </Reveal>
     </Section>
   );
