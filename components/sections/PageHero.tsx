@@ -16,7 +16,7 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden bg-paper">
+    <section className="relative overflow-hidden bg-gradient-to-b from-paper via-paper to-mist">
       <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-60" aria-hidden />
       {/* Brex color-blocking accents */}
       <div

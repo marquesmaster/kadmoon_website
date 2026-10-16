@@ -51,7 +51,7 @@ export default function AboutPage() {
         </PageHero>
 
         {/* Why we exist */}
-        <section className="bg-paper py-24">
+        <section className="bg-paper py-16 md:py-24">
           <div className="mx-auto grid max-w-5xl gap-12 px-6 md:grid-cols-3">
             <div>
               <Eyebrow>Why we exist</Eyebrow>
@@ -80,7 +80,7 @@ export default function AboutPage() {
         </section>
 
         {/* Principles */}
-        <section className="border-t border-line bg-mist py-24">
+        <section className="border-t border-line bg-mist py-16 md:py-24">
           <div className="mx-auto max-w-shell px-6">
             <div className="max-w-2xl">
               <Eyebrow>Principles</Eyebrow>
@@ -106,7 +106,7 @@ export default function AboutPage() {
         </section>
 
         {/* How we work timeline */}
-        <section className="bg-paper py-24">
+        <section className="bg-paper py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-6">
             <div className="mb-12 max-w-2xl">
               <Eyebrow>How we work</Eyebrow>
@@ -136,7 +136,7 @@ export default function AboutPage() {
         </section>
 
         {/* Team */}
-        <section className="border-t border-line bg-mist py-24">
+        <section className="border-t border-line bg-mist py-16 md:py-24">
           <div className="mx-auto max-w-shell px-6">
             <div className="max-w-2xl">
               <Eyebrow>The team you get</Eyebrow>
@@ -169,7 +169,7 @@ export default function AboutPage() {
         <section className="relative overflow-hidden bg-ink text-paper">
           <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
           <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(20,92,230,.28), transparent 60%)' }} />
-          <div className="relative mx-auto max-w-2xl px-6 py-28 text-center">
+          <div className="relative mx-auto max-w-2xl px-6 py-20 text-center md:py-28">
             <h2 className="font-display text-display-md font-semibold text-white">
               Let us talk about your trade operation.
             </h2>
