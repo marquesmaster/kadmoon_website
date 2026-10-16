@@ -39,10 +39,93 @@ export function docHeadings(doc: Doc): { id: string; text: string }[] {
 
 export const docs: Doc[] = [
   {
+    slug: 'platform-overview',
+    title: 'Platform overview',
+    group: 'Get started',
+    order: 1,
+    description:
+      'What Kadmoon Trade Intelligence is: a governed trade data model, a KPI library, connectors, and reports, delivered in your own Microsoft tenant.',
+    intro:
+      'Kadmoon Trade Intelligence is the productized core of what we deliver: one governed model over the systems you already run, with the trade KPIs, connectors, and reports built on top. This page explains what it is, how it is put together, where it runs, and what you own. It is the conceptual overview; the reference pages that follow go deeper on data, security, and the KPIs.',
+    blocks: [
+      { type: 'h2', id: 'what-it-is', text: 'What it is' },
+      {
+        type: 'p',
+        text: 'The platform is four things delivered as one: a governed data model of your trade, a library of trade KPIs defined a single time, the connectors that feed the model from your source systems, and the reports and alerts built on top. The important word is governed, every metric has one definition and every number traces back to its source. It is not a BI tool, which draws charts but knows nothing about trade, and it is not an application you install. It is a productized analytics layer, assembled and kept current, that runs on the Microsoft stack inside your own tenant.',
+      },
+      {
+        type: 'p',
+        text: 'Analytics is the lead offer, because it is what the model makes possible immediately. Software that we build on top of the same data, trade ERP, customs, warehouse, and security vision, is a roadmap introduced as a client needs it, not the headline. The platform is the analytics; the software grows from it.',
+      },
+      { type: 'h2', id: 'architecture', text: 'How it is put together' },
+      {
+        type: 'p',
+        text: 'The platform follows the same four steps in every deployment. The data stays where it lives; we meet it there rather than asking you to move it.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Connect. Read from the systems you already run: SAP, Oracle, NetSuite, Microsoft, broker and carrier systems, EDI and ACE, and spreadsheets. The sources are left in place.',
+          'Model. Build one governed trade data model where each KPI is defined once, with landed cost, duty, HTS, origin, and incoterms built in rather than rebuilt per report.',
+          'Decide. Deliver landed cost, duty exposure, visibility, compliance, and inventory as governed reports and alerts, each number drillable to the shipment, entry, or order behind it.',
+          'Run. Operate it in your own Microsoft tenant, or in a dedicated tenant we provision and manage, with the data isolated, documented, and yours.',
+        ],
+      },
+      { type: 'h2', id: 'modules', text: 'What is in it' },
+      {
+        type: 'p',
+        text: 'The subscription is scoped to the analytics domains you need. Each is built on the same model, so a number in one lines up with the same number in another.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Landed cost and margin. Freight, duty, insurance, and brokerage allocated to the unit, so margin by SKU, supplier, and shipment is known at receipt.',
+          'Duty and tariff exposure. Duty owed by HTS code, origin, and product line, with a scenario layer that reprices the import book the day a rate changes.',
+          'Shipment visibility and OTIF. Carrier milestones unified over EDI and API into one planned-versus-actual view, with OTIF, dwell, and delay by lane and carrier.',
+          'Customs and compliance. Clearance time, entry throughput, classification consistency, and screening coverage, with an audit trail that answers a regulator from a report.',
+          'Inventory and warehouse. Days on hand, aging, and fill rate across sites, bonded and FTZ stock included.',
+          'Executive control tower. Cost, service, risk, and compliance in one governed view, every KPI defined once and drillable to the record behind it.',
+        ],
+      },
+      { type: 'h2', id: 'tenant', text: 'Where it runs, and what you own' },
+      {
+        type: 'p',
+        text: 'The analytics is delivered on Microsoft Fabric, Power BI, and Azure, inside your own tenant, so your trade data never leaves your control. If you already run Microsoft, it runs there. If you do not, we provision and manage a dedicated tenant for you, and the Microsoft capacity can be billed on one invoice with the platform through the managed Microsoft add-on.',
+      },
+      {
+        type: 'p',
+        text: 'The data, the model, and the reports are yours, documented and handed over. The subscription keeps them current and supported, but the asset lives in your tenant, so you are never locked in to keep operating. That is the point of running it in your environment rather than ours.',
+      },
+      { type: 'h2', id: 'governance', text: 'Governance, lineage, and security' },
+      {
+        type: 'p',
+        text: 'One governed semantic layer gives each KPI a single definition, and every number carries lineage back to its source, so a figure questioned by an auditor, an executive, or a customs authority can be traced rather than reconstructed. Data quality is measured on the fields that drive duty and cost, classification, origin, and value, rather than assumed. Security follows the controls of your own Microsoft tenant; the Security reference page covers this in detail.',
+      },
+      { type: 'h2', id: 'engagement', text: 'How you start' },
+      {
+        type: 'p',
+        text: 'The usual path is to start small, prove it, then run on it. The assessment is a fixed-scope engagement; the platform is a subscription; managed Microsoft is an optional add-on. The Engagement models page describes each in full.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Trade data assessment. A short, fixed-price engagement that maps your decisions and data and ships first reports in about two weeks. The fee credits toward the subscription.',
+          'Trade intelligence subscription. The platform as a monthly or annual subscription: connectors, the model, the KPI library, and the reports kept current, with governance and support, scoped to what you run.',
+          'Managed Microsoft. Optional. We provision and bill the Microsoft capacity the analytics runs on, so licensing and cloud arrive on one invoice with the platform.',
+        ],
+      },
+      { type: 'h2', id: 'roadmap', text: 'Software built on the data' },
+      {
+        type: 'p',
+        text: 'Once the governed model exists, operational software can be built on top of it: trade ERP, customs and compliance tools, inventory and warehouse workflows, and port and vessel security vision. These reuse the same data rather than starting over, and we build them when the analytics has shown where they pay off. They are a roadmap, not the lead offer. If a platform is on your horizon, say so in a quote request and we will scope it.',
+      },
+    ],
+  },
+  {
     slug: 'methodology',
     title: 'Methodology',
     group: 'Get started',
-    order: 1,
+    order: 2,
     description: 'How we scope, build, and deliver trade analytics, and why value shows up by week two.',
     intro:
       'We start from the decision a leader needs to make, not from the tool. Every engagement follows the same arc: understand the questions, build the foundation, deliver in short cycles, and sustain what ships. This page describes that arc.',
@@ -82,7 +165,7 @@ export const docs: Doc[] = [
     slug: 'engagement-models',
     title: 'Engagement models',
     group: 'Get started',
-    order: 2,
+    order: 3,
     description: 'Three ways to work with us: a fixed-scope project, an embedded squad, or managed analytics.',
     intro:
       'The same senior team, acceptance criteria, and code you own run through every model. What changes is how the work is shaped and billed. Most clients start with an assessment, then pick the model that fits where they are.',
