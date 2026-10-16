@@ -1163,11 +1163,104 @@ export const platform = {
       body: 'In your own Microsoft tenant, or in a dedicated tenant we provision and manage for you. Your data stays isolated, documented, and yours.',
     },
   ],
+  modules: {
+    eyebrow: 'What is in it',
+    title: 'Six analytics domains, one governed model underneath.',
+    sub: 'The subscription is scoped to the domains you need. Each is built on the same model, so a number in one lines up with the same number in another, and every figure drills to the shipment, entry, or order behind it.',
+    items: [
+      {
+        icon: 'target',
+        name: 'Landed cost & margin',
+        body: 'Freight, duty, insurance, and brokerage allocated to the unit, so margin by SKU, supplier, and shipment is known at receipt, not at month end.',
+      },
+      {
+        icon: 'bolt',
+        name: 'Duty & tariff exposure',
+        body: 'Duty owed by HTS code, origin, and product line, with a scenario layer that reprices your import book the same day a rate changes.',
+      },
+      {
+        icon: 'delivery',
+        name: 'Shipment visibility & OTIF',
+        body: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with OTIF, dwell, and delay by lane and carrier.',
+      },
+      {
+        icon: 'contract',
+        name: 'Customs & compliance',
+        body: 'Clearance time, entry throughput, classification consistency, and screening coverage, with an audit trail that answers a regulator from a report.',
+      },
+      {
+        icon: 'stack',
+        name: 'Inventory & warehouse',
+        body: 'Days on hand, aging, and fill rate across sites, bonded and FTZ stock included, so cash and space in the wrong inventory become visible.',
+      },
+      {
+        icon: 'enterprise',
+        name: 'Executive control tower',
+        body: 'Cost, service, risk, and compliance in one governed executive view, every KPI defined once and drillable to the record behind it.',
+      },
+    ],
+  },
   reports: {
     eyebrow: 'Built reports',
     title: 'The reports your team opens every morning.',
     sub: 'A sample of what ships: landed cost to the unit, duty exposure by product line, and on-time performance over time. Figures are illustrative; the structure is what you get.',
     disclaimer: 'Illustrative figures · fictitious client · under NDA',
+  },
+  tenant: {
+    eyebrow: 'Where it runs',
+    title: 'In your own Microsoft tenant. The data, the model, and the reports are yours.',
+    sub: 'The analytics runs on the Microsoft stack you may already pay for, inside your own tenant, so your trade data never leaves your control. If you do not run Microsoft yet, we provision and manage a dedicated tenant for you.',
+    points: [
+      {
+        icon: 'key',
+        title: 'Your tenant, your data',
+        body: 'Everything lives in your Microsoft tenant on Fabric, Power BI, and Azure. Your data stays isolated and under your access controls, not pooled in a vendor platform.',
+      },
+      {
+        icon: 'architecture',
+        title: 'Governed and documented',
+        body: 'One model, one definition per KPI, with lineage from each number back to its source. The model and its documentation are handed over, not held hostage.',
+      },
+      {
+        icon: 'saas',
+        title: 'No lock-in',
+        body: 'Because you own the model, the reports, and the data, you can keep operating if you ever leave. The subscription keeps it current; it does not hold it ransom.',
+      },
+    ],
+  },
+  roadmap: {
+    eyebrow: 'What grows on top',
+    title: 'Software is the roadmap, built on the data once the model exists.',
+    sub: 'The analytics comes first, because it is what the model makes possible immediately. The platforms below are what we build on top of that same governed data as a client needs them. They are a roadmap, not the lead offer, and they reuse the model rather than starting over.',
+    items: [
+      { name: 'Trade ERP', body: 'Operational trade workflows fed by the same governed data, so execution and analytics share one source.', href: '/services/trade-erp' },
+      { name: 'Customs & compliance software', body: 'Filing, classification, and screening tools built on the compliance model already in place.', href: '/services/customs-compliance' },
+      { name: 'Inventory & WMS', body: 'Warehouse and bonded-stock workflows on top of the inventory model, not a separate silo.', href: '/services/inventory-wms' },
+      { name: 'Security vision', body: 'Port and vessel computer vision that feeds the same control tower as the rest of the trade data.', href: '/services/vessel-security-vision' },
+    ],
+    note: 'We build these when the analytics has shown where they pay off, not before. Ask in a quote request if a platform is on your horizon.',
+  },
+  faq: {
+    eyebrow: 'Questions',
+    title: 'What the platform is, and is not.',
+    items: [
+      {
+        q: 'Is this a product I log into?',
+        a: 'The reports run in Power BI in your own Microsoft tenant, so you sign in there, not to a Kadmoon login. The platform is the governed data model, the KPI library, the connectors, and the reports and alerts built on them, kept current as a subscription. It is a productized layer we assemble and run, delivered on the Microsoft stack, not a separate application to adopt.',
+      },
+      {
+        q: 'Do we need Microsoft to use it?',
+        a: 'The analytics is delivered on the Microsoft stack, Fabric, Power BI, and Azure. If you already run Microsoft, it runs in your tenant. If you do not, we provision and manage a dedicated tenant for you, and the Microsoft capacity can be billed on one invoice with the platform through the managed Microsoft add-on.',
+      },
+      {
+        q: 'How is this different from a BI tool?',
+        a: 'A BI tool draws charts; it does not know what landed cost or duty exposure mean for foreign trade. The platform arrives with the trade data model, the KPIs, and the connectors already built, so you are not starting from an empty canvas. The difference is the governed trade model underneath, which is what makes the numbers consistent, trustworthy, and specific to cross-border operations.',
+      },
+      {
+        q: 'What do we actually own?',
+        a: 'The data, the model, and the reports, all in your own tenant. The subscription keeps them current and supported, but the asset is yours, documented and handed over, so you are never locked in to keep operating. That is the point of running it in your tenant rather than in ours.',
+      },
+    ],
   },
   engage: {
     eyebrow: 'How an engagement works',

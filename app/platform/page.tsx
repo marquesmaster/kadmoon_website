@@ -80,6 +80,38 @@ export default function PlatformPage() {
           </div>
         </section>
 
+        {/* What is in it — the six analytics domains */}
+        <section className="border-t border-line bg-paper py-16 md:py-20">
+          <div className="mx-auto max-w-shell px-6">
+            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
+              {platform.modules.eyebrow}
+            </span>
+            <h2 className="mt-4 max-w-2xl font-display text-display-sm text-ink">
+              {platform.modules.title}
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-2">{platform.modules.sub}</p>
+
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {platform.modules.items.map((m, i) => (
+                <Reveal
+                  as="article"
+                  key={m.name}
+                  delay={(i % 3) * 70}
+                  className="group flex flex-col rounded-2xl border border-line bg-white p-7 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+                >
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy/5 text-navy transition-colors group-hover:bg-accent/10 group-hover:text-accent">
+                    <Icon name={m.icon} className="h-5 w-5" />
+                  </span>
+                  <h3 className="mt-5 font-display text-lg font-semibold tracking-[-0.02em] text-ink">
+                    {m.name}
+                  </h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-ink-2">{m.body}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Built reports showcase */}
         <section className="bg-mist py-16 md:py-24">
           <div className="mx-auto max-w-shell px-6">
@@ -113,6 +145,72 @@ export default function PlatformPage() {
           </div>
         </section>
 
+        {/* Where it runs — tenant & ownership */}
+        <section className="relative overflow-hidden border-t border-line bg-navy py-16 md:py-24">
+          <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-40" aria-hidden />
+          <div className="relative mx-auto max-w-shell px-6">
+            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#8FB8FF]">
+              {platform.tenant.eyebrow}
+            </span>
+            <h2 className="mt-4 max-w-3xl font-display text-display-sm text-white">
+              {platform.tenant.title}
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/70">{platform.tenant.sub}</p>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {platform.tenant.points.map((p, i) => (
+                <Reveal
+                  as="div"
+                  key={p.title}
+                  delay={(i % 3) * 70}
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-7"
+                >
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-[#8FB8FF]">
+                    <Icon name={p.icon} className="h-5 w-5" />
+                  </span>
+                  <h3 className="mt-5 font-display text-lg font-semibold text-white">{p.title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-white/70">{p.body}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* What grows on top — software roadmap */}
+        <section className="mx-auto max-w-shell px-6 py-16 md:py-20">
+          <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
+            {platform.roadmap.eyebrow}
+          </span>
+          <h2 className="mt-4 max-w-2xl font-display text-display-sm text-ink">
+            {platform.roadmap.title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-2">{platform.roadmap.sub}</p>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {platform.roadmap.items.map((r, i) => (
+              <Reveal as="div" key={r.name} delay={(i % 4) * 70}>
+                <a
+                  href={r.href}
+                  className="group flex h-full flex-col rounded-2xl border border-dashed border-line bg-paper p-6 transition-all hover:-translate-y-0.5 hover:border-ink-3/40 hover:bg-white"
+                >
+                  <span className="inline-flex w-fit rounded-full border border-line bg-white px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-3">
+                    Roadmap
+                  </span>
+                  <h3 className="mt-4 font-display text-base font-semibold text-ink group-hover:text-accent">
+                    {r.name}
+                  </h3>
+                  <p className="mt-2.5 flex-1 text-[14px] leading-relaxed text-ink-2">{r.body}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-navy">
+                    Learn more
+                    <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                  </span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+          <p className="mt-6 text-[14px] leading-relaxed text-ink-3">{platform.roadmap.note}</p>
+        </section>
+
         {/* Engagement model */}
         <section className="mx-auto max-w-shell px-6 py-16 md:py-20">
           <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
@@ -141,6 +239,38 @@ export default function PlatformPage() {
             ))}
           </ol>
           <p className="mt-6 text-[14px] leading-relaxed text-ink-3">{platform.engage.note}</p>
+        </section>
+
+        {/* FAQ */}
+        <section className="border-t border-line bg-mist py-16 md:py-20">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: platform.faq.items.map((f) => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              }),
+            }}
+          />
+          <div className="mx-auto max-w-3xl px-6">
+            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
+              {platform.faq.eyebrow}
+            </span>
+            <h2 className="mt-4 font-display text-display-sm text-ink">{platform.faq.title}</h2>
+            <dl className="mt-10 divide-y divide-line border-y border-line">
+              {platform.faq.items.map((f) => (
+                <div key={f.q} className="py-6">
+                  <dt className="font-display text-lg font-semibold text-ink">{f.q}</dt>
+                  <dd className="mt-3 text-[15px] leading-relaxed text-ink-2">{f.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </section>
 
         {/* Closing CTA */}
