@@ -2,8 +2,9 @@ import { Reveal } from '../Reveal';
 import { KpiTiles, LandedCostCard, DutyExposureCard, OtifCard } from '../reports/SampleReports';
 
 // Dense, high-contrast analytics showcase placed right after the hero: real
-// built reports on a navy ground so the home leads with analytics and reads
-// with depth and firmness, not white-on-white. Doubles as the platform teaser.
+// built reports framed inside a Fluent "acrylic" workspace panel on a navy
+// ground, so the home leads with analytics and reads like Power BI in your own
+// tenant. Doubles as the platform teaser.
 export function ReportsBand() {
   return (
     <section id="platform" className="relative overflow-hidden border-y-2 border-accent/60 bg-navy">
@@ -35,20 +36,35 @@ export function ReportsBand() {
           </a>
         </div>
 
-        <div className="mt-10">
-          <KpiTiles />
-        </div>
+        {/* Fluent "acrylic" workspace framing the real reports */}
+        <div className="fluent-acrylic-dark mt-10 rounded-[1.5rem] p-4 md:p-6">
+          <div className="flex items-center gap-2 px-1">
+            <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-accent/70" />
+            <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-white/25" />
+            <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-white/25" />
+            <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.14em] text-white/55">
+              Your tenant · Power BI
+            </span>
+            <span className="ml-auto rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.12em] text-white/55">
+              Refreshed daily
+            </span>
+          </div>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
-          <Reveal as="div">
-            <LandedCostCard />
-          </Reveal>
-          <Reveal as="div" delay={90}>
-            <DutyExposureCard />
-          </Reveal>
-          <Reveal as="div" delay={180}>
-            <OtifCard />
-          </Reveal>
+          <div className="mt-5">
+            <KpiTiles />
+          </div>
+
+          <div className="mt-5 grid gap-5 lg:grid-cols-3">
+            <Reveal as="div">
+              <LandedCostCard />
+            </Reveal>
+            <Reveal as="div" delay={90}>
+              <DutyExposureCard />
+            </Reveal>
+            <Reveal as="div" delay={180}>
+              <OtifCard />
+            </Reveal>
+          </div>
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
