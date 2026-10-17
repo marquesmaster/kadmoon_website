@@ -7,6 +7,7 @@ import { Reveal } from '@/components/Reveal';
 import { Icon } from '@/components/Icon';
 import { PageHero } from '@/components/sections/PageHero';
 import { KpiTiles, LandedCostCard, DutyExposureCard, OtifCard } from '@/components/reports/SampleReports';
+import { FluentWorkspace } from '@/components/sections/FluentWorkspace';
 import { platform } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -57,13 +58,13 @@ export default function PlatformPage() {
 
         {/* How it works — four pillars */}
         <section className="mx-auto max-w-shell px-6 py-16 md:py-20">
-          <div className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {platform.pillars.map((p, i) => (
               <Reveal
                 as="div"
                 key={p.step}
                 delay={(i % 4) * 70}
-                className="group flex flex-col bg-paper p-6 md:p-7"
+                className="fluent-tile group flex flex-col rounded-2xl p-6 transition-all hover:-translate-y-0.5 hover:shadow-card md:p-7"
               >
                 <div className="flex items-center justify-between">
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy/5 text-navy transition-colors group-hover:bg-accent/10 group-hover:text-accent">
@@ -145,34 +146,40 @@ export default function PlatformPage() {
           </div>
         </section>
 
-        {/* Where it runs — tenant & ownership */}
+        {/* Where it runs — tenant & ownership, with the Fluent workspace panel */}
         <section className="relative overflow-hidden border-t border-line bg-navy py-16 md:py-24">
           <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-40" aria-hidden />
-          <div className="relative mx-auto max-w-shell px-6">
-            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#8FB8FF]">
-              {platform.tenant.eyebrow}
-            </span>
-            <h2 className="mt-4 max-w-3xl font-display text-display-sm text-white">
-              {platform.tenant.title}
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/70">{platform.tenant.sub}</p>
+          <div className="relative mx-auto grid max-w-shell gap-12 px-6 md:grid-cols-[1fr_0.9fr] md:items-center md:gap-16">
+            <Reveal>
+              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#8FB8FF]">
+                {platform.tenant.eyebrow}
+              </span>
+              <h2 className="mt-4 max-w-xl font-display text-display-sm text-white">
+                {platform.tenant.title}
+              </h2>
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/70">{platform.tenant.sub}</p>
 
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {platform.tenant.points.map((p, i) => (
-                <Reveal
-                  as="div"
-                  key={p.title}
-                  delay={(i % 3) * 70}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-7"
-                >
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-[#8FB8FF]">
-                    <Icon name={p.icon} className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-white">{p.title}</h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-white/70">{p.body}</p>
-                </Reveal>
-              ))}
-            </div>
+              <div className="mt-8 grid gap-3">
+                {platform.tenant.points.map((p) => (
+                  <div
+                    key={p.title}
+                    className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-4"
+                  >
+                    <span className="grid h-10 w-10 flex-none place-items-center rounded-lg bg-white/10 text-[#8FB8FF]">
+                      <Icon name={p.icon} className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <h3 className="font-display text-[15px] font-semibold text-white">{p.title}</h3>
+                      <p className="mt-1 text-[14px] leading-relaxed text-white/65">{p.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <FluentWorkspace tone="dark" />
+            </Reveal>
           </div>
         </section>
 
