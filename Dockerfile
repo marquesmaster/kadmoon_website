@@ -20,6 +20,10 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # DATABASE_URL is not needed to build (all pages are static/SSG); a dummy keeps
 # Prisma client generation happy.
 ENV DATABASE_URL=postgresql://user:pass@localhost:5432/db
+# Optional Google Search Console verification token, baked into the static HTML
+# as a <meta name="google-site-verification"> tag. Empty = no tag.
+ARG GOOGLE_SITE_VERIFICATION=""
+ENV GOOGLE_SITE_VERIFICATION=$GOOGLE_SITE_VERIFICATION
 RUN npx prisma generate && npm run build
 
 # ---- runner ----

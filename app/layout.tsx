@@ -96,6 +96,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  // Google Search Console verification via meta tag. Set GOOGLE_SITE_VERIFICATION
+  // at build time (it is baked into the static HTML); unset = no tag rendered.
+  // DNS TXT verification is an alternative that needs no rebuild (see DEPLOY.md).
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },

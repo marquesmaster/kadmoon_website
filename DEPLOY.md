@@ -46,6 +46,10 @@ sed -i "s/^WEB3FORMS_ACCESS_KEY=.*/WEB3FORMS_ACCESS_KEY=YOUR_WEB3FORMS_KEY/" .en
 nano .env
 ```
 
+`GOOGLE_SITE_VERIFICATION` can stay empty for now; it is only needed if you
+verify Search Console with the HTML-tag method (step 7a), and it requires a
+rebuild once set. DNS verification needs nothing here.
+
 Email provider (first one set wins): **Web3Forms**, then Resend, then SMTP.
 The recommended path is Web3Forms: create an access key at web3forms.com tied
 to the inbox that should receive leads, and set `WEB3FORMS_ACCESS_KEY`. The key
@@ -108,6 +112,72 @@ from it.
 apt install -y certbot python3-certbot-nginx
 certbot --nginx -d kadmoon.com -d www.kadmoon.com --redirect --agree-tos -m commercial@kadmoon.com --no-eff-email
 ```
+
+## 7. Google Search Console (go-live SEO)
+
+Do this once the site is live over HTTPS at `https://kadmoon.com`. It is how
+Google discovers and indexes every page; the site already ships `sitemap.xml`,
+`robots.txt` (which points to the sitemap), canonical tags, and a `www -> non-www`
+301, so the job is to register the property, verify it, and submit the sitemap.
+
+### 7a. Add the property and verify
+
+Open [search.google.com/search-console](https://search.google.com/search-console)
+and add a property. Any one verification method is enough; pick one:
+
+- **Domain property via DNS TXT (recommended).** Choose "Domain", enter
+  `kadmoon.com`, and Google shows a `TXT` record. Add it at the DNS host
+  (Hostinger), wait for propagation, then click Verify. This covers http, https,
+  `www`, and every subdomain at once, and needs no rebuild or redeploy.
+
+  ```
+  TXT   @   google-site-verification=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  ```
+
+- **HTML meta tag (no DNS access).** Choose "URL prefix", enter
+  `https://kadmoon.com`, pick the "HTML tag" method, copy the token (the
+  `content="..."` value), put it in `.env` and rebuild:
+
+  ```bash
+  cd /opt/kadmoon-website
+  sed -i "s/^GOOGLE_SITE_VERIFICATION=.*/GOOGLE_SITE_VERIFICATION=YOUR_TOKEN/" .env
+  docker compose up -d --build     # the token bakes into every page's <head>
+  curl -s https://kadmoon.com | grep google-site-verification   # confirm it renders
+  ```
+
+  Then click Verify in Search Console.
+
+- **HTML file (no DNS access, no rebuild-arg).** Download the `googleXXXX.html`
+  file Google offers, drop it in `public/`, commit, and redeploy. It is then
+  served at `https://kadmoon.com/googleXXXX.html`. Then click Verify.
+
+### 7b. Submit the sitemap
+
+In Search Console: **Sitemaps -> Add a new sitemap -> `sitemap.xml` -> Submit**.
+Google reads `https://kadmoon.com/sitemap.xml`, which is generated at build and
+lists every page, blog post, and docs page. Confirm it loads first:
+
+```bash
+curl -sI https://kadmoon.com/sitemap.xml     # expect 200, content-type xml
+curl -s  https://kadmoon.com/robots.txt      # should name the sitemap
+```
+
+### 7c. Nudge the first pages in
+
+Use **URL Inspection** on the home page and a few priority URLs (`/platform`,
+`/pricing`, `/contact`, two or three cornerstone blog posts) and click "Request
+indexing" so they are crawled sooner. The rest Google picks up from the sitemap
+over the following days.
+
+### 7d. Post-launch checks
+
+- **Pages / Coverage** report over the next week: pages should move to "Indexed".
+  Investigate anything under "Not indexed" (usually just "Discovered, not yet
+  indexed", which resolves on its own).
+- Confirm no duplicate `www` property is competing; the 301 already consolidates
+  it, so register `kadmoon.com` (or the Domain property), not `www`.
+- Optional: add the same site to [Bing Webmaster Tools](https://www.bing.com/webmasters),
+  which can import the property and sitemap directly from Search Console.
 
 ## Updating the site later
 
