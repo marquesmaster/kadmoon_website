@@ -658,6 +658,33 @@ export const credibility = {
 };
 
 // ---------------------------------------------------------------------------
+// "Built on the Microsoft cloud" band. The analytics is delivered on the
+// Microsoft data stack, inside the client's own tenant. We name the stack
+// factually (we build on it); this is not a partnership or certification
+// claim, and no Microsoft logos are used.
+// ---------------------------------------------------------------------------
+
+export const microsoftStack = {
+  eyebrow: 'Built on the Microsoft cloud',
+  title: 'Enterprise analytics, delivered in your own Microsoft tenant.',
+  lead:
+    'The analytics runs on the Microsoft data stack you may already pay for, inside your tenant, under your own security and access controls. Your trade data never leaves your environment, and the model, reports, and data are yours.',
+  // The three Microsoft technologies the platform is delivered on. `mark` picks
+  // a brand-neutral geometric glyph we draw ourselves (see MicrosoftStack.tsx).
+  stack: [
+    { mark: 'fabric', name: 'Microsoft Fabric', role: 'The unified data foundation your trade model is built on.' },
+    { mark: 'powerbi', name: 'Power BI', role: 'The governed reports and dashboards your team signs in to.' },
+    { mark: 'azure', name: 'Azure', role: 'The cloud your tenant runs on, with your own controls.' },
+  ],
+  points: [
+    { title: 'Your tenant, your data', body: 'Everything stays inside your Microsoft environment, isolated under your controls, not pooled in a vendor platform.' },
+    { title: 'Enterprise security & governance', body: 'One governed model, lineage to source, and the security posture of your own tenant.' },
+    { title: 'No lock-in', body: 'You own the model, the reports, and the data, so you keep operating with or without us.' },
+  ],
+  note: 'Delivered on the Microsoft stack. If you do not run Microsoft yet, we provision and manage a dedicated tenant for you.',
+};
+
+// ---------------------------------------------------------------------------
 // Dedicated pages: Solutions and Industries (deep content)
 // ---------------------------------------------------------------------------
 

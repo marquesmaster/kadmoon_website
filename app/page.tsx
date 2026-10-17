@@ -4,6 +4,7 @@ import { Credibility } from '@/components/sections/Credibility';
 import { StatsBand } from '@/components/sections/StatsBand';
 import { Capabilities } from '@/components/sections/Capabilities';
 import { ReportsBand } from '@/components/sections/ReportsBand';
+import { MicrosoftStack } from '@/components/sections/MicrosoftStack';
 import { GroupExperience } from '@/components/sections/GroupExperience';
 import { Industries } from '@/components/sections/Industries';
 import { Process } from '@/components/sections/Process';
@@ -23,6 +24,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <ReportsBand />
+        <MicrosoftStack />
         <Credibility />
         <StatsBand />
         <GroupExperience />
