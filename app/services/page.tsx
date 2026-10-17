@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description:
     'Analytics for foreign trade: landed cost and margin, duty and tariff exposure, shipment visibility and OTIF, customs and compliance analytics, inventory, and an executive control tower. Plus the trade platforms we build. Delivered on the Microsoft stack, in your tenant.',
   alternates: { canonical: `${siteConfig.url}/services` },
+  openGraph: { url: `${siteConfig.url}/services`, type: 'website', images: ['/opengraph-image'] },
 };
 
 const engage = [

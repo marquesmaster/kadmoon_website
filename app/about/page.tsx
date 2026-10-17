@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     'Kadmoon is a US analytics firm focused entirely on foreign trade. Senior, US-based engineers who speak customs, logistics, and compliance, turning your data into decisions in your own tenant.',
   alternates: { canonical: `${siteConfig.url}/about` },
+  openGraph: { url: `${siteConfig.url}/about`, type: 'website', images: ['/opengraph-image'] },
 };
 
 const principles = [

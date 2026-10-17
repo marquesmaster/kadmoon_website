@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description:
     'How Kadmoon delivers: discovery of the decisions and the data behind them, a semantic model in your tenant, dashboards in short cycles from week two, and support that keeps governance current.',
   alternates: { canonical: `${siteConfig.url}/process` },
+  openGraph: { url: `${siteConfig.url}/process`, type: 'website', images: ['/opengraph-image'] },
 };
 
 export default function ProcessPage() {

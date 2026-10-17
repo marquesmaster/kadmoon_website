@@ -19,6 +19,7 @@ export const metadata: Metadata = {
       'Practical guides on landed cost, duty, customs, logistics, and the analytics a cross-border operation runs on, for US B2B buyers.',
     url: `${siteConfig.url}/blog`,
     type: 'website',
+    images: ['/opengraph-image'],
   },
 };
 

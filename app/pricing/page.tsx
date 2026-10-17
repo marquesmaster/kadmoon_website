@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     'How Kadmoon prices foreign-trade analytics: a fixed-scope trade data assessment, a trade intelligence subscription scoped to your data and decisions, and an optional managed Microsoft add-on. Quoted per engagement.',
   alternates: { canonical: `${siteConfig.url}/pricing` },
+  openGraph: { url: `${siteConfig.url}/pricing`, type: 'website', images: ['/opengraph-image'] },
 };
 
 export default function PricingPage() {

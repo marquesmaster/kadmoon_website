@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     'Analytics for importers, exporters, customs brokers, freight forwarders, 3PLs, ports, and the manufacturers and distributors that trade across borders. Built for how each one measures itself.',
   alternates: { canonical: `${siteConfig.url}/industries` },
+  openGraph: { url: `${siteConfig.url}/industries`, type: 'website', images: ['/opengraph-image'] },
 };
 
 // Illustrative outcomes, clearly labeled. Replaced with real, cleared client

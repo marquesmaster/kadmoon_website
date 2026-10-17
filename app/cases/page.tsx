@@ -25,6 +25,7 @@ export const metadata: Metadata = {
       'Analytics for importers, brokers, forwarders, and the companies that move goods across borders. Illustrative examples, real structure.',
     url: `${siteConfig.url}/cases`,
     type: 'website',
+    images: ['/opengraph-image'],
   },
 };
 

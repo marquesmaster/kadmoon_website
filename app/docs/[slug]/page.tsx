@@ -21,10 +21,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!d) return {};
   const url = `${siteConfig.url}/docs/${d.slug}`;
   return {
-    title: `${d.title} | Kadmoon docs`,
+    title: `${d.title} | Docs`,
     description: d.description,
     alternates: { canonical: url },
-    openGraph: { title: `${d.title} | Kadmoon docs`, description: d.description, url, type: 'article' },
+    openGraph: { title: `${d.title} | Kadmoon docs`, description: d.description, url, type: 'article', images: ['/opengraph-image'] },
   };
 }
 

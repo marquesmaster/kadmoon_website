@@ -81,9 +81,10 @@ export const metadata: Metadata = {
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: siteConfig.ogImageAlt }],
   },
   twitter: {
+    // No static title/description here: let each page's resolved title and
+    // description flow into the Twitter card, so sub-pages are not stamped with
+    // the generic site title when shared.
     card: 'summary_large_image',
-    title: siteConfig.defaultTitle,
-    description: siteConfig.description,
     images: ['/opengraph-image'],
   },
   robots: {

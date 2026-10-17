@@ -16,10 +16,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!c) return {};
   const url = `${siteConfig.url}/cases/${c.slug}`;
   return {
-    title: `${c.title} | Kadmoon case study`,
+    title: `${c.title} | Case study`,
     description: c.summary,
     alternates: { canonical: url },
-    openGraph: { title: c.title, description: c.summary, url, type: 'article' },
+    openGraph: { title: c.title, description: c.summary, url, type: 'article', images: ['/opengraph-image'] },
   };
 }
 

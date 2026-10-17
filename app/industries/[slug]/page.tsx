@@ -23,7 +23,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: `Analytics for ${ind.name}`,
     description: ind.intro.slice(0, 155),
     alternates: { canonical: url },
-    openGraph: { title: `Analytics for ${ind.name} | Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website' },
+    openGraph: { title: `Analytics for ${ind.name} | Kadmoon`, description: ind.intro.slice(0, 155), url, type: 'website', images: ['/opengraph-image'] },
   };
 }
 

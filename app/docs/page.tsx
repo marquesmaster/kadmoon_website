@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description:
     'Documentation for how Kadmoon delivers analytics for foreign trade: methodology, engagement models, data integration across SAP, Microsoft, Oracle, EDI and ACE, security and tenant model, the KPI library, and a glossary.',
   alternates: { canonical: `${siteConfig.url}/docs` },
+  openGraph: { url: `${siteConfig.url}/docs`, type: 'website', images: ['/opengraph-image'] },
 };
 
 const getStarted = docs.filter((d) => d.group === 'Get started').sort((a, b) => a.order - b.order);

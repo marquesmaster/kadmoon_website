@@ -12,10 +12,11 @@ import { platform } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Platform | Kadmoon Trade Intelligence',
+  title: { absolute: 'Platform | Kadmoon Trade Intelligence' },
   description:
     'Kadmoon Trade Intelligence connects your ERP, broker, carrier, EDI and ACE, and spreadsheets into one governed model, and delivers landed cost, duty exposure, visibility, and compliance reports in your own Microsoft tenant.',
   alternates: { canonical: `${siteConfig.url}/platform` },
+  openGraph: { url: `${siteConfig.url}/platform`, type: 'website', images: ['/opengraph-image'] },
 };
 
 const sources = ['SAP', 'Oracle', 'NetSuite', 'Microsoft', 'Broker & carrier', 'EDI / ACE', 'Spreadsheets'];

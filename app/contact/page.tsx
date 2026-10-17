@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     'Tell us how your trade operation works and where the friction is. Within one business day you get a response with a clear path forward and a quote.',
   alternates: { canonical: `${siteConfig.url}/contact` },
+  openGraph: { url: `${siteConfig.url}/contact`, type: 'website', images: ['/opengraph-image'] },
 };
 
 const firstCall = [
