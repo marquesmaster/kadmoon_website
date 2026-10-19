@@ -9,6 +9,24 @@ export const siteConfig = {
   regionCode: 'TX',
   country: 'United States',
   countryCode: 'US',
+  // --- Business location / NAP (Name, Address, Phone) ---
+  // Fill these with REAL, verifiable data once the US address and phone exist.
+  // Empty fields are omitted from the structured data, so nothing fake is
+  // emitted. Kadmoon serves clients remotely (a service-area business), so a
+  // precise street address can stay hidden on Google Business Profile after
+  // verification; set streetAddress here only if you list a real, staffed
+  // location and want it public. Keep these consistent with the Google
+  // Business Profile listing (same name, address, and phone everywhere).
+  phone: '', // e.g. '+1-512-555-0100'
+  streetAddress: '',
+  postalCode: '',
+  latitude: '', // e.g. '30.2672'
+  longitude: '', // e.g. '-97.7431'
+  openingHours: '', // e.g. 'Mo-Fr 09:00-17:00'
+  foundingYear: '', // e.g. '2025'
+  // Google Business Profile / Google Maps URL. Added to sameAs once the
+  // listing is live, which links the site and the profile as one entity.
+  googleBusinessUrl: '',
   defaultTitle: 'Kadmoon | Analytics for Foreign Trade: Landed Cost, Duty, Visibility & Compliance',
   titleTemplate: '%s | Kadmoon',
   // Kept to 120-160 chars, no em dashes (SEO + humanizer).

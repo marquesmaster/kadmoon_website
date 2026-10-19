@@ -83,6 +83,14 @@ export default function ContactPage() {
                 >
                   {siteConfig.email}
                 </a>
+                {siteConfig.phone && (
+                  <a
+                    href={`tel:${siteConfig.phone.replace(/[^+\d]/g, '')}`}
+                    className="mt-2 block font-display text-lg font-semibold text-ink hover:text-accent"
+                  >
+                    {siteConfig.phone}
+                  </a>
+                )}
                 <div className="mt-5 flex items-center gap-2.5 text-[14px] font-medium text-ink-2">
                   <span aria-hidden className="h-2 w-2 rounded-full bg-accent" style={{ boxShadow: '0 0 0 4px rgba(20,92,230,.14)' }} />
                   United States · Serving clients nationwide

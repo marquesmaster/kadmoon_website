@@ -3,6 +3,33 @@ import { faq } from '@/lib/content';
 
 /** Organization + FAQPage structured data for search engines. */
 export function JsonLd() {
+  // Optional NAP fields: included only when set, so nothing fake is emitted.
+  const phone = siteConfig.phone ? { telephone: siteConfig.phone } : {};
+  const streetAddr = siteConfig.streetAddress
+    ? {
+        streetAddress: siteConfig.streetAddress,
+        ...(siteConfig.postalCode ? { postalCode: siteConfig.postalCode } : {}),
+      }
+    : {};
+  const geo =
+    siteConfig.latitude && siteConfig.longitude
+      ? {
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: siteConfig.latitude,
+            longitude: siteConfig.longitude,
+          },
+        }
+      : {};
+  const hours = siteConfig.openingHours
+    ? { openingHours: siteConfig.openingHours }
+    : {};
+  const founding = siteConfig.foundingYear
+    ? { foundingDate: siteConfig.foundingYear }
+    : {};
+  // Link the site and the Google Business Profile as one entity via sameAs.
+  const sameAs = [siteConfig.googleBusinessUrl, ...Object.values(siteConfig.socials)].filter(Boolean);
+
   const organization = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -10,6 +37,8 @@ export function JsonLd() {
     alternateName: siteConfig.shortName,
     url: siteConfig.url,
     email: siteConfig.email,
+    ...phone,
+    ...founding,
     description: siteConfig.description,
     foundingLocation: {
       '@type': 'Place',
@@ -22,6 +51,7 @@ export function JsonLd() {
     },
     address: {
       '@type': 'PostalAddress',
+      ...streetAddr,
       addressLocality: siteConfig.city,
       addressRegion: siteConfig.regionCode,
       addressCountry: siteConfig.countryCode,
@@ -42,11 +72,12 @@ export function JsonLd() {
     contactPoint: {
       '@type': 'ContactPoint',
       email: siteConfig.email,
+      ...phone,
       contactType: 'sales',
       areaServed: siteConfig.countryCode,
       availableLanguage: 'English',
     },
-    sameAs: Object.values(siteConfig.socials).filter(Boolean),
+    sameAs,
   };
 
   const localBusiness = {
@@ -59,14 +90,20 @@ export function JsonLd() {
     image: `${siteConfig.url}/opengraph-image`,
     description: siteConfig.description,
     priceRange: '$$$',
+    ...phone,
+    ...founding,
     address: {
       '@type': 'PostalAddress',
+      ...streetAddr,
       addressLocality: siteConfig.city,
       addressRegion: siteConfig.regionCode,
       addressCountry: siteConfig.countryCode,
     },
+    ...geo,
+    ...hours,
     areaServed: { '@type': 'Country', name: siteConfig.country },
     knowsLanguage: 'en-US',
+    ...(sameAs.length ? { sameAs } : {}),
   };
 
   const website = {
