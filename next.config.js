@@ -205,6 +205,46 @@ const retargetedBlogRedirects = {
   'power-bi-kpis-for-logistics': '/blog/trade-control-tower',
 };
 
+// Retired Power BI / Fabric blog articles that still draw Microsoft-stack
+// search demand. A trade buyer who runs Microsoft should land on how we deliver
+// trade analytics on that stack, not on a dead generic BI article. Spread
+// before the blanket retiredPowerBiBlogSlugs map (first match wins).
+const retargetedMicrosoftBlogRedirects = {
+  'what-is-microsoft-fabric': '/blog/trade-analytics-microsoft-stack',
+  'azure-synapse-vs-microsoft-fabric': '/blog/trade-analytics-microsoft-stack',
+  'microsoft-fabric-capacity-planning': '/blog/trade-analytics-microsoft-stack',
+  'medallion-architecture-fabric': '/blog/trade-analytics-microsoft-stack',
+  'direct-lake-explained': '/blog/trade-analytics-microsoft-stack',
+  'import-vs-directquery-vs-direct-lake': '/blog/trade-analytics-microsoft-stack',
+  'power-bi-premium-to-fabric': '/blog/trade-analytics-microsoft-stack',
+  'power-bi-premium-vs-fabric-cost': '/pricing',
+  'what-is-a-semantic-model': '/blog/semantic-layer-trade-kpi',
+  'power-bi-semantic-model-best-practices': '/blog/semantic-layer-trade-kpi',
+  'star-schema-for-power-bi': '/blog/semantic-layer-trade-kpi',
+  'row-level-security-power-bi': '/blog/semantic-layer-trade-kpi',
+  'power-bi-incremental-refresh': '/blog/trade-data-freshness',
+  'power-bi-vs-excel-for-reporting': '/blog/spreadsheets-break-at-trade-scale',
+  'data-pipeline-architecture': '/docs/data-integration',
+  'building-a-data-warehouse': '/platform',
+  'business-intelligence-dashboards': '/platform',
+  'dax-patterns-for-business': '/platform',
+  'power-bi-governance-guide': '/platform',
+  'power-bi-governance-overhaul-signs': '/platform',
+  'power-bi-adoption-playbook': '/platform',
+  'power-bi-deployment-pipelines-alm': '/platform',
+  'power-platform-center-of-excellence-guide': '/platform',
+  'managed-power-bi-services': '/platform',
+  'in-house-bi-analyst-vs-managed-power-bi': '/docs/engagement-models',
+  'power-bi-consulting-rates': '/pricing',
+  'how-much-does-a-power-bi-project-cost': '/pricing',
+  'how-to-choose-a-power-bi-consultant': '/pricing',
+  'tableau-to-power-bi-migration-cost': '/platform',
+  'tableau-vs-power-bi': '/platform',
+  'cognos-to-power-bi-what-changes': '/platform',
+  'qlik-to-power-bi-what-carries-over': '/platform',
+  'tenant-to-tenant-migration-guide': '/platform',
+};
+
 const retiredPowerBiBlogSlugs = [
   'ai-document-processing', 'anomaly-detection-for-business', 'azure-synapse-vs-microsoft-fabric',
   'building-a-data-warehouse', 'business-intelligence-dashboards', 'cognos-to-power-bi-what-changes',
@@ -250,24 +290,27 @@ const nextConfig = {
         permanent: true,
       },
 
-      // Retired Power BI / Microsoft service pages (rebrand to foreign-trade
-      // software). Everything consolidates to the solutions listing.
-      { source: '/services/power-bi', destination: '/services', permanent: true },
-      { source: '/services/microsoft-fabric', destination: '/services', permanent: true },
-      { source: '/services/power-platform', destination: '/services', permanent: true },
-      { source: '/services/power-platform-coe', destination: '/services', permanent: true },
+      // Retired Power BI / Microsoft service pages. The analytics stack
+      // (Fabric, Power BI, Azure) is how we deliver, so these point to the
+      // platform ("Built on the Microsoft cloud") rather than a generic list:
+      // a trade buyer who runs Microsoft lands on proof we deliver there.
+      { source: '/services/power-bi', destination: '/platform', permanent: true },
+      { source: '/services/microsoft-fabric', destination: '/platform', permanent: true },
+      { source: '/services/power-platform', destination: '/platform', permanent: true },
+      { source: '/services/power-platform-coe', destination: '/platform', permanent: true },
       { source: '/services/data-engineering', destination: '/services/trade-integrations', permanent: true },
-      { source: '/services/analytics-and-ai', destination: '/services', permanent: true },
+      { source: '/services/analytics-and-ai', destination: '/platform', permanent: true },
       { source: '/services/data-governance', destination: '/services/customs-compliance', permanent: true },
-      { source: '/services/tenant-to-tenant-migration', destination: '/services', permanent: true },
-      { source: '/services/bi-sustainment', destination: '/services', permanent: true },
-      { source: '/services/discovery-assessment', destination: '/services', permanent: true },
+      { source: '/services/tenant-to-tenant-migration', destination: '/platform', permanent: true },
+      { source: '/services/bi-sustainment', destination: '/platform', permanent: true },
+      { source: '/services/discovery-assessment', destination: '/platform', permanent: true },
 
-      // Retired Power BI migration landing pages.
-      { source: '/tableau-to-power-bi-migration', destination: '/services', permanent: true },
-      { source: '/qlik-to-power-bi-migration', destination: '/services', permanent: true },
-      { source: '/cognos-to-power-bi-migration', destination: '/services', permanent: true },
-      { source: '/synapse-to-fabric-migration', destination: '/services', permanent: true },
+      // Retired Power BI migration landing pages -> the platform (we deliver
+      // trade analytics on the Microsoft stack, in your own tenant).
+      { source: '/tableau-to-power-bi-migration', destination: '/platform', permanent: true },
+      { source: '/qlik-to-power-bi-migration', destination: '/platform', permanent: true },
+      { source: '/cognos-to-power-bi-migration', destination: '/platform', permanent: true },
+      { source: '/synapse-to-fabric-migration', destination: '/platform', permanent: true },
 
       // Retired subscription and dashboards pages.
       { source: '/packages', destination: '/services', permanent: true },
@@ -298,22 +341,23 @@ const nextConfig = {
       // Retired programmatic solution x city pages.
       { source: '/custom-software-development', destination: '/services', permanent: true },
       { source: '/custom-software-development/:city*', destination: '/services', permanent: true },
-      { source: '/power-bi', destination: '/services', permanent: true },
-      { source: '/power-bi/:city*', destination: '/services', permanent: true },
-      { source: '/microsoft-fabric', destination: '/services', permanent: true },
-      { source: '/microsoft-fabric/:city*', destination: '/services', permanent: true },
-      { source: '/power-platform', destination: '/services', permanent: true },
-      { source: '/power-platform/:city*', destination: '/services', permanent: true },
+      // Microsoft-stack programmatic pages -> the platform (how we deliver).
+      { source: '/power-bi', destination: '/platform', permanent: true },
+      { source: '/power-bi/:city*', destination: '/platform', permanent: true },
+      { source: '/microsoft-fabric', destination: '/platform', permanent: true },
+      { source: '/microsoft-fabric/:city*', destination: '/platform', permanent: true },
+      { source: '/power-platform', destination: '/platform', permanent: true },
+      { source: '/power-platform/:city*', destination: '/platform', permanent: true },
       { source: '/power-apps-development', destination: '/services', permanent: true },
       { source: '/power-apps-development/:city*', destination: '/services', permanent: true },
-      { source: '/azure-data-engineering', destination: '/services', permanent: true },
-      { source: '/azure-data-engineering/:city*', destination: '/services', permanent: true },
+      { source: '/azure-data-engineering', destination: '/platform', permanent: true },
+      { source: '/azure-data-engineering/:city*', destination: '/platform', permanent: true },
       { source: '/copilot-consulting', destination: '/services', permanent: true },
       { source: '/copilot-consulting/:city*', destination: '/services', permanent: true },
       { source: '/data-governance', destination: '/services/customs-compliance', permanent: true },
       { source: '/data-governance/:city*', destination: '/services/customs-compliance', permanent: true },
-      { source: '/power-bi-migration', destination: '/services', permanent: true },
-      { source: '/power-bi-migration/:city*', destination: '/services', permanent: true },
+      { source: '/power-bi-migration', destination: '/platform', permanent: true },
+      { source: '/power-bi-migration/:city*', destination: '/platform', permanent: true },
 
       // Trade-relevant retired URLs retargeted to the closest new page (must
       // precede the blanket maps below, since the first matching rule wins).
@@ -329,6 +373,14 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       })),
+      // Microsoft-stack retired blog articles retargeted to the platform and
+      // trade-framed content (must precede the blanket map below).
+      ...Object.entries(retargetedMicrosoftBlogRedirects).map(([slug, destination]) => ({
+        source: `/blog/${slug}`,
+        destination,
+        permanent: true,
+      })),
+
       // Retired Power BI blog articles (rebrand to foreign trade).
       ...retiredPowerBiBlogSlugs.map((slug) => ({
         source: `/blog/${slug}`,
