@@ -15,23 +15,22 @@ nationwide, with no specific operating city claimed.
 
 ## Current status / decision
 
-The only US address on file is a Globalfy virtual mailbox in Orlando, FL
-(a shared mail-forwarding address used by many foreign-owned US companies).
-**Registering a Business Profile at a shared virtual address has a high chance
-of being suspended by Google**, and a suspended profile is hard to recover.
+Do **not** use the Globalfy virtual mailbox in Orlando, FL for the listing: it is
+a shared mail-forwarding address and registering a Business Profile there has a
+high chance of being suspended.
 
-Decision: **do not register the Business Profile yet.** First obtain a
-genuinely verifiable US presence, in order of least to most effort:
+Chosen path: register as a **service-area business** verified at the **real
+address of a US-based member** who genuinely operates the business from there,
+with the US phone number already in hand. After verification the address is
+hidden and the service area is set to the United States. This is the robust,
+policy-compliant route; it also reinforces the "senior, US-based team"
+positioning.
 
-1. A **US phone number** (helps phone verification and NAP consistency; several
-   providers offer one without a physical office).
-2. A **more defensible address** than the shared virtual mailbox if possible
-   (for example, a dedicated address you actually operate from, or accept the
-   risk knowingly for an SAB with video verification).
-
-Until then, acquisition runs on the website, Search Console, and content, not on
-the maps listing. Revisit this when a US phone (and ideally a better address)
-exists, then follow the steps below.
+Prerequisites (status):
+- US phone number: **available** (give it to wire into `lib/site.ts`).
+- Verifiable US address: a US-based member's real operating address (the owner
+  is arranging this). Used in Google for verification, then hidden; it does not
+  have to be published on the site, which stays "nationwide, no city".
 
 ## 0. Decide this first: the address and phone
 
