@@ -34,7 +34,7 @@ export function Footer() {
                 className="h-[7px] w-[7px] rounded-full bg-accent"
                 style={{ boxShadow: '0 0 0 4px rgba(20,92,230,.16)' }}
               />
-              {siteConfig.city}, {siteConfig.regionCode} · United States
+              United States · Serving clients nationwide
             </div>
           </div>
 

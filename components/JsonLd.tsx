@@ -29,6 +29,8 @@ export function JsonLd() {
     : {};
   // Link the site and the Google Business Profile as one entity via sameAs.
   const sameAs = [siteConfig.googleBusinessUrl, ...Object.values(siteConfig.socials)].filter(Boolean);
+  // Only assert a city when there is a real operating one (none today).
+  const locality = siteConfig.city ? { addressLocality: siteConfig.city } : {};
 
   const organization = {
     '@context': 'https://schema.org',
@@ -44,7 +46,7 @@ export function JsonLd() {
       '@type': 'Place',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: siteConfig.city,
+        ...locality,
         addressRegion: siteConfig.regionCode,
         addressCountry: siteConfig.countryCode,
       },
@@ -52,7 +54,7 @@ export function JsonLd() {
     address: {
       '@type': 'PostalAddress',
       ...streetAddr,
-      addressLocality: siteConfig.city,
+      ...locality,
       addressRegion: siteConfig.regionCode,
       addressCountry: siteConfig.countryCode,
     },
@@ -95,7 +97,7 @@ export function JsonLd() {
     address: {
       '@type': 'PostalAddress',
       ...streetAddr,
-      addressLocality: siteConfig.city,
+      ...locality,
       addressRegion: siteConfig.regionCode,
       addressCountry: siteConfig.countryCode,
     },

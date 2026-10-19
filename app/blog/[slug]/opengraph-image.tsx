@@ -65,7 +65,7 @@ export default function Image({ params }: { params: { slug: string } }) {
         </div>
 
         <div style={{ fontSize: 22, color: 'rgba(255,255,255,0.65)' }}>
-          kadmoon.com · Custom software firm, Austin TX
+          kadmoon.com · Analytics for foreign trade
         </div>
       </div>
     ),

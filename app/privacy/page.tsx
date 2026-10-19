@@ -73,7 +73,7 @@ export default function PrivacyPage() {
       <p>
         Questions about this policy? Email{' '}
         <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. {siteConfig.legalName} is
-        based in {siteConfig.city}, {siteConfig.region}, {siteConfig.country}.
+        a {siteConfig.region} corporation in the {siteConfig.country}, serving clients nationwide.
       </p>
     </LegalPage>
   );

@@ -4,7 +4,11 @@ export const siteConfig = {
   shortName: 'Kadmoon',
   url: 'https://kadmoon.com',
   email: 'commercial@kadmoon.com',
-  city: 'Austin',
+  // No public operating city: Kadmoon is a remote, nationwide service-area
+  // business. Texas is the state of incorporation (the legal home state), used
+  // for governing law and as the structured-data region. `city` is intentionally
+  // empty so no specific city is claimed; the structured data omits locality.
+  city: '',
   region: 'Texas',
   regionCode: 'TX',
   country: 'United States',

@@ -5,11 +5,33 @@ created and verified in Google's own console with your Google account. It cannot
 be set up from this repo. This file is the runbook: what to decide first, how to
 register, and how to keep it consistent with the website.
 
-The website is already prepared to match the listing: the business name, city,
-and region are in `lib/site.ts`, and the `JsonLd` component emits
-Organization + ProfessionalService structured data. Phone, street address, geo,
-hours and the profile URL are optional fields in `lib/site.ts` that stay empty
-(and are omitted from the structured data) until you have real, verifiable data.
+The website is already prepared to match the listing: the business name and
+state (Texas, the state of incorporation) are in `lib/site.ts`, and the `JsonLd`
+component emits Organization + ProfessionalService structured data. Phone, street
+address, geo, hours and the profile URL are optional fields in `lib/site.ts` that
+stay empty (and are omitted from the structured data) until you have real,
+verifiable data. The site presents Kadmoon as a US company serving clients
+nationwide, with no specific operating city claimed.
+
+## Current status / decision
+
+The only US address on file is a Globalfy virtual mailbox in Orlando, FL
+(a shared mail-forwarding address used by many foreign-owned US companies).
+**Registering a Business Profile at a shared virtual address has a high chance
+of being suspended by Google**, and a suspended profile is hard to recover.
+
+Decision: **do not register the Business Profile yet.** First obtain a
+genuinely verifiable US presence, in order of least to most effort:
+
+1. A **US phone number** (helps phone verification and NAP consistency; several
+   providers offer one without a physical office).
+2. A **more defensible address** than the shared virtual mailbox if possible
+   (for example, a dedicated address you actually operate from, or accept the
+   risk knowingly for an SAB with video verification).
+
+Until then, acquisition runs on the website, Search Console, and content, not on
+the maps listing. Revisit this when a US phone (and ideally a better address)
+exists, then follow the steps below.
 
 ## 0. Decide this first: the address and phone
 

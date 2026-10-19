@@ -13,7 +13,7 @@ test.describe('pages load', () => {
     ['/about', 'foreign trade'],
     ['/blog', 'business of trade'],
     ['/custom-software-development', 'United States'],
-    ['/custom-software-development/austin-tx', 'Austin'],
+    ['/custom-software-development/austin-tx', 'cross-border'],
     ['/privacy', 'Privacy'],
     ['/terms', 'Terms'],
   ] as const;
