@@ -172,6 +172,39 @@ const retiredBlogSlugs = [
   'writing-acceptance-criteria',
 ];
 
+// Retired URLs that still draw real search impressions on trade-relevant
+// queries. Point each to the closest NEW page instead of the generic /blog
+// or /services, so a clicker lands somewhere relevant and Google can transfer
+// the topical signal to the rebranded content. First-match wins, so these are
+// spread into the redirects list BEFORE the blanket retired maps below.
+const retargetedBlogRedirects = {
+  'custom-customs-brokerage-software': '/industries/customs-brokers',
+  'custom-us-customs-software': '/industries/customs-brokers',
+  'customs-entry-automation': '/industries/customs-brokers',
+  'custom-customs-software': '/industries/customs-brokers',
+  'denied-party-screening-software': '/blog/denied-party-screening',
+  'hts-classification-software': '/blog/hts-classification-accuracy',
+  'import-export-compliance-software': '/services/customs-compliance',
+  'trade-compliance-automation': '/services/customs-compliance',
+  'landed-cost-calculation-software': '/blog/landed-cost-calculation',
+  'real-time-shipment-tracking-software': '/blog/shipment-visibility-software',
+  'supply-chain-visibility-software': '/blog/shipment-visibility-software',
+  'custom-transportation-management-software': '/services/supply-chain-logistics',
+  'custom-warehouse-management-software': '/services/inventory-wms',
+  'custom-3pl-software': '/industries/third-party-logistics',
+  'freight-forwarding-software': '/industries/freight-forwarders',
+  'drayage-management-software': '/blog/drayage-first-mile-cost',
+  'cbp-ace-abi-integration': '/blog/edi-ace-integration-for-trade',
+  'ace-integration-software-guide': '/blog/edi-ace-integration-for-trade',
+  'edi-integration-for-supply-chain': '/blog/edi-ace-integration-for-trade',
+  'supply-chain-erp-integration': '/services/trade-integrations',
+  'custom-software-for-logistics': '/industries/freight-forwarders',
+  'custom-software-for-distribution': '/industries/manufacturers-distributors',
+  'demand-forecasting-software': '/blog/forecast-accuracy-cross-border-inventory',
+  'predictive-analytics-for-supply-chain': '/blog/forecast-accuracy-cross-border-inventory',
+  'power-bi-kpis-for-logistics': '/blog/trade-control-tower',
+};
+
 const retiredPowerBiBlogSlugs = [
   'ai-document-processing', 'anomaly-detection-for-business', 'azure-synapse-vs-microsoft-fabric',
   'building-a-data-warehouse', 'business-intelligence-dashboards', 'cognos-to-power-bi-what-changes',
@@ -281,6 +314,14 @@ const nextConfig = {
       { source: '/data-governance/:city*', destination: '/services/customs-compliance', permanent: true },
       { source: '/power-bi-migration', destination: '/services', permanent: true },
       { source: '/power-bi-migration/:city*', destination: '/services', permanent: true },
+
+      // Trade-relevant retired URLs retargeted to the closest new page (must
+      // precede the blanket maps below, since the first matching rule wins).
+      ...Object.entries(retargetedBlogRedirects).map(([slug, destination]) => ({
+        source: `/blog/${slug}`,
+        destination,
+        permanent: true,
+      })),
 
       // Retired blog articles from previous iterations.
       ...retiredBlogSlugs.map((slug) => ({
