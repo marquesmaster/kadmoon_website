@@ -21,7 +21,7 @@ export const siteConfig = {
   // verification; set streetAddress here only if you list a real, staffed
   // location and want it public. Keep these consistent with the Google
   // Business Profile listing (same name, address, and phone everywhere).
-  phone: '', // e.g. '+1-512-555-0100'
+  phone: '+1 (682) 293-5727',
   streetAddress: '',
   postalCode: '',
   latitude: '', // e.g. '30.2672'
