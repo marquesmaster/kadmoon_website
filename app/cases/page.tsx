@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Kadmoon case studies',
     description:
-      'Analytics for importers, brokers, forwarders, and the companies that move goods across borders. Illustrative examples, real structure.',
+      'Analytics for importers, brokers, forwarders, and the companies that move goods across borders. Illustrative scenarios of the analysis we build.',
     url: `${siteConfig.url}/cases`,
     type: 'website',
     images: ['/opengraph-image'],
@@ -86,13 +86,13 @@ export default function CasesPage() {
       <main>
         <PageHero
           eyebrow="Case studies"
-          title="Analytics we have built for cross-border trade."
+          title="Analytics we build for cross-border trade."
           breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cases' }]} />}
         >
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-            Kadmoon does analytics for one thing: foreign trade. With more than 35 clients served,
-            the work below is illustrative of the structure we ship; detailed client results are
-            available under NDA.
+            Kadmoon does analytics for one thing: foreign trade. The scenarios below are
+            illustrative of the analysis we build, not based on specific clients; the structure is
+            what ships.
           </p>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-3">
             Data comes from wherever your operation already runs: SAP, Microsoft, Oracle, NetSuite,
@@ -109,7 +109,7 @@ export default function CasesPage() {
           </div>
 
           <p className="mt-6 text-center font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3">
-            Illustrative figures · fictitious clients · under NDA
+            Illustrative scenarios · example figures
           </p>
         </section>
 

@@ -88,7 +88,7 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
               ))}
             </dl>
             <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
-              Illustrative figures · fictitious client · under NDA
+              Illustrative scenario · example figures
             </p>
           </div>
         </PageHero>

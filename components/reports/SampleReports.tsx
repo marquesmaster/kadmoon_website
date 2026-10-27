@@ -3,9 +3,8 @@ import type { ReactNode } from 'react';
 // ---------------------------------------------------------------------------
 // Illustrative "built reports" for the platform page. These are sample views
 // of the analytics Kadmoon ships, not real client data. Every card is labeled
-// "Sample" and the section carries the illustrative / fictitious-client / NDA
-// disclaimer. Figures are chosen to be realistic in structure, never presented
-// as verified results.
+// "Sample" and the section carries an "illustrative figures" note. Figures are
+// chosen to be realistic in structure, never presented as verified results.
 //
 // Charts are plain inline SVG / HTML in the ocean palette: single-series where
 // possible (accent for the mark, ink tokens for text, line token for the grid),

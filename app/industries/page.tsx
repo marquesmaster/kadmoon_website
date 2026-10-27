@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   openGraph: { url: `${siteConfig.url}/industries`, type: 'website', images: ['/opengraph-image'] },
 };
 
-// Illustrative outcomes, clearly labeled. Replaced with real, cleared client
-// results when the founder provides them.
+// Illustrative scenarios of the impact these analytics target, clearly labeled,
+// not specific client results. Replace with real results when available.
 const cases = [
   { metric: '3 days', title: 'Landed cost close, down from 12', desc: 'Freight, duty, and fees allocated to the unit from SAP and freight invoices, so margin by product is a daily number.', tag: 'Importers · Landed cost' },
   { metric: '-22%', title: 'Clearance time cut', desc: 'Entry throughput, clearance time, and exceptions tracked by client, port, and filer, with an audit trail on every entry.', tag: 'Customs brokers · Compliance' },
@@ -107,8 +107,8 @@ export default function IndustriesPage() {
               </a>
             </div>
             <p className="mt-6 text-[13px] text-ink-3">
-              Illustrative outcomes shown as placeholders. Real, cleared client results replace them
-              as they are approved.
+              Illustrative scenarios of the impact these analytics target, not specific client
+              results.
             </p>
           </div>
         </section>

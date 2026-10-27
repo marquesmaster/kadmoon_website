@@ -183,10 +183,10 @@ export const hero = {
   panelFooter: 'Built in your tenant. You own the model and the data.',
 };
 
-// Positioning signals and the one metric we can state plainly: client volume.
+// Positioning signals. The client-count stat is held until a real number is set.
 export const stats = [
   { value: '100%', label: 'foreign-trade focus' },
-  { value: '35+', label: 'clients served' },
+  { value: '6', label: 'analytics domains' },
   { value: 'US', label: 'based and operated' },
   { value: 'Week 2', label: 'first dashboards' },
 ];
@@ -372,9 +372,9 @@ export const process = {
 };
 
 export const work = {
-  eyebrow: 'Selected work',
-  title: 'Analytics behind real trade operations.',
-  sub: 'The analytics we build for cross-border operations, drawing on SAP, Microsoft, and the systems you already run. Client names and figures are illustrative and under NDA; the structure is what ships.',
+  eyebrow: 'What we build',
+  title: 'Analytics for cross-border trade.',
+  sub: 'The analysis we build for cross-border operations, drawing on SAP, Microsoft, and the systems you already run. Figures are illustrative of the structure we ship.',
   cases: [
     {
       tag: 'Importers',
@@ -647,14 +647,14 @@ export const comparison = {
 export const credibility = {
   eyebrow: 'Why Kadmoon',
   title: 'Analytics built only for foreign trade.',
-  lead: 'A senior, US-based team, with more than 35 clients served. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant.',
+  lead: 'A senior, US-based team. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant.',
   points: [
     { title: 'One definition per KPI', body: 'Landed cost, OTIF, and duty exposure mean one thing across every report.' },
     { title: 'Built in your tenant', body: 'Your data, your model, your reports. You own it, with no lock-in.' },
     { title: 'Senior, US-based team', body: 'The people who scope your model build it and support it.' },
   ],
   // Full statement, kept for reference and any schema use.
-  text: 'Kadmoon is a US analytics firm focused entirely on foreign trade, run by a senior, US-based team, with more than 35 clients served. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant. The dashboards shown on the site are illustrative of what we ship; detailed client work is available under NDA.',
+  text: 'Kadmoon is a US analytics firm focused entirely on foreign trade, run by a senior, US-based team. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant. The dashboards shown on the site are illustrative of what we ship.',
 };
 
 // ---------------------------------------------------------------------------
@@ -1231,7 +1231,7 @@ export const platform = {
     eyebrow: 'Built reports',
     title: 'The reports your team opens every morning.',
     sub: 'A sample of what ships: landed cost to the unit, duty exposure by product line, and on-time performance over time. Figures are illustrative; the structure is what you get.',
-    disclaimer: 'Illustrative figures · fictitious client · under NDA',
+    disclaimer: 'Sample reports · figures are illustrative',
   },
   tenant: {
     eyebrow: 'Where it runs',

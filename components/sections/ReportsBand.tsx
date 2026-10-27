@@ -75,7 +75,7 @@ export function ReportsBand() {
             Request a quote <span aria-hidden>→</span>
           </a>
           <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/45">
-            Illustrative figures · fictitious client · under NDA
+            Sample reports · figures are illustrative
           </span>
         </div>
       </div>
