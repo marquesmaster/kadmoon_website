@@ -336,7 +336,16 @@ const nextConfig = {
       { source: '/dedicated-development-team', destination: '/services', permanent: true },
       { source: '/hire-ai-engineers', destination: '/services', permanent: true },
       { source: '/solutions', destination: '/services', permanent: true },
+      // Trade-relevant legacy /solutions/* page still drawing impressions.
+      { source: '/solutions/customs-broker-software', destination: '/industries/customs-brokers', permanent: true },
       { source: '/solutions/:slug*', destination: '/services', permanent: true },
+
+      // Legacy URLs still indexed per Search Console (incl. old Portuguese
+      // case slugs) that no longer exist. Redirect so the rebrand deploy does
+      // not create fresh 404s on pages Google still knows.
+      { source: '/cases/migracao-qlik-powerbi', destination: '/platform', permanent: true },
+      { source: '/cases/plataforma-dados-fabric-varejo', destination: '/platform', permanent: true },
+      { source: '/blog/saas-metrics-and-analytics', destination: '/blog', permanent: true },
 
       // Retired programmatic solution x city pages.
       { source: '/custom-software-development', destination: '/services', permanent: true },
