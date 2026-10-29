@@ -18,7 +18,7 @@ export function ReportsBand() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
             <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#8FB8FF]">
-              The platform · in your own tenant
+              The analytics · in your own tenant
             </span>
             <h2 className="mt-4 font-display text-display-sm font-semibold text-white">
               The reports your team opens every morning.

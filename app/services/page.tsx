@@ -10,7 +10,7 @@ import { analyticsSolutions, services } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Solutions | Analytics for foreign trade',
+  title: 'What we do | Analytics and trade software',
   description:
     'Analytics for foreign trade: landed cost and margin, duty and tariff exposure, shipment visibility and OTIF, customs and compliance analytics, inventory, and an executive control tower. Plus the trade platforms we build. Delivered on the Microsoft stack, in your tenant.',
   alternates: { canonical: `${siteConfig.url}/services` },
@@ -55,9 +55,9 @@ export default function ServicesPage() {
       <main>
         {/* Hero */}
         <PageHero
-          eyebrow="Solutions"
-          title="Analytics for foreign trade, and the platforms we build."
-          breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions' }]} />}
+          eyebrow="What we do"
+          title="The analytics we deliver, and the software we build."
+          breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'What we do' }]} />}
         >
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
             We turn the data in your customs, logistics, and ERP systems into decisions, delivered on

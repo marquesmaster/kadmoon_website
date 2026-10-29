@@ -27,7 +27,7 @@ export type NavItem =
 // Every href points to a page that exists, so the menu never dead-ends.
 export const navMenu: NavItem[] = [
   {
-    label: 'Solutions',
+    label: 'What we do',
     panel: {
       groups: [
         {
@@ -40,7 +40,7 @@ export const navMenu: NavItem[] = [
           ],
         },
         {
-          title: 'Platforms we build',
+          title: 'Software we build',
           items: [
             { label: 'Trade ERP', href: '/services/trade-erp', desc: 'The operating system for trade' },
             { label: 'Customs & compliance', href: '/services/customs-compliance', desc: 'Classification, screening, filing' },
