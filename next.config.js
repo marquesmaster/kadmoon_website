@@ -283,6 +283,12 @@ const nextConfig = {
       { source: '/en', destination: '/', permanent: true },
       { source: '/en/blog/:slug*', destination: '/blog', permanent: true },
       { source: '/en/:path*', destination: '/', permanent: true },
+      // Old multilingual URLs (Chinese, Portuguese) from a previous site still
+      // indexed; send them home so they do not 404.
+      { source: '/zh', destination: '/', permanent: true },
+      { source: '/zh/:path*', destination: '/', permanent: true },
+      { source: '/pt', destination: '/', permanent: true },
+      { source: '/pt/:path*', destination: '/', permanent: true },
       // Renamed case study.
       {
         source: '/cases/freight-visibility-platform',
