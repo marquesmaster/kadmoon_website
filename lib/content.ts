@@ -159,13 +159,13 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: 'Foreign-trade analytics · United States',
+  eyebrow: 'Analytics for importers & exporters · US',
   // The accent phrase is rendered in the accent color inside the H1.
-  headlineBefore: 'The numbers your ',
+  headlineBefore: 'Know the landed cost, duty, and location of every ',
   headlineAccent: 'import and export',
-  headlineAfter: ' operation can finally trust.',
+  headlineAfter: '.',
   subhead:
-    'Kadmoon Trade Intelligence turns the data in your customs, logistics, and ERP systems into decisions: landed cost, duty exposure, shipment visibility, and compliance. One governed platform, on the Microsoft stack, in your own tenant.',
+    'Kadmoon is a US analytics firm for foreign trade. We turn the data already in your ERP, customs broker, and carrier systems into clear numbers for landed cost, duty exposure, and shipment visibility. It runs in your own Microsoft tenant, and you own it.',
   flagship: 'Landed cost · Duty exposure · Shipment visibility & OTIF · Customs analytics · Executive control tower',
   ctas: [
     { label: 'Request a quote', href: '/contact', primary: true },
