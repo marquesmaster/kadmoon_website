@@ -651,7 +651,7 @@ export const credibility = {
   points: [
     { title: 'One definition per KPI', body: 'Landed cost, OTIF, and duty exposure mean one thing across every report.' },
     { title: 'Built in your tenant', body: 'Your data, your model, your reports. You own it, with no lock-in.' },
-    { title: 'Senior, US-based team', body: 'The people who scope your model build it and support it.' },
+    { title: 'Senior, US-based team', body: 'Six years and more than 2,000 Microsoft analytics solutions behind the people who scope, build, and support your model.' },
   ],
   // Full statement, kept for reference and any schema use.
   text: 'Kadmoon is a US analytics firm focused entirely on foreign trade, run by a senior, US-based team. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant. The dashboards shown on the site are illustrative of what we ship.',
@@ -1049,8 +1049,13 @@ export const clientLogos: string[] = [];
 // ---------------------------------------------------------------------------
 export const groupExperience = {
   eyebrow: 'Experience behind Kadmoon',
-  line: 'Kadmoon is built by a team that has delivered data, analytics, and software platforms for organizations across government, education, sports, real estate, and technology.',
-  note: 'Delivery by the team and group behind Kadmoon, across sectors.',
+  line: 'The team behind Kadmoon has spent six years building data, analytics, and Microsoft platforms for organizations across government, education, sports, real estate, and technology. Kadmoon brings that practice to foreign trade.',
+  stats: [
+    { value: '6', label: 'years building data & analytics' },
+    { value: '50+', label: 'organizations served' },
+    { value: '2,000+', label: 'Microsoft solutions shipped' },
+  ],
+  note: 'The track record of the team and group behind Kadmoon, across sectors.',
   orgs: [
     'Ministério da Educação',
     'Paraná Educação',

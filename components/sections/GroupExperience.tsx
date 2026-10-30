@@ -15,7 +15,21 @@ export function GroupExperience() {
           <p className="mt-4 text-[17px] leading-relaxed text-ink-2">{g.line}</p>
         </div>
 
-        <ul className="mt-9 flex flex-wrap items-center justify-center gap-x-9 gap-y-5">
+        <dl className="mx-auto mt-10 grid max-w-2xl grid-cols-3 gap-6">
+          {g.stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <dt className="sr-only">{s.label}</dt>
+              <dd>
+                <span className="block font-display text-4xl font-bold tracking-tight tabular-nums text-ink md:text-5xl">
+                  {s.value}
+                </span>
+                <span className="mt-2 block text-[13px] leading-snug text-ink-2">{s.label}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-9 gap-y-5">
           {g.orgs.map((org) => (
             <li
               key={org}
