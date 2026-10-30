@@ -6,12 +6,13 @@ import { Button } from '@/components/Button';
 import { Reveal } from '@/components/Reveal';
 import { PageHero } from '@/components/sections/PageHero';
 import { Comparison } from '@/components/sections/Comparison';
+import { groupExperience } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About | A US analytics firm built for foreign trade',
   description:
-    'Kadmoon is a US analytics firm focused entirely on foreign trade. Senior, US-based engineers who speak customs, logistics, and compliance, turning your data into decisions in your own tenant.',
+    'Kadmoon is a US analytics firm focused entirely on foreign trade, built by a team with six years and 2,000+ Microsoft analytics solutions behind it. Senior, US-based engineers who speak customs, logistics, and compliance, turning your data into decisions in your own tenant.',
   alternates: { canonical: `${siteConfig.url}/about` },
   openGraph: { url: `${siteConfig.url}/about`, type: 'website', images: ['/opengraph-image'] },
 };
@@ -46,8 +47,8 @@ export default function AboutPage() {
         {/* Hero */}
         <PageHero eyebrow="About Kadmoon" title="A US analytics firm built for foreign trade.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We do one thing, and we do it deeply: turn the data behind cross-border trade into
-            decisions, for the companies that move the goods.
+            We do one thing: turn the data behind cross-border trade into decisions. The focus is
+            new; the team behind it has built analytics on the Microsoft stack for years.
           </p>
         </PageHero>
 
@@ -67,16 +68,67 @@ export default function AboutPage() {
                 the meeting with a different figure.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
-                Kadmoon is a US analytics firm with a deliberately narrow focus: foreign trade, and
-                nothing else. That focus lets us arrive with the trade data model and KPIs ready, move
-                faster, and stand behind every number we ship.
+                Kadmoon is a new name, not a new team. For six years we have built data platforms and
+                Power BI analytics on the Microsoft stack for more than 50 organizations across
+                government, education, sports, real estate, and technology. We know how to land messy
+                data in one tenant and turn it into numbers people act on.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
-                Every engagement is run by senior, US-based engineers, built in your own tenant, and
-                handed over with documentation and training. Our goal is not to become a dependency,
-                it is to leave you owning analytics you trust.
+                Kadmoon points that practice at one domain and nothing else: foreign trade. That
+                focus lets us arrive with the trade data model and KPIs ready, move faster, and stand
+                behind every number we ship, in your own tenant, documented and handed over so you
+                own it.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Track record of the team/group behind Kadmoon */}
+        <section className="relative overflow-hidden bg-ink text-paper">
+          <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
+          <div
+            className="pointer-events-none absolute inset-0"
+            aria-hidden
+            style={{ backgroundImage: 'radial-gradient(900px 480px at 50% -10%, rgba(20,92,230,.26), transparent 62%)' }}
+          />
+          <div className="relative mx-auto max-w-shell px-6 py-16 md:py-24">
+            <div className="max-w-2xl">
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#8FB8FF]">
+                {groupExperience.eyebrow}
+              </span>
+              <h2 className="mt-4 font-display text-display-sm font-semibold text-white">
+                A proven team behind a focused firm.
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-white/70">{groupExperience.line}</p>
+            </div>
+
+            <dl className="mt-11 grid gap-6 sm:grid-cols-3">
+              {groupExperience.stats.map((s) => (
+                <div key={s.label} className="rounded-2xl border border-white/12 bg-white/5 p-7">
+                  <dt className="sr-only">{s.label}</dt>
+                  <dd>
+                    <span className="block font-display text-5xl font-bold tracking-tight tabular-nums text-white">
+                      {s.value}
+                    </span>
+                    <span className="mt-2 block text-[14px] leading-snug text-white/65">{s.label}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <ul className="mt-11 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/10 pt-9">
+              {groupExperience.orgs.map((org) => (
+                <li
+                  key={org}
+                  className="font-display text-[15px] font-semibold tracking-[-0.01em] text-white/45"
+                >
+                  {org}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.1em] text-white/40">
+              {groupExperience.note}
+            </p>
           </div>
         </section>
 
@@ -157,8 +209,8 @@ export default function AboutPage() {
               ))}
             </div>
             <p className="mt-6 text-[13px] text-ink-3">
-              Roles shown reflect the team you work with. Real names and photos go here when you are
-              ready.
+              Roles shown reflect the team you work with on an engagement. We introduce the named
+              specialists during scoping.
             </p>
           </div>
         </section>
