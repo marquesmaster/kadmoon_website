@@ -1,6 +1,16 @@
 import nodemailer from 'nodemailer';
 import { siteConfig } from './site';
 
+// Every outbound email call is bounded so a slow or unreachable provider can
+// never hang the request (or a background task) indefinitely. Without this, a
+// blocked route to the mail API stalls the whole submission.
+const MAIL_TIMEOUT_MS = 10_000;
+const SMTP_TIMEOUTS = { connectionTimeout: 10_000, greetingTimeout: 10_000, socketTimeout: 15_000 };
+
+function mailFetch(url: string, init: RequestInit): Promise<Response> {
+  return fetch(url, { ...init, signal: AbortSignal.timeout(MAIL_TIMEOUT_MS) });
+}
+
 type Lead = {
   name: string;
   email?: string;
@@ -43,7 +53,7 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
   // exposed to the browser; Web3Forms emails the recipient tied to the key.
   const web3Key = process.env.WEB3FORMS_ACCESS_KEY;
   if (web3Key) {
-    const res = await fetch('https://api.web3forms.com/submit', {
+    const res = await mailFetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({
@@ -67,7 +77,7 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
     const from = process.env.CONTACT_FROM || 'Kadmoon Website <commercial@kadmoon.com>';
-    const res = await fetch('https://api.resend.com/emails', {
+    const res = await mailFetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${resendKey}`,
@@ -96,7 +106,7 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
     const port = Number(process.env.SMTP_PORT || 587);
     const secure = (process.env.SMTP_SECURE || (port === 465 ? 'true' : 'false')) === 'true';
     const from = process.env.CONTACT_FROM || `Kadmoon Website <${user}>`;
-    const transporter = nodemailer.createTransport({ host, port, secure, auth: { user, pass } });
+    const transporter = nodemailer.createTransport({ host, port, secure, auth: { user, pass }, ...SMTP_TIMEOUTS });
     await transporter.sendMail({ from, to, subject, text, replyTo: lead.email || undefined });
     return true;
   }
@@ -156,7 +166,7 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
     const from = process.env.CONTACT_FROM || 'Kadmoon <commercial@kadmoon.com>';
-    const res = await fetch('https://api.resend.com/emails', {
+    const res = await mailFetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ from, to: lead.email, subject, text, html }),
@@ -173,7 +183,7 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
     const port = Number(process.env.SMTP_PORT || 587);
     const secure = (process.env.SMTP_SECURE || (port === 465 ? 'true' : 'false')) === 'true';
     const from = process.env.CONTACT_FROM || `Kadmoon <${user}>`;
-    const transporter = nodemailer.createTransport({ host, port, secure, auth: { user, pass } });
+    const transporter = nodemailer.createTransport({ host, port, secure, auth: { user, pass }, ...SMTP_TIMEOUTS });
     await transporter.sendMail({ from, to: lead.email, subject, text, html });
     return true;
   }

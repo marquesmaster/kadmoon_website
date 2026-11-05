@@ -79,9 +79,20 @@ export async function POST(req: Request) {
   // is missing or the submission is implausibly fast, drop it silently.
   if (data.startedAt && Date.now() - data.startedAt < 2500) return ok();
 
-  // Persisting the lead is best-effort. If the database is unavailable (for
-  // example on a host without Postgres), we still send the email so the lead is
-  // never lost. Log only a safe label, never the full error or any submitted data.
+  // The lead payload every delivery channel reuses.
+  const lead = {
+    name: data.name,
+    email: data.email,
+    company: data.company,
+    size: data.size,
+    need: data.need,
+    message: data.message,
+  };
+  const suiteLead = toSuiteLead(data, req.headers.get('referer'));
+
+  // Persist the lead first. It is the durable record, and on this host the
+  // database is local, so this is fast. Best-effort: if it fails we fall back to
+  // email below. Log only a safe label, never the full error or submitted data.
   let persisted = false;
   try {
     await prisma.lead.create({
@@ -101,48 +112,62 @@ export async function POST(req: Request) {
     console.error('[contact] lead persist failed:', safeErr(err));
   }
 
-  // Lead into the Conecta CRM. Fire-and-forget: retries never delay the response.
-  void sendToSuite(toSuiteLead(data, req.headers.get('referer'))).catch(() => {});
+  // The lead is safely stored, so respond immediately and run every outbound
+  // notification (CRM, lead email, auto-reply) in the background. This runtime
+  // is a long-running Node server, so those finish after the response is sent.
+  // This is what keeps the form fast: the submit never waits on email.
+  if (persisted) {
+    void dispatchNotifications(lead, suiteLead);
+    return ok();
+  }
 
+  // The database was unavailable. Fall back to email as the capture channel and
+  // await it (with its own timeout), so we only report success if the lead
+  // actually went somewhere.
+  void sendToSuite(suiteLead).catch(() => {});
   let emailed = false;
   try {
-    emailed = await sendLeadEmail({
-      name: data.name,
-      email: data.email,
-      company: data.company,
-      size: data.size,
-      need: data.need,
-      message: data.message,
-    });
+    emailed = await sendLeadEmail(lead);
   } catch (err) {
-    // The mailer only ever throws its own coded messages (e.g.
-    // "web3forms_http_401") or a transport error, none of which contain
-    // credentials or submitted data, so logging the message here is safe and
-    // makes provider failures diagnosable.
-    console.error('[contact] lead email failed:', err instanceof Error ? err.message : 'unknown');
+    console.error('[contact] lead email failed:', mailErr(err));
   }
+  void sendProspectAutoReply(lead).catch((err) => {
+    console.error('[contact] auto-reply failed:', mailErr(err));
+  });
 
-  // Auto-reply to the prospect with the presentation + booking link. Purely
-  // best-effort: a failure here never affects the lead capture or the response.
-  try {
-    await sendProspectAutoReply({
-      name: data.name,
-      email: data.email,
-      company: data.company,
-      size: data.size,
-      need: data.need,
-      message: data.message,
-    });
-  } catch (err) {
-    console.error('[contact] auto-reply failed:', err instanceof Error ? err.message : 'unknown');
-  }
-
-  // Only fail the request if neither channel captured the lead.
-  if (!persisted && !emailed) {
+  // Nothing captured the lead: tell the client so it shows the fallback email.
+  if (!emailed) {
     return NextResponse.json({ ok: false, error: 'server' }, { status: 500 });
   }
-
   return ok();
+}
+
+// Deliver a lead that is already stored to every outbound channel. Each is
+// independent and best-effort; a failure in one never affects the others or the
+// HTTP response, which has already been sent. The mailer bounds its own calls
+// with a timeout, so a stuck provider cannot keep these tasks alive forever.
+async function dispatchNotifications(
+  lead: Parameters<typeof sendLeadEmail>[0],
+  suiteLead: ReturnType<typeof toSuiteLead>,
+) {
+  void sendToSuite(suiteLead).catch(() => {});
+  try {
+    await sendLeadEmail(lead);
+  } catch (err) {
+    // The mailer only throws its own coded messages (e.g. "web3forms_http_401")
+    // or a transport error, never credentials or submitted data, so logging the
+    // message is safe and makes provider failures diagnosable.
+    console.error('[contact] lead email failed:', mailErr(err));
+  }
+  try {
+    await sendProspectAutoReply(lead);
+  } catch (err) {
+    console.error('[contact] auto-reply failed:', mailErr(err));
+  }
+}
+
+function mailErr(err: unknown): string {
+  return err instanceof Error ? err.message : 'unknown';
 }
 
 // A short, safe error label (name + optional code). Never the message/data.
