@@ -24,15 +24,15 @@ export function ReportsBand() {
               The reports your team opens every morning.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-white/70">
-              Landed cost to the unit, duty exposure by product line, and on-time performance over
-              time, built on one governed model fed from the systems you already run.
+              Revenue and margin, segment performance, and operations over time, built on one
+              governed model fed from the systems you already run.
             </p>
           </div>
           <a
-            href="/platform"
+            href="/services"
             className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-paper transition-colors hover:border-white/50 hover:bg-white/5"
           >
-            See the platform <span aria-hidden>→</span>
+            Explore Power BI <span aria-hidden>→</span>
           </a>
         </div>
 

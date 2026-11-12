@@ -1,44 +1,55 @@
 # Kadmoon website — working notes
 
-Kadmoon is a **US analytics firm focused 100% on foreign trade**. The site
-leads with **analytics** (what we deliver today); software (trade ERP, customs,
-WMS, security vision) is positioned as the **roadmap** — "platforms we build" —
-never the lead offer.
+Kadmoon is a **US Microsoft data & analytics consultancy, led by Power BI
+services**. The site leads with **Power BI** (dashboards, semantic models,
+migration, embedded, governance); the surrounding Microsoft work (Power
+Platform, Fabric & Azure data engineering, Copilot & AI) is positioned as what
+we build **around** Power BI. Everything is delivered in the client's own
+Microsoft tenant, and the client owns it. The market is the United States, in
+English. Foreign trade is retired as the focus; it is at most a use case.
 
 Stack: Next.js 14 (App Router) + TypeScript + Tailwind, statically generated,
 deployed via Docker on a Hostinger VPS.
 
 ## Positioning (keep every surface consistent)
 
-- Lead with analytics for foreign trade: landed cost & margin, duty & tariff
-  exposure, shipment visibility & OTIF, customs & compliance analytics,
-  inventory & warehouse analytics, executive control tower.
-- Data comes from the systems clients already run — **SAP, Microsoft, Oracle,
-  NetSuite, broker and carrier systems, EDI/ACE, spreadsheets** — and analytics
-  is delivered on the Microsoft stack (Fabric, Power BI, Azure) **in the
-  client's own tenant**.
-- Software is "what we build on top of the data", introduced as it grows from
-  the analytics. Do not make it the headline.
+- **Lead with Power BI.** Dashboards and reports, governed semantic models,
+  report and migration work (legacy BI and spreadsheets to Power BI), embedded
+  analytics, and Power BI governance (row-level security, workspaces, lineage).
+- Four service lines, in this order of prominence: **Power BI** (lead), then
+  **Power Platform** (Power Apps + Power Automate: apps and automation on the
+  data), **data engineering on Microsoft Fabric & Azure** (lakehouse, pipelines,
+  the governed model Power BI sits on), and **Copilot & AI on your data**
+  (Copilot in Power BI, natural-language Q&A, AI-assisted insight).
+- Data comes from the systems clients already run — **SQL Server, Dynamics 365,
+  SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, APIs** — and the
+  analytics is delivered on the Microsoft stack (Power BI, Fabric, Azure) **in
+  the client's own tenant**.
+- Market is the **United States**, in English. Do not reposition around a
+  vertical; Power BI for US businesses is the frame, and verticals are use
+  cases, never the headline.
 - Primary CTA everywhere is **"Request a quote"** → `/contact`. There is no
   booking/scheduling tool. The top-bar secondary action is **"Client sign-in"**
-  → Power BI (`app.powerbi.com`): the analytics run in the client's own Microsoft
+  → Power BI (`app.powerbi.com`): the reports run in the client's own Microsoft
   tenant, so access is signing in there, not a Kadmoon login. Existing clients
-  who need access provisioned or a new report use `/contact` (the "Looking for
-  client access?" block on `/docs`).
+  who need access provisioned or a new report use `/contact`.
 
 ## Hard content rules
 
 - **Never reference Brazil or the Portuguese language** anywhere in site-facing
   content, copy, metadata, or data. **One approved exception:** the
-  `groupExperience` band (`lib/content.ts`) names the team/group's prior
-  organizations as cross-sector experience (not Kadmoon's trade clients). Keep
-  the exception limited to that band; do not reintroduce Brazil/Portuguese
-  elsewhere.
+  `groupExperience` band (`lib/content.ts`) may state the team/group's prior
+  Microsoft track record (years, organizations served, solutions shipped) as
+  cross-sector experience. Keep the exception limited to that band; do not
+  reintroduce Brazil/Portuguese elsewhere.
 - **Never invent clients, testimonials, or logos.** `testimonials` and
   `clientLogos` in `lib/content.ts` render only when populated; leave them empty
   until real, approved data is provided.
-- All figures in cases/mocks are **illustrative** and must be labeled as such
-  ("Illustrative figures · fictitious client · under NDA").
+- All figures in cases/mocks are **illustrative** and must be labeled plainly as
+  such ("Illustrative figures"); do not dress them up as a real client.
+- Name Microsoft products factually (we build on them). Do not claim a
+  partnership tier, certification, or Gold/Solutions-Partner status we have not
+  verified.
 - Apply the humanizer style: no em/en dashes, no rule-of-three padding, no hype
   or buzzwords, plain professional English.
 
@@ -69,7 +80,7 @@ deployed via Docker on a Hostinger VPS.
 ```
 npm run build      # must compile; SSG prerenders all pages
 npm run lint       # must be clean
-PW_CHROME=/opt/pw-browsers/chromium-1194/chrome-linux/chrome npm run test:e2e
+PW_CHROME=/opt/pw-browsers/chromium npm run test:e2e   # stable symlink; the versioned path changes per container
 ```
 
 - The e2e smoke suite (`e2e/smoke.spec.ts`) asserts specific hero copy, routes,

@@ -66,13 +66,13 @@ export function FluentWorkspace({ tone = 'light' }: { tone?: Tone }) {
       <div className="mt-5 grid grid-cols-2 gap-3">
         {/* KPI tile */}
         <div className={`${tile} rounded-xl p-3.5`}>
-          <div className={`font-mono text-[9px] uppercase tracking-[0.12em] ${label}`}>On-time</div>
-          <div className={`mt-1 font-display text-2xl font-bold tracking-tight ${num}`}>94%</div>
+          <div className={`font-mono text-[9px] uppercase tracking-[0.12em] ${label}`}>Margin</div>
+          <div className={`mt-1 font-display text-2xl font-bold tracking-tight ${num}`}>39%</div>
           <div className="mt-0.5 font-mono text-[9px] text-success">+2.1 pts</div>
         </div>
         {/* Bars tile */}
         <div className={`${tile} rounded-xl p-3.5`}>
-          <div className={`font-mono text-[9px] uppercase tracking-[0.12em] ${label}`}>Duty by line</div>
+          <div className={`font-mono text-[9px] uppercase tracking-[0.12em] ${label}`}>Revenue by region</div>
           <div className="mt-3 flex h-10 items-end gap-1.5">
             {[40, 62, 34, 80, 54, 70].map((h, i) => (
               <span key={i} className="flex-1 rounded-sm bg-accent" style={{ height: `${h}%`, opacity: 0.55 + (i % 3) * 0.15 }} />
@@ -81,7 +81,7 @@ export function FluentWorkspace({ tone = 'light' }: { tone?: Tone }) {
         </div>
         {/* Line/area tile */}
         <div className={`${tile} rounded-xl p-3.5`}>
-          <div className={`font-mono text-[9px] uppercase tracking-[0.12em] ${label}`}>Landed cost</div>
+          <div className={`font-mono text-[9px] uppercase tracking-[0.12em] ${label}`}>Revenue</div>
           <svg viewBox="0 0 100 34" className="mt-2 h-10 w-full" aria-hidden preserveAspectRatio="none">
             <path d="M0 26 L18 20 L36 24 L54 12 L72 16 L100 6" fill="none" stroke={lineStroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M0 26 L18 20 L36 24 L54 12 L72 16 L100 6 L100 34 L0 34 Z" fill="rgb(var(--accent) / 0.12)" />
@@ -89,15 +89,15 @@ export function FluentWorkspace({ tone = 'light' }: { tone?: Tone }) {
         </div>
         {/* Gauge tile */}
         <div className={`${tile} rounded-xl p-3.5`}>
-          <div className={`font-mono text-[9px] uppercase tracking-[0.12em] ${label}`}>Clearance</div>
+          <div className={`font-mono text-[9px] uppercase tracking-[0.12em] ${label}`}>Forecast</div>
           <div className="mt-2 flex items-center gap-2.5">
             <svg viewBox="0 0 36 36" className="h-10 w-10" aria-hidden>
               <circle cx="18" cy="18" r="15" fill="none" stroke={gaugeTrack} strokeWidth="5" />
-              <circle cx="18" cy="18" r="15" fill="none" stroke="rgb(var(--accent))" strokeWidth="5" strokeLinecap="round" strokeDasharray="94.2" strokeDashoffset="24" transform="rotate(-90 18 18)" />
+              <circle cx="18" cy="18" r="15" fill="none" stroke="rgb(var(--accent))" strokeWidth="5" strokeLinecap="round" strokeDasharray="94.2" strokeDashoffset="4" transform="rotate(-90 18 18)" />
             </svg>
             <div>
-              <div className={`font-display text-lg font-bold leading-none ${num}`}>1.4d</div>
-              <div className={`mt-0.5 font-mono text-[9px] ${label}`}>avg</div>
+              <div className={`font-display text-lg font-bold leading-none ${num}`}>96%</div>
+              <div className={`mt-0.5 font-mono text-[9px] ${label}`}>acc</div>
             </div>
           </div>
         </div>

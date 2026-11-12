@@ -17,10 +17,10 @@ export function CtaBand() {
           Ready when you are
         </p>
         <h2 className="mt-4 font-display text-display-md font-semibold text-white">
-          Turn your trade data into decisions.
+          Turn your business data into decisions.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/70">
-          Start with a trade data assessment: first dashboards in about two weeks, in your own
+          Start with a Power BI assessment: first dashboards in about two weeks, in your own
           tenant, with a clear next step and a quote.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3.5">

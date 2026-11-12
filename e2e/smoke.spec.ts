@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('pages load', () => {
   const pages = [
-    ['/', 'import and export'],
+    ['/', 'Power BI'],
     ['/platform', 'Trade Intelligence'],
     ['/pricing', 'per engagement'],
     ['/services', 'cross-border'],
@@ -41,7 +41,7 @@ test('stat counters finish without freezing mid-animation', async ({ page }) => 
   const values = await band.locator('dd').evaluateAll((dds) =>
     dds.map((d) => d.querySelector('span')?.textContent),
   );
-  expect(values).toEqual(['100%', '6', 'US', 'Week 2']);
+  expect(values).toEqual(['100%', 'US', 'Week 2', 'Your tenant']);
 });
 
 test('blog search filters results', async ({ page }) => {
