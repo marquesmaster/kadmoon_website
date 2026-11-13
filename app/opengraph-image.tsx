@@ -50,7 +50,7 @@ export default function OpengraphImage() {
               maxWidth: 980,
             }}
           >
-            Turn your business data into Power BI your team actually uses.
+            Power BI you can actually trust, in about two weeks.
           </div>
         </div>
 

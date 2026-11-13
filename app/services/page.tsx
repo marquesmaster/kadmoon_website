@@ -33,10 +33,10 @@ const engage = [
     featured: false,
   },
   {
-    kicker: 'Monthly subscription',
+    kicker: 'Managed Power BI',
     title: 'For ongoing work',
-    body: 'A monthly retainer where we run and evolve your Power BI: refreshes, governance, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call.',
-    cta: 'Talk subscription',
+    body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes, governance, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call.',
+    cta: 'Talk Managed Power BI',
     featured: false,
   },
 ];
@@ -163,7 +163,7 @@ export default function ServicesPage() {
                 A boutique, two ways to work.
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
-                Begin with a Power BI assessment, then run by project or on a monthly subscription.
+                Begin with a Power BI assessment, then run by project or on Managed Power BI, our monthly subscription.
                 Same senior US team, built in your own tenant, yours to own.
               </p>
             </div>

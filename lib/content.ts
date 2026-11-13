@@ -160,11 +160,11 @@ export const nav = {
 export const hero = {
   eyebrow: 'Microsoft data & analytics · United States',
   // The accent phrase is rendered in the accent color inside the H1.
-  headlineBefore: 'Turn your business data into ',
+  headlineBefore: '',
   headlineAccent: 'Power BI',
-  headlineAfter: ' your team actually uses.',
+  headlineAfter: ' you can actually trust, in about two weeks.',
   subhead:
-    'Kadmoon is a US Microsoft data and analytics firm. We connect the systems you already run, build a governed model, and deliver Power BI dashboards, Power Platform automation, and Fabric data engineering in your own tenant. You own all of it.',
+    'No more meetings about which number is right. Kadmoon connects the systems you already run, builds one governed Power BI model, and ships the dashboards your team opens daily. A senior US team, working in your own Microsoft tenant and handing it over so you own all of it.',
   flagship: 'Power BI · Semantic models & governance · Power Platform · Microsoft Fabric & Azure · Copilot & AI',
   ctas: [
     { label: 'Request a quote', href: '/contact', primary: true },
@@ -194,7 +194,7 @@ export const stats = [
 export const capabilities = {
   eyebrow: 'What we deliver',
   title: 'From scattered data to the decision.',
-  sub: 'We build the Power BI a business runs on: governed dashboards on a single model, fed from the systems you already use, with automation and AI on top.',
+  sub: 'Three versions of revenue in one meeting, reports no one trusts, a week spent waiting on a single number. We fix that with one governed model and the dashboards your team runs on, fed from the systems you already use, with automation and AI on top.',
   items: [
     {
       title: 'Power BI dashboards & reports',
@@ -603,7 +603,7 @@ export const techStack = {
 export const engagement = {
   eyebrow: 'How we engage',
   title: 'A boutique, two ways to work.',
-  sub: 'Start with a Power BI assessment, then run by project or on a monthly subscription. The same senior, US-based team, built in your own tenant and yours to own.',
+  sub: 'Start with a fixed-scope Power BI assessment, then run by project or on Managed Power BI, our monthly subscription. The same senior, US-based team, built in your own tenant and yours to own.',
   models: [
     {
       name: 'By project',
@@ -612,10 +612,10 @@ export const engagement = {
       points: ['Fixed scope and timeline', 'Acceptance criteria per deliverable', 'Milestone billing'],
     },
     {
-      name: 'Monthly subscription',
+      name: 'Managed Power BI',
       best: 'Best for ongoing work',
-      body: 'A monthly retainer where we run and evolve your Power BI: refreshes and governance kept current, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call, not a one-off build.',
-      points: ['Recurring monthly scope', 'New reports as needs change', 'Governance and support'],
+      body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes watched and governance kept current, new reports as needs change, Copilot and AI as it matures, and a named point of contact. A boutique partner on call, not a one-off build.',
+      points: ['A set monthly scope and a named contact', 'New reports and model changes as needs change', 'Managed refreshes, governance, and support'],
     },
   ],
 };
@@ -957,7 +957,7 @@ export const groupExperience = {
 export const pricing = {
   eyebrow: 'Pricing',
   title: 'Priced to the scope of your Power BI work, not a seat count.',
-  lead: 'Kadmoon is a boutique, so you work with us one of two ways: by project, or on a monthly subscription. Most start with a short Power BI assessment, then pick the model that fits. We quote per engagement; tell us what you want reported on and you get a number within one business day.',
+  lead: 'Kadmoon is a boutique, so you work with us one of two ways: by project, or on Managed Power BI, our monthly subscription. Most start with a short Power BI assessment, then pick the model that fits. We quote per engagement; tell us what you want reported on and you get a number within one business day.',
   model: [
     {
       name: 'By project',
@@ -965,9 +965,9 @@ export const pricing = {
       body: 'A fixed-scope build with defined deliverables: the governed semantic model, the dashboards and reports, any migration from legacy BI or spreadsheets, and the governance around them. The Power BI assessment is the short first project that scopes the rest.',
     },
     {
-      name: 'Monthly subscription',
-      meta: 'Recurring · we run and evolve it',
-      body: 'A monthly retainer where we run and evolve your Power BI: refreshes and governance kept current, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call. An optional managed Microsoft add-on bills the Microsoft capacity on one invoice.',
+      name: 'Managed Power BI',
+      meta: 'Monthly subscription · we run and evolve it',
+      body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes and governance kept current, new reports as needs change, Copilot and AI as it matures, and a named point of contact. A boutique partner on call. An optional managed Microsoft add-on bills the Microsoft capacity on one invoice.',
     },
   ],
   scopes: [
@@ -984,7 +984,7 @@ export const pricing = {
       featured: true,
     },
     {
-      name: 'Monthly subscription',
+      name: 'Managed Power BI',
       best: 'For ongoing work and a partner on call',
       includes: [
         'Managed refreshes, monitoring, and user support',
@@ -1001,12 +1001,12 @@ export const pricing = {
       a: 'No. Power BI engagements differ too much for a sticker price to be honest. We scope to your data and decisions and quote per engagement, usually within one business day of a first conversation.',
     },
     {
-      q: 'Project or subscription, how do we choose?',
-      a: 'If the outcome is defined, a project is cleanest: fixed scope, acceptance criteria, and milestone billing. If you want us to keep building and running your Power BI month to month, the subscription fits. Many start with a project and move to a subscription after go-live.',
+      q: 'Project or Managed Power BI, how do we choose?',
+      a: 'If the outcome is defined, a project is cleanest: fixed scope, acceptance criteria, and milestone billing. If you want us to keep building and running your Power BI month to month, Managed Power BI, our monthly subscription, fits. Many start with a project and move to Managed Power BI after go-live.',
     },
     {
       q: 'Is there a long contract?',
-      a: 'A project stands on its own. The subscription is a monthly term you can adjust, and you own the semantic model, the reports, and the data in your own Microsoft tenant, so you are never locked in to keep operating.',
+      a: 'A project stands on its own. Managed Power BI is a monthly term you can adjust, and you own the semantic model, the reports, and the data in your own Microsoft tenant, so you are never locked in to keep operating.',
     },
     {
       q: 'What about a dedicated squad or enterprise terms?',

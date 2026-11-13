@@ -30,8 +30,11 @@ deployed via Docker on a Hostinger VPS.
   cases, never the headline.
 - **Kadmoon is a boutique with two engagement models:** **by project** (fixed
   scope, defined deliverables, milestone billing) and a **monthly subscription**
-  (recurring retainer: we run and evolve the client's Power BI). The **Power BI
-  assessment** is the paid on-ramp (a short first project), not a third model.
+  branded **"Managed Power BI"** on-site (recurring retainer: we run and evolve
+  the client's Power BI). Use the name "Managed Power BI" for the subscription
+  across surfaces; keep the `monthly-subscription` doc anchor/slug stable. The
+  **Power BI assessment** is the paid on-ramp (a short first project), not a
+  third model.
   Keep pricing, services, and docs consistent with these two models.
 - Primary CTA everywhere is **"Request a quote"** → `/contact`. There is no
   booking/scheduling tool. The top-bar secondary action is **"Client sign-in"**
