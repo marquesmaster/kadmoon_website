@@ -3,14 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe('pages load', () => {
   const pages = [
     ['/', 'Power BI'],
-    ['/platform', 'Trade Intelligence'],
+    ['/platform', 'Power BI'],
     ['/pricing', 'per engagement'],
     ['/services', 'Power BI'],
     ['/services/power-bi', 'Power BI'],
-    ['/industries', 'move goods'],
-    ['/industries/importers-exporters', 'Importers & Exporters'],
+    ['/industries', 'Power BI'],
+    ['/industries/finance-operations', 'Finance'],
     ['/process', 'production'],
-    ['/about', 'foreign trade'],
+    ['/about', 'Power BI'],
     ['/blog', 'business of trade'],
     ['/custom-software-development', 'United States'],
     ['/custom-software-development/austin-tx', 'Power BI'],

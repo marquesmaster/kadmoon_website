@@ -8,11 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
   // Relaunch date. Bumping this on a real content/structure change nudges
   // Google to re-crawl after the rebrand instead of trusting a stale cache.
-  const now = new Date('2026-10-08');
+  const now = new Date('2026-11-13');
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: `${base}/platform`, lastModified: now, changeFrequency: 'monthly', priority: 0.95 },
     { url: `${base}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/industries`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },

@@ -16,22 +16,22 @@ export function GET() {
   lines.push(`> ${siteConfig.description}`);
   lines.push('');
   lines.push(
-    `Kadmoon is a US analytics firm focused entirely on foreign trade, a ${siteConfig.region} corporation serving clients nationwide. We turn the data in a cross-border operation's customs, logistics, and ERP systems into decisions: landed cost and margin, duty and tariff exposure, shipment visibility and OTIF, customs and compliance analytics, inventory and warehouse analytics, and an executive control tower. Data comes from the systems clients already run (SAP, Microsoft, Oracle, NetSuite, broker and carrier systems, EDI and ACE, or spreadsheets), and analytics is delivered on the Microsoft stack (Fabric, Power BI, Azure) inside the client's own tenant. We also build the trade platforms (customs filing, trade ERP, inventory, security vision) as engagements deepen. Senior US-based team; you own the model and the data.`,
+    `Kadmoon is a US Microsoft data and analytics consultancy led by Power BI services, a ${siteConfig.region} corporation serving clients nationwide. We turn the data in a business's ERP, CRM, and line-of-business systems into decisions: governed Power BI dashboards and semantic models, Power BI migration, and embedded analytics, plus Power Platform automation, data engineering on Microsoft Fabric and Azure, and Copilot and AI. Data comes from the systems clients already run (SQL Server, Dynamics 365, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, or APIs), and the analytics is delivered on the Microsoft stack (Power BI, Fabric, Azure) inside the client's own tenant. Senior US-based team; you own the model and the data.`,
   );
   lines.push('');
   lines.push('## Key pages');
-  lines.push(`- [Home](${siteConfig.url}/): positioning, what we deliver, four-phase process, how to choose a trade analytics partner`);
+  lines.push(`- [Home](${siteConfig.url}/): positioning, what we deliver, four-phase process, how to choose a Power BI partner`);
   lines.push(
-    `- [Solutions](${siteConfig.url}/services): analytics (landed cost, duty exposure, shipment visibility and OTIF, customs and compliance analytics, inventory, executive control tower) plus the platforms we build`,
+    `- [Services](${siteConfig.url}/services): Power BI (dashboards, semantic models, migration, embedded), Power Platform, data engineering on Fabric and Azure, and Copilot and AI`,
   );
   lines.push(
-    `- [Cases](${siteConfig.url}/cases): illustrative analytics case studies across importers, customs brokers, forwarders, 3PLs, manufacturers, and ports, plus a few software builds`,
+    `- [Cases](${siteConfig.url}/cases): illustrative Power BI and Microsoft-stack case studies across finance, sales, operations, retail, and SaaS`,
   );
   lines.push(
-    `- [Docs](${siteConfig.url}/docs): methodology, engagement models, data integration, security and tenant model, KPI library, and glossary`,
+    `- [Docs](${siteConfig.url}/docs): methodology, engagement models, data integration, security and tenant model, measure library, and glossary`,
   );
   lines.push('');
-  lines.push('## Platforms we build');
+  lines.push('## Services');
   for (const s of services) {
     lines.push(`- [${s.title}](${siteConfig.url}/services/${s.slug}): ${s.tagline}`);
   }

@@ -11,7 +11,7 @@ import { siteConfig } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Pricing | Scoped and quoted per engagement',
   description:
-    'How Kadmoon prices foreign-trade analytics: a fixed-scope trade data assessment, a trade intelligence subscription scoped to your data and decisions, and an optional managed Microsoft add-on. Quoted per engagement.',
+    'How Kadmoon prices Power BI work: a fixed-scope Power BI assessment, a build as a project or dedicated squad, and managed analytics after go-live, with an optional managed Microsoft add-on. Quoted per engagement.',
   alternates: { canonical: `${siteConfig.url}/pricing` },
   openGraph: { url: `${siteConfig.url}/pricing`, type: 'website', images: ['/opengraph-image'] },
 };

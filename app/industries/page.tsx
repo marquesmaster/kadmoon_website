@@ -9,21 +9,21 @@ import { industryPages } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Industries | Analytics for every link in the trade chain',
+  title: 'Industries | Power BI for your sector',
   description:
-    'Analytics for importers, exporters, customs brokers, freight forwarders, 3PLs, ports, and the manufacturers and distributors that trade across borders. Built for how each one measures itself.',
+    'Power BI and the Microsoft stack for finance and operations, retail and e-commerce, healthcare, manufacturing, professional services, SaaS and technology, and nonprofit and education. Built for how each one measures itself.',
   alternates: { canonical: `${siteConfig.url}/industries` },
   openGraph: { url: `${siteConfig.url}/industries`, type: 'website', images: ['/opengraph-image'] },
 };
 
-// Illustrative scenarios of the impact these analytics target, clearly labeled,
+// Illustrative scenarios of the impact these dashboards target, clearly labeled,
 // not specific client results. Replace with real results when available.
 const cases = [
-  { metric: '3 days', title: 'Landed cost close, down from 12', desc: 'Freight, duty, and fees allocated to the unit from SAP and freight invoices, so margin by product is a daily number.', tag: 'Importers · Landed cost' },
-  { metric: '-22%', title: 'Clearance time cut', desc: 'Entry throughput, clearance time, and exceptions tracked by client, port, and filer, with an audit trail on every entry.', tag: 'Customs brokers · Compliance' },
-  { metric: 'Real-time', title: 'Shipment visibility across carriers', desc: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with exceptions flagged early.', tag: 'Freight forwarders · Visibility' },
-  { metric: '-29%', title: 'Demurrage and detention charges', desc: 'Charges tied to container events and the free-time clock, attributed to a cause and an owner so avoidable fees are prevented.', tag: '3PL · Logistics' },
-  { metric: 'Same day', title: 'Tariff exposure on a rate change', desc: 'Duty exposure by HTS code and origin, with a scenario layer that reprices the import book the day a rate changes.', tag: 'Importers · Duty' },
+  { metric: '2 days', title: 'Monthly close reported, down from 10', desc: 'The close, budget versus actual, and the operating P&L modeled once from the ERP, so finance explains variances instead of rebuilding a workbook.', tag: 'Finance · Close' },
+  { metric: '44%', title: 'Gross margin, finally reconciled', desc: 'Sales and true margin after fees and returns unified across store, marketplace, and web, so merchandising runs on one number.', tag: 'Retail · Margin' },
+  { metric: '112%', title: 'Net revenue retention, in one model', desc: 'CRM pipeline joined to billed and recurring revenue, so forecasting and renewals run on data the team believes.', tag: 'SaaS · Revenue' },
+  { metric: '-40%', title: 'Ad hoc report requests', desc: 'Copilot and natural-language questions over a governed model, so common answers come in seconds instead of a ticket to the data team.', tag: 'Enablement · Copilot' },
+  { metric: 'Near real time', title: 'Refreshes, from a nightly batch', desc: 'A Microsoft Fabric lakehouse and pipelines feeding the model, so reporting is fast and in sync with the source systems.', tag: 'Operations · Data engineering' },
 ];
 
 export default function IndustriesPage() {
@@ -34,12 +34,12 @@ export default function IndustriesPage() {
         {/* Hero */}
         <PageHero
           eyebrow="Industries"
-          title="Built for the companies that move goods."
+          title="Power BI for the teams that run on data."
           breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries' }]} />}
         >
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We build the analytics tuned to how each link in the trade chain measures itself, from
-            importers and brokers to forwarders, 3PLs, and ports.
+            We build the governed model and the dashboards tuned to how each sector measures itself,
+            from finance and operations to retail, healthcare, manufacturing, and technology.
           </p>
         </PageHero>
 
@@ -119,11 +119,11 @@ export default function IndustriesPage() {
           <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(20,92,230,.28), transparent 60%)' }} />
           <div className="relative mx-auto max-w-2xl px-6 py-28 text-center">
             <h2 className="font-display text-display-md font-semibold text-white">
-              Want analytics built for your corner of trade?
+              Want Power BI built for your sector?
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
-              Request a quote and we will share the approach that fits your operation, your systems,
-              and your partners.
+              Request a quote and we will share the approach that fits your business, your systems,
+              and the decisions your team needs to make.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
               <Button href="/contact" size="lg">

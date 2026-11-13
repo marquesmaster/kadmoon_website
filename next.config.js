@@ -337,15 +337,24 @@ const nextConfig = {
       // Retired subscription and dashboards pages.
       { source: '/packages', destination: '/services', permanent: true },
       { source: '/dashboards', destination: '/cases', permanent: true },
+      // The standalone platform page is retired; services covers it.
+      { source: '/platform', destination: '/services', permanent: true },
 
       // Old retired Power BI industry slugs -> new trade industries.
-      { source: '/industries/retail', destination: '/industries/manufacturers-distributors', permanent: true },
-      { source: '/industries/financial-services', destination: '/industries', permanent: true },
-      { source: '/industries/manufacturing', destination: '/industries/manufacturers-distributors', permanent: true },
-      { source: '/industries/logistics', destination: '/industries/freight-forwarders', permanent: true },
-      { source: '/industries/healthcare', destination: '/industries', permanent: true },
-      { source: '/industries/education', destination: '/industries', permanent: true },
-      { source: '/industries/supply-chain', destination: '/industries/third-party-logistics', permanent: true },
+      // Retired foreign-trade industry pages -> the industries index (the new
+      // US verticals use different slugs; manufacturing and healthcare are live
+      // pages now, so they are not redirected).
+      ...[
+        'importers-exporters', 'customs-brokers', 'freight-forwarders',
+        'third-party-logistics', 'ports-terminals', 'manufacturers-distributors',
+        'shipping-carriers',
+      ].map((slug) => ({ source: `/industries/${slug}`, destination: '/industries', permanent: true })),
+      // Older Power BI-era industry slugs -> the closest live vertical.
+      { source: '/industries/retail', destination: '/industries/retail-ecommerce', permanent: true },
+      { source: '/industries/financial-services', destination: '/industries/finance-operations', permanent: true },
+      { source: '/industries/logistics', destination: '/industries', permanent: true },
+      { source: '/industries/education', destination: '/industries/nonprofit-education', permanent: true },
+      { source: '/industries/supply-chain', destination: '/industries', permanent: true },
 
       // Older retired pages from previous iterations.
       { source: '/software-house', destination: '/services', permanent: true },
