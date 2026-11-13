@@ -102,14 +102,14 @@ export const docs: Doc[] = [
       { type: 'h2', id: 'engagement', text: 'How you start' },
       {
         type: 'p',
-        text: 'The usual path is to start small, prove it, then run on it. We are a boutique with two models: by project, or a monthly subscription. The Engagement models page describes each in full.',
+        text: 'The usual path is to start small, prove it, then run on it. We are a boutique with two models: by project, or Managed Power BI, our monthly subscription. The Engagement models page describes each in full.',
       },
       {
         type: 'list',
         items: [
           'Power BI assessment. A short, fixed-price first project that maps your decisions and data and ships first dashboards in about two weeks, then leads into one of the two models.',
           'By project. A fixed-scope build with defined deliverables, acceptance criteria, and milestone billing.',
-          'Monthly subscription. A recurring retainer where we run and evolve your Power BI, with an optional managed Microsoft add-on that bills the Microsoft capacity on one invoice.',
+          'Managed Power BI. Our monthly subscription: a recurring retainer where we run and evolve your Power BI, with an optional managed Microsoft add-on that bills the Microsoft capacity on one invoice.',
         ],
       },
     ],
@@ -159,9 +159,9 @@ export const docs: Doc[] = [
     title: 'Engagement models',
     group: 'Get started',
     order: 3,
-    description: 'A boutique with two models: by project, or a monthly subscription, starting from a Power BI assessment.',
+    description: 'A boutique with two models: by project, or Managed Power BI (our monthly subscription), starting from a Power BI assessment.',
     intro:
-      'Kadmoon is a boutique, so there are two ways to work with us: by project, or on a monthly subscription. The same senior team and the model you own run through both. Most clients start with a Power BI assessment, then pick the model that fits where they are.',
+      'Kadmoon is a boutique, so there are two ways to work with us: by project, or on Managed Power BI, our monthly subscription. The same senior team and the model you own run through both. Most clients start with a Power BI assessment, then pick the model that fits where they are.',
     blocks: [
       { type: 'h2', id: 'assessment', text: 'Start with a Power BI assessment' },
       {
@@ -173,10 +173,10 @@ export const docs: Doc[] = [
         type: 'p',
         text: 'Best when the outcome is well defined. A fixed-scope build from data foundation to dashboards, with acceptance criteria per deliverable and milestone billing. You know exactly what you get, when, and how to validate it. A dedicated squad against a backlog you control is a flavor of this model for a larger, evolving build.',
       },
-      { type: 'h2', id: 'monthly-subscription', text: 'Monthly subscription' },
+      { type: 'h2', id: 'monthly-subscription', text: 'Managed Power BI' },
       {
         type: 'p',
-        text: 'Best for ongoing work. A monthly retainer where we run and evolve your Power BI: refreshes and governance kept current, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call, with an optional managed Microsoft add-on that bills the Microsoft capacity on one invoice.',
+        text: 'Best for ongoing work. Managed Power BI is our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes and governance kept current, new reports as needs change, Copilot and AI as it matures, and a named point of contact. A boutique partner on call, with an optional managed Microsoft add-on that bills the Microsoft capacity on one invoice.',
       },
     ],
   },
