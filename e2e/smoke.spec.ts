@@ -11,7 +11,7 @@ test.describe('pages load', () => {
     ['/industries/finance-operations', 'Finance'],
     ['/process', 'production'],
     ['/about', 'Power BI'],
-    ['/blog', 'business of trade'],
+    ['/blog', 'Power BI'],
     ['/custom-software-development', 'United States'],
     ['/custom-software-development/austin-tx', 'Power BI'],
     ['/privacy', 'Privacy'],
@@ -46,8 +46,8 @@ test('stat counters finish without freezing mid-animation', async ({ page }) => 
 
 test('blog search filters results', async ({ page }) => {
   await page.goto('/blog');
-  await page.getByPlaceholder('Search articles').fill('customs');
-  await expect(page.locator('article').first()).toContainText(/customs/i);
+  await page.getByPlaceholder('Search articles').fill('Power BI');
+  await expect(page.locator('article').first()).toContainText(/power bi/i);
 });
 
 test('floating contact popup opens', async ({ page }) => {

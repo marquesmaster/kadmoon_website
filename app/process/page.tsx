@@ -10,7 +10,7 @@ import { process, engagement } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Process | How we deliver trade analytics',
+  title: 'Process | How we deliver Power BI',
   description:
     'How Kadmoon delivers: discovery of the decisions and the data behind them, a semantic model in your tenant, dashboards in short cycles from week two, and support that keeps governance current.',
   alternates: { canonical: `${siteConfig.url}/process` },

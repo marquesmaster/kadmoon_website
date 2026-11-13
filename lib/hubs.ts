@@ -1,31 +1,25 @@
-// Internal-linking hubs. Maps each blog category to the most relevant solution
+// Internal-linking hubs. Maps each blog category to the most relevant service
 // pages so every article links out to them in a contextual "Related" block,
 // concentrating internal link equity on the pages we want to rank.
-// All routes here are valid trade-software pages.
+// All routes here are valid Power BI / Microsoft-stack pages.
 
 export type HubLink = { label: string; href: string };
 
-const CUSTOMS: HubLink = { label: 'Customs & compliance', href: '/services/customs-compliance' };
-const TRADE_ERP: HubLink = { label: 'Trade ERP', href: '/services/trade-erp' };
-const INVENTORY: HubLink = { label: 'Inventory & WMS', href: '/services/inventory-wms' };
-const SECURITY: HubLink = { label: 'Vessel & port security vision', href: '/services/vessel-security-vision' };
-const LOGISTICS: HubLink = { label: 'Supply chain & logistics', href: '/services/supply-chain-logistics' };
-const INTEGRATIONS: HubLink = { label: 'Trade integrations', href: '/services/trade-integrations' };
-const CUSTOM: HubLink = { label: 'Custom development', href: '/services/custom-development' };
-const SERVICES: HubLink = { label: 'What we build', href: '/services' };
-const CASES: HubLink = { label: 'Selected work', href: '/cases' };
+const POWER_BI: HubLink = { label: 'Power BI', href: '/services/power-bi' };
+const POWER_PLATFORM: HubLink = { label: 'Power Platform', href: '/services/power-platform' };
+const DATA_ENG: HubLink = { label: 'Data engineering', href: '/services/data-engineering' };
+const COPILOT: HubLink = { label: 'Copilot & AI', href: '/services/copilot-ai' };
+const SERVICES: HubLink = { label: 'All services', href: '/services' };
+const CASES: HubLink = { label: 'Case studies', href: '/cases' };
 
 const byCategory: Record<string, HubLink[]> = {
-  'Customs & Compliance': [CUSTOMS, TRADE_ERP, SERVICES],
-  'Trade Operations': [TRADE_ERP, CUSTOMS, INTEGRATIONS],
-  Inventory: [INVENTORY, TRADE_ERP, LOGISTICS],
-  Security: [SECURITY, SERVICES, CASES],
-  Logistics: [LOGISTICS, INTEGRATIONS, TRADE_ERP],
-  Integrations: [INTEGRATIONS, TRADE_ERP, LOGISTICS],
-  'Trade CRM': [TRADE_ERP, CUSTOM, SERVICES],
-  'Custom software': [CUSTOM, SERVICES, CASES],
+  'Power BI': [POWER_BI, DATA_ENG, SERVICES],
+  'Power Platform': [POWER_PLATFORM, POWER_BI, SERVICES],
+  'Data Engineering': [DATA_ENG, POWER_BI, SERVICES],
+  'Copilot & AI': [COPILOT, POWER_BI, SERVICES],
+  'Analytics Strategy': [POWER_BI, SERVICES, CASES],
 };
 
 export function hubsForCategory(category: string): HubLink[] {
-  return byCategory[category] ?? [SERVICES, CUSTOMS, CASES];
+  return byCategory[category] ?? [POWER_BI, SERVICES, CASES];
 }

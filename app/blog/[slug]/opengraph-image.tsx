@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export default function Image({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
   const title = post?.title ?? 'Kadmoon';
-  const category = post?.category ?? 'Custom software';
+  const category = post?.category ?? 'Power BI';
 
   return new ImageResponse(
     (
@@ -65,7 +65,7 @@ export default function Image({ params }: { params: { slug: string } }) {
         </div>
 
         <div style={{ fontSize: 22, color: 'rgba(255,255,255,0.65)' }}>
-          kadmoon.com · Analytics for foreign trade
+          kadmoon.com · Power BI &amp; Microsoft data
         </div>
       </div>
     ),

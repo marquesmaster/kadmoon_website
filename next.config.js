@@ -307,6 +307,37 @@ const nextConfig = {
         'freight-visibility-platform',
       ].map((slug) => ({ source: `/cases/${slug}`, destination: '/cases', permanent: true })),
 
+      // Retired foreign-trade blog articles -> the blog index (the blog is now
+      // Power BI and the Microsoft stack). Placed before the older blog
+      // retarget maps so these specific slugs resolve here first.
+      ...[
+        'abc-analysis-trade-inventory', 'analytics-in-your-own-tenant', 'antidumping-countervailing-duties',
+        'binding-rulings-classification-certainty', 'bonded-ftz-inventory-analytics', 'bonded-warehouse-ftz-wms',
+        'broker-performance-analytics', 'business-case-trade-analytics', 'cargo-theft-shrinkage-analytics',
+        'carrier-scorecard-analytics', 'cash-to-cash-cycle-importers', 'choosing-a-trade-erp',
+        'computer-vision-port-security', 'container-seal-chain-of-custody', 'container-utilization-analytics',
+        'country-of-origin-analytics', 'customs-brokerage-software', 'customs-value-valuation',
+        'data-lineage-trade-analytics', 'data-quality-trade-analytics', 'days-of-supply-stockout-risk',
+        'de-minimis-suspended-landed-cost', 'dead-stock-slow-moving-inventory', 'demurrage-detention-analytics',
+        'denied-party-screening', 'drayage-first-mile-cost', 'duty-drawback-recovering-duty',
+        'duty-optimization-four-levers', 'edi-ace-integration-for-trade', 'effective-duty-rate',
+        'entry-liquidation-tracking', 'entry-reconciliation-program', 'exception-management-trade',
+        'first-90-days-trade-analytics', 'first-sale-valuation', 'forecast-accuracy-cross-border-inventory',
+        'foreign-trade-zone-duty-deferral', 'freight-cost-analytics', 'fx-exposure-landed-cost',
+        'hts-classification-accuracy', 'incoterms-and-landed-cost', 'isf-10-2-timeliness',
+        'landed-cost-calculation', 'landed-cost-inventory-valuation', 'margin-bridge-why-margin-moved',
+        'microsoft-fabric-for-trade-data', 'mode-shift-air-ocean-analytics', 'otif-dwell-service-metrics',
+        'port-gateway-selection-analytics', 'power-bi-for-trade-reporting', 'purchase-order-analytics',
+        'reasonable-care-audit-trail', 'restricted-party-screening-coverage', 'reverse-logistics-cross-border-returns',
+        'safety-stock-long-lead-times', 'seasonal-demand-forecasting-imports', 'semantic-layer-trade-kpi',
+        'shipment-visibility-software', 'spreadsheets-break-at-trade-scale', 'supplier-analytics-landed-cost',
+        'supply-chain-concentration-risk', 'tariff-engineering-analytics', 'tariff-exposure-section-232-301',
+        'tariff-scenario-planning', 'total-cost-of-sourcing', 'trade-analytics-maturity-model',
+        'trade-analytics-microsoft-stack', 'trade-control-tower', 'trade-data-assessment',
+        'trade-data-freshness', 'trade-master-data', 'transit-time-variability',
+        'usmca-2026-review-importers', 'vendor-compliance-chargebacks', 'what-is-a-trade-intelligence-platform',
+      ].map((slug) => ({ source: `/blog/${slug}`, destination: '/blog', permanent: true })),
+
       // Service slugs. Power BI, Power Platform, data engineering and Copilot
       // are live pages now (do not redirect them). Older Microsoft variants
       // point to the closest live service.

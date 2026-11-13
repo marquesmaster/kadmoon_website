@@ -9,14 +9,14 @@ import { getAllPostMeta, getCategories } from '@/lib/blog';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Blog | Foreign-trade analytics, customs & logistics insights',
+  title: 'Blog | Power BI, Power Platform & the Microsoft data stack',
   description:
-    'Field notes on foreign-trade analytics: landed cost, duty exposure, customs and compliance, inventory, logistics, and the data that runs a cross-border operation. Written for US buyers doing real due diligence.',
+    'Field notes on Power BI and the Microsoft stack: governed semantic models, Power BI governance and migration, Power Platform automation, Microsoft Fabric data engineering, and Copilot and AI. Written for US buyers doing real due diligence.',
   alternates: { canonical: `${siteConfig.url}/blog` },
   openGraph: {
-    title: 'Kadmoon Blog | Foreign-trade analytics insights',
+    title: 'Kadmoon Blog | Power BI and Microsoft data insights',
     description:
-      'Practical guides on landed cost, duty, customs, logistics, and the analytics a cross-border operation runs on, for US B2B buyers.',
+      'Practical guides on Power BI, governed models, Microsoft Fabric, the Power Platform, and Copilot, for US B2B buyers.',
     url: `${siteConfig.url}/blog`,
     type: 'website',
     images: ['/opengraph-image'],
@@ -33,13 +33,12 @@ export default function BlogIndex() {
       <main>
         <PageHero
           eyebrow="Insights"
-          title="Notes on the business of trade."
+          title="Notes on Power BI and the Microsoft stack."
           breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />}
         >
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-            Practical writing on customs and compliance, landed cost, inventory, logistics, and the
-            analytics and software that run a cross-border operation. {posts.length} articles and
-            counting.
+            Practical writing on Power BI, governed semantic models, the Power Platform, Microsoft
+            Fabric, and Copilot and AI. {posts.length} articles and counting.
           </p>
         </PageHero>
 

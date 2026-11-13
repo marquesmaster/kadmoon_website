@@ -231,8 +231,8 @@ export default function ServicesPage() {
               Not sure where to start?
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
-              Tell us how you trade. We will point you to the right first step, usually a trade data
-              assessment, and send a quote.
+              Tell us where your data lives. We will point you to the right first step, usually a
+              Power BI assessment, and send a quote.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
               <Button href="/contact" size="lg">
