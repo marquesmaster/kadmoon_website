@@ -194,7 +194,7 @@ export const stats = [
 export const capabilities = {
   eyebrow: 'What we deliver',
   title: 'From scattered data to the decision.',
-  sub: 'Three versions of revenue in one meeting, reports no one trusts, a week spent waiting on a single number. We fix that with one governed model and the dashboards your team runs on, fed from the systems you already use, with automation and AI on top.',
+  sub: 'We build the Power BI a business runs on: governed dashboards on a single model, fed from the systems you already use, with automation and AI on top.',
   items: [
     {
       title: 'Power BI dashboards & reports',
@@ -1017,4 +1017,100 @@ export const pricing = {
     title: 'Tell us what you want reported on. Get a number.',
     body: 'A short description of your data and the decisions you need is enough for a scoped plan and a quote within one business day.',
   },
+};
+
+// ---------------------------------------------------------------------------
+// "Hard problems" band. Names the pain a buyer already feels before the fix,
+// instead of leading with features. Rendered by components/sections/Problems.
+// ---------------------------------------------------------------------------
+export const problems = {
+  eyebrow: 'Sound familiar?',
+  title: 'The problems a Power BI build is meant to fix.',
+  sub: 'If your team lives any of these, the issue is rarely the data itself. It is that no one has built a governed model on top of it.',
+  items: [
+    {
+      pain: 'Three versions of revenue in one meeting',
+      detail: 'Every team brings its own number, and the first ten minutes go to arguing which one is right.',
+    },
+    {
+      pain: 'A week to answer one question',
+      detail: 'A simple "how did last month close?" turns into an analyst re-keying exports by hand.',
+    },
+    {
+      pain: 'Reports no one trusts',
+      detail: 'Leaders quietly keep their own spreadsheet because the dashboard has been wrong before.',
+    },
+    {
+      pain: 'Power BI that grew into a mess',
+      detail: 'Dozens of workspaces, duplicated measures, and no row-level security. It became a risk, not an asset.',
+    },
+    {
+      pain: 'Dashboards built, never opened',
+      detail: 'A past project shipped reports that answered no real decision, so no one signs in to them.',
+    },
+    {
+      pain: 'Data stuck in the systems',
+      detail: 'It is all there in SQL Server, Dynamics, SAP, and Salesforce, but no one can see across it.',
+    },
+  ],
+  close: 'We fix the cause: one governed semantic model, fed from the systems you already run, with the dashboards your team actually opens.',
+};
+
+// ---------------------------------------------------------------------------
+// "Boutique, on purpose" band. The anti-big-firm and enablement angle: senior
+// people start to finish, lean and fast, we hand you the keys, you own it.
+// Rendered by components/sections/BoutiqueEdge.
+// ---------------------------------------------------------------------------
+export const boutiqueEdge = {
+  eyebrow: 'Boutique, on purpose',
+  title: 'A senior team, not a bench of juniors.',
+  lead: 'Big firms staff your project with whoever is free and bill the ramp-up. We are small on purpose: the senior people who scope your Power BI are the ones who build and support it.',
+  points: [
+    {
+      title: 'Senior people, start to finish',
+      body: 'The person who scopes your model builds it and is still there a year later. No handoff to a team that has never seen your data.',
+    },
+    {
+      title: 'Lean and fast',
+      body: 'No bloated, multi-month discovery. First dashboards in about two weeks, then delivery in short cycles you can see.',
+    },
+    {
+      title: 'We hand you the keys',
+      body: 'We train your team and document everything, so you can run and extend the reporting yourselves. We aim to be useful, not load-bearing.',
+    },
+    {
+      title: 'You own all of it',
+      body: 'The model, the reports, and the data stay in your own Microsoft tenant. Keep going with us or without us. No lock-in.',
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Productized paid on-ramp. A named, fixed-scope first project, not a third
+// engagement model: it leads into by project or Managed Power BI. No public
+// price (we quote per engagement), but the scope and deliverables are fixed.
+// Rendered by components/sections/Assessment.
+// ---------------------------------------------------------------------------
+export const assessment = {
+  eyebrow: 'The on-ramp',
+  name: '2-Week Power BI Assessment',
+  tagline: 'The fixed-scope first project that de-risks the rest.',
+  body: 'Most engagements start here. In about two weeks we map the decisions your leaders need, connect a slice of your real data in your own tenant, and ship working Power BI dashboards, not a slide deck. You leave with a plan and a fixed quote for the full build, grounded in your own numbers.',
+  timebox: 'About 2 weeks',
+  price: 'Fixed price, quoted up front',
+  includesLabel: 'What we do',
+  includes: [
+    'Map the decisions and the questions behind them',
+    'Connect a slice of your real data in your tenant',
+    'Build a first governed model and working dashboards',
+    'Scope the full build with a fixed quote',
+  ],
+  deliverLabel: 'What you walk away with',
+  deliverables: [
+    'Working Power BI dashboards on your own data',
+    'A clear architecture and delivery plan',
+    'A fixed-price quote, grounded in your numbers',
+  ],
+  footnote: 'The assessment is a short first project, not a third model. It leads into a by-project build or Managed Power BI.',
+  cta: { label: 'Start with an assessment', href: '/contact' },
 };

@@ -5,6 +5,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Button } from '@/components/Button';
 import { Reveal } from '@/components/Reveal';
 import { PageHero } from '@/components/sections/PageHero';
+import { Assessment } from '@/components/sections/Assessment';
 import { pricing } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -33,6 +34,9 @@ export default function PricingPage() {
             </Button>
           </div>
         </PageHero>
+
+        {/* Productized paid on-ramp */}
+        <Assessment />
 
         {/* The model */}
         <section className="mx-auto max-w-shell px-6 py-16 md:py-20">
