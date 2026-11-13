@@ -148,7 +148,7 @@ export const navMenu: NavItem[] = [
 
 export const nav = {
   wordmark: 'Kadmoon',
-  suffix: 'INC.',
+  suffix: 'Business Intelligence',
   menu: navMenu,
   // Secondary top-bar action for existing clients. The analytics run in the
   // client's own Microsoft tenant, so "access" is signing in to Power BI, not a
@@ -980,6 +980,7 @@ export const pricing = {
         'Power Platform automation and Fabric data engineering as needed',
         'Fixed scope, acceptance criteria, and milestone billing',
       ],
+      featured: true,
     },
     {
       name: 'Monthly subscription',
@@ -991,7 +992,6 @@ export const pricing = {
         'Dedicated governance and a named point of contact',
         'Optional managed Microsoft on one invoice',
       ],
-      featured: true,
     },
   ],
   faq: [

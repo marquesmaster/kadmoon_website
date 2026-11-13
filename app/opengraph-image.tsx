@@ -23,8 +23,8 @@ export default function OpengraphImage() {
           <span style={{ fontSize: 40, fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em' }}>
             Kadmoon
           </span>
-          <span style={{ fontSize: 18, fontWeight: 600, color: '#4C8DFF', letterSpacing: '0.16em' }}>
-            INC.
+          <span style={{ fontSize: 16, fontWeight: 600, color: '#4C8DFF', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+            Business Intelligence
           </span>
         </div>
 
