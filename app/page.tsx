@@ -5,7 +5,6 @@ import { StatsBand } from '@/components/sections/StatsBand';
 import { Capabilities } from '@/components/sections/Capabilities';
 import { ReportsBand } from '@/components/sections/ReportsBand';
 import { MicrosoftStack } from '@/components/sections/MicrosoftStack';
-import { GroupExperience } from '@/components/sections/GroupExperience';
 import { Industries } from '@/components/sections/Industries';
 import { Process } from '@/components/sections/Process';
 import { Comparison } from '@/components/sections/Comparison';
@@ -15,8 +14,8 @@ import { Faq } from '@/components/sections/Faq';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
 
-// Lean trade-software home: a tight sequence of strong blocks with an
-// alternating color rhythm. Depth lives on the dedicated pages.
+// Lean Power BI home: a tight sequence of strong blocks with an alternating
+// color rhythm. Depth lives on the dedicated pages.
 export default function HomePage() {
   return (
     <>
@@ -27,7 +26,6 @@ export default function HomePage() {
         <MicrosoftStack />
         <Credibility />
         <StatsBand />
-        <GroupExperience />
         <Capabilities />
         <Industries />
         <Process />

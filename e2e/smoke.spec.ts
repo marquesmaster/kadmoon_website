@@ -41,7 +41,7 @@ test('stat counters finish without freezing mid-animation', async ({ page }) => 
   const values = await band.locator('dd').evaluateAll((dds) =>
     dds.map((d) => d.querySelector('span')?.textContent),
   );
-  expect(values).toEqual(['100%', 'US', 'Week 2', 'Your tenant']);
+  expect(values).toEqual(['30,000+', '2,000+', '50+']);
 });
 
 test('blog search filters results', async ({ page }) => {

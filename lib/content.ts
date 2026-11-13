@@ -182,12 +182,13 @@ export const hero = {
   panelFooter: 'Built in your tenant. You own the model and the data.',
 };
 
-// Positioning signals, each one plainly true and free of invented client counts.
+// The track record of the team and group behind Kadmoon, stated plainly. These
+// are the group's numbers (the StatsBand frames them as such), not claims about
+// the new US entity on its own.
 export const stats = [
-  { value: '100%', label: 'Microsoft data stack' },
-  { value: 'US', label: 'based and operated' },
-  { value: 'Week 2', label: 'first dashboards' },
-  { value: 'Your tenant', label: 'you own it' },
+  { value: '30,000+', label: 'Analytics projects delivered', sub: 'Delivered on the Microsoft stack' },
+  { value: '2,000+', label: 'Solutions shipped', sub: 'Builds, migrations, and platform work' },
+  { value: '50+', label: 'Clients served', sub: 'Owner-managed firms through to listed groups' },
 ];
 
 export const capabilities = {
