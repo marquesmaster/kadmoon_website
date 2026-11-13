@@ -11,7 +11,7 @@ import { siteConfig } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Pricing | Scoped and quoted per engagement',
   description:
-    'How Kadmoon prices Power BI work: a fixed-scope Power BI assessment, a build as a project or dedicated squad, and managed analytics after go-live, with an optional managed Microsoft add-on. Quoted per engagement.',
+    'How Kadmoon prices Power BI work: a boutique with two models, by project (fixed scope, milestone billing) or a monthly subscription, starting from a short Power BI assessment. Quoted per engagement.',
   alternates: { canonical: `${siteConfig.url}/pricing` },
   openGraph: { url: `${siteConfig.url}/pricing`, type: 'website', images: ['/opengraph-image'] },
 };
@@ -40,9 +40,9 @@ export default function PricingPage() {
             How it works
           </span>
           <h2 className="mt-4 max-w-2xl font-display text-display-sm text-ink">
-            Three parts, so you only pay for what you use.
+            Two ways to work with us.
           </h2>
-          <ol className="mt-10 grid gap-5 md:grid-cols-3">
+          <ol className="mt-10 grid gap-5 md:grid-cols-2">
             {pricing.model.map((m, i) => (
               <li key={m.name} className="flex flex-col rounded-2xl border border-line bg-paper p-6 shadow-card">
                 <div className="flex items-center justify-between">
@@ -60,16 +60,16 @@ export default function PricingPage() {
           </ol>
         </section>
 
-        {/* Subscription scopes */}
+        {/* What each model includes */}
         <section className="bg-mist py-16 md:py-24">
           <div className="mx-auto max-w-shell px-6">
             <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
-              Subscription scopes
+              What each model includes
             </span>
             <h2 className="mt-4 max-w-2xl font-display text-display-sm text-ink">
-              Pick the scope; we quote it to your data.
+              Pick the model; we quote it to your data.
             </h2>
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <div className="mt-10 grid gap-5 md:grid-cols-2">
               {pricing.scopes.map((s, i) => (
                 <Reveal
                   as="div"

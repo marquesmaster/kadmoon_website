@@ -601,26 +601,20 @@ export const techStack = {
 
 export const engagement = {
   eyebrow: 'How we engage',
-  title: 'Three ways to work with us.',
-  sub: 'Every model runs on the same senior, US-based team, clear acceptance criteria, and analytics you own in your tenant.',
+  title: 'A boutique, two ways to work.',
+  sub: 'Start with a Power BI assessment, then run by project or on a monthly subscription. The same senior, US-based team, built in your own tenant and yours to own.',
   models: [
     {
-      name: 'Power BI assessment',
-      best: 'Best first step',
-      body: 'A short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks. It de-risks the larger build and produces a scope and a quote grounded in your real data.',
-      points: ['Fixed scope', 'First dashboards in ~2 weeks', 'Scope and quote'],
-    },
-    {
-      name: 'Fixed-scope project',
+      name: 'By project',
       best: 'Best when the outcome is defined',
-      body: 'A defined build from data foundation to dashboards, with acceptance criteria per deliverable and milestone billing. You know exactly what you get, when, and how to validate it.',
-      points: ['Acceptance criteria per deliverable', 'Milestone billing', 'Fixed timeline'],
+      body: 'A fixed-scope build with defined deliverables and milestone billing: the governed semantic model, the dashboards, any migration, and the governance around them. The Power BI assessment is the short first project that scopes the rest.',
+      points: ['Fixed scope and timeline', 'Acceptance criteria per deliverable', 'Milestone billing'],
     },
     {
-      name: 'Managed analytics',
-      best: 'Best after go-live',
-      body: 'We run and evolve your analytics estate on a defined agreement: refreshes, governance, new reports as needs change, and a roadmap for what comes next.',
-      points: ['Defined service agreement', 'Governance kept current', 'Evolution roadmap'],
+      name: 'Monthly subscription',
+      best: 'Best for ongoing work',
+      body: 'A monthly retainer where we run and evolve your Power BI: refreshes and governance kept current, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call, not a one-off build.',
+      points: ['Recurring monthly scope', 'New reports as needs change', 'Governance and support'],
     },
   ],
 };
@@ -962,55 +956,42 @@ export const groupExperience = {
 export const pricing = {
   eyebrow: 'Pricing',
   title: 'Priced to the scope of your Power BI work, not a seat count.',
-  lead: 'Every engagement is scoped to the systems you run and the decisions you need, so you pay for the Power BI work you use. Here is how it works and what each scope includes. We quote per engagement; tell us what you want reported on and you get a number within one business day.',
+  lead: 'Kadmoon is a boutique, so you work with us one of two ways: by project, or on a monthly subscription. Most start with a short Power BI assessment, then pick the model that fits. We quote per engagement; tell us what you want reported on and you get a number within one business day.',
   model: [
     {
-      name: 'Power BI assessment',
-      meta: 'Fixed scope · first dashboards in ~2 weeks',
-      body: 'A short, fixed-price first step that maps your decisions and data sources and ships the first dashboards in about two weeks. You leave with a governed starting point, a scope, and a quote for the build.',
+      name: 'By project',
+      meta: 'Fixed scope · milestone billing',
+      body: 'A fixed-scope build with defined deliverables: the governed semantic model, the dashboards and reports, any migration from legacy BI or spreadsheets, and the governance around them. The Power BI assessment is the short first project that scopes the rest.',
     },
     {
-      name: 'Build',
-      meta: 'Fixed-scope project or dedicated squad',
-      body: 'We build out the governed semantic model, the dashboards and reports, any migration from legacy BI or spreadsheets, and the row-level security and governance around them. Delivered as a fixed-scope project or a dedicated squad, in your own Microsoft tenant.',
-    },
-    {
-      name: 'Managed analytics',
-      meta: 'After go-live',
-      body: 'After go-live we keep the model and reports current, run the refreshes, and support your users. An optional managed Microsoft add-on lets us provision and bill the Microsoft capacity (Power BI, Fabric, Azure) on one invoice.',
+      name: 'Monthly subscription',
+      meta: 'Recurring · we run and evolve it',
+      body: 'A monthly retainer where we run and evolve your Power BI: refreshes and governance kept current, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call. An optional managed Microsoft add-on bills the Microsoft capacity on one invoice.',
     },
   ],
   scopes: [
     {
-      name: 'Assessment',
-      best: 'A first Power BI step, one priority',
+      name: 'By project',
+      best: 'When the outcome is defined',
       includes: [
-        'One governed semantic model scoped to a priority area',
-        'Up to ~3 data sources connected',
-        'First dashboards and reports in about two weeks',
-        'A scope and quote for the build',
-      ],
-    },
-    {
-      name: 'Build',
-      best: 'The full build across your reporting',
-      includes: [
-        'Governed semantic model and dashboards across your priorities',
+        'A governed semantic model and the dashboards on it',
         'Power BI migration from legacy BI and spreadsheets',
         'Row-level security and Power BI governance',
         'Power Platform automation and Fabric data engineering as needed',
+        'Fixed scope, acceptance criteria, and milestone billing',
       ],
-      featured: true,
     },
     {
-      name: 'Managed',
-      best: 'Run and grow it after go-live',
+      name: 'Monthly subscription',
+      best: 'For ongoing work and a partner on call',
       includes: [
         'Managed refreshes, monitoring, and user support',
+        'New reports and model changes as needs change',
         'Copilot and AI on your data as it matures',
         'Dedicated governance and a named point of contact',
-        'Quarterly reviews and a roadmap',
+        'Optional managed Microsoft on one invoice',
       ],
+      featured: true,
     },
   ],
   faq: [
@@ -1019,12 +1000,12 @@ export const pricing = {
       a: 'No. Power BI engagements differ too much for a sticker price to be honest. We scope to your data and decisions and quote per engagement, usually within one business day of a first conversation.',
     },
     {
-      q: 'How does billing work?',
-      a: 'The assessment is a fixed price. The build is a fixed-scope project or a dedicated squad. Managed analytics is a defined term after go-live. If you take managed Microsoft, the Microsoft capacity is billed with it on one invoice.',
+      q: 'Project or subscription, how do we choose?',
+      a: 'If the outcome is defined, a project is cleanest: fixed scope, acceptance criteria, and milestone billing. If you want us to keep building and running your Power BI month to month, the subscription fits. Many start with a project and move to a subscription after go-live.',
     },
     {
       q: 'Is there a long contract?',
-      a: 'The assessment stands alone. The build and managed work are defined terms you agree up front; you own the semantic model, the reports, and the data in your own Microsoft tenant, so you are never locked in to keep operating.',
+      a: 'A project stands on its own. The subscription is a monthly term you can adjust, and you own the semantic model, the reports, and the data in your own Microsoft tenant, so you are never locked in to keep operating.',
     },
     {
       q: 'What about a dedicated squad or enterprise terms?',

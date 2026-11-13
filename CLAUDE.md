@@ -28,6 +28,11 @@ deployed via Docker on a Hostinger VPS.
 - Market is the **United States**, in English. Do not reposition around a
   vertical; Power BI for US businesses is the frame, and verticals are use
   cases, never the headline.
+- **Kadmoon is a boutique with two engagement models:** **by project** (fixed
+  scope, defined deliverables, milestone billing) and a **monthly subscription**
+  (recurring retainer: we run and evolve the client's Power BI). The **Power BI
+  assessment** is the paid on-ramp (a short first project), not a third model.
+  Keep pricing, services, and docs consistent with these two models.
 - Primary CTA everywhere is **"Request a quote"** → `/contact`. There is no
   booking/scheduling tool. The top-bar secondary action is **"Client sign-in"**
   → Power BI (`app.powerbi.com`): the reports run in the client's own Microsoft

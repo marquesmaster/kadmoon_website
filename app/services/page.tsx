@@ -20,23 +20,23 @@ export const metadata: Metadata = {
 const engage = [
   {
     kicker: 'Power BI assessment',
-    title: 'Best first step',
-    body: 'A short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks, with a scope and a quote grounded in your real data.',
+    title: 'Start here',
+    body: 'A short, fixed-scope first project that maps your decisions and data and delivers first dashboards in about two weeks, with a scope and a quote grounded in your real data. It leads into one of the two models.',
     cta: 'Request a quote',
     featured: true,
   },
   {
-    kicker: 'Fixed-scope project',
+    kicker: 'By project',
     title: 'When the outcome is defined',
-    body: 'A defined build from data foundation to dashboards, with acceptance criteria per deliverable and milestone billing. You know what you get, when, and how to validate it.',
+    body: 'A fixed-scope build with defined deliverables and milestone billing: the governed semantic model, the dashboards, any migration, and the governance around them. You know what you get, when, and how to validate it.',
     cta: 'Scope a project',
     featured: false,
   },
   {
-    kicker: 'Managed analytics',
-    title: 'After go-live',
-    body: 'We run and evolve your reporting on a defined agreement: refreshes, governance, new reports as needs change, and a roadmap for what comes next.',
-    cta: 'Talk support',
+    kicker: 'Monthly subscription',
+    title: 'For ongoing work',
+    body: 'A monthly retainer where we run and evolve your Power BI: refreshes, governance, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call.',
+    cta: 'Talk subscription',
     featured: false,
   },
 ];
@@ -160,8 +160,12 @@ export default function ServicesPage() {
             <div className="max-w-2xl">
               <Eyebrow>Ways to engage</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
-                Start small, scale with confidence.
+                A boutique, two ways to work.
               </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
+                Begin with a Power BI assessment, then run by project or on a monthly subscription.
+                Same senior US team, built in your own tenant, yours to own.
+              </p>
             </div>
             <div className="mt-11 grid gap-5 md:grid-cols-3">
               {engage.map((e) => (

@@ -102,14 +102,14 @@ export const docs: Doc[] = [
       { type: 'h2', id: 'engagement', text: 'How you start' },
       {
         type: 'p',
-        text: 'The usual path is to start small, prove it, then run on it. The assessment is a fixed-scope engagement; the ongoing work is scoped to what you run. The Engagement models page describes each in full.',
+        text: 'The usual path is to start small, prove it, then run on it. We are a boutique with two models: by project, or a monthly subscription. The Engagement models page describes each in full.',
       },
       {
         type: 'list',
         items: [
-          'Power BI assessment. A short, fixed-price engagement that maps your decisions and data and ships first dashboards in about two weeks. The fee credits toward the build.',
-          'Fixed-scope project. A defined build from data foundation to dashboards, with acceptance criteria per deliverable and milestone billing.',
-          'Managed Microsoft. Optional. We provision and bill the Microsoft capacity the analytics runs on, so licensing and cloud arrive on one invoice.',
+          'Power BI assessment. A short, fixed-price first project that maps your decisions and data and ships first dashboards in about two weeks, then leads into one of the two models.',
+          'By project. A fixed-scope build with defined deliverables, acceptance criteria, and milestone billing.',
+          'Monthly subscription. A recurring retainer where we run and evolve your Power BI, with an optional managed Microsoft add-on that bills the Microsoft capacity on one invoice.',
         ],
       },
     ],
@@ -159,29 +159,24 @@ export const docs: Doc[] = [
     title: 'Engagement models',
     group: 'Get started',
     order: 3,
-    description: 'Three ways to work with us: a fixed-scope project, an embedded squad, or managed analytics.',
+    description: 'A boutique with two models: by project, or a monthly subscription, starting from a Power BI assessment.',
     intro:
-      'The same senior team, acceptance criteria, and model you own run through every engagement. What changes is how the work is shaped and billed. Most clients start with an assessment, then pick the model that fits where they are.',
+      'Kadmoon is a boutique, so there are two ways to work with us: by project, or on a monthly subscription. The same senior team and the model you own run through both. Most clients start with a Power BI assessment, then pick the model that fits where they are.',
     blocks: [
-      { type: 'h2', id: 'assessment', text: 'Power BI assessment' },
+      { type: 'h2', id: 'assessment', text: 'Start with a Power BI assessment' },
       {
         type: 'p',
-        text: 'The usual first step. A short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks. It de-risks the larger build and produces a scope and a quote grounded in your real data.',
+        text: 'The usual first step. A short, fixed-scope first project that maps your decisions and data and delivers first dashboards in about two weeks. It de-risks the larger build, produces a scope and a quote grounded in your real data, and leads into one of the two models below.',
       },
-      { type: 'h2', id: 'fixed-scope', text: 'Fixed-scope project' },
+      { type: 'h2', id: 'by-project', text: 'By project' },
       {
         type: 'p',
-        text: 'Best when the outcome is well defined. A defined build from data foundation to dashboards, with acceptance criteria per deliverable and milestone-based billing. You know exactly what you get, when, and how to validate it.',
+        text: 'Best when the outcome is well defined. A fixed-scope build from data foundation to dashboards, with acceptance criteria per deliverable and milestone billing. You know exactly what you get, when, and how to validate it. A dedicated squad against a backlog you control is a flavor of this model for a larger, evolving build.',
       },
-      { type: 'h2', id: 'squad', text: 'Dedicated analytics squad' },
+      { type: 'h2', id: 'monthly-subscription', text: 'Monthly subscription' },
       {
         type: 'p',
-        text: 'Best for an evolving roadmap. Senior analytics engineers embedded on your priorities, working in two-week cycles against a backlog you control. The people who build your models stay to evolve them.',
-      },
-      { type: 'h2', id: 'managed', text: 'Managed analytics' },
-      {
-        type: 'p',
-        text: 'Best after go-live. We run and evolve your Power BI estate on a defined service agreement: refreshes, governance, new reports as needs change, and a roadmap for what comes next.',
+        text: 'Best for ongoing work. A monthly retainer where we run and evolve your Power BI: refreshes and governance kept current, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call, with an optional managed Microsoft add-on that bills the Microsoft capacity on one invoice.',
       },
     ],
   },
