@@ -130,20 +130,21 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
   const deckUrl = `${siteConfig.url}/kadmoon-overview.pdf`;
   const contactUrl = `${siteConfig.url}/contact`;
   const first = lead.name.split(' ')[0] || 'there';
-  const subject = 'Software for your trade operation — Kadmoon';
+  const subject = 'Power BI for your business, Kadmoon';
 
   const text = [
     `Hi ${first},`,
     ``,
-    `Thanks for reaching out to Kadmoon. We build software for foreign trade:`,
-    `trade ERP, customs and compliance, inventory, vessel security, and logistics,`,
-    `as ready platforms and custom development.`,
+    `Thanks for reaching out to Kadmoon. We are a US Microsoft data and`,
+    `analytics firm led by Power BI: governed dashboards and semantic models,`,
+    `Power Platform automation, Fabric data engineering, and Copilot and AI,`,
+    `delivered in your own tenant.`,
     ``,
     `Overview: ${deckUrl}`,
     `Request a quote: ${contactUrl}`,
     ``,
-    `Tell us how ${lead.company} trades and we will come back with a clear next`,
-    `step and a quote.`,
+    `Tell us where ${lead.company}'s data lives and what your team needs to see,`,
+    `and we will come back with a clear next step and a quote.`,
     ``,
     `Talk soon,`,
     `The Kadmoon team`,
@@ -152,13 +153,13 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
 
   const html = `<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#092642;max-width:560px;line-height:1.55">
     <p>Hi ${first},</p>
-    <p>Thanks for reaching out to Kadmoon. We build software for foreign trade: trade ERP, customs and compliance, inventory, vessel security, and logistics, as ready platforms and custom development.</p>
+    <p>Thanks for reaching out to Kadmoon. We are a US Microsoft data and analytics firm led by Power BI: governed dashboards and semantic models, Power Platform automation, Fabric data engineering, and Copilot and AI, delivered in your own tenant.</p>
     <p style="margin:26px 0">
       <a href="${contactUrl}" style="background:#145CE6;color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block">Request a quote &rarr;</a>
       &nbsp;&nbsp;
       <a href="${deckUrl}" style="color:#092642;font-weight:600">View the overview (PDF)</a>
     </p>
-    <p>Tell us how ${lead.company} trades and we will come back with a clear next step and a quote.</p>
+    <p>Tell us where ${lead.company}'s data lives and what your team needs to see, and we will come back with a clear next step and a quote.</p>
     <p style="margin-top:24px">Talk soon,<br/>The Kadmoon team<br/><a href="${siteConfig.url}" style="color:#5B6470">${siteConfig.url.replace('https://', '')}</a></p>
   </div>`;
 

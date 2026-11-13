@@ -38,10 +38,10 @@ function ReportChrome({
 /** Headline KPI tiles. A stat row is the right "chart" for single numbers. */
 export function KpiTiles() {
   const tiles = [
-    { k: 'Landed cost accuracy', v: '98%', sub: 'vs actuals at receipt' },
-    { k: 'Effective duty rate', v: '6.2%', sub: 'blended, all entries' },
-    { k: 'Duty at risk', v: '$1.4M', sub: 'modeled tariff scenario' },
-    { k: 'OTIF', v: '94%', sub: 'on time, in full' },
+    { k: 'Revenue', v: '$2.48M', sub: 'this month, +2.1% vs plan' },
+    { k: 'Gross margin', v: '39.0%', sub: 'blended, all product lines' },
+    { k: 'Net retention', v: '112%', sub: 'trailing twelve months' },
+    { k: 'Forecast accuracy', v: '96%', sub: 'vs actuals' },
   ];
   return (
     <dl className="grid grid-cols-2 gap-4 lg:grid-cols-4">
@@ -58,22 +58,22 @@ export function KpiTiles() {
   );
 }
 
-/** Landed cost broken into its components, each a share of the total. */
+/** Revenue broken into segments, each a share of the total. */
 export function LandedCostCard() {
-  const total = 97830;
+  const total = 2480000;
   const rows = [
-    { k: 'Product cost', v: 84200 },
-    { k: 'Ocean freight', v: 6480 },
-    { k: 'Duty (HTS)', v: 5910, highlight: true },
-    { k: 'Brokerage & fees', v: 1240 },
+    { k: 'Enterprise', v: 1240000, highlight: true },
+    { k: 'Mid-market', v: 760000 },
+    { k: 'SMB', v: 360000 },
+    { k: 'Services', v: 120000 },
   ];
   const max = Math.max(...rows.map((r) => r.v));
   const fmt = (n: number) => `$${n.toLocaleString('en-US')}`;
   return (
-    <ReportChrome title="Landed cost · shipment IM-4821">
+    <ReportChrome title="Revenue by segment · this month">
       <div className="flex items-baseline justify-between">
         <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
-          Total landed cost
+          Total revenue
         </span>
         <span className="font-display text-2xl font-bold tabular-nums text-ink">{fmt(total)}</span>
       </div>
@@ -94,25 +94,25 @@ export function LandedCostCard() {
         ))}
       </ul>
       <p className="mt-5 border-t border-line pt-3 text-[12px] leading-relaxed text-ink-3">
-        Freight, duty, insurance, and brokerage allocated to the unit as goods arrive, from SAP and
-        the forwarder&apos;s invoices.
+        Revenue attributed to each segment from your CRM and billing, reconciled to the general
+        ledger so the total ties to finance.
       </p>
     </ReportChrome>
   );
 }
 
-/** Effective duty rate by product line, highest exposure highlighted. */
+/** Gross margin by product line, highest margin highlighted. */
 export function DutyExposureCard() {
   const rows = [
-    { k: 'Steel fittings', v: 12.8, highlight: true },
-    { k: 'Aluminum parts', v: 9.4 },
-    { k: 'Textiles', v: 7.1 },
-    { k: 'Electronics', v: 4.2 },
-    { k: 'Machinery', v: 2.9 },
+    { k: 'Platform', v: 44.0, highlight: true },
+    { k: 'Services', v: 38.0 },
+    { k: 'Support', v: 31.0 },
+    { k: 'Add-ons', v: 28.0 },
+    { k: 'Hardware', v: 22.0 },
   ];
   const max = Math.max(...rows.map((r) => r.v));
   return (
-    <ReportChrome title="Duty exposure · effective rate by product line">
+    <ReportChrome title="Gross margin · by product line">
       <ul className="space-y-3.5">
         {rows.map((r) => (
           <li key={r.k} className="grid grid-cols-[120px_1fr_auto] items-center gap-3">
@@ -136,15 +136,15 @@ export function DutyExposureCard() {
       <p className="mt-5 flex items-start gap-2 border-t border-line pt-3 text-[12px] leading-relaxed text-ink-2">
         <span aria-hidden className="mt-1.5 h-1.5 w-1.5 flex-none rounded-sm bg-accent" />
         <span>
-          A 10-point Section 301 increase on steel fittings adds <strong>$420k/yr</strong> in duty,
-          modeled the same day the rate changes.
+          Platform carries the highest margin at <strong>44%</strong>, so shifting mix toward it
+          lifts blended margin the fastest.
         </span>
       </p>
     </ReportChrome>
   );
 }
 
-/** OTIF over twelve months, with a target reference line. */
+/** On-time delivery over twelve months, with a target reference line. */
 export function OtifCard() {
   const data = [86, 88, 87, 90, 91, 89, 92, 93, 92, 94, 93, 94];
   const months = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
@@ -167,10 +167,10 @@ export function OtifCard() {
     .join(' L ')} L ${x(data.length - 1).toFixed(1)},${(pad.top + plotH).toFixed(1)} Z`;
 
   return (
-    <ReportChrome title="Shipment visibility · OTIF by month">
+    <ReportChrome title="Operations · on-time delivery by month">
       <div className="flex items-baseline justify-between">
         <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
-          On time, in full
+          On-time delivery
         </span>
         <span className="font-display text-2xl font-bold tabular-nums text-ink">
           94% <span className="text-[13px] font-semibold text-success">+8 pts YTD</span>
@@ -180,7 +180,7 @@ export function OtifCard() {
         viewBox={`0 0 ${W} ${H}`}
         className="mt-3 w-full"
         role="img"
-        aria-label="OTIF rose from 86% in January to 94% in December, against a 95% target."
+        aria-label="On-time delivery rose from 86% in January to 94% in December, against a 95% target."
       >
         {gridVals.map((g) => (
           <g key={g}>
@@ -215,7 +215,7 @@ export function OtifCard() {
         <polyline points={line} fill="none" className="stroke-accent" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" />
         {data.map((v, i) => (
           <circle key={i} cx={x(i)} cy={y(v)} r={3} className="fill-accent">
-            <title>{`${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][i]}: ${v}% OTIF`}</title>
+            <title>{`${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][i]}: ${v}% on time`}</title>
           </circle>
         ))}
         {months.map((m, i) => (
@@ -225,8 +225,8 @@ export function OtifCard() {
         ))}
       </svg>
       <p className="mt-2 border-t border-line pt-3 text-[12px] leading-relaxed text-ink-3">
-        Carrier milestones unified over EDI and API into one planned-versus-actual view, measured by
-        lane and carrier.
+        Delivery milestones from your ERP and operations systems in one planned-versus-actual view,
+        measured by site and team.
       </p>
     </ReportChrome>
   );

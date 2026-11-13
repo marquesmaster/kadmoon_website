@@ -41,7 +41,7 @@ export default function IndustryDetail({ params }: { params: { slug: string } })
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: `Trade analytics for ${ind.name}`,
+    serviceType: `Power BI for ${ind.name}`,
     provider: { '@type': 'Organization', name: siteConfig.legalName, url: siteConfig.url },
     areaServed: { '@type': 'Country', name: siteConfig.country },
     description: ind.intro,

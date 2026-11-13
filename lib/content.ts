@@ -1,13 +1,13 @@
 /**
  * All landing-page copy for Kadmoon, Inc.
  *
- * Kadmoon is a US analytics firm focused 100% on foreign trade / international
- * commerce: landed cost & margin, duty & tariff exposure, shipment visibility,
- * customs & compliance, and inventory analytics, delivered on the Microsoft stack
- * (Fabric, Power BI, Azure) in the client's own tenant. The analytics are packaged
- * as a trade intelligence platform (the EIP); trade software is the roadmap we
- * build on top of the data, not the lead. We do not publish prices; every
- * engagement is scoped to the client. Do NOT invent client names or metrics.
+ * Kadmoon is a US Microsoft data & analytics consultancy led by Power BI
+ * services: dashboards and governed semantic models, Power BI migration, and
+ * embedded analytics, plus Power Platform automation, Fabric & Azure data
+ * engineering, and Copilot & AI, all delivered in the client's own Microsoft
+ * tenant. The market is the United States, in English. We do not publish prices;
+ * every engagement is scoped to the client. Do NOT invent client names or
+ * metrics, and do NOT reference Brazil or Portuguese.
  */
 
 export type NavLink = { label: string; href: string; desc?: string };
@@ -27,38 +27,37 @@ export type NavItem =
 // Every href points to a page that exists, so the menu never dead-ends.
 export const navMenu: NavItem[] = [
   {
-    label: 'What we do',
+    label: 'Services',
     panel: {
       groups: [
         {
-          title: 'Analytics',
+          title: 'Power BI',
           items: [
-            { label: 'Landed cost & margin', href: '/cases/landed-cost-analytics', desc: 'Freight, duty, and fees to the unit' },
-            { label: 'Duty & tariff exposure', href: '/cases/tariff-duty-exposure', desc: 'Model a rate change the same day' },
-            { label: 'Shipment visibility & OTIF', href: '/cases/shipment-visibility-analytics', desc: 'Milestones unified over EDI and API' },
-            { label: 'Customs & compliance analytics', href: '/cases/entry-throughput-analytics', desc: 'Throughput, clearance, exceptions' },
+            { label: 'Dashboards & reports', href: '/services/power-bi', desc: 'Built on a governed model' },
+            { label: 'Semantic models & governance', href: '/services/power-bi', desc: 'One definition per metric, RLS' },
+            { label: 'Power BI migration', href: '/services/power-bi', desc: 'Legacy BI and spreadsheets to Power BI' },
+            { label: 'Embedded analytics', href: '/services/power-bi', desc: 'Power BI inside your own apps' },
           ],
         },
         {
-          title: 'Software we build',
+          title: 'Around Power BI',
           items: [
-            { label: 'Trade ERP', href: '/services/trade-erp', desc: 'The operating system for trade' },
-            { label: 'Customs & compliance', href: '/services/customs-compliance', desc: 'Classification, screening, filing' },
-            { label: 'Inventory & WMS', href: '/services/inventory-wms', desc: 'Bonded and FTZ handling' },
-            { label: 'Supply chain & logistics', href: '/services/supply-chain-logistics', desc: 'Freight and shipment management' },
+            { label: 'Power Platform', href: '/services/power-platform', desc: 'Power Apps and Power Automate' },
+            { label: 'Data engineering', href: '/services/data-engineering', desc: 'Microsoft Fabric and Azure' },
+            { label: 'Copilot & AI', href: '/services/copilot-ai', desc: 'Copilot in Power BI, natural-language Q&A' },
+            { label: 'All services', href: '/services', desc: 'How we scope and deliver' },
           ],
         },
       ],
       featured: {
         eyebrow: 'Start here',
-        title: 'A trade data assessment',
-        body: 'First dashboards in about two weeks, scoped and fixed. You get a clear next step and a quote.',
+        title: 'A Power BI assessment',
+        body: 'A short, fixed-scope engagement that delivers first dashboards in about two weeks, with a clear next step and a quote.',
         href: '/contact',
         cta: 'Request a quote',
       },
     },
   },
-  { label: 'Platform', href: '/platform' },
   { label: 'Pricing', href: '/pricing' },
   {
     label: 'Industries',
@@ -67,25 +66,25 @@ export const navMenu: NavItem[] = [
         {
           title: 'Who we serve',
           items: [
-            { label: 'Importers & exporters', href: '/industries/importers-exporters', desc: 'Landed cost, margin, compliance' },
-            { label: 'Customs brokers', href: '/industries/customs-brokers', desc: 'Throughput, screening, filing' },
-            { label: 'Freight forwarders', href: '/industries/freight-forwarders', desc: 'Visibility, OTIF, cost per lane' },
-            { label: 'Third-party logistics', href: '/industries/third-party-logistics', desc: 'Inventory and fulfillment' },
+            { label: 'Finance & operations', href: '/industries', desc: 'Close, cash, and the operating P&L' },
+            { label: 'Retail & e-commerce', href: '/industries', desc: 'Sales, margin, and inventory' },
+            { label: 'Healthcare', href: '/industries', desc: 'Access, utilization, and cost' },
+            { label: 'Manufacturing', href: '/industries', desc: 'Throughput, quality, and OEE' },
           ],
         },
         {
           title: 'More sectors',
           items: [
-            { label: 'Ports & terminals', href: '/industries/ports-terminals', desc: 'Dwell time and throughput' },
-            { label: 'Manufacturers & distributors', href: '/industries/manufacturers-distributors', desc: 'S&OP and product P&L' },
-            { label: 'Shipping & carriers', href: '/industries/shipping-carriers', desc: 'Fleet and service analytics' },
+            { label: 'Professional services', href: '/industries', desc: 'Utilization and project margin' },
+            { label: 'SaaS & technology', href: '/industries', desc: 'Product, revenue, and retention' },
+            { label: 'Nonprofit & education', href: '/industries', desc: 'Programs, grants, and outcomes' },
           ],
         },
       ],
       featured: {
         eyebrow: 'All industries',
-        title: 'Built for the trade chain',
-        body: 'Every link in the trade chain measures itself differently. See how we fit each one.',
+        title: 'Power BI for your sector',
+        body: 'Every team measures itself differently. See how we model the metrics yours runs on.',
         href: '/industries',
         cta: 'Explore industries',
       },
@@ -107,17 +106,17 @@ export const navMenu: NavItem[] = [
         {
           title: 'Reference',
           items: [
-            { label: 'Data integration', href: '/docs/data-integration', desc: 'SAP, Microsoft, Oracle, EDI, ACE' },
+            { label: 'Data integration', href: '/docs/data-integration', desc: 'SQL Server, Dynamics, SAP, APIs' },
             { label: 'Security & your tenant', href: '/docs/security', desc: 'Where data lives and who can see it' },
-            { label: 'KPI library', href: '/docs/kpi-library', desc: 'The trade metrics we model' },
-            { label: 'Glossary', href: '/docs/glossary', desc: 'Trade analytics terms' },
+            { label: 'Metric library', href: '/docs/kpi-library', desc: 'The measures we model in Power BI' },
+            { label: 'Glossary', href: '/docs/glossary', desc: 'Power BI and data terms' },
           ],
         },
       ],
       featured: {
         eyebrow: 'Documentation',
         title: 'How we work, in the open',
-        body: 'Our methodology, data integration, security model, and the KPIs we build, documented.',
+        body: 'Our methodology, data integration, security model, and the measures we build, documented.',
         href: '/docs',
         cta: 'Open the docs',
       },
@@ -130,15 +129,15 @@ export const navMenu: NavItem[] = [
         {
           title: 'Company',
           items: [
-            { label: 'About', href: '/about', desc: 'A US firm built for trade' },
+            { label: 'About', href: '/about', desc: 'A US Microsoft data team' },
             { label: 'Process', href: '/process', desc: 'Four phases, value from week two' },
           ],
         },
         {
           title: 'Resources',
           items: [
-            { label: 'Blog', href: '/blog', desc: 'Notes on the business of trade' },
-            { label: 'Cases', href: '/cases', desc: 'Analytics we have built' },
+            { label: 'Blog', href: '/blog', desc: 'Notes on Power BI and the data stack' },
+            { label: 'Cases', href: '/cases', desc: 'Dashboards and models we have built' },
             { label: 'Contact', href: '/contact', desc: 'Request a quote' },
           ],
         },
@@ -149,7 +148,7 @@ export const navMenu: NavItem[] = [
 
 export const nav = {
   wordmark: 'Kadmoon',
-  suffix: 'INC.',
+  suffix: 'Business Intelligence',
   menu: navMenu,
   // Secondary top-bar action for existing clients. The analytics run in the
   // client's own Microsoft tenant, so "access" is signing in to Power BI, not a
@@ -159,184 +158,184 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: 'Analytics for importers & exporters · US',
+  eyebrow: 'Microsoft data & analytics · United States',
   // The accent phrase is rendered in the accent color inside the H1.
-  headlineBefore: 'Know the landed cost, duty, and location of every ',
-  headlineAccent: 'import and export',
-  headlineAfter: '.',
+  headlineBefore: 'Turn your business data into ',
+  headlineAccent: 'Power BI',
+  headlineAfter: ' your team actually uses.',
   subhead:
-    'Kadmoon is a US analytics firm for foreign trade. We turn the data already in your ERP, customs broker, and carrier systems into clear numbers for landed cost, duty exposure, and shipment visibility. It runs in your own Microsoft tenant, and you own it.',
-  flagship: 'Landed cost · Duty exposure · Shipment visibility & OTIF · Customs analytics · Executive control tower',
+    'Kadmoon is a US Microsoft data and analytics firm. We connect the systems you already run, build a governed model, and deliver Power BI dashboards, Power Platform automation, and Fabric data engineering in your own tenant. You own all of it.',
+  flagship: 'Power BI · Semantic models & governance · Power Platform · Microsoft Fabric & Azure · Copilot & AI',
   ctas: [
     { label: 'Request a quote', href: '/contact', primary: true },
-    { label: 'See the platform', href: '/platform', primary: false },
+    { label: 'See case studies', href: '/cases', primary: false },
   ],
-  // What ships with a Kadmoon analytics engagement.
+  // What ships with a Kadmoon Power BI engagement.
   panelLabel: 'What you get',
   deliverables: [
-    'A governed model with one definition per KPI',
-    'Dashboards your leaders open and trust',
-    'Data from SAP, Microsoft, and the systems you run',
-    'Everything built in your own tenant',
-    'US-based team and full handover',
+    'A governed semantic model, one definition per metric',
+    'Power BI dashboards your leaders open daily',
+    'Data from SQL Server, Dynamics, SAP, Excel, and your apps',
+    'Everything built in your own Microsoft tenant',
+    'US-based team and a full handover',
   ],
   panelFooter: 'Built in your tenant. You own the model and the data.',
 };
 
-// Positioning signals. The client-count stat is held until a real number is set.
+// Positioning signals, each one plainly true and free of invented client counts.
 export const stats = [
-  { value: '100%', label: 'foreign-trade focus' },
-  { value: '6', label: 'analytics domains' },
+  { value: '100%', label: 'Microsoft data stack' },
   { value: 'US', label: 'based and operated' },
   { value: 'Week 2', label: 'first dashboards' },
+  { value: 'Your tenant', label: 'you own it' },
 ];
 
 export const capabilities = {
   eyebrow: 'What we deliver',
   title: 'From scattered data to the decision.',
-  sub: 'We build the analytics a cross-border operation runs on: landed cost, duty exposure, visibility, compliance, and inventory, on one governed model fed from the systems you already use.',
+  sub: 'We build the Power BI a business runs on: governed dashboards on a single model, fed from the systems you already use, with automation and AI on top.',
   items: [
     {
-      title: 'Landed cost & margin',
-      body: 'Freight, duty, insurance, and brokerage allocated to the unit from SAP and freight invoices, so margin by SKU, supplier, and shipment is a daily number, not a monthly spreadsheet.',
+      title: 'Power BI dashboards & reports',
+      body: 'The reports your leaders open every morning, built on a governed model so every number means one thing and drills to the record behind it.',
     },
     {
-      title: 'Duty & tariff exposure',
-      body: 'Duty owed by HTS code, origin, and product line, with a scenario layer that reprices your import book the same day a tariff changes.',
+      title: 'Semantic models & governance',
+      body: 'One definition per measure, row-level security, workspaces, and lineage, so reporting stays trustworthy as more people and data come on.',
     },
     {
-      title: 'Shipment visibility & OTIF',
-      body: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with OTIF, dwell, and delay measured by lane and carrier.',
+      title: 'Power BI migration',
+      body: 'Legacy BI, hand-built spreadsheets, and tool sprawl consolidated into Power BI, with the old numbers reconciled so the business trusts the move.',
     },
     {
-      title: 'Customs & compliance analytics',
-      body: 'Clearance time, entry throughput, classification consistency, and screening coverage, with an audit trail that answers a regulator from a report.',
+      title: 'Power Platform automation',
+      body: 'Power Apps and Power Automate on top of the data: input screens, approvals, and alerts that turn a dashboard into an action, not just a view.',
     },
     {
-      title: 'Inventory & warehouse analytics',
-      body: 'Days on hand, aging, and fill rate across sites, bonded and FTZ stock included, so cash and space tied up in the wrong inventory become visible.',
+      title: 'Data engineering on Fabric & Azure',
+      body: 'Lakehouse, pipelines, and the modeling layer Power BI sits on, built on Microsoft Fabric and Azure so refreshes are reliable and fast.',
     },
     {
-      title: 'Executive control tower',
-      body: 'Cost, service, risk, and compliance in one governed executive view, every KPI defined once and drillable to the shipment, entry, or order behind it.',
+      title: 'Copilot & AI on your data',
+      body: 'Copilot in Power BI and natural-language questions over your governed model, so people get answers without waiting on a new report.',
     },
   ],
 };
 
 export const why = {
   eyebrow: 'Why Kadmoon',
-  title: 'A software team that knows trade.',
-  sub: 'We build software only for companies that move goods across borders. That focus is why the systems match how your operation works.',
+  title: 'A team that lives in the Microsoft stack.',
+  sub: 'We build data and analytics only on Microsoft: Power BI, the Power Platform, Fabric, and Azure. That focus is why what we deliver fits how your business already works.',
   items: [
     {
-      title: 'Foreign trade is all we do',
-      body: 'Customs, landed cost, incoterms, bonded inventory, denied-party screening. We build from the vocabulary and rules of cross-border trade, not a generic template.',
+      title: 'Microsoft is all we do',
+      body: 'Power BI, Power Platform, Fabric, and Azure, every day. We are not a generalist shop learning the stack on your budget.',
     },
     {
       title: 'A senior, US-based team',
-      body: 'The engineers who scope your system are the ones who build and support it. No rotating subcontractors, no handoff to a team that has never seen a customs filing.',
+      body: 'The people who scope your model are the ones who build and support it. No rotating subcontractors, no handoff to a team that has never seen your data.',
     },
     {
-      title: 'Platforms plus custom',
-      body: 'Start on a ready Kadmoon platform and tailor it, or have us build from scratch. Either way you get software built to match how your operation works.',
+      title: 'Governed models, not just charts',
+      body: 'We build a semantic layer with one definition per measure and row-level security, so reporting holds up as more people and data come on.',
     },
     {
-      title: 'Compliance by default',
-      body: 'Screening, classification, and audit trails are part of the build, not an afterthought. Software that keeps you clear with CBP and your partners as you scale.',
+      title: 'We read your real systems',
+      body: 'SQL Server, Dynamics 365, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, and APIs, connected to one model instead of exported by hand.',
     },
     {
-      title: 'Integrated end to end',
-      body: 'ERP, compliance, inventory, and logistics talk to each other and to the outside world: carriers, brokers, marketplaces, and ACE, so data flows instead of being retyped.',
+      title: 'You own it, in your tenant',
+      body: 'Your data, your model, your reports, built in your own Microsoft tenant with documentation and a full handover. No lock-in and no dependency on us.',
     },
     {
-      title: 'You own it',
-      body: 'Your software, your data, your systems. Documentation and a full handover in every engagement. No lock-in and no dependency on us to keep operating.',
+      title: 'From dashboards to automation and AI',
+      body: 'Power BI is the lead, and we build on it: Power Platform apps and automation, and Copilot and AI over the same governed model.',
     },
   ],
 };
 
 export const howToChoose = {
   eyebrow: 'Buyer\'s guide',
-  title: 'How to choose a trade analytics partner.',
-  sub: 'Six questions worth asking before you hire anyone to build the analytics your cross-border operation runs on, us or anyone else.',
+  title: 'How to choose a Power BI partner.',
+  sub: 'Six questions worth asking before you hire anyone to build the Power BI your business runs on, us or anyone else.',
   items: [
     {
       num: '01',
-      title: 'Do they know trade?',
-      body: 'Ask whether they have modeled landed cost, duty, OTIF, or customs before. A generic BI shop will define your metrics wrong because it does not know what an incoterm or a denied-party screen is.',
+      title: 'Do they build governed models?',
+      body: 'Ask whether they build a semantic model with defined measures, or just wire charts to tables. Without a model you end up with three versions of revenue in one meeting.',
       answer:
-        'Foreign trade is the only thing we build analytics for. Landed cost, duty, OTIF, and customs are the metrics we model every day, not a new domain we learn on your budget.',
+        'We build a governed semantic model so every measure means one thing across every report, with row-level security and lineage from day one.',
     },
     {
       num: '02',
       title: 'Who builds it',
-      body: 'Ask whether the analytics engineers are full-time employees or rotating freelancers. The model that runs your reporting needs people who still understand it a year later.',
+      body: 'Ask whether the people are full-time employees or rotating freelancers. The model that runs your reporting needs people who still understand it a year later.',
       answer:
         'A senior, US-based in-house team. The people who scope your model build it and support it. No pass-through to third parties.',
     },
     {
       num: '03',
-      title: 'One definition per KPI',
-      body: 'Ask whether they build one governed definition per KPI or just wire charts to tables. Without a semantic layer you end up with three versions of landed cost in one meeting.',
+      title: 'Is it only Power BI, or the whole stack?',
+      body: 'Ask whether they can take you past dashboards: automation, data engineering, and AI. A charts-only shop leaves the rest of the problem on your desk.',
       answer:
-        'We build a governed semantic layer so landed cost, margin, OTIF, and duty exposure each mean one thing across every report.',
+        'Power BI is the lead, built on the whole Microsoft stack: Power Platform automation, Fabric and Azure data engineering, and Copilot and AI on the same model.',
     },
     {
       num: '04',
       title: 'Which systems they read',
-      body: 'Confirm they can read your real sources: SAP, Oracle, NetSuite, carrier EDI, and ACE. Analytics that cannot reach your data becomes another spreadsheet.',
+      body: 'Confirm they can read your real sources: SQL Server, Dynamics, SAP, Salesforce, Excel, and your APIs. Analytics that cannot reach your data becomes another spreadsheet.',
       answer:
-        'We read from the system of record wherever it runs, SAP, Microsoft, Oracle, NetSuite, EDI, ACE, and carrier feeds, and parse EDI and customs messages into measurable events.',
+        'We read from the system of record wherever it runs, SQL Server, Dynamics 365, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, and APIs, into one governed model.',
     },
     {
       num: '05',
       title: 'Ownership and your tenant',
-      body: 'Confirm everything is built in your own tenant. If the model and reports live somewhere you cannot reach, you are hostage to the vendor.',
+      body: 'Confirm everything is built in your own Microsoft tenant. If the model and reports live somewhere you cannot reach, you are hostage to the vendor.',
       answer:
         'Everything is built in your own tenant: your data, your model, your reports. You own it, with documentation and a full handover. No lock-in.',
     },
     {
       num: '06',
       title: 'Governance and support',
-      body: 'Ask how they handle row-level security, lineage, and support after go-live. Ungoverned analytics becomes a risk as it scales.',
+      body: 'Ask how they handle row-level security, workspaces, lineage, and support after go-live. Ungoverned Power BI becomes a risk as it scales.',
       answer:
-        'Governance is part of the build: row-level security, lineage, and access that follows your identity provider, with managed support on a defined agreement after go-live.',
+        'Governance is part of the build: row-level security, workspace structure, lineage, and access that follows your identity provider, with managed support after go-live.',
     },
   ],
 };
 
-// Analytics offerings for the Solutions page: what we deliver today. Each links
-// to a representative case study, so nothing dead-ends.
+// Power BI solution lines for the Services page: what we deliver. Each links to
+// the cases index for now; deep links are restored as cases are rebuilt.
 export const analyticsSolutions = [
   {
-    title: 'Landed cost & margin',
-    body: 'Freight, duty, insurance, and brokerage allocated to the unit, so margin by SKU, supplier, and shipment is known at receipt instead of at month end.',
-    href: '/cases/landed-cost-analytics',
+    title: 'Executive dashboards',
+    body: 'One governed view of the business: revenue, margin, cash, and the operating KPIs your leaders check daily, each drillable to the record behind it.',
+    href: '/cases',
   },
   {
-    title: 'Duty & tariff exposure',
-    body: 'Duty owed by HTS code, origin, and product line, with a scenario layer that reprices your import book the same day a rate changes.',
-    href: '/cases/tariff-duty-exposure',
+    title: 'Finance & operations analytics',
+    body: 'The close, cash flow, budget versus actual, and the operating P&L, modeled once from your ERP so finance and operations read the same numbers.',
+    href: '/cases',
   },
   {
-    title: 'Shipment visibility & OTIF',
-    body: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with OTIF, dwell, and delay measured by lane and carrier.',
-    href: '/cases/shipment-visibility-analytics',
+    title: 'Sales & revenue analytics',
+    body: 'Pipeline, bookings, win rate, and net revenue retention from your CRM and billing, so go-to-market decisions run on one trusted model.',
+    href: '/cases',
   },
   {
-    title: 'Customs & compliance analytics',
-    body: 'Clearance time, entry throughput, classification consistency, and screening coverage, with an audit trail that answers a regulator from a report.',
-    href: '/cases/entry-throughput-analytics',
+    title: 'Semantic models & governance',
+    body: 'A governed model with one definition per measure, row-level security, workspaces, and lineage, so reporting stays trustworthy as it scales.',
+    href: '/cases',
   },
   {
-    title: 'Inventory & warehouse analytics',
-    body: 'Days on hand, aging, and fill rate across sites, bonded and FTZ stock included, so cash and space in the wrong inventory become visible.',
-    href: '/cases/multi-warehouse-inventory-analytics',
+    title: 'Power Platform automation',
+    body: 'Power Apps and Power Automate on top of the data: input screens, approvals, and alerts that turn a dashboard into an action, not just a view.',
+    href: '/cases',
   },
   {
-    title: 'Executive control tower',
-    body: 'Cost, service, risk, and compliance in one governed executive view, every KPI defined once and drillable to the shipment, entry, or order behind it.',
-    href: '/cases/trade-control-tower',
+    title: 'Data engineering on Fabric',
+    body: 'Lakehouse, pipelines, and the modeling layer Power BI sits on, built on Microsoft Fabric and Azure so refreshes are reliable and fast.',
+    href: '/cases',
   },
 ];
 
@@ -354,72 +353,71 @@ export const process = {
       num: '02',
       title: 'Foundation',
       meta: 'Week 3-4',
-      body: 'We land your data in your tenant and build the semantic layer that gives one definition per KPI, fed from SAP, Microsoft, EDI, ACE, and the rest. Output: the data model and first dashboards.',
+      body: 'We land your data in your tenant and build the semantic model that gives one definition per measure, fed from SQL Server, Dynamics, SAP, Excel, and the rest. Output: the data model and first dashboards.',
     },
     {
       num: '03',
       title: 'Build',
       meta: 'Ongoing cycles',
-      body: 'We deliver in short cycles, validating each report with the area that uses it: landed cost, visibility, compliance, or inventory. Output: governed dashboards in production.',
+      body: 'We deliver in short cycles, validating each report with the area that uses it: finance, sales, operations, or leadership. Output: governed dashboards in production.',
     },
     {
       num: '04',
       title: 'Sustain',
       meta: 'Ongoing',
-      body: 'We train your team, keep refreshes and governance current as rules and partners change, and evolve the analytics as your trade grows. Output: analytics that keeps pace with your business.',
+      body: 'We train your team, keep refreshes and governance current as your data and users grow, and evolve the reporting as the business changes. Output: analytics that keeps pace with your business.',
     },
   ],
 };
 
 export const work = {
   eyebrow: 'What we build',
-  title: 'Analytics for cross-border trade.',
-  sub: 'The analysis we build for cross-border operations, drawing on SAP, Microsoft, and the systems you already run. Figures are illustrative of the structure we ship.',
+  title: 'Power BI that runs the business.',
+  sub: 'The dashboards and models we build, drawing on SQL Server, Dynamics, SAP, and the systems you already run. Figures are illustrative of the structure we ship.',
   cases: [
     {
-      tag: 'Importers',
-      title: 'Landed cost by SKU and supplier',
-      body: 'Freight, duty, and fees allocated to the unit from SAP and freight invoices, so margin by product is a daily number instead of a monthly spreadsheet.',
+      tag: 'Leadership',
+      title: 'Executive revenue & margin',
+      body: 'Revenue, gross margin, and cash in one governed view, each number drillable to the invoice or order behind it, refreshed daily instead of rebuilt monthly.',
     },
     {
-      tag: 'Customs Brokers',
-      title: 'Entry throughput and clearance time',
-      body: 'Entry volume, clearance time, and exceptions by client, port, and filer, so problem lanes and staffing are managed on evidence.',
+      tag: 'Finance',
+      title: 'Budget vs actual, modeled once',
+      body: 'The close, budget versus actual, and the operating P&L from your ERP, so finance and operations stop arguing over whose number is right.',
     },
     {
-      tag: 'Freight Forwarders',
-      title: 'Shipment visibility and milestones',
-      body: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with exceptions flagged before delivery.',
+      tag: 'Revenue',
+      title: 'Pipeline and net retention',
+      body: 'Pipeline, win rate, and net revenue retention from CRM and billing, so go-to-market runs on one trusted model instead of exported spreadsheets.',
     },
   ],
 };
 
-// Signature-practice highlight on the homepage: customs & compliance.
+// Signature-practice highlight on the homepage: the governed semantic model.
 // The panel is an explicitly labeled example, not a real client's figures.
 export const migrationHighlight = {
   eyebrow: 'Our specialty',
-  title: 'True landed cost, in one model your team trusts',
-  body: 'Most importers rebuild landed cost by hand each month, so margin by product is a lagging guess and pricing runs on stale numbers. We allocate freight, duty, and fees to the unit from the systems you already run, so landed cost and margin are known at receipt, not at month end.',
+  title: 'One governed model your whole team trusts',
+  body: 'Most teams rebuild the same numbers by hand in rival spreadsheets, so every meeting opens with an argument over whose figure is right. We model each measure once in Power BI, fed from the systems you already run, so revenue, margin, and cash mean one thing everywhere.',
   points: [
-    'Freight, duty, insurance, and brokerage allocated to the unit',
-    'Margin by SKU, supplier, and shipment, refreshed daily',
-    'Sourced from SAP, freight invoices, and duty tables',
+    'One definition per measure, governed and documented',
+    'Row-level security, so people see only their numbers',
+    'Sourced from SQL Server, Dynamics, SAP, and Excel',
   ],
   ctas: [
-    { label: 'See the case', href: '/cases/landed-cost-analytics', primary: true },
+    { label: 'See case studies', href: '/cases', primary: true },
     { label: 'Talk to us', href: '#contact', primary: false },
   ],
   panel: {
-    label: 'Landed cost',
-    caption: 'example · per shipment',
+    label: 'Revenue & margin',
+    caption: 'example · this month',
     rows: [
-      { label: 'Product cost', value: '$84,200', status: 'mapped' },
-      { label: 'Ocean freight', value: '$6,480', status: 'mapped' },
-      { label: 'Duty (HTS)', value: '$5,910', status: 'mapped' },
-      { label: 'Brokerage & fees', value: '$1,240', status: 'mapped' },
-      { label: 'Landed cost', value: '$97,830', status: 'mapped' },
-      { label: 'Margin at receipt', value: '27.4%', status: 'mapped' },
-      { label: 'Variance vs quote', value: '+1.2%', status: 'review' },
+      { label: 'Revenue', value: '$2,480,000', status: 'mapped' },
+      { label: 'Cost of goods sold', value: '$1,512,000', status: 'mapped' },
+      { label: 'Gross margin', value: '39.0%', status: 'mapped' },
+      { label: 'Operating expenses', value: '$610,000', status: 'mapped' },
+      { label: 'EBITDA', value: '$358,000', status: 'mapped' },
+      { label: 'vs budget', value: '+2.1%', status: 'review' },
     ],
   },
 };
@@ -433,44 +431,44 @@ export { caseStudies } from './cases/studies';
 
 export const industries = {
   eyebrow: 'Who we serve',
-  title: 'Built for the companies that move goods.',
-  sub: 'Every link in the trade chain measures itself differently. We build the analytics tuned to how each one operates.',
+  title: 'Power BI for the teams that run on data.',
+  sub: 'Every team measures itself differently. We build the governed model and the dashboards tuned to how each one operates.',
   items: [
     {
-      name: 'Importers & exporters',
+      name: 'Finance & operations',
       flagship: true,
-      body: 'Landed cost by SKU and supplier, duty exposure, and margin, drawn from your ERP and freight invoices into one model.',
-      count: 'Landed cost',
+      body: 'The close, cash flow, budget versus actual, and the operating P&L, modeled once from your ERP so every leader reads the same numbers.',
+      count: 'Finance',
     },
     {
-      name: 'Customs brokers',
-      body: 'Entry throughput, clearance time, classification consistency, and screening coverage, with an audit trail on every entry.',
-      count: 'Compliance',
+      name: 'Retail & e-commerce',
+      body: 'Sales, margin, and inventory across channels and stores, with basket, cohort, and sell-through measured on one model.',
+      count: 'Retail',
     },
     {
-      name: 'Freight forwarders',
-      body: 'Shipment visibility, OTIF, cost per lane, and demurrage, with carrier milestones unified over EDI and API.',
-      count: 'Visibility',
+      name: 'Healthcare',
+      body: 'Access, utilization, length of stay, and cost of care, with row-level security so each team sees only what it should.',
+      count: 'Care',
     },
     {
-      name: '3PL & warehousing',
-      body: 'Inventory across sites, bonded and FTZ included, with aging, fill rate, and dock-to-stock throughput measured.',
-      count: 'Inventory',
+      name: 'Manufacturing',
+      body: 'Throughput, yield, OEE, and product P&L across lines and sites, fed from the ERP and the systems on the floor.',
+      count: 'Operations',
     },
     {
-      name: 'Ports & terminals',
-      body: 'Dwell time, gate and berth throughput, and congestion flags, so the yard is managed on evidence instead of feel.',
-      count: 'Throughput',
+      name: 'Professional services',
+      body: 'Utilization, realization, and project margin from your PSA and finance systems, so staffing and pricing run on evidence.',
+      count: 'Services',
     },
     {
-      name: 'Manufacturers & distributors',
-      body: 'S&OP, forecast accuracy, and product P&L with true landed cost in COGS, across the cross-border network.',
-      count: 'S&OP',
+      name: 'SaaS & technology',
+      body: 'ARR, net revenue retention, pipeline, and product usage from CRM, billing, and the product, modeled in one place.',
+      count: 'SaaS',
     },
     {
-      name: 'Ocean & shipping carriers',
-      body: 'Service, cost, and utilization analytics for the companies that carry the cargo, tied to partners and terminals.',
-      count: 'Service',
+      name: 'Nonprofit & education',
+      body: 'Programs, grants, enrollment, and outcomes, with the reporting funders and boards expect built on governed data.',
+      count: 'Programs',
     },
   ],
 };
@@ -482,27 +480,27 @@ export const faq = {
   items: [
     {
       q: 'What does Kadmoon do?',
-      a: 'We are a US analytics firm focused entirely on foreign trade. We turn the data buried in your customs, logistics, and ERP systems into decisions: landed cost and margin, duty and tariff exposure, shipment visibility and OTIF, customs and compliance analytics, inventory, and an executive control tower. Everything is built on a governed model, delivered on the Microsoft stack, and lives in your own tenant.',
+      a: 'We are a US Microsoft data and analytics firm led by Power BI services. We connect the systems you already run, build a governed semantic model, and deliver the dashboards your team opens every day. On top of that we build Power Platform automation, Fabric and Azure data engineering, and Copilot and AI. Everything lives in your own Microsoft tenant, and you own it.',
     },
     {
       q: 'Do we have to be a Microsoft shop?',
-      a: 'No. Your data can live anywhere: SAP, Oracle, NetSuite, Microsoft Dynamics, broker and carrier systems, EDI and ACE, or spreadsheets. We read from the system of record wherever it runs. We deliver the analytics on the Microsoft stack, Fabric, Power BI, and Azure, because it is a strong, governed place to build, but the platform is the how, not the point.',
+      a: 'No. Your data can live anywhere: SQL Server, Dynamics 365, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, or your own APIs. We read from the system of record wherever it runs and deliver the analytics on Power BI and the Microsoft cloud, because it is a strong, governed place to build and most teams already have the licensing.',
     },
     {
-      q: 'Why only foreign trade?',
-      a: 'Because trade analytics fails when it is built by people who do not know trade. Landed cost, duty, incoterms, bonded inventory, HTS classification, denied-party screening, and ACE are not edge cases to us, they are the metrics we model every day. That focus is why we arrive with the trade data model and KPIs ready instead of learning your business on your budget.',
+      q: 'Why only the Microsoft stack?',
+      a: 'Because depth beats breadth. Power BI, the Power Platform, Fabric, and Azure are what we build on every day, so we arrive with patterns, a governance model, and reusable components instead of learning a new toolset on your budget. One stack, end to end, also means fewer seams between your dashboards, your automation, and your data pipelines.',
     },
     {
       q: 'Where does the data come from?',
-      a: 'From the systems you already run. We land raw data in your tenant, shape it into a governed semantic model, and feed the dashboards from there. Carrier EDI and customs messages are parsed into structured events, so milestones, exceptions, and filings become data you can measure instead of documents you have to read. The data integration doc goes into detail.',
+      a: 'From the systems you already run. We land raw data in your tenant, shape it into a governed semantic model, and feed the dashboards from there, with refreshes you can rely on. Connections to your ERP, CRM, finance, and line-of-business systems are built once so numbers come from the source instead of a re-keyed export. The data integration doc goes into detail.',
     },
     {
       q: 'How does a project start?',
-      a: 'Usually with a trade data assessment: a short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks. It de-risks the larger build and produces a scope and a quote grounded in your real data. You leave with working analytics, not a slide deck.',
+      a: 'Usually with a Power BI assessment: a short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks. It de-risks the larger build and produces a scope and a quote grounded in your real data. You leave with working reports, not a slide deck.',
     },
     {
-      q: 'Do you build software too?',
-      a: 'Yes, and it grows out of the analytics. Living in a client’s trade data is where our software starts: once we understand the operation, we build the systems that run it, customs filing, trade ERP, inventory, and security vision. Analytics is what we lead with and deliver today; the software is what we build as the relationship deepens.',
+      q: 'Do you do more than dashboards?',
+      a: 'Yes. Power BI is the lead, and we build on the same governed model: Power Apps and Power Automate for input screens, approvals, and alerts; Microsoft Fabric and Azure for the data engineering underneath; and Copilot and AI so people can ask questions in plain language. You can start with reporting and grow into automation and AI when it earns its place.',
     },
     {
       q: 'Do we own the analytics and the data?',
@@ -510,23 +508,23 @@ export const faq = {
     },
     {
       q: 'Which regions and company sizes do you serve?',
-      a: 'We are a US firm serving American importers, exporters, brokers, forwarders, 3PLs, ports, and the manufacturers and distributors that trade across borders. We work with growing operations and established enterprises alike; the common thread is that moving goods across borders is central to the business and the numbers have to be right.',
+      a: 'We are a US firm serving American businesses, from growing companies to established enterprises, across finance, retail, healthcare, manufacturing, professional services, technology, and the public and nonprofit sectors. The common thread is that decisions depend on data in Microsoft systems and the numbers have to be right.',
     },
   ],
 };
 
 export const contact = {
   eyebrow: 'Request a quote',
-  title: 'Tell us what you move. Get a quote.',
-  sub: 'Share how your operation works and where the friction is. Within one business day you get a response with a clear path forward and a quote, no obligation.',
+  title: 'Tell us what you need to see. Get a quote.',
+  sub: 'Share how your team works and where the reporting hurts today. Within one business day you get a response with a clear path forward and a quote, no obligation.',
   needOptions: [
-    'Landed cost & margin analytics',
-    'Duty & tariff exposure',
-    'Shipment visibility & OTIF',
-    'Customs & compliance analytics',
-    'Inventory & warehouse analytics',
-    'Executive control tower',
-    'Software build (ERP, customs, WMS)',
+    'Power BI dashboards & reports',
+    'Semantic model & governance',
+    'Power BI migration',
+    'Embedded analytics',
+    'Power Platform automation',
+    'Data engineering (Fabric & Azure)',
+    'Copilot & AI on our data',
     'Other',
   ],
   sizeOptions: [
@@ -539,14 +537,13 @@ export const contact = {
 
 export const footer = {
   tagline:
-    'A US analytics firm focused 100% on foreign trade. We turn the data in your customs, logistics, and ERP systems into decisions, on the Microsoft stack and in your own tenant, for the companies that move goods across borders.',
+    'A US Microsoft data and analytics firm led by Power BI services. We turn the data in your ERP, CRM, and line-of-business systems into decisions, on the Microsoft stack and in your own tenant.',
   columns: [
     {
       heading: 'Company',
       links: [
-        { label: 'Platform', href: '/platform' },
+        { label: 'Services', href: '/services' },
         { label: 'Pricing', href: '/pricing' },
-        { label: 'Solutions', href: '/services' },
         { label: 'Industries', href: '/industries' },
         { label: 'Cases', href: '/cases' },
         { label: 'Docs', href: '/docs' },
@@ -556,25 +553,24 @@ export const footer = {
       ],
     },
     {
-      heading: 'Analytics',
+      heading: 'Services',
       links: [
-        { label: 'The platform', href: '/platform' },
-        { label: 'Landed cost & margin', href: '/cases/landed-cost-analytics' },
-        { label: 'Duty & tariff exposure', href: '/cases/tariff-duty-exposure' },
-        { label: 'Shipment visibility & OTIF', href: '/cases/shipment-visibility-analytics' },
-        { label: 'Customs & compliance analytics', href: '/cases/entry-throughput-analytics' },
+        { label: 'Power BI', href: '/services/power-bi' },
+        { label: 'Power Platform', href: '/services/power-platform' },
+        { label: 'Data engineering', href: '/services/data-engineering' },
+        { label: 'Copilot & AI', href: '/services/copilot-ai' },
         { label: 'Methodology', href: '/docs/methodology' },
-        { label: 'Platforms we build', href: '/services' },
+        { label: 'All services', href: '/services' },
       ],
     },
     {
       heading: 'Industries',
       links: [
-        { label: 'Importers & exporters', href: '/industries/importers-exporters' },
-        { label: 'Customs brokers', href: '/industries/customs-brokers' },
-        { label: 'Freight forwarders', href: '/industries/freight-forwarders' },
-        { label: '3PL & warehousing', href: '/industries/third-party-logistics' },
-        { label: 'Ports & terminals', href: '/industries/ports-terminals' },
+        { label: 'Finance & operations', href: '/industries' },
+        { label: 'Retail & e-commerce', href: '/industries' },
+        { label: 'Healthcare', href: '/industries' },
+        { label: 'Manufacturing', href: '/industries' },
+        { label: 'SaaS & technology', href: '/industries' },
         { label: 'Start a project', href: '/contact' },
       ],
     },
@@ -586,75 +582,69 @@ export const footer = {
 // ---------------------------------------------------------------------------
 
 export const techStack = {
-  eyebrow: 'The platform',
-  title: 'One connected system, from quote to delivery.',
-  sub: 'Our software spans the whole trade operation and ties into the systems and partners around it, so data flows instead of being retyped.',
+  eyebrow: 'The stack',
+  title: 'One governed stack, from source to decision.',
+  sub: 'We build on the Microsoft data platform end to end and tie into the systems around it, so numbers come from the source instead of a re-keyed export.',
   groups: [
-    { label: 'Operations', items: ['Trade ERP', 'CRM', 'Documents', 'Landed cost'] },
-    { label: 'Compliance', items: ['HTS classification', 'Denied-party screening', 'Duty calculation', 'ACE filing'] },
-    { label: 'Inventory & logistics', items: ['Multi-warehouse WMS', 'Bonded / FTZ', 'Freight & carriers', 'Shipment visibility'] },
-    { label: 'Security & integration', items: ['Computer vision', 'EDI', 'Carrier & broker APIs', 'Marketplace links'] },
+    { label: 'Power BI', items: ['Dashboards & reports', 'Semantic models', 'Row-level security', 'Embedded'] },
+    { label: 'Power Platform', items: ['Power Apps', 'Power Automate', 'Dataverse', 'Approvals & alerts'] },
+    { label: 'Data engineering', items: ['Microsoft Fabric', 'Azure Data Factory', 'Lakehouse', 'Dataflows'] },
+    { label: 'Sources & AI', items: ['SQL Server', 'Dynamics 365', 'SAP & Salesforce', 'Copilot & AI'] },
   ],
   // Flattened for the marquee.
   marquee: [
-    'Trade ERP', 'CRM', 'Landed cost', 'HTS classification', 'Denied-party screening', 'Duty calculation',
-    'ACE filing', 'Multi-warehouse WMS', 'Bonded / FTZ', 'Freight & carriers', 'Shipment visibility',
-    'Computer vision', 'EDI', 'Carrier APIs', 'Broker integration', 'Marketplace links',
+    'Power BI', 'Semantic models', 'Row-level security', 'Embedded analytics', 'Power Apps', 'Power Automate',
+    'Dataverse', 'Microsoft Fabric', 'Azure', 'Lakehouse', 'SQL Server', 'Dynamics 365',
+    'SAP', 'Salesforce', 'Copilot', 'Natural-language Q&A',
   ],
 };
 
 export const engagement = {
   eyebrow: 'How we engage',
-  title: 'Three ways to work with us.',
-  sub: 'Every model runs on the same senior, US-based team, clear acceptance criteria, and analytics you own in your tenant.',
+  title: 'A boutique, two ways to work.',
+  sub: 'Start with a Power BI assessment, then run by project or on a monthly subscription. The same senior, US-based team, built in your own tenant and yours to own.',
   models: [
     {
-      name: 'Trade data assessment',
-      best: 'Best first step',
-      body: 'A short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks. It de-risks the larger build and produces a scope and a quote grounded in your real data.',
-      points: ['Fixed scope', 'First dashboards in ~2 weeks', 'Scope and quote'],
-    },
-    {
-      name: 'Fixed-scope project',
+      name: 'By project',
       best: 'Best when the outcome is defined',
-      body: 'A defined build from data foundation to dashboards, with acceptance criteria per deliverable and milestone billing. You know exactly what you get, when, and how to validate it.',
-      points: ['Acceptance criteria per deliverable', 'Milestone billing', 'Fixed timeline'],
+      body: 'A fixed-scope build with defined deliverables and milestone billing: the governed semantic model, the dashboards, any migration, and the governance around them. The Power BI assessment is the short first project that scopes the rest.',
+      points: ['Fixed scope and timeline', 'Acceptance criteria per deliverable', 'Milestone billing'],
     },
     {
-      name: 'Managed analytics',
-      best: 'Best after go-live',
-      body: 'We run and evolve your analytics estate on a defined agreement: refreshes, governance, new reports as needs change, and a roadmap for what comes next.',
-      points: ['Defined service agreement', 'Governance kept current', 'Evolution roadmap'],
+      name: 'Monthly subscription',
+      best: 'Best for ongoing work',
+      body: 'A monthly retainer where we run and evolve your Power BI: refreshes and governance kept current, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call, not a one-off build.',
+      points: ['Recurring monthly scope', 'New reports as needs change', 'Governance and support'],
     },
   ],
 };
 
 export const comparison = {
-  eyebrow: 'Trade analytics vs the alternatives',
-  title: 'Why trade-native analytics wins.',
-  sub: 'A generic BI shop or a stack of spreadsheets can draw a chart, but they leave landed cost, duty, and customs to manual work and let every team walk in with a different number.',
-  columns: ['Kadmoon (trade-native)', 'Generic BI', 'Spreadsheets'],
+  eyebrow: 'Power BI done right vs the alternatives',
+  title: 'Why a governed Power BI build wins.',
+  sub: 'A generalist BI shop or a pile of spreadsheets can draw a chart, but they leave the model ungoverned and let every team walk into the meeting with a different number.',
+  columns: ['Kadmoon (Microsoft-native)', 'Generalist BI', 'Spreadsheets'],
   rows: [
-    { label: 'One definition per KPI', values: ['yes', 'partial', 'no'] },
-    { label: 'Trade-native metrics (landed cost, OTIF, duty)', values: ['yes', 'no', 'partial'] },
-    { label: 'Reads SAP, EDI, ACE, and carriers', values: ['yes', 'partial', 'no'] },
-    { label: 'Governed and row-level secure', values: ['yes', 'partial', 'no'] },
-    { label: 'Lives in your own tenant', values: ['yes', 'partial', 'yes'] },
+    { label: 'One definition per measure', values: ['yes', 'partial', 'no'] },
+    { label: 'Governed semantic model & row-level security', values: ['yes', 'partial', 'no'] },
+    { label: 'Reads SQL Server, Dynamics, SAP, and APIs', values: ['yes', 'partial', 'no'] },
+    { label: 'Power Platform & Fabric on the same stack', values: ['yes', 'no', 'no'] },
+    { label: 'Lives in your own Microsoft tenant', values: ['yes', 'partial', 'yes'] },
     { label: 'First dashboards in about two weeks', values: ['yes', 'partial', 'partial'] },
   ],
 };
 
 export const credibility = {
   eyebrow: 'Why Kadmoon',
-  title: 'Analytics built only for foreign trade.',
-  lead: 'A senior, US-based team. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant.',
+  title: 'Power BI built by a senior Microsoft team.',
+  lead: 'A senior, US-based team that lives in the Microsoft stack. We turn the data in your ERP, CRM, and line-of-business systems into decisions, delivered on Power BI in your own tenant.',
   points: [
-    { title: 'One definition per KPI', body: 'Landed cost, OTIF, and duty exposure mean one thing across every report.' },
+    { title: 'One definition per measure', body: 'Revenue, margin, and the KPIs your leaders watch mean one thing across every report.' },
     { title: 'Built in your tenant', body: 'Your data, your model, your reports. You own it, with no lock-in.' },
     { title: 'Senior, US-based team', body: 'Six years and more than 2,000 Microsoft analytics solutions behind the people who scope, build, and support your model.' },
   ],
   // Full statement, kept for reference and any schema use.
-  text: 'Kadmoon is a US analytics firm focused entirely on foreign trade, run by a senior, US-based team. We turn the data in your customs, logistics, and ERP systems into decisions, delivered on the Microsoft stack in your own tenant. The dashboards shown on the site are illustrative of what we ship.',
+  text: 'Kadmoon is a US Microsoft data and analytics firm led by Power BI services, run by a senior, US-based team. We turn the data in your ERP, CRM, and line-of-business systems into decisions, delivered on Power BI, the Power Platform, and Microsoft Fabric in your own tenant. The dashboards shown on the site are illustrative of what we ship.',
 };
 
 // ---------------------------------------------------------------------------
@@ -668,11 +658,11 @@ export const microsoftStack = {
   eyebrow: 'Built on the Microsoft cloud',
   title: 'Enterprise analytics, delivered in your own Microsoft tenant.',
   lead:
-    'The analytics runs on the Microsoft data stack you may already pay for, inside your tenant, under your own security and access controls. Your trade data never leaves your environment, and the model, reports, and data are yours.',
+    'The analytics runs on the Microsoft data stack you may already pay for, inside your tenant, under your own security and access controls. Your data never leaves your environment, and the model, reports, and data are yours.',
   // The three Microsoft technologies the platform is delivered on. `mark` picks
   // a brand-neutral geometric glyph we draw ourselves (see MicrosoftStack.tsx).
   stack: [
-    { mark: 'fabric', name: 'Microsoft Fabric', role: 'The unified data foundation your trade model is built on.' },
+    { mark: 'fabric', name: 'Microsoft Fabric', role: 'The unified data foundation your semantic model is built on.' },
     { mark: 'powerbi', name: 'Power BI', role: 'The governed reports and dashboards your team signs in to.' },
     { mark: 'azure', name: 'Azure', role: 'The cloud your tenant runs on, with your own controls.' },
   ],
@@ -700,172 +690,88 @@ export type ServicePage = {
 
 export const services: ServicePage[] = [
   {
-    slug: 'trade-erp',
-    title: 'Trade ERP',
-    tagline: 'The operating system for an import and export business.',
+    slug: 'power-bi',
+    title: 'Power BI',
+    tagline: 'The dashboards and reports your team opens every day.',
     intro:
-      'Generic ERPs do not understand trade. They cannot model freight, duty, and fees, so landed cost becomes a spreadsheet and margin is a guess. We build a trade ERP around how you source, ship, and sell across borders, with purchase orders, shipments, documents, and true landed cost in one place.',
+      'Power BI is only as good as the model under it. We build the governed semantic model, connect it to the systems you already run, and design reports people actually use, with one definition per measure and security that holds as the audience grows.',
     includes: [
-      'Purchase orders, shipments, and document management built for trade',
-      'Landed-cost allocation of freight, duty, and fees to the unit',
-      'Supplier and customer management across borders',
-      'Real-time margin by product, supplier, and shipment',
-      'Finance, invoicing, and multi-currency',
-      'Integrations to carriers, brokers, and marketplaces',
+      'Governed semantic model with one definition per measure',
+      'Dashboards and reports designed for the people who use them',
+      'Row-level security, workspaces, and lineage',
+      'Migration from legacy BI, Excel, and tool sprawl',
+      'Embedded Power BI inside your own apps and portals',
+      'Scheduled refresh and performance tuning',
     ],
     outcomes: [
-      'Landed cost and margin known in real time, not at month end',
-      'One system from PO to stock instead of ERP plus spreadsheets',
-      'An operation built around trade, not forced into a generic tool',
+      'Reports your leaders open daily and trust',
+      'One version of each number across every team',
+      'Reporting that stays governed as it scales',
     ],
-    blogCategory: 'Trade ERP',
+    blogCategory: 'Power BI',
   },
   {
-    slug: 'customs-compliance',
-    title: 'Customs & compliance',
-    tagline: 'Keep every shipment clear, screened, and auditable.',
+    slug: 'power-platform',
+    title: 'Power Platform',
+    tagline: 'Apps and automation on top of the same data.',
     intro:
-      'A shipment held at the border or a screening you cannot prove you ran costs real money. We build classification, denied-party screening, duty and landed-cost, and filing into the core of the system, so every order is compliant and documented before it ships.',
+      'A dashboard shows the problem; the Power Platform lets people act on it. We build Power Apps and Power Automate on the same governed data, so input screens, approvals, and alerts turn reporting into a workflow instead of a slide.',
     includes: [
-      'HTS classification and duty calculation in the order flow',
-      'Denied-party and sanctions screening on every counterparty',
-      'ACE-ready filing workflows',
-      'Document management and recordkeeping per entry',
-      'A complete, auditable compliance trail',
-      'Rule updates as regulations change',
+      'Power Apps for data entry, review, and operations',
+      'Power Automate flows for approvals and alerts',
+      'Dataverse modeling and integration',
+      'Apps wired to the same governed Power BI model',
+      'Role-based access against your identity provider',
+      'Governance and an application lifecycle you can maintain',
     ],
     outcomes: [
-      'Every shipment classified, screened, and documented before departure',
-      'A provable compliance record instead of scattered files',
-      'Fewer holds, faster clearance, and audit-ready records',
+      'People act on the data instead of exporting it',
+      'Manual steps and email approvals automated away',
+      'Apps and reports that share one source of truth',
     ],
-    blogCategory: 'Compliance',
+    blogCategory: 'Power Platform',
   },
   {
-    slug: 'inventory-wms',
-    title: 'Inventory & WMS',
-    tagline: 'Stock visibility across every location you move goods through.',
+    slug: 'data-engineering',
+    title: 'Data engineering',
+    tagline: 'The governed model your reporting sits on, built on Fabric and Azure.',
     intro:
-      'Trade inventory is not just a warehouse count. It spans bonded zones, FTZs, in-transit goods, and multiple locations, each with its own rules. We build inventory and warehouse management that tracks it all, so you always know what you have, where it is, and what it is worth.',
+      'Reliable reporting needs reliable data underneath. We build the lakehouse, pipelines, and modeling layer on Microsoft Fabric and Azure, so your Power BI refreshes are fast, your sources stay in sync, and the model is documented and owned by you.',
     includes: [
-      'Multi-warehouse and multi-location inventory',
-      'Bonded and Foreign-Trade Zone handling',
-      'Receiving, putaway, picking, and shipping',
-      'Lot, serial, and in-transit tracking',
-      'Stock valuation with landed cost',
-      'Barcode and scanner workflows',
+      'Lakehouse and warehouse on Microsoft Fabric',
+      'Pipelines from SQL Server, Dynamics, SAP, Salesforce, and APIs',
+      'Incremental refresh and reliable scheduling',
+      'A documented, governed semantic model',
+      'Data quality checks and monitoring',
+      'Azure infrastructure in your own tenant',
     ],
     outcomes: [
-      'One accurate view of stock across every location',
-      'Bonded and FTZ goods handled by the rules',
-      'Inventory valued at true landed cost',
+      'Refreshes that are fast and reliable',
+      'Sources in sync instead of exported by hand',
+      'A data foundation you own and can maintain',
     ],
-    blogCategory: 'Inventory',
+    blogCategory: 'Data engineering',
   },
   {
-    slug: 'vessel-security-vision',
-    title: 'Vessel & port security vision',
-    tagline: 'Computer vision that watches cargo, containers, and the perimeter.',
+    slug: 'copilot-ai',
+    title: 'Copilot & AI',
+    tagline: 'Answers in plain language, on your governed data.',
     intro:
-      'Security teams cannot watch dozens of camera feeds at once, so incidents at the yard, the berth, or the perimeter get caught late or missed. We layer computer vision over your existing cameras to detect anomalies and events in real time and route alerts to the people who can act.',
+      'Once the model is governed, AI can safely sit on top of it. We set up Copilot in Power BI and natural-language question and answer over your data, so people get answers without waiting on a new report, with the same security and definitions as everything else.',
     includes: [
-      'Computer-vision models over yard, berth, and perimeter cameras',
-      'Container, cargo, and vehicle detection',
-      'Unauthorized access and perimeter-breach alerts',
-      'Anomaly detection with real-time notification',
-      'An incident console with clip, location, and audit trail',
-      'Integration with existing camera and access systems',
+      'Copilot in Power BI, configured on your model',
+      'Natural-language question and answer over your data',
+      'AI-assisted summaries and narrative insights',
+      'Guardrails so answers respect row-level security',
+      'Grounding on your governed measures, not guesses',
+      'Rollout and training for the people who will use it',
     ],
     outcomes: [
-      'Incidents caught in real time instead of after the fact',
-      'A watch team that acts on alerts instead of scanning feeds',
-      'An auditable record of every flagged event',
+      'Answers in plain language, without a new report',
+      'AI grounded on governed data, not a black box',
+      'Security and definitions carried through to AI',
     ],
-    blogCategory: 'Security',
-  },
-  {
-    slug: 'supply-chain-logistics',
-    title: 'Supply chain & logistics',
-    tagline: 'End-to-end visibility from supplier to door.',
-    intro:
-      'When shipment status lives in carrier portals, email, and spreadsheets, customers call for updates and exceptions surface too late. We build logistics software that consolidates carrier and shipment data, tracks every move end to end, and flags problems early.',
-    includes: [
-      'Freight, carrier, and shipment management',
-      'End-to-end tracking from supplier to door',
-      'Exception detection and early alerts',
-      'Carrier and partner integration over EDI and API',
-      'A customer portal for self-service status and documents',
-      'Freight cost and service-level reporting',
-    ],
-    outcomes: [
-      'Shipment status in one place instead of five portals',
-      'Exceptions caught early instead of at delivery',
-      'Customers self-serve instead of calling for updates',
-    ],
-    blogCategory: 'Logistics',
-  },
-  {
-    slug: 'trade-crm',
-    title: 'Trade CRM',
-    tagline: 'Manage suppliers, customers, and deals across borders.',
-    intro:
-      'Cross-border relationships are more than a contact list: quotes, terms, incoterms, credit, and compliance all ride on them. We build a CRM around trade, so your team manages suppliers and customers with the context that matters in international commerce.',
-    includes: [
-      'Supplier and customer management with trade context',
-      'Quotes and terms with incoterms and currency',
-      'Pipeline and deal tracking',
-      'Credit, documents, and compliance per party',
-      'Integration with the trade ERP and compliance',
-      'Activity, email, and task tracking',
-    ],
-    outcomes: [
-      'Relationships managed with the trade context that matters',
-      'Quotes and terms consistent across the team',
-      'CRM connected to operations, not a separate island',
-    ],
-    blogCategory: 'Trade CRM',
-  },
-  {
-    slug: 'custom-development',
-    title: 'Custom development',
-    tagline: 'When off-the-shelf does not fit how you trade, we build it.',
-    intro:
-      'Some operations are genuinely different, or need software no product covers. We build custom trade software from scratch: the integrations, portals, and workflows your operation depends on, by a team that already knows customs, logistics, and compliance.',
-    includes: [
-      'Custom trade software built to your operation',
-      'Integrations with carriers, brokers, ACE, and marketplaces',
-      'Partner and customer portals',
-      'Workflow automation across your systems',
-      'Modernization of legacy trade software',
-      'A senior, US-based team from scope to support',
-    ],
-    outcomes: [
-      'Software built to match how you work',
-      'The integrations and workflows no product covers',
-      'A partner who already speaks trade',
-    ],
-    blogCategory: 'Custom software',
-  },
-  {
-    slug: 'trade-integrations',
-    title: 'Trade integrations',
-    tagline: 'Connect your systems, your partners, and the government.',
-    intro:
-      'Trade runs on data moving between parties. When it does not flow, your team becomes a manual data entry and errors multiply. We build the EDI and API connections that keep your ERP, compliance, inventory, and logistics in sync with each other and the outside world.',
-    includes: [
-      'EDI with carriers, brokers, and partners',
-      'ACE and government-system integration',
-      'Carrier and marketplace APIs',
-      'System-to-system data sync across your stack',
-      'Error handling, monitoring, and reconciliation',
-      'Mapping and onboarding of new partners',
-    ],
-    outcomes: [
-      'Data flows between systems instead of being retyped',
-      'Partners and government systems connected and in sync',
-      'Fewer errors and less manual reconciliation',
-    ],
-    blogCategory: 'Integrations',
+    blogCategory: 'Copilot & AI',
   },
 ];
 
@@ -873,37 +779,21 @@ export const services: ServicePage[] = [
 // each platform grows from. `cases` are slugs in lib/cases/studies.ts; titles
 // are resolved at render time so labels never drift.
 export const serviceAnalytics: Record<string, { note: string; cases: string[] }> = {
-  'trade-erp': {
-    note: 'A trade ERP is only as good as the numbers it runs on. We usually start by modeling those numbers, landed cost, margin, and product P&L, so the platform is built on a foundation your leaders already trust.',
-    cases: ['landed-cost-analytics', 'import-margin-analytics', 'product-pnl-landed-cost'],
+  'power-bi': {
+    note: 'Power BI is only as good as the model under it. We start by modeling the numbers your leaders watch, revenue, margin, and the operating KPIs, so every report is built on a foundation the business already trusts.',
+    cases: ['executive-revenue-dashboard', 'finance-close-analytics', 'sales-pipeline-analytics'],
   },
-  'customs-compliance': {
-    note: 'Before compliance lives in software, we measure it: where entries stall, how consistent classification is, and whether screening is provable. The analytics shapes what the platform automates.',
-    cases: ['entry-throughput-analytics', 'hts-classification-analytics', 'denied-party-screening-analytics'],
+  'power-platform': {
+    note: 'Automation works best when it acts on numbers you trust. We model the data first, then build the Power Apps and Power Automate flows that turn what a dashboard shows into an action.',
+    cases: ['power-platform-approvals', 'executive-revenue-dashboard'],
   },
-  'inventory-wms': {
-    note: 'We model inventory before we move it into a system: what is aging, where fill rate slips, and how fast goods go dock to stock. The WMS is built to fix what the analytics exposes.',
-    cases: ['multi-warehouse-inventory-analytics', 'inventory-aging-analytics', 'receiving-throughput-analytics'],
+  'data-engineering': {
+    note: 'Reliable reporting needs reliable data underneath. We build the Fabric lakehouse and pipelines that feed the governed model, so refreshes are fast and the numbers come from the source.',
+    cases: ['fabric-lakehouse-platform', 'finance-close-analytics'],
   },
-  'vessel-security-vision': {
-    note: 'Vision sits on top of an operation we already measure. Dwell time and yard throughput show where incidents and bottlenecks cluster, so the cameras and alerts go where they matter.',
-    cases: ['terminal-dwell-time-analytics', 'trade-control-tower'],
-  },
-  'supply-chain-logistics': {
-    note: 'Logistics software works best when it targets the real cost and failure points. We measure OTIF, cost per lane, and visibility first, then build the platform around what moves the number.',
-    cases: ['shipment-visibility-analytics', 'otif-performance-analytics', 'freight-spend-analytics'],
-  },
-  'trade-crm': {
-    note: 'A trade CRM carries the relationships behind the numbers. Supplier and carrier performance analytics tell you which relationships to protect, and the CRM is built around that context.',
-    cases: ['supplier-performance-analytics', 'carrier-scorecard-analytics'],
-  },
-  'custom-development': {
-    note: 'Custom builds grow out of what the data reveals. Often a control tower or an audit model surfaces the workflow worth building, and we build it.',
-    cases: ['trade-control-tower', 'freight-invoice-audit-analytics'],
-  },
-  'trade-integrations': {
-    note: 'Integrations are what make analytics and software trustworthy: data has to flow before it can be measured or acted on. We map the same EDI, ACE, and API connections that feed our dashboards.',
-    cases: ['shipment-visibility-analytics', 'ace-filing-error-analytics'],
+  'copilot-ai': {
+    note: 'AI is only safe on top of a governed model. We prepare the semantic model and its definitions first, then layer Copilot and natural-language Q&A so answers respect the same security and meaning as every report.',
+    cases: ['copilot-self-service', 'executive-revenue-dashboard'],
   },
 };
 
@@ -919,103 +809,103 @@ export type IndustryPage = {
 
 export const industryPages: IndustryPage[] = [
   {
-    slug: 'importers-exporters',
-    name: 'Importers & Exporters',
+    slug: 'finance-operations',
+    name: 'Finance & Operations',
     flagship: true,
     intro:
-      'Importers and exporters run on landed cost, duty, and timing, and generic BI gets all three wrong. We model landed cost and margin, duty exposure, and supplier performance from the systems you already run, so leadership decides on current numbers.',
+      'Finance and operations run on one P&L, but the numbers usually live in rival spreadsheets. We model the close, budget versus actual, and the operating KPIs once from your ERP, so leadership decides on current figures that tie to the ledger.',
     systems: [
-      'Landed cost and margin by SKU, supplier, and shipment',
-      'Duty and tariff exposure with same-day scenario modeling',
-      'Supplier lead-time reliability and total cost',
-      'Purchase-order to receipt cycle time by stage',
+      'The close, cash flow, and the operating P&L in one model',
+      'Budget versus actual with variance to the cost center',
+      'Working capital, receivables, and payables aging',
+      'Cost to serve by customer and segment',
     ],
-    integrations: ['SAP, Oracle, NetSuite', 'Freight invoices', 'Customs duty tables and ACE', 'FX and treasury feeds'],
-    keyword: 'importers and exporters',
+    integrations: ['Dynamics 365 Finance', 'SAP, Oracle, NetSuite', 'SQL Server', 'Excel budgets and SharePoint'],
+    keyword: 'finance and operations analytics',
   },
   {
-    slug: 'customs-brokers',
-    name: 'Customs Brokers',
+    slug: 'retail-ecommerce',
+    name: 'Retail & E-commerce',
     intro:
-      'Brokers live and die on accuracy and speed, and spreadsheets cannot show where entries stall. We model throughput, clearance time, classification quality, and screening coverage, with an audit trail on every entry.',
+      'Store, marketplace, and web sales are usually reported in three tools, so true margin after fees and returns is a guess. We bring the channels and inventory into one model for sales, margin, and sell-through.',
     systems: [
-      'Entry throughput and clearance time by client, port, and filer',
-      'Classification consistency and reclassification rates',
-      'Denied-party screening coverage with an audit trail',
-      'ACE rejection causes, ranked and trended',
+      'Sales and true margin after fees, discounts, and returns',
+      'Sell-through and stock cover by channel, category, and store',
+      'Basket, cohort, and customer lifetime value',
+      'Inventory across stores and the warehouse',
     ],
-    integrations: ['Broker filing systems', 'ACE / ABI', 'Client ERPs', 'HTS and denied-party lists'],
-    keyword: 'customs brokers',
+    integrations: ['POS systems', 'E-commerce platforms', 'Inventory and OMS', 'Payment and marketplace fees'],
+    keyword: 'retail and e-commerce analytics',
   },
   {
-    slug: 'freight-forwarders',
-    name: 'Freight Forwarders',
+    slug: 'healthcare',
+    name: 'Healthcare',
     intro:
-      'When shipment status lives in a dozen carrier portals, service suffers and exceptions surface late. We unify carrier milestones into one view and measure OTIF, cost per lane, and demurrage, so the operation runs on evidence.',
+      'Healthcare reporting has to be both accurate and tightly controlled. We model access, utilization, and cost of care on a governed model with row-level security, so each team sees only what it should.',
     systems: [
-      'Shipment visibility and milestones unified over EDI and API',
-      'OTIF and transit variance by lane and carrier',
-      'Freight spend and cost per lane, normalized across carriers',
-      'Demurrage and detention attributed to a cause and owner',
+      'Access, utilization, and length of stay',
+      'Cost of care by service line and site',
+      'Scheduling, throughput, and no-show analysis',
+      'Row-level security so each team sees only its data',
     ],
-    integrations: ['Ocean and air carrier EDI', 'Tracking APIs', 'TMS', 'Rate contracts and invoices'],
-    keyword: 'freight forwarders',
+    integrations: ['EHR and practice systems', 'SQL Server and Azure', 'Finance systems', 'Scheduling platforms'],
+    keyword: 'healthcare analytics',
   },
   {
-    slug: 'third-party-logistics',
-    name: '3PL & Warehousing',
+    slug: 'manufacturing',
+    name: 'Manufacturing',
     intro:
-      'Trade inventory spans bonded zones, FTZs, and multiple sites, each with its own rules. We model inventory, throughput, and fulfillment across all of it, so cash and space tied up in the wrong stock become visible.',
+      'Plant data, quality data, and the ERP rarely meet in one place, so product P&L and throughput are hard to see together. We model operations and finance on one governed model across lines and sites.',
     systems: [
-      'Inventory across sites, bonded and FTZ included',
-      'Receiving and dock-to-stock throughput',
-      'Fulfillment accuracy and cycle time by client',
-      'Inventory aging and dead-stock with carrying cost',
+      'Throughput, yield, and OEE by line and site',
+      'Product P&L with full cost folded in',
+      'Scrap, rework, and quality by cause',
+      'On-time delivery and order fulfillment',
     ],
-    integrations: ['WMS across sites', 'Client ERPs', 'Order management', 'Billing systems'],
-    keyword: 'third-party logistics',
+    integrations: ['ERP (Dynamics, SAP, Infor)', 'MES and shop-floor systems', 'Quality systems', 'SQL Server'],
+    keyword: 'manufacturing analytics',
   },
   {
-    slug: 'ports-terminals',
-    name: 'Ports & Terminals',
+    slug: 'professional-services',
+    name: 'Professional Services',
     intro:
-      'Congestion builds before anyone can see it, and operations data is scattered. We model dwell time, gate and berth throughput, and congestion so the yard is managed on evidence, with security vision available where it fits.',
+      'In a services business, utilization and project margin decide the quarter, and they live across a PSA, timesheets, and finance. We model them once so staffing and pricing run on evidence.',
     systems: [
-      'Container dwell time by type, status, and yard area',
-      'Gate and berth throughput by shift and hour',
-      'Congestion flags before the yard locks up',
-      'Security vision over yard and perimeter cameras, where it fits',
+      'Utilization and realization by person and team',
+      'Project margin and budget to actual',
+      'Pipeline, bookings, and backlog',
+      'Revenue recognition and billing',
     ],
-    integrations: ['Terminal operating systems', 'Gate and vessel events', 'EDI', 'Camera and access systems'],
-    keyword: 'ports and terminals',
+    integrations: ['PSA and time tracking', 'Dynamics 365 and finance', 'CRM', 'SQL Server and Excel'],
+    keyword: 'professional services analytics',
   },
   {
-    slug: 'manufacturers-distributors',
-    name: 'Manufacturers & Distributors',
+    slug: 'saas-technology',
+    name: 'SaaS & Technology',
     intro:
-      'Companies that source abroad and distribute at home straddle two worlds of data. We model S&OP, forecast accuracy, and product P&L with true landed cost in COGS, across the cross-border network.',
+      'SaaS metrics live in the CRM, the billing system, and the product, and they never quite reconcile. We join them into one governed model for ARR, retention, and product usage.',
     systems: [
-      'S&OP with demand, supply, and import lead times in one plan',
-      'Forecast accuracy by product family and horizon',
-      'Product P&L with landed cost folded into COGS',
-      'Cross-border inventory positioning by cost and service',
+      'ARR, bookings, and net revenue retention',
+      'Pipeline, win rate, and sales cycle',
+      'Product usage and adoption by cohort',
+      'Churn and expansion with the drivers behind them',
     ],
-    integrations: ['SAP IBP and ERP', 'Sales and demand history', 'Supplier lead times', 'Duty and freight rates'],
-    keyword: 'manufacturers and distributors',
+    integrations: ['Salesforce and HubSpot', 'Billing and subscription systems', 'Product telemetry', 'Azure and SQL'],
+    keyword: 'saas and technology analytics',
   },
   {
-    slug: 'shipping-carriers',
-    name: 'Ocean & Shipping Carriers',
+    slug: 'nonprofit-education',
+    name: 'Nonprofit & Education',
     intro:
-      'The companies that carry the cargo need service, cost, and utilization measured against partners and terminals. We build the analytics around how carriers run.',
+      'Funders and boards expect clear reporting on programs and outcomes, and the data is spread across grants, enrollment, and finance systems. We build the governed model and the reports they expect.',
     systems: [
-      'Service and on-time performance by lane and partner',
-      'Cost and utilization across the fleet',
-      'Shipment and cargo visibility',
-      'Customer-facing service metrics',
+      'Programs, grants, and spend against budget',
+      'Enrollment, participation, and outcomes',
+      'Fundraising and donor analysis',
+      'Board and funder reporting packs',
     ],
-    integrations: ['Terminals and ports', 'Freight forwarders', 'EDI partners', 'Customer systems'],
-    keyword: 'shipping carriers',
+    integrations: ['CRM and grants systems', 'Finance systems', 'Student or member systems', 'SQL Server and Excel'],
+    keyword: 'nonprofit and education analytics',
   },
 ];
 
@@ -1040,36 +930,22 @@ export const clientLogos: string[] = [];
 
 // ---------------------------------------------------------------------------
 // Group experience band. Framed as the track record of the TEAM/GROUP behind
-// Kadmoon (delivered-for and partner organizations), NOT as Kadmoon's own
-// foreign-trade clients. Names are shown as text wordmarks; swap for approved
-// logo assets when provided, and only display organizations that have given
-// permission. This intentionally references organizations outside the US and
-// outside foreign trade, a deliberate exception to the no-Brazil site rule,
-// per an explicit positioning decision.
+// Kadmoon (years, organizations served, Microsoft solutions shipped), NOT as
+// Kadmoon's own clients. Per the content rules, organization names are not
+// listed here (US market, no Brazil); the numbers carry the track record.
 // ---------------------------------------------------------------------------
 export const groupExperience = {
   eyebrow: 'Experience behind Kadmoon',
-  line: 'The team behind Kadmoon has spent six years building data, analytics, and Microsoft platforms for organizations across government, education, sports, real estate, and technology. Kadmoon brings that practice to foreign trade.',
+  line: 'The team behind Kadmoon has spent six years building data, analytics, and Microsoft platforms for organizations across government, education, sports, real estate, and technology. Kadmoon brings that practice to Power BI for US businesses.',
   stats: [
     { value: '6', label: 'years building data & analytics' },
     { value: '50+', label: 'organizations served' },
     { value: '2,000+', label: 'Microsoft solutions shipped' },
   ],
   note: 'The track record of the team and group behind Kadmoon, across sectors.',
-  orgs: [
-    'Ministério da Educação',
-    'Paraná Educação',
-    'Santos FC',
-    'Sky HDTV',
-    'Tecnisa',
-    'ESPM',
-    'CREA-SP',
-    'Finep',
-    'APAS',
-    'Autodoc',
-    'Brasoftware',
-    'Xertica',
-  ],
+  // Organization names are intentionally not listed (US market, no Brazil per
+  // the content rules). The numbers above carry the track record.
+  orgs: [] as string[],
 };
 
 // ---------------------------------------------------------------------------
@@ -1079,245 +955,65 @@ export const groupExperience = {
 // ---------------------------------------------------------------------------
 export const pricing = {
   eyebrow: 'Pricing',
-  title: 'Priced to the scope of your trade, not a seat count.',
-  lead: 'Every engagement is scoped to the systems you run and the decisions you need, so you pay for the analytics you use. Here is how it works and what each level includes. We quote per engagement; tell us what you move and you get a number within one business day.',
+  title: 'Priced to the scope of your Power BI work, not a seat count.',
+  lead: 'Kadmoon is a boutique, so you work with us one of two ways: by project, or on a monthly subscription. Most start with a short Power BI assessment, then pick the model that fits. We quote per engagement; tell us what you want reported on and you get a number within one business day.',
   model: [
     {
-      name: 'Trade data assessment',
-      meta: 'Fixed scope · ~2 weeks',
-      body: 'A short, fixed-price engagement that maps your decisions and data and ships the first reports. You leave with a scope and a quote, and the fee credits toward the subscription.',
+      name: 'By project',
+      meta: 'Fixed scope · milestone billing',
+      body: 'A fixed-scope build with defined deliverables: the governed semantic model, the dashboards and reports, any migration from legacy BI or spreadsheets, and the governance around them. The Power BI assessment is the short first project that scopes the rest.',
     },
     {
-      name: 'Trade intelligence subscription',
-      meta: 'Monthly · the core',
-      body: 'The platform as a subscription: connectors, the trade data model, the KPI library, and the reports kept current, with governance and support. Scoped by the domains, data sources, and users you need.',
-    },
-    {
-      name: 'Managed Microsoft',
-      meta: 'Optional add-on',
-      body: 'We provision and bill the Microsoft capacity the analytics runs on (Fabric, Power BI, Azure), so licensing and cloud arrive on one invoice with your platform.',
+      name: 'Monthly subscription',
+      meta: 'Recurring · we run and evolve it',
+      body: 'A monthly retainer where we run and evolve your Power BI: refreshes and governance kept current, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call. An optional managed Microsoft add-on bills the Microsoft capacity on one invoice.',
     },
   ],
   scopes: [
     {
-      name: 'Starter',
-      best: 'A growing operation, one priority',
+      name: 'By project',
+      best: 'When the outcome is defined',
       includes: [
-        'One analytics domain (e.g. landed cost or visibility)',
-        'Up to ~3 data sources connected',
-        'One KPI pack, refreshed daily',
-        'Support during business hours',
-      ],
-    },
-    {
-      name: 'Growth',
-      best: 'Multiple domains across the operation',
-      includes: [
-        'Two to three analytics domains',
-        'More sources and multiple KPI packs',
-        'Alerts and exception monitoring',
-        'A stronger response SLA',
+        'A governed semantic model and the dashboards on it',
+        'Power BI migration from legacy BI and spreadsheets',
+        'Row-level security and Power BI governance',
+        'Power Platform automation and Fabric data engineering as needed',
+        'Fixed scope, acceptance criteria, and milestone billing',
       ],
       featured: true,
     },
     {
-      name: 'Control Tower',
-      best: 'Enterprise, the full suite',
+      name: 'Monthly subscription',
+      best: 'For ongoing work and a partner on call',
       includes: [
-        'The full suite: landed cost, duty, visibility, compliance, inventory, executive',
-        'Dedicated governance and a success manager',
-        'Quarterly reviews and roadmap',
-        'Priority support',
+        'Managed refreshes, monitoring, and user support',
+        'New reports and model changes as needs change',
+        'Copilot and AI on your data as it matures',
+        'Dedicated governance and a named point of contact',
+        'Optional managed Microsoft on one invoice',
       ],
     },
   ],
   faq: [
     {
       q: 'Do you publish prices?',
-      a: 'No. Trade operations differ too much for a sticker price to be honest. We scope to your data and decisions and quote per engagement, usually within one business day of a first conversation.',
+      a: 'No. Power BI engagements differ too much for a sticker price to be honest. We scope to your data and decisions and quote per engagement, usually within one business day of a first conversation.',
     },
     {
-      q: 'How does billing work?',
-      a: 'The assessment is a fixed price. The platform is a monthly or annual subscription scoped to what you use. If you take managed Microsoft, the Microsoft capacity is billed with it on one invoice.',
+      q: 'Project or subscription, how do we choose?',
+      a: 'If the outcome is defined, a project is cleanest: fixed scope, acceptance criteria, and milestone billing. If you want us to keep building and running your Power BI month to month, the subscription fits. Many start with a project and move to a subscription after go-live.',
     },
     {
       q: 'Is there a long contract?',
-      a: 'The assessment stands alone. The subscription is a defined term you agree up front; you own the model, the reports, and the data in your own tenant, so you are never locked in to keep operating.',
+      a: 'A project stands on its own. The subscription is a monthly term you can adjust, and you own the semantic model, the reports, and the data in your own Microsoft tenant, so you are never locked in to keep operating.',
     },
     {
-      q: 'What about dedicated capacity or enterprise terms?',
+      q: 'What about a dedicated squad or enterprise terms?',
       a: 'We scope those in a conversation, not off a page. If you want a dedicated team or custom terms, tell us in the quote request and we will put together a proposal.',
     },
   ],
   cta: {
-    title: 'Tell us what you move. Get a number.',
-    body: 'A short description of your operation is enough for a scoped plan and a quote within one business day.',
-  },
-};
-
-// ---------------------------------------------------------------------------
-// Platform page ("Kadmoon Trade Intelligence", the EIP). The productized core:
-// connectors + one governed trade data model + a KPI library + the reports and
-// alerts, delivered in the client's tenant or provisioned and run by us.
-// ---------------------------------------------------------------------------
-export const platform = {
-  eyebrow: 'The platform',
-  title: 'One trade intelligence layer over the systems you already run.',
-  lead:
-    'Kadmoon Trade Intelligence reads from your ERP, broker, carrier, EDI and ACE, and spreadsheets, builds one governed model of your trade, and delivers the reports and alerts your team acts on. It runs in your own Microsoft tenant, or we provision and run it for you.',
-  ctas: [
-    { label: 'Request a quote', href: '/contact', primary: true },
-    { label: 'See case studies', href: '/cases', primary: false },
-  ],
-  pillars: [
-    {
-      step: '01',
-      icon: 'integrations',
-      title: 'Connect your systems',
-      body: 'We read from SAP, Oracle, NetSuite, Microsoft, broker and carrier systems, EDI and ACE, and spreadsheets. The data stays where it lives; we meet it there.',
-    },
-    {
-      step: '02',
-      icon: 'stack',
-      title: 'Model it once',
-      body: 'One governed trade data model, every KPI defined a single time, with landed cost, duty, HTS, origin, and incoterms built in instead of rebuilt per report.',
-    },
-    {
-      step: '03',
-      icon: 'dataai',
-      title: 'Decide from it',
-      body: 'Landed cost, duty exposure, shipment visibility, compliance, and inventory as governed reports and alerts, each number drillable to the shipment or entry behind it.',
-    },
-    {
-      step: '04',
-      icon: 'qa',
-      title: 'Run it your way',
-      body: 'In your own Microsoft tenant, or in a dedicated tenant we provision and manage for you. Your data stays isolated, documented, and yours.',
-    },
-  ],
-  modules: {
-    eyebrow: 'What is in it',
-    title: 'Six analytics domains, one governed model underneath.',
-    sub: 'The subscription is scoped to the domains you need. Each is built on the same model, so a number in one lines up with the same number in another, and every figure drills to the shipment, entry, or order behind it.',
-    items: [
-      {
-        icon: 'target',
-        name: 'Landed cost & margin',
-        body: 'Freight, duty, insurance, and brokerage allocated to the unit, so margin by SKU, supplier, and shipment is known at receipt, not at month end.',
-      },
-      {
-        icon: 'bolt',
-        name: 'Duty & tariff exposure',
-        body: 'Duty owed by HTS code, origin, and product line, with a scenario layer that reprices your import book the same day a rate changes.',
-      },
-      {
-        icon: 'delivery',
-        name: 'Shipment visibility & OTIF',
-        body: 'Carrier milestones unified over EDI and API into one planned-versus-actual view, with OTIF, dwell, and delay by lane and carrier.',
-      },
-      {
-        icon: 'contract',
-        name: 'Customs & compliance',
-        body: 'Clearance time, entry throughput, classification consistency, and screening coverage, with an audit trail that answers a regulator from a report.',
-      },
-      {
-        icon: 'stack',
-        name: 'Inventory & warehouse',
-        body: 'Days on hand, aging, and fill rate across sites, bonded and FTZ stock included, so cash and space in the wrong inventory become visible.',
-      },
-      {
-        icon: 'enterprise',
-        name: 'Executive control tower',
-        body: 'Cost, service, risk, and compliance in one governed executive view, every KPI defined once and drillable to the record behind it.',
-      },
-    ],
-  },
-  reports: {
-    eyebrow: 'Built reports',
-    title: 'The reports your team opens every morning.',
-    sub: 'A sample of what ships: landed cost to the unit, duty exposure by product line, and on-time performance over time. Figures are illustrative; the structure is what you get.',
-    disclaimer: 'Sample reports · figures are illustrative',
-  },
-  tenant: {
-    eyebrow: 'Where it runs',
-    title: 'In your own Microsoft tenant. The data, the model, and the reports are yours.',
-    sub: 'The analytics runs on the Microsoft stack you may already pay for, inside your own tenant, so your trade data never leaves your control. If you do not run Microsoft yet, we provision and manage a dedicated tenant for you.',
-    points: [
-      {
-        icon: 'key',
-        title: 'Your tenant, your data',
-        body: 'Everything lives in your Microsoft tenant on Fabric, Power BI, and Azure. Your data stays isolated and under your access controls, not pooled in a vendor platform.',
-      },
-      {
-        icon: 'architecture',
-        title: 'Governed and documented',
-        body: 'One model, one definition per KPI, with lineage from each number back to its source. The model and its documentation are handed over, not held hostage.',
-      },
-      {
-        icon: 'saas',
-        title: 'No lock-in',
-        body: 'Because you own the model, the reports, and the data, you can keep operating if you ever leave. The subscription keeps it current; it does not hold it ransom.',
-      },
-    ],
-  },
-  roadmap: {
-    eyebrow: 'What grows on top',
-    title: 'Software is the roadmap, built on the data once the model exists.',
-    sub: 'The analytics comes first, because it is what the model makes possible immediately. The platforms below are what we build on top of that same governed data as a client needs them. They are a roadmap, not the lead offer, and they reuse the model rather than starting over.',
-    items: [
-      { name: 'Trade ERP', body: 'Operational trade workflows fed by the same governed data, so execution and analytics share one source.', href: '/services/trade-erp' },
-      { name: 'Customs & compliance software', body: 'Filing, classification, and screening tools built on the compliance model already in place.', href: '/services/customs-compliance' },
-      { name: 'Inventory & WMS', body: 'Warehouse and bonded-stock workflows on top of the inventory model, not a separate silo.', href: '/services/inventory-wms' },
-      { name: 'Security vision', body: 'Port and vessel computer vision that feeds the same control tower as the rest of the trade data.', href: '/services/vessel-security-vision' },
-    ],
-    note: 'We build these when the analytics has shown where they pay off, not before. Ask in a quote request if a platform is on your horizon.',
-  },
-  faq: {
-    eyebrow: 'Questions',
-    title: 'What the platform is, and is not.',
-    items: [
-      {
-        q: 'Is this a product I log into?',
-        a: 'The reports run in Power BI in your own Microsoft tenant, so you sign in there, not to a Kadmoon login. The platform is the governed data model, the KPI library, the connectors, and the reports and alerts built on them, kept current as a subscription. It is a productized layer we assemble and run, delivered on the Microsoft stack, not a separate application to adopt.',
-      },
-      {
-        q: 'Do we need Microsoft to use it?',
-        a: 'The analytics is delivered on the Microsoft stack, Fabric, Power BI, and Azure. If you already run Microsoft, it runs in your tenant. If you do not, we provision and manage a dedicated tenant for you, and the Microsoft capacity can be billed on one invoice with the platform through the managed Microsoft add-on.',
-      },
-      {
-        q: 'How is this different from a BI tool?',
-        a: 'A BI tool draws charts; it does not know what landed cost or duty exposure mean for foreign trade. The platform arrives with the trade data model, the KPIs, and the connectors already built, so you are not starting from an empty canvas. The difference is the governed trade model underneath, which is what makes the numbers consistent, trustworthy, and specific to cross-border operations.',
-      },
-      {
-        q: 'What do we actually own?',
-        a: 'The data, the model, and the reports, all in your own tenant. The subscription keeps them current and supported, but the asset is yours, documented and handed over, so you are never locked in to keep operating. That is the point of running it in your tenant rather than in ours.',
-      },
-    ],
-  },
-  engage: {
-    eyebrow: 'How an engagement works',
-    title: 'Start small, prove it, then run on it.',
-    steps: [
-      {
-        name: 'Trade data assessment',
-        meta: 'Fixed scope · ~2 weeks',
-        body: 'A short, fixed-price engagement that maps your decisions and data and delivers the first reports. You leave with a scope and a quote, and the fee credits toward the subscription.',
-      },
-      {
-        name: 'Trade intelligence subscription',
-        meta: 'Monthly · the core',
-        body: 'The platform as a subscription: connectors, the trade data model, the KPI library, and the reports kept current, with governance and support. Scoped to the domains and data you run.',
-      },
-      {
-        name: 'Managed Microsoft',
-        meta: 'Optional add-on',
-        body: 'We provision and bill the Microsoft capacity the analytics runs on, so licensing and cloud arrive on one invoice with your platform instead of a separate project.',
-      },
-    ],
-    note: 'Dedicated capacity and enterprise terms are scoped in a conversation, not sold off a page.',
-  },
-  cta: {
-    title: 'See it on your own data.',
-    body: 'Tell us where your trade data lives. You get a scoped plan and a quote within one business day, and first reports in about two weeks.',
+    title: 'Tell us what you want reported on. Get a number.',
+    body: 'A short description of your data and the decisions you need is enough for a scoped plan and a quote within one business day.',
   },
 };

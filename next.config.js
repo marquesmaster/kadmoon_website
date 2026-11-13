@@ -289,47 +289,103 @@ const nextConfig = {
       { source: '/zh/:path*', destination: '/', permanent: true },
       { source: '/pt', destination: '/', permanent: true },
       { source: '/pt/:path*', destination: '/', permanent: true },
-      // Renamed case study.
-      {
-        source: '/cases/freight-visibility-platform',
-        destination: '/cases/shipment-visibility-portal',
-        permanent: true,
-      },
+      // Retired foreign-trade case studies -> the cases index (the new Power BI
+      // case set uses different slugs).
+      ...[
+        'landed-cost-analytics', 'tariff-duty-exposure', 'supplier-performance-analytics',
+        'import-margin-analytics', 'po-to-receipt-cycle-analytics', 'fx-impact-on-import-cost',
+        'import-demand-forecasting', 'entry-throughput-analytics', 'hts-classification-analytics',
+        'denied-party-screening-analytics', 'broker-productivity-sla', 'duty-drawback-analytics',
+        'ace-filing-error-analytics', 'shipment-visibility-analytics', 'otif-performance-analytics',
+        'freight-spend-analytics', 'demurrage-detention-analytics', 'container-utilization-analytics',
+        'carrier-scorecard-analytics', 'multi-warehouse-inventory-analytics', 'receiving-throughput-analytics',
+        'fulfillment-accuracy-analytics', 'inventory-aging-analytics', 'sop-demand-planning-analytics',
+        'product-pnl-landed-cost', 'export-compliance-analytics', 'cross-border-inventory-positioning',
+        'terminal-dwell-time-analytics', 'freight-invoice-audit-analytics', 'trade-control-tower',
+        'customs-filing-platform', 'trade-erp-landed-cost', 'shipment-visibility-portal',
+        'denied-party-screening-service', 'bonded-ftz-wms', 'vessel-security-vision',
+        'freight-visibility-platform',
+      ].map((slug) => ({ source: `/cases/${slug}`, destination: '/cases', permanent: true })),
 
-      // Retired Power BI / Microsoft service pages. The analytics stack
-      // (Fabric, Power BI, Azure) is how we deliver, so these point to the
-      // platform ("Built on the Microsoft cloud") rather than a generic list:
-      // a trade buyer who runs Microsoft lands on proof we deliver there.
-      { source: '/services/power-bi', destination: '/platform', permanent: true },
-      { source: '/services/microsoft-fabric', destination: '/platform', permanent: true },
-      { source: '/services/power-platform', destination: '/platform', permanent: true },
-      { source: '/services/power-platform-coe', destination: '/platform', permanent: true },
-      { source: '/services/data-engineering', destination: '/services/trade-integrations', permanent: true },
-      { source: '/services/analytics-and-ai', destination: '/platform', permanent: true },
-      { source: '/services/data-governance', destination: '/services/customs-compliance', permanent: true },
-      { source: '/services/tenant-to-tenant-migration', destination: '/platform', permanent: true },
-      { source: '/services/bi-sustainment', destination: '/platform', permanent: true },
-      { source: '/services/discovery-assessment', destination: '/platform', permanent: true },
+      // Retired foreign-trade blog articles -> the blog index (the blog is now
+      // Power BI and the Microsoft stack). Placed before the older blog
+      // retarget maps so these specific slugs resolve here first.
+      ...[
+        'abc-analysis-trade-inventory', 'analytics-in-your-own-tenant', 'antidumping-countervailing-duties',
+        'binding-rulings-classification-certainty', 'bonded-ftz-inventory-analytics', 'bonded-warehouse-ftz-wms',
+        'broker-performance-analytics', 'business-case-trade-analytics', 'cargo-theft-shrinkage-analytics',
+        'carrier-scorecard-analytics', 'cash-to-cash-cycle-importers', 'choosing-a-trade-erp',
+        'computer-vision-port-security', 'container-seal-chain-of-custody', 'container-utilization-analytics',
+        'country-of-origin-analytics', 'customs-brokerage-software', 'customs-value-valuation',
+        'data-lineage-trade-analytics', 'data-quality-trade-analytics', 'days-of-supply-stockout-risk',
+        'de-minimis-suspended-landed-cost', 'dead-stock-slow-moving-inventory', 'demurrage-detention-analytics',
+        'denied-party-screening', 'drayage-first-mile-cost', 'duty-drawback-recovering-duty',
+        'duty-optimization-four-levers', 'edi-ace-integration-for-trade', 'effective-duty-rate',
+        'entry-liquidation-tracking', 'entry-reconciliation-program', 'exception-management-trade',
+        'first-90-days-trade-analytics', 'first-sale-valuation', 'forecast-accuracy-cross-border-inventory',
+        'foreign-trade-zone-duty-deferral', 'freight-cost-analytics', 'fx-exposure-landed-cost',
+        'hts-classification-accuracy', 'incoterms-and-landed-cost', 'isf-10-2-timeliness',
+        'landed-cost-calculation', 'landed-cost-inventory-valuation', 'margin-bridge-why-margin-moved',
+        'microsoft-fabric-for-trade-data', 'mode-shift-air-ocean-analytics', 'otif-dwell-service-metrics',
+        'port-gateway-selection-analytics', 'power-bi-for-trade-reporting', 'purchase-order-analytics',
+        'reasonable-care-audit-trail', 'restricted-party-screening-coverage', 'reverse-logistics-cross-border-returns',
+        'safety-stock-long-lead-times', 'seasonal-demand-forecasting-imports', 'semantic-layer-trade-kpi',
+        'shipment-visibility-software', 'spreadsheets-break-at-trade-scale', 'supplier-analytics-landed-cost',
+        'supply-chain-concentration-risk', 'tariff-engineering-analytics', 'tariff-exposure-section-232-301',
+        'tariff-scenario-planning', 'total-cost-of-sourcing', 'trade-analytics-maturity-model',
+        'trade-analytics-microsoft-stack', 'trade-control-tower', 'trade-data-assessment',
+        'trade-data-freshness', 'trade-master-data', 'transit-time-variability',
+        'usmca-2026-review-importers', 'vendor-compliance-chargebacks', 'what-is-a-trade-intelligence-platform',
+      ].map((slug) => ({ source: `/blog/${slug}`, destination: '/blog', permanent: true })),
 
-      // Retired Power BI migration landing pages -> the platform (we deliver
-      // trade analytics on the Microsoft stack, in your own tenant).
-      { source: '/tableau-to-power-bi-migration', destination: '/platform', permanent: true },
-      { source: '/qlik-to-power-bi-migration', destination: '/platform', permanent: true },
-      { source: '/cognos-to-power-bi-migration', destination: '/platform', permanent: true },
-      { source: '/synapse-to-fabric-migration', destination: '/platform', permanent: true },
+      // Service slugs. Power BI, Power Platform, data engineering and Copilot
+      // are live pages now (do not redirect them). Older Microsoft variants
+      // point to the closest live service.
+      { source: '/services/microsoft-fabric', destination: '/services/data-engineering', permanent: true },
+      { source: '/services/power-platform-coe', destination: '/services/power-platform', permanent: true },
+      { source: '/services/analytics-and-ai', destination: '/services/copilot-ai', permanent: true },
+      { source: '/services/data-governance', destination: '/services/power-bi', permanent: true },
+      { source: '/services/tenant-to-tenant-migration', destination: '/services', permanent: true },
+      { source: '/services/bi-sustainment', destination: '/services/power-bi', permanent: true },
+      { source: '/services/discovery-assessment', destination: '/services', permanent: true },
+
+      // Retired foreign-trade service pages -> the closest live service.
+      { source: '/services/trade-erp', destination: '/services/power-bi', permanent: true },
+      { source: '/services/customs-compliance', destination: '/services', permanent: true },
+      { source: '/services/inventory-wms', destination: '/services', permanent: true },
+      { source: '/services/vessel-security-vision', destination: '/services', permanent: true },
+      { source: '/services/supply-chain-logistics', destination: '/services', permanent: true },
+      { source: '/services/trade-crm', destination: '/services', permanent: true },
+      { source: '/services/custom-development', destination: '/services', permanent: true },
+      { source: '/services/trade-integrations', destination: '/services/data-engineering', permanent: true },
+
+      // Power BI / Fabric migration landing pages -> the live service pages.
+      { source: '/tableau-to-power-bi-migration', destination: '/services/power-bi', permanent: true },
+      { source: '/qlik-to-power-bi-migration', destination: '/services/power-bi', permanent: true },
+      { source: '/cognos-to-power-bi-migration', destination: '/services/power-bi', permanent: true },
+      { source: '/synapse-to-fabric-migration', destination: '/services/data-engineering', permanent: true },
 
       // Retired subscription and dashboards pages.
       { source: '/packages', destination: '/services', permanent: true },
       { source: '/dashboards', destination: '/cases', permanent: true },
+      // The standalone platform page is retired; services covers it.
+      { source: '/platform', destination: '/services', permanent: true },
 
       // Old retired Power BI industry slugs -> new trade industries.
-      { source: '/industries/retail', destination: '/industries/manufacturers-distributors', permanent: true },
-      { source: '/industries/financial-services', destination: '/industries', permanent: true },
-      { source: '/industries/manufacturing', destination: '/industries/manufacturers-distributors', permanent: true },
-      { source: '/industries/logistics', destination: '/industries/freight-forwarders', permanent: true },
-      { source: '/industries/healthcare', destination: '/industries', permanent: true },
-      { source: '/industries/education', destination: '/industries', permanent: true },
-      { source: '/industries/supply-chain', destination: '/industries/third-party-logistics', permanent: true },
+      // Retired foreign-trade industry pages -> the industries index (the new
+      // US verticals use different slugs; manufacturing and healthcare are live
+      // pages now, so they are not redirected).
+      ...[
+        'importers-exporters', 'customs-brokers', 'freight-forwarders',
+        'third-party-logistics', 'ports-terminals', 'manufacturers-distributors',
+        'shipping-carriers',
+      ].map((slug) => ({ source: `/industries/${slug}`, destination: '/industries', permanent: true })),
+      // Older Power BI-era industry slugs -> the closest live vertical.
+      { source: '/industries/retail', destination: '/industries/retail-ecommerce', permanent: true },
+      { source: '/industries/financial-services', destination: '/industries/finance-operations', permanent: true },
+      { source: '/industries/logistics', destination: '/industries', permanent: true },
+      { source: '/industries/education', destination: '/industries/nonprofit-education', permanent: true },
+      { source: '/industries/supply-chain', destination: '/industries', permanent: true },
 
       // Older retired pages from previous iterations.
       { source: '/software-house', destination: '/services', permanent: true },

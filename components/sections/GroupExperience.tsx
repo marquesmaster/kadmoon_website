@@ -29,18 +29,20 @@ export function GroupExperience() {
           ))}
         </dl>
 
-        <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-9 gap-y-5">
-          {g.orgs.map((org) => (
-            <li
-              key={org}
-              className="font-display text-lg font-semibold tracking-[-0.01em] text-ink-3 transition-colors hover:text-ink-2"
-            >
-              {org}
-            </li>
-          ))}
-        </ul>
+        {g.orgs.length > 0 && (
+          <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-9 gap-y-5">
+            {g.orgs.map((org) => (
+              <li
+                key={org}
+                className="font-display text-lg font-semibold tracking-[-0.01em] text-ink-3 transition-colors hover:text-ink-2"
+              >
+                {org}
+              </li>
+            ))}
+          </ul>
+        )}
 
-        <p className="mt-8 text-center font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3/70">
+        <p className="mt-10 text-center font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3/70">
           {g.note}
         </p>
       </div>

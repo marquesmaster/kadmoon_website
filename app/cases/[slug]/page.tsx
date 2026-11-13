@@ -151,7 +151,7 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
             <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
             <div className="relative">
               <h2 className="font-display text-2xl font-semibold text-white">
-                Want this on your trade data?
+                Want this on your data?
               </h2>
               <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-white/70">
                 Tell us where your numbers live and what leadership needs to see. You get a scoped

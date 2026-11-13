@@ -1,14 +1,13 @@
 import { hero } from '@/lib/content';
 import { Button } from '../Button';
 
-// Illustrative product UI — a stylized trade analytics console, not real
-// client data. Labeled "Sample" so it is never mistaken for a live figure.
-function TradeConsoleMock() {
+// Illustrative product UI — a stylized Power BI dashboard, not real client
+// data. Labeled "Sample" so it is never mistaken for a live figure.
+function DashboardMock() {
   const breakdown = [
-    { k: 'Product cost', v: '$84,200' },
-    { k: 'Ocean freight', v: '$6,480' },
-    { k: 'Duty (HTS)', v: '$5,910' },
-    { k: 'Brokerage & fees', v: '$1,240' },
+    { k: 'Revenue', v: '$2,480,000' },
+    { k: 'Cost of goods sold', v: '$1,512,000' },
+    { k: 'Operating expenses', v: '$610,000' },
   ];
   return (
     <div className="relative">
@@ -23,7 +22,7 @@ function TradeConsoleMock() {
           <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
           <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
           <span className="ml-2 font-mono text-[11px] tracking-[0.02em] text-ink-3">
-            kadmoon · trade analytics
+            kadmoon · Power BI
           </span>
           <span className="ml-auto rounded-full bg-mist px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.12em] text-ink-3">
             Sample
@@ -34,9 +33,9 @@ function TradeConsoleMock() {
           {/* KPI tiles */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { k: 'Landed cost', v: '$97.8k' },
-              { k: 'Gross margin', v: '27.4%' },
-              { k: 'OTIF', v: '94%' },
+              { k: 'Revenue', v: '$2.48M' },
+              { k: 'Gross margin', v: '39.0%' },
+              { k: 'EBITDA', v: '$358k' },
             ].map((t) => (
               <div key={t.k} className="rounded-xl bg-mist px-3 py-3">
                 <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">{t.k}</div>
@@ -45,11 +44,11 @@ function TradeConsoleMock() {
             ))}
           </div>
 
-          {/* Landed cost breakdown */}
+          {/* Revenue & margin summary */}
           <div className="mt-5 rounded-xl border border-line p-4">
             <div className="flex items-center justify-between">
               <span className="font-sans text-[12px] font-semibold text-ink">
-                Landed cost · shipment IM-4821
+                Revenue &amp; margin · this month
               </span>
               <span className="rounded-full bg-success/12 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] text-success">
                 Modeled
@@ -63,8 +62,8 @@ function TradeConsoleMock() {
                 </li>
               ))}
               <li className="mt-1 flex items-center justify-between border-t border-line pt-2.5 text-[13px]">
-                <span className="font-semibold text-ink">Landed cost</span>
-                <span className="font-mono tabular-nums font-semibold text-accent">$97,830</span>
+                <span className="font-semibold text-ink">EBITDA</span>
+                <span className="font-mono tabular-nums font-semibold text-accent">$358,000</span>
               </li>
             </ul>
           </div>
@@ -124,9 +123,9 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right: illustrative trade console */}
+          {/* Right: illustrative Power BI dashboard */}
           <div className="lg:pl-6">
-            <TradeConsoleMock />
+            <DashboardMock />
           </div>
         </div>
       </div>

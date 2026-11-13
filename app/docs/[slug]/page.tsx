@@ -121,7 +121,7 @@ export default function DocPage({ params }: { params: { slug: string } }) {
             </div>
 
             <div className="mt-10 rounded-2xl border border-line bg-navy p-6">
-              <p className="font-display text-lg font-semibold text-white">Want this on your trade data?</p>
+              <p className="font-display text-lg font-semibold text-white">Want this on your data?</p>
               <p className="mt-2 max-w-lg text-[14px] leading-relaxed text-white/70">
                 Tell us where your numbers live and what leadership needs to see. You get a scoped plan
                 and a quote within one business day.

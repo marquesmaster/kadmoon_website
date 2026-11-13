@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Kadmoon: analytics for foreign trade. Landed cost, duty exposure, visibility, and compliance.';
+export const alt = 'Kadmoon: Power BI and Microsoft data analytics for US businesses, in your own tenant.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -23,8 +23,8 @@ export default function OpengraphImage() {
           <span style={{ fontSize: 40, fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em' }}>
             Kadmoon
           </span>
-          <span style={{ fontSize: 18, fontWeight: 600, color: '#4C8DFF', letterSpacing: '0.16em' }}>
-            INC.
+          <span style={{ fontSize: 16, fontWeight: 600, color: '#4C8DFF', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+            Business Intelligence
           </span>
         </div>
 
@@ -38,7 +38,7 @@ export default function OpengraphImage() {
               marginBottom: 20,
             }}
           >
-            Analytics for foreign trade · United States
+            Microsoft data &amp; analytics · United States
           </div>
           <div
             style={{
@@ -50,12 +50,12 @@ export default function OpengraphImage() {
               maxWidth: 980,
             }}
           >
-            The numbers your import and export operation can finally trust.
+            Turn your business data into Power BI your team actually uses.
           </div>
         </div>
 
         <div style={{ fontSize: 22, color: 'rgba(255,255,255,0.65)' }}>
-          Landed cost · Duty exposure · Visibility & OTIF · Customs analytics
+          Power BI · Power Platform · Microsoft Fabric &amp; Azure · Copilot &amp; AI
         </div>
       </div>
     ),

@@ -31,20 +31,21 @@ export const siteConfig = {
   // Google Business Profile / Google Maps URL. Added to sameAs once the
   // listing is live, which links the site and the profile as one entity.
   googleBusinessUrl: '',
-  defaultTitle: 'Kadmoon | Analytics for Foreign Trade: Landed Cost, Duty, Visibility & Compliance',
+  defaultTitle: 'Kadmoon | Power BI & Microsoft Data Analytics Consultancy in the US',
   titleTemplate: '%s | Kadmoon',
   // Kept to 120-160 chars, no em dashes (SEO + humanizer).
   description:
-    'Kadmoon is a US analytics firm focused 100% on foreign trade. We turn data from SAP, Microsoft, and the systems you run into decisions: landed cost, duty exposure, shipment visibility, OTIF, and customs analytics, in your own tenant.',
-  ogImageAlt: 'Kadmoon: analytics built for foreign trade in the United States.',
+    'Kadmoon is a US Microsoft data and analytics firm led by Power BI services. We build governed dashboards, Power Platform automation, and Fabric data engineering in your own tenant. You own it.',
+  ogImageAlt: 'Kadmoon: Power BI and Microsoft data analytics for US businesses.',
   keywords: [
-    'foreign trade analytics',
-    'landed cost analytics',
-    'customs compliance analytics',
-    'import export analytics',
-    'trade data analytics',
-    'supply chain analytics',
-    'Power BI for trade',
+    'Power BI consulting',
+    'Power BI services',
+    'Microsoft data analytics',
+    'Power BI dashboards',
+    'Power Platform consulting',
+    'Microsoft Fabric',
+    'Power BI migration',
+    'business intelligence consulting',
   ],
   // The contact form posts to the site's own secure API route.
   contactApi: '/api/contact',

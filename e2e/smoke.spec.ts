@@ -2,18 +2,18 @@ import { test, expect } from '@playwright/test';
 
 test.describe('pages load', () => {
   const pages = [
-    ['/', 'import and export'],
-    ['/platform', 'Trade Intelligence'],
+    ['/', 'Power BI'],
+    ['/platform', 'Power BI'],
     ['/pricing', 'per engagement'],
-    ['/services', 'cross-border'],
-    ['/services/trade-erp', 'Trade ERP'],
-    ['/industries', 'move goods'],
-    ['/industries/importers-exporters', 'Importers & Exporters'],
+    ['/services', 'Power BI'],
+    ['/services/power-bi', 'Power BI'],
+    ['/industries', 'Power BI'],
+    ['/industries/finance-operations', 'Finance'],
     ['/process', 'production'],
-    ['/about', 'foreign trade'],
-    ['/blog', 'business of trade'],
+    ['/about', 'Power BI'],
+    ['/blog', 'Power BI'],
     ['/custom-software-development', 'United States'],
-    ['/custom-software-development/austin-tx', 'cross-border'],
+    ['/custom-software-development/austin-tx', 'Power BI'],
     ['/privacy', 'Privacy'],
     ['/terms', 'Terms'],
   ] as const;
@@ -41,13 +41,13 @@ test('stat counters finish without freezing mid-animation', async ({ page }) => 
   const values = await band.locator('dd').evaluateAll((dds) =>
     dds.map((d) => d.querySelector('span')?.textContent),
   );
-  expect(values).toEqual(['100%', '6', 'US', 'Week 2']);
+  expect(values).toEqual(['100%', 'US', 'Week 2', 'Your tenant']);
 });
 
 test('blog search filters results', async ({ page }) => {
   await page.goto('/blog');
-  await page.getByPlaceholder('Search articles').fill('customs');
-  await expect(page.locator('article').first()).toContainText(/customs/i);
+  await page.getByPlaceholder('Search articles').fill('Power BI');
+  await expect(page.locator('article').first()).toContainText(/power bi/i);
 });
 
 test('floating contact popup opens', async ({ page }) => {

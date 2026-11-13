@@ -10,11 +10,11 @@ export const dynamic = 'force-static';
 type IndexItem = { type: string; title: string; href: string; text: string; desc?: string };
 
 const pages: IndexItem[] = [
-  { type: 'Pages', title: 'Solutions', href: '/services', text: 'solutions analytics platforms trade ERP customs compliance inventory logistics', desc: 'What we build for trade' },
-  { type: 'Pages', title: 'Industries', href: '/industries', text: 'industries importers exporters customs brokers freight forwarders 3PL ports manufacturers', desc: 'Who we serve' },
+  { type: 'Pages', title: 'Services', href: '/services', text: 'services power bi power platform microsoft fabric azure copilot data engineering dashboards semantic model', desc: 'Power BI and the Microsoft stack' },
+  { type: 'Pages', title: 'Industries', href: '/industries', text: 'industries finance operations retail e-commerce healthcare manufacturing professional services saas technology nonprofit education', desc: 'Who we serve' },
   { type: 'Pages', title: 'Process', href: '/process', text: 'process methodology four phases discovery foundation build sustain', desc: 'How we deliver' },
-  { type: 'Pages', title: 'About', href: '/about', text: 'about US software company foreign trade senior team', desc: 'A US firm built for trade' },
-  { type: 'Pages', title: 'Contact', href: '/contact', text: 'contact request a quote trade data assessment', desc: 'Request a quote' },
+  { type: 'Pages', title: 'About', href: '/about', text: 'about US microsoft data analytics power bi senior team', desc: 'A US Power BI and Microsoft data team' },
+  { type: 'Pages', title: 'Contact', href: '/contact', text: 'contact request a quote power bi assessment', desc: 'Request a quote' },
 ];
 
 export function GET() {

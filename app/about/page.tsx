@@ -10,33 +10,33 @@ import { groupExperience } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'About | A US analytics firm built for foreign trade',
+  title: 'About | A US Power BI and Microsoft data team',
   description:
-    'Kadmoon is a US analytics firm focused entirely on foreign trade, built by a team with six years and 2,000+ Microsoft analytics solutions behind it. Senior, US-based engineers who speak customs, logistics, and compliance, turning your data into decisions in your own tenant.',
+    'Kadmoon is a US Microsoft data and analytics consultancy led by Power BI, built by a senior, US-based team with six years and 2,000+ Microsoft solutions behind it. We build dashboards, semantic models, and the Fabric and Azure data they sit on, all in your own Microsoft tenant.',
   alternates: { canonical: `${siteConfig.url}/about` },
   openGraph: { url: `${siteConfig.url}/about`, type: 'website', images: ['/opengraph-image'] },
 };
 
 const principles = [
-  { n: '01', t: 'Foreign trade is all we do', d: 'Deep in one domain instead of shallow across ten. It shows in metrics modeled the way trade actually works.' },
-  { n: '02', t: 'Senior, US-based teams', d: 'The people who scope your model build and support it. No rotating subcontractors.' },
-  { n: '03', t: 'One definition per KPI', d: 'Landed cost, OTIF, and duty exposure each mean one thing across every report, governed and documented.' },
-  { n: '04', t: 'You own it', d: 'Your model, your reports, your data, in your own tenant, documented and handed over. No lock-in.' },
+  { n: '01', t: 'Power BI is the lead', d: 'Dashboards, governed semantic models, and migrations are the core of the work. The rest of the Microsoft stack is built around them.' },
+  { n: '02', t: 'Senior, US-based team', d: 'The people who scope your reports build and support them. No rotating subcontractors.' },
+  { n: '03', t: 'One definition per KPI', d: 'Each measure means one thing across every report, governed with row-level security and documented lineage.' },
+  { n: '04', t: 'You own it', d: 'Your reports, your semantic model, your data, in your own Microsoft tenant, documented and handed over. No lock-in.' },
 ];
 
 const steps = [
   { n: '1', t: 'Discover', d: 'A call to understand the decisions your leaders need to make, the questions behind them, and where the numbers live.', last: false },
-  { n: '2', t: 'Scope & plan', d: 'A short assessment that produces a scope and an architecture plan you can act on, with first dashboards in about two weeks.', last: false },
-  { n: '3', t: 'Foundation', d: 'We land your data in your tenant and build the semantic layer that gives one definition per KPI.', last: false },
-  { n: '4', t: 'Build', d: 'Delivery in short cycles, each one a dashboard validated with the area that uses it.', last: false },
-  { n: '5', t: 'Sustain', d: 'Training, support, and governance kept current as rules and partners change and your trade grows.', last: true },
+  { n: '2', t: 'Scope & plan', d: 'A short assessment that produces a scope and an architecture plan you can act on, with first Power BI dashboards in about two weeks.', last: false },
+  { n: '3', t: 'Foundation', d: 'We connect your source systems in your tenant and build the governed semantic model that gives one definition per KPI.', last: false },
+  { n: '4', t: 'Build', d: 'Delivery in short cycles, each one a report validated with the team that uses it.', last: false },
+  { n: '5', t: 'Sustain', d: 'Training, support, and Power BI governance kept current as your data and your business grow.', last: true },
 ];
 
 const team = [
-  { mono: 'TA', role: 'Trade Analytics Lead', desc: 'Owns the metrics and keeps them coherent from sourcing to delivery.' },
-  { mono: 'DE', role: 'Data Engineering Lead', desc: 'Builds the pipelines and semantic model that feed every report from clean data.' },
-  { mono: 'CC', role: 'Customs & Compliance Lead', desc: 'Models classification, screening, and clearance so the numbers hold up to an audit.' },
-  { mono: 'PL', role: 'Platform Lead', desc: 'Builds the trade software, customs, ERP, and inventory, that grows out of the analytics.' },
+  { mono: 'BI', role: 'Power BI & Analytics Lead', desc: 'Owns the reports and semantic models, and keeps every measure coherent across the business.' },
+  { mono: 'DE', role: 'Data Engineering Lead', desc: 'Builds the lakehouse and pipelines on Fabric and Azure that feed Power BI from clean, governed data.' },
+  { mono: 'PP', role: 'Power Platform Lead', desc: 'Builds the Power Apps and Power Automate workflows that act on the data behind the reports.' },
+  { mono: 'EL', role: 'Engagement & Delivery Lead', desc: 'Runs scoping and delivery, and keeps each cycle aligned with the decisions you need to make.' },
 ];
 
 export default function AboutPage() {
@@ -45,10 +45,11 @@ export default function AboutPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="About Kadmoon" title="A US analytics firm built for foreign trade.">
+        <PageHero eyebrow="About Kadmoon" title="A US Power BI team that lives in the Microsoft stack.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We do one thing: turn the data behind cross-border trade into decisions. The focus is
-            new; the team behind it has built analytics on the Microsoft stack for years.
+            We turn the data US businesses already run on into Power BI dashboards they can act on.
+            The team behind Kadmoon has built on Power BI, Power Platform, Fabric, and Azure for
+            years.
           </p>
         </PageHero>
 
@@ -58,25 +59,26 @@ export default function AboutPage() {
             <div>
               <Eyebrow>Why we exist</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
-                Trade analytics, built by people who speak trade.
+                Power BI, built by people who build on it every day.
               </h2>
             </div>
             <div className="space-y-5 md:col-span-2">
               <p className="text-lg leading-relaxed text-ink-2">
-                Most trade operations read their numbers off generic BI and spreadsheets that were
-                never built for customs, landed cost, or bonded inventory, so every team walks into
-                the meeting with a different figure.
+                Most businesses read their numbers off scattered spreadsheets and aging reports, so
+                every team walks into the meeting with a different figure and no one is sure which
+                one is right.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
                 Kadmoon is a new name, not a new team. For six years we have built data platforms and
-                Power BI analytics on the Microsoft stack for more than 50 organizations across
-                government, education, sports, real estate, and technology. We know how to land messy
-                data in one tenant and turn it into numbers people act on.
+                Power BI analytics on the Microsoft stack, more than 2,000 solutions across a range of
+                sectors. We know how to pull messy data together in one tenant and turn it into
+                numbers people trust.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
-                Kadmoon points that practice at one domain and nothing else: foreign trade. That
-                focus lets us arrive with the trade data model and KPIs ready, move faster, and stand
-                behind every number we ship, in your own tenant, documented and handed over so you
+                We lead with Power BI: dashboards, governed semantic models, and migrations from
+                legacy BI and spreadsheets. Around that we build the rest of the Microsoft stack,
+                Power Apps and Power Automate, data engineering on Fabric and Azure, and Copilot on
+                your data. It all runs in your own Microsoft tenant, documented and handed over so you
                 own it.
               </p>
             </div>
@@ -224,7 +226,7 @@ export default function AboutPage() {
           <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(20,92,230,.28), transparent 60%)' }} />
           <div className="relative mx-auto max-w-2xl px-6 py-20 text-center md:py-28">
             <h2 className="font-display text-display-md font-semibold text-white">
-              Let us talk about your trade operation.
+              Let us talk about your Power BI.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/65">
               A short call is a simple way to see whether we are a fit and where to start.
@@ -234,10 +236,10 @@ export default function AboutPage() {
                 Request a quote <span aria-hidden>→</span>
               </Button>
               <a
-                href="/platform"
+                href="/services"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-4 text-[15px] font-semibold text-paper transition-colors hover:border-white/50 hover:bg-white/5"
               >
-                See the platform
+                See our services
               </a>
             </div>
           </div>

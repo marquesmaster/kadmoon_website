@@ -8,20 +8,20 @@ import { siteConfig } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contact | Request a quote',
   description:
-    'Tell us how your trade operation works and where the friction is. Within one business day you get a response with a clear path forward and a quote.',
+    'Tell us where your data lives and what your team needs to see. Within one business day you get a response with a scoped plan and a quote for your Power BI and Microsoft data work.',
   alternates: { canonical: `${siteConfig.url}/contact` },
   openGraph: { url: `${siteConfig.url}/contact`, type: 'website', images: ['/opengraph-image'] },
 };
 
 const firstCall = [
-  'A senior read on your trade data and analytics needs',
-  'Where analytics delivers first and where software fits',
+  'A senior read on your data, your systems, and the reporting you need',
+  'Where Power BI delivers first and what we build around it',
   'A clear next step and a quote, not a sales pitch',
 ];
 
 const heroChips = [
   'First dashboards in ~2 weeks',
-  'Built in your own tenant',
+  'Built in your own Microsoft tenant',
   'Response within one business day',
 ];
 
@@ -31,10 +31,11 @@ export default function ContactPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="Request a quote" title="Tell us what you move. Get a quote.">
+        <PageHero eyebrow="Request a quote" title="Tell us where your data lives. Get a quote.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            Tell us how your operation works and where the friction is. You get a senior point of
-            view and a quote, starting with a short call, at no cost and no obligation.
+            Tell us where your data lives, the systems your team runs, and the reporting you need.
+            You get a senior point of view and a quote, starting with a short call, at no cost and no
+            obligation.
           </p>
           <div className="mt-7 flex flex-wrap gap-2">
             {heroChips.map((chip) => (
@@ -59,7 +60,9 @@ export default function ContactPage() {
                   Tell us about your project
                 </h2>
                 <p className="mt-2 text-[15px] leading-relaxed text-ink-2">
-                  A few details are enough to prepare a useful first conversation.
+                  Tell us where your data lives, the systems you run (ERP, CRM, line-of-business),
+                  and what your team needs to see. A few details are enough to prepare a useful first
+                  conversation.
                 </p>
                 <div className="mt-7">
                   <ContactForm theme="light" idPrefix="contact" />
