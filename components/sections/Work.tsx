@@ -3,8 +3,8 @@ import { Section } from '../Section';
 import { SectionHeader } from '../SectionHeader';
 import { Reveal } from '../Reveal';
 
-// Featured on the homepage: three representative analytics engagements.
-const featured = ['landed-cost-analytics', 'entry-throughput-analytics', 'shipment-visibility-analytics']
+// Featured on the homepage: three representative Power BI engagements.
+const featured = ['executive-revenue-dashboard', 'finance-close-analytics', 'sales-pipeline-analytics']
   .map((slug) => caseStudies.find((c) => c.slug === slug))
   .filter((c): c is (typeof caseStudies)[number] => Boolean(c));
 

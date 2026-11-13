@@ -8,21 +8,21 @@ import { caseStudies } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Case studies | Analytics for foreign trade',
+  title: 'Case studies | Power BI and the Microsoft stack',
   description:
-    'Illustrative analytics work for cross-border trade: landed cost, duty exposure, shipment visibility, OTIF, customs throughput, and inventory, drawing data from SAP, Microsoft, and the systems a trade operation already runs on.',
+    'Illustrative Power BI and Microsoft-stack work: executive dashboards, finance and sales analytics, Power BI migration, Power Platform automation, Fabric data engineering, and embedded analytics, built in your own tenant.',
   keywords: [
-    'foreign trade analytics',
-    'customs analytics',
-    'logistics analytics',
-    'landed cost analytics',
+    'Power BI case studies',
+    'Power BI dashboards',
+    'Microsoft Fabric',
+    'Power Platform',
     'kadmoon case studies',
   ],
   alternates: { canonical: `${siteConfig.url}/cases` },
   openGraph: {
     title: 'Kadmoon case studies',
     description:
-      'Analytics for importers, brokers, forwarders, and the companies that move goods across borders. Illustrative scenarios of the analysis we build.',
+      'Illustrative Power BI and Microsoft-stack scenarios: dashboards, migrations, automation, and data engineering built in your own tenant.',
     url: `${siteConfig.url}/cases`,
     type: 'website',
     images: ['/opengraph-image'],
@@ -86,18 +86,16 @@ export default function CasesPage() {
       <main>
         <PageHero
           eyebrow="Case studies"
-          title="Analytics we build for cross-border trade."
+          title="Power BI and the Microsoft stack, at work."
           breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cases' }]} />}
         >
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-            Kadmoon does analytics for one thing: foreign trade. The scenarios below are
-            illustrative of the analysis we build, not based on specific clients; the structure is
-            what ships.
+            The scenarios below are illustrative of the Power BI and Microsoft-stack work we build,
+            not based on specific clients; the structure is what ships.
           </p>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-3">
-            Data comes from wherever your operation already runs: SAP, Microsoft, Oracle, NetSuite,
-            broker and carrier systems, EDI and ACE, or spreadsheets. Analytics is delivered in your
-            own tenant.
+            Data comes from wherever your business already runs: SQL Server, Dynamics 365, SAP,
+            Salesforce, Excel, SharePoint, or APIs. The analytics is delivered in your own tenant.
           </p>
         </PageHero>
 
@@ -118,14 +116,14 @@ export default function CasesPage() {
           <div className="mx-auto max-w-shell px-6">
             <div className="max-w-2xl">
               <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
-                Software we build
+                Builds on the stack
               </p>
               <h2 className="mt-3 font-display text-display-sm font-semibold text-ink">
-                When analytics turns into a system to run on.
+                When reporting turns into a system to run on.
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
-                Living in a client&rsquo;s trade data is where our software starts. These are builds
-                that grew out of that work, and the direction we keep extending.
+                Power BI leads, and the same governed model carries into Power Platform apps, Fabric
+                data engineering, and embedded analytics. These are builds that grew out of that work.
               </p>
             </div>
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -138,7 +136,7 @@ export default function CasesPage() {
 
         <section className="mx-auto max-w-3xl px-6 py-16 text-center md:py-20">
           <h2 className="font-display text-display-sm text-ink">
-            Want analytics like this on your trade data?
+            Want Power BI like this on your data?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-2">
             Tell us where your numbers live and what leadership needs to see. You get a scoped plan

@@ -8,9 +8,9 @@ import { docs } from '@/lib/docs';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Docs | How Kadmoon delivers trade analytics',
+  title: 'Docs | How Kadmoon delivers Power BI',
   description:
-    'Documentation for how Kadmoon delivers analytics for foreign trade: methodology, engagement models, data integration across SAP, Microsoft, Oracle, EDI and ACE, security and tenant model, the KPI library, and a glossary.',
+    'Documentation for how Kadmoon delivers Power BI and the Microsoft stack: methodology, engagement models, data integration across SQL Server, Dynamics, SAP and Salesforce, security and tenant model, the measure library, and a glossary.',
   alternates: { canonical: `${siteConfig.url}/docs` },
   openGraph: { url: `${siteConfig.url}/docs`, type: 'website', images: ['/opengraph-image'] },
 };
@@ -40,13 +40,13 @@ export default function DocsHub() {
       <main>
         <PageHero
           eyebrow="Documentation"
-          title="How we deliver trade analytics, documented."
+          title="How we deliver Power BI, documented."
           breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Docs' }]} />}
         >
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
             Our methodology, how we integrate data from the systems you already run, how it is
-            secured in your tenant, the KPIs we model, and the terms we use. Written for the people
-            evaluating a build, not just signing off on one.
+            secured in your tenant, the measures we model, and the terms we use. Written for the
+            people evaluating a build, not just signing off on one.
           </p>
         </PageHero>
 

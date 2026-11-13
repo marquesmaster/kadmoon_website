@@ -289,12 +289,23 @@ const nextConfig = {
       { source: '/zh/:path*', destination: '/', permanent: true },
       { source: '/pt', destination: '/', permanent: true },
       { source: '/pt/:path*', destination: '/', permanent: true },
-      // Renamed case study.
-      {
-        source: '/cases/freight-visibility-platform',
-        destination: '/cases/shipment-visibility-portal',
-        permanent: true,
-      },
+      // Retired foreign-trade case studies -> the cases index (the new Power BI
+      // case set uses different slugs).
+      ...[
+        'landed-cost-analytics', 'tariff-duty-exposure', 'supplier-performance-analytics',
+        'import-margin-analytics', 'po-to-receipt-cycle-analytics', 'fx-impact-on-import-cost',
+        'import-demand-forecasting', 'entry-throughput-analytics', 'hts-classification-analytics',
+        'denied-party-screening-analytics', 'broker-productivity-sla', 'duty-drawback-analytics',
+        'ace-filing-error-analytics', 'shipment-visibility-analytics', 'otif-performance-analytics',
+        'freight-spend-analytics', 'demurrage-detention-analytics', 'container-utilization-analytics',
+        'carrier-scorecard-analytics', 'multi-warehouse-inventory-analytics', 'receiving-throughput-analytics',
+        'fulfillment-accuracy-analytics', 'inventory-aging-analytics', 'sop-demand-planning-analytics',
+        'product-pnl-landed-cost', 'export-compliance-analytics', 'cross-border-inventory-positioning',
+        'terminal-dwell-time-analytics', 'freight-invoice-audit-analytics', 'trade-control-tower',
+        'customs-filing-platform', 'trade-erp-landed-cost', 'shipment-visibility-portal',
+        'denied-party-screening-service', 'bonded-ftz-wms', 'vessel-security-vision',
+        'freight-visibility-platform',
+      ].map((slug) => ({ source: `/cases/${slug}`, destination: '/cases', permanent: true })),
 
       // Service slugs. Power BI, Power Platform, data engineering and Copilot
       // are live pages now (do not redirect them). Older Microsoft variants
