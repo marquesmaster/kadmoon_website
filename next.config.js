@@ -296,27 +296,32 @@ const nextConfig = {
         permanent: true,
       },
 
-      // Retired Power BI / Microsoft service pages. The analytics stack
-      // (Fabric, Power BI, Azure) is how we deliver, so these point to the
-      // platform ("Built on the Microsoft cloud") rather than a generic list:
-      // a trade buyer who runs Microsoft lands on proof we deliver there.
-      { source: '/services/power-bi', destination: '/platform', permanent: true },
-      { source: '/services/microsoft-fabric', destination: '/platform', permanent: true },
-      { source: '/services/power-platform', destination: '/platform', permanent: true },
-      { source: '/services/power-platform-coe', destination: '/platform', permanent: true },
-      { source: '/services/data-engineering', destination: '/services/trade-integrations', permanent: true },
-      { source: '/services/analytics-and-ai', destination: '/platform', permanent: true },
-      { source: '/services/data-governance', destination: '/services/customs-compliance', permanent: true },
-      { source: '/services/tenant-to-tenant-migration', destination: '/platform', permanent: true },
-      { source: '/services/bi-sustainment', destination: '/platform', permanent: true },
-      { source: '/services/discovery-assessment', destination: '/platform', permanent: true },
+      // Service slugs. Power BI, Power Platform, data engineering and Copilot
+      // are live pages now (do not redirect them). Older Microsoft variants
+      // point to the closest live service.
+      { source: '/services/microsoft-fabric', destination: '/services/data-engineering', permanent: true },
+      { source: '/services/power-platform-coe', destination: '/services/power-platform', permanent: true },
+      { source: '/services/analytics-and-ai', destination: '/services/copilot-ai', permanent: true },
+      { source: '/services/data-governance', destination: '/services/power-bi', permanent: true },
+      { source: '/services/tenant-to-tenant-migration', destination: '/services', permanent: true },
+      { source: '/services/bi-sustainment', destination: '/services/power-bi', permanent: true },
+      { source: '/services/discovery-assessment', destination: '/services', permanent: true },
 
-      // Retired Power BI migration landing pages -> the platform (we deliver
-      // trade analytics on the Microsoft stack, in your own tenant).
-      { source: '/tableau-to-power-bi-migration', destination: '/platform', permanent: true },
-      { source: '/qlik-to-power-bi-migration', destination: '/platform', permanent: true },
-      { source: '/cognos-to-power-bi-migration', destination: '/platform', permanent: true },
-      { source: '/synapse-to-fabric-migration', destination: '/platform', permanent: true },
+      // Retired foreign-trade service pages -> the closest live service.
+      { source: '/services/trade-erp', destination: '/services/power-bi', permanent: true },
+      { source: '/services/customs-compliance', destination: '/services', permanent: true },
+      { source: '/services/inventory-wms', destination: '/services', permanent: true },
+      { source: '/services/vessel-security-vision', destination: '/services', permanent: true },
+      { source: '/services/supply-chain-logistics', destination: '/services', permanent: true },
+      { source: '/services/trade-crm', destination: '/services', permanent: true },
+      { source: '/services/custom-development', destination: '/services', permanent: true },
+      { source: '/services/trade-integrations', destination: '/services/data-engineering', permanent: true },
+
+      // Power BI / Fabric migration landing pages -> the live service pages.
+      { source: '/tableau-to-power-bi-migration', destination: '/services/power-bi', permanent: true },
+      { source: '/qlik-to-power-bi-migration', destination: '/services/power-bi', permanent: true },
+      { source: '/cognos-to-power-bi-migration', destination: '/services/power-bi', permanent: true },
+      { source: '/synapse-to-fabric-migration', destination: '/services/data-engineering', permanent: true },
 
       // Retired subscription and dashboards pages.
       { source: '/packages', destination: '/services', permanent: true },

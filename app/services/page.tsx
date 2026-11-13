@@ -10,16 +10,16 @@ import { analyticsSolutions, services } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'What we do | Analytics and trade software',
+  title: 'Services | Power BI, Power Platform, Fabric & Copilot',
   description:
-    'Analytics for foreign trade: landed cost and margin, duty and tariff exposure, shipment visibility and OTIF, customs and compliance analytics, inventory, and an executive control tower. Plus the trade platforms we build. Delivered on the Microsoft stack, in your tenant.',
+    'Power BI services and the Microsoft stack around it: governed dashboards and semantic models, Power BI migration and embedded analytics, Power Platform automation, data engineering on Fabric and Azure, and Copilot and AI. Delivered in your own tenant.',
   alternates: { canonical: `${siteConfig.url}/services` },
   openGraph: { url: `${siteConfig.url}/services`, type: 'website', images: ['/opengraph-image'] },
 };
 
 const engage = [
   {
-    kicker: 'Trade data assessment',
+    kicker: 'Power BI assessment',
     title: 'Best first step',
     body: 'A short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks, with a scope and a quote grounded in your real data.',
     cta: 'Request a quote',
@@ -35,17 +35,17 @@ const engage = [
   {
     kicker: 'Managed analytics',
     title: 'After go-live',
-    body: 'We run and evolve your analytics on a defined agreement: refreshes, governance, new reports as needs change, and a roadmap for what comes next.',
+    body: 'We run and evolve your reporting on a defined agreement: refreshes, governance, new reports as needs change, and a roadmap for what comes next.',
     cta: 'Talk support',
     featured: false,
   },
 ];
 
 const faqs = [
-  { q: 'Do you do analytics or build software?', a: 'Both, and analytics leads. We deliver trade analytics today, landed cost, duty, visibility, compliance, and inventory, and build the operational software (customs, ERP, WMS, security vision) as the relationship deepens and the data shows what to build.' },
-  { q: 'Do we have to be on Microsoft?', a: 'No. Your data can live in SAP, Oracle, NetSuite, Dynamics, broker and carrier systems, EDI and ACE, or spreadsheets. We read from the system of record and deliver the analytics on the Microsoft stack, in your own tenant.' },
-  { q: 'How fast do we see something?', a: 'A trade data assessment delivers first dashboards in about two weeks, so you validate real value early instead of waiting on a long data project with nothing to show.' },
-  { q: 'Do we own the analytics and the data?', a: 'Yes. The semantic model, the reports, and the data live in your own tenant with documentation and a full handover. Access follows your identity provider. No lock-in.' },
+  { q: 'Is it only Power BI, or the whole stack?', a: 'Power BI is the lead, and we build on the same governed model: Power Platform apps and automation, data engineering on Microsoft Fabric and Azure, and Copilot and AI. You can start with reporting and grow into automation and AI when it earns its place.' },
+  { q: 'Do we have to be on Microsoft already?', a: 'No. Your data can live in SQL Server, Dynamics, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, or your own APIs. We read from the system of record and deliver the analytics on Power BI and the Microsoft cloud, in your own tenant.' },
+  { q: 'How fast do we see something?', a: 'A Power BI assessment delivers first dashboards in about two weeks, so you validate real value early instead of waiting on a long data project with nothing to show.' },
+  { q: 'Do we own the model and the data?', a: 'Yes. The semantic model, the reports, and the data live in your own tenant with documentation and a full handover. Access follows your identity provider. No lock-in.' },
 ];
 
 export default function ServicesPage() {
@@ -55,14 +55,14 @@ export default function ServicesPage() {
       <main>
         {/* Hero */}
         <PageHero
-          eyebrow="What we do"
-          title="The analytics we deliver, and the software we build."
-          breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'What we do' }]} />}
+          eyebrow="Services"
+          title="Power BI, and everything we build around it."
+          breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />}
         >
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We turn the data in your customs, logistics, and ERP systems into decisions, delivered on
-            the Microsoft stack in your own tenant, plus the platforms we build for cross-border
-            operations as the work deepens.
+            We turn the data in your ERP, CRM, and line-of-business systems into decisions, delivered
+            on Power BI in your own tenant, with Power Platform automation, Fabric data engineering,
+            and Copilot and AI built on the same governed model.
           </p>
         </PageHero>
 
@@ -72,7 +72,7 @@ export default function ServicesPage() {
             <div className="max-w-2xl">
               <Eyebrow>What we deliver</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
-                Analytics we deliver today.
+                Power BI solutions your team runs on.
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
                 One governed model fed from the systems you already run, so every number means one
@@ -109,14 +109,13 @@ export default function ServicesPage() {
         <section className="border-t border-line bg-mist py-24">
           <div className="mx-auto max-w-shell px-6">
             <div className="max-w-2xl">
-              <Eyebrow>What we build</Eyebrow>
+              <Eyebrow>Service lines</Eyebrow>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-ink">
-                Platforms we build on top of the data.
+                Four service lines, from dashboards to AI.
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
-                Living in your trade data is where our software starts. As the operation becomes
-                clear, we build the systems that run it. These are the platforms we build and keep
-                extending.
+                Power BI leads, and the rest builds on the same governed model. Start with reporting
+                and grow into automation, data engineering, and AI as each earns its place.
               </p>
             </div>
             <div className="mt-11 grid gap-5 md:grid-cols-2">
