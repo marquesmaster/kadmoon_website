@@ -150,10 +150,8 @@ export const nav = {
   wordmark: 'Kadmoon',
   suffix: 'Business Intelligence',
   menu: navMenu,
-  // Secondary top-bar action for existing clients. The analytics run in the
-  // client's own Microsoft tenant, so "access" is signing in to Power BI, not a
-  // Kadmoon login. Prospects use "Request a quote" instead.
-  access: { label: 'Client sign-in', href: 'https://app.powerbi.com' },
+  // No "Client sign-in" for now: there is no platform at launch, so the top bar
+  // carries only the primary CTA. Existing clients use /contact.
   cta: { label: 'Request a quote', href: '/contact' },
 };
 

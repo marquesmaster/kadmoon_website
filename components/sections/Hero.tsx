@@ -1,4 +1,4 @@
-import { hero } from '@/lib/content';
+import { hero, stats, clientLogos } from '@/lib/content';
 import { Button } from '../Button';
 
 // Illustrative product UI — a stylized Power BI dashboard, not real client
@@ -75,11 +75,11 @@ function DashboardMock() {
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-gradient-to-b from-paper via-paper to-mist pb-16 pt-28 md:pb-24 md:pt-36">
+    <section id="top" className="relative overflow-hidden bg-gradient-to-b from-paper via-paper to-mist pb-10 pt-24 md:pb-14 md:pt-28">
       <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
 
       <div className="relative mx-auto max-w-shell px-6">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           {/* Left: text */}
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-2">
@@ -87,17 +87,17 @@ export function Hero() {
               {hero.eyebrow}
             </span>
 
-            <h1 className="mt-6 font-display text-display-xl text-ink" style={{ textWrap: 'balance' }}>
+            <h1 className="mt-5 font-display text-display-xl text-ink" style={{ textWrap: 'balance' }}>
               {hero.headlineBefore}
               <span className="text-accent">{hero.headlineAccent}</span>
               {hero.headlineAfter}
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2 md:text-xl">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-2 md:text-xl">
               {hero.subhead}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               {hero.ctas.map((cta) => (
                 <Button
                   key={cta.href}
@@ -111,7 +111,7 @@ export function Hero() {
               ))}
             </div>
 
-            <div className="mt-8 flex max-w-lg flex-wrap gap-2">
+            <div className="mt-6 flex max-w-lg flex-wrap gap-2">
               {hero.flagship.split(' · ').map((item) => (
                 <span
                   key={item}
@@ -127,6 +127,40 @@ export function Hero() {
           <div className="lg:pl-6">
             <DashboardMock />
           </div>
+        </div>
+
+        {/* Proof strip: the team and group's track record, in the first screen */}
+        <div className="mt-8 border-t border-line pt-6 md:mt-9">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+              The team &amp; group behind Kadmoon
+            </span>
+            <dl className="flex flex-wrap gap-x-9 gap-y-4">
+              {stats.map((s, i) => (
+                <div key={s.label} className="flex items-baseline gap-2.5">
+                  <dd
+                    className={`font-display text-2xl font-bold tracking-[-0.03em] tabular-nums md:text-[28px] ${
+                      i === 0 ? 'text-accent' : 'text-ink'
+                    }`}
+                  >
+                    {s.value}
+                  </dd>
+                  <dt className="max-w-[13ch] text-[12px] leading-tight text-ink-2">{s.label}</dt>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          {/* Client logos appear here once real, approved names are provided. */}
+          {clientLogos.length > 0 && (
+            <ul className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pt-6">
+              {clientLogos.map((c) => (
+                <li key={c} className="font-display text-[14px] font-semibold text-ink-3">
+                  {c}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </section>
