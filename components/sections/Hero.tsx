@@ -151,22 +151,50 @@ export function Hero() {
             </dl>
           </div>
 
-          {/* Organizations the team and group has worked with (clients + partners). */}
+          {/* Organizations the team and group has worked with (clients + partners):
+              real logo images where we have the file, wordmarks for the rest. */}
           {clientLogos.length > 0 && (
             <div className="mt-6 border-t border-line pt-6">
               <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
                 Organizations the team and group has worked with
               </span>
-              <ul className="mt-4 flex flex-wrap items-center gap-x-7 gap-y-2.5">
-                {clientLogos.map((c) => (
-                  <li
-                    key={c}
-                    className="font-display text-[15px] font-semibold tracking-[-0.01em] text-ink-3 transition-colors hover:text-ink-2"
-                  >
-                    {c}
-                  </li>
-                ))}
-              </ul>
+              {clientLogos.some((c) => c.logo) && (
+                <ul className="mt-4 flex flex-wrap items-center gap-2.5">
+                  {clientLogos
+                    .filter((c) => c.logo)
+                    .map((c) => (
+                      <li key={c.name}>
+                        <span
+                          className={`flex h-11 items-center justify-center rounded-lg border px-3.5 ${
+                            c.darkBg ? 'border-navy/15 bg-navy' : 'border-line bg-white'
+                          }`}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={c.logo}
+                            alt={`${c.name} logo`}
+                            className="max-h-6 w-auto opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
+                            style={{ maxWidth: '112px' }}
+                          />
+                        </span>
+                      </li>
+                    ))}
+                </ul>
+              )}
+              {clientLogos.some((c) => !c.logo) && (
+                <ul className="mt-3.5 flex flex-wrap items-center gap-x-6 gap-y-2">
+                  {clientLogos
+                    .filter((c) => !c.logo)
+                    .map((c) => (
+                      <li
+                        key={c.name}
+                        className="font-display text-[14px] font-semibold tracking-[-0.01em] text-ink-3 transition-colors hover:text-ink-2"
+                      >
+                        {c.name}
+                      </li>
+                    ))}
+                </ul>
+              )}
             </div>
           )}
         </div>

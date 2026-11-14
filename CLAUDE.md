@@ -58,8 +58,8 @@ deployed via Docker on a Hostinger VPS.
 - **Never invent clients, testimonials, or logos.** `testimonials` and
   `clientLogos` in `lib/content.ts` render only when populated. `testimonials`
   stays empty until real, approved data is provided; `clientLogos` is populated
-  with owner-provided names (shown as wordmarks; swap to logo images if the
-  owner provides files).
+  with owner-provided organizations: those with a `logo` render as an image
+  (files in `public/logos`, from the group's sites), the rest as wordmarks.
 - All figures in cases/mocks are **illustrative** and must be labeled plainly as
   such ("Illustrative figures"); do not dress them up as a real client.
 - Name Microsoft products factually (we build on them). Do not claim a
