@@ -924,29 +924,34 @@ export type Testimonial = {
 
 export const testimonials: Testimonial[] = [];
 
-// Organizations the team and group has worked with, shown as a wordmark row
-// (real, owner-approved names; a mix of clients and partners). Owner approved
-// including the group's Brazilian organizations here as a deliberate exception
-// to the no-Brazil rule; keep the neutral "worked with" framing, not "clients".
-// Swap to real logo images if the owner provides the files later.
-export const clientLogos: string[] = [
-  'Santos FC',
-  'Sky HDTV',
-  'Tecnisa',
-  'ESPM',
-  'CREA-SP',
-  'Finep',
-  'LCO Invest',
-  'Paraná Educação',
-  'Philipeia',
-  'APAS',
-  'Boom',
-  'LHH',
-  'Autodoc',
-  'Pilotís Brasília',
-  'Fivedev',
-  'RHC Solutions',
-  '4One',
+// Organizations the team and group has worked with (real, owner-approved; a mix
+// of clients and partners). Owner approved including the group's Brazilian
+// organizations here as a deliberate exception to the no-Brazil rule; keep the
+// neutral "worked with" framing, not "clients". Those with a `logo` render as
+// an image (files in public/logos, from the group's sites); the rest render as
+// wordmarks. `darkBg` marks a light logo that needs a dark chip to be visible.
+export type ClientLogo = { name: string; logo?: string; darkBg?: boolean };
+export const clientLogos: ClientLogo[] = [
+  { name: 'Santos FC', logo: '/logos/santos.png' },
+  { name: 'Sky HDTV', logo: '/logos/sky.png' },
+  { name: 'Tecnisa', logo: '/logos/tecnisa.png', darkBg: true },
+  { name: 'ESPM', logo: '/logos/espm.png' },
+  { name: 'APAS', logo: '/logos/apas.png' },
+  { name: 'Ministério da Educação', logo: '/logos/ministerio.png' },
+  { name: 'Xertica', logo: '/logos/xertica.png' },
+  { name: 'Brasoftware', logo: '/logos/brasoftware.png' },
+  { name: 'CREA-SP' },
+  { name: 'Finep' },
+  { name: 'LCO Invest' },
+  { name: 'Paraná Educação' },
+  { name: 'Philipeia' },
+  { name: 'Boom' },
+  { name: 'LHH' },
+  { name: 'Autodoc' },
+  { name: 'Pilotís Brasília' },
+  { name: 'Fivedev' },
+  { name: 'RHC Solutions' },
+  { name: '4One' },
 ];
 
 // ---------------------------------------------------------------------------
