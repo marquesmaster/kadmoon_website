@@ -37,10 +37,11 @@ deployed via Docker on a Hostinger VPS.
   third model.
   Keep pricing, services, and docs consistent with these two models.
 - Primary CTA everywhere is **"Request a quote"** → `/contact`. There is no
-  booking/scheduling tool. The top-bar secondary action is **"Client sign-in"**
-  → Power BI (`app.powerbi.com`): the reports run in the client's own Microsoft
-  tenant, so access is signing in there, not a Kadmoon login. Existing clients
-  who need access provisioned or a new report use `/contact`.
+  booking/scheduling tool. **No "Client sign-in" for now** (removed: no platform
+  at launch), so the top bar carries only the primary CTA. Existing clients who
+  need access provisioned or a new report use `/contact`. If a client sign-in is
+  reintroduced later, it points to Power BI (`app.powerbi.com`), since reports
+  run in the client's own Microsoft tenant, not a Kadmoon login.
 
 ## Hard content rules
 
