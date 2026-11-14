@@ -3,6 +3,8 @@ import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
 import { services, industryPages, caseStudies } from '@/lib/content';
 import { docs } from '@/lib/docs';
+import { usCities, usStates } from '@/lib/us-cities';
+import { ANGLES } from '@/lib/geo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
@@ -63,5 +65,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...posts, ...categories];
+  // Local Power BI pages: the /locations hub, state pages, and every
+  // angle x city combination.
+  const geo: MetadataRoute.Sitemap = [
+    { url: `${base}/locations`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    ...usStates.map((s) => ({
+      url: `${base}/power-bi/${s.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+    ...ANGLES.flatMap((a) =>
+      usCities.map((c) => ({
+        url: `${base}/${a.base}/${c.slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      })),
+    ),
+  ];
+
+  return [...staticRoutes, ...posts, ...categories, ...geo];
 }

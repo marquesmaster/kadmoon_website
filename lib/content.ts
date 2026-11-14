@@ -547,6 +547,7 @@ export const footer = {
         { label: 'Cases', href: '/cases' },
         { label: 'Docs', href: '/docs' },
         { label: 'Blog', href: '/blog' },
+        { label: 'Locations', href: '/locations' },
         { label: 'About', href: '/about' },
         { label: 'Contact', href: '/contact' },
       ],
