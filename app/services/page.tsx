@@ -6,6 +6,7 @@ import { Button } from '@/components/Button';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { PageHero } from '@/components/sections/PageHero';
 import { HowToChoose } from '@/components/sections/HowToChoose';
+import { Problems } from '@/components/sections/Problems';
 import { analyticsSolutions, services } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -19,9 +20,9 @@ export const metadata: Metadata = {
 
 const engage = [
   {
-    kicker: 'Power BI assessment',
+    kicker: '2-Week Power BI Assessment',
     title: 'Start here',
-    body: 'A short, fixed-scope first project that maps your decisions and data and delivers first dashboards in about two weeks, with a scope and a quote grounded in your real data. It leads into one of the two models.',
+    body: 'A short, fixed-scope first project that maps your decisions and data and delivers first dashboards in about two weeks, with a plan and a fixed quote grounded in your real data. It leads into one of the two models.',
     cta: 'Request a quote',
     featured: true,
   },
@@ -65,6 +66,9 @@ export default function ServicesPage() {
             and Copilot and AI built on the same governed model.
           </p>
         </PageHero>
+
+        {/* The problems we fix */}
+        <Problems />
 
         {/* Analytics we deliver */}
         <section className="bg-paper py-24">

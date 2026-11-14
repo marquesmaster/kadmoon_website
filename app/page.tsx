@@ -1,8 +1,10 @@
 import { Nav } from '@/components/Nav';
 import { Hero } from '@/components/sections/Hero';
+import { Problems } from '@/components/sections/Problems';
 import { Credibility } from '@/components/sections/Credibility';
 import { StatsBand } from '@/components/sections/StatsBand';
 import { Capabilities } from '@/components/sections/Capabilities';
+import { BoutiqueEdge } from '@/components/sections/BoutiqueEdge';
 import { ReportsBand } from '@/components/sections/ReportsBand';
 import { MicrosoftStack } from '@/components/sections/MicrosoftStack';
 import { Industries } from '@/components/sections/Industries';
@@ -23,6 +25,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <ReportsBand />
+        <Problems />
         <MicrosoftStack />
         <Credibility />
         <StatsBand />
@@ -30,6 +33,7 @@ export default function HomePage() {
         <Industries />
         <Process />
         <Comparison />
+        <BoutiqueEdge />
         <Work />
         <CtaBand />
         <Faq />
