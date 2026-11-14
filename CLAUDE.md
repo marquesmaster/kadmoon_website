@@ -46,14 +46,20 @@ deployed via Docker on a Hostinger VPS.
 ## Hard content rules
 
 - **Never reference Brazil or the Portuguese language** anywhere in site-facing
-  content, copy, metadata, or data. **One approved exception:** the
+  content, copy, metadata, or data. **Two approved exceptions:** (1) the
   `groupExperience` band (`lib/content.ts`) may state the team/group's prior
   Microsoft track record (years, organizations served, solutions shipped) as
-  cross-sector experience. Keep the exception limited to that band; do not
-  reintroduce Brazil/Portuguese elsewhere.
+  cross-sector experience; (2) `clientLogos` (`lib/content.ts`) carries the
+  group's real organizations (clients and partners), some Brazilian, which the
+  owner approved listing in the hero under the neutral framing "Organizations
+  the team and group has worked with." Do NOT strip those names for the
+  no-Brazil rule. Keep the exceptions limited to these two; do not reintroduce
+  Brazil/Portuguese elsewhere.
 - **Never invent clients, testimonials, or logos.** `testimonials` and
-  `clientLogos` in `lib/content.ts` render only when populated; leave them empty
-  until real, approved data is provided.
+  `clientLogos` in `lib/content.ts` render only when populated. `testimonials`
+  stays empty until real, approved data is provided; `clientLogos` is populated
+  with owner-provided names (shown as wordmarks; swap to logo images if the
+  owner provides files).
 - All figures in cases/mocks are **illustrative** and must be labeled plainly as
   such ("Illustrative figures"); do not dress them up as a real client.
 - Name Microsoft products factually (we build on them). Do not claim a
