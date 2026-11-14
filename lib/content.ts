@@ -924,8 +924,30 @@ export type Testimonial = {
 
 export const testimonials: Testimonial[] = [];
 
-// Client names to show as a logo/wordmark marquee (real, approved clients only).
-export const clientLogos: string[] = [];
+// Organizations the team and group has worked with, shown as a wordmark row
+// (real, owner-approved names; a mix of clients and partners). Owner approved
+// including the group's Brazilian organizations here as a deliberate exception
+// to the no-Brazil rule; keep the neutral "worked with" framing, not "clients".
+// Swap to real logo images if the owner provides the files later.
+export const clientLogos: string[] = [
+  'Santos FC',
+  'Sky HDTV',
+  'Tecnisa',
+  'ESPM',
+  'CREA-SP',
+  'Finep',
+  'LCO Invest',
+  'Paraná Educação',
+  'Philipeia',
+  'APAS',
+  'Boom',
+  'LHH',
+  'Autodoc',
+  'Pilotís Brasília',
+  'Fivedev',
+  'RHC Solutions',
+  '4One',
+];
 
 // ---------------------------------------------------------------------------
 // Group experience band. Framed as the track record of the TEAM/GROUP behind

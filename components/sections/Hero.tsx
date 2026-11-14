@@ -151,15 +151,23 @@ export function Hero() {
             </dl>
           </div>
 
-          {/* Client logos appear here once real, approved names are provided. */}
+          {/* Organizations the team and group has worked with (clients + partners). */}
           {clientLogos.length > 0 && (
-            <ul className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pt-6">
-              {clientLogos.map((c) => (
-                <li key={c} className="font-display text-[14px] font-semibold text-ink-3">
-                  {c}
-                </li>
-              ))}
-            </ul>
+            <div className="mt-6 border-t border-line pt-6">
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+                Organizations the team and group has worked with
+              </span>
+              <ul className="mt-4 flex flex-wrap items-center gap-x-7 gap-y-2.5">
+                {clientLogos.map((c) => (
+                  <li
+                    key={c}
+                    className="font-display text-[15px] font-semibold tracking-[-0.01em] text-ink-3 transition-colors hover:text-ink-2"
+                  >
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
       </div>
