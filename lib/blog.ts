@@ -31,6 +31,121 @@ const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 marked.setOptions({ gfm: true, breaks: false });
 
 /**
+ * Canonical "pillar" explainer posts. The first mention of one of these
+ * phrases in an article's body prose is turned into a link to the pillar,
+ * which concentrates internal link equity on the pages we most want to rank
+ * and gives readers an in-context route deeper. Phrases are matched longest
+ * first (so "on-premises data gateway" wins over "data gateway"), at most once
+ * per target per post, only in body text (never in headings, code, or existing
+ * links), never pointing a post at itself, and only when the target exists.
+ */
+const PILLAR_LINKS: { phrase: string; slug: string }[] = [
+  { phrase: 'on-premises data gateway', slug: 'power-bi-on-premises-data-gateway-explained' },
+  { phrase: 'import vs directquery', slug: 'import-vs-directquery-how-power-bi-connects-to-your-data' },
+  { phrase: 'row-level security', slug: 'power-bi-row-level-security-explained' },
+  { phrase: 'deployment pipelines', slug: 'power-bi-deployment-pipelines-explained' },
+  { phrase: 'deployment pipeline', slug: 'power-bi-deployment-pipelines-explained' },
+  { phrase: 'customer segmentation', slug: 'customer-segmentation-with-power-bi' },
+  { phrase: 'what-if parameters', slug: 'power-bi-what-if-parameters-explained' },
+  { phrase: 'incremental refresh', slug: 'power-bi-incremental-refresh-explained' },
+  { phrase: 'certified datasets', slug: 'power-bi-certified-and-promoted-datasets' },
+  { phrase: 'calculated columns', slug: 'power-bi-measures-vs-calculated-columns' },
+  { phrase: 'cohort analysis', slug: 'cohort-analysis-explained' },
+  { phrase: 'semantic models', slug: 'power-bi-semantic-models-explained' },
+  { phrase: 'semantic model', slug: 'power-bi-semantic-models-explained' },
+  { phrase: 'shared datasets', slug: 'power-bi-shared-datasets-one-model-many-reports' },
+  { phrase: 'shared dataset', slug: 'power-bi-shared-datasets-one-model-many-reports' },
+  { phrase: 'data gateway', slug: 'power-bi-on-premises-data-gateway-explained' },
+  { phrase: 'data lineage', slug: 'power-bi-data-lineage-explained' },
+  { phrase: 'star schema', slug: 'star-schema-why-your-data-model-shape-matters' },
+  { phrase: 'directquery', slug: 'import-vs-directquery-how-power-bi-connects-to-your-data' },
+  { phrase: 'date table', slug: 'power-bi-why-you-need-a-date-table' },
+];
+
+const PILLARS = [...PILLAR_LINKS]
+  .map((p) => ({ phrase: p.phrase.toLowerCase(), slug: p.slug }))
+  .sort((a, b) => b.phrase.length - a.phrase.length);
+
+const isWordChar = (ch: string) => /[a-z0-9]/i.test(ch);
+
+/**
+ * Inject pillar links into a single run of plain body text, left to right.
+ * At each position the longest unused pillar phrase that matches with word
+ * boundaries wins; the match is wrapped in an anchor and scanning resumes
+ * after it, so freshly injected markup is never re-scanned. `used` (keyed by
+ * target slug) and `state.count` are threaded across the whole post so each
+ * pillar is linked at most once and the per-post cap is respected.
+ */
+function linkTextRun(
+  text: string,
+  targets: { phrase: string; slug: string }[],
+  used: Set<string>,
+  state: { count: number; max: number },
+): string {
+  if (state.count >= state.max) return text;
+  const lower = text.toLowerCase();
+  let out = '';
+  let i = 0;
+  while (i < text.length) {
+    if (state.count >= state.max) {
+      out += text.slice(i);
+      break;
+    }
+    let hit: { slug: string; len: number } | null = null;
+    for (const t of targets) {
+      if (used.has(t.slug)) continue;
+      if (!lower.startsWith(t.phrase, i)) continue;
+      const before = i > 0 ? text[i - 1] : ' ';
+      const after = i + t.phrase.length < text.length ? text[i + t.phrase.length] : ' ';
+      if (!isWordChar(before) && !isWordChar(after)) {
+        hit = { slug: t.slug, len: t.phrase.length };
+        break;
+      }
+    }
+    if (hit) {
+      const orig = text.slice(i, i + hit.len);
+      out += `<a href="/blog/${hit.slug}">${orig}</a>`;
+      used.add(hit.slug);
+      state.count++;
+      i += hit.len;
+    } else {
+      out += text[i];
+      i++;
+    }
+  }
+  return out;
+}
+
+/**
+ * Add in-body contextual links to pillar posts. Operates on the rendered HTML,
+ * walking tags and text so links are only ever placed in body prose: headings,
+ * existing anchors, and code/pre blocks are skipped entirely.
+ */
+function addContextualLinks(html: string, currentSlug: string, slugSet: Set<string>, max = 4): string {
+  const targets = PILLARS.filter((p) => p.slug !== currentSlug && slugSet.has(p.slug));
+  if (targets.length === 0) return html;
+
+  const parts = html.split(/(<[^>]+>)/);
+  const skipOpen = /^<(a|code|pre|h[1-6])(\s|>)/i;
+  const skipClose = /^<\/(a|code|pre|h[1-6])>/i;
+  let skipDepth = 0;
+  const used = new Set<string>();
+  const state = { count: 0, max };
+
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i];
+    if (!part) continue;
+    if (part.startsWith('<')) {
+      if (skipClose.test(part)) skipDepth = Math.max(0, skipDepth - 1);
+      else if (skipOpen.test(part) && !part.endsWith('/>')) skipDepth++;
+      continue;
+    }
+    if (skipDepth === 0) parts[i] = linkTextRun(part, targets, used, state);
+  }
+  return parts.join('');
+}
+
+/**
  * Add stable ids to the H2/H3 headings in the rendered HTML and return the
  * table of contents. Anchor ids power in-page navigation and help search
  * engines and AI extractors understand the article structure.
@@ -106,6 +221,12 @@ export function getAllPosts(): Post[] {
       faqs: parseFaqs(data.faqs),
     } satisfies Post;
   });
+  // Second pass: inject in-body links to pillar posts now that every slug is
+  // known, so a link is only added when its target actually exists.
+  const slugSet = new Set(posts.map((p) => p.slug));
+  for (const p of posts) {
+    p.html = addContextualLinks(p.html, p.slug, slugSet);
+  }
   posts.sort((a, b) => (a.date < b.date ? 1 : -1));
   cache = posts;
   return posts;
