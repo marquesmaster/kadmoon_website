@@ -119,17 +119,91 @@ export function getPostBySlug(slug: string): Post | undefined {
   return getAllPosts().find((p) => p.slug === slug);
 }
 
+const RELATED_STOPWORDS = new Set([
+  'power', 'bi', 'the', 'a', 'an', 'to', 'of', 'for', 'and', 'in', 'with', 'on',
+  'your', 'you', 'is', 'are', 'it', 'that', 'this', 'how', 'what', 'why', 'when',
+  'vs', 'not', 'into', 'from', 'can', 'do', 'does', 'get', 'got', 'its',
+]);
+
+function significantTokens(s: string): Set<string> {
+  return new Set(
+    s
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, ' ')
+      .split(' ')
+      .filter((w) => w.length > 2 && !RELATED_STOPWORDS.has(w)),
+  );
+}
+
+function normalizedTags(tags: string[]): Set<string> {
+  return new Set(tags.map((t) => t.toLowerCase().trim()).filter(Boolean));
+}
+
+/**
+ * Pick the most topically related posts for internal linking.
+ *
+ * Relevance is scored, not just "same category by date". With ~180 posts split
+ * across a couple of large categories, same-category ordering is effectively
+ * arbitrary. Instead we weight shared tags by inverse document frequency, so a
+ * ubiquitous tag like "Power BI" (on nearly every post) counts for almost
+ * nothing while a rare, specific tag ("retail", "DAX", "occupancy") dominates,
+ * and we add shared title/keyword tokens plus a light same-category tiebreaker.
+ * A genuinely related post therefore links to its real neighbours, which is
+ * what concentrates internal link equity usefully. We still guarantee the block
+ * is filled, topping up with same-category then recent posts when a post has
+ * few strong matches, so no article shows an empty "Keep reading".
+ */
 export function getRelatedPosts(slug: string, limit = 3): PostMeta[] {
   const all = getAllPosts();
   const current = all.find((p) => p.slug === slug);
   if (!current) return [];
-  const sameCategory = all.filter(
-    (p) => p.slug !== slug && p.category === current.category,
-  );
-  const rest = all.filter(
-    (p) => p.slug !== slug && p.category !== current.category,
-  );
-  return [...sameCategory, ...rest].slice(0, limit).map(({ html, toc, takeaways, faqs, ...m }) => m);
+
+  const n = all.length;
+  const docFreq = new Map<string, number>();
+  for (const p of all) {
+    for (const t of normalizedTags(p.tags)) {
+      docFreq.set(t, (docFreq.get(t) ?? 0) + 1);
+    }
+  }
+  const idf = (tag: string) => Math.log(n / (docFreq.get(tag) ?? 1));
+
+  const currentTags = normalizedTags(current.tags);
+  const currentTokens = significantTokens(`${current.title} ${current.primaryKeyword}`);
+
+  const scored = all
+    .filter((p) => p.slug !== slug)
+    .map((p) => {
+      let score = 0;
+      for (const t of normalizedTags(p.tags)) {
+        if (currentTags.has(t)) score += idf(t);
+      }
+      for (const tok of significantTokens(`${p.title} ${p.primaryKeyword}`)) {
+        if (currentTokens.has(tok)) score += 0.6;
+      }
+      if (p.category === current.category) score += 0.3;
+      return { p, score };
+    })
+    .sort((a, b) => b.score - a.score || (a.p.date < b.p.date ? 1 : -1));
+
+  // A single shared specific tag or title token clears this; a shared
+  // ubiquitous tag plus same category (~0.3) does not, so arbitrary
+  // same-category posts only appear as fill, never as false "related".
+  const picked = scored.filter((s) => s.score > 0.35).slice(0, limit).map((s) => s.p);
+
+  if (picked.length < limit) {
+    const have = new Set<string>([slug, ...picked.map((p) => p.slug)]);
+    const fill = [
+      ...all.filter((p) => !have.has(p.slug) && p.category === current.category),
+      ...all.filter((p) => !have.has(p.slug) && p.category !== current.category),
+    ];
+    for (const p of fill) {
+      if (picked.length >= limit) break;
+      picked.push(p);
+      have.add(p.slug);
+    }
+  }
+
+  return picked.slice(0, limit).map(({ html, toc, takeaways, faqs, ...m }) => m);
 }
 
 export function getCategories(): { name: string; slug: string; count: number }[] {
