@@ -1,72 +1,56 @@
 ---
-title: "Power BI licensing explained: Pro, Premium Per User, and Fabric capacity"
-description: "A plain-English guide to Power BI licensing for decision makers: the difference between Pro, Premium Per User, and Fabric capacity, and how to tell which one your organization actually needs."
+title: "Power BI licensing explained: how to think about what it costs"
+description: "A plain guide to how Power BI licensing works, per-user licensing versus capacity, what shapes the decision, and how to think about the cost without getting lost in the details that change over time."
 category: "Power BI"
-primaryKeyword: "power bi licensing"
-tags: ["Power BI", "licensing", "Microsoft Fabric", "pricing", "Premium"]
+primaryKeyword: "power bi licensing explained"
+tags: ["Power BI", "licensing", "cost", "Fabric", "planning"]
 takeaways:
-  - "Power BI licensing comes down to three options: Pro per user, Premium Per User, and capacity, which is now Microsoft Fabric capacity."
-  - "Pro is the baseline for most teams: every person who builds or consumes shared reports needs a Pro license."
-  - "Premium Per User adds advanced features for individuals without buying a whole capacity, which suits power users and smaller teams."
-  - "Capacity (Fabric) makes sense when you have many report consumers or need the advanced engine, because it can let viewers see content without a per-user license."
-  - "The right license is a function of how many people build versus consume, which features you need, and your scale, and it is worth modeling before you commit."
+  - "Power BI licensing comes in two broad shapes: per-user licensing and capacity, and knowing which fits is most of the decision."
+  - "Per-user licensing is simple and scales with people, which suits most organizations until the user count grows large."
+  - "Capacity is a fixed block of compute that many users can share, which can be more economical at scale and unlocks some features."
+  - "The right choice depends on how many people need access and what features you need, not on chasing the cheapest line item."
+  - "Exact prices and tiers change, so confirm current figures with Microsoft and treat licensing as a planning decision, not a one-time guess."
 faqs:
-  - q: "Do all our report viewers need a paid Power BI license?"
-    a: "It depends on how you deploy. With Pro or Premium Per User, every person who views shared content needs their own license. With a Fabric capacity large enough to support broad viewing (historically the capacities that enabled free viewing), report consumers can view content without an individual paid license, while builders still need one. For an organization with a small number of builders and a large number of viewers, capacity often changes the math significantly, which is exactly the case worth modeling before you decide."
-  - q: "What happened to Power BI Premium? Is it Fabric now?"
-    a: "Microsoft folded the standalone Power BI Premium capacity SKUs into Microsoft Fabric capacity. In practice, the capacity you buy for large-scale Power BI is now a Fabric capacity (the F SKUs), which also covers the broader Fabric data workloads. Premium Per User, the per-individual option, still exists separately. If you read older documentation referring to Premium P SKUs, the modern equivalent is a Fabric capacity."
-  - q: "Can we start small and scale the licensing later?"
-    a: "Yes, and that is usually the sensible path. Many organizations start on Pro, which needs no capacity commitment, prove the value, and move to a Fabric capacity when the number of viewers or the need for advanced features justifies it. Because the content you build does not change, moving from Pro to capacity is a licensing and deployment change, not a rebuild. Starting small keeps the initial commitment low while you confirm the value."
-  - q: "How does licensing work if a consultant builds our Power BI?"
-    a: "The licenses are yours, in your own Microsoft tenant, the same as the rest of your Microsoft subscriptions. A good partner builds inside your tenant and advises on the right licensing for your mix of builders and viewers, but you hold and own the licenses. Some partners also offer to manage the Microsoft capacity on your behalf and bill it on one invoice as an add-on, which can simplify administration, but the entitlements remain yours."
+  - q: "How does Power BI licensing work?"
+    a: "At a high level, Power BI licensing comes in two shapes. Per-user licensing assigns a paid license to each person who needs to create or consume certain content, so cost scales with the number of people. Capacity is a fixed block of dedicated compute that an organization buys, which many users can share and which unlocks some features not available on per-user plans alone. There is also a free tier with limits that matter mainly for individual use. Most of the licensing decision is choosing between per-user and capacity for your situation, which depends on how many people need access and what features you need. The specifics of tiers and prices change over time, so the shape is worth understanding and the current figures are worth confirming with Microsoft."
+  - q: "Should we buy per-user licenses or capacity?"
+    a: "It depends mainly on how many people need access and what features you need. Per-user licensing is simple and cost scales with people, which suits most organizations well until the user count grows large enough that per-user cost adds up. Capacity is a fixed cost that many users can share, so beyond a certain scale it can be more economical than licensing everyone individually, and it unlocks some capabilities that per-user plans do not. The crossover depends on your numbers, so the decision is a calculation for your situation rather than a universal rule. A good partner helps you work it through against your actual user count and needs rather than guessing."
+  - q: "Do all our report viewers need a paid license?"
+    a: "It depends on how content is shared and what licensing you have. Under per-user licensing, people generally need a license to consume content shared in the standard way, which is what makes user count the main cost driver. With capacity, content hosted on that capacity can be shared more broadly without a per-user license for every viewer, which is one reason capacity becomes attractive as the audience grows. Because the details here affect cost meaningfully and the rules change over time, this is exactly the kind of thing to confirm against current Microsoft terms for your scenario rather than assume, since getting it right can change the economics of rolling reporting out widely."
+  - q: "How should we budget for Power BI licensing?"
+    a: "Treat it as a planning decision, not a one-time guess. Start from how many people will create and consume content and what features you need, work out whether per-user or capacity is more economical at that scale, and confirm current prices with Microsoft because the figures change. Then revisit it as you grow, because the right answer shifts: an organization that starts on per-user licensing may reach a scale where capacity becomes the better deal, and planning for that avoids an expensive surprise. The goal is not the cheapest line item today but the licensing that fits how you actually use Power BI as it grows, which is a decision worth making deliberately and reviewing over time."
 ---
 
-Power BI licensing confuses more buyers than almost any other part of the platform, and the confusion is expensive, because the wrong choice either leaves capability on the table or pays for capacity you do not need. The good news is that the model is simpler than it looks once you see what each option is really for. This guide explains the three licensing options in plain terms and, more usefully, how to tell which one fits your organization.
+Power BI licensing has a reputation for being confusing, and some of that reputation is earned, because the specific tiers and prices change and the details can get intricate. But the shape of it is not complicated, and understanding the shape is most of what you need to make a sensible decision. This is a plain guide to how Power BI licensing works and how to think about what it costs, aimed at the decision rather than the fine print, with the honest caveat that exact figures change and should be confirmed with Microsoft.
 
-## The three options, plainly
+## Two broad shapes
 
-Power BI licensing comes down to three choices. Everything else is detail.
+Strip away the details and Power BI licensing comes in **two broad shapes**, and knowing which one fits your situation is most of the decision.
 
-**Power BI Pro** is a per-user license. Anyone who builds reports, or who views reports that others have shared, needs a Pro license. It is the baseline, and for many teams it is all they ever need. If you have a modest number of people who both build and consume reports, Pro is usually where you start and often where you stay.
+The first is **per-user licensing.** Each person who needs to create or consume certain content has a paid license assigned to them, so the cost scales directly with the number of people. More users, more licenses, more cost, in a straightforward line. The second is **capacity**: a fixed block of dedicated compute that the organization buys, which many users can share. Capacity is a fixed cost rather than a per-person one, and it also unlocks some features that per-user plans alone do not provide. There is also a **free tier** with limits, which matters mainly for individual use and rarely anchors an organization's decision.
 
-**Power BI Premium Per User**, or PPU, is also per-user, but it adds the advanced capabilities that used to require a full capacity, larger models, more frequent refreshes, advanced AI features, without having to buy a whole capacity. It suits individual power users and smaller teams who need the premium feature set but do not have the scale to justify dedicated capacity.
+Almost all of the real licensing decision is choosing between **per-user** and **capacity** for your situation. Everything else is detail around those two shapes. Once you see licensing this way, the question becomes manageable: which of these two models fits how many people we have and what we need to do?
 
-**Capacity**, which is now **Microsoft Fabric capacity**, is a different model entirely. Instead of licensing each person, you buy a pool of dedicated compute. This is what you reach for at scale, or when you need the advanced engine, and critically, a capacity large enough can let report consumers view content without each needing their own per-user license.
+## Per-user: simple, scales with people
 
-## The question that decides it: builders versus viewers
+**Per-user licensing** is the natural starting point for most organizations, because it is simple and its cost is easy to understand. You license the people who need to build and consume content, and the cost is the number of those people times the per-license price. There is nothing to size or forecast beyond counting the people, which makes it easy to adopt and easy to budget at a small or moderate scale.
 
-The single most useful lens for choosing is the ratio of **builders to viewers**.
+For most organizations, per-user licensing is the right model **until the user count grows large.** When you have a modest number of people creating and consuming reports, licensing them individually is both simple and economical. The model only starts to strain when the number of people grows to the point where the per-user cost adds up to more than a shared alternative would cost, which is the point at which capacity enters the picture. Until then, per-user licensing is usually the sensible default, and reaching for anything more complex before you need it just adds cost and complexity for no benefit.
 
-If most of the people touching Power BI are building and exploring, and the total number is not huge, per-user licensing (Pro, with PPU for the power users) is usually the most economical and the simplest. You pay for the people doing the work.
+## Capacity: a shared block of compute
 
-If you have a **small number of builders and a large number of viewers**, the math changes. Licensing hundreds or thousands of viewers individually gets expensive fast. A Fabric capacity large enough to support broad viewing lets those viewers consume content without an individual paid license, while the builders keep theirs. For a company that wants to put dashboards in front of the whole sales floor or the entire operations team, this is often the difference between an affordable rollout and an unaffordable one.
+**Capacity** is the other shape: instead of licensing each person, the organization buys a fixed block of dedicated compute that users share. Because the cost is fixed rather than per-person, capacity changes the economics as the number of people grows. Beyond a certain scale, paying once for a block of capacity that many people share becomes more economical than licensing each of them individually, which is the central reason organizations move to it.
 
-This is why the honest answer to how much Power BI costs is always it depends on your mix. The licensing is not one price; it is a model you fit to how your organization actually uses reports.
+Capacity also **unlocks some capabilities** that per-user plans do not offer, and for some organizations those features, as much as the economics, are the reason to consider it. The trade-off is that capacity is a larger, fixed commitment that needs to be sized to your usage, so it is a more considered decision than simply adding per-user licenses. Capacity is where Power BI connects into the broader Microsoft Fabric platform, so for organizations growing into wider data and analytics work, the capacity decision often sits alongside those broader plans rather than standing alone. The key point is that capacity earns its place at **scale and for its features**, and below that scale per-user licensing is usually simpler and cheaper.
 
-## What happened to Premium
+## Choosing between them
 
-If you have researched this before, you may have read about Power BI Premium capacity and the P SKUs, and then found that terminology has changed. Microsoft folded the standalone Premium capacity into **Microsoft Fabric capacity**. The capacity you now buy for large-scale Power BI is a Fabric capacity, identified by the F SKUs, and it also covers the broader Fabric data engineering workloads, lakehouse, pipelines, and the rest.
+The right choice between per-user and capacity depends on **two things**: how many people need access, and what features you need. It is a calculation for your situation, not a universal rule, because the point at which capacity becomes more economical than per-user licensing depends on your numbers.
 
-For a Power BI buyer, the practical translation is simple: where older guidance says buy a Premium capacity, the modern equivalent is buy a Fabric capacity. Premium Per User, the individual option, still exists under its own name. The consolidation means your analytics capacity and your data platform capacity are the same thing, which is tidy if you are building the data foundation on Fabric anyway.
+Work it through concretely. Count the people who will create and consume content. Work out what per-user licensing would cost for them. Compare that to the cost of capacity sized to your usage, and factor in whether you need any features that only capacity provides. The more economical option at **your** scale, with **your** feature needs, is the right one, and for many organizations that is per-user licensing until they reach a size where capacity wins. The mistake to avoid is choosing by reputation or by chasing the cheapest headline number, rather than by the calculation for your actual situation. This is a place where a good partner helps, working the numbers through with you against your real user count and needs, so the decision rests on your situation rather than a guess.
 
-## Starting small and scaling
+## A planning decision, not a one-time guess
 
-One worry buyers have is committing to the wrong tier and being stuck. In practice the path is forgiving. Many organizations start on **Pro**, which requires no capacity commitment, prove the value on a focused set of reports, and move to a **Fabric capacity** when the number of viewers or the need for advanced features justifies it.
+Two honest caveats make the rest of this advice usable. First, the **exact prices and tiers change** over time, so any specific figure should be confirmed with Microsoft for your scenario rather than taken from a guide. This article deliberately stays at the level of the shapes and the trade-offs, because those are stable while the numbers are not. Second, licensing is a **planning decision, not a one-time guess**, because the right answer shifts as you grow.
 
-The reason this is low-risk is that the content does not change. A move from Pro to capacity is a licensing and deployment change, not a rebuild of your models and reports. You are changing how the same content is served, not remaking it. So the sensible approach is to license for where you are, not where you might be, and scale the licensing when the usage earns it.
-
-## How licensing works with a consultant
-
-A common question is who holds the licenses when a partner builds your Power BI. The answer is that the licenses are **yours, in your own Microsoft tenant**, alongside the rest of your Microsoft subscriptions. A good partner builds inside your tenant and advises on the right licensing for your builder-to-viewer mix, but you own the entitlements, the same as you own the model, the reports, and the data.
-
-Some partners also offer to **manage the Microsoft capacity** on your behalf and bill it on a single invoice as an optional add-on. That can simplify administration, one relationship, one bill, but the entitlements still belong to you. It is a convenience, not a transfer of ownership, and like everything else it should leave you able to operate on your own.
-
-## A simple way to decide
-
-If you want a starting heuristic before a proper model:
-
-- **Small team, mostly builders, modest viewer count:** Pro, with PPU for anyone who needs the advanced features.
-- **A few builders, many viewers:** model a Fabric capacity against per-user viewer licensing. The crossover usually favors capacity sooner than people expect.
-- **You are building the data foundation on Fabric already:** a Fabric capacity covers both the analytics and the data workloads, so it is worth considering even at moderate scale.
-
-The one thing worth avoiding is guessing. Licensing is one of the few Power BI decisions where a short modeling exercise, counting your real builders and viewers and the features you need, pays for itself immediately by pointing at the option that fits. It is exactly the kind of thing worth settling early, as part of scoping the build, rather than discovering after you have committed.
+An organization that sensibly starts on per-user licensing may reach a scale where capacity becomes the better deal, and planning for that transition avoids an expensive surprise later. So the right approach is to choose the model that fits you now, confirm the current figures, and revisit the decision as your usage grows, rather than deciding once and forgetting it. The goal is not the cheapest line item today but the licensing that fits **how you actually use Power BI as it grows**, which is a deliberate decision worth making with the real numbers and reviewing over time. Understood as two shapes and a calculation, Power BI licensing is far less confusing than its reputation suggests, and getting it right is mostly a matter of matching the model to your scale and your needs, with current figures confirmed and a plan for how it changes as you do.
