@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
-import { services } from '@/lib/content';
+import { services, pricingDetail } from '@/lib/content';
 import { docs } from '@/lib/docs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -27,6 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    })),
+    ...Object.keys(pricingDetail).map((slug) => ({
+      url: `${base}/pricing/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     })),
     ...docs.map((d) => ({
       url: `${base}/docs/${d.slug}`,

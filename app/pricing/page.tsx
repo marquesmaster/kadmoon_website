@@ -74,7 +74,7 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6">
+                <div className="mt-6 space-y-3">
                   <Button
                     href={siteConfig.bookingUrl}
                     variant={t.featured ? 'primary' : 'ghost'}
@@ -82,6 +82,12 @@ export default function PricingPage() {
                   >
                     {t.cta ?? 'Book a 30-minute call'}
                   </Button>
+                  <a
+                    href={`/pricing/${t.slug}`}
+                    className="flex items-center justify-center gap-1.5 text-[13px] font-semibold text-accent hover:underline"
+                  >
+                    See what&apos;s included <span aria-hidden>→</span>
+                  </a>
                 </div>
               </Reveal>
             ))}

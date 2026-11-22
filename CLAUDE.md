@@ -94,9 +94,16 @@ deployed via Docker on a Hostinger VPS.
 - `lib/content.ts` — nav menu, hero, stats, capabilities, comparison, faq,
   footer, `services[]` (now just `power-bi` + `microsoft-fabric`),
   `serviceAnalytics` (platform→cases tie-in), `powerBiForFinance` (the finance
-  landing page), `pricing`, `assessment`, `analyticsSolutions`, etc. The
-  `industryPages[]`/`industries` exports are retired (the `/industries` pages and
-  home section were removed); do not render them.
+  landing page), `pricing` (four published tiers, each with a `slug`),
+  `pricingDetail` (client-facing scope per tier, rendered at `/pricing/[tier]`),
+  `assessment`, `analyticsSolutions`, etc. The `industryPages[]`/`industries`
+  exports are retired (the `/industries` pages and home section were removed);
+  do not render them.
+- `internal/scopes/*.md` — the team's delivery playbooks per tier (process,
+  access, scripts, QA, hours). **Internal company asset; not part of the Next.js
+  app, never served or linked from the site.** Keep in sync with `pricingDetail`:
+  the site page states what the client receives; the playbook states how we
+  produce it.
 - `lib/cases/studies.ts` — case studies (`kind: 'analytics' | 'software'`),
   multi-vendor `dataSources`, inline `metrics`.
 - `lib/docs.ts` — docs hub content (methodology, data integration, security,
