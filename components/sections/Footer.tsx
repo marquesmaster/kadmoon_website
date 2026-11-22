@@ -32,7 +32,7 @@ export function Footer() {
               <span
                 aria-hidden
                 className="h-[7px] w-[7px] rounded-full bg-accent"
-                style={{ boxShadow: '0 0 0 4px rgba(20,92,230,.16)' }}
+                style={{ boxShadow: '0 0 0 4px rgba(139,92,246,.16)' }}
               />
               United States · Serving clients nationwide
             </div>

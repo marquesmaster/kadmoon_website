@@ -108,10 +108,12 @@ deployed via Docker on a Hostinger VPS.
 
 - Violet palette: CSS variables in `app/globals.css`, mapped in
   `tailwind.config.ts` (paper/mist/ice/ink/ink-2/ink-3/navy/accent/line).
-  Accent (sole CTA color) is `#6D28D9`; the darkest token (`navy`, used for dark
-  sections) and `themeColor` are `#1B0E33`. Changing a token value cascades
-  site-wide. A lighter violet `#8B5CF6` (gradients) / `#A78BFA` (accent on dark)
-  is used where a token does not reach.
+  Accent (sole CTA color) is `#6D28D9`; the dark-section token (`navy`) and
+  `themeColor` are `#2E1065` (a vivid deep violet, not near-black, so the dark
+  bands read as purple). Changing a token value cascades site-wide. A lighter
+  violet `#8B5CF6` / `#A78BFA` is used for glows, gradients and eyebrow text on
+  dark sections. There is no blue anywhere; if you find a `rgba(20,92,230,…)` or
+  `#8FB8FF`, it is an ocean-era leftover to convert to violet.
 - Fonts are **self-hosted** via `next/font/local` from `app/fonts/*.woff2`
   (Space Grotesk display, Inter sans, JetBrains Mono). **Do not switch back to
   `next/font/google`** — the build-time Google Fonts fetch flakes in CI and on

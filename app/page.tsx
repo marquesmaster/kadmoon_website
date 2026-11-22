@@ -2,6 +2,7 @@ import { Nav } from '@/components/Nav';
 import { Hero } from '@/components/sections/Hero';
 import { Problems } from '@/components/sections/Problems';
 import { Credibility } from '@/components/sections/Credibility';
+import { StatsBand } from '@/components/sections/StatsBand';
 import { Capabilities } from '@/components/sections/Capabilities';
 import { BoutiqueEdge } from '@/components/sections/BoutiqueEdge';
 import { ReportsBand } from '@/components/sections/ReportsBand';
@@ -24,6 +25,7 @@ export default function HomePage() {
         <Problems />
         <MicrosoftStack />
         <Credibility />
+        <StatsBand />
         <Capabilities />
         <Process />
         <BoutiqueEdge />
