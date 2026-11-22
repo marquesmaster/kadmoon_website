@@ -6,6 +6,12 @@ import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
 import { Reveal } from '@/components/Reveal';
 import { PageHero } from '@/components/sections/PageHero';
+import {
+  KpiTiles,
+  BudgetVsActualCard,
+  WorkingCapitalCard,
+  MonthEndCloseCard,
+} from '@/components/reports/SampleReports';
 import { powerBiForFinance as f } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -97,6 +103,30 @@ export default function PowerBiForFinancePage() {
                   <p className="mt-2 text-[14px] leading-relaxed text-ink-2">{r.note}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Representative product UI: the finance reports we build, not a
+                specific client's result. */}
+            <div className="mt-12">
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-3">
+                  A representative view · your tenant · Power BI
+                </span>
+              </div>
+              <div className="mt-5">
+                <KpiTiles />
+              </div>
+              <div className="mt-5 grid items-stretch gap-5 lg:grid-cols-3">
+                <Reveal as="div" className="h-full">
+                  <BudgetVsActualCard />
+                </Reveal>
+                <Reveal as="div" delay={90} className="h-full">
+                  <WorkingCapitalCard />
+                </Reveal>
+                <Reveal as="div" delay={180} className="h-full">
+                  <MonthEndCloseCard />
+                </Reveal>
+              </div>
             </div>
           </div>
         </section>
