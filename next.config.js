@@ -263,6 +263,28 @@ const retiredPowerBiBlogSlugs = [
   'tableau-vs-power-bi', 'tenant-to-tenant-migration-guide', 'what-is-a-semantic-model', 'what-is-microsoft-fabric',
 ];
 
+// Off-positioning industry blog posts removed in the finance/operations
+// refocus. These were well-ranked long-tail pages but target consumer,
+// home-services, and hyper-niche verticals with no finance or operations buyer,
+// so they pulled the brand toward a generalist Power BI shop. Each one-hops to
+// the finance and operations landing page, the on-positioning equivalent of a
+// "Power BI for <vertical>" page.
+const prunedIndustryBlogSlugs = [
+  'power-bi-for-car-washes', 'power-bi-for-auto-repair-shops', 'power-bi-for-funeral-homes',
+  'power-bi-for-golf-courses-and-country-clubs', 'power-bi-for-pest-control-companies',
+  'power-bi-for-landscaping-and-grounds-maintenance', 'power-bi-for-moving-and-relocation-companies',
+  'power-bi-for-childcare-and-daycare-businesses', 'power-bi-for-tutoring-and-test-prep',
+  'power-bi-for-fitness-and-membership-businesses', 'power-bi-for-independent-pharmacies',
+  'power-bi-for-optical-and-eyewear-retailers', 'power-bi-for-dental-practices',
+  'power-bi-for-veterinary-practices', 'power-bi-for-medical-dental-veterinary-practices',
+  'power-bi-for-parking-operators', 'power-bi-for-self-storage-operators',
+  'power-bi-for-museums-and-cultural-institutions', 'power-bi-for-craft-beverage-producers',
+  'power-bi-for-event-management-companies', 'power-bi-for-coworking-and-flexible-office',
+  'power-bi-for-travel-and-tourism', 'power-bi-for-commercial-cleaning-and-janitorial',
+  'power-bi-for-security-services-companies', 'power-bi-for-promotional-products-distributors',
+  'power-bi-for-associations-and-membership-organizations',
+];
+
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -337,6 +359,19 @@ const nextConfig = {
         'trade-data-freshness', 'trade-master-data', 'transit-time-variability',
         'usmca-2026-review-importers', 'vendor-compliance-chargebacks', 'what-is-a-trade-intelligence-platform',
       ].map((slug) => ({ source: `/blog/${slug}`, destination: '/blog', permanent: true })),
+
+      // Off-positioning industry blog posts (consumer / home-services / niche
+      // verticals) removed in the finance and operations refocus. One hop to
+      // the finance landing page.
+      ...prunedIndustryBlogSlugs.map((slug) => ({
+        source: `/blog/${slug}`,
+        destination: '/power-bi-for-finance',
+        permanent: true,
+      })),
+
+      // Power Platform is retired as a standalone service, so the post that
+      // sold Power Apps and Power Automate as a capability is retired too.
+      { source: '/blog/power-apps-power-automate-on-your-data', destination: '/blog', permanent: true },
 
       // The case studies are hidden until real, permissioned case studies are
       // ready. Send /cases and any case page home.
