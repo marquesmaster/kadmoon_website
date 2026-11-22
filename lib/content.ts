@@ -914,6 +914,7 @@ export const pricing = {
   tiers: [
     {
       name: 'Power BI Assessment',
+      slug: 'power-bi-assessment',
       price: '$5,000',
       unit: 'fixed',
       timeline: '2 weeks',
@@ -930,6 +931,7 @@ export const pricing = {
     },
     {
       name: 'Dashboard Build',
+      slug: 'dashboard-build',
       price: 'from $20,000',
       timeline: '4 to 6 weeks',
       best: 'Most chosen',
@@ -945,6 +947,7 @@ export const pricing = {
     },
     {
       name: 'Fabric Data Platform',
+      slug: 'fabric-data-platform',
       price: 'from $45,000',
       timeline: '8 to 12 weeks',
       best: 'When the data needs a foundation',
@@ -958,6 +961,7 @@ export const pricing = {
     },
     {
       name: 'Managed Power BI',
+      slug: 'managed-power-bi',
       price: 'from $3,500',
       unit: 'per month',
       timeline: 'Monthly',
@@ -994,6 +998,192 @@ export const pricing = {
   cta: {
     title: 'Not sure which fits?',
     body: 'Book a 30-minute call. We will look at how your team reports today and tell you what the first two weeks would deliver and what the full build would cost.',
+  },
+};
+
+// ---------------------------------------------------------------------------
+// Client-facing scope detail per pricing tier, keyed by the tier slug.
+// This is what the client receives. The internal process and methods (the
+// team's playbook) live in /internal/scopes and are not published.
+// Rendered at /pricing/[tier].
+// ---------------------------------------------------------------------------
+export type PricingDetail = {
+  slug: string;
+  name: string;
+  price: string;
+  unit?: string;
+  timeline: string;
+  summary: string;
+  forWho: string;
+  receive: string[];
+  included: string[];
+  process: { title: string; body: string }[];
+  ownership: string;
+  acceptance: string[];
+  notIncluded: string[];
+};
+
+export const pricingDetail: Record<string, PricingDetail> = {
+  'power-bi-assessment': {
+    slug: 'power-bi-assessment',
+    name: 'Power BI Assessment',
+    price: '$5,000',
+    unit: 'fixed',
+    timeline: '2 weeks',
+    summary:
+      'A short, fixed-price first project. In two weeks we connect a slice of your real data, build a first governed model, and ship working dashboards, then scope and quote the full build.',
+    forWho:
+      'Finance and operations teams that want to see real dashboards on their own data before committing to a larger build.',
+    receive: [
+      'Working Power BI dashboards on your own data, in your own tenant',
+      'A first governed semantic model with the core measures defined',
+      'A written architecture and delivery plan for the full build',
+      'A fixed-price quote for the full build, grounded in your data',
+      'A short readout session with your finance and operations leads',
+    ],
+    included: [
+      'Two working sessions with your team to map the decisions and the numbers behind them',
+      'Connection to a first set of data sources in your tenant',
+      'The first governed model and a set of working dashboards',
+      'The architecture plan and the fixed quote',
+    ],
+    process: [
+      { title: 'Week 1: map and connect', body: 'We map the decisions your leaders make, confirm where the numbers live, and connect a first slice of your data in your tenant.' },
+      { title: 'Week 2: model and ship', body: 'We build a first governed model and working dashboards, review them with your team, and write the plan and quote for the full build.' },
+    ],
+    ownership:
+      'Everything is built in your own Microsoft tenant and is yours to keep, whether or not you continue with the full build. We work with least-privilege access and remove it at the end.',
+    acceptance: [
+      'The dashboards open on your own data and the core numbers tie to your source systems',
+      'You receive the written plan and the fixed quote',
+    ],
+    notIncluded: [
+      'Microsoft licenses (Power BI, Fabric capacity), billed to you by Microsoft',
+      'The full build itself, which the assessment scopes and quotes',
+    ],
+  },
+  'dashboard-build': {
+    slug: 'dashboard-build',
+    name: 'Dashboard Build',
+    price: 'from $20,000',
+    timeline: '4 to 6 weeks',
+    summary:
+      'The full governed Power BI build: your data connected, one governed model, the report pages your team opens daily, with security, refresh, documentation, and training.',
+    forWho:
+      'Teams ready to move reporting off spreadsheets and onto one governed Power BI model they can trust and run.',
+    receive: [
+      'A governed semantic model with one definition per measure',
+      'The report pages your team opens daily, on your own data',
+      'Row-level security so people see only their numbers',
+      'Scheduled refresh from your source systems',
+      'Documentation of the model and the measures',
+      'Two training sessions for your team',
+      '30 days of support after go-live',
+    ],
+    included: [
+      'Connections to your core data sources',
+      'The governed model and the report pages agreed in the scope',
+      'Row-level security, workspaces, and scheduled refresh',
+      'Documentation and two training sessions',
+      '30 days of post-launch support',
+    ],
+    process: [
+      { title: 'Scope', body: 'We confirm the sources, the measures, and the report pages, then fix the price for the build.' },
+      { title: 'Foundation', body: 'We connect your sources in your tenant and build the governed model, one definition per measure.' },
+      { title: 'Build in cycles', body: 'We deliver the report pages in short cycles, reviewing each with the team that uses it.' },
+      { title: 'Handover', body: 'We set up security and refresh, document the model, train your team, and hand it over.' },
+    ],
+    ownership:
+      'The model, the reports, and the data stay in your own Microsoft tenant, documented and handed over, so you can run and extend them with or without us.',
+    acceptance: [
+      'Each report page is reviewed and accepted by the team that uses it',
+      'The numbers reconcile against your source systems',
+      'Row-level security and scheduled refresh are in place and documented',
+    ],
+    notIncluded: [
+      'Microsoft licenses (Power BI, Fabric capacity), billed to you by Microsoft',
+      'A Fabric lakehouse or data warehouse, which is the Fabric Data Platform tier',
+    ],
+  },
+  'fabric-data-platform': {
+    slug: 'fabric-data-platform',
+    name: 'Fabric Data Platform',
+    price: 'from $45,000',
+    timeline: '8 to 12 weeks',
+    summary:
+      'The data foundation under your reporting: a Microsoft Fabric lakehouse or warehouse, pipelines from your systems, a finance and operations data model, and the Power BI reports on top.',
+    forWho:
+      'Teams whose data is too large or too scattered for direct Power BI connections, and that need a governed foundation under the reporting.',
+    receive: [
+      'A Fabric lakehouse or warehouse in your own tenant',
+      'Pipelines that load your ERP, CRM, and other sources on a schedule',
+      'A finance and operations data model built on that foundation',
+      'Power BI reports on top of the model',
+      'Monitoring and alerts on the pipelines and refreshes',
+      'Documentation of the platform and a full handover',
+    ],
+    included: [
+      'The Fabric lakehouse or warehouse and the pipelines agreed in the scope',
+      'The finance and operations data model',
+      'The Power BI reports on top',
+      'Monitoring, alerts, documentation, and handover',
+    ],
+    process: [
+      { title: 'Scope and architecture', body: 'We confirm the sources, the data volumes, and the model, then set the architecture and fix the price.' },
+      { title: 'Platform', body: 'We build the lakehouse or warehouse in your tenant and the pipelines that load your sources.' },
+      { title: 'Model and reports', body: 'We build the finance and operations data model and the Power BI reports on top.' },
+      { title: 'Monitoring and handover', body: 'We set up monitoring and alerts, document the platform, and hand it over.' },
+    ],
+    ownership:
+      'The platform, the model, the pipelines, and the reports run in your own Microsoft tenant and are yours, documented and handed over.',
+    acceptance: [
+      'Pipelines load your sources on schedule and the data reconciles to source',
+      'The reports are reviewed and accepted by the teams that use them',
+      'Monitoring and alerts are in place and documented',
+    ],
+    notIncluded: [
+      'Microsoft licenses and Fabric capacity, billed to you by Microsoft',
+      'Ongoing operation of the platform, which Managed Power BI covers',
+    ],
+  },
+  'managed-power-bi': {
+    slug: 'managed-power-bi',
+    name: 'Managed Power BI',
+    price: 'from $3,500',
+    unit: 'per month',
+    timeline: 'Monthly',
+    summary:
+      'A monthly subscription where a senior team runs and evolves your Power BI: refreshes watched, new reports and changes delivered, users supported, and a monthly review.',
+    forWho:
+      'Teams that have a Power BI build in place and want it kept current and extended without hiring in-house.',
+    receive: [
+      'Refresh monitoring, with failures caught and fixed',
+      'A set block of hours each month for new reports and model changes',
+      'User support with a response within one business day',
+      'A monthly review with your finance lead',
+      'Governance kept current as people and data come on',
+    ],
+    included: [
+      'Refresh monitoring and fixes',
+      'A set block of hours each month for changes (the number is set in your agreement)',
+      'User support within one business day',
+      'A monthly review and a named point of contact',
+    ],
+    process: [
+      { title: 'Onboarding', body: 'We review your current Power BI, document what is there, and agree the monthly scope and hours.' },
+      { title: 'Each month', body: 'We watch refreshes, deliver the agreed changes, support your users, and meet for a monthly review.' },
+      { title: 'As it grows', body: 'We keep governance and security current and flag when a larger project is the better path.' },
+    ],
+    ownership:
+      'Everything stays in your own Microsoft tenant and is yours. Managed Power BI is month to month after the first three months, so you are never locked in.',
+    acceptance: [
+      'Refreshes are monitored and fixes are made within the agreed response time',
+      'The monthly hours are delivered and reviewed with your lead',
+    ],
+    notIncluded: [
+      'Microsoft licenses (Power BI, Fabric capacity), billed to you by Microsoft',
+      'Large new builds beyond the monthly hours, which we scope as a separate project',
+    ],
   },
 };
 
