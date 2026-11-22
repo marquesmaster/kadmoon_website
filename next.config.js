@@ -412,9 +412,20 @@ const nextConfig = {
       // Retired programmatic solution x city pages.
       { source: '/custom-software-development', destination: '/services', permanent: true },
       { source: '/custom-software-development/:city*', destination: '/services', permanent: true },
-      // Microsoft-stack programmatic pages -> the platform (how we deliver).
-      { source: '/power-bi', destination: '/platform', permanent: true },
-      { source: '/power-bi/:city*', destination: '/platform', permanent: true },
+      // Retired local Power BI pages (city/state landing pages and the
+      // /locations hub). These were near-duplicate pages with no local office,
+      // removed to avoid doorway-page treatment. Send them home.
+      { source: '/locations', destination: '/', permanent: true },
+      { source: '/power-bi-consulting', destination: '/', permanent: true },
+      { source: '/power-bi-consulting/:city*', destination: '/', permanent: true },
+      { source: '/power-bi-dashboards', destination: '/', permanent: true },
+      { source: '/power-bi-dashboards/:city*', destination: '/', permanent: true },
+      { source: '/managed-power-bi', destination: '/', permanent: true },
+      { source: '/managed-power-bi/:city*', destination: '/', permanent: true },
+      // Microsoft-stack programmatic pages (the old /power-bi/<state> set and
+      // the earlier generic pages) -> home.
+      { source: '/power-bi', destination: '/', permanent: true },
+      { source: '/power-bi/:city*', destination: '/', permanent: true },
       { source: '/microsoft-fabric', destination: '/platform', permanent: true },
       { source: '/microsoft-fabric/:city*', destination: '/platform', permanent: true },
       { source: '/power-platform', destination: '/platform', permanent: true },
@@ -427,8 +438,8 @@ const nextConfig = {
       { source: '/copilot-consulting/:city*', destination: '/services', permanent: true },
       { source: '/data-governance', destination: '/services/customs-compliance', permanent: true },
       { source: '/data-governance/:city*', destination: '/services/customs-compliance', permanent: true },
-      { source: '/power-bi-migration', destination: '/platform', permanent: true },
-      { source: '/power-bi-migration/:city*', destination: '/platform', permanent: true },
+      { source: '/power-bi-migration', destination: '/', permanent: true },
+      { source: '/power-bi-migration/:city*', destination: '/', permanent: true },
 
       // Trade-relevant retired URLs retargeted to the closest new page (must
       // precede the blanket maps below, since the first matching rule wins).
