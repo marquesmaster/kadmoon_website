@@ -172,7 +172,7 @@ export const groupCompanies = ['Bradata', 'Fynx', 'Vigiles AI', 'Cyberwalk', 'Ac
 export const capabilities = {
   eyebrow: 'What we deliver',
   title: 'What we build on Power BI.',
-  sub: 'We build the Power BI a business runs on: governed dashboards on a single model, fed from the systems you already use, with automation and AI on top.',
+  sub: 'Governed dashboards on a single model, fed from the systems you already run, with the Microsoft Fabric data engineering underneath.',
   items: [
     {
       title: 'Power BI dashboards & reports',
@@ -254,8 +254,8 @@ export const howToChoose = {
     },
     {
       num: '03',
-      title: 'Is it only Power BI, or the whole stack?',
-      body: 'Ask whether they can take you past dashboards: automation, data engineering, and AI. A charts-only shop leaves the rest of the problem on your desk.',
+      title: 'Is it only Power BI, or the data under it?',
+      body: 'Ask whether they can take you past dashboards to the data engineering underneath. A charts-only shop leaves the rest of the problem on your desk.',
       answer:
         'Power BI is the lead, built on the whole Microsoft stack: Microsoft Fabric and Azure data engineering, and Copilot-ready models on the same governed data.',
     },
@@ -269,7 +269,7 @@ export const howToChoose = {
     {
       num: '05',
       title: 'Ownership and your tenant',
-      body: 'Confirm everything is built in your own Microsoft tenant. If the model and reports live somewhere you cannot reach, you are hostage to the vendor.',
+      body: 'Confirm everything is built in your own Microsoft tenant. If the model and reports live somewhere you cannot reach, you are locked in to the vendor.',
       answer:
         'Everything is built in your own tenant: your data, your model, your reports. You own it, with documentation and a full handover. No lock-in.',
     },
@@ -626,7 +626,7 @@ export const credibility = {
 
 export const microsoftStack = {
   eyebrow: 'Built on the Microsoft cloud',
-  title: 'Enterprise analytics, delivered in your own Microsoft tenant.',
+  title: 'Power BI in your own Microsoft tenant.',
   lead:
     'The analytics runs on the Microsoft data stack you may already pay for, inside your tenant, under your own security and access controls. Your data never leaves your environment, and the model, reports, and data are yours.',
   // The three Microsoft technologies the platform is delivered on. `mark` picks
@@ -638,7 +638,7 @@ export const microsoftStack = {
   ],
   points: [
     { title: 'Your tenant, your data', body: 'Everything stays inside your Microsoft environment, isolated under your controls, not pooled in a vendor platform.' },
-    { title: 'Enterprise security & governance', body: 'One governed model, lineage to source, and the security posture of your own tenant.' },
+    { title: 'Security and governance', body: 'One governed model, lineage to source, and the security posture of your own tenant.' },
     { title: 'No lock-in', body: 'You own the model, the reports, and the data, so you keep operating with or without us.' },
   ],
   note: 'Delivered on the Microsoft stack. If you do not run Microsoft yet, we provision and manage a dedicated tenant for you.',
@@ -1054,7 +1054,7 @@ export const boutiqueEdge = {
     },
     {
       title: 'We hand you the keys',
-      body: 'We train your team and document everything, so you can run and extend the reporting yourselves. We aim to be useful, not load-bearing.',
+      body: 'We train your team and document everything, so you can run and extend the reporting yourselves, with or without us.',
     },
     {
       title: 'You own all of it',
