@@ -2,13 +2,11 @@ import { Nav } from '@/components/Nav';
 import { Hero } from '@/components/sections/Hero';
 import { Problems } from '@/components/sections/Problems';
 import { Credibility } from '@/components/sections/Credibility';
-import { StatsBand } from '@/components/sections/StatsBand';
 import { Capabilities } from '@/components/sections/Capabilities';
 import { BoutiqueEdge } from '@/components/sections/BoutiqueEdge';
 import { ReportsBand } from '@/components/sections/ReportsBand';
 import { MicrosoftStack } from '@/components/sections/MicrosoftStack';
 import { Process } from '@/components/sections/Process';
-import { Comparison } from '@/components/sections/Comparison';
 import { Work } from '@/components/sections/Work';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { Faq } from '@/components/sections/Faq';
@@ -27,10 +25,8 @@ export default function HomePage() {
         <Problems />
         <MicrosoftStack />
         <Credibility />
-        <StatsBand />
         <Capabilities />
         <Process />
-        <Comparison />
         <BoutiqueEdge />
         <Work />
         <CtaBand />

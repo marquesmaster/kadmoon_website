@@ -5,21 +5,20 @@ import { Eyebrow } from '@/components/Eyebrow';
 import { Button } from '@/components/Button';
 import { Reveal } from '@/components/Reveal';
 import { PageHero } from '@/components/sections/PageHero';
-import { Comparison } from '@/components/sections/Comparison';
 import { groupExperience } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About | A US Power BI and Microsoft data team',
   description:
-    'Kadmoon is a US Microsoft data and analytics consultancy led by Power BI, built by a senior, US-based team with six years and 2,000+ Microsoft solutions behind it. We build dashboards, semantic models, and the Fabric and Azure data they sit on, all in your own Microsoft tenant.',
+    'Kadmoon, Inc. is a US consultancy that builds Power BI and Microsoft Fabric for finance and operations teams. A senior team working US business hours, through our affiliate Fynx, builds dashboards, semantic models, and the Fabric and Azure data they sit on, all in your own Microsoft tenant.',
   alternates: { canonical: `${siteConfig.url}/about` },
   openGraph: { url: `${siteConfig.url}/about`, type: 'website', images: ['/opengraph-image'] },
 };
 
 const principles = [
   { n: '01', t: 'Power BI is the lead', d: 'Dashboards, governed semantic models, and migrations are the core of the work. The rest of the Microsoft stack is built around them.' },
-  { n: '02', t: 'Senior, US-based team', d: 'The people who scope your reports build and support them. No rotating subcontractors.' },
+  { n: '02', t: 'A senior team, US business hours', d: 'The people who scope your reports build and support them. No rotating subcontractors.' },
   { n: '03', t: 'One definition per KPI', d: 'Each measure means one thing across every report, governed with row-level security and documented lineage.' },
   { n: '04', t: 'You own it', d: 'Your reports, your semantic model, your data, in your own Microsoft tenant, documented and handed over. No lock-in.' },
 ];
@@ -216,9 +215,6 @@ export default function AboutPage() {
             </p>
           </div>
         </section>
-
-        {/* How we compare */}
-        <Comparison />
 
         {/* Dark CTA */}
         <section className="relative overflow-hidden bg-ink text-paper">
