@@ -5,14 +5,13 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Button } from '@/components/Button';
 import { Reveal } from '@/components/Reveal';
 import { PageHero } from '@/components/sections/PageHero';
-import { Assessment } from '@/components/sections/Assessment';
 import { pricing } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Pricing | Scoped and quoted per engagement',
+  title: 'Power BI Consulting Pricing | Kadmoon',
   description:
-    'How Kadmoon prices Power BI work: a boutique with two models, by project (fixed scope, milestone billing) or Managed Power BI (our monthly subscription), starting from a short Power BI assessment. Quoted per engagement.',
+    'Fixed, published prices for Power BI and Microsoft Fabric: a $5,000 assessment, dashboard builds from $20,000, Fabric data platforms from $45,000, and Managed Power BI from $3,500 a month. Built in your own Microsoft tenant.',
   alternates: { canonical: `${siteConfig.url}/pricing` },
   openGraph: { url: `${siteConfig.url}/pricing`, type: 'website', images: ['/opengraph-image'] },
 };
@@ -28,111 +27,86 @@ export default function PricingPage() {
           breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Pricing' }]} />}
         >
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">{pricing.lead}</p>
-          <div className="mt-8">
-            <Button href={siteConfig.bookingUrl} size="lg">
-              Book a 30-minute call <span aria-hidden>→</span>
-            </Button>
-          </div>
         </PageHero>
 
-        {/* Productized paid on-ramp */}
-        <Assessment />
-
-        {/* The model */}
-        <section className="mx-auto max-w-shell px-6 py-16 md:py-20">
-          <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
-            How it works
-          </span>
-          <h2 className="mt-4 max-w-2xl font-display text-display-sm text-ink">
-            Two ways to work with us.
-          </h2>
-          <ol className="mt-10 grid gap-5 md:grid-cols-2">
-            {pricing.model.map((m, i) => (
-              <li key={m.name} className="flex flex-col rounded-2xl border border-line bg-paper p-6 shadow-card">
-                <div className="flex items-center justify-between">
-                  <span className="font-display text-3xl font-semibold tracking-[-0.03em] text-navy/20">
-                    {String(i + 1).padStart(2, '0')}
+        {/* Tiers */}
+        <section className="mx-auto max-w-shell px-6 py-14 md:py-20">
+          <div className="grid gap-5 lg:grid-cols-4 md:grid-cols-2">
+            {pricing.tiers.map((t, i) => (
+              <Reveal
+                as="div"
+                key={t.name}
+                delay={(i % 4) * 70}
+                className={`flex flex-col rounded-2xl border p-6 ${
+                  t.featured
+                    ? 'border-accent/30 bg-white shadow-card-hover ring-1 ring-accent/20'
+                    : 'border-line bg-white shadow-card'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink-3">
+                    {t.best}
                   </span>
-                  <span className="rounded-full border border-line bg-mist px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-2">
-                    {m.meta}
-                  </span>
+                  {t.featured && (
+                    <span className="rounded-full bg-accent px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.12em] text-white">
+                      Popular
+                    </span>
+                  )}
                 </div>
-                <h3 className="mt-5 font-display text-lg font-semibold text-ink">{m.name}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-ink-2">{m.body}</p>
-              </li>
+                <h2 className="mt-3 font-display text-lg font-semibold text-ink">{t.name}</h2>
+                <div className="mt-3 flex items-baseline gap-1.5">
+                  <span className="font-display text-3xl font-bold tracking-[-0.03em] text-ink">
+                    {t.price}
+                  </span>
+                  {t.unit && <span className="text-[13px] text-ink-3">{t.unit}</span>}
+                </div>
+                <span className="mt-1.5 inline-block rounded-full border border-line bg-mist px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-2">
+                  {t.timeline}
+                </span>
+                <ul className="mt-5 flex-1 space-y-3">
+                  {t.includes.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-[13.5px] leading-relaxed text-ink-2"
+                    >
+                      <span aria-hidden className="mt-1.5 h-1.5 w-1.5 flex-none rounded-sm bg-accent" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6">
+                  <Button
+                    href={siteConfig.bookingUrl}
+                    variant={t.featured ? 'primary' : 'ghost'}
+                    className="w-full justify-center"
+                  >
+                    {t.cta ?? 'Book a 30-minute call'}
+                  </Button>
+                </div>
+              </Reveal>
             ))}
-          </ol>
-        </section>
-
-        {/* What each model includes */}
-        <section className="bg-mist py-16 md:py-24">
-          <div className="mx-auto max-w-shell px-6">
-            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
-              What each model includes
-            </span>
-            <h2 className="mt-4 max-w-2xl font-display text-display-sm text-ink">
-              Pick the model; we quote it to your data.
-            </h2>
-            <div className="mt-10 grid gap-5 md:grid-cols-2">
-              {pricing.scopes.map((s, i) => (
-                <Reveal
-                  as="div"
-                  key={s.name}
-                  delay={(i % 3) * 80}
-                  className={`flex flex-col rounded-2xl border p-7 ${
-                    s.featured
-                      ? 'border-accent/30 bg-white shadow-card-hover ring-1 ring-accent/20'
-                      : 'border-line bg-white shadow-card'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-display text-xl font-semibold text-ink">{s.name}</h3>
-                    {s.featured && (
-                      <span className="rounded-full bg-accent px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-white">
-                        Most chosen
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-1.5 text-[13px] text-ink-3">{s.best}</p>
-                  <ul className="mt-5 flex-1 space-y-3">
-                    {s.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-ink-2">
-                        <span aria-hidden className="mt-1.5 h-1.5 w-1.5 flex-none rounded-sm bg-accent" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-7">
-                    <Button href={siteConfig.bookingUrl} variant={s.featured ? 'primary' : 'ghost'} className="w-full justify-center">
-                      Book a 30-minute call {s.featured && <span aria-hidden>→</span>}
-                    </Button>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-            <p className="mt-6 text-[14px] leading-relaxed text-ink-3">
-              Every scope runs in your own tenant, with managed Microsoft (Fabric, Power BI, Azure) as
-              an optional add-on billed on the same invoice.
-            </p>
           </div>
+          <p className="mt-6 text-[14px] leading-relaxed text-ink-3">{pricing.licenseNote}</p>
         </section>
 
         {/* Pricing FAQ */}
-        <section className="mx-auto max-w-3xl px-6 py-16 md:py-20">
-          <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
-            Pricing questions
-          </span>
-          <h2 className="mt-4 font-display text-display-sm text-ink">Straight answers.</h2>
-          <dl className="mt-10 divide-y divide-line border-y border-line">
-            {pricing.faq.map((item) => (
-              <div key={item.q} className="py-6">
-                <dt className="font-display text-base font-medium tracking-[-0.01em] text-ink md:text-lg">
-                  {item.q}
-                </dt>
-                <dd className="mt-3 text-[15px] leading-relaxed text-ink-2">{item.a}</dd>
-              </div>
-            ))}
-          </dl>
+        <section className="bg-mist py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-6">
+            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
+              Pricing questions
+            </span>
+            <h2 className="mt-4 font-display text-display-sm text-ink">Straight answers.</h2>
+            <dl className="mt-10 divide-y divide-line border-y border-line">
+              {pricing.faq.map((item) => (
+                <div key={item.q} className="py-6">
+                  <dt className="font-display text-base font-medium tracking-[-0.01em] text-ink md:text-lg">
+                    {item.q}
+                  </dt>
+                  <dd className="mt-3 text-[15px] leading-relaxed text-ink-2">{item.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </section>
 
         {/* Closing CTA */}
@@ -141,7 +115,7 @@ export default function PricingPage() {
           <div
             className="pointer-events-none absolute inset-0"
             aria-hidden
-            style={{ backgroundImage: 'radial-gradient(900px 440px at 50% 120%, rgba(20,92,230,.3), transparent 60%)' }}
+            style={{ backgroundImage: 'radial-gradient(900px 440px at 50% 120%, rgba(139,92,246,.3), transparent 60%)' }}
           />
           <div className="relative mx-auto max-w-3xl px-6 py-16 text-center md:py-20">
             <h2 className="font-display text-display-md font-semibold text-white">{pricing.cta.title}</h2>

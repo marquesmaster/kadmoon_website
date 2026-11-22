@@ -900,66 +900,93 @@ export const groupExperience = {
 // ---------------------------------------------------------------------------
 export const pricing = {
   eyebrow: 'Pricing',
-  title: 'Priced to the scope of your Power BI work, not a seat count.',
-  lead: 'Kadmoon is a boutique, so you work with us one of two ways: by project, or on Managed Power BI, our monthly subscription. Most start with a short Power BI assessment, then pick the model that fits. We quote per engagement; tell us what you want reported on and you get a number within one business day.',
-  model: [
+  title: 'Fixed scope and fixed price on every project.',
+  lead: 'You see the number before we start. Four ways to work with us, from a two-week assessment to a monthly Managed Power BI retainer, all built in your own Microsoft tenant.',
+  // Published, fixed prices. Timelines and prices are set; the deliverable
+  // counts are scoped to your data during the assessment.
+  tiers: [
     {
-      name: 'By project',
-      meta: 'Fixed scope · milestone billing',
-      body: 'A fixed-scope build with defined deliverables: the governed semantic model, the dashboards and reports, any migration from legacy BI or spreadsheets, and the governance around them. The Power BI assessment is the short first project that scopes the rest.',
-    },
-    {
-      name: 'Managed Power BI',
-      meta: 'Monthly subscription · we run and evolve it',
-      body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes and governance kept current, new reports as needs change, Copilot and AI as it matures, and a named point of contact. A boutique partner on call. An optional managed Microsoft add-on bills the Microsoft capacity on one invoice.',
-    },
-  ],
-  scopes: [
-    {
-      name: 'By project',
-      best: 'When the outcome is defined',
+      name: 'Power BI Assessment',
+      price: '$5,000',
+      unit: 'fixed',
+      timeline: '2 weeks',
+      best: 'Start here',
       includes: [
-        'A governed semantic model and the dashboards on it',
-        'Power BI migration from legacy BI and spreadsheets',
-        'Row-level security and Power BI governance',
-        'Power Platform automation and Fabric data engineering as needed',
-        'Fixed scope, acceptance criteria, and milestone billing',
+        'Two workshops with your finance and operations leads',
+        'Connection to a first set of data sources in your tenant',
+        'A first governed semantic model',
+        'A set of working dashboards on your own data',
+        'An architecture and delivery plan',
+        'A fixed quote for the full build',
       ],
+      cta: 'Start with an assessment',
+    },
+    {
+      name: 'Dashboard Build',
+      price: 'from $20,000',
+      timeline: '4 to 6 weeks',
+      best: 'Most chosen',
       featured: true,
+      includes: [
+        'Connections to your core data sources',
+        'A governed semantic model with one definition per measure',
+        'The report pages your team opens daily',
+        'Row-level security and scheduled refresh',
+        'Documentation and two training sessions',
+        '30 days of post-launch support',
+      ],
+    },
+    {
+      name: 'Fabric Data Platform',
+      price: 'from $45,000',
+      timeline: '8 to 12 weeks',
+      best: 'When the data needs a foundation',
+      includes: [
+        'A Fabric lakehouse or warehouse in your tenant',
+        'Pipelines from your ERP, CRM, and other sources',
+        'A finance and operations data model',
+        'Power BI reports on top',
+        'Monitoring, alerts, documentation, and handover',
+      ],
     },
     {
       name: 'Managed Power BI',
-      best: 'For ongoing work and a partner on call',
+      price: 'from $3,500',
+      unit: 'per month',
+      timeline: 'Monthly',
+      best: 'To run and evolve it',
       includes: [
-        'Managed refreshes, monitoring, and user support',
-        'New reports and model changes as needs change',
-        'Copilot and AI on your data as it matures',
-        'Dedicated governance and a named point of contact',
-        'Optional managed Microsoft on one invoice',
+        'Refresh monitoring and fixes',
+        'A set block of hours each month for new reports and changes',
+        'User support with a response within one business day',
+        'A monthly review with your finance lead',
+        'Month-to-month after the first three months',
       ],
     },
   ],
+  licenseNote:
+    'Microsoft licenses (Power BI, Fabric capacity) are billed to you by Microsoft and are not included.',
   faq: [
     {
-      q: 'Do you publish prices?',
-      a: 'No. Power BI engagements differ too much for a sticker price to be honest. We scope to your data and decisions and quote per engagement, usually within one business day of a first conversation.',
+      q: 'What changes the price?',
+      a: 'The number of data sources, the condition of the data, and the number of reports. We confirm the exact scope in the assessment, then the price for the full build is fixed.',
+    },
+    {
+      q: 'How do we pay?',
+      a: 'Projects are split 50% at the start and 50% at acceptance. Managed Power BI is billed monthly in advance. We take ACH or card.',
+    },
+    {
+      q: 'What if the scope changes?',
+      a: 'We send a written change request with its own fixed price before any extra work starts, so there are no surprises on the invoice.',
     },
     {
       q: 'Project or Managed Power BI, how do we choose?',
-      a: 'If the outcome is defined, a project is cleanest: fixed scope, acceptance criteria, and milestone billing. If you want us to keep building and running your Power BI month to month, Managed Power BI, our monthly subscription, fits. Many start with a project and move to Managed Power BI after go-live.',
-    },
-    {
-      q: 'Is there a long contract?',
-      a: 'A project stands on its own. Managed Power BI is a monthly term you can adjust, and you own the semantic model, the reports, and the data in your own Microsoft tenant, so you are never locked in to keep operating.',
-    },
-    {
-      q: 'What about a dedicated squad or enterprise terms?',
-      a: 'We scope those in a conversation, not off a page. If you want a dedicated team or custom terms, tell us in the quote request and we will put together a proposal.',
+      a: 'If the outcome is defined, a project is cleanest: fixed scope, acceptance criteria, and milestone billing. If you want us to keep building and running your Power BI month to month, Managed Power BI fits. Many start with a project and move to Managed after go-live.',
     },
   ],
   cta: {
-    title: 'Tell us what you want reported on. Get a number.',
-    body: 'A short description of your data and the decisions you need is enough for a scoped plan and a quote within one business day.',
+    title: 'Not sure which fits?',
+    body: 'Book a 30-minute call. We will look at how your team reports today and tell you what the first two weeks would deliver and what the full build would cost.',
   },
 };
 

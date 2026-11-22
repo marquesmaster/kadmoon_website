@@ -4,7 +4,7 @@ test.describe('pages load', () => {
   const pages = [
     ['/', 'Power BI'],
     ['/platform', 'Power BI'],
-    ['/pricing', 'per engagement'],
+    ['/pricing', 'Fixed scope'],
     ['/services', 'Power BI'],
     ['/services/power-bi', 'Power BI'],
     ['/services/microsoft-fabric', 'Fabric'],
