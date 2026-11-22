@@ -7,7 +7,6 @@ import { Capabilities } from '@/components/sections/Capabilities';
 import { BoutiqueEdge } from '@/components/sections/BoutiqueEdge';
 import { ReportsBand } from '@/components/sections/ReportsBand';
 import { MicrosoftStack } from '@/components/sections/MicrosoftStack';
-import { Industries } from '@/components/sections/Industries';
 import { Process } from '@/components/sections/Process';
 import { Comparison } from '@/components/sections/Comparison';
 import { Work } from '@/components/sections/Work';
@@ -30,7 +29,6 @@ export default function HomePage() {
         <Credibility />
         <StatsBand />
         <Capabilities />
-        <Industries />
         <Process />
         <Comparison />
         <BoutiqueEdge />

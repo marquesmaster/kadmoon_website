@@ -6,18 +6,19 @@
 export type HubLink = { label: string; href: string };
 
 const POWER_BI: HubLink = { label: 'Power BI', href: '/services/power-bi' };
-const POWER_PLATFORM: HubLink = { label: 'Power Platform', href: '/services/power-platform' };
-const DATA_ENG: HubLink = { label: 'Data engineering', href: '/services/data-engineering' };
-const COPILOT: HubLink = { label: 'Copilot & AI', href: '/services/copilot-ai' };
+const FABRIC: HubLink = { label: 'Microsoft Fabric', href: '/services/microsoft-fabric' };
+const FINANCE: HubLink = { label: 'Power BI for finance', href: '/power-bi-for-finance' };
 const SERVICES: HubLink = { label: 'All services', href: '/services' };
 const CASES: HubLink = { label: 'Case studies', href: '/cases' };
 
+// Power Platform and Copilot are no longer standalone services, so their blog
+// categories point at Power BI (and finance) instead of a dead service page.
 const byCategory: Record<string, HubLink[]> = {
-  'Power BI': [POWER_BI, DATA_ENG, SERVICES],
-  'Power Platform': [POWER_PLATFORM, POWER_BI, SERVICES],
-  'Data Engineering': [DATA_ENG, POWER_BI, SERVICES],
-  'Copilot & AI': [COPILOT, POWER_BI, SERVICES],
-  'Analytics Strategy': [POWER_BI, SERVICES, CASES],
+  'Power BI': [POWER_BI, FINANCE, SERVICES],
+  'Power Platform': [POWER_BI, FINANCE, SERVICES],
+  'Data Engineering': [FABRIC, POWER_BI, SERVICES],
+  'Copilot & AI': [POWER_BI, FABRIC, SERVICES],
+  'Analytics Strategy': [POWER_BI, FINANCE, CASES],
 };
 
 export function hubsForCategory(category: string): HubLink[] {

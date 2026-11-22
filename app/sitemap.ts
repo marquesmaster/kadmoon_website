@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
-import { services, industryPages, caseStudies } from '@/lib/content';
+import { services, caseStudies } from '@/lib/content';
 import { docs } from '@/lib/docs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },
     { url: `${base}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/industries`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/power-bi-for-finance`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/cases`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/docs`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
@@ -28,12 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
-    })),
-    ...industryPages.map((i) => ({
-      url: `${base}/industries/${i.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
     })),
     ...caseStudies.map((c) => ({
       url: `${base}/cases/${c.slug}`,

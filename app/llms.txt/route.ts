@@ -1,6 +1,6 @@
 import { siteConfig } from '@/lib/site';
 import { getAllPostMeta, getCategories } from '@/lib/blog';
-import { services, industryPages } from '@/lib/content';
+import { services } from '@/lib/content';
 
 export const dynamic = 'force-static';
 
@@ -16,13 +16,16 @@ export function GET() {
   lines.push(`> ${siteConfig.description}`);
   lines.push('');
   lines.push(
-    `Kadmoon is a US Microsoft data and analytics consultancy led by Power BI services, a ${siteConfig.region} corporation serving clients nationwide. We turn the data in a business's ERP, CRM, and line-of-business systems into decisions: governed Power BI dashboards and semantic models, Power BI migration, and embedded analytics, plus Power Platform automation, data engineering on Microsoft Fabric and Azure, and Copilot and AI. Data comes from the systems clients already run (SQL Server, Dynamics 365, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, or APIs), and the analytics is delivered on the Microsoft stack (Power BI, Fabric, Azure) inside the client's own tenant. Senior US-based team; you own the model and the data.`,
+    `Kadmoon is a US consultancy that builds Power BI and Microsoft Fabric for finance and operations teams, a ${siteConfig.region} corporation serving clients nationwide. We connect the systems a business already runs, build one governed Power BI model, and deliver the dashboards finance and operations open daily, with fixed scope and fixed price. Data comes from the systems clients already run (QuickBooks, NetSuite, Dynamics 365 Business Central, Sage Intacct, SQL Server, Salesforce, Excel, SharePoint, or APIs), and the analytics is delivered on the Microsoft stack (Power BI, Fabric, Azure) inside the client's own Microsoft tenant. You own the model and the data.`,
   );
   lines.push('');
   lines.push('## Key pages');
   lines.push(`- [Home](${siteConfig.url}/): positioning, what we deliver, four-phase process, how to choose a Power BI partner`);
   lines.push(
-    `- [Services](${siteConfig.url}/services): Power BI (dashboards, semantic models, migration, embedded), Power Platform, data engineering on Fabric and Azure, and Copilot and AI`,
+    `- [Services](${siteConfig.url}/services): Power BI (dashboards, semantic models, migration, embedded) and data engineering on Microsoft Fabric and Azure`,
+  );
+  lines.push(
+    `- [Power BI for Finance](${siteConfig.url}/power-bi-for-finance): month-end close, budget vs actual, margin, and cash for finance and operations teams`,
   );
   lines.push(
     `- [Cases](${siteConfig.url}/cases): illustrative Power BI and Microsoft-stack case studies across finance, sales, operations, retail, and SaaS`,
@@ -34,11 +37,6 @@ export function GET() {
   lines.push('## Services');
   for (const s of services) {
     lines.push(`- [${s.title}](${siteConfig.url}/services/${s.slug}): ${s.tagline}`);
-  }
-  lines.push('');
-  lines.push('## Industries');
-  for (const i of industryPages) {
-    lines.push(`- [${i.name}](${siteConfig.url}/industries/${i.slug})`);
   }
   lines.push('');
   lines.push(`- [Blog](${siteConfig.url}/blog): ${posts.length} in-depth articles`);

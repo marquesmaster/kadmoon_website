@@ -40,11 +40,10 @@ export const navMenu: NavItem[] = [
           ],
         },
         {
-          title: 'Around Power BI',
+          title: 'Microsoft Fabric',
           items: [
-            { label: 'Power Platform', href: '/services/power-platform', desc: 'Power Apps and Power Automate' },
-            { label: 'Data engineering', href: '/services/data-engineering', desc: 'Microsoft Fabric and Azure' },
-            { label: 'Copilot & AI', href: '/services/copilot-ai', desc: 'Copilot in Power BI, natural-language Q&A' },
+            { label: 'Data engineering on Fabric', href: '/services/microsoft-fabric', desc: 'Lakehouse, pipelines, the governed model' },
+            { label: 'Power BI for finance', href: '/power-bi-for-finance', desc: 'Close, budget vs actual, margin, cash' },
             { label: 'All services', href: '/services', desc: 'How we scope and deliver' },
           ],
         },
@@ -59,37 +58,7 @@ export const navMenu: NavItem[] = [
     },
   },
   { label: 'Pricing', href: '/pricing' },
-  {
-    label: 'Industries',
-    panel: {
-      groups: [
-        {
-          title: 'Who we serve',
-          items: [
-            { label: 'Finance & operations', href: '/industries', desc: 'Close, cash, and the operating P&L' },
-            { label: 'Retail & e-commerce', href: '/industries', desc: 'Sales, margin, and inventory' },
-            { label: 'Healthcare', href: '/industries', desc: 'Access, utilization, and cost' },
-            { label: 'Manufacturing', href: '/industries', desc: 'Throughput, quality, and OEE' },
-          ],
-        },
-        {
-          title: 'More sectors',
-          items: [
-            { label: 'Professional services', href: '/industries', desc: 'Utilization and project margin' },
-            { label: 'SaaS & technology', href: '/industries', desc: 'Product, revenue, and retention' },
-            { label: 'Nonprofit & education', href: '/industries', desc: 'Programs, grants, and outcomes' },
-          ],
-        },
-      ],
-      featured: {
-        eyebrow: 'All industries',
-        title: 'Power BI for your sector',
-        body: 'Every team measures itself differently. See how we model the metrics yours runs on.',
-        href: '/industries',
-        cta: 'Explore industries',
-      },
-    },
-  },
+  { label: 'For Finance', href: '/power-bi-for-finance' },
   { label: 'Cases', href: '/cases' },
   {
     label: 'Docs',
@@ -543,7 +512,7 @@ export const footer = {
       links: [
         { label: 'Services', href: '/services' },
         { label: 'Pricing', href: '/pricing' },
-        { label: 'Industries', href: '/industries' },
+        { label: 'For Finance', href: '/power-bi-for-finance' },
         { label: 'Cases', href: '/cases' },
         { label: 'Docs', href: '/docs' },
         { label: 'Blog', href: '/blog' },
@@ -555,21 +524,18 @@ export const footer = {
       heading: 'Services',
       links: [
         { label: 'Power BI', href: '/services/power-bi' },
-        { label: 'Power Platform', href: '/services/power-platform' },
-        { label: 'Data engineering', href: '/services/data-engineering' },
-        { label: 'Copilot & AI', href: '/services/copilot-ai' },
+        { label: 'Microsoft Fabric', href: '/services/microsoft-fabric' },
+        { label: 'Power BI for finance', href: '/power-bi-for-finance' },
         { label: 'Methodology', href: '/docs/methodology' },
         { label: 'All services', href: '/services' },
       ],
     },
     {
-      heading: 'Industries',
+      heading: 'Get started',
       links: [
-        { label: 'Finance & operations', href: '/industries' },
-        { label: 'Retail & e-commerce', href: '/industries' },
-        { label: 'Healthcare', href: '/industries' },
-        { label: 'Manufacturing', href: '/industries' },
-        { label: 'SaaS & technology', href: '/industries' },
+        { label: 'Pricing', href: '/pricing' },
+        { label: 'Case studies', href: '/cases' },
+        { label: 'About', href: '/about' },
         { label: 'Start a project', href: '/contact' },
       ],
     },
@@ -710,29 +676,8 @@ export const services: ServicePage[] = [
     blogCategory: 'Power BI',
   },
   {
-    slug: 'power-platform',
-    title: 'Power Platform',
-    tagline: 'Apps and automation on top of the same data.',
-    intro:
-      'A dashboard shows the problem; the Power Platform lets people act on it. We build Power Apps and Power Automate on the same governed data, so input screens, approvals, and alerts turn reporting into a workflow instead of a slide.',
-    includes: [
-      'Power Apps for data entry, review, and operations',
-      'Power Automate flows for approvals and alerts',
-      'Dataverse modeling and integration',
-      'Apps wired to the same governed Power BI model',
-      'Role-based access against your identity provider',
-      'Governance and an application lifecycle you can maintain',
-    ],
-    outcomes: [
-      'People act on the data instead of exporting it',
-      'Manual steps and email approvals automated away',
-      'Apps and reports that share one source of truth',
-    ],
-    blogCategory: 'Power Platform',
-  },
-  {
-    slug: 'data-engineering',
-    title: 'Data engineering',
+    slug: 'microsoft-fabric',
+    title: 'Microsoft Fabric',
     tagline: 'The governed model your reporting sits on, built on Fabric and Azure.',
     intro:
       'Reliable reporting needs reliable data underneath. We build the lakehouse, pipelines, and modeling layer on Microsoft Fabric and Azure, so your Power BI refreshes are fast, your sources stay in sync, and the model is documented and owned by you.',
@@ -751,27 +696,6 @@ export const services: ServicePage[] = [
     ],
     blogCategory: 'Data engineering',
   },
-  {
-    slug: 'copilot-ai',
-    title: 'Copilot & AI',
-    tagline: 'Answers in plain language, on your governed data.',
-    intro:
-      'Once the model is governed, AI can safely sit on top of it. We set up Copilot in Power BI and natural-language question and answer over your data, so people get answers without waiting on a new report, with the same security and definitions as everything else.',
-    includes: [
-      'Copilot in Power BI, configured on your model',
-      'Natural-language question and answer over your data',
-      'AI-assisted summaries and narrative insights',
-      'Guardrails so answers respect row-level security',
-      'Grounding on your governed measures, not guesses',
-      'Rollout and training for the people who will use it',
-    ],
-    outcomes: [
-      'Answers in plain language, without a new report',
-      'AI grounded on governed data, not a black box',
-      'Security and definitions carried through to AI',
-    ],
-    blogCategory: 'Copilot & AI',
-  },
 ];
 
 // Analytics tie-in per platform: the analytics we deliver first, which is where
@@ -782,17 +706,9 @@ export const serviceAnalytics: Record<string, { note: string; cases: string[] }>
     note: 'Power BI is only as good as the model under it. We start by modeling the numbers your leaders watch, revenue, margin, and the operating KPIs, so every report is built on a foundation the business already trusts.',
     cases: ['executive-revenue-dashboard', 'finance-close-analytics', 'sales-pipeline-analytics'],
   },
-  'power-platform': {
-    note: 'Automation works best when it acts on numbers you trust. We model the data first, then build the Power Apps and Power Automate flows that turn what a dashboard shows into an action.',
-    cases: ['power-platform-approvals', 'executive-revenue-dashboard'],
-  },
-  'data-engineering': {
+  'microsoft-fabric': {
     note: 'Reliable reporting needs reliable data underneath. We build the Fabric lakehouse and pipelines that feed the governed model, so refreshes are fast and the numbers come from the source.',
     cases: ['fabric-lakehouse-platform', 'finance-close-analytics'],
-  },
-  'copilot-ai': {
-    note: 'AI is only safe on top of a governed model. We prepare the semantic model and its definitions first, then layer Copilot and natural-language Q&A so answers respect the same security and meaning as every report.',
-    cases: ['copilot-self-service', 'executive-revenue-dashboard'],
   },
 };
 
@@ -1138,4 +1054,64 @@ export const assessment = {
   ],
   footnote: 'The assessment is a short first project, not a third model. It leads into a by-project build or Managed Power BI.',
   cta: { label: 'Start with an assessment', href: '/contact' },
+};
+
+// ---------------------------------------------------------------------------
+// Power BI for Finance landing page. Replaces the /industries section with the
+// one frame the business leads on: finance and operations. No invented numbers;
+// example reports are labeled as examples.
+// Rendered at /power-bi-for-finance.
+// ---------------------------------------------------------------------------
+export const powerBiForFinance = {
+  eyebrow: 'Power BI · Finance & operations',
+  title: 'Power BI for finance and operations teams',
+  lead:
+    'We connect your ERP and spreadsheets, build one governed Power BI model, and deliver the dashboards your finance and operations team opens every morning. Fixed scope, fixed price, in your own Microsoft tenant.',
+  problems: {
+    eyebrow: 'Sound familiar?',
+    title: 'What finance teams bring us',
+    items: [
+      'Finance and sales report different revenue numbers.',
+      'Month-end close drags because the reports get rebuilt in Excel every time.',
+      'Dashboards exist, but nobody trusts them, so nobody opens them.',
+      'The data sits in the ERP and only one person knows how to pull it.',
+    ],
+  },
+  reports: {
+    eyebrow: 'What we build',
+    title: 'Reports finance teams open every morning',
+    note: 'Example reports. We build these on your own data, with one definition per measure.',
+    items: [
+      { name: 'Revenue and gross margin by product line', note: 'One governed model, so every report agrees.' },
+      { name: 'Budget vs actual by department', note: 'Variance to the cost center, tied to the ledger.' },
+      { name: 'Cash position and AR aging', note: 'Working capital and receivables in one view.' },
+      { name: 'Inventory and working capital', note: 'Stock cover and the cash tied up in it.' },
+    ],
+  },
+  systems: {
+    eyebrow: 'Your systems',
+    title: 'The systems we connect',
+    note: 'Your data can come from any of these. We read from the system of record and model it once.',
+    items: [
+      'QuickBooks',
+      'NetSuite',
+      'Dynamics 365 Business Central',
+      'Sage Intacct',
+      'SQL Server',
+      'Salesforce',
+      'Excel and SharePoint',
+      'APIs',
+    ],
+  },
+  how: {
+    eyebrow: 'How it starts',
+    title: 'Start with a Power BI assessment',
+    body: 'Most finance teams start with a short, fixed-price assessment. In about two weeks we map the decisions your team makes, connect a slice of your data in your own tenant, and ship the first dashboards. You leave with working reports, a delivery plan, and a fixed quote for the full build.',
+  },
+  cta: {
+    title: 'Book a 30-minute call',
+    body: 'We will look at how your team reports today and tell you what the first two weeks would deliver.',
+    label: 'Book a 30-minute call',
+    href: '/contact',
+  },
 };
