@@ -41,8 +41,8 @@ const config: Config = {
         },
         brand: {
           DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
-          deep: '#B8461A',
-          soft: 'rgba(234, 90, 31, 0.10)',
+          deep: '#5B21B6',
+          soft: 'rgba(109, 40, 217, 0.10)',
         },
         warning: '#D9822B',
       },
