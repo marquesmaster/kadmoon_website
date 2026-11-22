@@ -1,11 +1,16 @@
 import { siteConfig } from '@/lib/site';
 import { Reveal } from '../Reveal';
-import { KpiTiles, LandedCostCard, DutyExposureCard, OtifCard } from '../reports/SampleReports';
+import {
+  KpiTiles,
+  BudgetVsActualCard,
+  WorkingCapitalCard,
+  MonthEndCloseCard,
+} from '../reports/SampleReports';
 
-// Dense, high-contrast analytics showcase placed right after the hero: real
-// built reports framed inside a Fluent "acrylic" workspace panel on a navy
-// ground, so the home leads with analytics and reads like Power BI in your own
-// tenant. Doubles as the platform teaser.
+// Dense, high-contrast analytics showcase placed right after the hero: the
+// finance reports Kadmoon builds, framed inside a Fluent "acrylic" workspace
+// panel on a navy ground, so the home leads with analytics and reads like Power
+// BI in your own tenant. Doubles as the platform teaser.
 export function ReportsBand() {
   return (
     <section id="platform" className="relative overflow-hidden border-y-2 border-accent/60 bg-navy">
@@ -22,10 +27,10 @@ export function ReportsBand() {
               The analytics · in your own tenant
             </span>
             <h2 className="mt-4 font-display text-display-sm font-semibold text-white">
-              The reports your team opens every morning.
+              The reports your finance team opens every morning.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-white/70">
-              Revenue and margin, segment performance, and operations over time, built on one
+              Budget versus actual, cash and working capital, and the month-end close, built on one
               governed model fed from the systems you already run.
             </p>
           </div>
@@ -57,13 +62,13 @@ export function ReportsBand() {
 
           <div className="mt-5 grid items-stretch gap-5 lg:grid-cols-3">
             <Reveal as="div" className="h-full">
-              <LandedCostCard />
+              <BudgetVsActualCard />
             </Reveal>
             <Reveal as="div" delay={90} className="h-full">
-              <DutyExposureCard />
+              <WorkingCapitalCard />
             </Reveal>
             <Reveal as="div" delay={180} className="h-full">
-              <OtifCard />
+              <MonthEndCloseCard />
             </Reveal>
           </div>
         </div>
