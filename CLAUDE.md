@@ -82,9 +82,12 @@ deployed via Docker on a Hostinger VPS.
 
 ## Design
 
-- Ocean palette: CSS variables in `app/globals.css`, mapped in
+- Violet palette: CSS variables in `app/globals.css`, mapped in
   `tailwind.config.ts` (paper/mist/ice/ink/ink-2/ink-3/navy/accent/line).
-  `themeColor` is `#07203A`. Changing a token value cascades site-wide.
+  Accent (sole CTA color) is `#6D28D9`; the darkest token (`navy`, used for dark
+  sections) and `themeColor` are `#1B0E33`. Changing a token value cascades
+  site-wide. A lighter violet `#8B5CF6` (gradients) / `#A78BFA` (accent on dark)
+  is used where a token does not reach.
 - Fonts are **self-hosted** via `next/font/local` from `app/fonts/*.woff2`
   (Space Grotesk display, Inter sans, JetBrains Mono). **Do not switch back to
   `next/font/google`** — the build-time Google Fonts fetch flakes in CI and on

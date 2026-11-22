@@ -24,7 +24,7 @@ export function StatsBand() {
                 <StatCounter
                   value={stat.value}
                   className={`block font-display text-4xl font-bold tracking-[-0.035em] md:text-5xl ${
-                    i === 0 ? 'text-[#4C8DFF]' : 'text-white'
+                    i === 0 ? 'text-[#A78BFA]' : 'text-white'
                   }`}
                 />
                 <span className="mt-2.5 block font-display text-[15px] font-semibold text-white">

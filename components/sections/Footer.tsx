@@ -6,7 +6,7 @@ function BarMark() {
     <span
       aria-hidden
       className="inline-flex h-7 w-7 items-end gap-[3px] rounded-lg p-1.5"
-      style={{ background: 'linear-gradient(150deg,#4C8DFF,#145CE6)' }}
+      style={{ background: 'linear-gradient(150deg,#8B5CF6,#6D28D9)' }}
     >
       <span className="w-[3px] rounded-[2px] bg-white" style={{ height: 6 }} />
       <span className="w-[3px] rounded-[2px] bg-white" style={{ height: 10 }} />

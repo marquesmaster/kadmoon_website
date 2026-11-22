@@ -14,7 +14,7 @@ export default function OpengraphImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: '#07203A',
+          background: '#1B0E33',
           padding: '72px',
           fontFamily: 'sans-serif',
         }}
@@ -23,7 +23,7 @@ export default function OpengraphImage() {
           <span style={{ fontSize: 40, fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em' }}>
             Kadmoon
           </span>
-          <span style={{ fontSize: 16, fontWeight: 600, color: '#4C8DFF', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: 16, fontWeight: 600, color: '#A78BFA', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
             Business Intelligence
           </span>
         </div>
@@ -32,7 +32,7 @@ export default function OpengraphImage() {
           <div
             style={{
               fontSize: 24,
-              color: '#4C8DFF',
+              color: '#A78BFA',
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
               marginBottom: 20,

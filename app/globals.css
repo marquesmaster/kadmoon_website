@@ -7,21 +7,21 @@
    ========================================================= */
 
 :root {
-  /* Kadmoon identity: deep ocean blue + white, clean and technical.
-     White-dominant surfaces, deep-ocean navy for text and dark blocks, a strong
-     ocean-blue accent for calls to action. */
-  --paper: 250 251 253; /* #FAFBFD near-white canvas */
-  --mist: 236 242 249; /* #ECF2F9 soft blue panel */
-  --ice: 224 235 247; /* #E0EBF7 ocean-tint color-block */
-  --ink: 9 38 66; /* #092642 deep ocean navy-blue (text + dark) */
-  --ink-2: 64 85 110; /* #40556E secondary text */
-  --ink-3: 122 140 163; /* #7A8CA3 muted / captions */
-  --navy: 7 32 58; /* #07203A deepest ocean (dark sections) */
-  --accent: 20 92 230; /* #145CE6 ocean blue (sole CTA color) */
-  --line: 219 227 238; /* #DBE3EE borders / hairlines */
+  /* Kadmoon identity: deep violet + white, clean and technical.
+     White-dominant surfaces, deep-violet for text and dark blocks, a strong
+     violet accent for calls to action. */
+  --paper: 251 250 254; /* #FBFAFE near-white canvas */
+  --mist: 241 237 250; /* #F1EDFA soft violet panel */
+  --ice: 232 225 247; /* #E8E1F7 violet-tint color-block */
+  --ink: 36 22 64; /* #241640 deep violet (text + dark) */
+  --ink-2: 85 73 110; /* #55496E secondary text */
+  --ink-3: 133 122 156; /* #857A9C muted / captions */
+  --navy: 27 14 51; /* #1B0E33 deepest violet (dark sections) */
+  --accent: 109 40 217; /* #6D28D9 violet (sole CTA color), 7.1:1 on white */
+  --line: 228 222 241; /* #E4DEF1 borders / hairlines */
   --success: 22 163 74; /* #16A34A status */
 
-  --grid-line: rgba(9, 38, 66, 0.05);
+  --grid-line: rgba(36, 22, 64, 0.05);
 }
 
 html {
