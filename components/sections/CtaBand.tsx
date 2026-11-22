@@ -28,7 +28,7 @@ export function CtaBand() {
             href="/contact"
             className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
           >
-            Request a quote <span aria-hidden>→</span>
+            Book a 30-minute call <span aria-hidden>→</span>
           </a>
           <a
             href="/cases"

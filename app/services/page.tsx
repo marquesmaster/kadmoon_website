@@ -23,7 +23,7 @@ const engage = [
     kicker: '2-Week Power BI Assessment',
     title: 'Start here',
     body: 'A short, fixed-scope first project that maps your decisions and data and delivers first dashboards in about two weeks, with a plan and a fixed quote grounded in your real data. It leads into one of the two models.',
-    cta: 'Request a quote',
+    cta: 'Book a 30-minute call',
     featured: true,
   },
   {
@@ -244,7 +244,7 @@ export default function ServicesPage() {
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
               <Button href="/contact" size="lg">
-                Request a quote <span aria-hidden>→</span>
+                Book a 30-minute call <span aria-hidden>→</span>
               </Button>
               <a
                 href="/cases"

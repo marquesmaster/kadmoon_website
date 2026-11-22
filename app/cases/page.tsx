@@ -144,7 +144,7 @@ export default function CasesPage() {
           </p>
           <div className="mt-8 flex justify-center">
             <Button href="/contact" size="lg">
-              Request a quote <span aria-hidden>→</span>
+              Book a 30-minute call <span aria-hidden>→</span>
             </Button>
           </div>
         </section>

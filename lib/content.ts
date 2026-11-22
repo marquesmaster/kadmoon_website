@@ -53,7 +53,7 @@ export const navMenu: NavItem[] = [
         title: 'A Power BI assessment',
         body: 'A short, fixed-scope engagement that delivers first dashboards in about two weeks, with a clear next step and a quote.',
         href: '/contact',
-        cta: 'Request a quote',
+        cta: 'Book a 30-minute call',
       },
     },
   },
@@ -107,7 +107,7 @@ export const navMenu: NavItem[] = [
           items: [
             { label: 'Blog', href: '/blog', desc: 'Notes on Power BI and the data stack' },
             { label: 'Cases', href: '/cases', desc: 'Dashboards and models we have built' },
-            { label: 'Contact', href: '/contact', desc: 'Request a quote' },
+            { label: 'Contact', href: '/contact', desc: 'Book a 30-minute call' },
           ],
         },
       ],
@@ -121,7 +121,7 @@ export const nav = {
   menu: navMenu,
   // No "Client sign-in" for now: there is no platform at launch, so the top bar
   // carries only the primary CTA. Existing clients use /contact.
-  cta: { label: 'Request a quote', href: '/contact' },
+  cta: { label: 'Book a 30-minute call', href: '/contact' },
 };
 
 export const hero = {
@@ -134,7 +134,7 @@ export const hero = {
     'No more meetings about which number is right. Kadmoon connects the systems you already run, builds one governed Power BI model, and ships the dashboards your team opens daily. A senior US team, working in your own Microsoft tenant and handing it over so you own all of it.',
   flagship: 'Power BI · Semantic models & governance · Power Platform · Microsoft Fabric & Azure · Copilot & AI',
   ctas: [
-    { label: 'Request a quote', href: '/contact', primary: true },
+    { label: 'Book a 30-minute call', href: '/contact', primary: true },
     { label: 'See case studies', href: '/cases', primary: false },
   ],
   // What ships with a Kadmoon Power BI engagement.
@@ -482,7 +482,7 @@ export const faq = {
 };
 
 export const contact = {
-  eyebrow: 'Request a quote',
+  eyebrow: 'Book a 30-minute call',
   title: 'Tell us what you need to see. Get a quote.',
   sub: 'Share how your team works and where the reporting hurts today. Within one business day you get a response with a clear path forward and a quote, no obligation.',
   needOptions: [
@@ -893,7 +893,7 @@ export const groupExperience = {
 // ---------------------------------------------------------------------------
 // Pricing / engagement page. No public prices: every engagement is scoped and
 // quoted. The page explains the model, what each subscription scope includes,
-// and the Microsoft add-on, and routes to "Request a quote".
+// and the Microsoft add-on, and routes to "Book a 30-minute call".
 // ---------------------------------------------------------------------------
 export const pricing = {
   eyebrow: 'Pricing',

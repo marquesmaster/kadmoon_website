@@ -14,7 +14,7 @@ const pages: IndexItem[] = [
   { type: 'Pages', title: 'Power BI for Finance', href: '/power-bi-for-finance', text: 'finance operations month-end close budget vs actual variance gross margin cash flow AR aging FP&A controller CFO', desc: 'Power BI for finance and operations teams' },
   { type: 'Pages', title: 'Process', href: '/process', text: 'process methodology four phases discovery foundation build sustain', desc: 'How we deliver' },
   { type: 'Pages', title: 'About', href: '/about', text: 'about US microsoft data analytics power bi senior team', desc: 'A US Power BI and Microsoft data team' },
-  { type: 'Pages', title: 'Contact', href: '/contact', text: 'contact request a quote power bi assessment', desc: 'Request a quote' },
+  { type: 'Pages', title: 'Contact', href: '/contact', text: 'contact book a 30-minute call power bi assessment', desc: 'Book a 30-minute call' },
 ];
 
 export function GET() {
