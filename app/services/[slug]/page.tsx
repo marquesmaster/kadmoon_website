@@ -20,7 +20,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!s) return {};
   const url = `${siteConfig.url}/services/${s.slug}`;
   return {
-    title: s.title,
+    title: s.seoTitle ?? s.title,
     description: s.tagline,
     alternates: { canonical: url },
     openGraph: { title: `${s.title} | Kadmoon`, description: s.tagline, url, type: 'website', images: ['/opengraph-image'] },

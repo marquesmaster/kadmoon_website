@@ -31,21 +31,21 @@ export const siteConfig = {
   // Google Business Profile / Google Maps URL. Added to sameAs once the
   // listing is live, which links the site and the profile as one entity.
   googleBusinessUrl: '',
-  defaultTitle: 'Kadmoon | Power BI & Microsoft Data Analytics Consultancy in the US',
+  defaultTitle: 'Kadmoon | Power BI & Microsoft Fabric Consulting for Finance Teams',
   titleTemplate: '%s | Kadmoon',
   // Kept to 120-160 chars, no em dashes (SEO + humanizer).
   description:
-    'Kadmoon is a US Microsoft data and analytics firm led by Power BI services. We build governed dashboards, Power Platform automation, and Fabric data engineering in your own tenant. You own it.',
-  ogImageAlt: 'Kadmoon: Power BI and Microsoft data analytics for US businesses.',
+    'US Power BI and Microsoft Fabric consultancy for finance and operations teams. Fixed-scope projects, published prices, built in your own Microsoft tenant.',
+  ogImageAlt: 'Kadmoon: Power BI and Microsoft Fabric for finance and operations teams.',
   keywords: [
     'Power BI consulting',
-    'Power BI services',
-    'Microsoft data analytics',
+    'Power BI for finance',
+    'Microsoft Fabric consulting',
     'Power BI dashboards',
-    'Power Platform consulting',
-    'Microsoft Fabric',
+    'FP&A analytics',
+    'budget vs actual Power BI',
     'Power BI migration',
-    'business intelligence consulting',
+    'financial reporting Power BI',
   ],
   // Microsoft Bookings link for the "Book a 30-minute call" CTA. External, so
   // the Button opens it in a new tab.

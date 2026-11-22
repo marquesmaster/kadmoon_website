@@ -11,9 +11,9 @@ import { analyticsSolutions, services } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Services | Power BI, Power Platform, Fabric & Copilot',
+  title: 'Power BI & Microsoft Fabric Services | Kadmoon',
   description:
-    'Power BI services and the Microsoft stack around it: governed dashboards and semantic models, Power BI migration and embedded analytics, Power Platform automation, data engineering on Fabric and Azure, and Copilot and AI. Delivered in your own tenant.',
+    'Power BI and Microsoft Fabric for finance and operations teams: governed dashboards and semantic models, Power BI migration, and the Fabric and Azure data engineering underneath. Built in your own Microsoft tenant.',
   alternates: { canonical: `${siteConfig.url}/services` },
   openGraph: { url: `${siteConfig.url}/services`, type: 'website', images: ['/opengraph-image'] },
 };
@@ -36,14 +36,14 @@ const engage = [
   {
     kicker: 'Managed Power BI',
     title: 'For ongoing work',
-    body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes, governance, new reports as needs change, and Copilot and AI as it matures. A boutique partner on call.',
+    body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes, governance, and new reports and model changes as needs change. A boutique partner on call.',
     cta: 'Talk Managed Power BI',
     featured: false,
   },
 ];
 
 const faqs = [
-  { q: 'Is it only Power BI, or the whole stack?', a: 'Power BI is the lead, and we build on the same governed model: Power Platform apps and automation, data engineering on Microsoft Fabric and Azure, and Copilot and AI. You can start with reporting and grow into automation and AI when it earns its place.' },
+  { q: 'Do you do more than dashboards?', a: 'Power BI is the lead, and we build the foundation under it: Microsoft Fabric lakehouse and pipelines, and Copilot-ready models on the same governed data. You can start with reporting and add the Fabric data platform when the data needs it.' },
   { q: 'Do we have to be on Microsoft already?', a: 'No. Your data can live in SQL Server, Dynamics, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, or your own APIs. We read from the system of record and deliver the analytics on Power BI and the Microsoft cloud, in your own tenant.' },
   { q: 'How fast do we see something?', a: 'A Power BI assessment delivers first dashboards in about two weeks, so you validate real value early instead of waiting on a long data project with nothing to show.' },
   { q: 'Do we own the model and the data?', a: 'Yes. The semantic model, the reports, and the data live in your own tenant with documentation and a full handover. Access follows your identity provider. No lock-in.' },
@@ -57,13 +57,13 @@ export default function ServicesPage() {
         {/* Hero */}
         <PageHero
           eyebrow="Services"
-          title="Power BI, and everything we build around it."
+          title="Power BI, and the data platform under it."
           breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />}
         >
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-            We turn the data in your ERP, CRM, and line-of-business systems into decisions, delivered
-            on Power BI in your own tenant, with Power Platform automation, Fabric data engineering,
-            and Copilot and AI built on the same governed model.
+            We turn the data in your ERP and spreadsheets into decisions, delivered on Power BI in
+            your own tenant, with Microsoft Fabric data engineering underneath and Copilot-ready
+            models on the same governed data.
           </p>
         </PageHero>
 
