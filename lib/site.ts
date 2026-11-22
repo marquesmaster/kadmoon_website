@@ -47,6 +47,10 @@ export const siteConfig = {
     'Power BI migration',
     'business intelligence consulting',
   ],
+  // Microsoft Bookings link for the "Book a 30-minute call" CTA. External, so
+  // the Button opens it in a new tab.
+  bookingUrl:
+    'https://bookings.cloud.microsoft/bookwithme/user/bb0e37d3d20746d7b15e564c13e975d7@bradata.ai/meetingtype/J_2CbJwQKEC6nC9_gdFagg2?anonymous&ismsaljsauthenabled&ep=mlink',
   // The contact form posts to the site's own secure API route.
   contactApi: '/api/contact',
   // Sales presentation served from /public, emailed to prospects on submit.

@@ -29,7 +29,7 @@ export default function PricingPage() {
         >
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">{pricing.lead}</p>
           <div className="mt-8">
-            <Button href="/contact" size="lg">
+            <Button href={siteConfig.bookingUrl} size="lg">
               Book a 30-minute call <span aria-hidden>→</span>
             </Button>
           </div>
@@ -103,7 +103,7 @@ export default function PricingPage() {
                     ))}
                   </ul>
                   <div className="mt-7">
-                    <Button href="/contact" variant={s.featured ? 'primary' : 'ghost'} className="w-full justify-center">
+                    <Button href={siteConfig.bookingUrl} variant={s.featured ? 'primary' : 'ghost'} className="w-full justify-center">
                       Book a 30-minute call {s.featured && <span aria-hidden>→</span>}
                     </Button>
                   </div>
@@ -148,7 +148,9 @@ export default function PricingPage() {
             <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/70">{pricing.cta.body}</p>
             <div className="mt-8 flex justify-center">
               <a
-                href="/contact"
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
               >
                 Book a 30-minute call <span aria-hidden>→</span>

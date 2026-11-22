@@ -7,7 +7,6 @@ import { BoutiqueEdge } from '@/components/sections/BoutiqueEdge';
 import { ReportsBand } from '@/components/sections/ReportsBand';
 import { MicrosoftStack } from '@/components/sections/MicrosoftStack';
 import { Process } from '@/components/sections/Process';
-import { Work } from '@/components/sections/Work';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { Faq } from '@/components/sections/Faq';
 import { Contact } from '@/components/sections/Contact';
@@ -28,7 +27,6 @@ export default function HomePage() {
         <Capabilities />
         <Process />
         <BoutiqueEdge />
-        <Work />
         <CtaBand />
         <Faq />
         <Contact />

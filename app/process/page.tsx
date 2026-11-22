@@ -86,7 +86,7 @@ export default function ProcessPage() {
             Tell us where your data lives and you get a scoped plan and a quote within one business day.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button href="/contact" size="lg">
+            <Button href={siteConfig.bookingUrl} size="lg">
               Book a 30-minute call <span aria-hidden>→</span>
             </Button>
           </div>

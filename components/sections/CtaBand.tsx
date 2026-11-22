@@ -1,3 +1,4 @@
+import { siteConfig } from '@/lib/site';
 import { Reveal } from '../Reveal';
 
 // Mid-page conversion band: a strong, self-contained call to action placed
@@ -25,16 +26,18 @@ export function CtaBand() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3.5">
           <a
-            href="/contact"
+            href={siteConfig.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
           >
             Book a 30-minute call <span aria-hidden>→</span>
           </a>
           <a
-            href="/cases"
+            href="/power-bi-for-finance"
             className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-4 text-[15px] font-semibold text-paper transition-colors hover:border-white/50 hover:bg-white/5"
           >
-            See case studies
+            Power BI for finance
           </a>
         </div>
       </Reveal>

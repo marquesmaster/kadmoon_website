@@ -127,7 +127,9 @@ export default function DocPage({ params }: { params: { slug: string } }) {
                 and a quote within one business day.
               </p>
               <a
-                href="/contact"
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5"
               >
                 Book a 30-minute call <span aria-hidden>→</span>

@@ -1,4 +1,5 @@
 import { credibility } from '@/lib/content';
+import { siteConfig } from '@/lib/site';
 import { Eyebrow } from '../Eyebrow';
 import { Reveal } from '../Reveal';
 
@@ -13,7 +14,9 @@ export function Credibility() {
           </h2>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-2">{credibility.lead}</p>
           <a
-            href="/contact"
+            href={siteConfig.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-7 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
           >
             Book a 30-minute call <span aria-hidden>→</span>

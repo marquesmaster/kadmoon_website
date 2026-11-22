@@ -196,7 +196,9 @@ export default function ServicesPage() {
                     {e.body}
                   </p>
                   <a
-                    href="/contact"
+                    href={siteConfig.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent"
                   >
                     {e.cta} <span aria-hidden>→</span>
@@ -243,14 +245,14 @@ export default function ServicesPage() {
               Power BI assessment, and send a quote.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3.5">
-              <Button href="/contact" size="lg">
+              <Button href={siteConfig.bookingUrl} size="lg">
                 Book a 30-minute call <span aria-hidden>→</span>
               </Button>
               <a
-                href="/cases"
+                href="/power-bi-for-finance"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-4 text-[15px] font-semibold text-paper transition-colors hover:border-white/50 hover:bg-white/5"
               >
-                See our work
+                Power BI for finance
               </a>
             </div>
           </div>

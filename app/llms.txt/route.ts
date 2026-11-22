@@ -28,9 +28,6 @@ export function GET() {
     `- [Power BI for Finance](${siteConfig.url}/power-bi-for-finance): month-end close, budget vs actual, margin, and cash for finance and operations teams`,
   );
   lines.push(
-    `- [Cases](${siteConfig.url}/cases): the kind of Power BI and Microsoft Fabric work we build across finance, sales, operations, retail, and SaaS`,
-  );
-  lines.push(
     `- [Docs](${siteConfig.url}/docs): methodology, engagement models, data integration, security and tenant model, measure library, and glossary`,
   );
   lines.push('');

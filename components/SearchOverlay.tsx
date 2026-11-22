@@ -5,7 +5,7 @@ import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 
 type IndexItem = { type: string; title: string; href: string; text: string; desc?: string };
 
-const TYPE_ORDER = ['Docs', 'Cases', 'Blog', 'Pages'];
+const TYPE_ORDER = ['Docs', 'Blog', 'Pages'];
 
 export function SearchOverlay() {
   const [mounted, setMounted] = useState(false);

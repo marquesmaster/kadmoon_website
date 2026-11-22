@@ -10,6 +10,8 @@
  * metrics, and do NOT reference Brazil or Portuguese.
  */
 
+import { siteConfig } from './site';
+
 export type NavLink = { label: string; href: string; desc?: string };
 export type NavGroup = { title: string; items: NavLink[] };
 export type NavFeatured = {
@@ -52,14 +54,13 @@ export const navMenu: NavItem[] = [
         eyebrow: 'Start here',
         title: 'A Power BI assessment',
         body: 'A short, fixed-scope engagement that delivers first dashboards in about two weeks, with a clear next step and a quote.',
-        href: '/contact',
+        href: siteConfig.bookingUrl,
         cta: 'Book a 30-minute call',
       },
     },
   },
   { label: 'Pricing', href: '/pricing' },
   { label: 'For Finance', href: '/power-bi-for-finance' },
-  { label: 'Cases', href: '/cases' },
   {
     label: 'Docs',
     panel: {
@@ -106,7 +107,6 @@ export const navMenu: NavItem[] = [
           title: 'Resources',
           items: [
             { label: 'Blog', href: '/blog', desc: 'Notes on Power BI and the data stack' },
-            { label: 'Cases', href: '/cases', desc: 'Dashboards and models we have built' },
             { label: 'Contact', href: '/contact', desc: 'Book a 30-minute call' },
           ],
         },
@@ -121,7 +121,7 @@ export const nav = {
   menu: navMenu,
   // No "Client sign-in" for now: there is no platform at launch, so the top bar
   // carries only the primary CTA. Existing clients use /contact.
-  cta: { label: 'Book a 30-minute call', href: '/contact' },
+  cta: { label: 'Book a 30-minute call', href: siteConfig.bookingUrl },
 };
 
 export const hero = {
@@ -136,7 +136,7 @@ export const hero = {
   deliveryLine: 'US company · Senior team in Brazil · Your business hours',
   flagship: 'Power BI · Semantic models & governance · Microsoft Fabric · Finance & operations',
   ctas: [
-    { label: 'Book a 30-minute call', href: '/contact', primary: true },
+    { label: 'Book a 30-minute call', href: siteConfig.bookingUrl, primary: true },
     { label: 'See pricing', href: '/pricing', primary: false },
   ],
   // What ships with a Kadmoon Power BI engagement.
@@ -280,32 +280,32 @@ export const analyticsSolutions = [
   {
     title: 'Executive dashboards',
     body: 'One governed view of the business: revenue, margin, cash, and the operating KPIs your leaders check daily, each drillable to the record behind it.',
-    href: '/cases',
+    href: '/power-bi-for-finance',
   },
   {
     title: 'Finance & operations analytics',
     body: 'The close, cash flow, budget versus actual, and the operating P&L, modeled once from your ERP so finance and operations read the same numbers.',
-    href: '/cases',
+    href: '/power-bi-for-finance',
   },
   {
     title: 'Sales & revenue analytics',
     body: 'Pipeline, bookings, win rate, and net revenue retention from your CRM and billing, so go-to-market decisions run on one trusted model.',
-    href: '/cases',
+    href: '/power-bi-for-finance',
   },
   {
     title: 'Semantic models & governance',
     body: 'A governed model with one definition per measure, row-level security, workspaces, and lineage, so reporting stays trustworthy as it scales.',
-    href: '/cases',
+    href: '/power-bi-for-finance',
   },
   {
     title: 'Power Platform automation',
     body: 'Power Apps and Power Automate on top of the data: input screens, approvals, and alerts that turn a dashboard into an action, not just a view.',
-    href: '/cases',
+    href: '/power-bi-for-finance',
   },
   {
     title: 'Data engineering on Fabric',
     body: 'Lakehouse, pipelines, and the modeling layer Power BI sits on, built on Microsoft Fabric and Azure so refreshes are reliable and fast.',
-    href: '/cases',
+    href: '/power-bi-for-finance',
   },
 ];
 
@@ -375,7 +375,7 @@ export const migrationHighlight = {
     'Sourced from SQL Server, Dynamics, SAP, and Excel',
   ],
   ctas: [
-    { label: 'See case studies', href: '/cases', primary: true },
+    { label: 'Book a 30-minute call', href: siteConfig.bookingUrl, primary: true },
     { label: 'Talk to us', href: '#contact', primary: false },
   ],
   panel: {
@@ -507,7 +507,7 @@ export const contact = {
 
 export const footer = {
   tagline:
-    'A US Microsoft data and analytics firm led by Power BI services. We turn the data in your ERP, CRM, and line-of-business systems into decisions, on the Microsoft stack and in your own tenant.',
+    'A US consultancy that builds Power BI and Microsoft Fabric for finance and operations teams. We turn the data in your ERP and spreadsheets into decisions, on the Microsoft stack and in your own tenant.',
   columns: [
     {
       heading: 'Company',
@@ -515,7 +515,6 @@ export const footer = {
         { label: 'Services', href: '/services' },
         { label: 'Pricing', href: '/pricing' },
         { label: 'For Finance', href: '/power-bi-for-finance' },
-        { label: 'Cases', href: '/cases' },
         { label: 'Docs', href: '/docs' },
         { label: 'Blog', href: '/blog' },
         { label: 'About', href: '/about' },
@@ -536,7 +535,7 @@ export const footer = {
       heading: 'Get started',
       links: [
         { label: 'Pricing', href: '/pricing' },
-        { label: 'Case studies', href: '/cases' },
+        { label: 'Power BI for finance', href: '/power-bi-for-finance' },
         { label: 'About', href: '/about' },
         { label: 'Start a project', href: '/contact' },
       ],
@@ -703,14 +702,16 @@ export const services: ServicePage[] = [
 // Analytics tie-in per platform: the analytics we deliver first, which is where
 // each platform grows from. `cases` are slugs in lib/cases/studies.ts; titles
 // are resolved at render time so labels never drift.
+// The case studies are hidden for now, so the per-service tie-in to case pages
+// renders nothing (empty `cases`). Restore the slugs when real cases are live.
 export const serviceAnalytics: Record<string, { note: string; cases: string[] }> = {
   'power-bi': {
     note: 'Power BI is only as good as the model under it. We start by modeling the numbers your leaders watch, revenue, margin, and the operating KPIs, so every report is built on a foundation the business already trusts.',
-    cases: ['executive-revenue-dashboard', 'finance-close-analytics', 'sales-pipeline-analytics'],
+    cases: [],
   },
   'microsoft-fabric': {
     note: 'Reliable reporting needs reliable data underneath. We build the Fabric lakehouse and pipelines that feed the governed model, so refreshes are fast and the numbers come from the source.',
-    cases: ['fabric-lakehouse-platform', 'finance-close-analytics'],
+    cases: [],
   },
 };
 
@@ -1113,6 +1114,6 @@ export const powerBiForFinance = {
     title: 'Book a 30-minute call',
     body: 'We will look at how your team reports today and tell you what the first two weeks would deliver.',
     label: 'Book a 30-minute call',
-    href: '/contact',
+    href: siteConfig.bookingUrl,
   },
 };
