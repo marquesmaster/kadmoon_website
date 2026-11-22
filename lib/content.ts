@@ -1,13 +1,15 @@
 /**
  * All landing-page copy for Kadmoon, Inc.
  *
- * Kadmoon is a US Microsoft data & analytics consultancy led by Power BI
- * services: dashboards and governed semantic models, Power BI migration, and
- * embedded analytics, plus Power Platform automation, Fabric & Azure data
- * engineering, and Copilot & AI, all delivered in the client's own Microsoft
- * tenant. The market is the United States, in English. We do not publish prices;
- * every engagement is scoped to the client. Do NOT invent client names or
- * metrics, and do NOT reference Brazil or Portuguese.
+ * Kadmoon is a US consultancy that builds Power BI and Microsoft Fabric for
+ * finance and operations teams: dashboards and governed semantic models, Power
+ * BI migration, and the Fabric & Azure data engineering underneath, all
+ * delivered in the client's own Microsoft tenant. The market is the United
+ * States, in English. Prices are published (see the `pricing` export). The
+ * delivery team is based in Brazil and works US business hours, through our
+ * affiliate Fynx; state that honestly and never say "US-based team". Do NOT
+ * invent client names, team members, or metrics. See CLAUDE.md for the full
+ * positioning and content rules.
  */
 
 import { siteConfig } from './site';
@@ -178,16 +180,16 @@ export const capabilities = {
       body: 'Legacy BI, hand-built spreadsheets, and tool sprawl consolidated into Power BI, with the old numbers reconciled so the business trusts the move.',
     },
     {
-      title: 'Power Platform automation',
-      body: 'Power Apps and Power Automate on top of the data: input screens, approvals, and alerts that turn a dashboard into an action, not just a view.',
+      title: 'Finance & operations analytics',
+      body: 'The close, budget versus actual, gross margin, and cash, modeled once from your ERP so finance and operations read the same numbers every morning.',
     },
     {
       title: 'Data engineering on Fabric & Azure',
       body: 'Lakehouse, pipelines, and the modeling layer Power BI sits on, built on Microsoft Fabric and Azure so refreshes are reliable and fast.',
     },
     {
-      title: 'Copilot & AI on your data',
-      body: 'Copilot in Power BI and natural-language questions over your governed model, so people get answers without waiting on a new report.',
+      title: 'Copilot-ready models',
+      body: 'A governed semantic model with clean, documented measures, so Copilot in Power BI answers from the same definitions as every report, not a guess.',
     },
   ],
 };
@@ -195,11 +197,11 @@ export const capabilities = {
 export const why = {
   eyebrow: 'Why Kadmoon',
   title: 'A team that lives in the Microsoft stack.',
-  sub: 'We build data and analytics only on Microsoft: Power BI, the Power Platform, Fabric, and Azure. That focus is why what we deliver fits how your business already works.',
+  sub: 'We build data and analytics only on Microsoft: Power BI, Microsoft Fabric, and Azure. That focus is why what we deliver fits how your business already works.',
   items: [
     {
       title: 'Microsoft is all we do',
-      body: 'Power BI, Power Platform, Fabric, and Azure, every day. We are not a generalist shop learning the stack on your budget.',
+      body: 'Power BI, Microsoft Fabric, and Azure, every day. We are not a generalist shop learning the stack on your budget.',
     },
     {
       title: 'A senior team, US business hours',
@@ -218,8 +220,8 @@ export const why = {
       body: 'Your data, your model, your reports, built in your own Microsoft tenant with documentation and a full handover. No lock-in and no dependency on us.',
     },
     {
-      title: 'From dashboards to automation and AI',
-      body: 'Power BI is the lead, and we build on it: Power Platform apps and automation, and Copilot and AI over the same governed model.',
+      title: 'From dashboards to a data platform',
+      body: 'Power BI is the lead, and we build the foundation under it: Microsoft Fabric lakehouse and pipelines, and Copilot-ready models over the same governed data.',
     },
   ],
 };
@@ -248,7 +250,7 @@ export const howToChoose = {
       title: 'Is it only Power BI, or the whole stack?',
       body: 'Ask whether they can take you past dashboards: automation, data engineering, and AI. A charts-only shop leaves the rest of the problem on your desk.',
       answer:
-        'Power BI is the lead, built on the whole Microsoft stack: Power Platform automation, Fabric and Azure data engineering, and Copilot and AI on the same model.',
+        'Power BI is the lead, built on the whole Microsoft stack: Microsoft Fabric and Azure data engineering, and Copilot-ready models on the same governed data.',
     },
     {
       num: '04',
@@ -298,8 +300,8 @@ export const analyticsSolutions = [
     href: '/power-bi-for-finance',
   },
   {
-    title: 'Power Platform automation',
-    body: 'Power Apps and Power Automate on top of the data: input screens, approvals, and alerts that turn a dashboard into an action, not just a view.',
+    title: 'Power BI migration',
+    body: 'Legacy BI, hand-built spreadsheets, and tool sprawl consolidated into one governed Power BI model, with the old numbers reconciled so the business trusts the move.',
     href: '/power-bi-for-finance',
   },
   {
@@ -449,36 +451,32 @@ export const faq = {
   title: 'Questions a serious buyer asks.',
   items: [
     {
-      q: 'What does Kadmoon do?',
-      a: 'We are a US Microsoft data and analytics firm led by Power BI services. We connect the systems you already run, build a governed semantic model, and deliver the dashboards your team opens every day. On top of that we build Power Platform automation, Fabric and Azure data engineering, and Copilot and AI. Everything lives in your own Microsoft tenant, and you own it.',
+      q: 'Where is your team?',
+      a: 'Kadmoon, Inc. is a US company. Our delivery team is based in Brazil and works US business hours. It is the same team that has built Power BI for six years through our affiliate Fynx. Sao Paulo is one to two hours ahead of US Eastern Time, so your business day is covered.',
     },
     {
-      q: 'Do we have to be a Microsoft shop?',
-      a: 'No. Your data can live anywhere: SQL Server, Dynamics 365, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, or your own APIs. We read from the system of record wherever it runs and deliver the analytics on Power BI and the Microsoft cloud, because it is a strong, governed place to build and most teams already have the licensing.',
+      q: 'Do we need to be on Microsoft?',
+      a: 'Power BI runs in a Microsoft 365 or Azure tenant. If you do not have one, we set it up in your company name. The data can come from any source: ERP, CRM, SQL databases, Excel files, and APIs.',
     },
     {
-      q: 'Why only the Microsoft stack?',
-      a: 'Because depth beats breadth. Power BI, the Power Platform, Fabric, and Azure are what we build on every day, so we arrive with patterns, a governance model, and reusable components instead of learning a new toolset on your budget. One stack, end to end, also means fewer seams between your dashboards, your automation, and your data pipelines.',
-    },
-    {
-      q: 'Where does the data come from?',
-      a: 'From the systems you already run. We land raw data in your tenant, shape it into a governed semantic model, and feed the dashboards from there, with refreshes you can rely on. Connections to your ERP, CRM, finance, and line-of-business systems are built once so numbers come from the source instead of a re-keyed export. The data integration doc goes into detail.',
+      q: 'Which systems do you connect?',
+      a: 'QuickBooks, NetSuite, Dynamics 365 Business Central, Sage Intacct, Salesforce, HubSpot, SQL Server, Excel, and SharePoint, among others. We read from the system of record wherever it runs and model it once.',
     },
     {
       q: 'How does a project start?',
-      a: 'Usually with a Power BI assessment: a short, fixed-scope engagement that maps your decisions and data and delivers first dashboards in about two weeks. It de-risks the larger build and produces a scope and a quote grounded in your real data. You leave with working reports, not a slide deck.',
+      a: 'With the Power BI Assessment: two weeks, $5,000 fixed. You get the first dashboards on your own data, a delivery plan, and a fixed quote for the full build. You leave with working reports, not a slide deck.',
     },
     {
-      q: 'Do you do more than dashboards?',
-      a: 'Yes. Power BI is the lead, and we build on the same governed model: Power Apps and Power Automate for input screens, approvals, and alerts; Microsoft Fabric and Azure for the data engineering underneath; and Copilot and AI so people can ask questions in plain language. You can start with reporting and grow into automation and AI when it earns its place.',
+      q: 'Who owns the work?',
+      a: 'You do. Everything lives in your own Microsoft tenant: the semantic model, the reports, and the data, with documentation and a full handover. There are no licenses or lock-in from us.',
     },
     {
-      q: 'Do we own the analytics and the data?',
-      a: 'Yes. Everything we build is yours: the semantic model, the reports, and the data, all inside your own tenant, with documentation and a full handover. Access is provisioned per engagement against your identity provider and policies. We support and evolve it on a defined agreement after launch, but you are never locked in or dependent on us to keep operating.',
+      q: 'Who pays for Power BI licenses?',
+      a: 'You pay Microsoft directly. We size the licensing with you during the assessment, so there are no surprises.',
     },
     {
-      q: 'Which regions and company sizes do you serve?',
-      a: 'We are a US firm serving American businesses, from growing companies to established enterprises, across finance, retail, healthcare, manufacturing, professional services, technology, and the public and nonprofit sectors. The common thread is that decisions depend on data in Microsoft systems and the numbers have to be right.',
+      q: 'Can we start with one area?',
+      a: 'Yes. Most clients start with finance and operations and expand from there once the first dashboards are trusted.',
     },
   ],
 };
@@ -489,12 +487,11 @@ export const contact = {
   sub: 'Share how your team works and where the reporting hurts today. Within one business day you get a response with a clear path forward and a quote, no obligation.',
   needOptions: [
     'Power BI dashboards & reports',
+    'Finance & operations analytics',
     'Semantic model & governance',
     'Power BI migration',
-    'Embedded analytics',
-    'Power Platform automation',
-    'Data engineering (Fabric & Azure)',
-    'Copilot & AI on our data',
+    'Data engineering (Microsoft Fabric)',
+    'Managed Power BI',
     'Other',
   ],
   sizeOptions: [
@@ -553,15 +550,15 @@ export const techStack = {
   sub: 'We build on the Microsoft data platform end to end and tie into the systems around it, so numbers come from the source instead of a re-keyed export.',
   groups: [
     { label: 'Power BI', items: ['Dashboards & reports', 'Semantic models', 'Row-level security', 'Embedded'] },
-    { label: 'Power Platform', items: ['Power Apps', 'Power Automate', 'Dataverse', 'Approvals & alerts'] },
-    { label: 'Data engineering', items: ['Microsoft Fabric', 'Azure Data Factory', 'Lakehouse', 'Dataflows'] },
-    { label: 'Sources & AI', items: ['SQL Server', 'Dynamics 365', 'SAP & Salesforce', 'Copilot & AI'] },
+    { label: 'Microsoft Fabric', items: ['Lakehouse', 'Data pipelines', 'Azure Data Factory', 'Dataflows'] },
+    { label: 'Governance', items: ['One definition per measure', 'Workspaces & lineage', 'Scheduled refresh', 'Copilot-ready models'] },
+    { label: 'Sources', items: ['QuickBooks & NetSuite', 'Dynamics 365 & Sage', 'SQL Server', 'Salesforce & Excel'] },
   ],
   // Flattened for the marquee.
   marquee: [
-    'Power BI', 'Semantic models', 'Row-level security', 'Embedded analytics', 'Power Apps', 'Power Automate',
-    'Dataverse', 'Microsoft Fabric', 'Azure', 'Lakehouse', 'SQL Server', 'Dynamics 365',
-    'SAP', 'Salesforce', 'Copilot', 'Natural-language Q&A',
+    'Power BI', 'Semantic models', 'Row-level security', 'Embedded analytics', 'Microsoft Fabric', 'Lakehouse',
+    'Data pipelines', 'Azure', 'Scheduled refresh', 'QuickBooks', 'NetSuite', 'Dynamics 365',
+    'Sage Intacct', 'Salesforce', 'SQL Server', 'Copilot-ready models',
   ],
 };
 
@@ -579,7 +576,7 @@ export const engagement = {
     {
       name: 'Managed Power BI',
       best: 'Best for ongoing work',
-      body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes watched and governance kept current, new reports as needs change, Copilot and AI as it matures, and a named point of contact. A boutique partner on call, not a one-off build.',
+      body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes watched and governance kept current, new reports and model changes as needs change, and a named point of contact. A boutique partner on call, not a one-off build.',
       points: ['A set monthly scope and a named contact', 'New reports and model changes as needs change', 'Managed refreshes, governance, and support'],
     },
   ],
@@ -594,7 +591,7 @@ export const comparison = {
     { label: 'One definition per measure', values: ['yes', 'partial', 'no'] },
     { label: 'Governed semantic model & row-level security', values: ['yes', 'partial', 'no'] },
     { label: 'Reads SQL Server, Dynamics, SAP, and APIs', values: ['yes', 'partial', 'no'] },
-    { label: 'Power Platform & Fabric on the same stack', values: ['yes', 'no', 'no'] },
+    { label: 'Microsoft Fabric on the same stack', values: ['yes', 'no', 'no'] },
     { label: 'Lives in your own Microsoft tenant', values: ['yes', 'partial', 'yes'] },
     { label: 'First dashboards in about two weeks', values: ['yes', 'partial', 'partial'] },
   ],
@@ -647,6 +644,7 @@ export const microsoftStack = {
 export type ServicePage = {
   slug: string;
   title: string;
+  seoTitle?: string;
   tagline: string;
   intro: string;
   includes: string[];
@@ -658,6 +656,7 @@ export const services: ServicePage[] = [
   {
     slug: 'power-bi',
     title: 'Power BI',
+    seoTitle: 'Power BI Consulting for Finance & Operations | Kadmoon',
     tagline: 'The dashboards and reports your team opens every day.',
     intro:
       'Power BI is only as good as the model under it. We build the governed semantic model, connect it to the systems you already run, and design reports people actually use, with one definition per measure and security that holds as the audience grows.',
@@ -679,6 +678,7 @@ export const services: ServicePage[] = [
   {
     slug: 'microsoft-fabric',
     title: 'Microsoft Fabric',
+    seoTitle: 'Microsoft Fabric Consulting & Data Engineering | Kadmoon',
     tagline: 'The governed model your reporting sits on, built on Fabric and Azure.',
     intro:
       'Reliable reporting needs reliable data underneath. We build the lakehouse, pipelines, and modeling layer on Microsoft Fabric and Azure, so your Power BI refreshes are fast, your sources stay in sync, and the model is documented and owned by you.',

@@ -38,7 +38,7 @@ export default function OpengraphImage() {
               marginBottom: 20,
             }}
           >
-            Microsoft data &amp; analytics · United States
+            Power BI · Microsoft Fabric · United States
           </div>
           <div
             style={{
@@ -50,12 +50,12 @@ export default function OpengraphImage() {
               maxWidth: 980,
             }}
           >
-            Power BI you can actually trust, in about two weeks.
+            Power BI for finance and operations teams.
           </div>
         </div>
 
         <div style={{ fontSize: 22, color: 'rgba(255,255,255,0.65)' }}>
-          Power BI · Power Platform · Microsoft Fabric &amp; Azure · Copilot &amp; AI
+          Power BI · Microsoft Fabric · Finance &amp; Operations
         </div>
       </div>
     ),

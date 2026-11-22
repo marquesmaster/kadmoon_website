@@ -65,11 +65,11 @@ export function JsonLd() {
     knowsAbout: [
       'Power BI',
       'Power BI consulting',
-      'Microsoft Power Platform',
+      'Power BI for finance',
       'Microsoft Fabric',
       'Azure data engineering',
-      'Business intelligence',
-      'Data analytics',
+      'Financial reporting',
+      'FP&A analytics',
     ],
     contactPoint: {
       '@type': 'ContactPoint',

@@ -9,7 +9,7 @@ import { groupExperience } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'About | A US Power BI and Microsoft data team',
+  title: 'About Kadmoon',
   description:
     'Kadmoon, Inc. is a US consultancy that builds Power BI and Microsoft Fabric for finance and operations teams. A senior team working US business hours, through our affiliate Fynx, builds dashboards, semantic models, and the Fabric and Azure data they sit on, all in your own Microsoft tenant.',
   alternates: { canonical: `${siteConfig.url}/about` },
@@ -34,7 +34,7 @@ const steps = [
 const team = [
   { mono: 'BI', role: 'Power BI & Analytics Lead', desc: 'Owns the reports and semantic models, and keeps every measure coherent across the business.' },
   { mono: 'DE', role: 'Data Engineering Lead', desc: 'Builds the lakehouse and pipelines on Fabric and Azure that feed Power BI from clean, governed data.' },
-  { mono: 'PP', role: 'Power Platform Lead', desc: 'Builds the Power Apps and Power Automate workflows that act on the data behind the reports.' },
+  { mono: 'FA', role: 'Finance & Operations Analytics Lead', desc: 'Translates the close, budget versus actual, margin, and cash into the measures the model is built on.' },
   { mono: 'EL', role: 'Engagement & Delivery Lead', desc: 'Runs scoping and delivery, and keeps each cycle aligned with the decisions you need to make.' },
 ];
 
@@ -44,11 +44,11 @@ export default function AboutPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="About Kadmoon" title="A US Power BI team that lives in the Microsoft stack.">
+        <PageHero eyebrow="About Kadmoon" title="Power BI and Microsoft Fabric for finance and operations teams.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
             We turn the data US businesses already run on into Power BI dashboards they can act on.
-            The team behind Kadmoon has built on Power BI, Power Platform, Fabric, and Azure for
-            years.
+            Kadmoon, Inc. is a US company; the delivery team is based in Brazil and works US business
+            hours, through our affiliate Fynx.
           </p>
         </PageHero>
 
@@ -68,17 +68,17 @@ export default function AboutPage() {
                 one is right.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
-                Kadmoon is a new name, not a new team. For six years we have built data platforms and
-                Power BI analytics on the Microsoft stack, more than 2,000 solutions across a range of
-                sectors. We know how to pull messy data together in one tenant and turn it into
-                numbers people trust.
+                Kadmoon is a new US company, not a new team. The delivery team, based in Brazil and
+                working US business hours through our affiliate Fynx, has built data platforms and
+                Power BI analytics on the Microsoft stack for six years, across a range of sectors. We
+                know how to pull messy data together in one tenant and turn it into numbers people
+                trust.
               </p>
               <p className="text-lg leading-relaxed text-ink-2">
                 We lead with Power BI: dashboards, governed semantic models, and migrations from
-                legacy BI and spreadsheets. Around that we build the rest of the Microsoft stack,
-                Power Apps and Power Automate, data engineering on Fabric and Azure, and Copilot on
-                your data. It all runs in your own Microsoft tenant, documented and handed over so you
-                own it.
+                legacy BI and spreadsheets. Under that we build the data foundation on Microsoft
+                Fabric and Azure, with Copilot-ready models on the same governed data. It all runs in
+                your own Microsoft tenant, documented and handed over so you own it.
               </p>
             </div>
           </div>
