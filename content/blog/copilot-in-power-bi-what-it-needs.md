@@ -1,7 +1,7 @@
 ---
 title: "Copilot in Power BI: what it does and what it needs first"
 description: "An honest look at Copilot in Power BI: natural-language questions and summaries, why it depends on a governed semantic model, how row-level security applies, and where it helps."
-category: "Copilot & AI"
+category: "Power BI"
 primaryKeyword: "Copilot in Power BI"
 tags: ["Copilot", "Power BI", "semantic model", "AI on your data"]
 takeaways:
