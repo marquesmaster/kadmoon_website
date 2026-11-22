@@ -31,7 +31,9 @@ export function Faq() {
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
               <a
-                href="/contact"
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
               >
                 Book a 30-minute call <span aria-hidden>→</span>

@@ -36,8 +36,13 @@ export function Button({
 }) {
   const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
   if (href) {
+    const external = /^https?:\/\//.test(href);
     return (
-      <a href={href} className={cls}>
+      <a
+        href={href}
+        className={cls}
+        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
         {children}
       </a>
     );

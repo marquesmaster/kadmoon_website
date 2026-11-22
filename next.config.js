@@ -338,6 +338,11 @@ const nextConfig = {
         'usmca-2026-review-importers', 'vendor-compliance-chargebacks', 'what-is-a-trade-intelligence-platform',
       ].map((slug) => ({ source: `/blog/${slug}`, destination: '/blog', permanent: true })),
 
+      // The case studies are hidden until real, permissioned case studies are
+      // ready. Send /cases and any case page home.
+      { source: '/cases/:slug*', destination: '/', permanent: true },
+      { source: '/cases', destination: '/', permanent: true },
+
       // Service slugs. The live services are Power BI and Microsoft Fabric.
       // Power Platform and Copilot are folded into Power BI; data engineering
       // was renamed to microsoft-fabric. Older Microsoft variants point to the
