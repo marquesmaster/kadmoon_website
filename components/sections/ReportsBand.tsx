@@ -74,9 +74,6 @@ export function ReportsBand() {
           >
             Book a 30-minute call <span aria-hidden>→</span>
           </a>
-          <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/45">
-            Sample reports · figures are illustrative
-          </span>
         </div>
       </div>
     </section>

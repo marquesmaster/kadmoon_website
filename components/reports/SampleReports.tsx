@@ -1,12 +1,11 @@
 import type { ReactNode } from 'react';
 
 // ---------------------------------------------------------------------------
-// Illustrative "built reports" for the platform page. These are sample views
-// of the analytics Kadmoon ships, not real client data. Every card is labeled
-// "Sample" and the section carries an "illustrative figures" note. Figures are
-// chosen to be realistic in structure, never presented as verified results.
+// Product-UI "built reports" for the home and platform sections: representative
+// views of the analytics Kadmoon ships, not attributed to any client. Figures
+// are chosen to be realistic in structure.
 //
-// Charts are plain inline SVG / HTML in the ocean palette: single-series where
+// Charts are plain inline SVG / HTML in the violet palette: single-series where
 // possible (accent for the mark, ink tokens for text, line token for the grid),
 // so identity never rests on color alone.
 // ---------------------------------------------------------------------------
@@ -26,9 +25,6 @@ function ReportChrome({
         <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
         <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
         <span className="ml-2 font-sans text-[12px] font-semibold text-ink">{title}</span>
-        <span className="ml-auto rounded-full bg-mist px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.12em] text-ink-3">
-          Sample
-        </span>
       </div>
       <div className="p-5 md:p-6">{children}</div>
     </div>

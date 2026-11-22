@@ -76,9 +76,13 @@ deployed via Docker on a Hostinger VPS.
 - **No unverifiable numbers.** Do not state years, client counts, or project
   counts the owner has not confirmed. Real track record is attributed to the team
   via Fynx, with real figures only; otherwise leave the numbers out.
-- All figures in cases/mocks are **illustrative** and must be labeled plainly as
-  such ("Example report", "Illustrative figures"); do not dress them up as a real
-  client.
+- **Do not use "Sample", "Example", "illustrative", or "figures are
+  illustrative" labels** on the product-UI dashboards or report cards (owner
+  preference). The mock figures stay as representative product UI. The hard line
+  still holds: **never attribute a figure to a named real client or present it as
+  a specific client's real result.** The case studies state plainly that they are
+  "not based on specific clients"; keep that honest framing. Real case studies
+  with real numbers require written client permission.
 - Name Microsoft products factually (we build on them). **Do not say "Microsoft
   Partner" or claim a partnership tier, certification, or Solutions-Partner status
   before that designation actually exists and is verified.**

@@ -343,7 +343,7 @@ export const process = {
 export const work = {
   eyebrow: 'What we build',
   title: 'Power BI that runs the business.',
-  sub: 'The dashboards and models we build, drawing on SQL Server, Dynamics, SAP, and the systems you already run. Figures are illustrative of the structure we ship.',
+  sub: 'The dashboards and models we build, drawing on your ERP, spreadsheets, and the systems you already run.',
   cases: [
     {
       tag: 'Leadership',
@@ -364,7 +364,7 @@ export const work = {
 };
 
 // Signature-practice highlight on the homepage: the governed semantic model.
-// The panel is an explicitly labeled example, not a real client's figures.
+// The panel is product UI with representative figures, not a real client.
 export const migrationHighlight = {
   eyebrow: 'Our specialty',
   title: 'One governed model your whole team trusts',
@@ -380,7 +380,7 @@ export const migrationHighlight = {
   ],
   panel: {
     label: 'Revenue & margin',
-    caption: 'example · this month',
+    caption: 'this month',
     rows: [
       { label: 'Revenue', value: '$2,480,000', status: 'mapped' },
       { label: 'Cost of goods sold', value: '$1,512,000', status: 'mapped' },
@@ -611,7 +611,7 @@ export const credibility = {
     { title: 'A senior team, US business hours', body: 'The team behind Kadmoon, through our affiliate Fynx, has shipped Power BI and Microsoft analytics for years. The people who scope your model build and support it.' },
   ],
   // Full statement, kept for reference and any schema use.
-  text: 'Kadmoon, Inc. is a US consultancy that builds Power BI and Microsoft Fabric for finance and operations teams, run by a senior team working US business hours. We turn the data in your ERP, spreadsheets, and line-of-business systems into decisions, delivered on Power BI and Microsoft Fabric in your own tenant. The dashboards shown on the site are illustrative of what we ship.',
+  text: 'Kadmoon, Inc. is a US consultancy that builds Power BI and Microsoft Fabric for finance and operations teams, run by a senior team working US business hours. We turn the data in your ERP, spreadsheets, and line-of-business systems into decisions, delivered on Power BI and Microsoft Fabric in your own tenant.',
 };
 
 // ---------------------------------------------------------------------------
@@ -1060,8 +1060,7 @@ export const assessment = {
 
 // ---------------------------------------------------------------------------
 // Power BI for Finance landing page. Replaces the /industries section with the
-// one frame the business leads on: finance and operations. No invented numbers;
-// example reports are labeled as examples.
+// one frame the business leads on: finance and operations.
 // Rendered at /power-bi-for-finance.
 // ---------------------------------------------------------------------------
 export const powerBiForFinance = {
@@ -1082,7 +1081,7 @@ export const powerBiForFinance = {
   reports: {
     eyebrow: 'What we build',
     title: 'Reports finance teams open every morning',
-    note: 'Example reports. We build these on your own data, with one definition per measure.',
+    note: 'We build these on your own data, with one definition per measure.',
     items: [
       { name: 'Revenue and gross margin by product line', note: 'One governed model, so every report agrees.' },
       { name: 'Budget vs actual by department', note: 'Variance to the cost center, tied to the ledger.' },
