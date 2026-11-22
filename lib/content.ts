@@ -125,26 +125,28 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: 'Microsoft data & analytics · United States',
+  eyebrow: 'Power BI · Microsoft Fabric · Finance and operations',
   // The accent phrase is rendered in the accent color inside the H1.
   headlineBefore: '',
   headlineAccent: 'Power BI',
-  headlineAfter: ' you can actually trust, in about two weeks.',
+  headlineAfter: ' for finance and operations teams',
   subhead:
-    'No more meetings about which number is right. Kadmoon connects the systems you already run, builds one governed Power BI model, and ships the dashboards your team opens daily. A senior US team, working in your own Microsoft tenant and handing it over so you own all of it.',
-  flagship: 'Power BI · Semantic models & governance · Power Platform · Microsoft Fabric & Azure · Copilot & AI',
+    'We connect your ERP and spreadsheets, build one governed Power BI model, and deliver your first dashboards in two weeks. Fixed scope, fixed price, in your own Microsoft tenant.',
+  // Honest delivery model, in the first screen.
+  deliveryLine: 'US company · Senior team in Brazil · Your business hours',
+  flagship: 'Power BI · Semantic models & governance · Microsoft Fabric · Finance & operations',
   ctas: [
     { label: 'Book a 30-minute call', href: '/contact', primary: true },
-    { label: 'See case studies', href: '/cases', primary: false },
+    { label: 'See pricing', href: '/pricing', primary: false },
   ],
   // What ships with a Kadmoon Power BI engagement.
   panelLabel: 'What you get',
   deliverables: [
     'A governed semantic model, one definition per metric',
     'Power BI dashboards your leaders open daily',
-    'Data from SQL Server, Dynamics, SAP, Excel, and your apps',
+    'Data from your ERP, spreadsheets, and the systems you run',
     'Everything built in your own Microsoft tenant',
-    'US-based team and a full handover',
+    'A senior team working US business hours, and a full handover',
   ],
   panelFooter: 'Built in your tenant. You own the model and the data.',
 };
@@ -200,8 +202,8 @@ export const why = {
       body: 'Power BI, Power Platform, Fabric, and Azure, every day. We are not a generalist shop learning the stack on your budget.',
     },
     {
-      title: 'A senior, US-based team',
-      body: 'The people who scope your model are the ones who build and support it. No rotating subcontractors, no handoff to a team that has never seen your data.',
+      title: 'A senior team, US business hours',
+      body: 'The people who scope your model are the ones who build and support it. A senior team working US business hours, no rotating subcontractors, no handoff to a team that has never seen your data.',
     },
     {
       title: 'Governed models, not just charts',
@@ -239,7 +241,7 @@ export const howToChoose = {
       title: 'Who builds it',
       body: 'Ask whether the people are full-time employees or rotating freelancers. The model that runs your reporting needs people who still understand it a year later.',
       answer:
-        'A senior, US-based in-house team. The people who scope your model build it and support it. No pass-through to third parties.',
+        'A senior in-house team working US business hours. The people who scope your model build it and support it. No pass-through to third parties.',
     },
     {
       num: '03',
@@ -567,7 +569,7 @@ export const techStack = {
 export const engagement = {
   eyebrow: 'How we engage',
   title: 'A boutique, two ways to work.',
-  sub: 'Start with a fixed-scope Power BI assessment, then run by project or on Managed Power BI, our monthly subscription. The same senior, US-based team, built in your own tenant and yours to own.',
+  sub: 'Start with a fixed-scope Power BI assessment, then run by project or on Managed Power BI, our monthly subscription. The same senior team working US business hours, built in your own tenant and yours to own.',
   models: [
     {
       name: 'By project',
@@ -602,14 +604,14 @@ export const comparison = {
 export const credibility = {
   eyebrow: 'Why Kadmoon',
   title: 'Power BI built by a senior Microsoft team.',
-  lead: 'A senior, US-based team that lives in the Microsoft stack. We turn the data in your ERP, CRM, and line-of-business systems into decisions, delivered on Power BI in your own tenant.',
+  lead: 'A senior team that lives in the Microsoft stack and works US business hours. We turn the data in your ERP, spreadsheets, and line-of-business systems into decisions, delivered on Power BI in your own tenant.',
   points: [
     { title: 'One definition per measure', body: 'Revenue, margin, and the KPIs your leaders watch mean one thing across every report.' },
     { title: 'Built in your tenant', body: 'Your data, your model, your reports. You own it, with no lock-in.' },
-    { title: 'Senior, US-based team', body: 'Six years and more than 2,000 Microsoft analytics solutions behind the people who scope, build, and support your model.' },
+    { title: 'A senior team, US business hours', body: 'The team behind Kadmoon, through our affiliate Fynx, has shipped Power BI and Microsoft analytics for years. The people who scope your model build and support it.' },
   ],
   // Full statement, kept for reference and any schema use.
-  text: 'Kadmoon is a US Microsoft data and analytics firm led by Power BI services, run by a senior, US-based team. We turn the data in your ERP, CRM, and line-of-business systems into decisions, delivered on Power BI, the Power Platform, and Microsoft Fabric in your own tenant. The dashboards shown on the site are illustrative of what we ship.',
+  text: 'Kadmoon, Inc. is a US consultancy that builds Power BI and Microsoft Fabric for finance and operations teams, run by a senior team working US business hours. We turn the data in your ERP, spreadsheets, and line-of-business systems into decisions, delivered on Power BI and Microsoft Fabric in your own tenant. The dashboards shown on the site are illustrative of what we ship.',
 };
 
 // ---------------------------------------------------------------------------
@@ -878,7 +880,7 @@ export const clientLogos: ClientLogo[] = [
 // ---------------------------------------------------------------------------
 export const groupExperience = {
   eyebrow: 'Experience behind Kadmoon',
-  line: 'The team behind Kadmoon has spent six years building data, analytics, and Microsoft platforms for organizations across government, education, sports, real estate, and technology. Kadmoon brings that practice to Power BI for US businesses.',
+  line: 'The team behind Kadmoon, through our affiliate Fynx, has spent six years building data, analytics, and Microsoft platforms for organizations across government, education, sports, real estate, and technology. Kadmoon brings that practice to US finance and operations teams, on US business hours.',
   stats: [
     { value: '6', label: 'years building data & analytics' },
     { value: '50+', label: 'organizations served' },

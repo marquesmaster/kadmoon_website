@@ -1,4 +1,4 @@
-import { hero, stats, clientLogos } from '@/lib/content';
+import { hero, clientLogos } from '@/lib/content';
 import { Button } from '../Button';
 
 // Illustrative product UI — a stylized Power BI dashboard, not real client
@@ -111,6 +111,10 @@ export function Hero() {
               ))}
             </div>
 
+            <p className="mt-5 font-mono text-[12px] tracking-[0.02em] text-ink-3">
+              {hero.deliveryLine}
+            </p>
+
             <div className="mt-6 flex max-w-lg flex-wrap gap-2">
               {hero.flagship.split(' · ').map((item) => (
                 <span
@@ -129,34 +133,13 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Proof strip: the team and group's track record, in the first screen */}
+        {/* Proof strip: our team's work in Brazil, through our affiliate Fynx.
+            Real logo images where we have the file, wordmarks for the rest. */}
         <div className="mt-8 border-t border-line pt-6 md:mt-9">
-          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
-              The team &amp; group behind Kadmoon
-            </span>
-            <dl className="flex flex-wrap gap-x-9 gap-y-4">
-              {stats.map((s, i) => (
-                <div key={s.label} className="flex items-baseline gap-2.5">
-                  <dd
-                    className={`font-display text-2xl font-bold tracking-[-0.03em] tabular-nums md:text-[28px] ${
-                      i === 0 ? 'text-accent' : 'text-ink'
-                    }`}
-                  >
-                    {s.value}
-                  </dd>
-                  <dt className="max-w-[13ch] text-[12px] leading-tight text-ink-2">{s.label}</dt>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          {/* Organizations the team and group has worked with (clients + partners):
-              real logo images where we have the file, wordmarks for the rest. */}
           {clientLogos.length > 0 && (
-            <div className="mt-6 border-t border-line pt-6">
+            <div>
               <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
-                Organizations the team and group has worked with
+                Our team&apos;s work in Brazil, through our affiliate Fynx
               </span>
               {clientLogos.some((c) => c.logo) && (
                 <ul className="mt-4 flex flex-wrap items-center gap-2.5">

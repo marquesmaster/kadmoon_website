@@ -33,17 +33,6 @@ test.describe('pages load', () => {
   });
 });
 
-test('stat counters finish without freezing mid-animation', async ({ page }) => {
-  await page.goto('/');
-  const band = page.locator('[data-testid="stat-band"]');
-  await band.scrollIntoViewIfNeeded();
-  await page.waitForTimeout(2000);
-  const values = await band.locator('dd').evaluateAll((dds) =>
-    dds.map((d) => d.querySelector('span')?.textContent),
-  );
-  expect(values).toEqual(['30,000+', '2,000+', '50+']);
-});
-
 test('blog search filters results', async ({ page }) => {
   await page.goto('/blog');
   await page.getByPlaceholder('Search articles').fill('Power BI');
