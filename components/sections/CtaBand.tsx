@@ -18,7 +18,7 @@ export function CtaBand() {
           Ready when you are
         </p>
         <h2 className="mt-4 font-display text-display-md font-semibold text-white">
-          Turn your business data into decisions.
+          See your first dashboards in two weeks.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/70">
           Start with a Power BI assessment: first dashboards in about two weeks, in your own

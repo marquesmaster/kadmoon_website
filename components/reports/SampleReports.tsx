@@ -19,14 +19,14 @@ function ReportChrome({
   children: ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-card">
+    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card">
       <div className="flex items-center gap-2 border-b border-line px-5 py-3">
         <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
         <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
         <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
         <span className="ml-2 font-sans text-[12px] font-semibold text-ink">{title}</span>
       </div>
-      <div className="p-5 md:p-6">{children}</div>
+      <div className="flex-1 p-5 md:p-6">{children}</div>
     </div>
   );
 }

@@ -171,7 +171,7 @@ export const groupCompanies = ['Bradata', 'Fynx', 'Vigiles AI', 'Cyberwalk', 'Ac
 
 export const capabilities = {
   eyebrow: 'What we deliver',
-  title: 'From scattered data to the decision.',
+  title: 'What we build on Power BI.',
   sub: 'We build the Power BI a business runs on: governed dashboards on a single model, fed from the systems you already use, with automation and AI on top.',
   items: [
     {
@@ -203,7 +203,7 @@ export const capabilities = {
 
 export const why = {
   eyebrow: 'Why Kadmoon',
-  title: 'A team that lives in the Microsoft stack.',
+  title: 'We build only on the Microsoft stack.',
   sub: 'We build data and analytics only on Microsoft: Power BI, Microsoft Fabric, and Azure. That focus is why what we deliver fits how your business already works.',
   items: [
     {
@@ -553,7 +553,7 @@ export const footer = {
 
 export const techStack = {
   eyebrow: 'The stack',
-  title: 'One governed stack, from source to decision.',
+  title: 'The Microsoft stack we build on.',
   sub: 'We build on the Microsoft data platform end to end and tie into the systems around it, so numbers come from the source instead of a re-keyed export.',
   groups: [
     { label: 'Power BI', items: ['Dashboards & reports', 'Semantic models', 'Row-level security', 'Embedded'] },
@@ -571,7 +571,7 @@ export const techStack = {
 
 export const engagement = {
   eyebrow: 'How we engage',
-  title: 'A boutique, two ways to work.',
+  title: 'Two ways to work with us.',
   sub: 'Start with a fixed-scope Power BI assessment, then run by project or on Managed Power BI, our monthly subscription. The same senior team working US business hours, built in your own tenant and yours to own.',
   models: [
     {
@@ -583,7 +583,7 @@ export const engagement = {
     {
       name: 'Managed Power BI',
       best: 'Best for ongoing work',
-      body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes watched and governance kept current, new reports and model changes as needs change, and a named point of contact. A boutique partner on call, not a one-off build.',
+      body: 'Our monthly subscription: a senior team that runs and evolves your Power BI every month. Refreshes watched and governance kept current, new reports and model changes as needs change, and a named point of contact. We run it month to month instead of handing off a one-time build.',
       points: ['A set monthly scope and a named contact', 'New reports and model changes as needs change', 'Managed refreshes, governance, and support'],
     },
   ],
@@ -607,7 +607,7 @@ export const comparison = {
 export const credibility = {
   eyebrow: 'Why Kadmoon',
   title: 'Power BI built by a senior Microsoft team.',
-  lead: 'A senior team that lives in the Microsoft stack and works US business hours. We turn the data in your ERP, spreadsheets, and line-of-business systems into decisions, delivered on Power BI in your own tenant.',
+  lead: 'A senior team that works only on the Microsoft stack, on US business hours. We turn the data in your ERP, spreadsheets, and line-of-business systems into Power BI reports, delivered in your own tenant.',
   points: [
     { title: 'One definition per measure', body: 'Revenue, margin, and the KPIs your leaders watch mean one thing across every report.' },
     { title: 'Built in your tenant', body: 'Your data, your model, your reports. You own it, with no lock-in.' },
@@ -1041,8 +1041,8 @@ export const problems = {
 // ---------------------------------------------------------------------------
 export const boutiqueEdge = {
   eyebrow: 'Boutique, on purpose',
-  title: 'A senior team, not a bench of juniors.',
-  lead: 'Big firms staff your project with whoever is free and bill the ramp-up. We are small on purpose: the senior people who scope your Power BI are the ones who build and support it.',
+  title: 'Senior people, start to finish.',
+  lead: 'Big firms staff your project with whoever is free and bill the ramp-up time. Here, the senior people who scope your Power BI are the ones who build and support it.',
   points: [
     {
       title: 'Senior people, start to finish',

@@ -55,14 +55,14 @@ export function ReportsBand() {
             <KpiTiles />
           </div>
 
-          <div className="mt-5 grid gap-5 lg:grid-cols-3">
-            <Reveal as="div">
+          <div className="mt-5 grid items-stretch gap-5 lg:grid-cols-3">
+            <Reveal as="div" className="h-full">
               <LandedCostCard />
             </Reveal>
-            <Reveal as="div" delay={90}>
+            <Reveal as="div" delay={90} className="h-full">
               <DutyExposureCard />
             </Reveal>
-            <Reveal as="div" delay={180}>
+            <Reveal as="div" delay={180} className="h-full">
               <OtifCard />
             </Reveal>
           </div>
