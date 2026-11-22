@@ -11,7 +11,7 @@ export function CtaBand() {
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden
-        style={{ backgroundImage: 'radial-gradient(900px 440px at 50% 120%, rgba(20,92,230,.3), transparent 60%)' }}
+        style={{ backgroundImage: 'radial-gradient(900px 440px at 50% 120%, rgba(139,92,246,.3), transparent 60%)' }}
       />
       <Reveal className="relative mx-auto max-w-3xl px-6 py-16 text-center md:py-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">

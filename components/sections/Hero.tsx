@@ -1,4 +1,4 @@
-import { hero, clientLogos } from '@/lib/content';
+import { hero, groupCompanies } from '@/lib/content';
 import { Button } from '../Button';
 
 // Stylized Power BI dashboard used as product UI. Representative figures, not
@@ -130,54 +130,32 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Proof strip: our team's work in Brazil, through our affiliate Fynx.
-            Real logo images where we have the file, wordmarks for the rest. */}
-        <div className="mt-8 border-t border-line pt-6 md:mt-9">
-          {clientLogos.length > 0 && (
-            <div>
-              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
-                Our team&apos;s work in Brazil, through our affiliate Fynx
-              </span>
-              {clientLogos.some((c) => c.logo) && (
-                <ul className="mt-4 flex flex-wrap items-center gap-2.5">
-                  {clientLogos
-                    .filter((c) => c.logo)
-                    .map((c) => (
-                      <li key={c.name}>
-                        <span
-                          className={`flex h-11 items-center justify-center rounded-lg border px-3.5 ${
-                            c.darkBg ? 'border-navy/15 bg-navy' : 'border-line bg-white'
-                          }`}
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={c.logo}
-                            alt={`${c.name} logo`}
-                            className="max-h-6 w-auto opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
-                            style={{ maxWidth: '112px' }}
-                          />
-                        </span>
-                      </li>
-                    ))}
-                </ul>
-              )}
-              {clientLogos.some((c) => !c.logo) && (
-                <ul className="mt-3.5 flex flex-wrap items-center gap-x-6 gap-y-2">
-                  {clientLogos
-                    .filter((c) => !c.logo)
-                    .map((c) => (
-                      <li
-                        key={c.name}
-                        className="font-display text-[14px] font-semibold tracking-[-0.01em] text-ink-3 transition-colors hover:text-ink-2"
-                      >
-                        {c.name}
-                      </li>
-                    ))}
-                </ul>
-              )}
+        {/* Group companies: a continuous marquee of the companies in the group
+            Kadmoon belongs to. Names scroll (logos added when available). */}
+        {groupCompanies.length > 0 && (
+          <div className="mt-8 border-t border-line pt-6 md:mt-9">
+            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+              Part of a group of Microsoft specialists
+            </span>
+            <div className="marquee-mask marquee-pause mt-4 overflow-hidden">
+              {/* Two identical halves so the -50% translate loops seamlessly.
+                  Each half repeats the list enough to span a wide viewport. */}
+              <ul className="flex w-max animate-marquee items-center gap-x-12 pr-12">
+                {Array.from({ length: 6 })
+                  .flatMap(() => groupCompanies)
+                  .map((name, i) => (
+                    <li
+                      key={`${name}-${i}`}
+                      aria-hidden={i >= groupCompanies.length * 3}
+                      className="whitespace-nowrap font-display text-xl font-semibold tracking-[-0.01em] text-ink-3/80"
+                    >
+                      {name}
+                    </li>
+                  ))}
+              </ul>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

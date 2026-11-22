@@ -95,7 +95,7 @@ export default function ContactPage() {
                   </a>
                 )}
                 <div className="mt-5 flex items-center gap-2.5 text-[14px] font-medium text-ink-2">
-                  <span aria-hidden className="h-2 w-2 rounded-full bg-accent" style={{ boxShadow: '0 0 0 4px rgba(20,92,230,.14)' }} />
+                  <span aria-hidden className="h-2 w-2 rounded-full bg-accent" style={{ boxShadow: '0 0 0 4px rgba(139,92,246,.14)' }} />
                   United States · Serving clients nationwide
                 </div>
                 <div className="mt-3 text-[14px] font-medium text-ink-2">

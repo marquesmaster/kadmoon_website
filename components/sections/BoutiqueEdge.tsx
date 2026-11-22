@@ -9,11 +9,11 @@ export function BoutiqueEdge() {
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden
-        style={{ backgroundImage: 'radial-gradient(900px 480px at 50% -10%, rgba(20,92,230,.22), transparent 62%)' }}
+        style={{ backgroundImage: 'radial-gradient(900px 480px at 50% -10%, rgba(139,92,246,.22), transparent 62%)' }}
       />
       <div className="relative mx-auto max-w-shell px-6 py-16 md:py-24">
         <div className="max-w-2xl">
-          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#8FB8FF]">
+          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#A78BFA]">
             {boutiqueEdge.eyebrow}
           </span>
           <h2 className="mt-4 font-display text-display-sm font-semibold text-white">{boutiqueEdge.title}</h2>

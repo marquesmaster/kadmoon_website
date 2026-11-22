@@ -13,12 +13,12 @@ export function ReportsBand() {
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden
-        style={{ backgroundImage: 'radial-gradient(1100px 520px at 50% -12%, rgba(20,92,230,.28), transparent 62%)' }}
+        style={{ backgroundImage: 'radial-gradient(1100px 520px at 50% -12%, rgba(139,92,246,.28), transparent 62%)' }}
       />
       <div className="relative mx-auto max-w-shell px-6 py-16 md:py-24">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#8FB8FF]">
+            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#A78BFA]">
               The analytics · in your own tenant
             </span>
             <h2 className="mt-4 font-display text-display-sm font-semibold text-white">

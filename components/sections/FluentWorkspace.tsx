@@ -46,10 +46,10 @@ export function FluentWorkspace({ tone = 'light' }: { tone?: Tone }) {
   const label = dark ? 'text-white/45' : 'text-ink-3';
   const num = dark ? 'text-white' : 'text-ink';
   const divider = dark ? 'border-white/10' : 'border-line/80';
-  const glyphWrap = dark ? 'bg-white/10 text-[#8FB8FF]' : 'bg-navy/5 text-navy';
+  const glyphWrap = dark ? 'bg-white/10 text-[#A78BFA]' : 'bg-navy/5 text-navy';
   const stackName = dark ? 'text-white' : 'text-ink';
   const stackRole = dark ? 'text-white/55' : 'text-ink-3';
-  const lineStroke = dark ? '#8FB8FF' : 'rgb(var(--navy))';
+  const lineStroke = dark ? '#A78BFA' : 'rgb(var(--navy))';
   const gaugeTrack = dark ? 'rgb(255 255 255 / 0.15)' : 'rgb(var(--line))';
 
   return (

@@ -156,11 +156,18 @@ export const hero = {
 // The track record of the team and group behind Kadmoon, stated plainly. These
 // are the group's numbers (the StatsBand frames them as such), not claims about
 // the new US entity on its own.
+// Real track record of the group behind Kadmoon (through our affiliate Fynx).
+// Owner-confirmed figures.
 export const stats = [
-  { value: '30,000+', label: 'Analytics projects delivered', sub: 'Delivered on the Microsoft stack' },
-  { value: '2,000+', label: 'Solutions shipped', sub: 'Builds, migrations, and platform work' },
-  { value: '50+', label: 'Clients served', sub: 'Owner-managed firms through to listed groups' },
+  { value: '2,000+', label: 'Analytics solutions implemented', sub: 'On the Microsoft stack' },
+  { value: '5,000+', label: 'Reports and dashboards built', sub: 'For finance and operations teams' },
+  { value: '50+', label: 'Organizations served', sub: 'Across the group, through Fynx' },
 ];
+
+// Companies in the group Kadmoon belongs to. Shown as a continuous marquee in
+// the hero. Names scroll (no logo files yet); confirm exact names and add logos
+// to public/logos when available.
+export const groupCompanies = ['Bradata', 'Fynx', 'Vigiles AI', 'Cyberwalk', 'Academy'];
 
 export const capabilities = {
   eyebrow: 'What we deliver',
@@ -883,11 +890,11 @@ export const groupExperience = {
   eyebrow: 'Experience behind Kadmoon',
   line: 'The team behind Kadmoon, through our affiliate Fynx, has spent six years building data, analytics, and Microsoft platforms for organizations across government, education, sports, real estate, and technology. Kadmoon brings that practice to US finance and operations teams, on US business hours.',
   stats: [
-    { value: '6', label: 'years building data & analytics' },
+    { value: '2,000+', label: 'analytics solutions implemented' },
+    { value: '5,000+', label: 'reports and dashboards built' },
     { value: '50+', label: 'organizations served' },
-    { value: '2,000+', label: 'Microsoft solutions shipped' },
   ],
-  note: 'The track record of the team and group behind Kadmoon, across sectors.',
+  note: 'The track record of the group behind Kadmoon, through our affiliate Fynx, across sectors.',
   // Organization names are intentionally not listed (US market, no Brazil per
   // the content rules). The numbers above carry the track record.
   orgs: [] as string[],

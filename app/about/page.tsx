@@ -90,11 +90,11 @@ export default function AboutPage() {
           <div
             className="pointer-events-none absolute inset-0"
             aria-hidden
-            style={{ backgroundImage: 'radial-gradient(900px 480px at 50% -10%, rgba(20,92,230,.26), transparent 62%)' }}
+            style={{ backgroundImage: 'radial-gradient(900px 480px at 50% -10%, rgba(139,92,246,.26), transparent 62%)' }}
           />
           <div className="relative mx-auto max-w-shell px-6 py-16 md:py-24">
             <div className="max-w-2xl">
-              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#8FB8FF]">
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#A78BFA]">
                 {groupExperience.eyebrow}
               </span>
               <h2 className="mt-4 font-display text-display-sm font-semibold text-white">
@@ -219,7 +219,7 @@ export default function AboutPage() {
         {/* Dark CTA */}
         <section className="relative overflow-hidden bg-ink text-paper">
           <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
-          <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(20,92,230,.28), transparent 60%)' }} />
+          <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: 'radial-gradient(900px 500px at 50% 120%, rgba(139,92,246,.28), transparent 60%)' }} />
           <div className="relative mx-auto max-w-2xl px-6 py-20 text-center md:py-28">
             <h2 className="font-display text-display-md font-semibold text-white">
               Let us talk about your Power BI.

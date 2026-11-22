@@ -49,7 +49,7 @@ const mono = localFont({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#1B0E33',
+  themeColor: '#2E1065',
   width: 'device-width',
   initialScale: 1,
   colorScheme: 'light',
