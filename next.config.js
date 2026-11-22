@@ -338,12 +338,15 @@ const nextConfig = {
         'usmca-2026-review-importers', 'vendor-compliance-chargebacks', 'what-is-a-trade-intelligence-platform',
       ].map((slug) => ({ source: `/blog/${slug}`, destination: '/blog', permanent: true })),
 
-      // Service slugs. Power BI, Power Platform, data engineering and Copilot
-      // are live pages now (do not redirect them). Older Microsoft variants
-      // point to the closest live service.
-      { source: '/services/microsoft-fabric', destination: '/services/data-engineering', permanent: true },
-      { source: '/services/power-platform-coe', destination: '/services/power-platform', permanent: true },
-      { source: '/services/analytics-and-ai', destination: '/services/copilot-ai', permanent: true },
+      // Service slugs. The live services are Power BI and Microsoft Fabric.
+      // Power Platform and Copilot are folded into Power BI; data engineering
+      // was renamed to microsoft-fabric. Older Microsoft variants point to the
+      // closest live service.
+      { source: '/services/data-engineering', destination: '/services/microsoft-fabric', permanent: true },
+      { source: '/services/power-platform', destination: '/services/power-bi', permanent: true },
+      { source: '/services/copilot-ai', destination: '/services/power-bi', permanent: true },
+      { source: '/services/power-platform-coe', destination: '/services/power-bi', permanent: true },
+      { source: '/services/analytics-and-ai', destination: '/services/power-bi', permanent: true },
       { source: '/services/data-governance', destination: '/services/power-bi', permanent: true },
       { source: '/services/tenant-to-tenant-migration', destination: '/services', permanent: true },
       { source: '/services/bi-sustainment', destination: '/services/power-bi', permanent: true },
@@ -381,11 +384,13 @@ const nextConfig = {
         'shipping-carriers',
       ].map((slug) => ({ source: `/industries/${slug}`, destination: '/industries', permanent: true })),
       // Older Power BI-era industry slugs -> the closest live vertical.
-      { source: '/industries/retail', destination: '/industries/retail-ecommerce', permanent: true },
-      { source: '/industries/financial-services', destination: '/industries/finance-operations', permanent: true },
-      { source: '/industries/logistics', destination: '/industries', permanent: true },
-      { source: '/industries/education', destination: '/industries/nonprofit-education', permanent: true },
-      { source: '/industries/supply-chain', destination: '/industries', permanent: true },
+      { source: '/industries/financial-services', destination: '/power-bi-for-finance', permanent: true },
+      { source: '/industries/finance-operations', destination: '/power-bi-for-finance', permanent: true },
+      // The /industries section is retired; the finance and operations frame
+      // lives at /power-bi-for-finance. Everything else under /industries lands
+      // there too.
+      { source: '/industries/:slug*', destination: '/power-bi-for-finance', permanent: true },
+      { source: '/industries', destination: '/power-bi-for-finance', permanent: true },
 
       // Older retired pages from previous iterations.
       { source: '/software-house', destination: '/services', permanent: true },

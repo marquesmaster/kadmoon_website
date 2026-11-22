@@ -1,78 +1,98 @@
 # Kadmoon website — working notes
 
-Kadmoon is a **US Microsoft data & analytics consultancy, led by Power BI
-services**. The site leads with **Power BI** (dashboards, semantic models,
-migration, embedded, governance); the surrounding Microsoft work (Power
-Platform, Fabric & Azure data engineering, Copilot & AI) is positioned as what
-we build **around** Power BI. Everything is delivered in the client's own
-Microsoft tenant, and the client owns it. The market is the United States, in
-English. Foreign trade is retired as the focus; it is at most a use case.
+Kadmoon, Inc. is a **US consultancy that builds Power BI and Microsoft Fabric
+for finance and operations teams**. One-liner: *Power BI and Microsoft Fabric
+for finance and operations teams. Fixed scope, fixed price, built in your own
+Microsoft tenant.* We connect the systems a business already runs (ERP and
+spreadsheets), build one governed Power BI model, and ship the dashboards
+finance and operations open daily. Everything is delivered in the client's own
+Microsoft tenant, and the client owns it. The market is the **United States**,
+in English.
+
+**Delivery model (state it honestly, never hide it):** Kadmoon is a US company.
+The **senior delivery team is based in Brazil and works US business hours**, and
+it is the team behind our affiliate **Fynx**. São Paulo is 1 to 2 hours ahead of
+US Eastern Time, so the US business day is covered. Say "a senior team working US
+business hours" and name Brazil and Fynx plainly on About and the FAQ. **Never
+say "US-based team".**
+
+> This site is being repositioned from a broad 6-service / 7-industry Microsoft
+> shop to the focused Power BI + Fabric for finance & operations above. Some
+> surfaces may still carry older copy mid-migration; when you touch one, move it
+> toward this positioning. The structural changes (removed city/industry pages,
+> narrowed services) are already in.
 
 Stack: Next.js 14 (App Router) + TypeScript + Tailwind, statically generated,
 deployed via Docker on a Hostinger VPS.
 
 ## Positioning (keep every surface consistent)
 
-- **Lead with Power BI.** Dashboards and reports, governed semantic models,
-  report and migration work (legacy BI and spreadsheets to Power BI), embedded
-  analytics, and Power BI governance (row-level security, workspaces, lineage).
-- Four service lines, in this order of prominence: **Power BI** (lead), then
-  **Power Platform** (Power Apps + Power Automate: apps and automation on the
-  data), **data engineering on Microsoft Fabric & Azure** (lakehouse, pipelines,
-  the governed model Power BI sits on), and **Copilot & AI on your data**
-  (Copilot in Power BI, natural-language Q&A, AI-assisted insight).
-- Data comes from the systems clients already run — **SQL Server, Dynamics 365,
-  SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, APIs** — and the
-  analytics is delivered on the Microsoft stack (Power BI, Fabric, Azure) **in
-  the client's own tenant**.
-- Market is the **United States**, in English. Do not reposition around a
-  vertical; Power BI for US businesses is the frame, and verticals are use
-  cases, never the headline.
-- **Kadmoon is a boutique with two engagement models:** **by project** (fixed
-  scope, defined deliverables, milestone billing) and a **monthly subscription**
-  branded **"Managed Power BI"** on-site (recurring retainer: we run and evolve
-  the client's Power BI). Use the name "Managed Power BI" for the subscription
-  across surfaces; keep the `monthly-subscription` doc anchor/slug stable. The
-  **Power BI assessment** is the paid on-ramp (a short first project), not a
-  third model.
-  Keep pricing, services, and docs consistent with these two models.
-- Primary CTA everywhere is **"Request a quote"** → `/contact`. There is no
-  booking/scheduling tool. **No "Client sign-in" for now** (removed: no platform
-  at launch), so the top bar carries only the primary CTA. Existing clients who
-  need access provisioned or a new report use `/contact`. If a client sign-in is
-  reintroduced later, it points to Power BI (`app.powerbi.com`), since reports
-  run in the client's own Microsoft tenant, not a Kadmoon login.
+- **Lead with Power BI, framed for finance and operations.** Dashboards and
+  reports, governed semantic models, migration (legacy BI and spreadsheets to
+  Power BI), embedded analytics, and Power BI governance (row-level security,
+  workspaces, lineage). The buyer is a CFO, Controller, VP Finance, Head of
+  FP&A, or COO. `/power-bi-for-finance` is the finance landing page (it replaced
+  the retired `/industries` section).
+- **Two service lines only:** **Power BI** (lead) and **Microsoft Fabric** (data
+  engineering: lakehouse, pipelines, the governed model Power BI sits on; slug
+  `/services/microsoft-fabric`). **Power Platform and Copilot/AI are retired as
+  standalone services** — Copilot is at most a feature inside Power BI
+  ("Copilot-ready models"); do not add them back as services or nav items.
+- Data comes from the systems clients already run — **QuickBooks, NetSuite,
+  Dynamics 365 Business Central, Sage Intacct, SQL Server, Salesforce, Excel,
+  SharePoint, APIs** — and the analytics is delivered on the Microsoft stack
+  (Power BI, Fabric, Azure) **in the client's own tenant**.
+- Market is the **United States**, in English. Verticals are use cases; finance
+  and operations is the frame, never a different industry headline.
+- **Two engagement models:** **by project** (fixed scope, defined deliverables,
+  milestone billing) and a **monthly subscription** branded **"Managed Power BI"**
+  (the plan also calls it "Managed BI"; keep "Managed Power BI" as the canonical
+  name and keep the `monthly-subscription` doc anchor/slug stable). The **Power
+  BI assessment** is the paid on-ramp (a short first project), not a third model.
+- **Published, fixed prices** (this reverses the earlier no-public-prices rule).
+  The target tiers from the owner's plan: **Assessment $4,000 / 2 weeks**,
+  **Dashboard Build from $15,000 / 4–6 weeks**, **Fabric Data Platform from
+  $40,000 / 8–12 weeks**, **Managed Power BI from $3,000/month**. Bracketed
+  limits in the plan (sources, report pages, hours) are owner decisions; do not
+  invent them.
+- Primary CTA everywhere is **"Book a 30-minute call"**. There is **no booking
+  link wired yet**, so the button points to `/contact` until the owner provides a
+  Microsoft Bookings or Calendly URL; then point it there. **No "Client sign-in".**
+  Existing clients who need access or a new report use `/contact`.
 
 ## Hard content rules
 
-- **Never reference Brazil or the Portuguese language** anywhere in site-facing
-  content, copy, metadata, or data. **Two approved exceptions:** (1) the
-  `groupExperience` band (`lib/content.ts`) may state the team/group's prior
-  Microsoft track record (years, organizations served, solutions shipped) as
-  cross-sector experience; (2) `clientLogos` (`lib/content.ts`) carries the
-  group's real organizations (clients and partners), some Brazilian, which the
-  owner approved listing in the hero under the neutral framing "Organizations
-  the team and group has worked with." Do NOT strip those names for the
-  no-Brazil rule. Keep the exceptions limited to these two; do not reintroduce
-  Brazil/Portuguese elsewhere.
-- **Never invent clients, testimonials, or logos.** `testimonials` and
-  `clientLogos` in `lib/content.ts` render only when populated. `testimonials`
-  stays empty until real, approved data is provided; `clientLogos` is populated
-  with owner-provided organizations: those with a `logo` render as an image
-  (files in `public/logos`, from the group's sites), the rest as wordmarks.
+- **Brazil and Fynx are now stated honestly, not hidden** (this reverses the
+  earlier no-Brazil rule). The delivery team is based in Brazil and works US
+  business hours, through the affiliate **Fynx**; say so on About and the FAQ.
+  The `clientLogos` band is framed as **"Our team's work in Brazil, through our
+  affiliate Fynx"**. Still **never say "US-based team"** — it is false.
+- **Never invent clients, testimonials, logos, team members, case studies, or
+  numbers.** `testimonials`, `clientLogos`, and any team array in `lib/content.ts`
+  render ONLY when populated with real, owner-provided, approved data. Real Fynx
+  case studies require **written client permission**; until provided, the cases
+  stay illustrative and clearly labeled. Team names, photos, LinkedIn, and
+  certifications come from the owner only.
+- **No unverifiable numbers.** Do not state years, client counts, or project
+  counts the owner has not confirmed. Real track record is attributed to the team
+  via Fynx, with real figures only; otherwise leave the numbers out.
 - All figures in cases/mocks are **illustrative** and must be labeled plainly as
-  such ("Illustrative figures"); do not dress them up as a real client.
-- Name Microsoft products factually (we build on them). Do not claim a
-  partnership tier, certification, or Gold/Solutions-Partner status we have not
-  verified.
+  such ("Example report", "Illustrative figures"); do not dress them up as a real
+  client.
+- Name Microsoft products factually (we build on them). **Do not say "Microsoft
+  Partner" or claim a partnership tier, certification, or Solutions-Partner status
+  before that designation actually exists and is verified.**
 - Apply the humanizer style: no em/en dashes, no rule-of-three padding, no hype
   or buzzwords, plain professional English.
 
 ## Where content lives (data-driven)
 
-- `lib/content.ts` — nav mega-menu, hero, stats, capabilities, comparison, faq,
-  footer, `services[]`, `serviceAnalytics` (platform→cases tie-in),
-  `industryPages[]`, `analyticsSolutions`, etc.
+- `lib/content.ts` — nav menu, hero, stats, capabilities, comparison, faq,
+  footer, `services[]` (now just `power-bi` + `microsoft-fabric`),
+  `serviceAnalytics` (platform→cases tie-in), `powerBiForFinance` (the finance
+  landing page), `pricing`, `assessment`, `analyticsSolutions`, etc. The
+  `industryPages[]`/`industries` exports are retired (the `/industries` pages and
+  home section were removed); do not render them.
 - `lib/cases/studies.ts` — case studies (`kind: 'analytics' | 'software'`),
   multi-vendor `dataSources`, inline `metrics`.
 - `lib/docs.ts` — docs hub content (methodology, data integration, security,
