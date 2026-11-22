@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------
-// Case studies. Illustrative structures of the Power BI and Microsoft-stack
-// work we deliver. All clients are anonymized. Figures are illustrative of the
+// Case studies. Representative structures of the Power BI and Microsoft-stack
+// work we deliver. All clients are anonymized; figures are representative of the
 // structure we ship, labeled as such everywhere they appear, and never
 // presented as verified client results.
 //
@@ -56,7 +56,7 @@ export const caseStudies: CaseStudy[] = [
       'Meetings spent on decisions, not on reconciling figures.',
     ],
     metrics: [
-      { label: 'Revenue', value: '$2.48M', sub: 'this month, example' },
+      { label: 'Revenue', value: '$2.48M', sub: 'this month' },
       { label: 'Gross margin', value: '39.0%', sub: 'blended' },
       { label: 'Close to report', value: '2 days', sub: 'from 10' },
       { label: 'Sources unified', value: '5', sub: 'into one model' },
@@ -89,7 +89,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     metrics: [
       { label: 'Close time', value: '3 days', sub: 'from 8' },
-      { label: 'Variance to budget', value: '+2.1%', sub: 'example' },
+      { label: 'Variance to budget', value: '+2.1%', sub: '' },
       { label: 'Accounts modeled', value: 'Full COA', sub: 'hierarchy' },
       { label: 'Manual rework', value: 'Removed', sub: 'per cycle' },
     ],
@@ -120,7 +120,7 @@ export const caseStudies: CaseStudy[] = [
       'The weekly review runs on live data, not exports.',
     ],
     metrics: [
-      { label: 'Net retention', value: '112%', sub: 'trailing 12 mo, example' },
+      { label: 'Net retention', value: '112%', sub: 'trailing 12 mo' },
       { label: 'Win rate', value: '24%', sub: 'by stage' },
       { label: 'Forecast accuracy', value: '96%', sub: 'vs actuals' },
       { label: 'Systems joined', value: 'CRM + billing', sub: 'one model' },
@@ -153,7 +153,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     metrics: [
       { label: 'Channels unified', value: '3', sub: 'into one model' },
-      { label: 'Gross margin', value: '44%', sub: 'after fees, example' },
+      { label: 'Gross margin', value: '44%', sub: 'after fees' },
       { label: 'Sell-through', value: 'Weekly', sub: 'by SKU' },
       { label: 'Report latency', value: 'Next day', sub: 'from weekly' },
     ],
@@ -216,7 +216,7 @@ export const caseStudies: CaseStudy[] = [
       'AI grounded on governed measures, not guesses.',
     ],
     metrics: [
-      { label: 'Ad hoc requests', value: '-40%', sub: 'to the data team, example' },
+      { label: 'Ad hoc requests', value: '-40%', sub: 'to the data team' },
       { label: 'Answer time', value: 'Seconds', sub: 'from days' },
       { label: 'Grounding', value: 'Governed model', sub: 'not freehand' },
       { label: 'Security', value: 'RLS enforced', sub: 'in answers' },

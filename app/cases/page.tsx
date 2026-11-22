@@ -10,7 +10,7 @@ import { siteConfig } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Case studies | Power BI and the Microsoft stack',
   description:
-    'Illustrative Power BI and Microsoft-stack work: executive dashboards, finance and sales analytics, Power BI migration, Power Platform automation, Fabric data engineering, and embedded analytics, built in your own tenant.',
+    'The kind of Power BI and Microsoft Fabric work we build: executive dashboards, finance and operations analytics, Power BI migration, and Fabric data engineering, built in your own tenant.',
   keywords: [
     'Power BI case studies',
     'Power BI dashboards',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Kadmoon case studies',
     description:
-      'Illustrative Power BI and Microsoft-stack scenarios: dashboards, migrations, automation, and data engineering built in your own tenant.',
+      'The kind of Power BI and Microsoft Fabric work we build: dashboards, migrations, and data engineering built in your own tenant.',
     url: `${siteConfig.url}/cases`,
     type: 'website',
     images: ['/opengraph-image'],
@@ -90,8 +90,8 @@ export default function CasesPage() {
           breadcrumbs={<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cases' }]} />}
         >
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-            The scenarios below are illustrative of the Power BI and Microsoft-stack work we build,
-            not based on specific clients; the structure is what ships.
+            The dashboards below show the kind of Power BI and Microsoft-stack work we build. They
+            are not based on specific clients; the structure is what ships.
           </p>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-3">
             Data comes from wherever your business already runs: SQL Server, Dynamics 365, SAP,
@@ -107,7 +107,7 @@ export default function CasesPage() {
           </div>
 
           <p className="mt-6 text-center font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3">
-            Illustrative scenarios · example figures
+            Not based on specific clients
           </p>
         </section>
 

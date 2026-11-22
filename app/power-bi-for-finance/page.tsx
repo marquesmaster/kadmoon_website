@@ -93,10 +93,7 @@ export default function PowerBiForFinancePage() {
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {f.reports.items.map((r) => (
                 <div key={r.name} className="rounded-2xl border border-line bg-paper p-6">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent">
-                    Example report
-                  </span>
-                  <h3 className="mt-2 font-display text-lg font-semibold text-ink">{r.name}</h3>
+                  <h3 className="font-display text-lg font-semibold text-ink">{r.name}</h3>
                   <p className="mt-2 text-[14px] leading-relaxed text-ink-2">{r.note}</p>
                 </div>
               ))}

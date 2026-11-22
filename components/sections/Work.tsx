@@ -65,10 +65,6 @@ export function Work() {
           </Reveal>
         ))}
       </div>
-
-      <p className="mt-8 text-center font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3">
-        Illustrative scenarios · example figures
-      </p>
     </Section>
   );
 }

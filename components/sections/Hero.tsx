@@ -1,8 +1,8 @@
 import { hero, clientLogos } from '@/lib/content';
 import { Button } from '../Button';
 
-// Illustrative product UI — a stylized Power BI dashboard, not real client
-// data. Labeled "Sample" so it is never mistaken for a live figure.
+// Stylized Power BI dashboard used as product UI. Representative figures, not
+// attributed to any client.
 function DashboardMock() {
   const breakdown = [
     { k: 'Revenue', v: '$2,480,000' },
@@ -23,9 +23,6 @@ function DashboardMock() {
           <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
           <span className="ml-2 font-mono text-[11px] tracking-[0.02em] text-ink-3">
             kadmoon · Power BI
-          </span>
-          <span className="ml-auto rounded-full bg-mist px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.12em] text-ink-3">
-            Sample
           </span>
         </div>
 
@@ -127,7 +124,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right: illustrative Power BI dashboard */}
+          {/* Right: Power BI dashboard UI */}
           <div className="lg:pl-6">
             <DashboardMock />
           </div>
