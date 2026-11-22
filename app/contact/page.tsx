@@ -6,7 +6,7 @@ import { PageHero } from '@/components/sections/PageHero';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Contact | Request a quote',
+  title: 'Contact | Book a 30-minute call',
   description:
     'Tell us where your data lives and what your team needs to see. Within one business day you get a response with a scoped plan and a quote for your Power BI and Microsoft data work.',
   alternates: { canonical: `${siteConfig.url}/contact` },
@@ -31,7 +31,7 @@ export default function ContactPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <PageHero eyebrow="Request a quote" title="Tell us where your data lives. Get a quote.">
+        <PageHero eyebrow="Book a 30-minute call" title="Tell us where your data lives. Get a quote.">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
             Tell us where your data lives, the systems your team runs, and the reporting you need.
             You get a senior point of view and a quote, starting with a short call, at no cost and no

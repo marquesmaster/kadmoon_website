@@ -16,7 +16,7 @@ export function Credibility() {
             href="/contact"
             className="mt-7 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
           >
-            Request a quote <span aria-hidden>→</span>
+            Book a 30-minute call <span aria-hidden>→</span>
           </a>
         </Reveal>
 

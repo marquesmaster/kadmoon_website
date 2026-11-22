@@ -141,7 +141,7 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
     `delivered in your own tenant.`,
     ``,
     `Overview: ${deckUrl}`,
-    `Request a quote: ${contactUrl}`,
+    `Book a 30-minute call: ${contactUrl}`,
     ``,
     `Tell us where ${lead.company}'s data lives and what your team needs to see,`,
     `and we will come back with a clear next step and a quote.`,
@@ -155,7 +155,7 @@ export async function sendProspectAutoReply(lead: Lead): Promise<boolean> {
     <p>Hi ${first},</p>
     <p>Thanks for reaching out to Kadmoon. We are a US Microsoft data and analytics firm led by Power BI: governed dashboards and semantic models, Power Platform automation, Fabric data engineering, and Copilot and AI, delivered in your own tenant.</p>
     <p style="margin:26px 0">
-      <a href="${contactUrl}" style="background:#6D28D9;color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block">Request a quote &rarr;</a>
+      <a href="${contactUrl}" style="background:#6D28D9;color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block">Book a 30-minute call &rarr;</a>
       &nbsp;&nbsp;
       <a href="${deckUrl}" style="color:#241640;font-weight:600">View the overview (PDF)</a>
     </p>

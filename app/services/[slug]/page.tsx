@@ -77,7 +77,7 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-2">{s.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/contact" size="lg">
-              Request a quote <span aria-hidden>→</span>
+              Book a 30-minute call <span aria-hidden>→</span>
             </Button>
             <Button href="/services" size="lg" variant="ghost">
               All solutions

@@ -161,7 +161,7 @@ export default function CaseDetailPage({ params }: { params: { slug: string } })
                 href="/contact"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-accent/90"
               >
-                Request a quote <span aria-hidden>→</span>
+                Book a 30-minute call <span aria-hidden>→</span>
               </a>
             </div>
           </div>

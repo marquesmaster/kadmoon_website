@@ -130,7 +130,7 @@ export default function DocPage({ params }: { params: { slug: string } }) {
                 href="/contact"
                 className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5"
               >
-                Request a quote <span aria-hidden>→</span>
+                Book a 30-minute call <span aria-hidden>→</span>
               </a>
             </div>
           </article>
