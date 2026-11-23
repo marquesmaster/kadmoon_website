@@ -549,7 +549,31 @@ function Matrix({ v }: { v: Extract<Visual, { type: 'matrix' }> }) {
 
 // --- Visual dispatch -------------------------------------------------------
 
-function VisualView({ v, period }: { v: Visual; period: string }) {
+/**
+ * Effective column span per visual for a 2-column grid: KPI strips and span-2
+ * visuals take a full row; any span-1 visual that would be left alone in a row
+ * (before a full-width visual or at the end) is promoted to full width, so the
+ * canvas never leaves a half-empty cell.
+ */
+function computeSpans(visuals: Visual[]): (1 | 2)[] {
+  const spans: (1 | 2)[] = visuals.map((v) => (v.type === 'kpis' || (v as { span?: number }).span === 2 ? 2 : 1));
+  let open = -1;
+  for (let i = 0; i < spans.length; i++) {
+    if (spans[i] === 2) {
+      if (open >= 0) {
+        spans[open] = 2;
+        open = -1;
+      }
+      continue;
+    }
+    if (open < 0) open = i;
+    else open = -1;
+  }
+  if (open >= 0) spans[open] = 2;
+  return spans;
+}
+
+function VisualView({ v, period, span }: { v: Visual; period: string; span: 1 | 2 }) {
   switch (v.type) {
     case 'kpis': {
       const items = v.itemsByPeriod?.[period] ?? v.items;
@@ -561,13 +585,13 @@ function VisualView({ v, period }: { v: Visual; period: string }) {
     }
     case 'multiLine':
       return (
-        <Panel title={v.title} subtitle={v.subtitle} span={v.span} note={v.note} legend={v.series.map((s) => ({ name: s.name, color: s.color, line: true }))}>
+        <Panel title={v.title} subtitle={v.subtitle} span={span} note={v.note} legend={v.series.map((s) => ({ name: s.name, color: s.color, line: true }))}>
           <MultiLine v={v} />
         </Panel>
       );
     case 'divergingColumn':
       return (
-        <Panel title={v.title} subtitle={v.subtitle} span={v.span} note={v.note} legend={v.series.map((s) => ({ name: s.name, color: s.color }))}>
+        <Panel title={v.title} subtitle={v.subtitle} span={span} note={v.note} legend={v.series.map((s) => ({ name: s.name, color: s.color }))}>
           <DivergingColumn v={v} />
         </Panel>
       );
@@ -576,7 +600,7 @@ function VisualView({ v, period }: { v: Visual; period: string }) {
         <Panel
           title={v.title}
           subtitle={v.subtitle}
-          span={v.span}
+          span={span}
           note={v.note}
           legend={[...v.series.map((s) => ({ name: s.name, color: s.color })), ...(v.line ? [{ name: v.line.name, color: v.line.color, line: true }] : [])]}
         >
@@ -585,37 +609,37 @@ function VisualView({ v, period }: { v: Visual; period: string }) {
       );
     case 'notes':
       return (
-        <Panel title={v.title} subtitle={v.subtitle} span={v.span}>
+        <Panel title={v.title} subtitle={v.subtitle} span={span}>
           <Notes v={v} />
         </Panel>
       );
     case 'clusteredBarsH':
       return (
-        <Panel title={v.title} subtitle={v.subtitle} span={v.span} note={v.note} legend={v.series.map((s) => ({ name: s.name, color: s.color }))}>
+        <Panel title={v.title} subtitle={v.subtitle} span={span} note={v.note} legend={v.series.map((s) => ({ name: s.name, color: s.color }))}>
           <ClusteredBarsH v={v} />
         </Panel>
       );
     case 'divergingBarsH':
       return (
-        <Panel title={v.title} subtitle={v.subtitle} span={v.span} note={v.note}>
+        <Panel title={v.title} subtitle={v.subtitle} span={span} note={v.note}>
           <DivergingBarsH v={v} />
         </Panel>
       );
     case 'barsH':
       return (
-        <Panel title={v.title} subtitle={v.subtitle} span={v.span} note={v.note}>
+        <Panel title={v.title} subtitle={v.subtitle} span={span} note={v.note}>
           <BarsH v={v} />
         </Panel>
       );
     case 'waterfallV':
       return (
-        <Panel title={v.title} subtitle={v.subtitle} span={v.span} note={v.note}>
+        <Panel title={v.title} subtitle={v.subtitle} span={span} note={v.note}>
           <WaterfallV v={v} />
         </Panel>
       );
     case 'matrix':
       return (
-        <Panel title={v.title} subtitle={v.subtitle} span={v.span} note={v.note}>
+        <Panel title={v.title} subtitle={v.subtitle} span={span} note={v.note}>
           <Matrix v={v} />
         </Panel>
       );
@@ -699,9 +723,12 @@ export function Dashboard({ spec, className = '' }: { spec: DashboardSpec; class
 
       {/* Canvas */}
       <div className="grid grid-cols-1 gap-3 bg-mist p-3 md:grid-cols-2 md:p-4">
-        {page.visuals.map((v, i) => (
-          <VisualView key={`${uid}-${active}-${i}`} v={v} period={period} />
-        ))}
+        {(() => {
+          const spans = computeSpans(page.visuals);
+          return page.visuals.map((v, i) => (
+            <VisualView key={`${uid}-${active}-${i}`} v={v} period={period} span={spans[i]} />
+          ));
+        })()}
       </div>
 
       {/* Page tabs */}
