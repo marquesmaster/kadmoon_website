@@ -9,6 +9,8 @@ test.describe('pages load', () => {
     ['/services/power-bi', 'Power BI'],
     ['/services/microsoft-fabric', 'Fabric'],
     ['/power-bi-for-finance', 'finance and operations'],
+    ['/cases', 'finance and operations'],
+    ['/cases/executive-revenue-dashboard', 'Power BI'],
     ['/process', 'production'],
     ['/about', 'Power BI'],
     ['/blog', 'Power BI'],
