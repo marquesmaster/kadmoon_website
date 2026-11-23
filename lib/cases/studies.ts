@@ -531,6 +531,38 @@ export const caseStudies: CaseStudy[] = [
     result:
       'The asset team reads NOI against budget with the leasing and operations behind every variance, so a miss is traced to its driver instead of discovered a month later.',
   },
+  {
+    slug: 'field-service',
+    kind: 'analytics',
+    sector: 'Home services',
+    title: 'Field service: technicians, booking and memberships',
+    summary:
+      'A residential HVAC and plumbing company moved off its field-software standard reports onto a governed Power BI model that reads first-time fix, booking rate, and membership renewals by branch and technician, so the revenue leaking from calls, visits, and memberships is visible.',
+    challenge:
+      'Branch managers saw revenue and job counts weekly but not first-time fix, return trips, or close rate by advisor. The call center reported answered calls, not how many became jobs, and membership renewals were checked only when the member count dropped.',
+    build:
+      'We modeled jobs, replacement opportunities, calls, memberships, renewals, and technician hours into a governed model, and defined first-time fix, utilization, close rate, booking rate, and renewal rate as measures once, read by branch, technician, and advisor.',
+    whatWeBuilt: [
+      'A governed model over jobs, opportunities, calls, memberships, and hours.',
+      'First-time fix, return trips, and utilization by branch and technician.',
+      'Booking and abandonment, replacement close rate, and membership renewals.',
+    ],
+    outcomes: [
+      'Calls that fail to book and the revenue behind them made visible.',
+      'A first-time-fix drop traced to one branch and system change.',
+      'Failed membership payments isolated as the renewal problem.',
+    ],
+    metrics: [
+      { label: 'First-time fix', value: '84.5%', sub: 'from 87.3%' },
+      { label: 'Booking rate', value: '70.0%', sub: 'from 78.1%' },
+      { label: 'Renewal rate', value: '60.7%', sub: 'from 78.7%' },
+      { label: 'Member revenue', value: '42.1%', sub: 'of total' },
+    ],
+    dataSources: ['ServiceTitan / Housecall Pro', 'Call center', 'Payroll (paid hours)', 'Payment processor'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
+    result:
+      'The business reads the calls, visits, and memberships that leak revenue by branch and technician, so booking, first-time fix, and renewals are managed where the money actually moves.',
+  },
   // ----- Builds on the Microsoft stack -----------------------------------
   {
     slug: 'fabric-lakehouse-platform',

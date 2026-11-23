@@ -99,9 +99,10 @@ function Panel({
 
 // --- KPI strip -------------------------------------------------------------
 
-function KpiStrip({ items }: { items: Kpi[] }) {
+function KpiStrip({ items, cols = 6 }: { items: Kpi[]; cols?: number }) {
+  const grid = cols === 3 ? 'grid-cols-1 sm:grid-cols-3' : cols === 4 ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-6';
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+    <div className={`grid gap-3 ${grid}`}>
       {items.map((t) => (
         <div key={t.label} className="rounded-xl border border-line bg-white p-3.5 shadow-sm">
           <div className="text-[11px] leading-snug" style={{ color: INK3 }}>{t.label}</div>
@@ -270,38 +271,54 @@ function DivergingColumn({ v }: { v: Extract<Visual, { type: 'divergingColumn' }
 
 function ClusteredColumn({ v }: { v: Extract<Visual, { type: 'clusteredColumn' }> }) {
   const n = v.labels.length;
-  const max = Math.max(...v.series.flatMap((s) => s.points)) * 1.05;
+  const all = v.series.flatMap((s) => s.points).concat(v.line ? v.line.points : []).concat(v.target ? [v.target.v] : []);
+  let min = Math.min(0, ...all);
+  let max = Math.max(...all);
+  const padv = (max - min) * 0.08 || 1;
+  max += padv;
+  if (min < 0) min -= padv;
   const W = 560;
   const H = 240;
-  const pad = { t: 10, r: 12, b: 24, l: 42 };
+  const pad = { t: 12, r: 12, b: 24, l: 42 };
   const pw = W - pad.l - pad.r;
   const ph = H - pad.t - pad.b;
-  const y = (val: number) => pad.t + (1 - val / max) * ph;
+  const y = (val: number) => pad.t + (1 - (val - min) / (max - min)) * ph;
+  const zero = y(0);
   const group = (pw / n) * 0.7;
   const bw = group / v.series.length;
   const gx = (i: number) => pad.l + (i + 0.5) * (pw / n) - group / 2;
+  const cx = (i: number) => pad.l + (i + 0.5) * (pw / n);
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={v.title}>
-      {ticks(0, max).map((g, i) => (
+      {ticks(min, max).map((g, i) => (
         <g key={i}>
-          <line x1={pad.l} x2={W - pad.r} y1={y(g)} y2={y(g)} stroke={GRID} strokeWidth={1} />
+          <line x1={pad.l} x2={W - pad.r} y1={y(g)} y2={y(g)} stroke={g === 0 ? INK3 : GRID} strokeWidth={1} />
           <text x={pad.l - 5} y={y(g) + 3} textAnchor="end" fill={INK3} fontSize={9} fontFamily="monospace">
             {ax(g, v.yFormat)}
           </text>
         </g>
       ))}
+      {v.target ? (
+        <>
+          <line x1={pad.l} x2={W - pad.r} y1={y(v.target.v)} y2={y(v.target.v)} stroke={COLOR.violet} strokeWidth={1.3} strokeDasharray="4 4" />
+          <text x={W - pad.r} y={y(v.target.v) - 4} textAnchor="end" fill={COLOR.violet} fontSize={8.5} fontFamily="monospace">
+            {v.target.label}
+          </text>
+        </>
+      ) : null}
       {v.labels.map((l, i) => (
         <g key={i}>
           {v.series.map((ser, si) => {
             const col = ser.colors?.[i] ?? ser.color;
+            const yv = y(ser.points[i]);
             return (
               <g key={ser.name}>
-                <rect x={gx(i) + si * bw + bw * 0.1} y={y(ser.points[i])} width={bw * 0.8} height={y(0) - y(ser.points[i])} fill={COLOR[col]} rx={1}>
+                <rect x={gx(i) + si * bw + bw * 0.1} y={Math.min(yv, zero)} width={bw * 0.8} height={Math.max(Math.abs(yv - zero), 1)} fill={COLOR[col]} rx={1}>
                   <title>{`${l} · ${ser.name}: ${ax(ser.points[i], v.yFormat)}`}</title>
                 </rect>
                 {v.showValues ? (
-                  <text x={gx(i) + si * bw + bw * 0.5} y={y(ser.points[i]) - 3} textAnchor="middle" fill={INK} fontSize={8.5} fontWeight={600}>
+                  <text x={gx(i) + si * bw + bw * 0.5} y={yv - 3} textAnchor="middle" fill={INK} fontSize={8.5} fontWeight={600}>
                     {ax(ser.points[i], v.yFormat)}
                   </text>
                 ) : null}
@@ -310,14 +327,39 @@ function ClusteredColumn({ v }: { v: Extract<Visual, { type: 'clusteredColumn' }
           })}
         </g>
       ))}
+      {v.line ? (
+        <polyline
+          points={v.line.points.map((val, i) => `${cx(i).toFixed(1)},${y(val).toFixed(1)}`).join(' ')}
+          fill="none"
+          stroke={COLOR[v.line.color]}
+          strokeWidth={1.6}
+          strokeDasharray="5 4"
+          strokeLinejoin="round"
+        />
+      ) : null}
       {v.labels.map((l, i) =>
         i % labelEvery(n) === 0 ? (
-          <text key={i} x={pad.l + (i + 0.5) * (pw / n)} y={H - 7} textAnchor="middle" fill={INK3} fontSize={8.5} fontFamily="monospace">
+          <text key={i} x={cx(i)} y={H - 7} textAnchor="middle" fill={INK3} fontSize={8.5} fontFamily="monospace">
             {l}
           </text>
         ) : null
       )}
     </svg>
+  );
+}
+
+function Notes({ v }: { v: Extract<Visual, { type: 'notes' }> }) {
+  return (
+    <ol className="space-y-2.5">
+      {v.items.map((t, i) => (
+        <li key={i} className="flex items-start gap-2.5 text-[12.5px] leading-snug text-ink-2">
+          <span className="mt-px flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold text-white" style={{ background: COLOR.violet }}>
+            {i + 1}
+          </span>
+          {t}
+        </li>
+      ))}
+    </ol>
   );
 }
 
@@ -513,7 +555,7 @@ function VisualView({ v, period }: { v: Visual; period: string }) {
       const items = v.itemsByPeriod?.[period] ?? v.items;
       return (
         <div className="md:col-span-2">
-          <KpiStrip items={items} />
+          <KpiStrip items={items} cols={v.cols} />
         </div>
       );
     }
@@ -531,8 +573,20 @@ function VisualView({ v, period }: { v: Visual; period: string }) {
       );
     case 'clusteredColumn':
       return (
-        <Panel title={v.title} subtitle={v.subtitle} span={v.span} note={v.note} legend={v.series.map((s) => ({ name: s.name, color: s.color }))}>
+        <Panel
+          title={v.title}
+          subtitle={v.subtitle}
+          span={v.span}
+          note={v.note}
+          legend={[...v.series.map((s) => ({ name: s.name, color: s.color })), ...(v.line ? [{ name: v.line.name, color: v.line.color, line: true }] : [])]}
+        >
           <ClusteredColumn v={v} />
+        </Panel>
+      );
+    case 'notes':
+      return (
+        <Panel title={v.title} subtitle={v.subtitle} span={v.span}>
+          <Notes v={v} />
         </Panel>
       );
     case 'clusteredBarsH':

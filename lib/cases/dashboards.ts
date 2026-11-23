@@ -864,10 +864,694 @@ const multifamily: DashboardSpec = {
   ],
 };
 
+const M12 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const K = 1000;
+
+// ===========================================================================
+// Case 01 · CFO Board Pack
+// ===========================================================================
+
+const boardpack: DashboardSpec = {
+  caseLabel: 'Case 01 · CFO Board Pack',
+  pages: [
+    {
+      name: 'Executive Summary',
+      title: 'Executive Summary',
+      period: 'YTD October 2026',
+      slicers: [
+        { label: 'Period', options: ['YTD Oct 2026'] },
+        { label: 'Entity', options: ['All entities'] },
+        { label: 'Compare', options: ['Prior year · Budget'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Net revenue', value: '$164.2M', delta: { text: '+5.8% vs PY', good: true }, sub: '-1.9% vs Budget' },
+            { label: 'Gross margin', value: '25.4%', delta: { text: '-2.7 pts vs PY', good: false }, sub: '-2.9 pts vs Bud' },
+            { label: 'EBITDA', value: '$4.5M', delta: { text: '-48% vs PY', good: false }, sub: '-49% vs Bud' },
+            { label: 'EBITDA margin', value: '2.7%', sub: 'PY 5.6% · Bud 5.2%' },
+            { label: 'Net income', value: '$158K', sub: 'PY $3.8M · Bud $4.0M' },
+            { label: 'Cash conversion cycle', value: '87 days', delta: { text: '+22 days vs Oct 2025', good: false } },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'EBITDA by month',
+          subtitle: '2026 actual vs 2025 actual and 2026 budget · $',
+          labels: M12,
+          yFormat: 'usd',
+          series: [
+            { name: '2026 actual', color: 'violet', points: [120 * K, -120 * K, 700 * K, 750 * K, 350 * K, 420 * K, -480 * K, 650 * K, 600 * K, 1200 * K, 0, 0] },
+            { name: '2025 actual', color: 'slate', points: [150 * K, 60 * K, 780 * K, 820 * K, 900 * K, 950 * K, 1250 * K, 760 * K, 1400 * K, 1600 * K, 620 * K, 860 * K] },
+          ],
+          line: { name: '2026 budget', color: 'grape', points: [200 * K, 110 * K, 840 * K, 880 * K, 950 * K, 1000 * K, 1300 * K, 800 * K, 1450 * K, 1150 * K, 700 * K, 900 * K] },
+        },
+        {
+          type: 'waterfallV',
+          title: 'EBITDA bridge: YTD 2025 → YTD 2026',
+          subtitle: 'What moved EBITDA · $',
+          yFormat: 'usd',
+          bars: [
+            { k: 'YTD 2025', kind: 'total', value: 8.7e6 },
+            { k: 'Product margin', kind: 'up', value: 1.1e6 },
+            { k: 'Freight & fuel', kind: 'down', value: 1.9e6 },
+            { k: 'Inventory', kind: 'down', value: 0.985e6 },
+            { k: 'People', kind: 'down', value: 1.6e6 },
+            { k: 'Other opex', kind: 'down', value: 0.792e6 },
+            { k: 'YTD 2026', kind: 'total', value: 4.5e6 },
+          ],
+        },
+        {
+          type: 'matrix',
+          title: 'Performance by entity',
+          subtitle: 'YTD Oct 2026 · variance vs budget and prior year',
+          cols: ['Entity', 'Net revenue', 'vs Bud', 'vs PY', 'GM %', 'EBITDA', 'EBITDA %', 'vs Bud'],
+          rows: [
+            { cells: ['Columbus', '$99.2M', { v: '-1.7%', tone: 'bad' }, { v: '+5.5%', tone: 'good' }, '25.2%', '$2.91M', '2.9%', { v: '-$1.85M', tone: 'bad' }] },
+            { cells: ['Dallas', '$48.0M', { v: '+6.9%', tone: 'good' }, { v: '+15.9%', tone: 'good' }, '26.6%', '$3.28M', '6.8%', { v: '-$494K', tone: 'bad' }] },
+            { cells: ['Reno', '$17.0M', { v: '-21.0%', tone: 'bad' }, { v: '-13.9%', tone: 'bad' }, '23.2%', { v: '-$1.70M', tone: 'bad' }, '-10.0%', { v: '-$1.94M', tone: 'bad' }] },
+            { cells: ['Consolidated', '$164.2M', { v: '-1.9%', tone: 'bad' }, { v: '+5.8%', tone: 'good' }, '25.4%', '$4.49M', '2.7%', { v: '-$4.28M', tone: 'bad' }], strong: true },
+          ],
+        },
+        {
+          type: 'notes',
+          span: 2,
+          title: 'Key messages for the board',
+          items: [
+            'Revenue grew 5.8% but EBITDA fell 48%: margin, not volume, is the issue.',
+            'Freight and fuel cost $1.9M more than last year; the fuel surcharge alone is $2.5M vs $992K.',
+            'Cobalt Ridge West (Reno) is 21% below budget after losing its largest account in March.',
+            'Working capital absorbed cash: the revolver rose from $6.0M to $16.5M in twelve months.',
+            'The full-year EBITDA forecast is now $4.7M against a $10.2M budget.',
+          ],
+        },
+      ],
+    },
+    {
+      name: 'P&L vs Budget & PY',
+      title: 'P&L vs Budget & Prior Year',
+      period: 'YTD October 2026',
+      slicers: [
+        { label: 'Period', options: ['YTD Oct 2026'] },
+        { label: 'Entity', options: ['All entities'] },
+      ],
+      visuals: [
+        {
+          type: 'matrix',
+          span: 2,
+          title: 'Income statement',
+          subtitle: 'YTD · actual vs budget and prior year · $M',
+          cols: ['Line', 'Actual', 'Budget', 'Variance', 'Prior year'],
+          rows: [
+            { cells: ['Net revenue', '164.2', '167.4', { v: '-3.2', tone: 'bad' }, '155.2'] },
+            { cells: ['Cost of sales', '-122.5', '-120.0', { v: '-2.5', tone: 'bad' }, '-111.6'] },
+            { cells: ['Gross profit', '41.7', '47.4', { v: '-5.7', tone: 'bad' }, '43.6'], strong: true },
+            { cells: ['Operating expenses', '-37.2', '-38.6', { v: '+1.4', tone: 'good' }, '-34.9'] },
+            { cells: ['EBITDA', '4.49', '8.77', { v: '-4.28', tone: 'bad' }, '8.71'], strong: true },
+            { cells: ['D&A, interest, tax', '-4.33', '-4.72', { v: '+0.39', tone: 'good' }, '-4.92'] },
+            { cells: ['Net income', '0.16', '4.05', { v: '-3.89', tone: 'bad' }, '3.79'], strong: true },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Gross margin % by month',
+          subtitle: 'Actual vs budget',
+          labels: M12,
+          yFormat: 'pct',
+          series: [
+            { name: 'Actual', color: 'violet', points: seg(28.2, 25.0, 10, 0.6).concat([25.2, 25.4]), endLabel: 'Actual 25.4%' },
+            { name: 'Budget', color: 'slate', points: seg(28.3, 28.3, 12, 0), dashed: true, endLabel: 'Budget 28.3%' },
+          ],
+        },
+        {
+          type: 'divergingBarsH',
+          title: 'Top account variances vs budget',
+          subtitle: 'YTD · favorable right, unfavorable left · $M',
+          xFormat: 'usd',
+          rows: [
+            { k: 'Product sales', v: -3.27e6 },
+            { k: 'Outbound freight & fuel', v: -1.81e6 },
+            { k: 'Inventory costs', v: -0.835e6 },
+            { k: 'Returns & discounts', v: -0.42e6 },
+            { k: 'Other operating expenses', v: -0.33e6 },
+            { k: 'People costs', v: 1.86e6 },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Balance Sheet & Liquidity',
+      title: 'Balance Sheet & Liquidity',
+      period: 'As of October 31, 2026',
+      slicers: [
+        { label: 'Period', options: ['Oct 2026'] },
+        { label: 'Entity', options: ['All entities'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Cash', value: '$3.2M', sub: 'a year earlier $4.1M' },
+            { label: 'Revolver drawn', value: '$16.5M', delta: { text: '+$10.5M vs Oct 2025', good: false } },
+            { label: 'Net debt', value: '$27.3M', sub: 'a year earlier $16.9M' },
+            { label: 'DSO', value: '55.9 days', delta: { text: '+9.4 vs PY', good: false } },
+            { label: 'DIO', value: '74.4 days', delta: { text: '+6.1 vs PY', good: false } },
+            { label: 'DPO', value: '43.2 days', delta: { text: '-6.3 vs PY', good: false } },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Receivables, inventory and payables',
+          subtitle: 'Month-end balances · $M',
+          labels: M12,
+          yFormat: 'usd',
+          series: [
+            { name: 'Receivables', color: 'violet', points: seg(22e6, 28e6, 12, 0.6e6), endLabel: 'AR $28M' },
+            { name: 'Inventory', color: 'teal', points: seg(30e6, 33e6, 12, 0.5e6), endLabel: 'Inv $33M' },
+            { name: 'Payables', color: 'amber', points: seg(18e6, 17e6, 12, 0.5e6), endLabel: 'AP $17M' },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Daily revolver balance',
+          subtitle: 'End-of-day drawn · $M',
+          labels: M12,
+          yFormat: 'usd',
+          series: [{ name: 'Revolver', color: 'violet', points: seg(6e6, 16.5e6, 12, 0.6e6), endLabel: 'Revolver $16.5M' }],
+        },
+        {
+          type: 'matrix',
+          title: 'Condensed consolidated balance sheet',
+          subtitle: '$M · vs the same date last year',
+          cols: ['Line', 'Oct 2026', 'Oct 2025'],
+          rows: [
+            { cells: ['Cash', '3.2', '4.1'] },
+            { cells: ['Accounts receivable', '28.0', '22.3'] },
+            { cells: ['Inventory, net', '33.0', '30.1'] },
+            { cells: ['Accounts payable', '17.0', '18.4'] },
+            { cells: ['Revolver', '16.5', '6.0'] },
+            { cells: ['Term loan', '14.0', '15.0'] },
+            { cells: ['Net debt', '27.3', '16.9'], strong: true },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+// ===========================================================================
+// Case 02 · Budget vs Actual & Forecast
+// ===========================================================================
+
+const budget: DashboardSpec = {
+  caseLabel: 'Case 02 · Budget vs Actual & Forecast',
+  pages: [
+    {
+      name: 'Variance Overview',
+      title: 'Variance Overview',
+      period: 'YTD October 2026',
+      slicers: [
+        { label: 'Period', options: ['YTD Oct 2026'] },
+        { label: 'Version', options: ['Budget 2026'] },
+        { label: 'Entity', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Revenue vs budget', value: '-$3.2M', delta: { text: '-1.9%', good: false } },
+            { label: 'Gross profit vs budget', value: '-$5.7M', delta: { text: '-12.0%', good: false } },
+            { label: 'Opex vs budget', value: '+$1.4M', delta: { text: 'favorable', good: true } },
+            { label: 'EBITDA vs budget', value: '-$4.28M', delta: { text: '-49%', good: false } },
+            { label: 'Headcount vs plan', value: '378 / 404', sub: '26 open positions' },
+            { label: 'FY EBITDA forecast (9+3)', value: '$4.7M', sub: 'budget $10.2M' },
+          ],
+        },
+        {
+          type: 'divergingBarsH',
+          title: 'EBITDA variance by driver vs budget',
+          subtitle: 'YTD · favorable right, unfavorable left · $M',
+          xFormat: 'usd',
+          rows: [
+            { k: 'Product sales', v: -3.27e6 },
+            { k: 'Outbound freight & fuel', v: -1.81e6 },
+            { k: 'Inventory costs', v: -0.835e6 },
+            { k: 'Returns & discounts', v: -0.31e6 },
+            { k: 'Other operating expenses', v: -0.28e6 },
+            { k: 'People', v: 1.86e6 },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'Monthly EBITDA, actual vs budget',
+          subtitle: '$',
+          labels: M12,
+          yFormat: 'usd',
+          series: [
+            { name: 'Actual', color: 'violet', points: [120 * K, -120 * K, 700 * K, 750 * K, 350 * K, 420 * K, -480 * K, 650 * K, 600 * K, 1200 * K, 0, 0] },
+            { name: 'Budget', color: 'slate', points: [200 * K, 110 * K, 840 * K, 880 * K, 950 * K, 1000 * K, 1300 * K, 800 * K, 1450 * K, 1150 * K, 700 * K, 900 * K] },
+          ],
+        },
+        {
+          type: 'matrix',
+          title: 'EBITDA variance by entity and P&L group',
+          subtitle: 'YTD vs budget · favorable +',
+          cols: ['P&L group', 'Columbus', 'Dallas', 'Reno', 'Total'],
+          rows: [
+            { cells: ['Revenue', { v: '-$1.1M', tone: 'bad' }, { v: '+$0.6M', tone: 'good' }, { v: '-$2.7M', tone: 'bad' }, { v: '-$3.2M', tone: 'bad' }] },
+            { cells: ['Gross margin', { v: '-$2.1M', tone: 'bad' }, { v: '-$0.3M', tone: 'bad' }, { v: '-$1.4M', tone: 'bad' }, { v: '-$3.8M', tone: 'bad' }] },
+            { cells: ['People', { v: '+$0.9M', tone: 'good' }, { v: '+$0.4M', tone: 'good' }, { v: '+$0.6M', tone: 'good' }, { v: '+$1.86M', tone: 'good' }] },
+            { cells: ['Other opex', { v: '-$0.6M', tone: 'bad' }, { v: '-$0.2M', tone: 'bad' }, { v: '-$0.1M', tone: 'bad' }, { v: '-$0.9M', tone: 'bad' }] },
+            { cells: ['EBITDA', { v: '-$1.85M', tone: 'bad' }, { v: '-$0.49M', tone: 'bad' }, { v: '-$1.94M', tone: 'bad' }, { v: '-$4.28M', tone: 'bad' }], strong: true },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Forecast 2026',
+      title: 'Forecast 2026',
+      period: 'YTD October 2026',
+      slicers: [{ label: 'Period', options: ['Oct 2026'] }],
+      visuals: [
+        {
+          type: 'kpis',
+          cols: 3,
+          items: [
+            { label: 'FY EBITDA · 9+3 forecast', value: '$4.7M', sub: 'budget $10.2M' },
+            { label: 'Change since 6+6 forecast', value: '-$2.0M', delta: { text: 'from $6.7M', good: false } },
+            { label: 'October accuracy', value: '+22%', sub: 'EBITDA vs forecast · revenue +3.7%' },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'Full-year EBITDA by version',
+          subtitle: '$M',
+          labels: ['Budget', 'FC 3+9', 'FC 6+6', 'FC 9+3'],
+          yFormat: 'usd',
+          showValues: true,
+          series: [{ name: 'FY EBITDA', color: 'violet', points: [10.2e6, 10.2e6, 6.7e6, 4.7e6] }],
+        },
+        {
+          type: 'multiLine',
+          title: 'Cumulative EBITDA by version',
+          subtitle: '$M, through the year',
+          labels: M12,
+          yFormat: 'usd',
+          series: [
+            { name: 'Budget', color: 'slate', points: curve(0.8e6, 10.2e6, 12), dashed: true, endLabel: 'Budget $10.2M' },
+            { name: 'FC 6+6', color: 'teal', points: curve(0.6e6, 6.7e6, 12), endLabel: 'FC 6+6 $6.7M' },
+            { name: 'FC 9+3', color: 'violet', points: curve(0.5e6, 4.7e6, 12), endLabel: 'FC 9+3 $4.7M' },
+          ],
+        },
+        {
+          type: 'notes',
+          title: 'What changed between versions',
+          items: [
+            'The 3+9 forecast kept the budget freight assumptions and missed the fuel increase that started in April.',
+            '6+6 cut the full-year landing to $6.7M after the Q2 margin miss.',
+            '9+3 reflects the lost Reno account and sets the year at $4.7M.',
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+// ===========================================================================
+// Case 04 · Cash & Working Capital
+// ===========================================================================
+
+const arBuckets = (r: number) => seg(6.0e6, 9.3e6, 22, 0.1e6).map((t) => Math.round(t * r));
+
+const cash: DashboardSpec = {
+  caseLabel: 'Case 04 · Cash & Working Capital',
+  pages: [
+    {
+      name: 'Working Capital & Receivables',
+      title: 'Working Capital & Receivables',
+      period: 'October 31, 2026',
+      slicers: [
+        { label: 'Period', options: ['Oct 2026'] },
+        { label: 'Entity', options: ['All'] },
+        { label: 'Segment', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Cash conversion cycle', value: '87 days', delta: { text: '+22 vs PY', good: false } },
+            { label: 'DSO', value: '55.9 days', delta: { text: '+9.4 vs PY', good: false } },
+            { label: 'DIO', value: '74.4 days', delta: { text: '+6.1 vs PY', good: false } },
+            { label: 'DPO', value: '43.2 days', delta: { text: '-6.3 vs PY', good: false } },
+            { label: 'Revolver drawn', value: '$16.5M', delta: { text: '+$10.5M vs PY', good: false } },
+            { label: 'Receivables past due', value: '$9.3M', delta: { text: 'from $4.2M', good: false } },
+          ],
+        },
+        {
+          type: 'divergingColumn',
+          title: 'A/R by age, month end',
+          subtitle: 'Current → 90+ · $',
+          labels: M25,
+          yFormat: 'usd',
+          series: [
+            { name: 'Current', color: 'lilac', points: arBuckets(0.72) },
+            { name: '1–30', color: 'violet2', points: arBuckets(0.13) },
+            { name: '31–60', color: 'violet', points: arBuckets(0.08) },
+            { name: '61–90', color: 'grape', points: arBuckets(0.04) },
+            { name: '90+', color: 'bad', points: arBuckets(0.03) },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Days to pay, by customer segment',
+          subtitle: 'Invoice-weighted · 2026 vs 2025',
+          labels: M25,
+          yFormat: 'num',
+          series: [
+            { name: 'Healthcare', color: 'violet', points: seg(49, 66, 22, 1.2), endLabel: 'Healthcare 66' },
+            { name: 'All customers', color: 'slate', points: seg(46, 52, 22, 0.8), endLabel: 'All 52' },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Cash conversion cycle',
+          subtitle: 'DSO + DIO − DPO · days',
+          labels: M25,
+          yFormat: 'num',
+          series: [{ name: 'CCC', color: 'violet', points: seg(65, 87, 22, 1.5), endLabel: 'CCC 87' }],
+        },
+      ],
+    },
+    {
+      name: '13-Week Cash Forecast',
+      title: '13-Week Cash Forecast',
+      period: 'Week of October 27, 2026',
+      slicers: [
+        { label: 'Snapshot', options: ['Oct 27 2026'] },
+        { label: 'Category', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          cols: 3,
+          items: [
+            { label: 'Forecast receipts bias · wk 1–4', value: '+14.5%', delta: { text: 'Q3 over-stated', good: false } },
+            { label: 'Merchandise payments bias', value: '-16%', sub: 'under-stated' },
+            { label: 'Revolver at week 13', value: '$18.1M', sub: 'projected' },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Weekly receipts: forecast vs actual',
+          subtitle: 'Last 13 weeks · $M',
+          labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10', 'W11', 'W12', 'W13'],
+          yFormat: 'usd',
+          series: [
+            { name: 'Forecast', color: 'slate', points: seg(3.6e6, 3.9e6, 13, 0.2e6), dashed: true, endLabel: 'Forecast' },
+            { name: 'Actual', color: 'violet', points: seg(3.2e6, 3.4e6, 13, 0.3e6), endLabel: 'Actual' },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'Next 13 weeks: receipts vs payments',
+          subtitle: '$M',
+          labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10', 'W11', 'W12', 'W13'],
+          yFormat: 'usd',
+          series: [
+            { name: 'Receipts', color: 'violet', points: seg(3.4e6, 3.6e6, 13, 0.25e6) },
+            { name: 'Payments', color: 'slate', points: seg(3.6e6, 3.7e6, 13, 0.2e6) },
+          ],
+        },
+        {
+          type: 'notes',
+          title: 'Forecast notes',
+          items: [
+            'Weeks 1–4 over-stated customer receipts by +12.7% in Q2 and +14.5% in Q3 (Q1: -1.7%).',
+            'Merchandise payments were under-stated by about 16%.',
+            'Summit Ridge Health moved from ~49 to 103 days on Net 45 terms from January 2026.',
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+// ===========================================================================
+// Case 06 · Month-End Close
+// ===========================================================================
+
+const monthend: DashboardSpec = {
+  caseLabel: 'Case 06 · Month-End Close',
+  pages: [
+    {
+      name: 'Close Performance',
+      title: 'Close Performance',
+      period: 'YTD October 2026',
+      slicers: [
+        { label: 'Period', options: ['2023–2026'] },
+        { label: 'Entity', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Days to close', value: '11.6', delta: { text: '+1.7 vs 2025', good: false }, sub: 'target 5' },
+            { label: 'On-time task %', value: '28%', delta: { text: '-39 pts vs 2023', good: false } },
+            { label: 'Average days late', value: '3.1', delta: { text: 'per late task', good: false } },
+            { label: 'Post-close entries · YTD', value: '174', delta: { text: 'from 91', good: false } },
+            { label: 'Post-close value · YTD', value: '$4.1M', sub: 'absolute' },
+            { label: 'Consolidated sign-off', value: 'BD 12', sub: 'October close' },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'Days to close, by year',
+          subtitle: 'Business day of consolidated sign-off',
+          labels: ['2023', '2024', '2025', '2026'],
+          yFormat: 'num',
+          showValues: true,
+          target: { v: 5, label: 'Target BD5' },
+          series: [{ name: 'Days to close', color: 'violet', points: [8.2, 8.8, 9.9, 11.6] }],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'Entries posted after close, by year',
+          subtitle: 'Distinct journal entries after statements issued',
+          labels: ['2023', '2024', '2025', '2026 YTD'],
+          yFormat: 'num',
+          showValues: true,
+          series: [{ name: 'Post-close entries', color: 'violet', points: [35, 38, 91, 174], colors: ['slate', 'slate', 'amber', 'bad'] }],
+        },
+        {
+          type: 'barsH',
+          title: 'Slowest tasks, 2026',
+          subtitle: 'Average business days late',
+          xFormat: 'num',
+          rows: [
+            { k: 'Inventory recon · Reno', v: 5.2, highlight: true, show: '5.2' },
+            { k: 'Intercompany recon · Columbus', v: 3.7, show: '3.7' },
+            { k: 'Intercompany recon · Dallas', v: 3.5, show: '3.5' },
+            { k: 'Intercompany recon · Reno', v: 3.3, show: '3.3' },
+            { k: 'Accruals · Reno', v: 2.6, show: '2.6' },
+            { k: 'Bank recon · Columbus', v: 1.9, show: '1.9' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'October Close Calendar',
+      title: 'October 2026 Close Calendar',
+      period: 'Reno · slowest entity',
+      slicers: [
+        { label: 'Period', options: ['Oct 2026'] },
+        { label: 'Entity', options: ['Reno'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          cols: 3,
+          items: [
+            { label: 'Entity statements issued', value: 'BD 11', sub: 'Columbus BD9 · Dallas BD9' },
+            { label: 'Consolidated sign-off', value: 'BD 12', sub: 'target BD5' },
+            { label: 'Tasks late', value: '12 of 28', sub: 'Reno entity' },
+          ],
+        },
+        {
+          type: 'matrix',
+          span: 2,
+          title: 'Close tasks — Reno, October 2026',
+          subtitle: 'Due vs completed business day',
+          cols: ['Task', 'Owner', 'Due BD', 'Done BD', 'Days late', 'Status'],
+          rows: [
+            { cells: ['Cash & bank reconciliation', 'Treasury', '3', '4', { v: '1', tone: 'bad' }, 'Late'] },
+            { cells: ['AR subledger close', 'AR', '4', '7', { v: '3', tone: 'bad' }, 'Late'] },
+            { cells: ['Inventory subledger-to-GL', 'Inventory', '5', '10', { v: '5', tone: 'bad' }, 'Late'] },
+            { cells: ['Accruals & prepaids', 'GL', '6', '8', { v: '2', tone: 'bad' }, 'Late'] },
+            { cells: ['Intercompany reconciliation', 'GL', '7', '10', { v: '3', tone: 'bad' }, 'Late'] },
+            { cells: ['Entity statements issued', 'Controller', '8', '11', { v: '3', tone: 'bad' }, 'Late'] },
+            { cells: ['Consolidated sign-off (CON-03)', 'Group', '9', '12', { v: '3', tone: 'bad' }, 'Late'] },
+          ],
+        },
+        {
+          type: 'barsH',
+          title: 'Workload by owner',
+          subtitle: 'Late tasks this close',
+          xFormat: 'num',
+          rows: [
+            { k: 'GL team', v: 6, highlight: true, show: '6' },
+            { k: 'Inventory', v: 3, show: '3' },
+            { k: 'AR', v: 2, show: '2' },
+            { k: 'Treasury', v: 1, show: '1' },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+// ===========================================================================
+// Case 16 · Field Service
+// ===========================================================================
+
+const fieldservice: DashboardSpec = {
+  caseLabel: 'Case 16 · Field Service Performance',
+  pages: [
+    {
+      name: 'Technician Performance',
+      title: 'Technician Performance & Replacements',
+      period: 'YTD October 2026',
+      slicers: [
+        { label: 'Period', options: ['Oct 2026'] },
+        { label: 'Branch', options: ['All'] },
+        { label: 'Inventory system', options: ['All'] },
+        { label: 'Trade', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Revenue · YTD', value: '$47.2M', delta: { text: '-3.2% vs PY', good: false } },
+            { label: 'First-time fix · YTD', value: '84.5%', delta: { text: '-2.8 pts vs PY', good: false } },
+            { label: 'Return trips · YTD', value: '7,930', delta: { text: '+18% vs PY', good: false } },
+            { label: 'Average service ticket', value: '$493', sub: 'service calls · PY $493' },
+            { label: 'Technician utilization · YTD', value: '60.4%', delta: { text: '-2.1 pts vs PY', good: false } },
+            { label: 'Replacement close rate · YTD', value: '37.2%', delta: { text: '-1.8 pts vs PY', good: false }, sub: '$17.0M sold' },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'First-time fix rate by month',
+          subtitle: 'Branches on the new inventory system (March 2026) vs legacy',
+          labels: M24,
+          yFormat: 'pct',
+          series: [
+            { name: 'Legacy', color: 'slate', points: seg(87, 86.8, 31, 0.6), endLabel: 'Legacy 86.8%' },
+            { name: 'New system', color: 'violet', points: seg(87, 86, 14, 0.6).concat(seg(73, 72.9, 17, 0.6)), endLabel: 'New system 72.9%' },
+          ],
+        },
+        {
+          type: 'clusteredBarsH',
+          title: 'First-time fix rate by branch',
+          subtitle: 'Year to date vs same months last year',
+          xFormat: 'pct',
+          cats: ['Mesa', 'Las Vegas South', 'Albuquerque', 'Scottsdale', 'Phoenix East', 'Las Vegas North', 'Henderson', 'Phoenix West', 'Tucson'],
+          series: [
+            { name: '2026', color: 'violet', values: [76, 77, 85, 86, 86, 87, 88, 88, 89] },
+            { name: '2025', color: 'slate', values: [87, 87, 85, 86, 86, 87, 88, 88, 89] },
+          ],
+        },
+        {
+          type: 'barsH',
+          title: 'Replacement close rate, by comfort advisor',
+          subtitle: 'Year to date · 12 lowest of 18 advisors',
+          xFormat: 'pct',
+          rows: [
+            { k: 'Alex Santos (Mesa)', v: 24.2, highlight: true, show: '24%' },
+            { k: 'Alex Castro (LV North)', v: 27, highlight: true, show: '27%' },
+            { k: 'Hugo Lopez (Henderson)', v: 30, highlight: true, show: '30%' },
+            { k: 'Tony Castro (Albuquerque)', v: 33, show: '33%' },
+            { k: 'Eli Flores (Henderson)', v: 33, show: '33%' },
+            { k: 'Ray Zamora (LV North)', v: 34, show: '34%' },
+            { k: 'Ray Bennett (LV South)', v: 35, show: '35%' },
+            { k: 'Andre Flores (Phoenix East)', v: 35, show: '35%' },
+            { k: 'Isaac Diaz (Tucson)', v: 36, show: '36%' },
+            { k: 'Derek Flores (Phoenix West)', v: 40, show: '40%' },
+            { k: 'Pete Ellis (Phoenix East)', v: 41, show: '41%' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Demand & Memberships',
+      title: 'Demand, Booking & Memberships',
+      period: 'YTD October 2026',
+      slicers: [
+        { label: 'Period', options: ['Oct 2026'] },
+        { label: 'Branch', options: ['All'] },
+        { label: 'Trade', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Booking rate · YTD', value: '70.0%', delta: { text: '-8.1 pts vs PY', good: false } },
+            { label: 'Abandon rate · July', value: '26.2%', delta: { text: 'heat wave', good: false } },
+            { label: 'Replacement sales · YTD', value: '$17.0M', delta: { text: 'from $18.3M', good: false } },
+            { label: 'Membership renewal rate', value: '60.7%', delta: { text: '-18.0 pts vs PY', good: false } },
+            { label: 'Active members', value: '16,045', delta: { text: 'from 16,751', good: false } },
+            { label: 'Member share of revenue', value: '42.1%', sub: 'members & plans' },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Booking rate by month',
+          subtitle: 'Booked jobs ÷ inbound calls',
+          labels: M25,
+          yFormat: 'pct',
+          series: [
+            { name: '2026', color: 'violet', points: seg(78, 74, 6, 1).concat([56.2]).concat(seg(70, 70, 15, 1)), endLabel: '2026 70.0%' },
+            { name: '2025', color: 'slate', points: seg(78, 78, 22, 1), dashed: true, endLabel: '2025 78.1%' },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'Inbound calls vs booked jobs',
+          subtitle: 'Monthly',
+          labels: M25,
+          yFormat: 'num',
+          series: [
+            { name: 'Inbound calls', color: 'slate', points: seg(3200, 3600, 22, 180) },
+            { name: 'Booked jobs', color: 'violet', points: seg(2500, 2520, 22, 150) },
+          ],
+        },
+        {
+          type: 'barsH',
+          title: 'Membership renewal outcomes · YTD',
+          subtitle: 'Share of memberships reaching renewal',
+          xFormat: 'pct',
+          rows: [
+            { k: 'Renewed', v: 60.7, show: '60.7%' },
+            { k: 'Payment failed', v: 18.6, highlight: true, show: '18.6%' },
+            { k: 'Cancelled', v: 20.7, show: '20.7%' },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
 export const caseDashboards: Record<string, DashboardSpec> = {
+  'executive-revenue-dashboard': boardpack,
+  'finance-close-analytics': budget,
+  'cash-working-capital': cash,
+  'month-end-close': monthend,
+  'field-service': fieldservice,
   'dtc-cac-ltv': dtc,
   'saas-arr-retention': saas,
   'revenue-cycle': revcycle,
   'trucking-lanes-fleet': trucking,
   'multifamily-noi': multifamily,
 };
+
+export const heroDashboard = boardpack;
