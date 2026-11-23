@@ -10,7 +10,17 @@ import {
   BudgetVsActualCard,
   WorkingCapitalCard,
   MonthEndCloseCard,
+  MarginBridgeCard,
+  InventoryCoverCard,
+  OeeCard,
+  JobCostCard,
+  UtilizationCard,
+  ArrRetentionCard,
+  RevenueCycleCard,
+  PrimeCostCard,
 } from '@/components/reports/SampleReports';
+import { Dashboard } from '@/components/reports/dashboard/Dashboard';
+import { caseDashboards } from '@/lib/cases/dashboards';
 import { caseStudies } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
@@ -18,6 +28,14 @@ const CASE_CARDS: Record<string, () => JSX.Element> = {
   'budget-vs-actual': BudgetVsActualCard,
   'working-capital': WorkingCapitalCard,
   'month-end-close': MonthEndCloseCard,
+  'margin-bridge': MarginBridgeCard,
+  'inventory-cover': InventoryCoverCard,
+  oee: OeeCard,
+  'job-cost': JobCostCard,
+  utilization: UtilizationCard,
+  'arr-retention': ArrRetentionCard,
+  'revenue-cycle': RevenueCycleCard,
+  'prime-cost': PrimeCostCard,
 };
 
 export function generateStaticParams() {
@@ -73,6 +91,8 @@ function Chips({ label, items }: { label: string; items: string[] }) {
 export default function CasePage({ params }: { params: { slug: string } }) {
   const c = caseStudies.find((x) => x.slug === params.slug);
   if (!c) notFound();
+
+  const navDashboard = caseDashboards[c.slug];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -143,7 +163,20 @@ export default function CasePage({ params }: { params: { slug: string } }) {
             </div>
           </div>
 
-          {c.dashboards && c.dashboards.length > 0 ? (
+          {navDashboard ? (
+            <div className="mt-14">
+              <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
+                The dashboards
+              </h2>
+              <p className="mt-2 max-w-2xl text-[13px] leading-relaxed text-ink-3">
+                The report we build, re-skinned here in the browser. Switch pages with the tabs and
+                hover the charts. Representative, not a specific client.
+              </p>
+              <div className="mt-5">
+                <Dashboard spec={navDashboard} />
+              </div>
+            </div>
+          ) : c.dashboards && c.dashboards.length > 0 ? (
             (() => {
               const cardKeys = c.dashboards.filter((k) => k !== 'kpi');
               return (

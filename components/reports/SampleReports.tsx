@@ -303,3 +303,454 @@ export function MonthEndCloseCard() {
     </ReportChrome>
   );
 }
+
+// ---------------------------------------------------------------------------
+// Shared building blocks for the operations and sector report cards below.
+// ---------------------------------------------------------------------------
+
+/** Horizontal bar list in the violet palette, one tone per row. */
+function MiniBars({
+  rows,
+  max,
+  suffix,
+  labelW = 'minmax(96px,auto)',
+}: {
+  rows: { k: string; v: number; tone?: 'accent' | 'success' | 'warning' | 'muted'; strong?: boolean; show?: string }[];
+  max: number;
+  suffix: string;
+  labelW?: string;
+}) {
+  const bar = (t?: string) =>
+    t === 'success' ? 'bg-success' : t === 'warning' ? 'bg-warning' : t === 'muted' ? 'bg-ink-3/40' : 'bg-accent';
+  const txt = (t?: string) =>
+    t === 'warning' ? 'text-warning' : t === 'success' ? 'text-success' : 'text-ink';
+  return (
+    <ul className="space-y-2.5">
+      {rows.map((r) => (
+        <li
+          key={r.k}
+          className="grid items-center gap-3"
+          style={{ gridTemplateColumns: `${labelW} 1fr auto` }}
+        >
+          <span className={`truncate text-[12.5px] ${r.strong ? 'font-semibold text-ink' : 'text-ink-2'}`}>
+            {r.k}
+          </span>
+          <div className="h-2.5 overflow-hidden rounded-full bg-mist" aria-hidden>
+            <div
+              className={`h-full rounded-full ${bar(r.tone)}`}
+              style={{ width: `${Math.max((r.v / max) * 100, 3)}%` }}
+            />
+          </div>
+          <span className={`w-14 text-right font-mono text-[12.5px] tabular-nums ${txt(r.tone)}`}>
+            {r.show ?? `${r.v}${suffix}`}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Compact stat tiles for a report header strip. */
+function StatStrip({
+  items,
+  cols = 3,
+}: {
+  items: { k: string; v: string; sub?: string; tone?: 'ink' | 'success' | 'warning' | 'accent' }[];
+  cols?: number;
+}) {
+  const txt = (t?: string) =>
+    t === 'warning' ? 'text-warning' : t === 'success' ? 'text-success' : t === 'accent' ? 'text-accent' : 'text-ink';
+  return (
+    <dl className="grid gap-3" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0,1fr))` }}>
+      {items.map((t) => (
+        <div key={t.k}>
+          <dt className="font-mono text-[9px] uppercase tracking-[0.08em] text-ink-3">{t.k}</dt>
+          <dd className={`mt-1 font-display text-xl font-bold tabular-nums ${txt(t.tone)}`}>{t.v}</dd>
+          {t.sub ? <div className="text-[11px] leading-snug text-ink-3">{t.sub}</div> : null}
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+/** Floating-bar waterfall (margin bridge, ARR bridge). */
+function WaterfallChart({
+  title,
+  legendLeft,
+  legendRight,
+  rows,
+  max,
+  note,
+}: {
+  title: string;
+  legendLeft: string;
+  legendRight: string;
+  rows: { k: string; lo: number; hi: number; kind: 'base' | 'up' | 'down'; label: string }[];
+  max: number;
+  note: string;
+}) {
+  const fill = (kind: string) =>
+    kind === 'up' ? 'bg-success' : kind === 'down' ? 'bg-warning' : 'bg-accent';
+  const txt = (kind: string) =>
+    kind === 'up' ? 'text-success' : kind === 'down' ? 'text-warning' : 'text-ink';
+  return (
+    <ReportChrome title={title}>
+      <div className="flex items-baseline justify-between">
+        <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">{legendLeft}</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">{legendRight}</span>
+      </div>
+      <ul className="mt-4 space-y-2.5">
+        {rows.map((r) => (
+          <li key={r.k} className="grid grid-cols-[104px_1fr_auto] items-center gap-3">
+            <span
+              className={`truncate text-[12.5px] ${r.kind === 'base' ? 'font-semibold text-ink' : 'text-ink-2'}`}
+            >
+              {r.k}
+            </span>
+            <div className="relative h-3 rounded-full bg-mist" aria-hidden>
+              <div
+                className={`absolute top-0 h-full rounded-full ${fill(r.kind)}`}
+                style={{ left: `${(r.lo / max) * 100}%`, width: `${Math.max(((r.hi - r.lo) / max) * 100, 1.5)}%` }}
+              />
+            </div>
+            <span className={`w-16 text-right font-mono text-[12.5px] tabular-nums ${txt(r.kind)}`}>
+              {r.label}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 border-t border-line pt-3 text-[12px] leading-relaxed text-ink-3">{note}</p>
+    </ReportChrome>
+  );
+}
+
+/**
+ * Margin analytics: price-volume-mix bridge from prior to current gross margin.
+ * Mirrors the PVM / margin-bridge page. Values in USD thousands.
+ */
+export function MarginBridgeCard() {
+  return (
+    <WaterfallChart
+      title="Margin bridge · price, volume, mix, cost"
+      legendLeft="USD thousands"
+      legendRight="Prior → current GM"
+      max={2327}
+      rows={[
+        { k: 'Prior margin', lo: 0, hi: 2052, kind: 'base', label: '2,052' },
+        { k: 'Price', lo: 2052, hi: 2232, kind: 'up', label: '+180' },
+        { k: 'Volume', lo: 2232, hi: 2327, kind: 'up', label: '+95' },
+        { k: 'Mix', lo: 2267, hi: 2327, kind: 'down', label: '−60' },
+        { k: 'Cost', lo: 2159, hi: 2267, kind: 'down', label: '−108' },
+        { k: 'Current margin', lo: 0, hi: 2159, kind: 'base', label: '2,159' },
+      ]}
+      note="Gross margin movement split into price, volume, mix, and cost, by product and channel, so the change is explained, not just reported."
+    />
+  );
+}
+
+/**
+ * Inventory and supply: weeks of cover by category plus excess and dead stock.
+ * Mirrors the stock-cover / excess page.
+ */
+export function InventoryCoverCard() {
+  return (
+    <ReportChrome title="Inventory · days of stock cover">
+      <StatStrip
+        cols={2}
+        items={[
+          { k: 'Excess & dead stock', v: '$1.8M', sub: '12% of on-hand', tone: 'warning' },
+          { k: 'Avg stock cover', v: '46 days', sub: 'healthy band 30–60', tone: 'ink' },
+        ]}
+      />
+      <div className="mt-4 border-t border-line pt-4">
+        <div className="mb-3 flex items-baseline justify-between">
+          <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+            Cover by category
+          </span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">days</span>
+        </div>
+        <MiniBars
+          max={210}
+          suffix="d"
+          labelW="104px"
+          rows={[
+            { k: 'Fast movers', v: 18, tone: 'warning', show: '18d' },
+            { k: 'Core lines', v: 42, tone: 'accent', strong: true, show: '42d' },
+            { k: 'Seasonal', v: 96, tone: 'warning', show: '96d' },
+            { k: 'Spares / slow', v: 210, tone: 'muted', show: '210d' },
+          ]}
+        />
+      </div>
+      <p className="mt-4 border-t border-line pt-3 text-[12px] leading-relaxed text-ink-3">
+        Stock cover is on-hand against demand, so a fast line short of cover and a slow line burying
+        cash both surface by item and location.
+      </p>
+    </ReportChrome>
+  );
+}
+
+/**
+ * Plant performance: OEE broken into availability, performance, and quality,
+ * plus a downtime Pareto. Mirrors the OEE / losses page.
+ */
+export function OeeCard() {
+  return (
+    <ReportChrome title="Plant OEE · availability × performance × quality">
+      <div className="flex items-end justify-between">
+        <StatStrip
+          cols={3}
+          items={[
+            { k: 'Availability', v: '91.2%' },
+            { k: 'Performance', v: '94.8%' },
+            { k: 'Quality', v: '98.6%' },
+          ]}
+        />
+        <div className="shrink-0 pl-4 text-right">
+          <div className="font-mono text-[9px] uppercase tracking-[0.08em] text-ink-3">OEE</div>
+          <div className="font-display text-3xl font-bold tabular-nums text-accent">85.3%</div>
+          <div className="text-[11px] font-semibold text-success">at BD target 85%</div>
+        </div>
+      </div>
+      <div className="mt-4 border-t border-line pt-4">
+        <div className="mb-3 flex items-baseline justify-between">
+          <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+            Downtime by reason
+          </span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+            share of lost time
+          </span>
+        </div>
+        <MiniBars
+          max={34}
+          suffix="%"
+          labelW="104px"
+          rows={[
+            { k: 'Changeover', v: 34, tone: 'accent', strong: true },
+            { k: 'Die maintenance', v: 22, tone: 'muted' },
+            { k: 'Material wait', v: 16, tone: 'muted' },
+            { k: 'Breakdown', v: 14, tone: 'warning' },
+            { k: 'Other', v: 14, tone: 'muted' },
+          ]}
+        />
+      </div>
+    </ReportChrome>
+  );
+}
+
+/**
+ * Job cost and WIP: projected margin at completion against the bid, by job,
+ * with percent complete. Mirrors the WIP / margin page.
+ */
+export function JobCostCard() {
+  const jobs = [
+    { k: 'Job 1420', pct: 82, proj: 18.5, bid: 20.0 },
+    { k: 'Job 1515', pct: 46, proj: 22.1, bid: 21.0 },
+    { k: 'Job 1388', pct: 95, proj: 15.2, bid: 19.0 },
+    { k: 'Job 1602', pct: 28, proj: 24.0, bid: 23.5 },
+  ];
+  return (
+    <ReportChrome title="Job cost · margin at completion">
+      <div className="flex items-baseline justify-between">
+        <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+          % complete · projected / bid margin
+        </span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">WIP $4.2M</span>
+      </div>
+      <ul className="mt-4 space-y-3">
+        {jobs.map((j) => {
+          const ahead = j.proj >= j.bid;
+          return (
+            <li key={j.k} className="grid grid-cols-[72px_1fr_auto] items-center gap-3">
+              <span className="text-[12.5px] font-semibold text-ink">{j.k}</span>
+              <div className="flex items-center gap-2">
+                <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-mist" aria-hidden>
+                  <div className="h-full rounded-full bg-accent" style={{ width: `${j.pct}%` }} />
+                </div>
+                <span className="w-9 text-right font-mono text-[11px] tabular-nums text-ink-3">
+                  {j.pct}%
+                </span>
+              </div>
+              <span className="w-24 text-right font-mono text-[12px] tabular-nums">
+                <span className={ahead ? 'text-success' : 'text-warning'}>{j.proj.toFixed(1)}%</span>
+                <span className="text-ink-3"> / {j.bid.toFixed(1)}%</span>
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="mt-4 border-t border-line pt-3 text-[12px] leading-relaxed text-ink-3">
+        Committed cost and change orders projected to completion against the bid, so a job eroding its
+        margin shows while there is still time to act.
+      </p>
+    </ReportChrome>
+  );
+}
+
+/**
+ * Utilization and realization: billable utilization by team against target,
+ * with the realization rate. Mirrors the utilization page.
+ */
+export function UtilizationCard() {
+  return (
+    <ReportChrome title="Billable utilization · vs 75% target">
+      <StatStrip
+        cols={3}
+        items={[
+          { k: 'Realization', v: '92%', sub: 'billed / standard', tone: 'success' },
+          { k: 'Utilization', v: '79%', sub: 'billable / available', tone: 'ink' },
+          { k: 'WIP', v: '$0.9M', sub: 'unbilled', tone: 'ink' },
+        ]}
+      />
+      <div className="mt-4 border-t border-line pt-4">
+        <div className="mb-3 flex items-baseline justify-between">
+          <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">By team</span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+            target 75%
+          </span>
+        </div>
+        <MiniBars
+          max={100}
+          suffix="%"
+          labelW="88px"
+          rows={[
+            { k: 'Strategy', v: 82, tone: 'success' },
+            { k: 'Delivery', v: 78, tone: 'success' },
+            { k: 'Design', v: 71, tone: 'warning' },
+            { k: 'Data', v: 85, tone: 'success' },
+          ]}
+        />
+      </div>
+    </ReportChrome>
+  );
+}
+
+/**
+ * SaaS ARR and retention: the ARR bridge from starting to ending ARR, with net
+ * and gross retention. Mirrors the ARR / retention page. Values in USD millions.
+ */
+export function ArrRetentionCard() {
+  return (
+    <>
+      <WaterfallChart
+        title="ARR bridge · new, expansion, contraction, churn"
+        legendLeft="USD millions"
+        legendRight="NRR 106% · GRR 93%"
+        max={5.14}
+        rows={[
+          { k: 'Starting ARR', lo: 0, hi: 4.2, kind: 'base', label: '4.20' },
+          { k: 'New', lo: 4.2, hi: 4.62, kind: 'up', label: '+0.42' },
+          { k: 'Expansion', lo: 4.62, hi: 5.14, kind: 'up', label: '+0.52' },
+          { k: 'Contraction', lo: 5.04, hi: 5.14, kind: 'down', label: '−0.10' },
+          { k: 'Churn', lo: 4.86, hi: 5.04, kind: 'down', label: '−0.18' },
+          { k: 'Ending ARR', lo: 0, hi: 4.86, kind: 'base', label: '4.86' },
+        ]}
+        note="Starting ARR walked to ending ARR through new, expansion, contraction, and churn, so growth and leakage are read in one view rather than a single net number."
+      />
+    </>
+  );
+}
+
+/**
+ * Revenue cycle: denials by reason plus the headline RCM measures. Mirrors the
+ * revenue-cycle / denials page.
+ */
+export function RevenueCycleCard() {
+  return (
+    <ReportChrome title="Revenue cycle · denials by reason">
+      <StatStrip
+        cols={3}
+        items={[
+          { k: 'Clean claim rate', v: '94%', tone: 'success' },
+          { k: 'Days in AR', v: '38', sub: 'by payer' },
+          { k: 'Denial rate', v: '6.2%', tone: 'warning' },
+        ]}
+      />
+      <div className="mt-4 border-t border-line pt-4">
+        <div className="mb-3 flex items-baseline justify-between">
+          <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+            Denials by reason
+          </span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+            share of denied
+          </span>
+        </div>
+        <MiniBars
+          max={28}
+          suffix="%"
+          labelW="104px"
+          rows={[
+            { k: 'Eligibility', v: 28, tone: 'accent', strong: true },
+            { k: 'Coding', v: 22, tone: 'muted' },
+            { k: 'Authorization', v: 18, tone: 'muted' },
+            { k: 'Timely filing', v: 16, tone: 'warning' },
+            { k: 'Other', v: 16, tone: 'muted' },
+          ]}
+        />
+      </div>
+      <p className="mt-4 border-t border-line pt-3 text-[12px] leading-relaxed text-ink-3">
+        Denials sized by reason and payer, so the few causes behind most of the lost revenue are the
+        ones that get worked first.
+      </p>
+    </ReportChrome>
+  );
+}
+
+/**
+ * Restaurant prime cost: food plus labor as a share of sales, by store, against
+ * the 60% target. Mirrors the prime-cost page.
+ */
+export function PrimeCostCard() {
+  const stores = [
+    { k: 'Downtown', food: 29, labor: 29 },
+    { k: 'Midtown', food: 31, labor: 31 },
+    { k: 'Airport', food: 28, labor: 28 },
+    { k: 'Mall', food: 32, labor: 29 },
+  ];
+  const target = 60;
+  const scaleMax = 70;
+  return (
+    <ReportChrome title="Prime cost by store · food + labor vs 60%">
+      <div className="flex items-center gap-4 text-[11px] text-ink-3">
+        <span className="flex items-center gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-sm bg-accent" aria-hidden /> Food
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-sm bg-accent/45" aria-hidden /> Labor
+        </span>
+        <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.1em]">target 60%</span>
+      </div>
+      <ul className="mt-4 space-y-3">
+        {stores.map((s) => {
+          const total = s.food + s.labor;
+          const over = total > target;
+          return (
+            <li key={s.k} className="grid grid-cols-[80px_1fr_auto] items-center gap-3">
+              <span className="truncate text-[12.5px] text-ink-2">{s.k}</span>
+              <div className="relative h-3.5 overflow-hidden rounded-full bg-mist" aria-hidden>
+                <div className="flex h-full">
+                  <div className="h-full bg-accent" style={{ width: `${(s.food / scaleMax) * 100}%` }} />
+                  <div className="h-full bg-accent/45" style={{ width: `${(s.labor / scaleMax) * 100}%` }} />
+                </div>
+                <span
+                  className="absolute top-0 h-full w-px bg-ink"
+                  style={{ left: `${(target / scaleMax) * 100}%` }}
+                />
+              </div>
+              <span
+                className={`w-12 text-right font-mono text-[12.5px] font-semibold tabular-nums ${
+                  over ? 'text-warning' : 'text-success'
+                }`}
+              >
+                {total}%
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="mt-4 border-t border-line pt-3 text-[12px] leading-relaxed text-ink-3">
+        Food and labor read together as prime cost against target, by store and day part, since the
+        two move against each other and only matter as one number.
+      </p>
+    </ReportChrome>
+  );
+}
