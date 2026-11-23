@@ -63,6 +63,7 @@ export const navMenu: NavItem[] = [
   },
   { label: 'Pricing', href: '/pricing' },
   { label: 'For Finance', href: '/power-bi-for-finance' },
+  { label: 'Cases', href: '/cases' },
   {
     label: 'Docs',
     panel: {
@@ -519,6 +520,7 @@ export const footer = {
         { label: 'Services', href: '/services' },
         { label: 'Pricing', href: '/pricing' },
         { label: 'For Finance', href: '/power-bi-for-finance' },
+        { label: 'Cases', href: '/cases' },
         { label: 'Docs', href: '/docs' },
         { label: 'Blog', href: '/blog' },
         { label: 'About', href: '/about' },
@@ -709,16 +711,14 @@ export const services: ServicePage[] = [
 // Analytics tie-in per platform: the analytics we deliver first, which is where
 // each platform grows from. `cases` are slugs in lib/cases/studies.ts; titles
 // are resolved at render time so labels never drift.
-// The case studies are hidden for now, so the per-service tie-in to case pages
-// renders nothing (empty `cases`). Restore the slugs when real cases are live.
 export const serviceAnalytics: Record<string, { note: string; cases: string[] }> = {
   'power-bi': {
     note: 'Power BI is only as good as the model under it. We start by modeling the numbers your leaders watch, revenue, margin, and the operating KPIs, so every report is built on a foundation the business already trusts.',
-    cases: [],
+    cases: ['executive-revenue-dashboard', 'finance-close-analytics', 'cash-working-capital'],
   },
   'microsoft-fabric': {
     note: 'Reliable reporting needs reliable data underneath. We build the Fabric lakehouse and pipelines that feed the governed model, so refreshes are fast and the numbers come from the source.',
-    cases: [],
+    cases: ['fabric-lakehouse-platform', 'embedded-analytics-portal'],
   },
 };
 

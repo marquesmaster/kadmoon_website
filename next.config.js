@@ -373,10 +373,8 @@ const nextConfig = {
       // sold Power Apps and Power Automate as a capability is retired too.
       { source: '/blog/power-apps-power-automate-on-your-data', destination: '/blog', permanent: true },
 
-      // The case studies are hidden until real, permissioned case studies are
-      // ready. Send /cases and any case page home.
-      { source: '/cases/:slug*', destination: '/', permanent: true },
-      { source: '/cases', destination: '/', permanent: true },
+      // /cases is live. The retired foreign-trade case slugs above redirect to
+      // the cases index; the current case slugs render their own pages.
 
       // Service slugs. The live services are Power BI and Microsoft Fabric.
       // Power Platform and Copilot are folded into Power BI; data engineering

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getAllPostMeta } from '@/lib/blog';
+import { caseStudies } from '@/lib/content';
 import { docs, docText } from '@/lib/docs';
 
 // Static, build-time search index covering docs, blog, cases, and key pages.
@@ -31,6 +32,13 @@ export function GET() {
       href: `/blog/${p.slug}`,
       desc: p.description,
       text: `${p.title} ${p.description} ${p.category}`,
+    })),
+    ...caseStudies.map((c) => ({
+      type: 'Cases',
+      title: c.title,
+      href: `/cases/${c.slug}`,
+      desc: c.summary,
+      text: `${c.title} ${c.summary} ${c.sector} ${c.dataSources.join(' ')} ${c.stack.join(' ')}`,
     })),
     ...pages,
   ];
