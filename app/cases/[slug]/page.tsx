@@ -137,9 +137,9 @@ export default function CasePage({ params }: { params: { slug: string } }) {
             </div>
           ) : null}
 
-          <p className="mt-10 text-[13px] leading-relaxed text-ink-3">
-            This case describes the work and the numbers we build with. It is not based on a specific
-            client; work tied to a named client is shared with written permission.
+          <p className="mt-10 text-[11px] leading-relaxed text-ink-3">
+            Anonymized case, not based on a specific client. Named-client work is shared with written
+            permission.
           </p>
         </section>
 
