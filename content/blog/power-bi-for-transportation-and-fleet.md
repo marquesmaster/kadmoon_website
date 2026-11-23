@@ -1,7 +1,7 @@
 ---
 title: "Power BI for transportation and fleet: utilization, cost per mile, and on-time"
 description: "How transportation operators and fleet managers use Power BI to bring telematics, maintenance, and cost data into one governed view, so utilization, cost per mile, and service performance are visible and current."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for fleet management"
 tags: ["Power BI", "transportation", "fleet", "telematics", "cost per mile"]
 takeaways:

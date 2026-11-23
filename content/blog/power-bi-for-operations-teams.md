@@ -1,7 +1,7 @@
 ---
 title: "Power BI for operations teams: throughput, cost, and the daily view"
 description: "How operations leaders use Power BI to bring the systems that run the operation into one current view, so throughput, cost, and bottlenecks are visible day to day and managed against rather than reviewed after the fact."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for operations"
 tags: ["Power BI", "operations", "throughput", "efficiency", "daily reporting"]
 takeaways:

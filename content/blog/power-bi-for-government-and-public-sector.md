@@ -1,7 +1,7 @@
 ---
 title: "Power BI for government and public sector: budgets, programs, and accountability"
 description: "How government agencies and public sector organizations use Power BI for budget, program, and operational reporting in their own tenant, with the governance and access control that public accountability requires."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for government"
 tags: ["Power BI", "government", "public sector", "accountability", "governance"]
 takeaways:

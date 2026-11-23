@@ -1,7 +1,7 @@
 ---
 title: "Power BI for telecom and communications providers: subscribers, churn, and the network"
 description: "How communications providers use Power BI to bring subscriber, usage, billing, and network data into one governed view, so churn, ARPU, and service performance are visible and acted on."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for telecom"
 tags: ["Power BI", "telecom", "communications", "churn", "ARPU"]
 takeaways:

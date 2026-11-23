@@ -1,7 +1,7 @@
 ---
 title: "Power BI for energy and utilities: operations, consumption, and asset performance"
 description: "How energy and utility operators use Power BI to bring operational, consumption, and asset data into one governed view, so performance, outages, and costs are visible to the people who run the network."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for utilities"
 tags: ["Power BI", "energy", "utilities", "asset performance", "operations"]
 takeaways:

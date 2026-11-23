@@ -1,7 +1,7 @@
 ---
 title: "Power BI for manufacturing: from the plant floor to the P&L"
 description: "How manufacturers use Power BI to connect production, quality, inventory, and cost data into one governed view, so plant performance, OEE, and margin are visible to the people who run operations."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for manufacturing"
 tags: ["Power BI", "manufacturing", "OEE", "operations", "supply chain"]
 takeaways:

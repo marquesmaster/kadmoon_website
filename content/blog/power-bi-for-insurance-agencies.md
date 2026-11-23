@@ -1,7 +1,7 @@
 ---
 title: "Power BI for insurance agencies: book of business, retention, and carrier mix"
 description: "How independent insurance agencies use Power BI to bring policy, commission, and client data into one governed view, so the book of business, retention, and carrier mix are visible where the agency's value is actually built."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for insurance agency"
 tags: ["Power BI", "insurance agency", "book of business", "retention", "commission"]
 takeaways:

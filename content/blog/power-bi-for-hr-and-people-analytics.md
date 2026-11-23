@@ -1,7 +1,7 @@
 ---
 title: "Power BI for HR and people analytics: headcount, turnover, and hiring"
 description: "How HR leaders use Power BI to bring HR, payroll, and recruiting data into one governed view, so headcount, turnover, and hiring are visible and sensitive people data stays controlled."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for hr"
 tags: ["Power BI", "HR", "people analytics", "turnover", "headcount"]
 takeaways:

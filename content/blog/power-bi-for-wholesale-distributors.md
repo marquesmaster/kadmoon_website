@@ -1,7 +1,7 @@
 ---
 title: "Power BI for wholesale distributors: margin, inventory turns, and customer profitability"
 description: "How wholesale distributors use Power BI to bring sales, inventory, and purchasing data into one governed view, so true margin, inventory turns, and customer profitability are visible in a thin-margin, high-volume business."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for wholesale distribution"
 tags: ["Power BI", "wholesale", "distribution", "margin", "inventory"]
 takeaways:

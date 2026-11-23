@@ -1,7 +1,7 @@
 ---
 title: "Power BI for accounting and bookkeeping firms: capacity, realization, and busy season"
 description: "How accounting firms use Power BI to bring time, billing, and workflow data into one governed view, so capacity, realization, and client profitability are visible, especially when busy season stretches the firm."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for accounting firms"
 tags: ["Power BI", "accounting", "bookkeeping", "realization", "capacity"]
 takeaways:

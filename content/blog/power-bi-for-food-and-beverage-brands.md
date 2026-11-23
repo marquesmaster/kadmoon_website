@@ -1,7 +1,7 @@
 ---
 title: "Power BI for food and beverage brands: velocity, distribution, and the retail shelf"
 description: "How food and beverage and consumer brands use Power BI to bring sales, distribution, and channel data into one governed view, so velocity, distribution gaps, and channel performance are visible where the brand is actually sold."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for cpg"
 tags: ["Power BI", "food and beverage", "CPG", "distribution", "velocity"]
 takeaways:

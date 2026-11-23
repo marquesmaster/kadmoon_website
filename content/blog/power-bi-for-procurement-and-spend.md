@@ -1,7 +1,7 @@
 ---
 title: "Power BI for procurement and spend analysis: seeing where the money goes"
 description: "How procurement teams use Power BI to bring purchasing, supplier, and financial data into one governed view, so total spend, supplier concentration, and savings opportunities become visible where they were hidden."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for procurement"
 tags: ["Power BI", "procurement", "spend analysis", "suppliers", "cost savings"]
 takeaways:

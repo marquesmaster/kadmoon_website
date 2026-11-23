@@ -1,7 +1,7 @@
 ---
 title: "Power BI for contact centers: service levels, occupancy, and the customer behind the call"
 description: "How contact centers use Power BI to bring volume, staffing, and quality data into one governed view, so service levels, occupancy, and the reasons behind contacts are visible together rather than in separate system reports."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for contact centers"
 tags: ["Power BI", "contact center", "call center", "service levels", "operations"]
 takeaways:

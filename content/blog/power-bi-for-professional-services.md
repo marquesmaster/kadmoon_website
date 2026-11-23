@@ -1,7 +1,7 @@
 ---
 title: "Power BI for professional services: utilization, margin, and the billable hour"
 description: "How agencies, consultancies, and firms that sell time use Power BI to see utilization, project margin, and pipeline in one governed view, so the numbers that run the business are current and trusted."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for professional services"
 tags: ["Power BI", "professional services", "utilization", "project margin", "agencies"]
 takeaways:

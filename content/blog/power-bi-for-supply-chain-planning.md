@@ -1,7 +1,7 @@
 ---
 title: "Power BI for supply chain planning: demand, inventory, and supplier performance"
 description: "How supply chain teams use Power BI to bring demand, inventory, and supplier data into one governed view, so planning rests on a clear current picture instead of spreadsheets that lag the reality they describe."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for supply chain"
 tags: ["Power BI", "supply chain", "inventory", "demand planning", "suppliers"]
 takeaways:

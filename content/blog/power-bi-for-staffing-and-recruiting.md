@@ -1,7 +1,7 @@
 ---
 title: "Power BI for staffing and recruiting firms: pipeline, time-to-fill, and margin"
 description: "How staffing and recruiting firms use Power BI to bring applicant tracking, placement, and financial data into one governed view, so pipeline, time-to-fill, and placement margin are visible and current."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for staffing"
 tags: ["Power BI", "staffing", "recruiting", "time-to-fill", "margin"]
 takeaways:

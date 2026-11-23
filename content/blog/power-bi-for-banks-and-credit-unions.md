@@ -1,7 +1,7 @@
 ---
 title: "Power BI for banks and credit unions: deposits, lending, and branch performance"
 description: "How community banks and credit unions use Power BI to bring core banking, lending, and member data into one governed view, so deposits, loan performance, and branch results are visible under the controls the sector requires."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for banks"
 tags: ["Power BI", "banking", "credit unions", "lending", "branch performance"]
 takeaways:

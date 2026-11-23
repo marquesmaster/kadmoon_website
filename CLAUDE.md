@@ -50,15 +50,16 @@ deployed via Docker on a Hostinger VPS.
   name and keep the `monthly-subscription` doc anchor/slug stable). The **Power
   BI assessment** is the paid on-ramp (a short first project), not a third model.
 - **Published, fixed prices** (this reverses the earlier no-public-prices rule).
-  The target tiers from the owner's plan: **Assessment $4,000 / 2 weeks**,
-  **Dashboard Build from $15,000 / 4–6 weeks**, **Fabric Data Platform from
-  $40,000 / 8–12 weeks**, **Managed Power BI from $3,000/month**. Bracketed
-  limits in the plan (sources, report pages, hours) are owner decisions; do not
-  invent them.
-- Primary CTA everywhere is **"Book a 30-minute call"**. There is **no booking
-  link wired yet**, so the button points to `/contact` until the owner provides a
-  Microsoft Bookings or Calendly URL; then point it there. **No "Client sign-in".**
-  Existing clients who need access or a new report use `/contact`.
+  The live published tiers (the owner's mid-market choice): **Assessment $5,000 /
+  2 weeks**, **Dashboard Build from $20,000 / 4–6 weeks**, **Fabric Data Platform
+  from $45,000 / 8–12 weeks**, **Managed Power BI from $3,500/month**. These are
+  the values in `pricing`/`pricingDetail`; keep them in sync. Bracketed limits in
+  the plan (sources, report pages, hours) are owner decisions; do not invent them.
+- Primary CTA everywhere is **"Book a 30-minute call"**. The booking link is
+  wired: the CTA points to `siteConfig.bookingUrl` (the owner's Microsoft Bookings
+  URL). Use `siteConfig.bookingUrl` for the primary CTA, not `/contact`. **No
+  "Client sign-in".** Existing clients who need access or a new report use
+  `/contact` (still the secondary contact route).
 
 ## Hard content rules
 

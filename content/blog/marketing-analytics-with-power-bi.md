@@ -1,7 +1,7 @@
 ---
 title: "Marketing analytics with Power BI: channels, campaigns, and real ROI"
 description: "How marketing teams use Power BI to bring channel, campaign, and revenue data into one governed view, so marketing performance is measured against actual results instead of platform metrics that never add up."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for marketing"
 tags: ["Power BI", "marketing", "campaign analytics", "ROI", "attribution"]
 takeaways:

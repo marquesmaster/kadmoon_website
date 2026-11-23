@@ -1,7 +1,7 @@
 ---
 title: "Power BI for waste and environmental services: routes, tonnage, and cost to serve"
 description: "How waste and environmental services companies use Power BI to bring route, volume, and cost data into one governed view, so cost to serve, route efficiency, and contract profitability are visible across the operation."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for waste management"
 tags: ["Power BI", "waste management", "environmental services", "routes", "cost to serve"]
 takeaways:

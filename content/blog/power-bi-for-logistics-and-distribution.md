@@ -1,7 +1,7 @@
 ---
 title: "Power BI for logistics and distribution: on-time, in-full, and the cost to serve"
 description: "How distributors and logistics operations use Power BI to connect orders, warehouse, transport, and cost data into one governed view, so service levels and cost to serve are visible where decisions get made."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for logistics"
 tags: ["Power BI", "logistics", "distribution", "supply chain", "OTIF"]
 takeaways:

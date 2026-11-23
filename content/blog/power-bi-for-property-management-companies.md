@@ -1,7 +1,7 @@
 ---
 title: "Power BI for property management companies: occupancy, collections, and the portfolio"
 description: "How property management companies use Power BI to bring leasing, accounting, and maintenance data into one governed view, so occupancy, collections, and property performance are visible across the whole portfolio rather than property by property."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for property management"
 tags: ["Power BI", "property management", "real estate", "occupancy", "collections"]
 takeaways:

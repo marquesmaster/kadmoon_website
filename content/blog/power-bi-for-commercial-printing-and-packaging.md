@@ -1,7 +1,7 @@
 ---
 title: "Power BI for commercial printing and packaging: job costing, press time, and waste"
 description: "How commercial printing and packaging companies use Power BI to bring job, production, and cost data into one governed view, so job profitability, press utilization, and waste are visible where margin is actually made."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for commercial printing"
 tags: ["Power BI", "printing", "packaging", "job costing", "manufacturing"]
 takeaways:

@@ -1,7 +1,7 @@
 ---
 title: "Power BI for finance teams: from the close to the forecast"
 description: "How finance teams use Power BI to replace spreadsheet-driven reporting: a governed model over the ERP, a faster close, trustworthy management reporting, and forecasting that everyone works from."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for finance"
 tags: ["Power BI", "finance", "FP&A", "reporting", "forecasting"]
 takeaways:

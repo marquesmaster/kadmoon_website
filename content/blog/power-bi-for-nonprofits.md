@@ -1,7 +1,7 @@
 ---
 title: "Power BI for nonprofits: outcomes, funding, and the report the board actually reads"
 description: "How nonprofits use Power BI to bring program, funding, and finance data into one governed view, so outcomes are visible, grant reporting is less painful, and the board sees a report it trusts."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for nonprofits"
 tags: ["Power BI", "nonprofits", "grant reporting", "outcomes", "impact"]
 takeaways:

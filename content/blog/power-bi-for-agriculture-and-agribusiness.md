@@ -1,7 +1,7 @@
 ---
 title: "Power BI for agriculture and agribusiness: yield, inputs, and cost per acre"
 description: "How farms and agribusinesses use Power BI to bring production, input, and financial data into one governed view, so yield, cost per acre, and margin by field or crop are visible and decisions rest on real numbers."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for agriculture"
 tags: ["Power BI", "agriculture", "agribusiness", "yield", "cost per acre"]
 takeaways:

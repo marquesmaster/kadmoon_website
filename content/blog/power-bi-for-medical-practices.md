@@ -1,7 +1,7 @@
 ---
 title: "Power BI for medical practices: visits, payer mix, and provider productivity"
 description: "How independent medical practices use Power BI to turn EHR and billing data into clear reporting, so visit volume, payer mix, and provider productivity are visible where the practice is actually managed, with patient data kept controlled."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for medical practice"
 tags: ["Power BI", "medical practice", "healthcare", "payer mix", "productivity"]
 takeaways:
