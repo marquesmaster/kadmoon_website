@@ -435,6 +435,102 @@ export const caseStudies: CaseStudy[] = [
       'Prime cost became one live number each store manages during the week, so food and labor are kept in balance against target while it still makes a difference.',
     dashboards: ['prime-cost'],
   },
+  {
+    slug: 'dtc-cac-ltv',
+    kind: 'analytics',
+    sector: 'Direct-to-consumer',
+    title: 'DTC acquisition: CAC, ROAS, retention and LTV',
+    summary:
+      'A direct-to-consumer brand moved off platform-reported ROAS onto a governed Power BI model that ties every order to its channel and customer, so acquisition is read on first-order contribution, repeat rate, and lifetime value.',
+    challenge:
+      'The growth team optimized to the ROAS each ad platform reported, while finance saw contribution only in the monthly P&L. Returns, shipping, and payment fees were never tied back to the channel or the customer, and repeat behavior was not tracked by acquisition cohort.',
+    build:
+      'We modeled order lines with product cost, shipping, fees, discounts, and returns into a governed model, joined daily ad spend to the customers each platform brought in, and defined CAC, contribution ROAS, repeat rate, and cohort LTV as measures once.',
+    whatWeBuilt: [
+      'A governed model over orders, order lines, customers, products, and ad spend.',
+      'Contribution per order, customer, and channel, after returns, shipping, and fees.',
+      'Repeat rate and cumulative contribution (LTV) by acquisition cohort and channel.',
+    ],
+    outcomes: [
+      'Acquisition read on first-order contribution, not platform-reported ROAS.',
+      'Promo dependence and its weaker repeat behavior made visible.',
+      'Returns sized by product line and category, where the margin leaks.',
+    ],
+    metrics: [
+      { label: 'Net revenue YTD', value: '$11.4M', sub: '+31.0% vs PY' },
+      { label: 'Blended CAC', value: '$93', sub: 'from $61' },
+      { label: 'Contribution ROAS', value: '0.42x', sub: 'platforms report 2.5x' },
+      { label: '90-day repeat', value: '16.4%', sub: 'from 22.5%' },
+    ],
+    dataSources: ['Shopify', 'Meta / Google / TikTok ad APIs', 'ERP (product cost)', 'Affiliate platform'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
+    result:
+      'The brand stopped steering by platform-reported ROAS and started reading what each customer really costs and earns, so paid channels, promos, and returns are managed on contribution and lifetime value.',
+  },
+  {
+    slug: 'trucking-lanes-fleet',
+    kind: 'analytics',
+    sector: 'Transportation',
+    title: 'Trucking: lane and customer profitability, fleet and drivers',
+    summary:
+      'A truckload carrier moved off monthly TMS reports onto a governed Power BI model that ties revenue to cost at the load level, so margin is read by lane and customer, and maintenance and turnover by truck age and driver tenure.',
+    challenge:
+      'Revenue per mile was reviewed monthly from the TMS and costs from the P&L, with nobody tying them to lanes or customers. Deadhead, detention, and fuel-surcharge recovery lived in dispatch spreadsheets, and maintenance cost was not split by truck age.',
+    build:
+      'We modeled load-level revenue, miles, fuel, and driver pay into a governed model, allocated fleet and fixed cost per mile, and defined operating ratio, margin per loaded mile, deadhead, unbilled detention, and driver turnover as measures once.',
+    whatWeBuilt: [
+      'A governed model over loads, maintenance, and fixed costs.',
+      'Margin per loaded mile by lane and customer, with deadhead and detention.',
+      'Maintenance by truck model year and driver turnover by tenure.',
+    ],
+    outcomes: [
+      'Lanes and customers that lose money made visible, load by load.',
+      'Unbilled detention and weak fuel-surcharge recovery sized.',
+      'The cost of an aging fleet and driver churn read directly.',
+    ],
+    metrics: [
+      { label: 'Operating ratio', value: '98.9%', sub: 'from 90.8%' },
+      { label: 'Deadhead', value: '18.1%', sub: 'from 13.7%' },
+      { label: 'Unbilled detention', value: '$685K', sub: 'YTD' },
+      { label: 'Driver turnover', value: '99%', sub: 'from 80%' },
+    ],
+    dataSources: ['TMS (McLeod / TMW)', 'Telematics (Samsara / Motive)', 'Fuel card files', 'Maintenance system'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
+    result:
+      'The carrier can see which lanes, customers, and trucks make money, load by load, so rate reviews, detention billing, and fleet replacement run on margin instead of monthly averages.',
+  },
+  {
+    slug: 'multifamily-noi',
+    kind: 'analytics',
+    sector: 'Real estate',
+    title: 'Multifamily: leasing, occupancy and NOI versus budget',
+    summary:
+      'A multifamily owner-operator moved monthly property reports onto a governed Power BI model that connects every NOI variance to the leasing and operations behind it, from renewal conversion and trade-out to make-ready and bad debt.',
+    challenge:
+      'Each community sent a monthly operating statement and a rent roll in Excel. The asset team compared NOI with budget once a month, without the leasing detail behind it: renewal conversion, trade-out, turn times, and delinquency sat in different reports and were never tied to the NOI variance.',
+    build:
+      'We modeled a monthly unit-level snapshot, leases, expirations, and the operating statement into a governed model, and built an NOI bridge mapped to drivers so the variance always reconciles to the leasing and expense lines behind it.',
+    whatWeBuilt: [
+      'A governed model over unit-months, leases, turns, and the GL.',
+      'Occupancy, renewal conversion, trade-out, make-ready, and bad debt.',
+      'An NOI bridge by driver that ties out to the budget variance.',
+    ],
+    outcomes: [
+      'Every NOI variance traced to the leasing or expense line behind it.',
+      'Falling occupancy explained by renewals, trade-out, and turn times.',
+      'Bad debt and make-ready outliers isolated by community.',
+    ],
+    metrics: [
+      { label: 'NOI vs budget', value: '-$3.7M', sub: '-5.2% YTD' },
+      { label: 'Occupancy', value: '93.6%', sub: 'from 95.6%' },
+      { label: 'Renewal conversion', value: '46.3%', sub: 'from 56.3%' },
+      { label: 'Days vacant per turn', value: '42 days', sub: 'from 35' },
+    ],
+    dataSources: ['Yardi / RealPage', 'Rent roll & lease events', 'Make-ready work orders', 'GL & budget'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
+    result:
+      'The asset team reads NOI against budget with the leasing and operations behind every variance, so a miss is traced to its driver instead of discovered a month later.',
+  },
   // ----- Builds on the Microsoft stack -----------------------------------
   {
     slug: 'fabric-lakehouse-platform',
