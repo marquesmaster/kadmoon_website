@@ -30,6 +30,11 @@ export type CaseStudy = {
   dataSources: string[];
   stack: string[];
   result?: string;
+  // Keys of the product-UI dashboards to show on the case page, from the
+  // finance report set: 'kpi', 'budget-vs-actual', 'working-capital',
+  // 'month-end-close'. Rendered as representative product UI, not a client's
+  // real result.
+  dashboards?: string[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -65,6 +70,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
     result:
       'Revenue, margin, and cash became one governed view the leadership team opens daily, instead of a monthly reconstruction nobody fully trusted.',
+    dashboards: ['kpi', 'budget-vs-actual'],
   },
   {
     slug: 'finance-close-analytics',
@@ -97,6 +103,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
       'The monthly close moved from a week of spreadsheet rebuilding to a governed report finance trusts and explains from.',
+    dashboards: ['budget-vs-actual', 'month-end-close'],
   },
   {
     slug: 'cash-working-capital',
@@ -129,6 +136,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
       'Cash position and AR aging became one live view the finance team manages working capital from, instead of a spreadsheet that was already out of date when it was made.',
+    dashboards: ['working-capital', 'kpi'],
   },
   {
     slug: 'month-end-close',
@@ -161,6 +169,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model'],
     result:
       'The close moved from a long cycle nobody could explain to a tracked process that gets shorter and steadier against its business-day target.',
+    dashboards: ['month-end-close', 'kpi'],
   },
   {
     slug: 'sales-pipeline-analytics',
