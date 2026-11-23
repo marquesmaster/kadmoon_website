@@ -9,9 +9,8 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
 
       <div className="relative mx-auto max-w-shell px-6">
-        <div>
-          {/* Text */}
-          <div className="max-w-2xl">
+        {/* Text */}
+        <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-2">
               <span aria-hidden className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
               {hero.eyebrow}
@@ -57,17 +56,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* A live, navigable Power BI style report (the CFO board pack).
-              Switch pages with the tabs; hover the charts. */}
-          <div className="mt-10 md:mt-12">
-            <Dashboard spec={heroDashboard} />
-            <p className="mt-3 text-center text-[11px] text-ink-3">
-              A board pack we build, live in your browser. Switch pages, hover the charts.
-              Representative, not a specific client.
-            </p>
-          </div>
-        </div>
-
         {/* A continuous marquee of the organizations the senior team behind
             Kadmoon has worked with, through our affiliate Fynx. Logos render as
             images where a file exists; the rest scroll as wordmarks. */}
@@ -110,6 +98,17 @@ export function Hero() {
             </div>
           </div>
         )}
+
+        {/* A live, navigable Power BI style report (the CFO board pack), placed
+            after the client carousel. Hidden on mobile, where a full report is
+            cramped. */}
+        <div className="mt-10 hidden md:mt-12 md:block">
+          <Dashboard spec={heroDashboard} />
+          <p className="mt-3 text-center text-[11px] text-ink-3">
+            A board pack we build, live in your browser. Switch pages, hover the charts.
+            Representative, not a specific client.
+          </p>
+        </div>
       </div>
     </section>
   );

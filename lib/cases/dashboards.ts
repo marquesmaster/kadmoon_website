@@ -924,6 +924,7 @@ const boardpack: DashboardSpec = {
         },
         {
           type: 'matrix',
+          span: 2,
           title: 'Performance by entity',
           subtitle: 'YTD Oct 2026 · variance vs budget and prior year',
           cols: ['Entity', 'Net revenue', 'vs Bud', 'vs PY', 'GM %', 'EBITDA', 'EBITDA %', 'vs Bud'],
