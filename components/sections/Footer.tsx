@@ -1,4 +1,4 @@
-import { footer } from '@/lib/content';
+import { footer, groupCompanies } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
 
 function BarMark() {
@@ -59,7 +59,25 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
+        {groupCompanies.length > 0 && (
+          <div className="mt-14 border-t border-white/10 pt-7">
+            <span className="font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-[#71767F]">
+              Part of a group of Microsoft specialists
+            </span>
+            <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-3">
+              {groupCompanies.map((name) => (
+                <span
+                  key={name}
+                  className="font-display text-lg font-semibold tracking-[-0.01em] text-[#9AA0A9]"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[13px] text-[#71767F]">
             © 2026 {siteConfig.legalName}. All rights reserved.
           </p>
