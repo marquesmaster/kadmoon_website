@@ -33,7 +33,7 @@ export type Cell = string | number | { v: string | number; tone?: 'good' | 'bad'
 export type MatrixRow = { cells: Cell[]; strong?: boolean };
 
 export type Visual =
-  | { type: 'kpis'; items: Kpi[]; itemsByPeriod?: Record<string, Kpi[]> }
+  | { type: 'kpis'; cols?: number; items: Kpi[]; itemsByPeriod?: Record<string, Kpi[]> }
   | {
       type: 'multiLine';
       span?: 1 | 2;
@@ -62,9 +62,18 @@ export type Visual =
       subtitle?: string;
       labels: string[];
       series: { name: string; color: ColorKey; points: number[]; colors?: ColorKey[] }[];
+      line?: { name: string; color: ColorKey; points: number[] }; // dashed overlay (e.g. budget)
+      target?: { v: number; label: string };
       yFormat?: YFormat;
       showValues?: boolean;
       note?: string;
+    }
+  | {
+      type: 'notes';
+      span?: 1 | 2;
+      title: string;
+      subtitle?: string;
+      items: string[];
     }
   | {
       type: 'clusteredBarsH';

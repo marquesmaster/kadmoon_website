@@ -1,74 +1,7 @@
 import { hero, clientLogos } from '@/lib/content';
 import { Button } from '../Button';
-
-// Stylized Power BI dashboard used as product UI. Representative figures, not
-// attributed to any client.
-function DashboardMock() {
-  const breakdown = [
-    { k: 'Revenue', v: '$2,480,000' },
-    { k: 'Cost of goods sold', v: '$1,512,000' },
-    { k: 'Operating expenses', v: '$610,000' },
-  ];
-  return (
-    <div className="relative">
-      {/* Color-block accents */}
-      <div aria-hidden className="absolute -right-4 -top-5 h-40 w-40 rounded-3xl bg-accent md:h-52 md:w-52" />
-      <div aria-hidden className="absolute -bottom-6 -left-5 hidden h-28 w-28 rounded-3xl bg-ice md:block" />
-
-      <div className="relative overflow-hidden rounded-3xl border border-line bg-white shadow-card-hover">
-        {/* Window chrome */}
-        <div className="flex items-center gap-2 border-b border-line px-5 py-3.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
-          <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
-          <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden />
-          <span className="ml-2 font-mono text-[11px] tracking-[0.02em] text-ink-3">
-            kadmoon · Power BI
-          </span>
-        </div>
-
-        <div className="p-5 md:p-6">
-          {/* KPI tiles */}
-          <div className="grid grid-cols-3 gap-3">
-            {[
-              { k: 'Revenue', v: '$2.48M' },
-              { k: 'Gross margin', v: '39.0%' },
-              { k: 'EBITDA', v: '$358k' },
-            ].map((t) => (
-              <div key={t.k} className="rounded-xl bg-mist px-3 py-3">
-                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">{t.k}</div>
-                <div className="mt-1 font-display text-xl font-bold tracking-tight text-ink">{t.v}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Revenue & margin summary */}
-          <div className="mt-5 rounded-xl border border-line p-4">
-            <div className="flex items-center justify-between">
-              <span className="font-sans text-[12px] font-semibold text-ink">
-                Revenue &amp; margin · this month
-              </span>
-              <span className="rounded-full bg-success/12 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] text-success">
-                Modeled
-              </span>
-            </div>
-            <ul className="mt-3 space-y-2">
-              {breakdown.map((row) => (
-                <li key={row.k} className="flex items-center justify-between text-[13px]">
-                  <span className="text-ink-2">{row.k}</span>
-                  <span className="font-mono tabular-nums text-ink">{row.v}</span>
-                </li>
-              ))}
-              <li className="mt-1 flex items-center justify-between border-t border-line pt-2.5 text-[13px]">
-                <span className="font-semibold text-ink">EBITDA</span>
-                <span className="font-mono tabular-nums font-semibold text-accent">$358,000</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { Dashboard } from '../reports/dashboard/Dashboard';
+import { heroDashboard } from '@/lib/cases/dashboards';
 
 export function Hero() {
   return (
@@ -76,9 +9,9 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-grid grid-mask opacity-70" aria-hidden />
 
       <div className="relative mx-auto max-w-shell px-6">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-          {/* Left: text */}
-          <div>
+        <div>
+          {/* Text */}
+          <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-2">
               <span aria-hidden className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
               {hero.eyebrow}
@@ -124,9 +57,14 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right: Power BI dashboard UI */}
-          <div className="lg:pl-6">
-            <DashboardMock />
+          {/* A live, navigable Power BI style report (the CFO board pack).
+              Switch pages with the tabs; hover the charts. */}
+          <div className="mt-10 md:mt-12">
+            <Dashboard spec={heroDashboard} />
+            <p className="mt-3 text-center text-[11px] text-ink-3">
+              A board pack we build, live in your browser. Switch pages, hover the charts.
+              Representative, not a specific client.
+            </p>
           </div>
         </div>
 
