@@ -172,100 +172,268 @@ export const caseStudies: CaseStudy[] = [
     dashboards: ['month-end-close', 'kpi'],
   },
   {
-    slug: 'sales-pipeline-analytics',
+    slug: 'margin-analytics',
     kind: 'analytics',
-    sector: 'Sales',
-    title: 'Pipeline, win rate, and net revenue retention',
+    sector: 'Commercial',
+    title: 'Gross margin, split by price, volume, mix, and cost',
     summary:
-      'A go-to-market team unified CRM and billing into one Power BI model for pipeline, win rate, and net revenue retention.',
+      'A commercial team put its margin reporting on a Power BI model that explains the change in gross margin as price, volume, mix, and cost, by product, customer, and channel.',
     challenge:
-      'Pipeline reports came out of the CRM, revenue out of billing, and the two never matched, so forecasting was an argument and renewals slipped through unseen.',
+      'Margin moved every month and nobody could say why, because sales, cost, and discount lived in different extracts and the bridge between last month and this one was rebuilt by hand, if at all.',
     build:
-      'We joined CRM opportunities to billed revenue in a governed model, defined each sales measure once, and built a revenue dashboard the team runs its weekly review on.',
+      'We modeled sales lines, cost, and discounts into a governed model, defined the price, volume, mix, and cost effects as measures once, and built a margin bridge that drills from the headline movement to the products and customers behind it.',
     whatWeBuilt: [
-      'A model joining CRM pipeline to billed and recurring revenue.',
-      'Win rate, sales cycle, and net revenue retention measures.',
-      'A weekly review dashboard with drill-through to the account.',
+      'A governed model over sales lines, cost, and discounts.',
+      'A price-volume-mix-cost bridge defined once as measures.',
+      'Gross margin by product, customer, channel, and distribution center.',
     ],
     outcomes: [
-      'Forecasting on one trusted model instead of two reports.',
-      'Renewals and churn visible before they happen.',
-      'The weekly review runs on live data, not exports.',
+      'The monthly margin change explained, not just reported.',
+      'Price and discount leakage visible by customer and channel.',
+      'Pricing and mix decisions made on the real drivers.',
     ],
     metrics: [
-      { label: 'Net retention', value: '112%', sub: 'trailing 12 mo' },
-      { label: 'Win rate', value: '24%', sub: 'by stage' },
-      { label: 'Forecast accuracy', value: '96%', sub: 'vs actuals' },
-      { label: 'Systems joined', value: 'CRM + billing', sub: 'one model' },
+      { label: 'Gross margin', value: '41.2%', sub: 'blended' },
+      { label: 'Margin bridge', value: 'PVM + cost', sub: 'defined once' },
+      { label: 'Drill path', value: 'To product', sub: 'and customer' },
+      { label: 'Rebuild by hand', value: 'Removed', sub: 'per cycle' },
     ],
-    dataSources: ['Salesforce', 'Billing system', 'Dynamics 365 Sales', 'Excel targets'],
+    dataSources: ['SQL Server', 'Dynamics 365', 'Excel price lists', 'Billing system'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
+    result:
+      'Margin stopped being a number that moved for unknown reasons and became a bridge the commercial team reads to see exactly where price, volume, mix, and cost took it.',
+    dashboards: ['margin-bridge', 'kpi'],
+  },
+  {
+    slug: 'inventory-supply',
+    kind: 'analytics',
+    sector: 'Distribution',
+    title: 'Stock cover, excess, and dead stock in one view',
+    summary:
+      'A distributor moved its inventory reporting onto a governed Power BI model that shows days of stock cover, excess and dead stock, and supplier performance, so operations and finance read the same numbers.',
+    challenge:
+      'The stock report was a monthly spreadsheet that was stale the day it was made, so cash sat in slow and dead stock nobody could see while fast lines ran short, and finance and operations argued from different copies.',
+    build:
+      'We modeled on-hand, demand, and purchasing into a governed model, defined stock cover and the excess and dead-stock rules as measures once, and built an inventory view that reconciles to both the stock system and the ledger.',
+    whatWeBuilt: [
+      'A governed model over on-hand, demand, and purchasing.',
+      'Days of stock cover by item, category, and location.',
+      'Excess and dead-stock flags, with supplier performance alongside.',
+    ],
+    outcomes: [
+      'Cash in slow and dead stock surfaced as a worklist.',
+      'Fast lines short of cover caught before they stock out.',
+      'Operations and finance on one inventory number.',
+    ],
+    metrics: [
+      { label: 'Excess & dead stock', value: '$1.8M', sub: '12% of on-hand' },
+      { label: 'Avg stock cover', value: '46 days', sub: 'band 30–60' },
+      { label: 'Aging', value: 'Live', sub: 'from monthly export' },
+      { label: 'Reconciles to', value: 'Stock + GL', sub: 'one model' },
+    ],
+    dataSources: ['NetSuite', 'Dynamics 365 Business Central', 'SQL Server', 'Excel'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
+    result:
+      'Inventory became one live view that frees working capital deliberately, instead of a stale spreadsheet that hid the cash tied up in stock.',
+    dashboards: ['inventory-cover'],
+  },
+  {
+    slug: 'plant-performance',
+    kind: 'analytics',
+    sector: 'Manufacturing',
+    title: 'OEE, downtime, and scrap across the plant',
+    summary:
+      'A manufacturer put plant performance on a Power BI model that breaks OEE into availability, performance, and quality, with a downtime Pareto and scrap, consistent across lines and shifts.',
+    challenge:
+      'Each line and shift counted output and downtime its own way, so OEE could not be compared across the plant and the biggest losses stayed hidden in machine logs nobody consolidated.',
+    build:
+      'We modeled production, downtime, and scrap into a governed model, defined availability, performance, quality, and OEE as measures once, and built a losses view where downtime is ranked by reason and read the same way everywhere.',
+    whatWeBuilt: [
+      'A governed model over production, downtime, and scrap.',
+      'OEE split into availability, performance, and quality.',
+      'A downtime Pareto by reason, plus scrap and cost variance.',
+    ],
+    outcomes: [
+      'OEE compared fairly across lines and shifts.',
+      'The biggest downtime causes ranked, not buried in logs.',
+      'Scrap and cost variance read next to the output they cost.',
+    ],
+    metrics: [
+      { label: 'OEE', value: '85.3%', sub: 'at target' },
+      { label: 'Availability', value: '91.2%', sub: '' },
+      { label: 'Top loss', value: 'Changeover', sub: '34% of downtime' },
+      { label: 'Measured once', value: 'All lines', sub: 'and shifts' },
+    ],
+    dataSources: ['MES / machine data', 'SQL Server', 'Dynamics 365', 'Excel'],
     stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
     result:
-      'Pipeline and revenue finally reconciled in one model, so go-to-market decisions and the forecast ran on numbers the team believed.',
+      'OEE and downtime became one consistent view the plant reads to compare lines fairly and go after the losses that actually cost the most.',
+    dashboards: ['oee'],
   },
   {
-    slug: 'retail-margin-analytics',
+    slug: 'job-cost-wip',
     kind: 'analytics',
-    sector: 'Retail',
-    title: 'Sales and margin across channels and stores',
+    sector: 'Construction',
+    title: 'Job cost, WIP, and margin at completion',
     summary:
-      'A retailer brought point of sale, e-commerce, and inventory into one Power BI model for sales, margin, and sell-through by channel and store.',
+      'A contractor moved job costing onto a Power BI model that projects margin at completion against the bid, tracks WIP, and surfaces change orders, by job and in total.',
     challenge:
-      'Store, marketplace, and web sales were reported in three different tools, so nobody could see true margin by product once returns and fees were counted.',
+      'Job cost lived in accounting and progress lived in the field, so the question that matters, will this job finish at the margin we bid, could not be answered until it was too late to do anything about it.',
     build:
-      'We consolidated the sales channels and inventory into a governed model, modeled true margin after fees and returns, and built a merchandising dashboard by channel, category, and store.',
+      'We modeled committed cost, budget, and change orders into a governed model, defined percent complete and projected margin at completion as measures once, and built a WIP view that flags jobs eroding their margin while there is still time.',
     whatWeBuilt: [
-      'A model unifying POS, e-commerce, and inventory.',
-      'True margin after fees, discounts, and returns.',
-      'Sell-through and stock cover by channel, category, and store.',
+      'A governed model over job cost, budget, and change orders.',
+      'Projected margin at completion against the bid, by job.',
+      'WIP, percent complete, and change-order aging in one view.',
     ],
     outcomes: [
-      'One margin number across every channel.',
-      'Buying and markdown decisions on real sell-through.',
-      'Stock cover visible before a line runs out or piles up.',
+      'Margin erosion caught mid-job, not at closeout.',
+      'Change orders tracked against the cost they cover.',
+      'WIP and margin read together across every active job.',
     ],
     metrics: [
-      { label: 'Channels unified', value: '3', sub: 'into one model' },
-      { label: 'Gross margin', value: '44%', sub: 'after fees' },
-      { label: 'Sell-through', value: 'Weekly', sub: 'by SKU' },
-      { label: 'Report latency', value: 'Next day', sub: 'from weekly' },
+      { label: 'Margin at completion', value: 'Projected', sub: 'vs bid, by job' },
+      { label: 'WIP', value: '$4.2M', sub: 'tracked' },
+      { label: 'Change orders', value: 'By age', sub: 'and job' },
+      { label: 'Early warning', value: 'Mid-job', sub: 'not closeout' },
     ],
-    dataSources: ['POS system', 'E-commerce platform', 'Inventory system', 'Payment fees'],
-    stack: ['Power BI', 'Microsoft Fabric', 'Dataflows', 'Semantic model'],
+    dataSources: ['Sage Intacct', 'SQL Server', 'Excel budgets', 'Field reports'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'Merchandising decisions moved onto one governed view of sales and true margin, across every channel and store.',
+      'The contractor can finally see each job finishing at a margin, so a job drifting below its bid is caught while something can still be done about it.',
+    dashboards: ['job-cost'],
   },
   {
-    slug: 'power-bi-migration',
+    slug: 'utilization-realization',
     kind: 'analytics',
-    sector: 'BI modernization',
-    title: 'Legacy BI and spreadsheet consolidation into Power BI',
+    sector: 'Professional services',
+    title: 'Billable utilization, realization, and WIP',
     summary:
-      'An organization consolidated a sprawl of legacy BI reports and spreadsheets into a single governed Power BI estate, with the old numbers reconciled.',
+      'A services firm put utilization and realization on a Power BI model that ties time, invoices, and payments together, by consultant, team, and engagement.',
     challenge:
-      'Reporting was split across an aging BI tool, dozens of spreadsheets, and conflicting definitions, so the same metric meant three things and trust in the numbers was gone.',
+      'Utilization came out of the time system, realization out of billing, and WIP out of a spreadsheet, so the firm could not see which engagements and people were actually profitable until the quarter closed.',
     build:
-      'We inventoried the existing reports, rebuilt the important ones on a governed semantic model, reconciled every number to the legacy source, and retired the duplicates.',
+      'We modeled time, invoices, and payments into a governed model, defined billable utilization, realization, and WIP as measures once, and built a view that reads profitability by consultant, team, and engagement.',
     whatWeBuilt: [
-      'A governed semantic model replacing scattered report logic.',
-      'Rebuilt core reports reconciled to the legacy numbers.',
-      'Workspace structure, row-level security, and lineage.',
+      'A governed model over time, invoices, and payments.',
+      'Billable utilization against target, by person and team.',
+      'Realization and unbilled WIP by engagement.',
     ],
     outcomes: [
-      'One governed Power BI estate instead of tool sprawl.',
-      'Each measure defined once and reconciled to the old world.',
-      'Licensing and maintenance on a single platform.',
+      'Utilization and realization read together, not apart.',
+      'Low-realization engagements caught during the quarter.',
+      'WIP and billing managed on current numbers.',
     ],
     metrics: [
-      { label: 'Reports retired', value: '60%', sub: 'as duplicates' },
-      { label: 'Definitions', value: 'One per KPI', sub: 'governed' },
-      { label: 'Reconciliation', value: 'Tied out', sub: 'to legacy' },
-      { label: 'Tools consolidated', value: 'Into Power BI', sub: 'one estate' },
+      { label: 'Realization', value: '92%', sub: 'billed / standard' },
+      { label: 'Utilization', value: '79%', sub: 'vs 75% target' },
+      { label: 'WIP', value: '$0.9M', sub: 'unbilled' },
+      { label: 'By', value: 'Person + team', sub: 'and engagement' },
     ],
-    dataSources: ['Legacy BI tool', 'SQL Server', 'Excel workbooks', 'SharePoint'],
-    stack: ['Power BI', 'Microsoft Fabric', 'Azure', 'Semantic model'],
+    dataSources: ['Time system', 'Billing system', 'SQL Server', 'Excel'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'A fractured reporting estate became one governed Power BI model, with every migrated number reconciled so the business trusted the move.',
+      'Utilization, realization, and WIP became one view the firm runs on, so the engagements and people that make or lose money are visible while the quarter is still open.',
+    dashboards: ['utilization'],
+  },
+  {
+    slug: 'saas-arr-retention',
+    kind: 'analytics',
+    sector: 'SaaS',
+    title: 'The ARR bridge, net revenue retention, and churn',
+    summary:
+      'A software company moved its ARR reporting onto a governed Power BI model that walks starting ARR to ending ARR through new, expansion, contraction, and churn, with net and gross retention.',
+    challenge:
+      'ARR was a single net number in a board slide, so growth and leakage cancelled each other out and nobody could see whether the base was expanding or quietly churning underneath.',
+    build:
+      'We modeled account-level ARR, support, and acquisition spend into a governed model, defined the ARR bridge and net and gross retention as measures once, and built a retention view that reads growth and leakage separately.',
+    whatWeBuilt: [
+      'A governed model over account-level ARR and activity.',
+      'An ARR bridge: new, expansion, contraction, and churn.',
+      'Net and gross retention, with account health alongside.',
+    ],
+    outcomes: [
+      'Growth and churn read separately, not as one net figure.',
+      'Quiet contraction in the base made visible.',
+      'Retention tracked the same way every board cycle.',
+    ],
+    metrics: [
+      { label: 'Net retention', value: '106%', sub: 'trailing 12 mo' },
+      { label: 'Gross retention', value: '93%', sub: '' },
+      { label: 'ARR bridge', value: 'Full walk', sub: 'start to end' },
+      { label: 'Account health', value: 'Alongside', sub: 'support + usage' },
+    ],
+    dataSources: ['Billing system', 'Product database', 'Salesforce', 'SQL Server'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
+    result:
+      'ARR stopped being one net number and became a bridge the company reads to see new, expansion, contraction, and churn separately, so the leakage underneath the growth is finally visible.',
+    dashboards: ['arr-retention'],
+  },
+  {
+    slug: 'revenue-cycle',
+    kind: 'analytics',
+    sector: 'Healthcare',
+    title: 'Claims, denials, and days in AR by payer',
+    summary:
+      'A healthcare provider moved revenue-cycle reporting onto a governed Power BI model that tracks clean claim rate, denials by reason, and days in AR by payer.',
+    challenge:
+      'Denials were worked as they came, with no view of which reasons and payers drove most of the lost revenue, so the same denial causes kept recurring and cash sat in aged AR nobody prioritized.',
+    build:
+      'We modeled claims, denials, and AR into a governed model, defined clean claim rate, denial rate, and days in AR as measures once, and built a view that ranks denials by reason and payer so the biggest causes get worked first.',
+    whatWeBuilt: [
+      'A governed model over claims, denials, and AR aging.',
+      'Clean claim rate and denial rate, defined once.',
+      'Denials ranked by reason and payer, with days in AR.',
+    ],
+    outcomes: [
+      'The few denial causes behind most lost revenue made visible.',
+      'Aged AR prioritized by payer instead of worked at random.',
+      'Recurring denial reasons fixed at the source.',
+    ],
+    metrics: [
+      { label: 'Clean claim rate', value: '94%', sub: '' },
+      { label: 'Days in AR', value: '38', sub: 'by payer' },
+      { label: 'Denial rate', value: '6.2%', sub: 'by reason' },
+      { label: 'Top cause', value: 'Eligibility', sub: '28% of denials' },
+    ],
+    dataSources: ['Practice management', 'Clearinghouse', 'SQL Server', 'Excel'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
+    result:
+      'The revenue cycle moved onto one governed view that shows where denials and aged AR actually come from, so the team works the causes that recover the most cash.',
+    dashboards: ['revenue-cycle'],
+  },
+  {
+    slug: 'restaurant-prime-cost',
+    kind: 'analytics',
+    sector: 'Hospitality',
+    title: 'Prime cost by store: food plus labor against target',
+    summary:
+      'A restaurant group moved its prime-cost reporting onto a governed Power BI model that reads food and labor together as a share of sales, by store and day part, against target.',
+    challenge:
+      'Food cost lived in one weekly report and labor in another, so prime cost, the number that decides whether a store makes money, was only assembled long after the week it could have been fixed.',
+    build:
+      'We modeled daily sales, food cost, and labor into a governed model, defined food percent, labor percent, and prime cost as measures once, and built a view that reads every store against the prime-cost target while the week is still live.',
+    whatWeBuilt: [
+      'A governed model over sales, food cost, and labor.',
+      'Prime cost as food plus labor, by store and day part.',
+      'Comps and sales trend alongside, against the target.',
+    ],
+    outcomes: [
+      'Food and labor read as one prime-cost number.',
+      'Stores over target caught during the week, not after.',
+      'Trade-offs between food and labor managed deliberately.',
+    ],
+    metrics: [
+      { label: 'Prime cost target', value: '60%', sub: 'of sales' },
+      { label: 'Read', value: 'Food + labor', sub: 'together' },
+      { label: 'By', value: 'Store + day part', sub: '' },
+      { label: 'Timing', value: 'Live week', sub: 'not after close' },
+    ],
+    dataSources: ['POS system', 'Scheduling system', 'SQL Server', 'Excel'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
+    result:
+      'Prime cost became one live number each store manages during the week, so food and labor are kept in balance against target while it still makes a difference.',
+    dashboards: ['prime-cost'],
   },
   // ----- Builds on the Microsoft stack -----------------------------------
   {

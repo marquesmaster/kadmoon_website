@@ -10,6 +10,14 @@ import {
   BudgetVsActualCard,
   WorkingCapitalCard,
   MonthEndCloseCard,
+  MarginBridgeCard,
+  InventoryCoverCard,
+  OeeCard,
+  JobCostCard,
+  UtilizationCard,
+  ArrRetentionCard,
+  RevenueCycleCard,
+  PrimeCostCard,
 } from '@/components/reports/SampleReports';
 import { caseStudies } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
@@ -18,6 +26,14 @@ const CASE_CARDS: Record<string, () => JSX.Element> = {
   'budget-vs-actual': BudgetVsActualCard,
   'working-capital': WorkingCapitalCard,
   'month-end-close': MonthEndCloseCard,
+  'margin-bridge': MarginBridgeCard,
+  'inventory-cover': InventoryCoverCard,
+  oee: OeeCard,
+  'job-cost': JobCostCard,
+  utilization: UtilizationCard,
+  'arr-retention': ArrRetentionCard,
+  'revenue-cycle': RevenueCycleCard,
+  'prime-cost': PrimeCostCard,
 };
 
 export function generateStaticParams() {
