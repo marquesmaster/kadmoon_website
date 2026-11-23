@@ -70,19 +70,23 @@ deployed via Docker on a Hostinger VPS.
 - **Never invent clients, testimonials, logos, team members, case studies, or
   numbers.** `testimonials`, `clientLogos`, and any team array in `lib/content.ts`
   render ONLY when populated with real, owner-provided, approved data. Real Fynx
-  case studies require **written client permission**; until provided, the cases
-  stay illustrative and clearly labeled. Team names, photos, LinkedIn, and
-  certifications come from the owner only.
+  case studies with a named client require **written client permission**. The
+  case studies render at `/cases` as anonymized cases ("a finance team...") that
+  state plainly they are **not based on specific clients**; until a client gives
+  written permission, no case names a real client or presents its figures as that
+  client's real result. Team names, photos, LinkedIn, and certifications come
+  from the owner only.
 - **No unverifiable numbers.** Do not state years, client counts, or project
   counts the owner has not confirmed. Real track record is attributed to the team
   via Fynx, with real figures only; otherwise leave the numbers out.
-- **Do not use "Sample", "Example", "illustrative", or "figures are
-  illustrative" labels** on the product-UI dashboards or report cards (owner
-  preference). The mock figures stay as representative product UI. The hard line
-  still holds: **never attribute a figure to a named real client or present it as
-  a specific client's real result.** The case studies state plainly that they are
-  "not based on specific clients"; keep that honest framing. Real case studies
-  with real numbers require written client permission.
+- **Do not use "Sample", "Example", "illustrative", "demo", or "figures are
+  illustrative" labels** on the product-UI dashboards, report cards, or the
+  `/cases` pages (owner preference: these read as cases, not demos). The mock
+  figures stay as representative product UI. The hard line still holds: **never
+  attribute a figure to a named real client or present it as a specific client's
+  real result.** The case studies state plainly, once and understatedly, that
+  they are "not based on specific clients"; keep that honest framing. Real case
+  studies with real numbers require written client permission.
 - Name Microsoft products factually (we build on them). **Do not say "Microsoft
   Partner" or claim a partnership tier, certification, or Solutions-Partner status
   before that designation actually exists and is verified.**
