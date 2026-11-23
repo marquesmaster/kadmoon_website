@@ -99,6 +99,70 @@ export const caseStudies: CaseStudy[] = [
       'The monthly close moved from a week of spreadsheet rebuilding to a governed report finance trusts and explains from.',
   },
   {
+    slug: 'cash-working-capital',
+    kind: 'analytics',
+    sector: 'Finance',
+    title: 'Cash, working capital, and AR aging in one view',
+    summary:
+      'A finance team brought cash position, receivables aging, and the working-capital cycle into one governed Power BI view, so collections and cash decisions run on current data instead of a stale spreadsheet.',
+    challenge:
+      'The AR aging report was a spreadsheet exported once a month, so by the time anyone worked the list it was out of date, and cash position lived in a separate workbook nobody fully trusted.',
+    build:
+      'We modeled open receivables and the ledger into a governed model, built the aging buckets and the DSO, DIO, DPO, and cash conversion cycle as measures defined once, and made every bucket drill to the invoices behind it.',
+    whatWeBuilt: [
+      'A governed model over open receivables and the general ledger.',
+      'AR aging buckets with drill-through to the overdue invoices.',
+      'DSO, DIO, DPO, and the cash conversion cycle as one definition each.',
+    ],
+    outcomes: [
+      'Collections work a current list, not last month’s export.',
+      'Cash and receivables read together, not in rival workbooks.',
+      'Working capital managed on today’s position.',
+    ],
+    metrics: [
+      { label: 'DSO', value: '44 days', sub: '' },
+      { label: 'Cash conversion', value: '63 days', sub: 'DSO + DIO − DPO' },
+      { label: 'AR past due', value: '7%', sub: 'of open' },
+      { label: 'Aging', value: 'Live', sub: 'from monthly export' },
+    ],
+    dataSources: ['NetSuite', 'SQL Server', 'Excel', 'Billing system'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
+    result:
+      'Cash position and AR aging became one live view the finance team manages working capital from, instead of a spreadsheet that was already out of date when it was made.',
+  },
+  {
+    slug: 'month-end-close',
+    kind: 'analytics',
+    sector: 'Finance',
+    title: 'The month-end close, tracked to a business-day target',
+    summary:
+      'A finance team put its month-end close on a Power BI model that tracks days to close against a business-day target, task completion, and post-close entries, so the close gets shorter and steadier.',
+    challenge:
+      'The close ran long and the team could not say why, because task status lived in a checklist, late entries lived in the ledger, and nobody had the two side by side to see where the time went.',
+    build:
+      'We modeled the close tasks and the ledger together, defined days to close against the business-day target, on-time task completion, and post-close entries as measures, and built a close dashboard the controller runs each cycle.',
+    whatWeBuilt: [
+      'A governed model joining close tasks to the general ledger.',
+      'Days to close against a business-day target, tracked every cycle.',
+      'On-time task completion and post-close entries in one view.',
+    ],
+    outcomes: [
+      'The close gets shorter and steadier, cycle over cycle.',
+      'Late tasks and post-close entries visible where they happen.',
+      'The controller sees where the close actually spends its time.',
+    ],
+    metrics: [
+      { label: 'Days to close', value: '5.5', sub: 'toward BD5 target' },
+      { label: 'On-time tasks', value: 'Tracked', sub: 'per cycle' },
+      { label: 'Post-close entries', value: 'Monitored', sub: 'by entity' },
+      { label: 'Trend', value: 'Shorter', sub: 'over the year' },
+    ],
+    dataSources: ['Dynamics 365 Finance', 'SQL Server', 'Close checklist', 'SharePoint'],
+    stack: ['Power BI', 'Microsoft Fabric', 'Semantic model'],
+    result:
+      'The close moved from a long cycle nobody could explain to a tracked process that gets shorter and steadier against its business-day target.',
+  },
+  {
     slug: 'sales-pipeline-analytics',
     kind: 'analytics',
     sector: 'Sales',
@@ -194,38 +258,6 @@ export const caseStudies: CaseStudy[] = [
     result:
       'A fractured reporting estate became one governed Power BI model, with every migrated number reconciled so the business trusted the move.',
   },
-  {
-    slug: 'copilot-self-service',
-    kind: 'analytics',
-    sector: 'Enablement',
-    title: 'Copilot and natural-language questions on governed data',
-    summary:
-      'A business enabled Copilot in Power BI and natural-language question and answer over a governed model, so people got answers without waiting on a new report.',
-    challenge:
-      'Every new question meant a ticket to the data team, so simple answers took days and the backlog only grew as more people wanted self-service.',
-    build:
-      'We prepared the semantic model for Copilot, added clear measure and field descriptions, set up natural-language Q&A, and ran enablement so answers respected the same security and definitions as every report.',
-    whatWeBuilt: [
-      'A Copilot-ready semantic model with described measures.',
-      'Natural-language question and answer over governed data.',
-      'Guardrails so answers respect row-level security.',
-    ],
-    outcomes: [
-      'Common questions answered in seconds, not days.',
-      'The report backlog shrank as self-service grew.',
-      'AI grounded on governed measures, not guesses.',
-    ],
-    metrics: [
-      { label: 'Ad hoc requests', value: '-40%', sub: 'to the data team' },
-      { label: 'Answer time', value: 'Seconds', sub: 'from days' },
-      { label: 'Grounding', value: 'Governed model', sub: 'not freehand' },
-      { label: 'Security', value: 'RLS enforced', sub: 'in answers' },
-    ],
-    dataSources: ['Governed Power BI model', 'Dynamics 365', 'SQL Server'],
-    stack: ['Power BI', 'Copilot in Power BI', 'Microsoft Fabric', 'Semantic model'],
-    result:
-      'People got trustworthy answers in plain language, and the data team spent its time building instead of fielding one-off questions.',
-  },
   // ----- Builds on the Microsoft stack -----------------------------------
   {
     slug: 'fabric-lakehouse-platform',
@@ -258,38 +290,6 @@ export const caseStudies: CaseStudy[] = [
     stack: ['Microsoft Fabric', 'Azure Data Factory', 'Lakehouse', 'Power BI'],
     result:
       'Brittle overnight exports became reliable Fabric pipelines, so the reporting on top was fast, fresh, and trustworthy.',
-  },
-  {
-    slug: 'power-platform-approvals',
-    kind: 'software',
-    sector: 'Operations',
-    title: 'Approvals and alerts on the Power Platform',
-    summary:
-      'An operations team turned a reporting dashboard into action with Power Apps and Power Automate on the same governed data.',
-    challenge:
-      'The dashboard showed exceptions, but acting on them still meant email chains and a spreadsheet, so issues the report surfaced were slow to actually get resolved.',
-    build:
-      'We built a Power App for review and input and Power Automate flows for approvals and alerts, wired to the same governed model, so the number on the dashboard and the action taken share one source of truth.',
-    whatWeBuilt: [
-      'A Power App for review, input, and exception handling.',
-      'Power Automate flows for approvals and alerts.',
-      'A write-back path tied to the governed model.',
-    ],
-    outcomes: [
-      'Exceptions acted on in the app, not in email.',
-      'Approvals tracked instead of lost in a thread.',
-      'Reporting and action sharing one source of truth.',
-    ],
-    metrics: [
-      { label: 'Approval time', value: 'Hours', sub: 'from days' },
-      { label: 'Email chains', value: 'Replaced', sub: 'by the app' },
-      { label: 'Audit trail', value: 'Built in', sub: 'per action' },
-      { label: 'Data source', value: 'One model', sub: 'app + report' },
-    ],
-    dataSources: ['Dataverse', 'Dynamics 365', 'SQL Server', 'SharePoint'],
-    stack: ['Power Apps', 'Power Automate', 'Dataverse', 'Power BI'],
-    result:
-      'A report that only showed problems became a workflow that resolved them, on the same governed data.',
   },
   {
     slug: 'embedded-analytics-portal',
