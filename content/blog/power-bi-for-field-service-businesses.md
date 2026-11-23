@@ -1,7 +1,7 @@
 ---
 title: "Power BI for field service businesses: technicians, first-time fix, and jobs"
 description: "How field service businesses, HVAC, facilities, maintenance, and repair, use Power BI to bring scheduling, job, and cost data into one governed view, so technician productivity, first-time fix, and job margin are visible."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for field service"
 tags: ["Power BI", "field service", "HVAC", "operations", "technician productivity"]
 takeaways:

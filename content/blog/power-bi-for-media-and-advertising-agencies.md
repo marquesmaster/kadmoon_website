@@ -1,7 +1,7 @@
 ---
 title: "Power BI for media and advertising agencies: campaigns, clients, and margin"
 description: "How agencies use Power BI to bring campaign, time, and financial data into one governed view, so campaign performance, client profitability, and team utilization are visible and reported with confidence."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for agencies"
 tags: ["Power BI", "advertising", "agencies", "campaign performance", "client profitability"]
 takeaways:

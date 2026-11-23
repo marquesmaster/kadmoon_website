@@ -1,7 +1,7 @@
 ---
 title: "Power BI for SaaS and subscription businesses: MRR, churn, and retention"
 description: "How SaaS and subscription companies use Power BI to get one trusted view of recurring revenue, churn, and retention, by defining the metrics once and joining billing, product, and CRM data."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for saas"
 tags: ["Power BI", "SaaS", "subscription", "MRR", "churn", "retention"]
 takeaways:

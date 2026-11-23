@@ -1,7 +1,7 @@
 ---
 title: "Power BI for equipment rental companies: utilization, rate, and return on assets"
 description: "How equipment rental companies use Power BI to bring rental, fleet, and financial data into one governed view, so utilization, rental rate, and return on assets are visible where the economics of a capital-heavy business are decided."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for equipment rental"
 tags: ["Power BI", "equipment rental", "utilization", "assets", "operations"]
 takeaways:

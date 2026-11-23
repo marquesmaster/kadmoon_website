@@ -1,7 +1,7 @@
 ---
 title: "Power BI for healthcare organizations: analytics that respects the data"
 description: "How healthcare providers and payers use Power BI for operational and financial analytics while meeting HIPAA expectations: a governed model, your own tenant, row-level security, and access that holds up to scrutiny."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for healthcare"
 tags: ["Power BI", "healthcare", "HIPAA", "governance", "security"]
 takeaways:

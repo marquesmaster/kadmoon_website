@@ -1,7 +1,7 @@
 ---
 title: "Power BI for automotive dealerships: sales, service, and the whole store"
 description: "How dealerships use Power BI to bring sales, service, parts, and finance data into one governed view, so department performance and whole-store profitability are visible across a store or a group."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for dealerships"
 tags: ["Power BI", "automotive", "dealerships", "fixed operations", "profitability"]
 takeaways:

@@ -1,4 +1,4 @@
-import { hero, groupCompanies } from '@/lib/content';
+import { hero, clientLogos } from '@/lib/content';
 import { Button } from '../Button';
 
 // Stylized Power BI dashboard used as product UI. Representative figures, not
@@ -130,28 +130,44 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Group companies: a continuous marquee of the companies in the group
-            Kadmoon belongs to. Names scroll (logos added when available). */}
-        {groupCompanies.length > 0 && (
+        {/* A continuous marquee of the organizations the senior team behind
+            Kadmoon has worked with, through our affiliate Fynx. Logos render as
+            images where a file exists; the rest scroll as wordmarks. */}
+        {clientLogos.length > 0 && (
           <div className="mt-8 border-t border-line pt-6 md:mt-9">
             <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
-              Part of a group of Microsoft specialists
+              Our team&rsquo;s work in Brazil, through our affiliate Fynx
             </span>
             <div className="marquee-mask marquee-pause mt-4 overflow-hidden">
-              {/* Two identical halves so the -50% translate loops seamlessly.
-                  Each half repeats the list enough to span a wide viewport. */}
-              <ul className="flex w-max animate-marquee items-center gap-x-12 pr-12">
-                {Array.from({ length: 6 })
-                  .flatMap(() => groupCompanies)
-                  .map((name, i) => (
-                    <li
-                      key={`${name}-${i}`}
-                      aria-hidden={i >= groupCompanies.length * 3}
-                      className="whitespace-nowrap font-display text-xl font-semibold tracking-[-0.01em] text-ink-3/80"
-                    >
-                      {name}
-                    </li>
-                  ))}
+              {/* Two identical halves so the -50% translate loops seamlessly. */}
+              <ul className="flex w-max animate-marquee items-center gap-x-10 pr-10">
+                {[...clientLogos, ...clientLogos].map((c, i) => (
+                  <li
+                    key={`${c.name}-${i}`}
+                    aria-hidden={i >= clientLogos.length}
+                    className="flex shrink-0 items-center"
+                  >
+                    {c.logo ? (
+                      <span
+                        className={`inline-flex h-9 items-center rounded px-2 ${
+                          c.darkBg ? 'bg-navy' : ''
+                        }`}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={c.logo}
+                          alt={c.name}
+                          loading="lazy"
+                          className="max-h-7 w-auto object-contain opacity-70 grayscale"
+                        />
+                      </span>
+                    ) : (
+                      <span className="whitespace-nowrap font-display text-xl font-semibold tracking-[-0.01em] text-ink-3/80">
+                        {c.name}
+                      </span>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

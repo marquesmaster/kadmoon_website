@@ -1,7 +1,7 @@
 ---
 title: "Power BI for financial advisors and wealth management: AUM, clients, and the book"
 description: "How advisory firms use Power BI to bring portfolio, client, and practice data into one governed view, so AUM, client relationships, and the growth of the book are visible, with the control that client data requires."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for financial advisors"
 tags: ["Power BI", "wealth management", "financial advisors", "AUM", "client"]
 takeaways:

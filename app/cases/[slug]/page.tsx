@@ -5,8 +5,20 @@ import { Footer } from '@/components/sections/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Button } from '@/components/Button';
 import { PageHero } from '@/components/sections/PageHero';
+import {
+  KpiTiles,
+  BudgetVsActualCard,
+  WorkingCapitalCard,
+  MonthEndCloseCard,
+} from '@/components/reports/SampleReports';
 import { caseStudies } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
+
+const CASE_CARDS: Record<string, () => JSX.Element> = {
+  'budget-vs-actual': BudgetVsActualCard,
+  'working-capital': WorkingCapitalCard,
+  'month-end-close': MonthEndCloseCard,
+};
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -130,6 +142,40 @@ export default function CasePage({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
+
+          {c.dashboards && c.dashboards.length > 0 ? (
+            (() => {
+              const cardKeys = c.dashboards.filter((k) => k !== 'kpi');
+              return (
+                <div className="mt-14">
+                  <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
+                    The dashboards
+                  </h2>
+                  {c.dashboards.includes('kpi') ? (
+                    <div className="mt-5">
+                      <KpiTiles />
+                    </div>
+                  ) : null}
+                  {cardKeys.length > 0 ? (
+                    <div
+                      className={`mt-5 grid items-stretch gap-5 ${
+                        cardKeys.length > 1 ? 'md:grid-cols-2' : 'md:max-w-xl'
+                      }`}
+                    >
+                      {cardKeys.map((k) => {
+                        const Card = CASE_CARDS[k];
+                        return Card ? (
+                          <div key={k} className="h-full">
+                            <Card />
+                          </div>
+                        ) : null;
+                      })}
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })()
+          ) : null}
 
           {c.result ? (
             <div className="mt-14 rounded-2xl border border-accent/30 bg-accent/5 p-7 md:p-9">

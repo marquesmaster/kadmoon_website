@@ -1,7 +1,7 @@
 ---
 title: "Power BI for retail and e-commerce: one view of what is actually selling"
 description: "How retailers and online sellers use Power BI to bring stores, channels, and inventory into one governed view, so merchandising, pricing, and stock decisions run on numbers everyone trusts."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for retail"
 tags: ["Power BI", "retail", "e-commerce", "inventory", "merchandising"]
 takeaways:

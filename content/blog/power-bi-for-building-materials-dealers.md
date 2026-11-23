@@ -1,7 +1,7 @@
 ---
 title: "Power BI for building materials and lumber dealers: margin, inventory, and contractor accounts"
 description: "How building materials and lumber dealers use Power BI to bring sales, inventory, and account data into one governed view, so real margin, inventory position, and contractor account profitability are visible in a volatile, thin-margin trade."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for building materials"
 tags: ["Power BI", "building materials", "lumber", "distribution", "margin"]
 takeaways:

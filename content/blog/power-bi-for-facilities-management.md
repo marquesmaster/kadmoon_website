@@ -1,7 +1,7 @@
 ---
 title: "Power BI for facilities management: work orders, SLAs, and cost across the portfolio"
 description: "How facilities management companies use Power BI to bring work order, asset, and cost data into one governed view, so service performance against SLAs, asset cost, and portfolio spend are visible across every site."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for facilities management"
 tags: ["Power BI", "facilities management", "work orders", "SLAs", "assets"]
 takeaways:

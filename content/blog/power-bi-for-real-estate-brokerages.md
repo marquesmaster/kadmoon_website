@@ -1,7 +1,7 @@
 ---
 title: "Power BI for real estate brokerages: agents, listings, and the pipeline"
 description: "How real estate brokerages use Power BI to bring transaction, listing, and agent data into one governed view, so production, pipeline, and agent performance are visible across the brokerage."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for real estate brokerage"
 tags: ["Power BI", "real estate", "brokerage", "agents", "pipeline"]
 takeaways:

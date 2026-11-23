@@ -168,7 +168,7 @@ export const stats = [
 // Companies in the group Kadmoon belongs to. Shown as a continuous marquee in
 // the hero. Names scroll (no logo files yet); confirm exact names and add logos
 // to public/logos when available.
-export const groupCompanies = ['Bradata', 'Fynx', 'Vigiles AI', 'Cyberwalk', 'Academy'];
+export const groupCompanies = ['Bradata', 'Fynx', 'Kadmoon', 'Cyberwalk', 'Vigiles AI'];
 
 export const capabilities = {
   eyebrow: 'What we deliver',

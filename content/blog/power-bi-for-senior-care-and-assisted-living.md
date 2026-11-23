@@ -1,7 +1,7 @@
 ---
 title: "Power BI for senior care and assisted living: occupancy, care, and cost per resident"
 description: "How senior care and assisted living operators use Power BI to bring occupancy, care, and financial data into one governed view, so occupancy, care delivery, and cost per resident are visible together across communities."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for senior care"
 tags: ["Power BI", "senior care", "assisted living", "occupancy", "healthcare"]
 takeaways:

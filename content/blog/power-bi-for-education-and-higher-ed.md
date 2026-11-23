@@ -1,7 +1,7 @@
 ---
 title: "Power BI for education and higher education: enrollment, success, and the budget"
 description: "How schools, districts, and universities use Power BI to bring enrollment, student success, and financial data into one governed view, so leaders see the numbers that run the institution and act in time."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for education"
 tags: ["Power BI", "education", "higher education", "enrollment", "student success"]
 takeaways:

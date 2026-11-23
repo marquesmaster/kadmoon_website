@@ -1,7 +1,7 @@
 ---
 title: "Power BI for law firms: matters, realization, and utilization"
 description: "How law firms use Power BI to bring time, billing, and matter data into one governed view, so realization, utilization, and matter profitability are visible and the numbers that run the firm are trusted."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for law firms"
 tags: ["Power BI", "law firms", "legal", "realization", "matter profitability"]
 takeaways:

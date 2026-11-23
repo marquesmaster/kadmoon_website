@@ -1,7 +1,7 @@
 ---
 title: "Power BI for architecture and engineering firms: projects, utilization, and margin"
 description: "How architecture and engineering firms use Power BI to bring project, time, and financial data into one governed view, so project margin, utilization, and backlog are visible while there is still time to act on them."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for architecture and engineering firms"
 tags: ["Power BI", "architecture", "engineering", "AEC", "utilization"]
 takeaways:

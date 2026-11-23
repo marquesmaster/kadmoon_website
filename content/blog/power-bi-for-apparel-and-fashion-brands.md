@@ -1,7 +1,7 @@
 ---
 title: "Power BI for apparel and fashion brands: sell-through, size and color mix, and markdowns"
 description: "How apparel and fashion brands use Power BI to bring sales, inventory, and channel data into one governed view, so sell-through, size and color mix, and markdown exposure are visible fast enough to act within the season."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for apparel brands"
 tags: ["Power BI", "apparel", "fashion", "retail", "sell-through"]
 takeaways:

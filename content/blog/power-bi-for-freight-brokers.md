@@ -1,7 +1,7 @@
 ---
 title: "Power BI for freight brokers: load margin, carrier performance, and customer profitability"
 description: "How freight brokers use Power BI to bring load, carrier, and financial data into one governed view, so margin per load, carrier performance, and customer profitability are visible in a fast, thin-margin business."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for freight brokers"
 tags: ["Power BI", "freight broker", "logistics", "margin", "carrier"]
 takeaways:

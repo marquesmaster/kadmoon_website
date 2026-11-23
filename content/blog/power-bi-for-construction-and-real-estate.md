@@ -1,7 +1,7 @@
 ---
 title: "Power BI for construction and real estate: projects, costs, and the portfolio view"
 description: "How construction firms and real estate operators use Power BI to see project cost and schedule, portfolio performance, and the numbers that decide a job, by joining project, accounting, and operational data."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for construction"
 tags: ["Power BI", "construction", "real estate", "project controls", "cost management"]
 takeaways:

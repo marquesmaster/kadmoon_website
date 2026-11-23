@@ -1,7 +1,7 @@
 ---
 title: "Power BI for sales teams: pipeline, forecast, and quota"
 description: "How sales leaders use Power BI to turn CRM and sales data into a trustworthy view of pipeline, forecast, and quota attainment, so the team manages on real numbers instead of gut feel and spreadsheet exports."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for sales"
 tags: ["Power BI", "sales", "pipeline", "forecast", "CRM"]
 takeaways:

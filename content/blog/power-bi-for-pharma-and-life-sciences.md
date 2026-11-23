@@ -1,7 +1,7 @@
 ---
 title: "Power BI for pharma and life sciences: commercial, quality, and controlled data"
 description: "How pharma and life sciences companies use Power BI for commercial, operational, and quality analytics in their own validated-ready environment, with the governance and control the sector requires."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for pharma"
 tags: ["Power BI", "pharma", "life sciences", "quality", "compliance"]
 takeaways:

@@ -1,7 +1,7 @@
 ---
 title: "Power BI for furniture and home goods retailers: turns, special orders, and delivery"
 description: "How furniture and home goods retailers use Power BI to bring sales, inventory, and special-order data into one governed view, so inventory turns, special-order flow, and delivery performance are visible on big-ticket, slow-moving stock."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for furniture retail"
 tags: ["Power BI", "furniture", "home goods", "retail", "inventory"]
 takeaways:

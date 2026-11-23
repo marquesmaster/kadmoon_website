@@ -1,7 +1,7 @@
 ---
 title: "Power BI for customer success and support: tickets, satisfaction, and churn signals"
 description: "How customer success and support teams use Power BI to bring support, product, and account data into one governed view, so service performance, satisfaction, and the early signs of churn are visible and acted on."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for customer success"
 tags: ["Power BI", "customer success", "support", "churn", "CSAT"]
 takeaways:

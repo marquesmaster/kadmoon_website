@@ -1,7 +1,7 @@
 ---
 title: "Power BI for IT teams: incidents, assets, and cloud spend"
 description: "How IT teams use Power BI to bring service management, asset, and cloud cost data into one governed view, so service performance, the estate, and spending are visible and managed rather than reconstructed by hand."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for it"
 tags: ["Power BI", "IT", "service management", "cloud cost", "operations"]
 takeaways:

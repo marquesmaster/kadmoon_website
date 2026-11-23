@@ -1,7 +1,7 @@
 ---
 title: "Power BI for insurance: claims, underwriting, and the loss ratio"
 description: "How insurers and agencies use Power BI to bring policy, claims, and financial data into one governed view, so loss ratios, claims performance, and underwriting results are visible and trusted."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for insurance"
 tags: ["Power BI", "insurance", "loss ratio", "claims", "underwriting"]
 takeaways:

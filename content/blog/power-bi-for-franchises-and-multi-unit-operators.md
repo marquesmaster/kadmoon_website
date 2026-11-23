@@ -1,7 +1,7 @@
 ---
 title: "Power BI for franchises and multi-unit operators: comparing units that never agree"
 description: "How franchisors and multi-unit operators use Power BI to bring every location's data into one governed view, so units can be compared on the same basis and the whole network managed from one consistent picture."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for franchises"
 tags: ["Power BI", "franchise", "multi-unit", "benchmarking", "operations"]
 takeaways:

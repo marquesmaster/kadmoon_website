@@ -373,6 +373,10 @@ const nextConfig = {
       // sold Power Apps and Power Automate as a capability is retired too.
       { source: '/blog/power-apps-power-automate-on-your-data', destination: '/blog', permanent: true },
 
+      // The "Industries" blog category was renamed to "By industry" (it echoed
+      // the retired /industries positioning). Redirect the old category URL.
+      { source: '/blog/category/industries', destination: '/blog/category/by-industry', permanent: true },
+
       // /cases is live. The retired foreign-trade case slugs above redirect to
       // the cases index; the current case slugs render their own pages.
 

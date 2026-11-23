@@ -1,7 +1,7 @@
 ---
 title: "Power BI for hospitality: occupancy, revenue, and labor in one view"
 description: "How hotels, restaurants, and hospitality groups use Power BI to bring property, revenue, and labor data into one governed view, so occupancy, RevPAR, and labor cost are visible across every location."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for hospitality"
 tags: ["Power BI", "hospitality", "hotels", "restaurants", "revenue management"]
 takeaways:

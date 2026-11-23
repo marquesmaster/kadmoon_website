@@ -1,7 +1,7 @@
 ---
 title: "Power BI for HVAC and home services contractors: jobs, technicians, and revenue per truck"
 description: "How HVAC and home services contractors use Power BI to bring job, technician, and financial data into one governed view, so revenue per job, technician productivity, and the service-versus-install mix are visible across the business."
-category: "Industries"
+category: "By industry"
 primaryKeyword: "power bi for hvac contractors"
 tags: ["Power BI", "HVAC", "home services", "field service", "contractors"]
 takeaways:
