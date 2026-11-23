@@ -39,10 +39,6 @@ export default function CasesPage() {
             platform underneath. Each one built on a governed model, in the client&rsquo;s own
             Microsoft tenant.
           </p>
-          <p className="mt-4 max-w-2xl text-[13px] leading-relaxed text-ink-3">
-            These cases describe the work and the numbers we build with. They are not based on
-            specific clients; work tied to a named client is shared with written permission.
-          </p>
         </PageHero>
 
         <section className="mx-auto max-w-shell px-6 py-16 md:py-20">
@@ -82,6 +78,10 @@ export default function CasesPage() {
               </Reveal>
             ))}
           </div>
+          <p className="mt-10 text-[11px] leading-relaxed text-ink-3">
+            Cases are anonymized and not based on specific clients. Named-client work is shared with
+            written permission.
+          </p>
         </section>
 
         <section className="bg-mist py-16 md:py-20">
