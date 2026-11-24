@@ -23,8 +23,9 @@ Chosen path: register as a **service-area business** verified at the **real
 address of a US-based member** who genuinely operates the business from there,
 with the US phone number already in hand. After verification the address is
 hidden and the service area is set to the United States. This is the robust,
-policy-compliant route; it also reinforces the "senior, US-based team"
-positioning.
+policy-compliant route. It does not change the delivery statement on the site:
+Kadmoon is a US company and its senior team works from Brazil on US business
+hours (never "US-based team").
 
 Prerequisites (status):
 - US phone number: **available** (give it to wire into `lib/site.ts`).

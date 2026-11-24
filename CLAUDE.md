@@ -72,11 +72,13 @@ deployed via Docker on a Hostinger VPS.
   numbers.** `testimonials`, `clientLogos`, and any team array in `lib/content.ts`
   render ONLY when populated with real, owner-provided, approved data. Real Fynx
   case studies with a named client require **written client permission**. The
-  case studies render at `/cases` as anonymized cases ("a finance team...") that
-  state plainly they are **not based on specific clients**; until a client gives
-  written permission, no case names a real client or presents its figures as that
-  client's real result. Team names, photos, LinkedIn, and certifications come
-  from the owner only.
+  case studies render at `/cases` as **representative builds** ("a finance
+  team...") that state plainly they are **not based on specific clients** and
+  describe what the client receives in the present tense (never "anonymized",
+  which implies a real client, and never a past-tense claim of delivered work
+  for a specific client); until a client gives written permission, no case names
+  a real client or presents its figures as that client's real result. Team
+  names, photos, LinkedIn, and certifications come from the owner only.
 - **No unverifiable numbers.** Do not state years, client counts, or project
   counts the owner has not confirmed. Real track record is attributed to the team
   via Fynx, with real figures only; otherwise leave the numbers out.

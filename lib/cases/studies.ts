@@ -1,8 +1,8 @@
 // ---------------------------------------------------------------------------
-// Case studies. Representative structures of the Power BI and Microsoft-stack
-// work we deliver. All clients are anonymized; figures are representative of the
-// structure we ship, labeled as such everywhere they appear, and never
-// presented as verified client results.
+// Case studies. Representative builds that show the Power BI and Microsoft-stack
+// work we deliver. Not based on specific clients; figures are representative of
+// the structure we ship and are never presented as a specific client's verified
+// result. Named-client work is shared only with written permission.
 //
 // Data can originate anywhere the business already runs: SQL Server, Dynamics
 // 365, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, or APIs. The
@@ -45,11 +45,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Leadership',
     title: 'Executive revenue and margin control tower',
     summary:
-      'A leadership team moved its monthly board pack off hand-built spreadsheets into one governed Power BI model with revenue, margin, and cash in a single view.',
+      'A board pack for a leadership team: revenue, margin, EBITDA, and cash from one governed Power BI model, by entity, against budget and last year.',
     challenge:
-      'Every function arrived at the leadership meeting with its own numbers, built in rival spreadsheets, so half the meeting was spent reconciling figures instead of deciding anything.',
+      'The board pack is rebuilt by hand from spreadsheets every month, so revenue, margin, and cash arrive late and each department brings a different number.',
     build:
-      'We modeled revenue, cost, and cash once from the ERP and billing system into a governed semantic model, then built an executive report where every number drills to the invoice or order behind it.',
+      'The build models revenue, cost, and cash once from the ERP and billing system into a governed model, defines the board KPIs as measures, and adds an EBITDA bridge and the entity view leadership reviews each month.',
     whatWeBuilt: [
       'A governed semantic model with one definition per measure.',
       'An executive dashboard for revenue, margin, cash, and the operating KPIs.',
@@ -61,15 +61,15 @@ export const caseStudies: CaseStudy[] = [
       'Meetings spent on decisions, not on reconciling figures.',
     ],
     metrics: [
-      { label: 'Revenue', value: '$2.48M', sub: 'this month' },
-      { label: 'Gross margin', value: '39.0%', sub: 'blended' },
-      { label: 'Close to report', value: '2 days', sub: 'from 10' },
-      { label: 'Sources unified', value: '5', sub: 'into one model' },
+      { label: 'Net revenue YTD', value: '$164.2M', sub: '+5.8% vs PY' },
+      { label: 'EBITDA YTD', value: '$4.49M', sub: 'budget $8.77M' },
+      { label: 'EBITDA margin', value: '2.7%', sub: 'PY 5.6%' },
+      { label: 'Cash conversion', value: '87 days', sub: '+22 days in a year' },
     ],
     dataSources: ['SQL Server', 'Dynamics 365 Finance', 'Billing system', 'Excel budgets'],
     stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
     result:
-      'Revenue, margin, and cash became one governed view the leadership team opens daily, instead of a monthly reconstruction nobody fully trusted.',
+      'Leadership reads revenue, margin, EBITDA, and cash in one governed view, with the variances against budget and last year explained, instead of reconciling spreadsheets before the meeting.',
     dashboards: ['kpi', 'budget-vs-actual'],
   },
   {
@@ -78,11 +78,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Finance',
     title: 'Budget versus actual and the monthly close',
     summary:
-      'A finance team replaced a spreadsheet close with a Power BI model that ties budget, actual, and the operating P&L back to the general ledger.',
+      'Budget, actual, and the rolling forecast by entity and department, tied back to the general ledger in one governed Power BI model.',
     challenge:
-      'Budget versus actual lived in a workbook that broke every time the chart of accounts changed, so finance spent the first week of each month rebuilding it instead of explaining variances.',
+      'Budget versus actual is rebuilt in spreadsheets each month, so variances are explained late and the forecast keeps assumptions the year has already broken.',
     build:
-      'We built a governed model over the ERP general ledger, mapped budgets and the account hierarchy once, and delivered a close dashboard with variance analysis down to the cost center.',
+      'The build maps the ledger, cost centers, and every budget and forecast version into a governed model, defines the variance once, and ranks the drivers of the gap by entity and account.',
     whatWeBuilt: [
       'A governed P&L model tied to the general ledger.',
       'Budget versus actual with variance down to the cost center.',
@@ -94,15 +94,15 @@ export const caseStudies: CaseStudy[] = [
       'One P&L finance and operations both read.',
     ],
     metrics: [
-      { label: 'Close time', value: '3 days', sub: 'from 8' },
-      { label: 'Variance to budget', value: '+2.1%', sub: '' },
-      { label: 'Accounts modeled', value: 'Full COA', sub: 'hierarchy' },
-      { label: 'Manual rework', value: 'Removed', sub: 'per cycle' },
+      { label: 'EBITDA vs budget', value: '-$4.28M', sub: '-49% YTD' },
+      { label: 'Freight and fuel', value: '-$1.81M', sub: 'vs budget' },
+      { label: 'Headcount', value: '378', sub: 'vs 404 planned' },
+      { label: 'Full-year forecast', value: '$4.7M', sub: 'vs $10.2M budget' },
     ],
     dataSources: ['Dynamics 365 Finance', 'SQL Server', 'Excel budgets', 'SharePoint'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'The monthly close moved from a week of spreadsheet rebuilding to a governed report finance trusts and explains from.',
+      'Finance sees which accounts and entities drive the variance to budget, and how each forecast version moved, from one model tied to the ledger.',
     dashboards: ['budget-vs-actual', 'month-end-close'],
   },
   {
@@ -111,11 +111,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Finance',
     title: 'Cash, working capital, and AR aging in one view',
     summary:
-      'A finance team brought cash position, receivables aging, and the working-capital cycle into one governed Power BI view, so collections and cash decisions run on current data instead of a stale spreadsheet.',
+      'Cash position, receivables and payables aging, and the cash conversion cycle in one governed Power BI view, by customer and supplier.',
     challenge:
-      'The AR aging report was a spreadsheet exported once a month, so by the time anyone worked the list it was out of date, and cash position lived in a separate workbook nobody fully trusted.',
+      'Cash, receivables, and payables sit in separate reports, so a slower-paying customer or shorter supplier terms show up only when the revolver balance rises.',
     build:
-      'We modeled open receivables and the ledger into a governed model, built the aging buckets and the DSO, DIO, DPO, and cash conversion cycle as measures defined once, and made every bucket drill to the invoices behind it.',
+      'The build models open receivables, payables, inventory, and the ledger into a governed model, defines DSO, DIO, DPO, and the cash conversion cycle once, and compares the 13-week cash forecast with actual receipts and payments.',
     whatWeBuilt: [
       'A governed model over open receivables and the general ledger.',
       'AR aging buckets with drill-through to the overdue invoices.',
@@ -127,15 +127,15 @@ export const caseStudies: CaseStudy[] = [
       'Working capital managed on today’s position.',
     ],
     metrics: [
-      { label: 'DSO', value: '44 days', sub: '' },
-      { label: 'Cash conversion', value: '63 days', sub: 'DSO + DIO − DPO' },
-      { label: 'AR past due', value: '7%', sub: 'of open' },
-      { label: 'Aging', value: 'Live', sub: 'from monthly export' },
+      { label: 'DSO', value: '55.9 days', sub: 'from 46.5' },
+      { label: 'Cash conversion', value: '87 days', sub: 'from 65' },
+      { label: 'AR past due', value: '$9.3M', sub: 'from $4.2M' },
+      { label: 'Revolver', value: '$16.5M', sub: 'from $6.0M' },
     ],
     dataSources: ['NetSuite', 'SQL Server', 'Excel', 'Billing system'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'Cash position and AR aging became one live view the finance team manages working capital from, instead of a spreadsheet that was already out of date when it was made.',
+      'Finance sees which customers and suppliers move working capital and how far the cash forecast is off, while there is still time to act.',
     dashboards: ['working-capital', 'kpi'],
   },
   {
@@ -144,11 +144,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Finance',
     title: 'The month-end close, tracked to a business-day target',
     summary:
-      'A finance team put its month-end close on a Power BI model that tracks days to close against a business-day target, task completion, and post-close entries, so the close gets shorter and steadier.',
+      'The month-end close tracked against a business-day target: days to close, task completion, and entries posted after close, by entity.',
     challenge:
-      'The close ran long and the team could not say why, because task status lived in a checklist, late entries lived in the ledger, and nobody had the two side by side to see where the time went.',
+      'The close calendar lives in a spreadsheet, so nobody sees which reconciliations run late or how many entries are booked after the books close.',
     build:
-      'We modeled the close tasks and the ledger together, defined days to close against the business-day target, on-time task completion, and post-close entries as measures, and built a close dashboard the controller runs each cycle.',
+      'The build models close tasks, due dates, and post-close journal entries with the ledger, defines days to close and on-time completion once, and ranks the tasks that delay each entity.',
     whatWeBuilt: [
       'A governed model joining close tasks to the general ledger.',
       'Days to close against a business-day target, tracked every cycle.',
@@ -160,15 +160,15 @@ export const caseStudies: CaseStudy[] = [
       'The controller sees where the close actually spends its time.',
     ],
     metrics: [
-      { label: 'Days to close', value: '5.5', sub: 'toward BD5 target' },
-      { label: 'On-time tasks', value: 'Tracked', sub: 'per cycle' },
-      { label: 'Post-close entries', value: 'Monitored', sub: 'by entity' },
-      { label: 'Trend', value: 'Shorter', sub: 'over the year' },
+      { label: 'Days to close', value: '11.6', sub: 'target 5' },
+      { label: 'On-time tasks', value: '28%', sub: '67% in 2023' },
+      { label: 'Post-close entries', value: '174', sub: '$4.1M in 2026' },
+      { label: 'Consolidated sign-off', value: 'BD 12', sub: 'October 2026' },
     ],
     dataSources: ['Dynamics 365 Finance', 'SQL Server', 'Close checklist', 'SharePoint'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model'],
     result:
-      'The close moved from a long cycle nobody could explain to a tracked process that gets shorter and steadier against its business-day target.',
+      'Controllers see which tasks and entities hold up the close and how many entries land after it, cycle by cycle.',
     dashboards: ['month-end-close', 'kpi'],
   },
   {
@@ -177,11 +177,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Commercial',
     title: 'Gross margin, split by price, volume, mix, and cost',
     summary:
-      'A commercial team put its margin reporting on a Power BI model that explains the change in gross margin as price, volume, mix, and cost, by product, customer, and channel.',
+      'Gross and pocket margin explained by price, volume, mix, and cost, by product line, customer, and channel, in one governed Power BI model.',
     challenge:
-      'Margin moved every month and nobody could say why, because sales, cost, and discount lived in different extracts and the bridge between last month and this one was rebuilt by hand, if at all.',
+      'Margin moves every month and nobody can say how much came from price, cost, mix, or freight, so contract discounts and free freight stay hidden inside the average.',
     build:
-      'We modeled sales lines, cost, and discounts into a governed model, defined the price, volume, mix, and cost effects as measures once, and built a margin bridge that drills from the headline movement to the products and customers behind it.',
+      'The build models invoice lines, standard cost, discounts, and freight into a governed model, defines the price, volume, mix, and cost bridge once, and drills from product line to customer.',
     whatWeBuilt: [
       'A governed model over sales lines, cost, and discounts.',
       'A price-volume-mix-cost bridge defined once as measures.',
@@ -193,15 +193,15 @@ export const caseStudies: CaseStudy[] = [
       'Pricing and mix decisions made on the real drivers.',
     ],
     metrics: [
-      { label: 'Gross margin', value: '41.2%', sub: 'blended' },
-      { label: 'Margin bridge', value: 'PVM + cost', sub: 'defined once' },
-      { label: 'Drill path', value: 'To product', sub: 'and customer' },
-      { label: 'Rebuild by hand', value: 'Removed', sub: 'per cycle' },
+      { label: 'Product margin', value: '34.4%', sub: '-1.3 pts vs PY' },
+      { label: 'Pocket margin', value: '28.7%', sub: '-2.2 pts vs PY' },
+      { label: 'Price vs cost', value: '+$4.25M / -$4.93M', sub: 'gross profit YTD' },
+      { label: 'Net freight', value: '5.7%', sub: 'of net sales' },
     ],
     dataSources: ['SQL Server', 'Dynamics 365', 'Excel price lists', 'Billing system'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'Margin stopped being a number that moved for unknown reasons and became a bridge the commercial team reads to see exactly where price, volume, mix, and cost took it.',
+      'The commercial team reads each change in margin as price, volume, mix, and cost, and sees the accounts and channels where pocket margin is lowest.',
     dashboards: ['margin-bridge', 'kpi'],
   },
   {
@@ -210,11 +210,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Distribution',
     title: 'Stock cover, excess, and dead stock in one view',
     summary:
-      'A distributor moved its inventory reporting onto a governed Power BI model that shows days of stock cover, excess and dead stock, and supplier performance, so operations and finance read the same numbers.',
+      'Inventory value, turns, excess stock, fill rate, and supplier on-time delivery in one governed Power BI view, by warehouse and item class.',
     challenge:
-      'The stock report was a monthly spreadsheet that was stale the day it was made, so cash sat in slow and dead stock nobody could see while fast lines ran short, and finance and operations argued from different copies.',
+      'Inventory, sales orders, and purchasing are reported separately, so excess stock builds in one warehouse while another misses orders.',
     build:
-      'We modeled on-hand, demand, and purchasing into a governed model, defined stock cover and the excess and dead-stock rules as measures once, and built an inventory view that reconciles to both the stock system and the ledger.',
+      'The build models on-hand stock, demand, open orders, and receipts into a governed model, defines turns, excess, fill rate, and supplier OTIF once, and reads them by warehouse, category, and supplier.',
     whatWeBuilt: [
       'A governed model over on-hand, demand, and purchasing.',
       'Days of stock cover by item, category, and location.',
@@ -226,15 +226,15 @@ export const caseStudies: CaseStudy[] = [
       'Operations and finance on one inventory number.',
     ],
     metrics: [
-      { label: 'Excess & dead stock', value: '$1.8M', sub: '12% of on-hand' },
-      { label: 'Avg stock cover', value: '46 days', sub: 'band 30–60' },
-      { label: 'Aging', value: 'Live', sub: 'from monthly export' },
-      { label: 'Reconciles to', value: 'Stock + GL', sub: 'one model' },
+      { label: 'Inventory', value: '$28.5M', sub: '+$3.9M in a year' },
+      { label: 'Excess stock', value: '$9.1M', sub: 'from $6.4M' },
+      { label: 'Unfilled demand', value: '$6.0M', sub: 'at selling price, 2026' },
+      { label: 'Supplier OTIF', value: '85.7%', sub: '2026' },
     ],
     dataSources: ['NetSuite', 'Dynamics 365 Business Central', 'SQL Server', 'Excel'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'Inventory became one live view that frees working capital deliberately, instead of a stale spreadsheet that hid the cash tied up in stock.',
+      'Operations sees where cash is tied up in excess stock, where orders go unfilled, and which suppliers cause it.',
     dashboards: ['inventory-cover'],
   },
   {
@@ -243,11 +243,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Manufacturing',
     title: 'OEE, downtime, and scrap across the plant',
     summary:
-      'A manufacturer put plant performance on a Power BI model that breaks OEE into availability, performance, and quality, with a downtime Pareto and scrap, consistent across lines and shifts.',
+      'OEE broken into availability, performance, and quality, with downtime by reason, scrap by defect, and cost variance against standard, by plant, press, and shift.',
     challenge:
-      'Each line and shift counted output and downtime its own way, so OEE could not be compared across the plant and the biggest losses stayed hidden in machine logs nobody consolidated.',
+      'Each plant and shift counts output and downtime its own way, so OEE cannot be compared and the biggest losses stay in machine logs nobody consolidates.',
     build:
-      'We modeled production, downtime, and scrap into a governed model, defined availability, performance, quality, and OEE as measures once, and built a losses view where downtime is ranked by reason and read the same way everywhere.',
+      'The build models production, downtime events, scrap, and standard cost into a governed model, defines availability, performance, quality, and OEE once, and ranks losses by reason, press, and shift.',
     whatWeBuilt: [
       'A governed model over production, downtime, and scrap.',
       'OEE split into availability, performance, and quality.',
@@ -259,15 +259,15 @@ export const caseStudies: CaseStudy[] = [
       'Scrap and cost variance read next to the output they cost.',
     ],
     metrics: [
-      { label: 'OEE', value: '85.3%', sub: 'at target' },
-      { label: 'Availability', value: '91.2%', sub: '' },
-      { label: 'Top loss', value: 'Changeover', sub: '34% of downtime' },
-      { label: 'Measured once', value: 'All lines', sub: 'and shifts' },
+      { label: 'OEE', value: '66.5%', sub: 'from 71.8%' },
+      { label: 'Availability', value: '77.1%', sub: 'from 82.2%' },
+      { label: 'Largest loss', value: 'Mold changes', sub: '19,008 press-hours YTD' },
+      { label: 'Cost vs standard', value: '-$835K', sub: 'YTD' },
     ],
     dataSources: ['MES / machine data', 'SQL Server', 'Dynamics 365', 'Excel'],
     stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
     result:
-      'OEE and downtime became one consistent view the plant reads to compare lines fairly and go after the losses that actually cost the most.',
+      'The plant reads OEE, downtime, scrap, and cost variance the same way across lines and shifts, and sees which losses cost the most.',
     dashboards: ['oee'],
   },
   {
@@ -276,11 +276,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Construction',
     title: 'Job cost, WIP, and margin at completion',
     summary:
-      'A contractor moved job costing onto a Power BI model that projects margin at completion against the bid, tracks WIP, and surfaces change orders, by job and in total.',
+      'Job cost and WIP with projected margin at completion against the bid, change orders by age, and labor productivity, by job, division, and project manager.',
     challenge:
-      'Job cost lived in accounting and progress lived in the field, so the question that matters, will this job finish at the margin we bid, could not be answered until it was too late to do anything about it.',
+      'Job cost lives in accounting and progress in the field, so the question that matters, will this job finish at the margin it was bid, is answered only at closeout.',
     build:
-      'We modeled committed cost, budget, and change orders into a governed model, defined percent complete and projected margin at completion as measures once, and built a WIP view that flags jobs eroding their margin while there is still time.',
+      'The build models cost to date, budget, earned value, and change orders into a governed model, defines percent complete and projected margin at completion once, and flags jobs fading from their bid.',
     whatWeBuilt: [
       'A governed model over job cost, budget, and change orders.',
       'Projected margin at completion against the bid, by job.',
@@ -292,15 +292,15 @@ export const caseStudies: CaseStudy[] = [
       'WIP and margin read together across every active job.',
     ],
     metrics: [
-      { label: 'Margin at completion', value: 'Projected', sub: 'vs bid, by job' },
-      { label: 'WIP', value: '$4.2M', sub: 'tracked' },
-      { label: 'Change orders', value: 'By age', sub: 'and job' },
-      { label: 'Early warning', value: 'Mid-job', sub: 'not closeout' },
+      { label: 'Projected margin', value: '13.5%', sub: 'bid 17.1%' },
+      { label: 'Margin fade', value: '-$7.4M', sub: 'since bid' },
+      { label: 'Pending change orders', value: '$7.9M', sub: '$2.4M over 90 days' },
+      { label: 'Labor over estimate', value: '25,230 h', sub: 'active jobs' },
     ],
     dataSources: ['Sage Intacct', 'SQL Server', 'Excel budgets', 'Field reports'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'The contractor can finally see each job finishing at a margin, so a job drifting below its bid is caught while something can still be done about it.',
+      'The contractor sees each job\'s projected margin against its bid while there is still time to act, with the change orders and labor hours behind the fade.',
     dashboards: ['job-cost'],
   },
   {
@@ -309,11 +309,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Professional services',
     title: 'Billable utilization, realization, and WIP',
     summary:
-      'A services firm put utilization and realization on a Power BI model that ties time, invoices, and payments together, by consultant, team, and engagement.',
+      'Billable utilization against target, realization, unbilled WIP, and lockup, by person, practice, engagement, and partner.',
     challenge:
-      'Utilization came out of the time system, realization out of billing, and WIP out of a spreadsheet, so the firm could not see which engagements and people were actually profitable until the quarter closed.',
+      'Utilization comes from the time system, realization from billing, and WIP from a spreadsheet, so unprofitable engagements and idle capacity show up after the quarter closes.',
     build:
-      'We modeled time, invoices, and payments into a governed model, defined billable utilization, realization, and WIP as measures once, and built a view that reads profitability by consultant, team, and engagement.',
+      'The build models weekly time, standard rates, invoices, and payments into a governed model, defines utilization, realization, WIP, and lockup once, and reads them by person, practice, and engagement.',
     whatWeBuilt: [
       'A governed model over time, invoices, and payments.',
       'Billable utilization against target, by person and team.',
@@ -325,15 +325,15 @@ export const caseStudies: CaseStudy[] = [
       'WIP and billing managed on current numbers.',
     ],
     metrics: [
-      { label: 'Realization', value: '92%', sub: 'billed / standard' },
-      { label: 'Utilization', value: '79%', sub: 'vs 75% target' },
-      { label: 'WIP', value: '$0.9M', sub: 'unbilled' },
-      { label: 'By', value: 'Person + team', sub: 'and engagement' },
+      { label: 'Utilization', value: '74.2%', sub: 'target 78.5%' },
+      { label: 'Realization', value: '90.6%', sub: 'from 93.7%' },
+      { label: 'Unbilled WIP', value: '$17.0M', sub: '+40% in a year' },
+      { label: 'Lockup', value: '116 days', sub: 'from 94' },
     ],
     dataSources: ['Time system', 'Billing system', 'SQL Server', 'Excel'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'Utilization, realization, and WIP became one view the firm runs on, so the engagements and people that make or lose money are visible while the quarter is still open.',
+      'The firm sees where capacity sits idle, which engagements are written down, and which partners hold unbilled WIP, while the quarter is still open.',
     dashboards: ['utilization'],
   },
   {
@@ -342,11 +342,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'SaaS',
     title: 'The ARR bridge, net revenue retention, and churn',
     summary:
-      'A software company moved its ARR reporting onto a governed Power BI model that walks starting ARR to ending ARR through new, expansion, contraction, and churn, with net and gross retention.',
+      'ARR walked from start to end through new, expansion, price increase, contraction, and churn, with net and gross retention by segment and the account health behind them.',
     challenge:
-      'ARR was a single net number in a board slide, so growth and leakage cancelled each other out and nobody could see whether the base was expanding or quietly churning underneath.',
+      'ARR is reported as one net number and churn as one rate, so the segments losing customers and the reasons behind them stay hidden.',
     build:
-      'We modeled account-level ARR, support, and acquisition spend into a governed model, defined the ARR bridge and net and gross retention as measures once, and built a retention view that reads growth and leakage separately.',
+      'The build models a monthly account snapshot, product usage, support tickets, and acquisition spend into a governed model, classifies every ARR movement, and defines NRR, GRR, logo churn, and CAC payback once.',
     whatWeBuilt: [
       'A governed model over account-level ARR and activity.',
       'An ARR bridge: new, expansion, contraction, and churn.',
@@ -358,15 +358,15 @@ export const caseStudies: CaseStudy[] = [
       'Retention tracked the same way every board cycle.',
     ],
     metrics: [
-      { label: 'Net retention', value: '106%', sub: 'trailing 12 mo' },
-      { label: 'Gross retention', value: '93%', sub: '' },
+      { label: 'Net revenue retention', value: '105.5%', sub: 'trailing 12 mo' },
+      { label: 'Gross revenue retention', value: '89.4%', sub: 'TTM' },
       { label: 'ARR bridge', value: 'Full walk', sub: 'start to end' },
       { label: 'Account health', value: 'Alongside', sub: 'support + usage' },
     ],
     dataSources: ['Billing system', 'Product database', 'Salesforce', 'SQL Server'],
     stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
     result:
-      'ARR stopped being one net number and became a bridge the company reads to see new, expansion, contraction, and churn separately, so the leakage underneath the growth is finally visible.',
+      'The company reads where ARR comes from and where it goes, which segments churn, and which accounts use too few of their seats to renew.',
     dashboards: ['arr-retention'],
   },
   {
@@ -375,11 +375,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Healthcare',
     title: 'Claims, denials, and days in AR by payer',
     summary:
-      'A healthcare provider moved revenue-cycle reporting onto a governed Power BI model that tracks clean claim rate, denials by reason, and days in AR by payer.',
+      'Net collections, denials by payer and reason, days in A/R, charge lag, and underpayments against contract, by clinic and payer.',
     challenge:
-      'Denials were worked as they came, with no view of which reasons and payers drove most of the lost revenue, so the same denial causes kept recurring and cash sat in aged AR nobody prioritized.',
+      'Denials are worked claim by claim and A/R aging comes from the practice management system once a month, so payer rule changes and underpayments are found late.',
     build:
-      'We modeled claims, denials, and AR into a governed model, defined clean claim rate, denial rate, and days in AR as measures once, and built a view that ranks denials by reason and payer so the biggest causes get worked first.',
+      'The build models every claim with its service, submission, denial, payment, and write-off dates into a governed model, rebuilds A/R at any month end, and compares each payment with the contracted rate.',
     whatWeBuilt: [
       'A governed model over claims, denials, and AR aging.',
       'Clean claim rate and denial rate, defined once.',
@@ -391,15 +391,15 @@ export const caseStudies: CaseStudy[] = [
       'Recurring denial reasons fixed at the source.',
     ],
     metrics: [
-      { label: 'Clean claim rate', value: '94%', sub: '' },
-      { label: 'Days in AR', value: '38', sub: 'by payer' },
-      { label: 'Denial rate', value: '6.2%', sub: 'by reason' },
-      { label: 'Top cause', value: 'Eligibility', sub: '28% of denials' },
+      { label: 'Net collection rate', value: '95.6%', sub: 'YTD' },
+      { label: 'Days in A/R', value: '46.5', sub: 'by payer' },
+      { label: 'First-pass denial rate', value: '8.4%', sub: 'by reason' },
+      { label: 'Top denial cause', value: 'Prior auth', sub: '$321K YTD' },
     ],
     dataSources: ['Practice management', 'Clearinghouse', 'SQL Server', 'Excel'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'The revenue cycle moved onto one governed view that shows where denials and aged AR actually come from, so the team works the causes that recover the most cash.',
+      'The billing team sees which payers deny or underpay, for what reason, and where A/R is aging, by clinic and payer.',
     dashboards: ['revenue-cycle'],
   },
   {
@@ -408,14 +408,14 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Hospitality',
     title: 'Prime cost by store: food plus labor against target',
     summary:
-      'A restaurant group moved its prime-cost reporting onto a governed Power BI model that reads food and labor together as a share of sales, by store and day part, against target.',
+      'Same-store sales and traffic, channel mix, and prime cost (food plus labor) against sales of the same weeks, by store and metro.',
     challenge:
-      'Food cost lived in one weekly report and labor in another, so prime cost, the number that decides whether a store makes money, was only assembled long after the week it could have been fixed.',
+      'Sales come from the POS weekly and prime cost from the P&L after month end, so a store\'s food cost gap or overtime surfaces weeks after it could be fixed.',
     build:
-      'We modeled daily sales, food cost, and labor into a governed model, defined food percent, labor percent, and prime cost as measures once, and built a view that reads every store against the prime-cost target while the week is still live.',
+      'The build models daily sales by channel, weekly actual and theoretical food cost, and weekly labor into a governed model, defines same-store sales and prime cost once, and compares each store with its theoretical food cost.',
     whatWeBuilt: [
       'A governed model over sales, food cost, and labor.',
-      'Prime cost as food plus labor, by store and day part.',
+      'Prime cost as food plus labor, by store and week.',
       'Comps and sales trend alongside, against the target.',
     ],
     outcomes: [
@@ -424,15 +424,15 @@ export const caseStudies: CaseStudy[] = [
       'Trade-offs between food and labor managed deliberately.',
     ],
     metrics: [
-      { label: 'Prime cost target', value: '60%', sub: 'of sales' },
-      { label: 'Read', value: 'Food + labor', sub: 'together' },
-      { label: 'By', value: 'Store + day part', sub: '' },
-      { label: 'Timing', value: 'Live week', sub: 'not after close' },
+      { label: 'Prime cost', value: '59.4%', sub: 'from 56.1%' },
+      { label: 'Same-store sales', value: '+1.2%', sub: 'traffic -5.5%' },
+      { label: 'Food over theoretical', value: '$698K', sub: 'YTD' },
+      { label: '3P delivery', value: '23.7%', sub: 'of sales' },
     ],
     dataSources: ['POS system', 'Scheduling system', 'SQL Server', 'Excel'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'Prime cost became one live number each store manages during the week, so food and labor are kept in balance against target while it still makes a difference.',
+      'Operations sees which stores lose margin on food or labor each week, and whether growth comes from price, traffic, delivery, or new stores.',
     dashboards: ['prime-cost'],
   },
   {
@@ -441,11 +441,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Direct-to-consumer',
     title: 'DTC acquisition: CAC, ROAS, retention and LTV',
     summary:
-      'A direct-to-consumer brand moved off platform-reported ROAS onto a governed Power BI model that ties every order to its channel and customer, so acquisition is read on first-order contribution, repeat rate, and lifetime value.',
+      'Acquisition cost, ROAS measured on contribution, repeat rate, and LTV by acquisition cohort and channel.',
     challenge:
-      'The growth team optimized to the ROAS each ad platform reported, while finance saw contribution only in the monthly P&L. Returns, shipping, and payment fees were never tied back to the channel or the customer, and repeat behavior was not tracked by acquisition cohort.',
+      'The growth team steers by the ROAS each ad platform reports, and contribution after returns, shipping, and fees appears only in the monthly P&L.',
     build:
-      'We modeled order lines with product cost, shipping, fees, discounts, and returns into a governed model, joined daily ad spend to the customers each platform brought in, and defined CAC, contribution ROAS, repeat rate, and cohort LTV as measures once.',
+      'The build models order lines with product cost, shipping, fees, discounts, and returns into a governed model, ties every customer to the channel that acquired them, and defines contribution ROAS, repeat rate, and cohort LTV once.',
     whatWeBuilt: [
       'A governed model over orders, order lines, customers, products, and ad spend.',
       'Contribution per order, customer, and channel, after returns, shipping, and fees.',
@@ -465,7 +465,7 @@ export const caseStudies: CaseStudy[] = [
     dataSources: ['Shopify', 'Meta / Google / TikTok ad APIs', 'ERP (product cost)', 'Affiliate platform'],
     stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
     result:
-      'The brand stopped steering by platform-reported ROAS and started reading what each customer really costs and earns, so paid channels, promos, and returns are managed on contribution and lifetime value.',
+      'The brand reads what each customer costs and earns, by channel and cohort, next to what the platforms claim.',
   },
   {
     slug: 'trucking-lanes-fleet',
@@ -473,11 +473,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Transportation',
     title: 'Trucking: lane and customer profitability, fleet and drivers',
     summary:
-      'A truckload carrier moved off monthly TMS reports onto a governed Power BI model that ties revenue to cost at the load level, so margin is read by lane and customer, and maintenance and turnover by truck age and driver tenure.',
+      'Operating ratio, revenue and margin per mile by lane and customer, deadhead, detention, fuel surcharge recovery, maintenance by truck age, and driver turnover.',
     challenge:
-      'Revenue per mile was reviewed monthly from the TMS and costs from the P&L, with nobody tying them to lanes or customers. Deadhead, detention, and fuel-surcharge recovery lived in dispatch spreadsheets, and maintenance cost was not split by truck age.',
+      'Revenue per mile comes from the TMS and cost from the P&L, so lanes, customers, and trucks that lose money are never seen at the load level.',
     build:
-      'We modeled load-level revenue, miles, fuel, and driver pay into a governed model, allocated fleet and fixed cost per mile, and defined operating ratio, margin per loaded mile, deadhead, unbilled detention, and driver turnover as measures once.',
+      'The build models load-level revenue, miles, wait time, fuel, and driver pay into a governed model, allocates fleet cost per mile, and adds maintenance by truck and productivity by driver tenure.',
     whatWeBuilt: [
       'A governed model over loads, maintenance, and fixed costs.',
       'Margin per loaded mile by lane and customer, with deadhead and detention.',
@@ -497,7 +497,7 @@ export const caseStudies: CaseStudy[] = [
     dataSources: ['TMS (McLeod / TMW)', 'Telematics (Samsara / Motive)', 'Fuel card files', 'Maintenance system'],
     stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
     result:
-      'The carrier can see which lanes, customers, and trucks make money, load by load, so rate reviews, detention billing, and fleet replacement run on margin instead of monthly averages.',
+      'The carrier sees which lanes, customers, and trucks make money, load by load, and what deadhead, unbilled detention, and turnover cost.',
   },
   {
     slug: 'multifamily-noi',
@@ -505,11 +505,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Real estate',
     title: 'Multifamily: leasing, occupancy and NOI versus budget',
     summary:
-      'A multifamily owner-operator moved monthly property reports onto a governed Power BI model that connects every NOI variance to the leasing and operations behind it, from renewal conversion and trade-out to make-ready and bad debt.',
+      'Occupancy, renewals, trade-out, make-ready and vacancy days, bad debt, and NOI against budget with a bridge by driver, by community.',
     challenge:
-      'Each community sent a monthly operating statement and a rent roll in Excel. The asset team compared NOI with budget once a month, without the leasing detail behind it: renewal conversion, trade-out, turn times, and delinquency sat in different reports and were never tied to the NOI variance.',
+      'Each community sends a monthly operating statement and a rent roll in Excel, so the NOI variance is reviewed without the leasing and operations behind it.',
     build:
-      'We modeled a monthly unit-level snapshot, leases, expirations, and the operating statement into a governed model, and built an NOI bridge mapped to drivers so the variance always reconciles to the leasing and expense lines behind it.',
+      'The build models a monthly unit-level snapshot, leases, expirations, turns, and the operating statement with budget into a governed model, and maps each line to a driver in the NOI bridge.',
     whatWeBuilt: [
       'A governed model over unit-months, leases, turns, and the GL.',
       'Occupancy, renewal conversion, trade-out, make-ready, and bad debt.',
@@ -529,7 +529,7 @@ export const caseStudies: CaseStudy[] = [
     dataSources: ['Yardi / RealPage', 'Rent roll & lease events', 'Make-ready work orders', 'GL & budget'],
     stack: ['Power BI', 'Microsoft Fabric', 'Semantic model', 'Dataflows'],
     result:
-      'The asset team reads NOI against budget with the leasing and operations behind every variance, so a miss is traced to its driver instead of discovered a month later.',
+      'The asset team reads NOI against budget with the leasing and operations behind every variance, community by community.',
   },
   {
     slug: 'field-service',
@@ -537,11 +537,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Home services',
     title: 'Field service: technicians, booking and memberships',
     summary:
-      'A residential HVAC and plumbing company moved off its field-software standard reports onto a governed Power BI model that reads first-time fix, booking rate, and membership renewals by branch and technician, so the revenue leaking from calls, visits, and memberships is visible.',
+      'First-time fix and return trips, technician utilization, replacement close rate by advisor, call booking, and membership renewals, by branch and technician.',
     challenge:
-      'Branch managers saw revenue and job counts weekly but not first-time fix, return trips, or close rate by advisor. The call center reported answered calls, not how many became jobs, and membership renewals were checked only when the member count dropped.',
+      'Branch managers see revenue and job counts every week, but not first-time fix, return trips, close rate by advisor, or how many calls turn into jobs.',
     build:
-      'We modeled jobs, replacement opportunities, calls, memberships, renewals, and technician hours into a governed model, and defined first-time fix, utilization, close rate, booking rate, and renewal rate as measures once, read by branch, technician, and advisor.',
+      'The build models jobs, replacement opportunities, calls, memberships, renewals, and paid hours into one governed model shared by service work and replacement sales.',
     whatWeBuilt: [
       'A governed model over jobs, opportunities, calls, memberships, and hours.',
       'First-time fix, return trips, and utilization by branch and technician.',
@@ -561,7 +561,7 @@ export const caseStudies: CaseStudy[] = [
     dataSources: ['ServiceTitan / Housecall Pro', 'Call center', 'Payroll (paid hours)', 'Payment processor'],
     stack: ['Power BI', 'Microsoft Fabric', 'Azure Data Factory', 'Semantic model'],
     result:
-      'The business reads the calls, visits, and memberships that leak revenue by branch and technician, so booking, first-time fix, and renewals are managed where the money actually moves.',
+      'The business sees the calls, visits, and memberships that leak revenue, by branch and technician.',
   },
   // ----- Builds on the Microsoft stack -----------------------------------
   {
@@ -570,11 +570,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'Data engineering',
     title: 'Lakehouse and pipelines on Microsoft Fabric',
     summary:
-      'A company replaced brittle overnight exports with a Microsoft Fabric lakehouse and pipelines that keep Power BI fast and in sync with the source systems.',
+      'A Microsoft Fabric lakehouse and pipelines that replace overnight exports and keep Power BI in sync with the source systems.',
     challenge:
-      'Dashboards ran on nightly spreadsheet exports that broke often and were always a day behind, so reporting could not be trusted for anything time sensitive.',
+      'Reports depend on overnight exports that break, so dashboards open with stale or missing data and nobody knows until a user asks.',
     build:
-      'We built a Fabric lakehouse with pipelines from the ERP, CRM, and APIs, added incremental refresh and data quality checks, and pointed the governed semantic model at it.',
+      'The build sets up a Fabric lakehouse with pipelines from the ERP, CRM, and APIs, adds incremental refresh and failure alerts, and puts the governed Power BI model on top.',
     whatWeBuilt: [
       'A Fabric lakehouse as the single data foundation.',
       'Pipelines from ERP, CRM, and APIs with incremental refresh.',
@@ -594,7 +594,7 @@ export const caseStudies: CaseStudy[] = [
     dataSources: ['Dynamics 365', 'Salesforce', 'SQL Server', 'REST APIs'],
     stack: ['Microsoft Fabric', 'Azure Data Factory', 'Lakehouse', 'Power BI'],
     result:
-      'Brittle overnight exports became reliable Fabric pipelines, so the reporting on top was fast, fresh, and trustworthy.',
+      'Reporting runs on monitored pipelines instead of overnight exports, so dashboards are current and failures are caught before users see them.',
   },
   {
     slug: 'embedded-analytics-portal',
@@ -602,11 +602,11 @@ export const caseStudies: CaseStudy[] = [
     sector: 'SaaS',
     title: 'Embedded Power BI inside a customer portal',
     summary:
-      'A software company embedded Power BI into its own product, so customers get governed analytics in-app without a separate login.',
+      'Power BI embedded in a software company\'s product, so its customers get governed analytics in the app without a separate login.',
     challenge:
-      'Customers wanted analytics in the product, but building charts by hand was slow and every new metric meant engineering work the team could not spare.',
+      'Customers ask for reporting inside the product, and the team exports data to spreadsheets on request.',
     build:
-      'We built a governed model with row-level security per tenant and embedded Power BI into the product, so each customer sees only their own data inside the app.',
+      'The build creates a governed model with row-level security per tenant and embeds Power BI reports in the product with app-owned data.',
     whatWeBuilt: [
       'A multi-tenant model with row-level security per customer.',
       'Power BI embedded into the product UI.',
@@ -626,6 +626,6 @@ export const caseStudies: CaseStudy[] = [
     dataSources: ['Product database', 'SQL Server', 'Azure', 'APIs'],
     stack: ['Power BI Embedded', 'Microsoft Fabric', 'Azure', 'Semantic model'],
     result:
-      'Customers got governed, self-service analytics inside the product, with each tenant safely seeing only its own data.',
+      'Customers get self-service analytics inside the product, and each tenant sees only its own data.',
   },
 ];
