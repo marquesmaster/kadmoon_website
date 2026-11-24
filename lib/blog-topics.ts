@@ -821,23 +821,6 @@ export const topics: BlogTopic[] = [
     wordCount: 1100,
   },
   {
-    slug: 'why-choose-a-us-based-software-house',
-    title: 'Why choose a US-based software house over offshore?',
-    category: 'Software House',
-    primaryKeyword: 'us-based software house',
-    secondaryKeywords: ['onshore software development', 'american software company', 'domestic software team'],
-    intent: 'commercial',
-    outline: [
-      'Time-zone overlap and velocity',
-      'Communication and domain nuance',
-      'IP protection and legal recourse',
-      'Compliance and data-residency comfort',
-      'When offshore still makes sense',
-      'Making the onshore business case',
-    ],
-    wordCount: 1150,
-  },
-  {
     slug: 'how-a-software-house-works',
     title: 'How a software house works: teams, process, and delivery',
     category: 'Software House',
