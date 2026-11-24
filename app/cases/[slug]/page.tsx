@@ -149,7 +149,7 @@ export default function CasePage({ params }: { params: { slug: string } }) {
               </h2>
               <p className="mt-5 text-[15px] leading-relaxed text-ink">{c.challenge}</p>
               <h2 className="mt-10 font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
-                What we built
+                What we build
               </h2>
               <p className="mt-5 text-[15px] leading-relaxed text-ink">{c.build}</p>
             </div>

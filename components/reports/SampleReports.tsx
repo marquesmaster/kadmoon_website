@@ -500,15 +500,15 @@ export function OeeCard() {
         <StatStrip
           cols={3}
           items={[
-            { k: 'Availability', v: '91.2%' },
-            { k: 'Performance', v: '94.8%' },
-            { k: 'Quality', v: '98.6%' },
+            { k: 'Availability', v: '77.1%' },
+            { k: 'Performance', v: '87.8%' },
+            { k: 'Quality', v: '98.3%' },
           ]}
         />
         <div className="shrink-0 pl-4 text-right">
           <div className="font-mono text-[9px] uppercase tracking-[0.08em] text-ink-3">OEE</div>
-          <div className="font-display text-3xl font-bold tabular-nums text-accent">85.3%</div>
-          <div className="text-[11px] font-semibold text-success">at BD target 85%</div>
+          <div className="font-display text-3xl font-bold tabular-nums text-accent">66.5%</div>
+          <div className="text-[11px] font-semibold text-warning">71.8% last year</div>
         </div>
       </div>
       <div className="mt-4 border-t border-line pt-4">
@@ -521,15 +521,15 @@ export function OeeCard() {
           </span>
         </div>
         <MiniBars
-          max={34}
+          max={53}
           suffix="%"
-          labelW="104px"
+          labelW="132px"
           rows={[
-            { k: 'Changeover', v: 34, tone: 'accent', strong: true },
-            { k: 'Die maintenance', v: 22, tone: 'muted' },
-            { k: 'Material wait', v: 16, tone: 'muted' },
-            { k: 'Breakdown', v: 14, tone: 'warning' },
-            { k: 'Other', v: 14, tone: 'muted' },
+            { k: 'Mold change', v: 53, tone: 'accent', strong: true },
+            { k: 'Hydraulic failure', v: 12, tone: 'warning' },
+            { k: 'Ejector / mold', v: 6, tone: 'muted' },
+            { k: 'Resin moisture', v: 5, tone: 'muted' },
+            { k: 'Other', v: 24, tone: 'muted' },
           ]}
         />
       </div>
@@ -748,7 +748,7 @@ export function PrimeCostCard() {
         })}
       </ul>
       <p className="mt-4 border-t border-line pt-3 text-[12px] leading-relaxed text-ink-3">
-        Food and labor read together as prime cost against target, by store and day part, since the
+        Food and labor read together as prime cost against target, by store and week, since the
         two move against each other and only matter as one number.
       </p>
     </ReportChrome>
