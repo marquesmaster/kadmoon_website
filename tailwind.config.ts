@@ -53,7 +53,7 @@ const config: Config = {
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       fontSize: {
-        'display-xl': ['clamp(42px, 5.8vw, 82px)', { lineHeight: '0.96', letterSpacing: '-0.04em', fontWeight: '700' }],
+        'display-xl': ['clamp(34px, 4.4vw, 60px)', { lineHeight: '1.02', letterSpacing: '-0.035em', fontWeight: '700' }],
         'display-lg': ['clamp(33px, 4.6vw, 60px)', { lineHeight: '1.02', letterSpacing: '-0.035em', fontWeight: '700' }],
         'display-md': ['clamp(28px, 3.6vw, 46px)', { lineHeight: '1.08', letterSpacing: '-0.03em', fontWeight: '700' }],
         'display-sm': ['clamp(22px, 2.4vw, 31px)', { lineHeight: '1.18', letterSpacing: '-0.022em', fontWeight: '600' }],
