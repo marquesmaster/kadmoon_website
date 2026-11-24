@@ -128,16 +128,16 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: 'Power BI · Microsoft Fabric · Finance and operations',
+  eyebrow: 'For CFOs and controllers at $20M to $300M companies',
   // The accent phrase is rendered in the accent color inside the H1.
   headlineBefore: '',
   headlineAccent: 'Power BI',
-  headlineAfter: ' for finance and operations teams',
+  headlineAfter: ' for the office of the CFO',
   subhead:
-    'We connect your ERP and spreadsheets, build one governed Power BI model, and deliver your first dashboards in two weeks. Fixed scope, fixed price, in your own Microsoft tenant.',
+    'Board pack, budget vs actual, and the month-end close in Power BI, for finance teams on NetSuite, Business Central, or Sage Intacct. Fixed scope, fixed price, in your own Microsoft tenant, delivered in weeks.',
   // Honest delivery model, in the first screen.
   deliveryLine: 'US company · Senior team in Brazil · Your business hours',
-  flagship: 'Power BI · Semantic models & governance · Microsoft Fabric · Finance & operations',
+  flagship: 'Board pack · Budget vs actual · Cash & working capital · Month-end close',
   ctas: [
     { label: 'Book a 30-minute call', href: siteConfig.bookingUrl, primary: true },
     { label: 'See pricing', href: '/pricing', primary: false },
@@ -172,32 +172,32 @@ export const groupCompanies = ['Bradata', 'Fynx', 'Kadmoon', 'Cyberwalk', 'Vigil
 
 export const capabilities = {
   eyebrow: 'What we deliver',
-  title: 'What we build on Power BI.',
-  sub: 'Governed dashboards on a single model, fed from the systems you already run, with the Microsoft Fabric data engineering underneath.',
+  title: 'The reports the office of the CFO opens daily.',
+  sub: 'The board pack, budget vs actual, cash, and the close, built on one governed Power BI model fed from your ERP, with the Microsoft Fabric data engineering underneath.',
   items: [
     {
-      title: 'Power BI dashboards & reports',
-      body: 'The reports your leaders open every morning, built on a governed model so every number means one thing and drills to the record behind it.',
+      title: 'The board pack',
+      body: 'The monthly executive view: revenue, margin, EBITDA, cash, and the operating KPIs, on a governed model so every number means one thing and drills to the record behind it.',
     },
     {
-      title: 'Semantic models & governance',
-      body: 'One definition per measure, row-level security, workspaces, and lineage, so reporting stays trustworthy as more people and data come on.',
+      title: 'Budget vs actual & forecast',
+      body: 'Budget, actual, and a rolling forecast by entity and department, with the variances that matter surfaced instead of buried in a spreadsheet.',
     },
     {
-      title: 'Power BI migration',
-      body: 'Legacy BI, hand-built spreadsheets, and tool sprawl consolidated into Power BI, with the old numbers reconciled so the business trusts the move.',
+      title: 'Cash & working capital',
+      body: 'Cash position, AR and AP aging, DSO and DPO, and the working-capital view finance checks before it commits to spend.',
     },
     {
-      title: 'Finance & operations analytics',
-      body: 'The close, budget versus actual, gross margin, and cash, modeled once from your ERP so finance and operations read the same numbers every morning.',
+      title: 'The month-end close',
+      body: 'Close status, flux and variance analysis, and the reconciliations finance works each cycle, read the same way across every entity.',
     },
     {
-      title: 'Data engineering on Fabric & Azure',
-      body: 'Lakehouse, pipelines, and the modeling layer Power BI sits on, built on Microsoft Fabric and Azure so refreshes are reliable and fast.',
+      title: 'The governed model underneath',
+      body: 'One definition per measure, row-level security, workspaces, and lineage, with legacy BI and hand-built spreadsheets consolidated into Power BI and reconciled.',
     },
     {
-      title: 'Copilot-ready models',
-      body: 'A governed semantic model with clean, documented measures, so Copilot in Power BI answers from the same definitions as every report, not a guess.',
+      title: 'The Fabric data platform',
+      body: 'Lakehouse, pipelines, and the modeling layer Power BI sits on, built on Microsoft Fabric and Azure, with Copilot-ready measures over the same governed data.',
     },
   ],
 };
@@ -888,7 +888,7 @@ export const clientLogos: ClientLogo[] = [
 // ---------------------------------------------------------------------------
 export const groupExperience = {
   eyebrow: 'Experience behind Kadmoon',
-  line: 'The team behind Kadmoon, through our affiliate Fynx, has spent six years building data, analytics, and Microsoft platforms for organizations across government, education, sports, real estate, and technology. Kadmoon brings that practice to US finance and operations teams, on US business hours.',
+  line: 'The team behind Kadmoon, through our affiliate Fynx, has spent six years building data, analytics, and Microsoft platforms: governed semantic models, Power BI reporting, and the Fabric and Azure pipelines underneath. Kadmoon brings that practice to US finance and operations teams, on US business hours.',
   stats: [
     { value: '2,000+', label: 'analytics solutions implemented' },
     { value: '5,000+', label: 'reports and dashboards built' },

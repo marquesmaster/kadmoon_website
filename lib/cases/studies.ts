@@ -1,8 +1,8 @@
 // ---------------------------------------------------------------------------
-// Case studies. Representative structures of the Power BI and Microsoft-stack
-// work we deliver. All clients are anonymized; figures are representative of the
-// structure we ship, labeled as such everywhere they appear, and never
-// presented as verified client results.
+// Case studies. Representative builds that show the Power BI and Microsoft-stack
+// work we deliver. Not based on specific clients; figures are representative of
+// the structure we ship and are never presented as a specific client's verified
+// result. Named-client work is shared only with written permission.
 //
 // Data can originate anywhere the business already runs: SQL Server, Dynamics
 // 365, SAP, Oracle, NetSuite, Salesforce, Excel, SharePoint, or APIs. The

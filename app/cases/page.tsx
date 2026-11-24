@@ -79,8 +79,8 @@ export default function CasesPage() {
             ))}
           </div>
           <p className="mt-10 text-[11px] leading-relaxed text-ink-3">
-            Cases are anonymized and not based on specific clients. Named-client work is shared with
-            written permission.
+            These are representative builds that show what we deliver, not based on specific clients.
+            Named-client work is shared only with written permission.
           </p>
         </section>
 
