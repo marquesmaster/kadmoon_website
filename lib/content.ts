@@ -901,9 +901,10 @@ export const groupExperience = {
 };
 
 // ---------------------------------------------------------------------------
-// Pricing / engagement page. No public prices: every engagement is scoped and
-// quoted. The page explains the model, what each subscription scope includes,
-// and the Microsoft add-on, and routes to "Book a 30-minute call".
+// Pricing / engagement page. Published, fixed prices (Assessment $5,000,
+// Dashboard Build from $20,000, Fabric Data Platform from $45,000, Managed
+// Power BI from $3,500/month). The page explains the model, what each tier
+// includes, and routes to "Book a 30-minute call".
 // ---------------------------------------------------------------------------
 export const pricing = {
   eyebrow: 'Pricing',
