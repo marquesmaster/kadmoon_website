@@ -1542,12 +1542,521 @@ const fieldservice: DashboardSpec = {
   ],
 };
 
+// ===========================================================================
+// Case 07 · Plant Performance (OEE, downtime, scrap, cost variance)
+// ===========================================================================
+
+const oeeGRR = seg(71.5, 72.2, 24, 0.7).concat([71, 70.4, 69.8, 69.2, 68.8, 69.1, 68.6, 68.9, 68.4, 68.5]);
+const oeeELP = seg(71, 72.5, 24, 0.9).concat([70, 67, 64.5, 63, 62.2, 62.5, 61.8, 61.6, 62, 61.7]);
+const scrapClips = seg(2.3, 2.3, 27, 0.2).concat([5.8, 6.0, 5.9, 5.6, 5.4, 5.3, 5.2]);
+
+const plant: DashboardSpec = {
+  caseLabel: 'Case 07 · Plant Performance',
+  pages: [
+    {
+      name: 'OEE & Losses',
+      title: 'OEE & Losses',
+      period: 'YTD October 2026',
+      slicers: [
+        { label: 'Period', options: ['YTD Oct 2026'] },
+        { label: 'Plant', options: ['All'] },
+        { label: 'Shift', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'OEE · YTD', value: '66.5%', delta: { text: '-5.3 pts vs PY', good: false }, sub: 'world class 85%' },
+            { label: 'Availability · YTD', value: '77.1%', delta: { text: '-5.1 pts vs PY', good: false } },
+            { label: 'Performance · YTD', value: '87.8%', delta: { text: '-0.9 pts vs PY', good: false } },
+            { label: 'Quality · YTD', value: '98.3%', delta: { text: '-0.2 pts vs PY', good: false } },
+            { label: 'Unplanned downtime · YTD', value: '16,657 h', delta: { text: '+7% vs PY', good: false } },
+            { label: 'Changeovers per press-day', value: '2.2', sub: 'avg 69 min · PY 1.6 / 60' },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'OEE by month and plant',
+          subtitle: 'Two years to Oct 2026 · world class = 85%',
+          labels: M34,
+          yFormat: 'pct',
+          target: { v: 85, label: 'World class 85%' },
+          series: [
+            { name: 'Grand Rapids, MI', color: 'violet', points: oeeGRR, endLabel: 'GRR 68.5%' },
+            { name: 'El Paso, TX', color: 'teal', points: oeeELP, endLabel: 'ELP 61.7%' },
+          ],
+        },
+        {
+          type: 'barsH',
+          title: 'Where the time goes: downtime by reason',
+          subtitle: 'YTD Oct 2026 · hours · includes mold changes',
+          xFormat: 'num',
+          rows: [
+            { k: 'Mold change / setup', v: 19008, show: '19,008' },
+            { k: 'Hydraulic failure', v: 4362, show: '4,362' },
+            { k: 'Ejector / mold damage', v: 2224, show: '2,224' },
+            { k: 'Dryer / resin moisture', v: 1728, show: '1,728' },
+            { k: 'No operator / setup tech', v: 1685, show: '1,685' },
+            { k: 'Heater band / thermocouple', v: 1639, show: '1,639' },
+            { k: 'Quality hold', v: 1533, show: '1,533' },
+            { k: 'Stuck part / cooling line', v: 1226, show: '1,226' },
+            { k: 'Resin shortage', v: 985, show: '985' },
+          ],
+        },
+        {
+          type: 'matrix',
+          title: 'OEE by press — lowest first',
+          subtitle: 'YTD Oct 2026 · Δ = change vs same months 2025, pts',
+          cols: ['Press', 'Plant', 'OEE', 'Avail.', 'Perf.', 'Quality', 'Δ pts', 'Unpl. h'],
+          align: ['l', 'l', 'r', 'r', 'r', 'r', 'r', 'r'],
+          rows: [
+            { cells: ['ELP-04', 'El Paso', '55.1%', '67.3%', '83.8%', '97.8%', { v: '-12.6', tone: 'bad' }, '941'] },
+            { cells: ['ELP-11', 'El Paso', '61.6%', '71.4%', '87.9%', '98.2%', { v: '-10.1', tone: 'bad' }, '556'] },
+            { cells: ['ELP-09', 'El Paso', '61.6%', '71.3%', '87.9%', '98.2%', { v: '-11.6', tone: 'bad' }, '571'] },
+            { cells: ['ELP-08', 'El Paso', '61.6%', '71.5%', '88.0%', '98.0%', { v: '-10.3', tone: 'bad' }, '550'] },
+            { cells: ['ELP-12', 'El Paso', '61.7%', '71.4%', '87.9%', '98.2%', { v: '-11.5', tone: 'bad' }, '573'] },
+            { cells: ['ELP-10', 'El Paso', '61.8%', '71.7%', '87.8%', '98.2%', { v: '-11.0', tone: 'bad' }, '547'] },
+            { cells: ['ELP-02', 'El Paso', '62.3%', '71.8%', '88.0%', '98.6%', { v: '-10.6', tone: 'bad' }, '558'] },
+            { cells: ['ELP-05', 'El Paso', '62.4%', '71.8%', '88.1%', '98.6%', { v: '-9.9', tone: 'bad' }, '558'] },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'OEE by shift and plant',
+          subtitle: 'YTD Oct 2026',
+          labels: ['A · Day', 'B · Swing', 'C · Night'],
+          yFormat: 'pct',
+          showValues: true,
+          series: [
+            { name: 'Grand Rapids', color: 'violet', points: [71.0, 71.0, 64.5] },
+            { name: 'El Paso', color: 'teal', points: [61.5, 61.9, 61.8] },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Cost Variance & Scrap',
+      title: 'Cost Variance & Scrap',
+      period: 'YTD October 2026',
+      slicers: [
+        { label: 'Period', options: ['YTD Oct 2026'] },
+        { label: 'Plant', options: ['All'] },
+        { label: 'Family', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Cost variance · YTD', value: '-$835K', sub: 'std $30.2M · actual $31.0M' },
+            { label: 'Material price variance', value: '-$251K', sub: 'PY -$88K' },
+            { label: 'Material usage variance', value: '-$103K', sub: 'PY -$940' },
+            { label: 'Labor efficiency variance', value: '-$174K', sub: 'PY -$1K' },
+            { label: 'Scrap rate · YTD', value: '1.7%', delta: { text: '+0.2 pts vs PY', good: false } },
+            { label: 'Scrap cost · YTD', value: '$658K', delta: { text: '+8% vs PY', good: false } },
+          ],
+        },
+        {
+          type: 'divergingBarsH',
+          title: 'Cost variance by element',
+          subtitle: 'YTD Oct 2026 · negative = unfavorable',
+          xFormat: 'usd',
+          rows: [
+            { k: 'Material price', v: -251000, show: '-$251K' },
+            { k: 'Overhead volume', v: -208000, show: '-$208K' },
+            { k: 'Labor efficiency', v: -174000, show: '-$174K' },
+            { k: 'Material usage', v: -103000, show: '-$103K' },
+            { k: 'Labor rate', v: -53000, show: '-$53K' },
+            { k: 'Overhead spending', v: -46000, show: '-$46K' },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Scrap rate by month and part family',
+          subtitle: 'Scrapped parts / parts produced',
+          labels: M34,
+          yFormat: 'pct',
+          series: [
+            { name: 'Automotive clips', color: 'teal', points: scrapClips, endLabel: 'Clips 5.2%' },
+            { name: 'Medical housings', color: 'slate', points: seg(2.6, 2.6, 34, 0.25), endLabel: 'Medical 2.5%' },
+            { name: 'Electrical connectors', color: 'pink', points: seg(2.0, 2.0, 34, 0.2), endLabel: 'Electrical 2.0%' },
+            { name: 'Appliance components', color: 'violet', points: seg(1.8, 1.8, 34, 0.2), endLabel: 'Appliance 1.8%' },
+            { name: 'Consumer closures', color: 'amber', points: seg(1.4, 1.4, 34, 0.15), endLabel: 'Consumer 1.4%' },
+          ],
+        },
+        {
+          type: 'matrix',
+          title: 'Parts with the largest scrap increase',
+          subtitle: 'YTD Oct 2026 vs same months 2025 · at standard cost',
+          cols: ['Part', 'Family', 'Resin', 'Produced', 'Scrap %', 'Δ pts', 'Scrap $', 'Δ vs PY'],
+          align: ['l', 'l', 'l', 'r', 'r', 'r', 'r', 'r'],
+          rows: [
+            { cells: ['P10091 Auto clip 013', 'Auto clips', 'Nylon 66', '1,344,176', '4.5%', { v: '+2.2', tone: 'bad' }, '$11K', { v: '+$6K', tone: 'bad' }] },
+            { cells: ['P10182 Auto clip 026', 'Auto clips', 'Nylon 66', '1,505,848', '3.7%', { v: '+1.5', tone: 'bad' }, '$8K', { v: '+$5K', tone: 'bad' }] },
+            { cells: ['P10287 Auto clip 041', 'Auto clips', 'Nylon 66', '1,415,755', '4.1%', { v: '+2.0', tone: 'bad' }, '$8K', { v: '+$5K', tone: 'bad' }] },
+            { cells: ['P10203 Auto clip 029', 'Auto clips', 'Nylon 66', '1,434,167', '3.6%', { v: '+1.4', tone: 'bad' }, '$8K', { v: '+$5K', tone: 'bad' }] },
+            { cells: ['P10070 Auto clip 010', 'Auto clips', 'Nylon 66', '1,207,663', '4.2%', { v: '+2.0', tone: 'bad' }, '$10K', { v: '+$5K', tone: 'bad' }] },
+            { cells: ['P10021 Auto clip 003', 'Auto clips', 'Nylon 66', '1,411,919', '4.9%', { v: '+2.7', tone: 'bad' }, '$8K', { v: '+$4K', tone: 'bad' }] },
+            { cells: ['P10147 Auto clip 021', 'Auto clips', 'Nylon 66', '1,155,156', '4.2%', { v: '+2.1', tone: 'bad' }, '$8K', { v: '+$4K', tone: 'bad' }] },
+            { cells: ['P10119 Auto clip 017', 'Auto clips', 'Nylon 66', '783,925', '4.1%', { v: '+1.8', tone: 'bad' }, '$6K', { v: '+$4K', tone: 'bad' }] },
+          ],
+        },
+        {
+          type: 'barsH',
+          title: 'Scrap cost by defect',
+          subtitle: 'YTD Oct 2026 · $',
+          xFormat: 'usd',
+          rows: [
+            { k: 'Short shot', v: 165000, show: '$165K' },
+            { k: 'Flash', v: 107000, show: '$107K' },
+            { k: 'Splay / moisture', v: 104000, show: '$104K' },
+            { k: 'Sink marks', v: 74000, show: '$74K' },
+            { k: 'Warp', v: 59000, show: '$59K' },
+            { k: 'Color / cosmetic', v: 52000, show: '$52K' },
+            { k: 'Dimensional', v: 49000, show: '$49K' },
+            { k: 'Contamination', v: 48000, show: '$48K' },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+// ===========================================================================
+// Case 08 · Job Cost, WIP & Change Orders
+// ===========================================================================
+
+const jcProjected = seg(17, 17.3, 16, 0.4).concat([17.5, 16.8, 15.5, 14.2, 14.0, 14.3, 14.1, 13.8, 13.9, 13.7, 13.6, 13.8, 13.5, 13.6, 13.7, 13.5, 13.5, 13.5]);
+const jcBilling = [10, 9, 8, 8.5, 11, 10, 11, 12, 11.5, 12, 12.5, 11, 11, 11, 12, 12, 13, 12, 16, 14.5, 13, 11].map((v) => v * 1e6);
+
+const jobcost: DashboardSpec = {
+  caseLabel: 'Case 08 · Job Cost & WIP',
+  pages: [
+    {
+      name: 'WIP & Margin',
+      title: 'WIP & Margin Fade',
+      period: 'October 31, 2026',
+      slicers: [
+        { label: 'Period', options: ['Oct 2026'] },
+        { label: 'Division', options: ['All'] },
+        { label: 'Project manager', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Contract value, active jobs', value: '$204.4M', sub: 'backlog $70.0M · 40 jobs' },
+            { label: 'Earned revenue · YTD', value: '$154.7M', delta: { text: '+3.5% vs PY', good: true } },
+            { label: 'Gross margin · YTD', value: '16.0%', delta: { text: '-1.6 pts vs PY', good: false } },
+            { label: 'Projected margin, active jobs', value: '13.5%', delta: { text: '-3.6 pts vs bid 17.1%', good: false } },
+            { label: 'Margin fade vs bid', value: '-$7.4M', sub: '9 jobs more than 3 pts below bid' },
+            { label: 'Net over/(under) billing', value: '+$11.6M', sub: 'underbilled jobs: -$462K' },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Projected vs bid margin, active jobs',
+          subtitle: 'Month-end WIP schedule · contract-weighted',
+          labels: M34,
+          yFormat: 'pct',
+          series: [
+            { name: 'Projected margin', color: 'violet', points: jcProjected, endLabel: 'Projected 13.5%' },
+            { name: 'Bid margin', color: 'slate', points: seg(18, 17.1, 34, 0.25), endLabel: 'Bid 17.1%', dashed: true },
+          ],
+        },
+        {
+          type: 'divergingBarsH',
+          title: 'Margin gained or lost vs bid, by project manager',
+          subtitle: 'Active jobs, Oct 31, 2026 · $',
+          xFormat: 'usd',
+          rows: [
+            { k: 'Marcus Ellery', v: -4700000, show: '-$4.7M' },
+            { k: 'Laura Fenn', v: -1400000, show: '-$1.4M' },
+            { k: 'Grace Holm', v: -406000, show: '-$406K' },
+            { k: 'Kevin Oduya', v: -353000, show: '-$353K' },
+            { k: 'Sam Delacroix', v: -215000, show: '-$215K' },
+            { k: 'Priya Natarajan', v: -209000, show: '-$209K' },
+            { k: 'Dana Whitfield', v: -119000, show: '-$119K' },
+            { k: 'Tom Brandt', v: 4000, show: '+$4K' },
+          ],
+        },
+        {
+          type: 'matrix',
+          title: 'WIP schedule — largest fade first',
+          subtitle: 'Active jobs · contract includes approved and 80% of pending change orders',
+          cols: ['Job', 'Division', 'PM', 'Contract', '% compl.', 'Bid', 'Proj.', 'Δ pts', 'Over/(under)'],
+          align: ['l', 'l', 'l', 'r', 'r', 'r', 'r', 'r', 'r'],
+          rows: [
+            { cells: ['J25044 Fairmont Apts', 'Plumbing', 'M. Ellery', '$5.6M', '79%', '16.4%', '2.6%', { v: '-13.8', tone: 'bad' }, '+$1.1M'] },
+            { cells: ['J24872 Summit Park Hosp', 'Plumbing', 'M. Ellery', '$6.7M', '70%', '14.9%', '2.4%', { v: '-12.6', tone: 'bad' }, '+$839K'] },
+            { cells: ['J25074 Stonebridge Med', 'Plumbing', 'M. Ellery', '$21.5M', '74%', '17.8%', '6.3%', { v: '-11.5', tone: 'bad' }, '+$3.4M'] },
+            { cells: ['J24734 Pinecrest Apts', 'Plumbing', 'M. Ellery', '$4.1M', '72%', '17.5%', '6.2%', { v: '-11.4', tone: 'bad' }, '+$520K'] },
+            { cells: ['J24579 Westfield Mixed-Use', 'Plumbing', 'L. Fenn', '$23.0M', '20%', '15.0%', '9.5%', { v: '-5.5', tone: 'bad' }, '+$236K'] },
+            { cells: ['J23688 Stonebridge Med', 'Plumbing', 'L. Fenn', '$3.9M', '54%', '14.7%', '10.2%', { v: '-4.5', tone: 'bad' }, '+$328K'] },
+            { cells: ['J24146 Riverside Hotel', 'Plumbing', 'S. Delacroix', '$3.6M', '53%', '15.5%', '12.1%', { v: '-3.4', tone: 'bad' }, '+$258K'] },
+            { cells: ['J23469 Lakeview Brewery', 'Process Piping', 'P. Natarajan', '$5.5M', '62%', '21.7%', '18.6%', { v: '-3.1', tone: 'bad' }, '+$381K'] },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'Net over/(under) billing by month',
+          subtitle: 'Billed to date − earned to date, active jobs',
+          labels: M25,
+          yFormat: 'usd',
+          series: [{ name: 'Over/(under) billing', color: 'violet', points: jcBilling }],
+        },
+      ],
+    },
+    {
+      name: 'Cost & Change Orders',
+      title: 'Labor, Cost & Change Orders',
+      period: 'October 31, 2026',
+      slicers: [
+        { label: 'Period', options: ['Oct 2026'] },
+        { label: 'Division', options: ['All'] },
+        { label: 'Project manager', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Labor productivity index', value: '0.97', sub: '+0.00 vs a year earlier' },
+            { label: 'Labor hours over earned', value: '25,230 h', sub: 'actual vs earned hours, active jobs' },
+            { label: 'Pending change orders', value: '$7.9M', sub: '42 COs · $2.4M over 90 days' },
+            { label: 'Pending CO cost incurred', value: '$6.7M', sub: 'pending COs PY $5.2M' },
+            { label: 'Cost to complete', value: '$61.0M', sub: 'to finish active jobs' },
+            { label: 'Jobs below 0.90 productivity', value: '5', sub: 'active jobs' },
+          ],
+        },
+        {
+          type: 'clusteredBarsH',
+          title: 'Earned budget vs actual cost, by cost type',
+          subtitle: 'Active jobs, cost to date · earned budget = budget × % complete',
+          xFormat: 'usd',
+          cats: ['Labor', 'Material', 'Subcontract', 'Equipment', 'Other'],
+          series: [
+            { name: 'Actual cost', color: 'violet', values: [49200000, 39500000, 17100000, 5000000, 4900000] },
+            { name: 'Earned budget', color: 'slate', values: [41600000, 37000000, 15000000, 4000000, 4000000] },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'Pending change orders by age',
+          subtitle: 'Days since submitted · $',
+          labels: ['0–30', '31–60', '61–90', '91–180', '180+'],
+          yFormat: 'usd',
+          showValues: true,
+          series: [{ name: 'Pending CO', color: 'violet', points: [1200000, 1800000, 2400000, 2000000, 402000] }],
+        },
+        {
+          type: 'matrix',
+          title: 'Jobs at risk — lowest labor productivity first',
+          subtitle: 'Active jobs with more than 2,000 labor hours',
+          cols: ['Job', 'PM', 'Earned h', 'Actual h', 'Prod.', 'Pending CO', 'Proj.'],
+          align: ['l', 'l', 'r', 'r', 'r', 'r', 'r'],
+          rows: [
+            { cells: ['J25044 Fairmont Apts', 'M. Ellery', '22,888', '28,955', { v: '0.79', tone: 'bad' }, '$418K', '2.6%'] },
+            { cells: ['J24872 Summit Park Hosp', 'M. Ellery', '24,182', '30,061', { v: '0.80', tone: 'bad' }, '$98K', '2.4%'] },
+            { cells: ['J24734 Pinecrest Apts', 'M. Ellery', '15,170', '18,477', { v: '0.82', tone: 'bad' }, '$373K', '6.2%'] },
+            { cells: ['J23688 Stonebridge Med', 'L. Fenn', '10,997', '12,720', { v: '0.86', tone: 'bad' }, '$0', '10.2%'] },
+            { cells: ['J25074 Stonebridge Med', 'M. Ellery', '84,734', '97,102', { v: '0.87', tone: 'bad' }, '$0', '6.3%'] },
+            { cells: ['J23240 Elm Ridge Housing', 'S. Delacroix', '3,366', '3,715', '0.91', '$0', '16.5%'] },
+            { cells: ['J23441 Brookline Housing', 'L. Fenn', '4,438', '4,846', '0.92', '$0', '14.0%'] },
+            { cells: ['J24579 Westfield Mixed-Use', 'L. Fenn', '24,664', '26,738', '0.92', '$1.2M', '9.5%'] },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Labor productivity by division',
+          subtitle: 'Earned / actual hours, active jobs',
+          labels: M34,
+          yFormat: 'ratio',
+          series: [
+            { name: 'HVAC', color: 'violet', points: seg(1.02, 1.04, 17, 0.02).concat(seg(1.03, 1.01, 17, 0.02)), endLabel: 'HVAC 1.01' },
+            { name: 'Process Piping', color: 'amber', points: seg(1.0, 1.05, 17, 0.03).concat(seg(1.04, 1.0, 17, 0.03)), endLabel: 'Process 1.00' },
+            { name: 'Plumbing', color: 'teal', points: seg(0.99, 1.0, 12, 0.03).concat(seg(1.0, 0.93, 22, 0.02)), endLabel: 'Plumbing 0.93' },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+// ===========================================================================
+// Case 09 · Utilization, Realization & WIP
+// ===========================================================================
+
+const utilization: DashboardSpec = {
+  caseLabel: 'Case 09 · Utilization & Realization',
+  pages: [
+    {
+      name: 'Utilization',
+      title: 'Utilization & Capacity',
+      period: 'YTD October 2026',
+      slicers: [
+        { label: 'Period', options: ['YTD Oct 2026'] },
+        { label: 'Practice', options: ['All'] },
+        { label: 'Level', options: ['All'] },
+        { label: 'Office', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Utilization · YTD', value: '74.2%', delta: { text: '-2.5 pts vs PY', good: false } },
+            { label: 'Target utilization · YTD', value: '78.5%', sub: 'gap -4.2 pts · weighted by level' },
+            { label: 'Billable hours · YTD', value: '372,398', delta: { text: '+3.7% vs PY', good: true } },
+            { label: 'Bench hours · YTD', value: '46,904', delta: { text: '+56% vs PY', good: false } },
+            { label: 'Bench at standard rates · YTD', value: '$12.0M', sub: 'unassigned hours × standard rate' },
+            { label: 'Headcount', value: '300', sub: 'a year earlier 309' },
+          ],
+        },
+        {
+          type: 'multiLine',
+          title: 'Utilization by practice',
+          subtitle: 'Monthly · billable / available hours',
+          labels: M34,
+          yFormat: 'pct',
+          series: [
+            { name: 'Tax', color: 'teal', points: seg(80, 85, 34, 9), endLabel: 'Tax 85%' },
+            { name: 'Advisory', color: 'violet', points: seg(76, 77, 34, 1.5), endLabel: 'Advisory 77%' },
+            { name: 'Audit', color: 'amber', points: seg(82, 73, 34, 9), endLabel: 'Audit 73%' },
+            { name: 'Technology Consulting', color: 'pink', points: seg(76, 77, 24, 2).concat([74, 70, 66, 63, 62, 63, 64, 63, 63, 63]), endLabel: 'Tech 63%' },
+          ],
+        },
+        {
+          type: 'clusteredBarsH',
+          title: 'Utilization vs target, by level',
+          subtitle: 'Year to date',
+          xFormat: 'pct',
+          cats: ['Partner', 'Director', 'Manager', 'Senior', 'Staff'],
+          series: [
+            { name: 'Utilization', color: 'violet', values: [51, 63, 73, 79, 79] },
+            { name: 'Target', color: 'slate', values: [56, 75, 72, 80, 85] },
+          ],
+        },
+        {
+          type: 'matrix',
+          title: 'Furthest below target',
+          subtitle: 'Year to date · active people with billable time',
+          cols: ['Employee', 'Practice', 'Level', 'Hire date', 'Billable h', 'Util.', 'Target', 'Gap pts'],
+          align: ['l', 'l', 'l', 'l', 'r', 'r', 'r', 'r'],
+          rows: [
+            { cells: ['Greer Ashford', 'Tech Consulting', 'Staff', 'Sep 08, 2025', '884', '54.2%', '85%', { v: '-30.8', tone: 'bad' }] },
+            { cells: ['Micah Galloway', 'Tech Consulting', 'Staff', 'Sep 08, 2025', '924', '54.6%', '85%', { v: '-30.4', tone: 'bad' }] },
+            { cells: ['Greer Everly', 'Tech Consulting', 'Staff', 'Sep 08, 2025', '807', '55.1%', '85%', { v: '-29.9', tone: 'bad' }] },
+            { cells: ['Jules Castellano', 'Tech Consulting', 'Staff', 'Sep 08, 2025', '964', '55.2%', '85%', { v: '-29.8', tone: 'bad' }] },
+            { cells: ['Morgan Kowalczyk', 'Tech Consulting', 'Staff', 'Sep 08, 2025', '956', '55.4%', '85%', { v: '-29.6', tone: 'bad' }] },
+            { cells: ['Greer Whitlock', 'Tech Consulting', 'Staff', 'Sep 08, 2025', '922', '55.6%', '85%', { v: '-29.4', tone: 'bad' }] },
+            { cells: ['Jules Fitzhugh', 'Tech Consulting', 'Staff', 'Sep 08, 2025', '888', '55.8%', '85%', { v: '-29.2', tone: 'bad' }] },
+            { cells: ['Noel Jessup', 'Tech Consulting', 'Staff', 'Sep 08, 2025', '903', '56.1%', '85%', { v: '-28.9', tone: 'bad' }] },
+          ],
+        },
+        {
+          type: 'clusteredBarsH',
+          title: 'Non-billable hours by category',
+          subtitle: 'Year to date vs same months last year',
+          xFormat: 'num',
+          cats: ['Bench (unassigned)', 'Firm admin', 'Training', 'Business development'],
+          series: [
+            { name: '2026', color: 'violet', values: [46904, 41942, 25173, 15158] },
+            { name: '2025', color: 'slate', values: [30077, 40100, 26000, 16200] },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Realization & WIP',
+      title: 'Realization, WIP & Lockup',
+      period: 'October 31, 2026',
+      slicers: [
+        { label: 'Period', options: ['Oct 2026'] },
+        { label: 'Practice', options: ['All'] },
+        { label: 'Engagement type', options: ['All'] },
+        { label: 'Engagement partner', options: ['All'] },
+      ],
+      visuals: [
+        {
+          type: 'kpis',
+          items: [
+            { label: 'Billed revenue · YTD', value: '$71.9M', delta: { text: '-4.1% vs PY', good: false } },
+            { label: 'Realization · YTD', value: '90.6%', delta: { text: '-3.1 pts vs PY', good: false } },
+            { label: 'Write-downs · YTD', value: '$6.4M', sub: 'same months last year $5.1M' },
+            { label: 'Unbilled WIP', value: '$17.0M', delta: { text: '+40% vs a year earlier', good: false } },
+            { label: 'WIP over 90 days', value: '$3.4M', sub: 'a year earlier $1.0M' },
+            { label: 'Lockup', value: '116 days', sub: 'WIP 62 + A/R 55 · PY 94' },
+          ],
+        },
+        {
+          type: 'waterfallV',
+          title: 'Where the hours worked this year went',
+          subtitle: 'Year to date · $ at standard rates → billed',
+          yFormat: 'usd',
+          bars: [
+            { k: 'Time worked', kind: 'total', value: 85200000 },
+            { k: 'Written down', kind: 'down', value: 6400000 },
+            { k: 'Not yet billed', kind: 'down', value: 17000000 },
+            { k: 'Billed', kind: 'total', value: 61800000 },
+          ],
+        },
+        {
+          type: 'clusteredColumn',
+          title: 'Realization by practice and engagement type',
+          subtitle: 'Hours worked year to date and billed',
+          labels: ['Advisory', 'Audit', 'Tax', 'Tech Consulting'],
+          yFormat: 'pct',
+          series: [
+            { name: 'Fixed fee', color: 'violet', points: [76, 97, 101, 92] },
+            { name: 'Recurring', color: 'teal', points: [0, 84, 92, 0] },
+            { name: 'T&M', color: 'amber', points: [96, 94, 95, 95] },
+          ],
+        },
+        {
+          type: 'matrix',
+          title: 'Lowest realization — engagements over $40K',
+          subtitle: 'Standard value of hours worked year to date and billed',
+          cols: ['Engagement', 'Practice', 'Type', 'Partner', 'Hrs vs bud.', 'Std value', 'Billed', 'Realiz.'],
+          align: ['l', 'l', 'l', 'l', 'r', 'r', 'r', 'r'],
+          rows: [
+            { cells: ['G5226 Westbury Builders', 'Advisory', 'Fixed fee', 'B. Ashford', '177%', '$89K', '$50K', { v: '55.9%', tone: 'bad' }] },
+            { cells: ['G5012 Lakeshore Logistics', 'Advisory', 'Fixed fee', 'F. Marchetti', '169%', '$379K', '$215K', { v: '56.7%', tone: 'bad' }] },
+            { cells: ['G5161 Fairview Health', 'Advisory', 'Fixed fee', 'L. Pemberton', '165%', '$746K', '$443K', { v: '59.4%', tone: 'bad' }] },
+            { cells: ['G5361 Lakeshore Mfg', 'Tax', 'Recurring', 'N. Jablonski', '157%', '$425K', '$257K', { v: '60.4%', tone: 'bad' }] },
+            { cells: ['G5026 Pinehurst Properties', 'Advisory', 'Fixed fee', 'F. Marchetti', '168%', '$114K', '$70K', { v: '61.1%', tone: 'bad' }] },
+            { cells: ['G5115 Silverline Industries', 'Advisory', 'Fixed fee', 'B. Fitzhugh', '161%', '$151K', '$93K', { v: '61.3%', tone: 'bad' }] },
+            { cells: ['G5199 Pinehurst Health', 'Advisory', 'Fixed fee', 'B. Fitzhugh', '164%', '$1.1M', '$682K', { v: '62.6%', tone: 'bad' }] },
+            { cells: ['G5186 Granite Health', 'Advisory', 'Fixed fee', 'L. Pemberton', '151%', '$658K', '$414K', { v: '62.9%', tone: 'bad' }] },
+          ],
+        },
+        {
+          type: 'barsH',
+          title: 'Unbilled WIP by engagement partner',
+          subtitle: 'Oct 31, 2026 · Briar Ashford carries most of the over-90 WIP',
+          xFormat: 'usd',
+          rows: [
+            { k: 'Briar Ashford', v: 4200000, highlight: true, show: '$4.2M' },
+            { k: 'Dallas Lindqvist', v: 1300000, show: '$1.3M' },
+            { k: 'Kai Valdez', v: 1100000, show: '$1.1M' },
+            { k: 'Emerson Sorensen', v: 322000, show: '$322K' },
+            { k: 'Nico Jablonski', v: 137000, show: '$137K' },
+            { k: 'Finley Esposito', v: 136000, show: '$136K' },
+            { k: 'Peyton Yamamoto', v: 134000, show: '$134K' },
+            { k: 'Rowan Fitzhugh', v: 87000, show: '$87K' },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
 export const caseDashboards: Record<string, DashboardSpec> = {
   'executive-revenue-dashboard': boardpack,
   'finance-close-analytics': budget,
   'cash-working-capital': cash,
   'month-end-close': monthend,
   'field-service': fieldservice,
+  'plant-performance': plant,
+  'job-cost-wip': jobcost,
+  'utilization-realization': utilization,
   'dtc-cac-ltv': dtc,
   'saas-arr-retention': saas,
   'revenue-cycle': revcycle,
